@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "smkHhMl2022"
+rootProject.name = "nanm2022"
 include ':app'

@@ -52,7 +52,7 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.abdulsajid.smkHhMl2022"
+            applicationId "edu.aku.abdulsajid.nanm2022"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
             minSdk 22
@@ -92,7 +92,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_smkHhMl2022.db", "VaLu@b1ePeRcE!V3")
+            resValue("string", "DB_PASSWORD_nanm2022.db", "VaLu@b1ePeRcE!V3")
         }
     }
     compileOptions {
