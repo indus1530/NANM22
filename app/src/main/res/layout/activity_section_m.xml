@@ -152,7 +152,7 @@
 
                             <RadioButton
                                 android:id="@+id/m10201"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m102.equals(`1`)}"
@@ -161,7 +161,7 @@
 
                             <RadioButton
                                 android:id="@+id/m10202"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m102.equals(`2`)}"
