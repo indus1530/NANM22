@@ -1039,9 +1039,8 @@
     <string name="a109">Village</string>
     <string name="a110">Block/ Mohalla</string>
     <string name="a111">Street </string>
-    <string name="a112">House number/khandan number</string>
-    <string name="a11201">Khandan number in LHW covered area</string>
-    <string name="a11203">Not Applicable</string>
+    <string name="a112">House / Khandan Number in LHW Covered Area</string>
+    <string name="a11297">NA</string>
     <string name="consent">Assalaam-O-Alaikum. My name is %1$s. and I am working with Centre of Excellence in Women and Child Health, Aga Khan University Karachi. In collaboration with AKDN partners, UNFPA and Provincial Health Departments, we are conducting a project on family planning (FP) Sexual Reproductive health (SRH), Adolescent health (AH) in selected districts of Pakistan. As part of the project, we are collecting information on the status of health of population in these selected districts. The Information we are collecting relates to knowledge, attitudes and practices including morbidity and mortality. This information will be used to design strategies in improving FP, SRH, and AH services by government and other healthcare providers in your area. The whole process of this interview may take approximately one hour. We would very much appreciate your participation in this survey. All the answers you provide will be confidential. Your participation in the survey is voluntary. If you do not want to provide information to a specific question or a section, please let me know. You may also withdraw from this interview at any time.</string>
     <string name="c101">Name of the respondent</string>
     <string name="c102">Age of respondent </string>

@@ -77,7 +77,7 @@
 
                             <RadioButton
                                 android:id="@+id/a10801"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.a108.equals(`1`)}"
@@ -86,7 +86,7 @@
 
                             <RadioButton
                                 android:id="@+id/a10802"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.a108.equals(`2`)}"
@@ -300,7 +300,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:enabled="@{!form.a11203.equals(`97`)}"
+                                android:enabled="@{!form.a11297.equals(`97`)}"
                                 android:gravity="center"
                                 android:hint="########"
                                 android:inputType="number"
@@ -310,13 +310,14 @@
                                 app:type="range" />
 
                             <CheckBox
-                                android:id="@+id/a11203"
+                                android:id="@+id/a11297"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:checked="@{form.a11203.equals(`97`)}"
-                                android:onClick="@{()->form.setA11203(form.a11203.equals(`97`)?``:`97`)}"
+                                android:background="@color/lightPink"
+                                android:checked="@{form.a11297.equals(`97`)}"
                                 android:tag="-1"
-                                android:text="@string/a11203" />
+                                android:onClick="@{()->form.setA11297(form.a11297.equals(`97`)?``:`97`)}"
+                                android:text="@string/a11297" />
 
                         </LinearLayout>
 

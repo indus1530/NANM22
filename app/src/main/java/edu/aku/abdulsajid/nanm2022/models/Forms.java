@@ -64,9 +64,7 @@ public class Forms extends BaseObservable implements Observable {
     private String a110 = _EMPTY_;
     private String a111 = _EMPTY_;
     private String a112 = _EMPTY_;
-    private String a11201 = _EMPTY_;
-    private String a11201x = _EMPTY_;
-    private String a11203 = _EMPTY_;
+    private String a11297 = _EMPTY_;
     private String c101 = _EMPTY_;
     private String c102 = _EMPTY_;
     private String c103 = _EMPTY_;
@@ -463,38 +461,17 @@ public class Forms extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a112);
     }
 
-    @Bindable
-    public String getA11201() {
-        return a11201;
-    }
-
-    public void setA11201(String a11201) {
-        if (this.a11201.equals(a11201)) return;     //For all checkboxes
-        this.a11201 = a11201;
-        setA11201x(a11201.equals("1") ? this.a11201x : "");
-        notifyPropertyChanged(BR.a11201);
-    }
 
     @Bindable
-    public String getA11201x() {
-        return a11201x;
+    public String getA11297() {
+        return a11297;
     }
 
-    public void setA11201x(String a11201x) {
-        this.a11201x = a11201x;
-        notifyPropertyChanged(BR.a11201x);
-    }
-
-    @Bindable
-    public String getA11203() {
-        return a11203;
-    }
-
-    public void setA11203(String a11203) {
-        if (this.a11203.equals(a11203)) return;     //For all checkboxes
-        this.a11203 = a11203;
-        setA112(a11203.equals("97") ? "" : this.a112);
-        notifyPropertyChanged(BR.a11203);
+    public void setA11297(String a11297) {
+        if (this.a11297.equals(a11297)) return;
+        this.a11297 = a11297;
+        setA112(a11297.equals("97") ? "" : this.a112);
+        notifyPropertyChanged(BR.a11297);
     }
 
     @Bindable
@@ -1616,7 +1593,7 @@ public class Forms extends BaseObservable implements Observable {
             this.a112 = json.getString("a112");
             this.a11201 = json.getString("a11201");
             this.a11201x = json.getString("a11201x");
-            this.a11203 = json.getString("a11203");
+            this.a11297 = json.getString("a11203");
             this.c101 = json.getString("c101");
             this.c102 = json.getString("c102");
             this.c103 = json.getString("c103");
@@ -1798,7 +1775,7 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a112", a112)
                 .put("a11201", a11201)
                 .put("a11201x", a11201x)
-                .put("a11203", a11203)
+                .put("a11203", a11297)
                 .put("c101", c101)
                 .put("c102", c102)
                 .put("c103", c103)
