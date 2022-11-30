@@ -48,6 +48,7 @@ import edu.aku.abdulsajid.nanm2022.models.PregnancyDetails;
 import edu.aku.abdulsajid.nanm2022.models.PregnancyMaster;
 import edu.aku.abdulsajid.nanm2022.models.RandomHH;
 import edu.aku.abdulsajid.nanm2022.models.Users;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.LockActivity;
 
 
@@ -323,6 +324,10 @@ public class MainApp extends Application {
             //IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
             IBAHC = bundle.getString("YEK_REVRES");
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
+
+            // Room DB
+            NANMRoomDatabase.init(this, IBAHC);
+
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }

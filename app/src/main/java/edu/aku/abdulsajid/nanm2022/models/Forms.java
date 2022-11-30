@@ -13,6 +13,9 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +29,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
 
+@Entity(tableName = FormsTable.TABLE_NAME)
 public class Forms extends BaseObservable implements Observable {
 
     private final String TAG = "Forms";
@@ -34,7 +38,11 @@ public class Forms extends BaseObservable implements Observable {
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
     // APP VARIABLES
-    private String id = _EMPTY_;
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = FormsTable.COLUMN_ID)
+    private long id = 0;
+
     private String uid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
@@ -177,6 +185,10 @@ public class Forms extends BaseObservable implements Observable {
     private String o108 = _EMPTY_;
     private String o10896x = _EMPTY_;
 
+    // Section Variables
+
+    private String sA = _EMPTY_;
+
 
     public Forms() {
     }
@@ -211,11 +223,11 @@ public class Forms extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -339,6 +351,14 @@ public class Forms extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
+
+    public String getSA() {
+        return sA;
+    }
+
+    public void setSA(String sA) {
+        this.sA = sA;
+    }
 
     @Bindable
     public String getA101() {
@@ -1551,7 +1571,7 @@ public class Forms extends BaseObservable implements Observable {
 
 
     public Forms Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
         this.clusterCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE));
