@@ -151,6 +151,7 @@
 
                         <TextView
                             style="@style/labelsHead"
+                            android:layout_marginTop="0dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/a1title" />
@@ -314,6 +315,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:background="@color/lightPink"
+                                android:buttonTint="@color/red"
+                                android:textColor="@color/redDark"
                                 android:checked="@{form.a11297.equals(`97`)}"
                                 android:tag="-1"
                                 android:onClick="@{()->form.setA11297(form.a11297.equals(`97`)?``:`97`)}"

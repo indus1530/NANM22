@@ -586,7 +586,7 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.NO:
                 return true;
 
-            case R.id.SD:
+            case R.id.UR:
                 MainApp.selectedLanguage = 1;
                 MainApp.langRTL = true;
                 break;

@@ -24,7 +24,6 @@ import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionE1aBinding;
 import edu.aku.abdulsajid.nanm2022.models.PregnancyDetails;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
-import edu.aku.abdulsajid.nanm2022.ui.lists.PregnancyListActivity;
 
 public class SectionE1AActivity extends AppCompatActivity {
 
@@ -124,7 +123,7 @@ public class SectionE1AActivity extends AppCompatActivity {
             if (MainApp.totalPreg > 0) {
                 MainApp.pregD = new PregnancyDetails();
                 finish();
-                startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
+//                startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
 
             } else {
 
@@ -141,7 +140,7 @@ public class SectionE1AActivity extends AppCompatActivity {
                     finish();
 
                     // if no more pregnancy and no more mwra than go to E2
-                    startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
+//                    startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
 
                 }
 

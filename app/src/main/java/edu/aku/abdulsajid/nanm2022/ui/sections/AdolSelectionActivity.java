@@ -186,7 +186,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
         if (!formValidation()) return;
 
         allAdolList.remove(bi.d102.getSelectedItemPosition() - 1);
-        startActivity(new Intent(this, SectionAH1Activity.class).putExtra("age", bi.age.getText().toString()));
+//        startActivity(new Intent(this, SectionAH1Activity.class).putExtra("age", bi.age.getText().toString()));
         finish();
 
 

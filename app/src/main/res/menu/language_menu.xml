@@ -11,8 +11,8 @@
             <item android:title="Language Selection" />
 
             <item
-                android:id="@+id/SD"
-                android:title="Sindhi" />
+                android:id="@+id/UR"
+                android:title="Urdu" />
 
             <item
                 android:id="@+id/EN"

@@ -30,7 +30,8 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectiondhouseholdmemberinformation_mainheading"
+            app:subtitle="@string/sectiona2membersinformation_mainheading"
+            app:title="@string/sectiona2membersinformation_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -61,14 +62,14 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_d101" />
+                            android:text="@string/Q_a201" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="@string/d101" />
+                            android:text="@string/a201" />
 
                         <TextView
                             android:id="@+id/d101"
@@ -104,12 +105,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_d102" />
+                                android:text="@string/Q_a202" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/d102t" />
+                                android:text="@string/a202" />
 
                         </LinearLayout>
 
@@ -156,13 +157,13 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_d104" />
+                            android:text="@string/Q_a204" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/d104" />
+                            android:text="@string/a204" />
 
                         <RadioGroup
                             android:id="@+id/d104"
@@ -178,7 +179,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{member.d104.equals(`1`)}"
                                 android:onClick="@{()->member.setD104(`1`)}"
-                                android:text="@string/d10401" />
+                                android:text="@string/a204a" />
 
                             <RadioButton
                                 android:id="@+id/d10402"
@@ -187,7 +188,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{member.d104.equals(`2`)}"
                                 android:onClick="@{()->member.setD104(`2`)}"
-                                android:text="@string/d10402" />
+                                android:text="@string/a204b" />
 
                         </RadioGroup>
 
@@ -216,12 +217,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_d103" />
+                                android:text="@string/Q_a203" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/d103" />
+                                android:text="@string/a203" />
 
                         </LinearLayout>
 
@@ -245,7 +246,7 @@
                                 android:checked="@{member.d103.equals(`1`)}"
                                 android:enabled="@{member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`1`)}"
-                                android:text="@string/d10301" />
+                                android:text="@string/a203a" />
 
                             <RadioButton
                                 android:id="@+id/d10302"
@@ -254,7 +255,7 @@
                                 android:checked="@{member.d103.equals(`2`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`2`)}"
-                                android:text="@string/d10302" />
+                                android:text="@string/a203b" />
 
                             <RadioButton
                                 android:id="@+id/d10303"
@@ -263,7 +264,7 @@
                                 android:checked="@{member.d103.equals(`3`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`3`)}"
-                                android:text="@string/d10303" />
+                                android:text="@string/a203c" />
 
                             <RadioButton
                                 android:id="@+id/d10304"
@@ -272,7 +273,7 @@
                                 android:checked="@{member.d103.equals(`4`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`4`)}"
-                                android:text="@string/d10304" />
+                                android:text="@string/a203d" />
 
                             <RadioButton
                                 android:id="@+id/d10305"
@@ -281,7 +282,7 @@
                                 android:checked="@{member.d103.equals(`5`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`5`)}"
-                                android:text="@string/d10305" />
+                                android:text="@string/a203e" />
 
                             <RadioButton
                                 android:id="@+id/d10306"
@@ -290,7 +291,7 @@
                                 android:checked="@{member.d103.equals(`6`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`6`)}"
-                                android:text="@string/d10306" />
+                                android:text="@string/a203f" />
 
                             <RadioButton
                                 android:id="@+id/d10307"
@@ -299,7 +300,7 @@
                                 android:checked="@{member.d103.equals(`7`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`7`)}"
-                                android:text="@string/d10307" />
+                                android:text="@string/a203g" />
 
                             <RadioButton
                                 android:id="@+id/d10308"
@@ -308,7 +309,7 @@
                                 android:checked="@{member.d103.equals(`8`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`8`)}"
-                                android:text="@string/d10308" />
+                                android:text="@string/a203h" />
 
                             <RadioButton
                                 android:id="@+id/d10309"
@@ -317,7 +318,7 @@
                                 android:checked="@{member.d103.equals(`9`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`9`)}"
-                                android:text="@string/d10309" />
+                                android:text="@string/a203i" />
 
                             <RadioButton
                                 android:id="@+id/d10310"
@@ -326,7 +327,7 @@
                                 android:checked="@{member.d103.equals(`10`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`10`)}"
-                                android:text="@string/d10310" />
+                                android:text="@string/a203j" />
 
                             <RadioButton
                                 android:id="@+id/d10311"
@@ -335,7 +336,7 @@
                                 android:checked="@{member.d103.equals(`11`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`11`)}"
-                                android:text="@string/d10311" />
+                                android:text="@string/a203k" />
 
                             <RadioButton
                                 android:id="@+id/d10312"
@@ -344,7 +345,7 @@
                                 android:checked="@{member.d103.equals(`12`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`12`)}"
-                                android:text="@string/d10312" />
+                                android:text="@string/a203l" />
 
                             <RadioButton
                                 android:id="@+id/d10313"
@@ -353,7 +354,7 @@
                                 android:checked="@{member.d103.equals(`13`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`13`)}"
-                                android:text="@string/d10313" />
+                                android:text="@string/a203m" />
 
                             <RadioButton
                                 android:id="@+id/d10314"
@@ -362,18 +363,28 @@
                                 android:checked="@{member.d103.equals(`14`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
                                 android:onClick="@{()->member.setD103(`14`)}"
-                                android:text="@string/d10314" />
+                                android:text="@string/a203n" />
 
                             <RadioButton
                                 android:id="@+id/d10398"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{member.d103.equals(`98`)}"
+                                android:checked="@{member.d103.equals(`96`)}"
                                 android:enabled="@{!member.d101.equals(`1`)}"
-                                android:onClick="@{()->member.setD103(`98`)}"
-                                android:text="@string/d10398" />
+                                android:onClick="@{()->member.setD103(`96`)}"
+                                android:text="@string/a203x" />
 
                         </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/a20396x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/a203x"
+                            android:tag="d10398"
+                            android:text='@{d10398.checked ? d10398.getText().toString() : ""}'
+                            android:visibility='@{d10398.checked? View.VISIBLE : View.GONE}' />
 
                     </LinearLayout>
 
@@ -400,12 +411,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_d108" />
+                                android:text="@string/Q_a205" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/d108" />
+                                android:text="@string/a205" />
 
                         </LinearLayout>
 
@@ -505,12 +516,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_d109" />
+                                android:text="@string/Q_a206" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/d109" />
+                                android:text="@string/a206" />
 
                         </LinearLayout>
 

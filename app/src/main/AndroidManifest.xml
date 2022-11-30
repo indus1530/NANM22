@@ -38,55 +38,6 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH1Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH2Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH3Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH4Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH5Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH6Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionAH7Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
             android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionDActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -95,125 +46,6 @@
 
         <activity
             android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1AActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1BActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionE2AActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionE2BActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionF1Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionF2Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionGActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionH1AActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionH1BActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionH2Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionIMAActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionIMBActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionKActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionLActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionMActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionNActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionOActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionUNActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
@@ -256,12 +88,6 @@
 
         <activity
             android:name="edu.aku.abdulsajid.nanm2022.ui.lists.FamilyMembersListActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
