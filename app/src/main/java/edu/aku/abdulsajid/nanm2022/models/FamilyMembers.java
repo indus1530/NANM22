@@ -54,29 +54,23 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String sD = _EMPTY_;
 
     // FIELD VARIABLES
-    private String d101 = _EMPTY_;
-    private String d102 = _EMPTY_;
-    private String d104 = _EMPTY_;
-    private String d103 = _EMPTY_;
-    private String d108d = _EMPTY_;
-    private String d108m = _EMPTY_;
-    private String d108y = _EMPTY_;
-    private String d109y = _EMPTY_;
-    private String d109m = _EMPTY_;
-    private String d109d = _EMPTY_;
-    private String d106 = _EMPTY_;
-    private String d10601x = _EMPTY_;
-    private String d107 = _EMPTY_;
-    private String d10701x = _EMPTY_;
-    private String d105 = _EMPTY_;
-    private String d110 = _EMPTY_;
-    private String d111 = _EMPTY_;
-    private String d115 = _EMPTY_;
-    private String d112 = _EMPTY_;
-    private String d113 = _EMPTY_;
-    private String d114 = _EMPTY_;
-    private String d11601 = _EMPTY_;
-    private String d11602 = _EMPTY_;
+    private String a201 = _EMPTY_;
+    private String a202 = _EMPTY_;
+    private String a204 = _EMPTY_;
+    private String a203 = _EMPTY_;
+    private String a205dd = _EMPTY_;
+    private String a205mm = _EMPTY_;
+    private String a205yy = _EMPTY_;
+    private String a206yy = _EMPTY_;
+    private String a206mm = _EMPTY_;
+    private String a206dd = _EMPTY_;
+    private String a212 = _EMPTY_;
+    private String a213 = _EMPTY_;
+    private String a207 = _EMPTY_;
+    private String a208 = _EMPTY_;
+    private String a209 = _EMPTY_;
+    private String a210 = _EMPTY_;
+    private String a211 = _EMPTY_;
 
 
     private boolean expanded;
@@ -102,7 +96,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setAppver(MainApp.form.getAppver());
         setClusterCode(MainApp.form.getClusterCode());
         setHhid(MainApp.form.getHhid());
-        setSno(getD101());
+        setSno(getA201());
         CaluculateAge();
 
     }
@@ -283,250 +277,187 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
     @Bindable
-    public String getD101() {
-        return d101;
+    public String getA201() {
+        return a201;
     }
 
-    public void setD101(String d101) {
-        this.d101 = d101;
-        notifyPropertyChanged(BR.d101);
-    }
-
-    @Bindable
-    public String getD102() {
-        return d102;
-    }
-
-    public void setD102(String d102) {
-        this.d102 = d102;
-        notifyPropertyChanged(BR.d102);
+    public void setA201(String a201) {
+        this.a201 = a201;
+        notifyPropertyChanged(BR.a201);
     }
 
     @Bindable
-    public String getD104() {
-        return d104;
+    public String getA202() {
+        return a202;
     }
 
-    public void setD104(String d104) {
-        this.d104 = d104;
-        setD111("");
-        notifyPropertyChanged(BR.d104);
-    }
-
-    @Bindable
-    public String getD103() {
-        return d103;
-    }
-
-    public void setD103(String d103) {
-        this.d103 = d103;
-        notifyPropertyChanged(BR.d103);
+    public void setA202(String a202) {
+        this.a202 = a202;
+        notifyPropertyChanged(BR.a202);
     }
 
     @Bindable
-    public String getD108d() {
-        return d108d;
+    public String getA204() {
+        return a204;
     }
 
-    public void setD108d(String d108d) {
-        this.d108d = d108d;
+    public void setA204(String a204) {
+        this.a204 = a204;
+        setA210("");
+        notifyPropertyChanged(BR.a204);
+    }
+
+    @Bindable
+    public String getA203() {
+        return a203;
+    }
+
+    public void setA203(String a203) {
+        this.a203 = a203;
+        notifyPropertyChanged(BR.a203);
+    }
+
+    @Bindable
+    public String getA205dd() {
+        return a205dd;
+    }
+
+    public void setA205dd(String a205dd) {
+        this.a205dd = a205dd;
         CaluculateAge();
-        notifyPropertyChanged(BR.d108d);
+        notifyPropertyChanged(BR.a205dd);
     }
 
     @Bindable
-    public String getD108m() {
-        return d108m;
+    public String getA205mm() {
+        return a205mm;
     }
 
-    public void setD108m(String d108m) {
-        this.d108m = d108m;
-        if (d108m.equals("98")) {
-            setD108d("98");
+    public void setA205mm(String a205mm) {
+        this.a205mm = a205mm;
+        if (a205mm.equals("98")) {
+            setA205dd("98");
         }
         CaluculateAge();
-        notifyPropertyChanged(BR.d108m);
+        notifyPropertyChanged(BR.a205mm);
     }
 
     @Bindable
-    public String getD108y() {
-        return d108y;
+    public String getA205yy() {
+        return a205yy;
     }
 
-    public void setD108y(String d108y) {
-        this.d108y = d108y;
-        if (d108y.equals("9998")) {
-            setD108m("98");
-            setD109d("");
-            setD109m("");
-            setD109y("");
+    public void setA205yy(String a205yy) {
+        this.a205yy = a205yy;
+        if (a205yy.equals("9998")) {
+            setA205mm("98");
+            setA206dd("");
+            setA206mm("");
+            setA206yy("");
         }
         // Calculate age
         CaluculateAge();
-        notifyPropertyChanged(BR.d108y);
+        notifyPropertyChanged(BR.a205yy);
     }
 
     @Bindable
-    public String getD109y() {
-        return d109y;
+    public String getA206yy() {
+        return a206yy;
     }
 
-    public void setD109y(String d109y) {
-        this.d109y = d109y;
-        /*setD105(d109y.length() > 0 && Integer.parseInt(d109y) >= 14 ? this.d105
-                : d109y.length() > 0 && Integer.parseInt(d109y) < 14 ? "2"
-                : "");*/
-        notifyPropertyChanged(BR.d109y);
+    public void setA206yy(String a206yy) {
+        this.a206yy = a206yy;
+        notifyPropertyChanged(BR.a206yy);
     }
 
     @Bindable
-    public String getD109m() {
-        return d109m;
+    public String getA206mm() {
+        return a206mm;
     }
 
-    public void setD109m(String d109m) {
-        this.d109m = d109m;
-        notifyPropertyChanged(BR.d109m);
-    }
-
-    @Bindable
-    public String getD109d() {
-        return d109d;
-    }
-
-    public void setD109d(String d109d) {
-        this.d109d = d109d;
-        notifyPropertyChanged(BR.d109d);
+    public void setA206mm(String a206mm) {
+        this.a206mm = a206mm;
+        notifyPropertyChanged(BR.a206mm);
     }
 
     @Bindable
-    public String getD106() {
-        return d106;
+    public String getA206dd() {
+        return a206dd;
     }
 
-    public void setD106(String d106) {
-        this.d106 = d106;
-        notifyPropertyChanged(BR.d106);
-    }
-
-    @Bindable
-    public String getD10601x() {
-        return d10601x;
-    }
-
-    public void setD10601x(String d10601x) {
-        this.d10601x = d10601x;
-        notifyPropertyChanged(BR.d10601x);
+    public void setA206dd(String a206dd) {
+        this.a206dd = a206dd;
+        notifyPropertyChanged(BR.a206dd);
     }
 
     @Bindable
-    public String getD107() {
-        return d107;
+    public String getA212() {
+        return a212;
     }
 
-    public void setD107(String d107) {
-        this.d107 = d107;
-        notifyPropertyChanged(BR.d107);
-    }
-
-    @Bindable
-    public String getD10701x() {
-        return d10701x;
-    }
-
-    public void setD10701x(String d10701x) {
-        this.d10701x = d10701x;
-        notifyPropertyChanged(BR.d10701x);
+    public void setA212(String a212) {
+        this.a212 = a212;
+        notifyPropertyChanged(BR.a212);
     }
 
     @Bindable
-    public String getD105() {
-        return d105;
+    public String getA213() {
+        return a213;
     }
 
-    public void setD105(String d105) {
-        this.d105 = d105;
-        notifyPropertyChanged(BR.d105);
-    }
-
-    @Bindable
-    public String getD110() {
-        return d110;
-    }
-
-    public void setD110(String d110) {
-        this.d110 = d110;
-        notifyPropertyChanged(BR.d110);
+    public void setA213(String a213) {
+        this.a213 = a213;
+        notifyPropertyChanged(BR.a213);
     }
 
     @Bindable
-    public String getD111() {
-        return d111;
+    public String getA207() {
+        return a207;
     }
 
-    public void setD111(String d111) {
-        this.d111 = d111;
-        notifyPropertyChanged(BR.d111);
-    }
-
-    @Bindable
-    public String getD115() {
-        return d115;
-    }
-
-    public void setD115(String d115) {
-        this.d115 = d115;
-        notifyPropertyChanged(BR.d115);
+    public void setA207(String a207) {
+        this.a207 = a207;
+        notifyPropertyChanged(BR.a207);
     }
 
     @Bindable
-    public String getD112() {
-        return d112;
+    public String getA208() {
+        return a208;
     }
 
-    public void setD112(String d112) {
-        this.d112 = d112;
-        notifyPropertyChanged(BR.d112);
-    }
-
-    @Bindable
-    public String getD113() {
-        return d113;
-    }
-
-    public void setD113(String d113) {
-        this.d113 = d113;
-        notifyPropertyChanged(BR.d113);
+    public void setA208(String a208) {
+        this.a208 = a208;
+        notifyPropertyChanged(BR.a208);
     }
 
     @Bindable
-    public String getD114() {
-        return d114;
+    public String getA209() {
+        return a209;
     }
 
-    public void setD114(String d114) {
-        this.d114 = d114;
-        notifyPropertyChanged(BR.d114);
-    }
-
-    @Bindable
-    public String getD11601() {
-        return d11601;
-    }
-
-    public void setD11601(String d11601) {
-        this.d11601 = d11601;
-        notifyPropertyChanged(BR.d11601);
+    public void setA209(String a209) {
+        this.a209 = a209;
+        notifyPropertyChanged(BR.a209);
     }
 
     @Bindable
-    public String getD11602() {
-        return d11602;
+    public String getA210() {
+        return a210;
     }
 
-    public void setD11602(String d11602) {
-        this.d11602 = d11602;
-        notifyPropertyChanged(BR.d11602);
+    public void setA210(String a210) {
+        this.a210 = a210;
+        notifyPropertyChanged(BR.a210);
+    }
+
+    @Bindable
+    public String getA211() {
+        return a211;
+    }
+
+    public void setA211(String a211) {
+        this.a211 = a211;
+        notifyPropertyChanged(BR.a211);
     }
 
 
@@ -593,29 +524,23 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.d101 = json.getString("d101");
-            this.d102 = json.getString("d102");
-            this.d104 = json.getString("d104");
-            this.d103 = json.getString("d103");
-            this.d108d = json.getString("d108d");
-            this.d108m = json.getString("d108m");
-            this.d108y = json.getString("d108y");
-            this.d109y = json.getString("d109y");
-            this.d109m = json.getString("d109m");
-            this.d109d = json.getString("d109d");
-            this.d106 = json.getString("d106");
-            this.d10601x = json.getString("d10601x");
-            this.d107 = json.getString("d107");
-            this.d10701x = json.getString("d10701x");
-            this.d105 = json.getString("d105");
-            this.d110 = json.getString("d110");
-            this.d111 = json.getString("d111");
-            this.d115 = json.getString("d115");
-            this.d112 = json.getString("d112");
-            this.d113 = json.getString("d113");
-            this.d114 = json.getString("d114");
-            this.d11601 = json.getString("d11601");
-            this.d11602 = json.getString("d11602");
+            this.a201 = json.getString("a201");
+            this.a202 = json.getString("a202");
+            this.a204 = json.getString("a204");
+            this.a203 = json.getString("a203");
+            this.a205dd = json.getString("a205dd");
+            this.a205mm = json.getString("a205mm");
+            this.a205yy = json.getString("a205yy");
+            this.a206yy = json.getString("a206yy");
+            this.a206mm = json.getString("a206mm");
+            this.a206dd = json.getString("a206dd");
+            this.a212 = json.getString("a212");
+            this.a213 = json.getString("a213");
+            this.a207 = json.getString("a207");
+            this.a208 = json.getString("a208");
+            this.a209 = json.getString("a209");
+            this.a210 = json.getString("a210");
+            this.a211 = json.getString("a211");
         }
     }
 
@@ -650,40 +575,34 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public String sDtoString() throws JSONException {
         Log.d(TAG, "sDtoString: ");
         JSONObject json = new JSONObject();
-        json.put("d101", d101)
-                .put("d102", d102)
-                .put("d104", d104)
-                .put("d103", d103)
-                .put("d108d", d108d)
-                .put("d108m", d108m)
-                .put("d108y", d108y)
-                .put("d109y", d109y)
-                .put("d109m", d109m)
-                .put("d109d", d109d)
-                .put("d106", d106)
-                .put("d10601x", d10601x)
-                .put("d107", d107)
-                .put("d10701x", d10701x)
-                .put("d105", d105)
-                .put("d110", d110)
-                .put("d111", d111)
-                .put("d115", d115)
-                .put("d112", d112)
-                .put("d113", d113)
-                .put("d114", d114)
-                .put("d11601", d11601)
-                .put("d11602", d11602);
+        json.put("a201", a201)
+                .put("a202", a202)
+                .put("a204", a204)
+                .put("a203", a203)
+                .put("a205dd", a205dd)
+                .put("a205mm", a205mm)
+                .put("a205yy", a205yy)
+                .put("a206yy", a206yy)
+                .put("a206mm", a206mm)
+                .put("a206dd", a206dd)
+                .put("a212", a212)
+                .put("a213", a213)
+                .put("a207", a207)
+                .put("a208", a208)
+                .put("a209", a209)
+                .put("a210", a210)
+                .put("a211", a211);
         return json.toString();
     }
 
     private void CaluculateAge() {
-        Log.d(TAG, "CaluculateAge: " + this.d108y + "-" + this.d108m + "-" + this.d108d);
+        Log.d(TAG, "CaluculateAge: " + this.a205yy + "-" + this.a205mm + "-" + this.a205dd);
 
-        if (!this.d108y.equals("") && !this.d108y.equals("9998") && !this.d108m.equals("") && !this.d108d.equals("")) {
+        if (!this.a205yy.equals("") && !this.a205yy.equals("9998") && !this.a205mm.equals("") && !this.a205dd.equals("")) {
 
-            if ((Integer.parseInt(this.d108m) > 12 && !this.d108m.equals("98")) || (Integer.parseInt(this.d108d) > 31 && !this.d108d.equals("98")) || Integer.parseInt(this.d108y) < 1920) {
-                setD109y("");
-                setD109m("");
+            if ((Integer.parseInt(this.a205mm) > 12 && !this.a205mm.equals("98")) || (Integer.parseInt(this.a205dd) > 31 && !this.a205dd.equals("98")) || Integer.parseInt(this.a205yy) < 1920) {
+                setA206yy("");
+                setA206mm("");
                 this.ageInMonths = "0";
                 return;
             }
@@ -699,9 +618,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
             // set Date of birth
-            int day = !this.d108d.equals("98") ? Integer.parseInt(this.d108d) : 15;
-            int month = !this.d108m.equals("98") ? Integer.parseInt(this.d108m) : 6;
-            int year = Integer.parseInt(this.d108y);
+            int day = !this.a205dd.equals("98") ? Integer.parseInt(this.a205dd) : 15;
+            int month = !this.a205mm.equals("98") ? Integer.parseInt(this.a205mm) : 6;
+            int year = Integer.parseInt(this.a205yy);
             Calendar cal = Calendar.getInstance();
 
             SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
@@ -728,12 +647,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
 
-                setD109y(String.valueOf(tYear));
-                setD109m(String.valueOf(tMonth));
-                setD109d(String.valueOf(tDay));
+                setA206yy(String.valueOf(tYear));
+                setA206mm(String.valueOf(tMonth));
+                setA206dd(String.valueOf(tDay));
                 setAgeInMonth(String.valueOf((int) inDays));
                 if (tYear < 0)
-                    setD109y("");
+                    setA206yy("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
 
 
@@ -749,19 +668,19 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
             }
         } else {
-            if (!this.d109y.equals("") && !this.d109m.equals("") && !this.d109d.equals("")) {
+            if (!this.a206yy.equals("") && !this.a206mm.equals("") && !this.a206dd.equals("")) {
                 int yearToDays = 0;
                 int monthsToDays = 0;
                 int inDays = 0;
 
 
-                if (Integer.parseInt(this.d109y) < 98 && Integer.parseInt(this.d109y) > 0)
-                    yearToDays = (int) (Integer.parseInt(this.d109y) * 365.2425);
+                if (Integer.parseInt(this.a206yy) < 98 && Integer.parseInt(this.a206yy) > 0)
+                    yearToDays = (int) (Integer.parseInt(this.a206yy) * 365.2425);
 
-                if (Integer.parseInt(this.d109m) < 12 && Integer.parseInt(this.d109m) > 0)
-                    monthsToDays = (int) (Integer.parseInt(this.d109m) * 30.43);
-                if (Integer.parseInt(this.d109d) < 30)
-                    inDays = Integer.parseInt(this.d109d);
+                if (Integer.parseInt(this.a206mm) < 12 && Integer.parseInt(this.a206mm) > 0)
+                    monthsToDays = (int) (Integer.parseInt(this.a206mm) * 30.43);
+                if (Integer.parseInt(this.a206dd) < 30)
+                    inDays = Integer.parseInt(this.a206dd);
 
                 setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
 
@@ -777,10 +696,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
      * 4 = Adol
      */
     private void updateMemCategory() {
-        if (d104.equals("") || d109y.equals("") || d105.equals("") || !d115.equals("1")) return;
-        String memGender = getD104();
-        String memMaritalStatus = getD105();
-        int memAge = Integer.parseInt(getD109y());
+        if (a204.equals("") || a206yy.equals("") || a207.equals("") || !a211.equals("1")) return;
+        String memGender = getA204();
+        String memMaritalStatus = getA207();
+        int memAge = Integer.parseInt(getA206yy());
 
         // MWRA
         if (memGender.equals("2")                // Female
@@ -792,7 +711,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         }
 
         // Child
-        if (memAge < 5 && !d107.equals("") && !d107.equals("97")) setMemCate("2");
+        if (memAge < 5 && !a213.equals("") && !a213.equals("97")) setMemCate("2");
 
 
         // Adolescent

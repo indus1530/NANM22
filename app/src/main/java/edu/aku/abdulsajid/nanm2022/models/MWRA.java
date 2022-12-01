@@ -791,7 +791,7 @@ public class MWRA extends BaseObservable implements Observable {
         setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid()); //// not applicable in Form table
         setSno(selectedMWRA);
         setIndexed(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getIndexed());
-        setName(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getD102());
+        setName(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getA202());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.currentHousehold.getClusterCode());

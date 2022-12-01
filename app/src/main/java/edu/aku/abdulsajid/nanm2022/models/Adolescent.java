@@ -297,7 +297,7 @@ public class Adolescent extends BaseObservable implements Observable {
         setSno(selectedAdol);
         setFmuid(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getUid()); //// not applicable in Form table
         setIndexed(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
-        setName(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getD102());
+        setName(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
 
 
     }

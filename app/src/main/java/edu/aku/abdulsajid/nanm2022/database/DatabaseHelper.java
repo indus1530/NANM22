@@ -137,7 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SN, form.sNtoString());
         values.put(FormsTable.COLUMN_SO, form.sOtoString());
         values.put(FormsTable.COLUMN_SE2, form.sE2toString());
-        values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
+        values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
@@ -540,7 +540,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_ISTATUS, MainApp.form.getiStatus());
+        values.put(FormsTable.COLUMN_ISTATUS, MainApp.form.getIStatus());
 
         // Which row to update, based on the ID
         String selection = FormsTable.COLUMN_ID + " =? ";
@@ -1350,7 +1350,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
             fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
             fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
-            fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
+            fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
         }
@@ -1393,7 +1393,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
             fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
-            fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
+            fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
         }
@@ -1439,7 +1439,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
             fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
             fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
-            fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
+            fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
         }
@@ -2071,7 +2071,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int chSNo = 999;
 
         c.moveToFirst();
-        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
+        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getA201());
         //db.close();
         return chSNo;
     }
@@ -2108,7 +2108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int chSNo = 999;
 
         c.moveToFirst();
-        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
+        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getA201());
 
         //db.close();
 

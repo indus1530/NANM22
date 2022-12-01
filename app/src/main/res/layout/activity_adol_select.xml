@@ -105,7 +105,7 @@
 
 
                             <androidx.appcompat.widget.AppCompatSpinner
-                                android:id="@+id/d102"
+                                android:id="@+id/a202"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -114,7 +114,7 @@
                                 android:spinnerMode="dropdown" />
 
                             <TextView
-                                android:id="@+id/d101"
+                                android:id="@+id/a201"
                                 style="@style/textView"
                                 android:layout_width="100dp"
                                 android:layout_height="match_parent"

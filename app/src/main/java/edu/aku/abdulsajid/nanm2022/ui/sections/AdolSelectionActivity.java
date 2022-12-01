@@ -63,9 +63,9 @@ public class AdolSelectionActivity extends AppCompatActivity {
         adolFmUID.add("");
 
         for (FamilyMembers fm : allAdolList) {
-            adolNames.add(fm.getD102());
-            adolCodes.add(fm.getD101());
-            adolAges.add(fm.getD109y());
+            adolNames.add(fm.getA202());
+            adolCodes.add(fm.getA201());
+            adolAges.add(fm.getA206yy());
             adolFmUID.add(fm.getUid());
         }
 

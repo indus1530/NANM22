@@ -38,7 +38,7 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionDActivity"
+            android:name="edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"

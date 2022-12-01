@@ -48,10 +48,10 @@ public class SectionE1AActivity extends AppCompatActivity {
         }
 
         // Name
-        MainApp.pregM.setE101a(MainApp.allMWRAList.get(0).getD102());
+        MainApp.pregM.setE101a(MainApp.allMWRAList.get(0).getA202());
 
         // SNO
-        MainApp.pregM.setE101b(MainApp.allMWRAList.get(0).getD101());
+        MainApp.pregM.setE101b(MainApp.allMWRAList.get(0).getA201());
 
         // FMUID
         MainApp.pregM.setFmuid(MainApp.allMWRAList.get(0).getUid());

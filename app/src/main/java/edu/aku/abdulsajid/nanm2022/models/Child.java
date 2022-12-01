@@ -202,7 +202,7 @@ public class Child extends BaseObservable implements Observable {
         setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
         setSno(selectedChild);
         setIndexed(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getIndexed());
-        setName(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getD102());
+        setName(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getA202());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.currentHousehold.getClusterCode());

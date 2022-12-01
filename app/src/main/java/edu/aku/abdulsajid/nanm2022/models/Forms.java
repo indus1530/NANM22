@@ -32,7 +32,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 @Entity(tableName = FormsTable.TABLE_NAME)
 public class Forms extends BaseObservable implements Observable {
 
-    private final String TAG = "Forms";
+    private String TAG = "Forms";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
@@ -226,6 +226,14 @@ public class Forms extends BaseObservable implements Observable {
 
     }
 
+    @Bindable
+    public String getTAG() {
+        return TAG;
+    }
+
+    public void setTAG(String tag) {
+        this.TAG = tag;
+    }
 
     public String getProjectName() {
         return projectName;
@@ -330,20 +338,20 @@ public class Forms extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
         // this.o108 = iStatus;
     }
 
-    public String getiStatus96x() {
+    public String getIStatus96x() {
         return iStatus96x;
     }
 
-    public void setiStatus96x(String iStatus96x) {
+    public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 

@@ -6,8 +6,6 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp.memberCount;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,14 +24,14 @@ import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
-import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionDBinding;
+import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA2Binding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 
 
-public class SectionDActivity extends AppCompatActivity {
+public class SectionA2Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionDActivity";
-    ActivitySectionDBinding bi;
+    ActivitySectionA2Binding bi;
     private DatabaseHelper db;
     private ArrayList<String> fatherNames, fatherCodes, motherNames, motherCodes, motherUID, motherPresent;
 
@@ -41,17 +39,17 @@ public class SectionDActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        familyMember.setD101(String.valueOf(memberCount + 1));
+        familyMember.setA201(String.valueOf(memberCount + 1));
         bi.setMember(familyMember);
         populateSpinner();
         setupListener();
     }
 
     private void setupListener() {
-        bi.d102.addTextChangedListener(new TextWatcher() {
+/*        bi.a202.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -64,10 +62,10 @@ public class SectionDActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                bi.d102Name.setVisibility(View.VISIBLE);
-                bi.d102Name.setText(getString(R.string.d103t1) + " " + familyMember.getD102() + " " + getString(R.string.d103t2));
+                bi.a202Name.setVisibility(View.VISIBLE);
+                bi.a202Name.setText(getString(R.string.d103t1) + " " + familyMember.getA202() + " " + getString(R.string.d103t2));
             }
-        });
+        });*/
     }
 
 
@@ -85,8 +83,8 @@ public class SectionDActivity extends AppCompatActivity {
         fatherNames.add("...");
         fatherCodes.add("...");
         for (FamilyMembers fl : MainApp.fatherList) {
-            fatherNames.add(fl.getD102());
-            fatherCodes.add(fl.getD101());
+            fatherNames.add(fl.getA202());
+            fatherCodes.add(fl.getA201());
         }
         fatherNames.add("Not Available/Died");
         fatherCodes.add("97");
@@ -96,10 +94,10 @@ public class SectionDActivity extends AppCompatActivity {
         motherUID.add("...");
         motherPresent.add("...");
         for (FamilyMembers fl : MainApp.motherList) {
-            motherNames.add(fl.getD102());
-            motherCodes.add(fl.getD101());
+            motherNames.add(fl.getA202());
+            motherCodes.add(fl.getA201());
             motherUID.add(fl.getUid());
-            motherPresent.add(fl.getD115().equals("1") && Integer.parseInt(fl.getD109y()) < 50 ? "1" : "2");
+            motherPresent.add(fl.getA211().equals("1") && Integer.parseInt(fl.getA206yy()) < 50 ? "1" : "2");
         }
         motherNames.add("Not Available/Died");
         motherCodes.add("97");
@@ -107,14 +105,14 @@ public class SectionDActivity extends AppCompatActivity {
         motherPresent.add("");
 
         // Apply the adapter to the Father spinner
-        bi.d106.setAdapter(new ArrayAdapter<>(SectionDActivity.this, R.layout.custom_spinner, fatherNames));
+        bi.a212.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, fatherNames));
 
-        bi.d106.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a212.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position == 0) return;
-                MainApp.familyMember.setD106(fatherCodes.get(position));
+                MainApp.familyMember.setA212(fatherCodes.get(position));
             }
 
             @Override
@@ -124,14 +122,14 @@ public class SectionDActivity extends AppCompatActivity {
         });
 
         // Apply the adapter to the Mother spinner
-        bi.d107.setAdapter(new ArrayAdapter<>(SectionDActivity.this, R.layout.custom_spinner, motherNames));
+        bi.a213.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, motherNames));
 
-        bi.d107.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a213.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position == 0) return;
-                MainApp.familyMember.setD107(motherCodes.get(position));
+                MainApp.familyMember.setA213(motherCodes.get(position));
                 MainApp.familyMember.setMuid(motherUID.get(position));
                 MainApp.familyMember.setMotherPresent(motherPresent.get(position));
             }
@@ -215,13 +213,13 @@ public class SectionDActivity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (!MainApp.familyMember.getD109d().equals("98") && Integer.parseInt(MainApp.familyMember.getD109d()) > 29) {
-            Validator.emptyCustomTextBox(this, bi.d109d, "Invalid day's value");
+        if (!MainApp.familyMember.getA206dd().equals("98") && Integer.parseInt(MainApp.familyMember.getA206dd()) > 29) {
+            Validator.emptyCustomTextBox(this, bi.a206dd, "Invalid day's value");
             return false;
         }
 
-        if (!MainApp.familyMember.getD109m().equals("98") && Integer.parseInt(MainApp.familyMember.getD109m()) > 11) {
-            Validator.emptyCustomTextBox(this, bi.d109m, "Invalid month's value");
+        if (!MainApp.familyMember.getA206mm().equals("98") && Integer.parseInt(MainApp.familyMember.getA206mm()) > 11) {
+            Validator.emptyCustomTextBox(this, bi.a206mm, "Invalid month's value");
             return false;
         }
         return true;

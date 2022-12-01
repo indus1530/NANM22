@@ -43,7 +43,7 @@ import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityFamilyListBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
-import edu.aku.abdulsajid.nanm2022.ui.sections.SectionDActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1AActivity;
 
 
@@ -68,12 +68,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         MainApp.familyList.add(MainApp.familyMember);
 
                         // Set if relation to household head is head himself
-                        MainApp.hhheadSelected = MainApp.familyMember.getD103().equals("1");
+                        MainApp.hhheadSelected = MainApp.familyMember.getA203().equals("1");
 
                         // Adding Parents
-                        boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getD109y()) > 14;
-                        boolean memMarriedCheck = !MainApp.familyMember.getD105().equals("2");
-                        String memGender = MainApp.familyMember.getD104();
+                        boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getA206yy()) > 14;
+                        boolean memMarriedCheck = !MainApp.familyMember.getA207().equals("2");
+                        String memGender = MainApp.familyMember.getA204();
                         if (memMarriedCheck && memAgeCheck) {
                             switch (memGender) {
                                 case "1":
@@ -84,7 +84,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                                     MainApp.motherList.add(MainApp.familyMember);
                                     // if present add SNO to allMWRAlist
 
-                                    if (MainApp.familyMember.getD115().equals("1") && Integer.parseInt(MainApp.familyMember.getD109y()) < 50) {
+                                    if (MainApp.familyMember.getA211().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) < 50) {
                                         MainApp.allMWRAList.add(MainApp.familyMember);
                                     }
                                     //MainApp.adolCount++;
@@ -96,7 +96,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         /**
                          *  Populate All Children Under-5
                          */
-                        if (MainApp.familyMember.getD115().equals("1") && Integer.parseInt(MainApp.familyMember.getD109y()) < 5) {
+                        if (MainApp.familyMember.getA211().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) < 5) {
                             MainApp.allChildrenList.add(MainApp.familyMember);
 
                         }
@@ -104,7 +104,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         /**
                          *  Populate All Adolescent between 10-19
                          */
-                        if (MainApp.familyMember.getD115().equals("1") && Integer.parseInt(MainApp.familyMember.getD109y()) > 9 && Integer.parseInt(MainApp.familyMember.getD109y()) < 20) {
+                        if (MainApp.familyMember.getA211().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) > 9 && Integer.parseInt(MainApp.familyMember.getA206yy()) < 20) {
                             MainApp.allAdolList.add(MainApp.familyMember);
 
                         }
@@ -114,8 +114,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                          *      Mother not already exists in the MWRA List
                          */
 
-                        String motherSno = MainApp.familyMember.getD107();
-                        if (Integer.parseInt(MainApp.familyMember.getD109y()) < 5 && MainApp.familyMember.getD115().equals("1")
+                        String motherSno = MainApp.familyMember.getA213();
+                        if (Integer.parseInt(MainApp.familyMember.getA206yy()) < 5 && MainApp.familyMember.getA211().equals("1")
                                 && !motherSno.equals("")
                                 && !motherSno.equals("97")
                                 && !MainApp.mwraList.contains(Integer.parseInt(motherSno))
@@ -126,7 +126,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                              * Mother is present
                              * Mother's age is between 15 - 49
                              */
-                            if (mother.getD115().equals("1") && Integer.parseInt(mother.getD109y()) > 14 && Integer.parseInt(mother.getD109y()) < 50) {
+                            if (mother.getA211().equals("1") && Integer.parseInt(mother.getA206yy()) > 14 && Integer.parseInt(mother.getA206yy()) < 50) {
                                 MainApp.mwraList.add(Integer.parseInt(motherSno));
                             }
                         }
@@ -173,9 +173,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 fmCount++;
 
                 // Adding Parents
-                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) > 14;
-                boolean memMarriedCheck = !fm.getD105().equals("2");
-                String memGender = fm.getD104();
+                boolean memAgeCheck = Integer.parseInt(fm.getA206yy()) > 14;
+                boolean memMarriedCheck = !fm.getA207().equals("2");
+                String memGender = fm.getA204();
                 if (memMarriedCheck && memAgeCheck) {
                     switch (memGender) {
                         case "1":
@@ -185,7 +185,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         case "2":
                             MainApp.motherList.add(fm);
 
-                            if (fm.getD115().equals("1") && Integer.parseInt(fm.getD109y()) < 50) {
+                            if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 50) {
                                 MainApp.allMWRAList.add(fm);
                             }
                             //MainApp.adolCount++;
@@ -194,23 +194,23 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 }
 
                 // Populate All U-5 Children
-                if (fm.getD115().equals("1") && Integer.parseInt(fm.getD109y()) < 5) {
+                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 5) {
                     MainApp.allChildrenList.add(fm);
                 }
 
                 // Populate All Adolescent
-                if (fm.getD115().equals("1") && Integer.parseInt(fm.getD109y()) > 9 && Integer.parseInt(fm.getD109y()) < 20)
+                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 20)
                     MainApp.allAdolList.add(fm);
 
 
                 // Populate mothers' list
-                String motherSno = fm.getD107(); // mother's line number from child
-                if (Integer.parseInt(fm.getD109y()) < 5 && fm.getD115().equals("1") &&
+                String motherSno = fm.getA213(); // mother's line number from child
+                if (Integer.parseInt(fm.getA206yy()) < 5 && fm.getA211().equals("1") &&
                         !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
                     // MainApp.mwraList.add(Integer.parseInt(motherSno));
                     FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
 
-                    if (mother.getD115().equals("1") && Integer.parseInt(mother.getD109y()) > 14 && Integer.parseInt(mother.getD109y()) < 50) {
+                    if (mother.getA211().equals("1") && Integer.parseInt(mother.getA206yy()) > 14 && Integer.parseInt(mother.getA206yy()) < 50) {
                         MainApp.mwraList.add(Integer.parseInt(motherSno));
                     }
                 }
@@ -232,7 +232,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Set MWRA
             if (MainApp.familyList.get(i).getIndexed().equals("1")) {
-                selectedMWRA = familyList.get(i).getD101();
+                selectedMWRA = familyList.get(i).getA201();
                 bi.btnRand.setVisibility(View.INVISIBLE);
                 //bi.btnContinue.setVisibility(View.VISIBLE);
                 bi.btnContinue.setEnabled(true);
@@ -242,20 +242,20 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Set Child
             if (MainApp.familyList.get(i).getIndexed().equals("2")) {
-                MainApp.selectedChild = familyList.get(i).getD101();
-                selectedChildName = MainApp.familyList.get(i).getD102();
-                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getD109y());
+                MainApp.selectedChild = familyList.get(i).getA201();
+                selectedChildName = MainApp.familyList.get(i).getA202();
+                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getA206yy());
             }
 
             // Set Adol MWRA
             if (MainApp.familyList.get(i).getIndexed().equals("3"))
-                selectedMWRA = familyList.get(i).getD101();
+                selectedMWRA = familyList.get(i).getA201();
 
             // Set Adolescent
             if (MainApp.familyList.get(i).getIndexed().equals("4"))
-                MainApp.selectedAdol = familyList.get(i).getD101();
+                MainApp.selectedAdol = familyList.get(i).getA201();
 
-            MainApp.hhheadSelected = MainApp.familyList.get(i).getD103().equals("1");
+            MainApp.hhheadSelected = MainApp.familyList.get(i).getA203().equals("1");
         }
 
 
@@ -336,7 +336,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             // Select MWRA
             MainApp.familyMember = allMWRAList.get(new Random().nextInt(allMWRAList.size()));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
-            selectedMWRA = familyMember.getD101();
+            selectedMWRA = familyMember.getA201();
 
             // Updating adapter for MWRA selection
             MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).setIndexed("1");
@@ -351,20 +351,20 @@ public class FamilyMembersListActivity extends AppCompatActivity {
              * */
             int youngestChildDays = 0;
             for (FamilyMembers ch : allChildrenList) {
-                if (ch.getD107().equals(selectedMWRA)) {
+                if (ch.getA213().equals(selectedMWRA)) {
                     int selectedChildDays = Integer.parseInt(ch.getAgeInMonths());
                     if (youngestChildDays == 0) {
                         youngestChildDays = selectedChildDays;
-                        selectedChild = ch.getD101();
+                        selectedChild = ch.getA201();
                     } else if (youngestChildDays > selectedChildDays) {
                         youngestChildDays = selectedChildDays;
-                        selectedChild = ch.getD101();
+                        selectedChild = ch.getA201();
                     }
                 }
             }
             if (!selectedChild.equals("")) {
-                selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getD102();
-                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getD109y());
+                selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getA202();
+                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getA206yy());
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild) - 1);
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
@@ -381,8 +381,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Select ADOL
         if (!allAdolList.isEmpty()) {
             for (FamilyMembers ch : allAdolList) {
-                if (ch.getD101().equals(selectedMWRA)) {
-                    selectedAdol = ch.getD101();
+                if (ch.getA201().equals(selectedMWRA)) {
+                    selectedAdol = ch.getA201();
                     break;
                 }
             }
@@ -395,7 +395,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             } else {
                 MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
-                selectedAdol = familyMember.getD101();
+                selectedAdol = familyMember.getA201();
 
                 // Updating adapter
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
@@ -412,7 +412,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     private void addMoreMember() {
         MainApp.familyMember = new FamilyMembers();
-        Intent intent = new Intent(this, SectionDActivity.class);
+        Intent intent = new Intent(this, SectionA2Activity.class);
         MemberInfoLauncher.launch(intent);
     }
 
@@ -434,7 +434,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         if (requestCode == RESULT_OK)
 
             // A213 is line number
-            familyMembersAdapter.notifyItemInserted(Integer.parseInt(MainApp.familyMember.getD107()) - 1);
+            familyMembersAdapter.notifyItemInserted(Integer.parseInt(MainApp.familyMember.getA213()) - 1);
 
     }
 

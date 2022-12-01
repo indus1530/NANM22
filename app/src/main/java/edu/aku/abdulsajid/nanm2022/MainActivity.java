@@ -35,7 +35,7 @@ import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportCluster;
 import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportDate;
 import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportPending;
 import edu.aku.abdulsajid.nanm2022.ui.sections.ConsentActivity;
-import edu.aku.abdulsajid.nanm2022.ui.sections.SectionDActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1AActivity;
 
 
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.secri:
                 MainApp.form = new Forms();
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 
             case R.id.secss1:
