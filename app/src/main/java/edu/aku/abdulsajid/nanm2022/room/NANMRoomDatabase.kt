@@ -27,6 +27,7 @@ import net.sqlcipher.database.SupportFactory
 abstract class NANMRoomDatabase : RoomDatabase(){
 
     abstract fun formsDao() : FormsDao
+    abstract fun syncFunctionsDao() : SyncFunctionsDao
 
 
     companion object {
