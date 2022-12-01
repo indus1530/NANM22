@@ -78,12 +78,8 @@ public class MainApp extends Application {
 
     //public static Samples samples;
     public static Forms form;
-    public static MWRA mwra;
-    // public static Pregnancy pregnancy;
-    public static Child child;
     public static Adolescent adol;
     public static FamilyMembers familyMember;
-    public static MaternalMortality mortality;
     public static RandomHH currentHousehold;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
@@ -127,10 +123,7 @@ public class MainApp extends Application {
     public static int pregCount = 0;
     public static int pregCountComplete = 0;
     public static boolean pregComplete = false;
-    public static PregnancyMaster pregM;
-    public static PregnancyDetails pregD;
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
-    public static List<PregnancyDetails> pregList;
     public static int mortalityCounter = 0;
     public static Clusters selectedCluster;
     public static List<Integer> childCompleted;
