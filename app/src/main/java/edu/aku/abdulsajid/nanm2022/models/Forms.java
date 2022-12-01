@@ -43,19 +43,31 @@ public class Forms extends BaseObservable implements Observable {
     @ColumnInfo(name = FormsTable.COLUMN_ID)
     private long id = 0;
 
+    @ColumnInfo(name = FormsTable.COLUMN_UID)
     private String uid = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_CLUSTER_CODE)
     private String clusterCode = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_HHID)
     private String hhid = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
     private String iStatus96x = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
     // FIELD VARIABLES
