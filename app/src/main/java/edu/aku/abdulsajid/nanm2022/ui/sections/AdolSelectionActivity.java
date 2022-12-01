@@ -72,7 +72,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdolSelectionActivity.this,
                 R.layout.custom_spinner, adolNames);
 
-        bi.d102.setAdapter(adapter);
+        bi.a202.setAdapter(adapter);
  /*       bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -93,25 +93,25 @@ public class AdolSelectionActivity extends AppCompatActivity {
 
             }
         });*/
-        bi.d102.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a202.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 //ladol = new LateAdolescent();
                 bi.age.setText("");
-                bi.d101.setText("");
+                bi.a201.setText("");
 
                 //  if (position == 0) return;
                 try {
-                    adol = db.getAdolByUUID(adolFmUID.get(bi.d102.getSelectedItemPosition()));
+                    adol = db.getAdolByUUID(adolFmUID.get(bi.a202.getSelectedItemPosition()));
                     if (MainApp.adol.getUid().equals("")) {
-                        MainApp.adol.setFmuid(adolFmUID.get(bi.d102.getSelectedItemPosition()));
-                        MainApp.adol.setSno(adolCodes.get(bi.d102.getSelectedItemPosition()));
-                        /*MainApp.adol.setEs1respline(adolCodes.get(bi.d102.getSelectedItemPosition()));
-                        MainApp.adol.setEs1resp(adolNames.get(bi.d102.getSelectedItemPosition()));*/
+                        MainApp.adol.setFmuid(adolFmUID.get(bi.a202.getSelectedItemPosition()));
+                        MainApp.adol.setSno(adolCodes.get(bi.a202.getSelectedItemPosition()));
+                        /*MainApp.adol.setEs1respline(adolCodes.get(bi.a202.getSelectedItemPosition()));
+                        MainApp.adol.setEs1resp(adolNames.get(bi.a202.getSelectedItemPosition()));*/
                     }
-                    bi.d101.setText(adolCodes.get(bi.d102.getSelectedItemPosition()));
-                    bi.age.setText(adolAges.get(bi.d102.getSelectedItemPosition()));
+                    bi.a201.setText(adolCodes.get(bi.a202.getSelectedItemPosition()));
+                    bi.age.setText(adolAges.get(bi.a202.getSelectedItemPosition()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(AdolSelectionActivity.this, "JSONException(Adolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -185,7 +185,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
 
-        allAdolList.remove(bi.d102.getSelectedItemPosition() - 1);
+        allAdolList.remove(bi.a202.getSelectedItemPosition() - 1);
 //        startActivity(new Intent(this, SectionAH1Activity.class).putExtra("age", bi.age.getText().toString()));
         finish();
 
