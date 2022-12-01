@@ -36,7 +36,6 @@ import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportDate;
 import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportPending;
 import edu.aku.abdulsajid.nanm2022.ui.sections.ConsentActivity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
-import edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1AActivity;
 
 
 public class MainActivity extends AppCompatActivity {

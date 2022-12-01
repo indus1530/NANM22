@@ -44,7 +44,6 @@ import edu.aku.abdulsajid.nanm2022.databinding.ActivityFamilyListBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
-import edu.aku.abdulsajid.nanm2022.ui.sections.SectionE1AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {

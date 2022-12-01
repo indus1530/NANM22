@@ -39,14 +39,9 @@ import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.Child;
 import edu.aku.abdulsajid.nanm2022.models.Clusters;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
-import edu.aku.abdulsajid.nanm2022.models.MWRA;
-import edu.aku.abdulsajid.nanm2022.models.MaternalMortality;
-import edu.aku.abdulsajid.nanm2022.models.PregnancyDetails;
-import edu.aku.abdulsajid.nanm2022.models.PregnancyMaster;
 import edu.aku.abdulsajid.nanm2022.models.RandomHH;
 import edu.aku.abdulsajid.nanm2022.models.Users;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
