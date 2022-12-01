@@ -3,8 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d.xml" value="0.31416666666666665" />
-        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_e1a.xml" value="0.31416666666666665" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/drawable/ic_home.xml" value="0.3880208333333333" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/layout/activity_camera.xml" value="0.35625" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/layout/activity_change_password.xml" value="0.27" />
@@ -221,7 +219,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
