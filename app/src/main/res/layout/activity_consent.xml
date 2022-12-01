@@ -46,6 +46,93 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <!-- a101  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa101"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a101" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a101" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/a101"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="DD/MM/YYYY"
+                                android:text="@={form.a101}"
+                                app:dateFormat="dd-MM-yyyy"
+                                app:maxDate="CR_DATE"
+                                app:minDate="01/01/2020" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- a102  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa102"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a102" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a102" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerInputEditText
+                                android:id="@+id/a102"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.a102}"
+                                app:is24HourView="true"
+                                app:timeFormat="HH:mm" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
 
                 <!-- concent  Title   -->
                 <androidx.cardview.widget.CardView
@@ -88,136 +175,60 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <!-- c101  Input   -->
+                <!-- a110  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc101"
+                    android:id="@+id/fldGrpCVa110"
                     style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_c101" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:text="@string/c101" />
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a110" />
 
-                        <EditText
-                            android:id="@+id/c101"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            android:hint="@string/c101"
-                            android:inputType="text"
-                            android:text="@={form.c101}" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/a110" />
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- c102  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc102"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_c102" />
-
-                        <TextView
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:text="@string/c102" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c102"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="##"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.c102}"
-                            app:maxValue="99"
-                            app:minValue="18"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- c103  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc103"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_c103" />
-
-                        <TextView
-                            android:layout_width="220dp"
-                            android:layout_height="match_parent"
-                            android:text="@string/c103" />
+                        </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/c103"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:id="@+id/a110"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/c10301"
+                                android:id="@+id/a110a"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.c103.equals(`1`)}"
-                                android:onClick="@{()->form.setC103(`1`)}"
-                                android:text="@string/c10301" />
+                                android:checked="@{form.a110.equals(`1`)}"
+                                android:onClick="@{()->form.setA110(`1`)}"
+                                android:text="@string/a110a" />
 
                             <RadioButton
-                                android:id="@+id/c10302"
+                                android:id="@+id/a110b"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.c103.equals(`2`)}"
-                                android:onClick="@{()->form.setC103(`2`)}"
-                                android:text="@string/c10302" />
-
+                                android:layout_height="match_parent"
+                                android:checked="@{form.a110.equals(`2`)}"
+                                android:onClick="@{()->form.setA110(`2`)}"
+                                android:text="@string/a110b" />
                         </RadioGroup>
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
 

@@ -23,7 +23,7 @@ import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
 import edu.aku.abdulsajid.nanm2022.models.Clusters;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.RandomHH;
-import edu.aku.abdulsajid.nanm2022.ui.sections.SectionAActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Forms();
 
 
-        bi.a101.addTextChangedListener(new TextWatcher() {
+        bi.a109.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -52,11 +52,11 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 bi.btnContinue.setEnabled(false);
-                bi.a105.setText(null);
                 bi.a106.setText(null);
                 bi.a107.setText(null);
-                bi.a113.setText(null);
-                bi.fldGrpA113.setVisibility(View.GONE);
+                bi.a108.setText(null);
+                bi.a109.setText(null);
+                bi.fldGrpA105.setVisibility(View.GONE);
             }
 
             @Override
@@ -65,7 +65,7 @@ public class IdentificationActivity extends AppCompatActivity {
         });
 
 
-        bi.a113.addTextChangedListener(new TextWatcher() {
+        bi.a105.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 c = charSequence.length();
@@ -81,13 +81,13 @@ public class IdentificationActivity extends AppCompatActivity {
                 Log.d(TAG, "onTextChanged: i-" + i + " i1-" + i1 + " i2-" + i2 + "\t\t\tCHAR: " + charSequence);
                 if (c1 > 1 && charSequence.charAt(1) != '-') {
                     txt = txt.charAt(0) + "-" + txt.substring(1);
-                    bi.a113.setText(txt);
+                    bi.a105.setText(txt);
                 }
                 if (c1 > 6 && charSequence.charAt(6) != '-') {
                     txt = txt.substring(0, 6) + "-" + txt.substring(6);
-                    bi.a113.setText(txt);
+                    bi.a105.setText(txt);
                 }
-                bi.a113.setSelection(bi.a113.getText().length());
+                bi.a105.setSelection(bi.a105.getText().length());
             }
 
             @Override
@@ -274,7 +274,7 @@ public class IdentificationActivity extends AppCompatActivity {
         testRand.setClusteCcode("9000001");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999");*/
-        RandomHH randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
+        RandomHH randHH = db.getHHbyCluster(bi.a109.getText().toString(), bi.a105.getText().toString());
       /*  if (!bi.a101.getText().toString().equals("9000001")) {
             randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
@@ -310,7 +310,7 @@ public class IdentificationActivity extends AppCompatActivity {
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
-            startActivity(new Intent(this, SectionAActivity.class));
+            startActivity(new Intent(this, SectionA1Activity.class));
         }
 
     }
@@ -379,13 +379,13 @@ public class IdentificationActivity extends AppCompatActivity {
     public void searchCluster(View view) {
         bi.btnContinue.setEnabled(false);
 
-        bi.a105.setText(null);
         bi.a106.setText(null);
         bi.a107.setText(null);
-        bi.a113.setText(null);
-        bi.fldGrpA113.setVisibility(View.GONE);
+        bi.a108.setText(null);
+        bi.a105.setText(null);
+        bi.fldGrpA105.setVisibility(View.GONE);
 
-        Clusters clusters = db.getCluster(bi.a101.getText().toString());
+        Clusters clusters = db.getCluster(bi.a109.getText().toString());
 
         String geoarea = clusters.getGeoarea();
         if (!clusters.getClusterCode().equals("")) {
@@ -393,7 +393,7 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.a106.setText(geoarea.split("\\|")[1]);
             bi.a107.setText(geoarea.split("\\|")[2]);
 
-            bi.fldGrpA113.setVisibility(View.VISIBLE);
+            bi.fldGrpA105.setVisibility(View.VISIBLE);
 
             MainApp.selectedTehsil = bi.a106.getText().toString();
             MainApp.selectedUC = bi.a107.getText().toString();

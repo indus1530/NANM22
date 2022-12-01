@@ -16,14 +16,13 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionABinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
-public class SectionAActivity extends AppCompatActivity {
+public class SectionA1Activity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionAActivity";
@@ -34,7 +33,7 @@ public class SectionAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         form.setA103(MainApp.currentHousehold.getSno());
