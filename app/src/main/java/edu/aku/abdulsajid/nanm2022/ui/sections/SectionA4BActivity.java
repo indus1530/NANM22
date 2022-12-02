@@ -19,27 +19,25 @@ import org.json.JSONException;
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
-
-import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA3ABinding;
+import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA4BBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
-public class SectionA3AActivity extends AppCompatActivity {
+public class SectionA4BActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionA3Activity";
-    ActivitySectionA3ABinding bi;
+    private static final String TAG = "SectionA4Activity";
+    ActivitySectionA4BBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_a);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a4_b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
     }
-
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
@@ -69,7 +67,7 @@ public class SectionA3AActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionA4AActivity.class));
+            startActivity(new Intent(this, SectionA4CActivity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
@@ -95,6 +93,5 @@ public class SectionA3AActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
-        setContentView(R.layout.activity_section_a3_a);
     }
 }
