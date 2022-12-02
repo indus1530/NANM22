@@ -1225,9 +1225,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- a415_title  Title   -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa415_title"
-                    style="@style/cardView">
+                    style="@style/cardView">-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1235,11 +1235,12 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/a415_title" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                <!--</androidx.cardview.widget.CardView>-->
 
                 <!-- a415  Radio   -->
                 <androidx.cardview.widget.CardView
