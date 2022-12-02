@@ -1513,13 +1513,12 @@
     <string name="lifestylephysicalactivity_mainheading">جسمانی سرگرمی اور طرز زندگی :</string>
     <string name="sleep_mainheading">نیند: نیند</string>
     <string name="sectiond1youngadolescentsphysicalinformation_mainheading"> جواب دہندہ اور بچوں کی جسمانی معلومات </string>
-    <string name="sectiond1_mainheading">سیکشن -کے 1 :</string>
     <string name="sectionl1nutritionalironstatusassessmentofparticipant_mainheading">شرکاءکی غذائی فولاد کی صورتحال کا جائزہ</string>
     <string name="sectionl1_mainheading">سیکشن ایل 1:</string>
     <string name="sectiona2membersinformation_mainheading">گھرانے اور اس کے افراد کی معلومات</string>
     <string name="sectiona2_mainheading">سیکشن اے 2:</string>
     <string name="sectiond1childanthropometricassessment_mainheading">بچے  اور ماں کی  جسمانی پیمائش </string>
-    <string name="sectiond1child_mainheading">سیکشن-کے  2 :</string>
+    <string name="sectiond1_mainheading">سیکشن-ڈی  1 :</string>
     <string name="sectiona4knowledgeattitudeandpracticesrelatedtoclimatechange_mainheading">KNOWLEDGE ATTITUDE AND PRACTICES RELATED TO CLIMATE CHANGE: KNOWLEDGE ATTITUDE AND PRACTICES RELATED TO CLIMATE CHANGE</string>
     <string name="sectiona4_mainheading">SECTION A4:</string>
     <string name="sectiona5effectslossesoffloods2022_mainheading">EFFECTS &amp; LOSSES OF FLOODS – 2022</string>
@@ -3681,7 +3680,8 @@
     <string name="d12502">نہیں</string>
     <string name="d126">بائیں بازو کےاوپری درمیانی گھیرکی پیمائش تیسری بار</string>
     <string name="d201_title">یہ سیکشن انڈیکس چائلڈ سے بھروایا جائے گا</string>
-    <string name="d200">ڈی سیکشن: 2 غذائیت سے متعلق آئرن کی حیثیت کی جانچ</string>
+    <string name="d200">غذائیت سے متعلق آئرن کی حیثیت کی جانچ</string>
+    <string name="d200main"> سیکشن ڈی 2:</string>
     <string name="d201_title1">شناخت</string>
     <string name="d201_title2">شناخت</string>
     <string name="d201">بچے کا نام ڈراپ ڈائون لسٹ سے چنیں</string>
