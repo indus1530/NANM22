@@ -52,13 +52,6 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        int childCount = 0;
-        childCount = db.getChildrenByUUID(fc.get(position).getUid());
-        int photoChild = 0;
-        photoChild = db.getChildrenPhotoCheck(fc.get(position).getUid());
-        int cardChild = 0;
-        cardChild = db.getChildrenCardCheck(fc.get(position).getUid());
-
 
         String iStatus = "Status  Unknown";
         int iColor = 0;
@@ -100,7 +93,6 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.hhno.setText(fc.get(position).getHhid() + " \t\t(" + fc.get(position).getSysDate() + ")");
         holder.cluster.setText(fc.get(position).getClusterCode());
         holder.istatus.setText(iStatus);
-        holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
         holder.istatus.setTextColor(iColor);
     }
 
