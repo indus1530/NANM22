@@ -31,7 +31,7 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/sectiona2membersinformation_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectiona2membersinformation_mainheading"
+            app:title="@string/sectiona2_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
