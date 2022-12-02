@@ -9,7 +9,7 @@ import java.util.*
 
 /*
  * @author Mustufa
- * @update Ali Azaz Alam dt. 12.16.20
+ * @update hussain.siddiqui on 01/12/22
  * */
 class AppInfo {
     var versionName: String = ""

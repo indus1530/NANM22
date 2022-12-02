@@ -30,7 +30,7 @@ import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 
 public class SectionA2Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionDActivity";
+    private static final String TAG = "SectionA2Activity";
     ActivitySectionA2Binding bi;
     private DatabaseHelper db;
     private ArrayList<String> fatherNames, fatherCodes, motherNames, motherCodes, motherUID, motherPresent;
@@ -38,7 +38,7 @@ public class SectionA2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
