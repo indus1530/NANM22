@@ -4,7 +4,6 @@ package edu.aku.abdulsajid.nanm2022.database;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.IBAHC;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.PROJECT_NAME;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.child;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedCluster;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedHousehold;
 import static edu.aku.abdulsajid.nanm2022.core.UserAuth.checkPassword;
@@ -128,10 +127,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA, form.sAtoString());
-        values.put(FormsTable.COLUMN_SM, form.sMtoString());
-        values.put(FormsTable.COLUMN_SN, form.sNtoString());
-        values.put(FormsTable.COLUMN_SO, form.sOtoString());
-        values.put(FormsTable.COLUMN_SE2, form.sE2toString());
+        //values.put(FormsTable.COLUMN_SM, form.sMtoString());
+        //values.put(FormsTable.COLUMN_SN, form.sNtoString());
+        //values.put(FormsTable.COLUMN_SO, form.sOtoString());
+        //values.put(FormsTable.COLUMN_SE2, form.sE2toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
@@ -177,7 +176,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMWRA(MWRA mwra) throws JSONException {
+    /*public Long addMWRA(MWRA mwra) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MwraTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
@@ -214,9 +213,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MwraTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
-    }
+    }*/
 
-    public Long addChild(Child child) throws JSONException {
+    /*public Long addChild(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
@@ -244,9 +243,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
-    }
+    }*/
 
-    public Long addAdolescent(Adolescent adol) throws JSONException {
+    /*public Long addAdolescent(Adolescent adol) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(AdolescentTable.COLUMN_PROJECT_NAME, adol.getProjectName());
@@ -280,7 +279,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 AdolescentTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
-    }
+    }*/
 
     public Long addEntryLog(EntryLog entryLog) throws SQLiteException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
@@ -308,7 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addPregnancyMaster(PregnancyMaster pregM) throws JSONException {
+    /*public Long addPregnancyMaster(PregnancyMaster pregM) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyMasterTable.COLUMN_PROJECT_NAME, pregM.getProjectName());
@@ -393,7 +392,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MaternalMortalityTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
-    }
+    }*/
 
 
     //UPDATE in DB
@@ -439,7 +438,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesChildColumn(String column, String value) {
+    /*public int updatesChildColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
@@ -452,7 +451,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
     public int updatesAdolColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -469,7 +468,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesMWRAColumn(String column, String value) {
+    /*public int updatesMWRAColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
@@ -482,9 +481,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
-    public int updatesPregnancyMasterColumn(String column, String value) {
+    /*public int updatesPregnancyMasterColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
@@ -497,9 +496,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
-    public int updatesPregnancyDetailsColumn(String column, String value) {
+    /*public int updatesPregnancyDetailsColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
@@ -512,9 +511,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
-    public int updatesMortalityColumn(String column, String value) {
+   /* public int updatesMortalityColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
         ContentValues values = new ContentValues();
@@ -527,7 +526,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
 
     public int updateEnding() {
@@ -618,7 +617,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             Forms forms = new Forms();
-            forms.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            forms.setId(c.getLong(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             forms.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             forms.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             forms.setUserName(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME)));
@@ -858,7 +857,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedMWRA() throws JSONException {
+    /*public JSONArray getUnsyncedMWRA() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -891,9 +890,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "getUnsyncedMWRA: " + all.toString().length());
         Log.d(TAG, "getUnsyncedMWRA: " + all);
         return all;
-    }
+    }*/
 
-    public JSONArray getUnsyncedPregnancyDetails() throws JSONException {
+    /*public JSONArray getUnsyncedPregnancyDetails() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -927,8 +926,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "getUnsyncedPregnancy: " + all);
         return all;
     }
-
-    public JSONArray getUnsyncedPregnancyMaster() throws JSONException {
+*/
+    /*public JSONArray getUnsyncedPregnancyMaster() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -1029,7 +1028,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "getUnsyncedChild: " + allChild.toString().length());
         Log.d(TAG, "getUnsyncedChild: " + allChild);
         return allChild;
-    }
+    }*/
 
     public JSONArray getUnsyncedAdolescent() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1339,7 +1338,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             Forms fc = new Forms();
-            fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            fc.setId(c.getLong(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
@@ -1383,7 +1382,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             Forms fc = new Forms();
-            fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            fc.setId(c.getLong(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
@@ -1428,7 +1427,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             Forms fc = new Forms();
-            fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            fc.setId(c.getLong(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
@@ -1650,7 +1649,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return randomHH;
     }
 
-    public List<Child> getChildrenBYUID() throws JSONException {
+    /*public List<Child> getChildrenBYUID() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -1684,7 +1683,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return childrenByUID;
-    }
+    }*/
 
 
     public int getChildrenByUUID(String UUID) {
@@ -1722,7 +1721,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<PregnancyDetails> getPregDByFmuid(String fmuid) throws JSONException {
+    /*public List<PregnancyDetails> getPregDByFmuid(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
@@ -1795,7 +1794,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.close();
 
         return pregnancyD;
-    }
+    }*/
 
     public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {
 
@@ -1961,7 +1960,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public MaternalMortality getMortalityBySno(String sno) throws JSONException {
+    /*public MaternalMortality getMortalityBySno(String sno) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
@@ -2032,7 +2031,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.close();
 
         return child;
-    }
+    }*/
 
 
     public int getSNoYoungestChild() throws JSONException {
@@ -2111,7 +2110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public MWRA getMwraByUUid() throws JSONException {
+    /*public MWRA getMwraByUUid() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
@@ -2137,7 +2136,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.close();
         return mwra;
     }
-
+*/
 
     public Adolescent getAdolByUUid() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -2166,7 +2165,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return adol;
     }
 
-    public PregnancyMaster getPregMByFmuid(String fmuid) throws JSONException {
+    /*public PregnancyMaster getPregMByFmuid(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
@@ -2192,7 +2191,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         //db.close();
         return pregnancyM;
-    }
+    }*/
 
 
     public Forms getFormByPsuHHNo(String psuCode, String hhid) throws JSONException {

@@ -63,7 +63,7 @@
             android:name=".ui.sections.SectionA4Activity"
             android:exported="true" />
         <activity
-            android:name=".ui.sections.SectionA3Activity"
+            android:name=".ui.sections.SectionA3AActivity"
             android:exported="true" />
         <activity
             android:name=".ui.sections.AdolSelectionActivity"

@@ -182,7 +182,7 @@ public class SyncActivity extends AppCompatActivity {
                 }
 
                 //MWRA
-                uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
+               /* uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedMWRA());
                 } catch (JSONException e) {
@@ -231,7 +231,7 @@ public class SyncActivity extends AppCompatActivity {
                     Log.d(TAG, "ProcessStart: JSONException(Child): " + e.getMessage());
                     Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG).show();
 
-                }
+                }*/
 
                 //Adolescent
                 uploadTables.add(new SyncModel(AdolescentTable.TABLE_NAME));

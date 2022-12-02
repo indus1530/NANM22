@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.secss1:
                 MainApp.form = new Forms();
-                startActivity(new Intent(this, SectionE1AActivity.class));
+                //startActivity(new Intent(this, SectionE1AActivity.class));
                 break;
 
             case R.id.seccs:

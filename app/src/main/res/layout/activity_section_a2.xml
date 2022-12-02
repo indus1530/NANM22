@@ -724,7 +724,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a207.equals(`1`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.setA206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
                                 android:onClick="@{()->member.setA207(`1`)}"
                                 android:text="@string/a207a" />
 
@@ -743,7 +743,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a207.equals(`3`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.setA206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
                                 android:onClick="@{()->member.setA207(`3`)}"
                                 android:text="@string/a207c" />
 
@@ -753,7 +753,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a207.equals(`4`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.setA206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
                                 android:onClick="@{()->member.setA207(`4`)}"
                                 android:text="@string/a207d" />
 
