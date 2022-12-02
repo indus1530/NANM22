@@ -1326,8 +1326,6 @@ public class Forms extends BaseObservable implements Observable {
 
     private String sA = _EMPTY_;
     private String sB = _EMPTY_;
-    private String sC = _EMPTY_;
-    private String sD = _EMPTY_;
 
 
     public Forms() {
@@ -1515,24 +1513,6 @@ public class Forms extends BaseObservable implements Observable {
 
     public void setSB(String sB) {
         this.sB = sB;
-    }
-
-
-    public String getSC() {
-        return sC;
-    }
-
-    public void setSC(String sC) {
-        this.sC = sC;
-    }
-
-
-    public String getSD() {
-        return sD;
-    }
-
-    public void setSD(String sD) {
-        this.sD = sD;
     }
 
     @Bindable
@@ -7804,8 +7784,6 @@ public class Forms extends BaseObservable implements Observable {
 
         sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
         sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB)));
-        sCHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SC)));
-        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SD)));
         return this;
     }
 
@@ -8451,22 +8429,6 @@ public class Forms extends BaseObservable implements Observable {
         }
     }
 
-    public void sCHydrate(String string) throws JSONException {
-        Log.d(TAG, "sCHydrate: " + string);
-        if (string != null) {
-            JSONObject json = null;
-            json = new JSONObject(string);
-        }
-    }
-
-    public void sDHydrate(String string) throws JSONException {
-        Log.d(TAG, "sDHydrate: " + string);
-        if (string != null) {
-            JSONObject json = null;
-            json = new JSONObject(string);
-        }
-    }
-
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
         json.put(FormsTable.COLUMN_ID, this.id);
@@ -8485,8 +8447,6 @@ public class Forms extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
         json.put(FormsTable.COLUMN_SB, new JSONObject(sBtoString()));
-        json.put(FormsTable.COLUMN_SC, new JSONObject(sCtoString()));
-        json.put(FormsTable.COLUMN_SD, new JSONObject(sDtoString()));
         return json;
     }
 
@@ -9126,18 +9086,6 @@ public class Forms extends BaseObservable implements Observable {
                 .put("b314h", b314h)
                 .put("b31496", b31496)
                 .put("b31496x", b31496x);
-        return json.toString();
-    }
-
-    public String sCtoString() throws JSONException {
-        Log.d(TAG, "sCtoString: ");
-        JSONObject json = new JSONObject();
-        return json.toString();
-    }
-
-    public String sDtoString() throws JSONException {
-        Log.d(TAG, "sDtoString: ");
-        JSONObject json = new JSONObject();
         return json.toString();
     }
 

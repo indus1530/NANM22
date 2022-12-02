@@ -110,8 +110,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA, form.sAtoString());
         values.put(FormsTable.COLUMN_SB, form.sBtoString());
-        values.put(FormsTable.COLUMN_SC, form.sCtoString());
-        values.put(FormsTable.COLUMN_SD, form.sDtoString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
@@ -172,13 +170,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
         values.put(AdolescentTable.COLUMN_INDEXED, adol.getIndexed());
         values.put(AdolescentTable.COLUMN_NAME, adol.getName());
-        values.put(AdolescentTable.COLUMN_SAH1, adol.sAH1toString());
-        values.put(AdolescentTable.COLUMN_SAH2, adol.sAH2toString());
-        values.put(AdolescentTable.COLUMN_SAH3, adol.sAH3toString());
-        values.put(AdolescentTable.COLUMN_SAH4, adol.sAH4toString());
-        values.put(AdolescentTable.COLUMN_SAH5, adol.sAH5toString());
-        values.put(AdolescentTable.COLUMN_SAH6, adol.sAH6toString());
-        values.put(AdolescentTable.COLUMN_SAH7, adol.sAH7toString());
+        values.put(AdolescentTable.COLUMN_SC, adol.sCtoString());
+        values.put(AdolescentTable.COLUMN_SD, adol.sDtoString());
         values.put(AdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
         values.put(AdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(AdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());

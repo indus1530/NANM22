@@ -68,7 +68,7 @@ public class SectionB3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionC1Activity.class));
+            startActivity(new Intent(this, AdolSelectionActivity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

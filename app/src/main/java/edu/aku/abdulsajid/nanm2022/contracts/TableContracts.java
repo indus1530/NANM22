@@ -77,8 +77,6 @@ public class TableContracts {
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SA = "sA";
         public static final String COLUMN_SB = "sB";
-        public static final String COLUMN_SC = "sC";
-        public static final String COLUMN_SD = "sD";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
@@ -129,13 +127,8 @@ public class TableContracts {
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_SAH1 = "sAH1";
-        public static final String COLUMN_SAH2 = "sAH2";
-        public static final String COLUMN_SAH3 = "sAH3";
-        public static final String COLUMN_SAH4 = "sAH4";
-        public static final String COLUMN_SAH5 = "sAH5";
-        public static final String COLUMN_SAH6 = "sAH6";
-        public static final String COLUMN_SAH7 = "sAH7";
+        public static final String COLUMN_SC = "sC";
+        public static final String COLUMN_SD = "sD";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

@@ -1,8 +1,610 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.sections.SectionC4Activity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.abdulsajid.nanm2022.models.Adolescent" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_effect"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/sleep_mainheading"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/sleep_mainheading"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ca402  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca402"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca402" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca402" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/ca402"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ca403  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca403"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca403" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca403" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ca403"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/ca403a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca403.equals(`1`)}"
+                                android:onClick="@{()->form.setCa403(`1`)}"
+                                android:text="@string/ca403a" />
+
+                            <RadioButton
+                                android:id="@+id/ca403b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca403.equals(`2`)}"
+                                android:onClick="@{()->form.setCa403(`2`)}"
+                                android:text="@string/ca403b" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ca404  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca404"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca404" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca404" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/ca404"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ca405  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca405"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca405" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca405" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/ca405"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ca406  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca406"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca406" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca406" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ca406"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/ca406a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca406.equals(`1`)}"
+                                android:onClick="@{()->form.setCa406(`1`)}"
+                                android:text="@string/ca406a" />
+
+                            <RadioButton
+                                android:id="@+id/ca406b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca406.equals(`2`)}"
+                                android:onClick="@{()->form.setCa406(`2`)}"
+                                android:text="@string/ca406b" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ca407  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca407"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca407" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca407" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/ca407"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/ca407a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca407.equals(`1`)}"
+                                android:onClick="@{()->form.setCa407(`1`)}"
+                                android:text="@string/ca407a" />
+
+                            <RadioButton
+                                android:id="@+id/ca407b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca407.equals(`2`)}"
+                                android:onClick="@{()->form.setCa407(`2`)}"
+                                android:text="@string/ca407b" />
+
+                            <RadioButton
+                                android:id="@+id/ca407c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca407.equals(`3`)}"
+                                android:onClick="@{()->form.setCa407(`3`)}"
+                                android:text="@string/ca407c" />
+
+                            <RadioButton
+                                android:id="@+id/ca407d"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ca407.equals(`4`)}"
+                                android:onClick="@{()->form.setCa407(`4`)}"
+                                android:text="@string/ca407d" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cb401_title  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcb401_title"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb401_title" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cb401  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcb401"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cb401" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/cb401" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/cb401"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cb402  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcb402"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cb402" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/cb402" />
+
+                        </LinearLayout>
+
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                            android:id="@+id/cb402"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            app:theme="@style/DatePickerStyle" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cb403  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcb403"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cb403" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/cb403" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cb403"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cb403a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb403.equals(`1`)}"
+                                android:onClick="@{()->form.setCb403(`1`)}"
+                                android:text="@string/cb403a" />
+
+                            <RadioButton
+                                android:id="@+id/cb403b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb403.equals(`2`)}"
+                                android:onClick="@{()->form.setCb403(`2`)}"
+                                android:text="@string/cb403b" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cb404  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcb404"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cb404" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/cb404" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cb404"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cb404a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb404.equals(`1`)}"
+                                android:onClick="@{()->form.setCb404(`1`)}"
+                                android:text="@string/cb404a" />
+
+                            <RadioButton
+                                android:id="@+id/cb404b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb404.equals(`2`)}"
+                                android:onClick="@{()->form.setCb404(`2`)}"
+                                android:text="@string/cb404b" />
+
+                            <RadioButton
+                                android:id="@+id/cb404c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb404.equals(`3`)}"
+                                android:onClick="@{()->form.setCb404(`3`)}"
+                                android:text="@string/cb404c" />
+
+                            <RadioButton
+                                android:id="@+id/cb404d"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.cb404.equals(`4`)}"
+                                android:onClick="@{()->form.setCb404(`4`)}"
+                                android:text="@string/cb404d" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
+                <RelativeLayout
+                    android:id="@+id/llbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layoutDirection="ltr"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/btnEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_shape_red"
+                        android:onClick="btnEnd"
+                        android:padding="10dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnContinue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_shape_green"
+                        android:backgroundTintMode="src_atop"
+                        android:onClick="btnContinue"
+                        android:padding="10dp"
+                        android:text="Save"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <!--EndButton LinearLayout-->
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

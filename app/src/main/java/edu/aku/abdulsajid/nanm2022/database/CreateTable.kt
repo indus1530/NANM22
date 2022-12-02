@@ -24,9 +24,7 @@ object CreateTable {
             + FormsTable.COLUMN_SYNC_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
             + FormsTable.COLUMN_SA + " TEXT,"
-            + FormsTable.COLUMN_SB + " TEXT,"
-            + FormsTable.COLUMN_SC + " TEXT,"
-            + FormsTable.COLUMN_SD + " TEXT"
+            + FormsTable.COLUMN_SB + " TEXT"
             + " );"
             )
 
@@ -98,13 +96,8 @@ object CreateTable {
             + AdolescentTable.COLUMN_SYNCED + " TEXT, "
             + AdolescentTable.COLUMN_SYNC_DATE + " TEXT, "
             + AdolescentTable.COLUMN_APPVERSION + " TEXT, "
-            + AdolescentTable.COLUMN_SAH1 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH2 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH3 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH4 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH5 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH6 + " TEXT, "
-            + AdolescentTable.COLUMN_SAH7 + " TEXT "
+            + AdolescentTable.COLUMN_SC + " TEXT, "
+            + AdolescentTable.COLUMN_SD + " TEXT"
             + " );"
             )
 
