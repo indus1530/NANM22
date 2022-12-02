@@ -1900,8 +1900,8 @@
     <string name="a326b">نہیں</string>
     <string name="a326c">معلوم نہیں </string>
     <string name="a327">گر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ/ایکٹر زمین ہے ؟</string>
-    <string name="a327a">اگر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ/ایکٹر زمین ہے ؟ ایکٹر</string>
-    <string name="a327b">اگر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ/ایکٹر زمین ہے ؟ کنال</string>
+    <string name="a327a"> ایکٹر</string>
+    <string name="a327b"> کنال</string>
     <string name="a327c">معلوم نہیں</string>
     <string name="a328">کیاآپ اپنا مال مویشی،جانور یا مرغی خانہ رکھتے ہیں؟</string>
     <string name="a328a">ہاں </string>
