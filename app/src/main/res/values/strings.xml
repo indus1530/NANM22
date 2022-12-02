@@ -1911,8 +1911,8 @@
     <string name="a326b">No </string>
     <string name="a326c">Don’t Know </string>
     <string name="a327">How many acres or kanals of agricultural land do members of this household own?</string>
-    <string name="a327a">How many acres or kanals of agricultural land do members of this household own? Acre</string>
-    <string name="a327b">How many acres or kanals of agricultural land do members of this household own? Kanals</string>
+    <string name="a327a">Acre</string>
+    <string name="a327b">Kanals</string>
     <string name="a327c">Don’t Know </string>
     <string name="a328">Does this household own any livestock, herds, other farm animals or poultry?</string>
     <string name="a328a">Yes </string>
