@@ -4322,6 +4322,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50101(String a50101) {
+        if (this.a50101.equals(a50101)) return; // for all checkboxes
         this.a50101 = a50101;
         notifyPropertyChanged(BR.a50101);
     }
@@ -4332,6 +4333,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50102(String a50102) {
+        if (this.a50102.equals(a50102)) return; // for all checkboxes
         this.a50102 = a50102;
         notifyPropertyChanged(BR.a50102);
     }
@@ -4342,6 +4344,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50103(String a50103) {
+        if (this.a50103.equals(a50103)) return; // for all checkboxes
         this.a50103 = a50103;
         notifyPropertyChanged(BR.a50103);
     }
@@ -4352,7 +4355,12 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50198(String a50198) {
+        if (this.a50198.equals(a50198)) return; // for all checkboxes
         this.a50198 = a50198;
+        setA50101(a50198.equals("98") ? "" : this.a50101);
+        setA50102(a50198.equals("98") ? "" : this.a50102);
+        setA50103(a50198.equals("98") ? "" : this.a50103);
+        setA50105(a50198.equals("98") ? "" : this.a50105);
         notifyPropertyChanged(BR.a50198);
     }
 
@@ -4362,7 +4370,60 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50105(String a50105) {
+        if (this.a50105.equals(a50105)) return; // for all checkboxes
         this.a50105 = a50105;
+        setA502(a50105.equals("5") ? "" : this.a502);
+        setA502(a50105.equals("5") ? "" : this.a502);
+
+        setA50301(a50105.equals("5") ? "" : this.a50301);
+        setA50302(a50105.equals("5") ? "" : this.a50302);
+        setA50303(a50105.equals("5") ? "" : this.a50303);
+        setA50304(a50105.equals("5") ? "" : this.a50304);
+        setA50305(a50105.equals("5") ? "" : this.a50305);
+
+        setA50401(a50105.equals("5") ? "" : this.a50401);
+        setA50402(a50105.equals("5") ? "" : this.a50402);
+        setA50403(a50105.equals("5") ? "" : this.a50403);
+        setA50404(a50105.equals("5") ? "" : this.a50404);
+        setA50497(a50105.equals("5") ? "" : this.a50497);
+
+        setA50501(a50105.equals("5") ? "" : this.a50501);
+        setA50502(a50105.equals("5") ? "" : this.a50502);
+        setA50503(a50105.equals("5") ? "" : this.a50503);
+        setA50504(a50105.equals("5") ? "" : this.a50504);
+        setA50597(a50105.equals("5") ? "" : this.a50597);
+
+        setA506(a50105.equals("5") ? "" : this.a506);
+        setA507(a50105.equals("5") ? "" : this.a507);
+        setA508(a50105.equals("5") ? "" : this.a508);
+        setA509(a50105.equals("5") ? "" : this.a509);
+        setA510(a50105.equals("5") ? "" : this.a510);
+        setA511(a50105.equals("5") ? "" : this.a511);
+
+        setA51201(a50105.equals("5") ? "" : this.a51201);
+        setA51202(a50105.equals("5") ? "" : this.a51202);
+        setA51203(a50105.equals("5") ? "" : this.a51203);
+        setA51204(a50105.equals("5") ? "" : this.a51204);
+        setA51205(a50105.equals("5") ? "" : this.a51205);
+        setA51296(a50105.equals("5") ? "" : this.a51296);
+        setA51298(a50105.equals("5") ? "" : this.a51298);
+
+        setA513a(a50105.equals("5") ? "" : this.a513a);
+        setA513b(a50105.equals("5") ? "" : this.a513b);
+        setA513c(a50105.equals("5") ? "" : this.a513c);
+        setA513d(a50105.equals("5") ? "" : this.a513d);
+        setA513e(a50105.equals("5") ? "" : this.a513e);
+        setA513f(a50105.equals("5") ? "" : this.a513f);
+        setA513g(a50105.equals("5") ? "" : this.a513g);
+        setA513h(a50105.equals("5") ? "" : this.a513h);
+        setA513i(a50105.equals("5") ? "" : this.a513i);
+        setA513j(a50105.equals("5") ? "" : this.a513j);
+        setA513k(a50105.equals("5") ? "" : this.a513k);
+        setA513l(a50105.equals("5") ? "" : this.a513l);
+        setA513m(a50105.equals("5") ? "" : this.a513m);
+        setA513n(a50105.equals("5") ? "" : this.a513n);
+        setA513o(a50105.equals("5") ? "" : this.a513o);
+        setA513p(a50105.equals("5") ? "" : this.a513p);
         notifyPropertyChanged(BR.a50105);
     }
 
@@ -4422,7 +4483,12 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50305(String a50305) {
+        if (this.a50305.equals(a50305)) return; // for all checkboxes
         this.a50305 = a50305;
+        setA50301(a50305.equals("1") ? "" : this.a50301);
+        setA50302(a50305.equals("1") ? "" : this.a50302);
+        setA50303(a50305.equals("1") ? "" : this.a50303);
+        setA50304(a50305.equals("1") ? "" : this.a50304);
         notifyPropertyChanged(BR.a50305);
     }
 
@@ -4472,7 +4538,12 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50497(String a50497) {
+        if (this.a50497.equals(a50497)) return; // for all checkboxes
         this.a50497 = a50497;
+        setA50401(a50497.equals("1") ? "" : this.a50401);
+        setA50402(a50497.equals("1") ? "" : this.a50402);
+        setA50403(a50497.equals("1") ? "" : this.a50403);
+        setA50404(a50497.equals("1") ? "" : this.a50404);
         notifyPropertyChanged(BR.a50497);
     }
 
@@ -4522,7 +4593,12 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA50597(String a50597) {
+        if (this.a50597.equals(a50597)) return; // for all checkboxes
         this.a50597 = a50597;
+        setA50501(a50597.equals("1") ? "" : this.a50501);
+        setA50502(a50597.equals("1") ? "" : this.a50502);
+        setA50503(a50597.equals("1") ? "" : this.a50503);
+        setA50504(a50597.equals("1") ? "" : this.a50504);
         notifyPropertyChanged(BR.a50597);
     }
 
@@ -4602,6 +4678,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51201(String a51201) {
+        if (this.a51201.equals(a51201)) return; // for all checkboxes
         this.a51201 = a51201;
         notifyPropertyChanged(BR.a51201);
     }
@@ -4612,6 +4689,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51202(String a51202) {
+        if (this.a51202.equals(a51202)) return; // for all checkboxes
         this.a51202 = a51202;
         notifyPropertyChanged(BR.a51202);
     }
@@ -4622,6 +4700,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51203(String a51203) {
+        if (this.a51203.equals(a51203)) return; // for all checkboxes
         this.a51203 = a51203;
         notifyPropertyChanged(BR.a51203);
     }
@@ -4632,6 +4711,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51204(String a51204) {
+        if (this.a51204.equals(a51204)) return; // for all checkboxes
         this.a51204 = a51204;
         notifyPropertyChanged(BR.a51204);
     }
@@ -4642,6 +4722,7 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51205(String a51205) {
+        if (this.a51205.equals(a51205)) return; // for all checkboxes
         this.a51205 = a51205;
         notifyPropertyChanged(BR.a51205);
     }
@@ -4652,7 +4733,14 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51298(String a51298) {
+        if (this.a51298.equals(a51298)) return; // for all checkboxes
         this.a51298 = a51298;
+        setA51201(a51298.equals("98") ? "" : this.a51201);
+        setA51202(a51298.equals("98") ? "" : this.a51202);
+        setA51203(a51298.equals("98") ? "" : this.a51203);
+        setA51204(a51298.equals("98") ? "" : this.a51204);
+        setA51205(a51298.equals("98") ? "" : this.a51205);
+        setA51296(a51298.equals("98") ? "" : this.a51296);
         notifyPropertyChanged(BR.a51298);
     }
 
@@ -4662,7 +4750,9 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     public void setA51296(String a51296) {
+        if (this.a51296.equals(a51296)) return; // for all checkboxes
         this.a51296 = a51296;
+        setA51296x(a51296.equals("96") ? this.a51296x : "");
         notifyPropertyChanged(BR.a51296);
     }
 

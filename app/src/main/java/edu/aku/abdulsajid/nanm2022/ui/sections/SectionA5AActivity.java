@@ -68,7 +68,10 @@ public class SectionA5AActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionA5BActivity.class));
+            if (form.getA501().equals("5"))
+                startActivity(new Intent(this, SectionB1Activity.class));
+            else
+                startActivity(new Intent(this, SectionA5BActivity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
