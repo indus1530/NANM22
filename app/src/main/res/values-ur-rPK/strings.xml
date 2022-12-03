@@ -1870,6 +1870,7 @@
     <string name="a321ia">ہاں </string>
     <string name="a321ib">نہیں</string>
     <string name="a322">آپ کے گھرانے کے افراد عام طورپر کس قسم کا بیت الخلاء استعمال کرتے ہیں ؟</string>
+    <string name="a322info">Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
     <string name="a322a_title"> فلش یا انڈیل کر پانی ڈالنے والا</string>
     <string name="a322a"> فلش   سیوریج کے نظام سے منسلک  </string>
     <string name="a322b">فلش سپٹک ٹینک سے منسلک  </string>
@@ -2479,7 +2480,8 @@
     <string name="cb404c">کافی بری </string>
     <string name="cb404d">بہت بری </string>
     <string name="a201">لائن نمبر</string>
-    <string name="a202">برا ئےمہربانی پہلے مجھے ان تمام افراد کانام بتائیں جو عام طور پر یہاں رہتے ہیں، خاندان کے سربراہ سے شروع کریںگھر کے دیگر  افراد کے بارے میں پوچھیں</string>
+    <string name="a202t">برا ئےمہربانی پہلے مجھے ان تمام افراد کانام بتائیں جو عام طور پر یہاں رہتے ہیں، خاندان کے سربراہ سے شروع کریںگھر کے دیگر  افراد کے بارے میں پوچھیں</string>
+    <string name="a202">نام</string>
     <string name="a203">گھر کے سربراہ سے رشتہ ؟</string>
     <string name="a203a">گھر کا سربراہ</string>
     <string name="a203b">بیوی/شوہر </string>

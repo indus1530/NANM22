@@ -1042,8 +1042,8 @@
                             <RadioButton
                                 android:id="@+id/a306aaa"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a306aa.equals(`1`)}"
                                 android:onClick="@{()->form.setA306aa(`1`)}"
                                 android:text="@string/a306aaa" />
@@ -1051,8 +1051,8 @@
                             <RadioButton
                                 android:id="@+id/a306aab"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a306aa.equals(`2`)}"
                                 android:onClick="@{()->form.setA306aa(`2`)}"
                                 android:text="@string/a306aab" />
@@ -1365,7 +1365,8 @@
                 <!-- a309  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa309"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a308.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1396,19 +1397,20 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a309"
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_height="match_parent"
-                            android:hint="##"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.a309}"
-                            app:maxValue="60"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a309"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:enabled="@{!form.a309a.equals(`98`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.a309}"
+                                app:maxValue="60"
+                                app:minValue="0"
+                                app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/a309a"
@@ -1416,7 +1418,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.a309a.equals(`98`)}"
-                                android:enabled="@{!form.a309a.equals(`98`)}"
                                 android:onClick="@{()->form.setA309a(form.a309a.equals(`98`)?``:`98`)}"
                                 android:text="@string/a309a" />
                         </LinearLayout>
@@ -1426,7 +1427,8 @@
                 <!-- a310  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa310"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a308.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1689,7 +1691,8 @@
                 <!-- a314  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa314"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a313.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1822,8 +1825,8 @@
                             android:id="@+id/a315"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="##"
                             android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.a315}"
@@ -2139,7 +2142,6 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
 
                 <!--EndButton LinearLayout-->

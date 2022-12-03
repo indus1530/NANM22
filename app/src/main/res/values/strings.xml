@@ -1842,7 +1842,8 @@
     <string name="a321i">Boat without motor  </string>
     <string name="a321ia">Yes </string>
     <string name="a321ib">No </string>
-    <string name="a322">What kind of toilet facility do members of your household usually use? Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
+    <string name="a322">What kind of toilet facility do members of your household usually use?</string>
+    <string name="a322info">Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
     <string name="a322a_title">Flush or Pour Flush Toilet</string>
     <string name="a322a">Flush to piped sewer system</string>
     <string name="a322b">Flush to septic tank </string>
@@ -2452,7 +2453,8 @@
     <string name="cb404c">Fairly bad</string>
     <string name="cb404d">Very bad </string>
     <string name="a201">Line number </string>
-    <string name="a202">First, please tell me the name of each person who usually lives here, starting with the head of the household. Probe for additional household members.</string>
+    <string name="a202t">First, please tell me the name of each person who usually lives here, starting with the head of the household. Probe for additional household members.</string>
+    <string name="a202">Name</string>
     <string name="a203">relationship with  Head of household)? </string>
     <string name="a203a">Head of HH</string>
     <string name="a203b">Wife/Husband</string>
@@ -3591,7 +3593,7 @@
     <string name="d1title1">SECTION - D1: ANTHROPOMETRIC MEASUREMENTS</string>
     <string name="d1001c">Shorter than for his/her age</string>
     <string name="d101">Date of interview:</string>
-    <string name="d102">Time of interview: (In 24 hours, format)</string>
+    <string name="d102">Time of interview</string>
     <string name="d1102">Do you think that your (Child Name) weight is appropriate for his/her age?</string>
     <string name="d103">Enumeration Block (Cluster):</string>
     <string name="d1102a">Weight is Appropriate for his/her age</string>
