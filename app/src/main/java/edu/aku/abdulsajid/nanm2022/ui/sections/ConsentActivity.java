@@ -66,12 +66,11 @@ public class ConsentActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             Intent i;
-            /*if (bi.c10301.isChecked()) {
+            if (bi.a110a.isChecked()) {
                 i = new Intent(this, FamilyMembersListActivity.class).putExtra("complete", true);
             } else {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);
             }
-*/
             finish();
             //startActivity(i);
         } else {

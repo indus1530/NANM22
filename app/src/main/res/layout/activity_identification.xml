@@ -106,7 +106,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2.04"
+                                android:layout_weight="2.05"
                                 android:gravity="center"
                                 android:text="@string/a106" />
 
@@ -134,7 +134,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2.04"
+                                android:layout_weight="2.05"
                                 android:gravity="center"
                                 android:text="@string/a107" />
 
@@ -161,7 +161,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2.04"
+                                android:layout_weight="2.05"
                                 android:gravity="center"
                                 android:text="@string/a108" />
 

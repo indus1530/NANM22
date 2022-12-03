@@ -117,8 +117,19 @@
     <string name="istatus04"> Refused </string>
     <string name="istatus05"> Dwelling vacant or address not a dwelling </string>
     <string name="istatus06"> Dwelling not found </string>
-    <string name="istatus07"> No child of 06-23 months in this household </string>
+    <string name="istatus07"> No adolescents between 10-15 years </string>
     <string name="istatus96"> Other (Specify) </string>
+
+    <string name="a114">Result of Household Questionnaire interview: Discuss any result not completed with team leader.</string>
+    <string name="a114a">Completed</string>
+    <string name="a114b">No household member at home or no competent respondent at home at time of visit</string>
+    <string name="a114c">Entire household absent for extended period of time </string>
+    <string name="a114d">Refused</string>
+    <string name="a114e">Dwelling vacant or address not a dwelling </string>
+    <string name="a114f">Dwelling not found</string>
+    <string name="a114g">No adolescents between 10-15 years </string>
+    <string name="a11496">Other (Specify</string>
+
 
     <string name="title_activity_change_password">ChangePasswordActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -1472,6 +1483,7 @@
 
     <!--NANM-->
     <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">HOUSEHOLD IDENTIFICATION &amp; CONSENT </string>
     <string name="sectiona1_mainheading"> SECTION A1:</string>
     <string name="sectiona3socioeconomicstatusofhouseholdss_mainheading">SOCIO ECONOMIC STATUS OF HOUSEHOLD (SS)</string>
@@ -1569,15 +1581,6 @@
     <string name="a113">Does your HH Have a  young adolescents aged 5-10-year? </string>
     <string name="a113a">Yes </string>
     <string name="a113b">No </string>
-    <string name="a114">Result of Household Questionnaire interview: Discuss any result not completed with team leader.</string>
-    <string name="a114a">Completed</string>
-    <string name="a114b">No household member at home or no competent respondent at home at time of visit</string>
-    <string name="a114c">Entire household absent for extended period of time </string>
-    <string name="a114d">Refused</string>
-    <string name="a114e">Dwelling vacant or address not a dwelling </string>
-    <string name="a114f">Dwelling not found</string>
-    <string name="a114g">No adolescents between 10-15 years </string>
-    <string name="a11496">Other (Specify</string>
     <string name="a301">What language do you usually speak in your household?</string>
     <string name="a301a">Punjabi </string>
     <string name="a301b">Hindko </string>
@@ -1642,8 +1645,8 @@
     <string name="a305e">Stone with mud  </string>
     <string name="a305f">Uncovered adobe</string>
     <string name="a305g">Plywood </string>
-    <string name="a305h">Cardboard گّتہ</string>
-    <string name="a305i">Reused wood استعمال شدہ لکڑی</string>
+    <string name="a305h">Cardboard</string>
+    <string name="a305i">Reused wood</string>
     <string name="a305j">Cloth/Curtain/Tent </string>
     <string name="a305k_title">Finished walls</string>
     <string name="a305k">Cement </string>
@@ -1839,7 +1842,8 @@
     <string name="a321i">Boat without motor  </string>
     <string name="a321ia">Yes </string>
     <string name="a321ib">No </string>
-    <string name="a322">What kind of toilet facility do members of your household usually use? Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
+    <string name="a322">What kind of toilet facility do members of your household usually use?</string>
+    <string name="a322info">Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
     <string name="a322a_title">Flush or Pour Flush Toilet</string>
     <string name="a322a">Flush to piped sewer system</string>
     <string name="a322b">Flush to septic tank </string>
@@ -1895,8 +1899,8 @@
     <string name="a332c">Don’t Know </string>
     <string name="a331">What is the main source of income of your household? </string>
     <string name="a331a">Unskilled manual </string>
-    <string name="a331f">ہنرمند پیشہ عوامی</string>
-    <string name="a331g">نجی ہنرمند پیشہ </string>
+    <string name="a331f">Professional public </string>
+    <string name="a331g">Professional private </string>
     <string name="a333">Do you or your family receive any support in the form of cash or kind? (select as many as apply) </string>
     <string name="a333a">BISP </string>
     <string name="a333b">Food Voucher per month </string>
@@ -1906,7 +1910,7 @@
     <string name="a333x">Other specify </string>
     <string name="a331b">Skilled manual</string>
     <string name="a331c">Agriculture</string>
-    <string name="a331d">گھریلو خدمت</string>
+    <string name="a331d">Domestic service </string>
     <string name="a331e">Sales and services </string>
     <string name="a331x">Other specify </string>
     <string name="a334">Who provides this support? (select as many as apply)</string>
@@ -2449,7 +2453,8 @@
     <string name="cb404c">Fairly bad</string>
     <string name="cb404d">Very bad </string>
     <string name="a201">Line number </string>
-    <string name="a202">First, please tell me the name of each person who usually lives here, starting with the head of the household. Probe for additional household members.</string>
+    <string name="a202t">First, please tell me the name of each person who usually lives here, starting with the head of the household. Probe for additional household members.</string>
+    <string name="a202">Name</string>
     <string name="a203">relationship with  Head of household)? </string>
     <string name="a203a">Head of HH</string>
     <string name="a203b">Wife/Husband</string>
@@ -3588,7 +3593,7 @@
     <string name="d1title1">SECTION - D1: ANTHROPOMETRIC MEASUREMENTS</string>
     <string name="d1001c">Shorter than for his/her age</string>
     <string name="d101">Date of interview:</string>
-    <string name="d102">Time of interview: (In 24 hours, format)</string>
+    <string name="d102">Time of interview</string>
     <string name="d1102">Do you think that your (Child Name) weight is appropriate for his/her age?</string>
     <string name="d103">Enumeration Block (Cluster):</string>
     <string name="d1102a">Weight is Appropriate for his/her age</string>

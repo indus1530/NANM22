@@ -58,6 +58,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a202 = _EMPTY_;
     private String a204 = _EMPTY_;
     private String a203 = _EMPTY_;
+    private String a20396x = _EMPTY_;
     private String a205dd = _EMPTY_;
     private String a205mm = _EMPTY_;
     private String a205yy = _EMPTY_;
@@ -314,7 +315,18 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA203(String a203) {
         this.a203 = a203;
+        setA20396x(a203.equals("96") ? this.a20396x : "");
         notifyPropertyChanged(BR.a203);
+    }
+
+    @Bindable
+    public String getA20396x() {
+        return a20396x;
+    }
+
+    public void setA20396x(String a20396x) {
+        this.a20396x = a20396x;
+        notifyPropertyChanged(BR.a20396x);
     }
 
     @Bindable
@@ -528,6 +540,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a202 = json.getString("a202");
             this.a204 = json.getString("a204");
             this.a203 = json.getString("a203");
+            this.a20396x = json.getString("a20396x");
             this.a205dd = json.getString("a205dd");
             this.a205mm = json.getString("a205mm");
             this.a205yy = json.getString("a205yy");
@@ -579,6 +592,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a202", a202)
                 .put("a204", a204)
                 .put("a203", a203)
+                .put("a20396x", a20396x)
                 .put("a205dd", a205dd)
                 .put("a205mm", a205mm)
                 .put("a205yy", a205yy)

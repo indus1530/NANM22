@@ -110,7 +110,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/a202" />
+                                android:text="@string/a202t" />
 
                         </LinearLayout>
 
@@ -123,14 +123,14 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/d102" />
+                                android:text="@string/a202" />
 
                             <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/a202"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                                android:hint="@string/d102"
+                                android:hint="@string/a202"
                                 android:inputType="textPersonName"
                                 android:maxLength="20"
                                 android:text="@={member.a202}" />
@@ -384,8 +384,8 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/a203x"
                             android:tag="d10398"
-                            android:text='@{a203x.checked ? a203x.getText().toString() : ""}'
-                            android:visibility='@{a203x.checked? View.VISIBLE : View.GONE}' />
+                            android:text="@={member.a20396x}"
+                            android:visibility="@{member.a203.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                     </LinearLayout>
 

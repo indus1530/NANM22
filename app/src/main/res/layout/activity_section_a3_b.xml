@@ -60,841 +60,834 @@
 
 
                     <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_a319" />
+                        style="@style/quesNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/Q_a319" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/a319" />
                     </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319a"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319aa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319a.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319a(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319ab"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319a.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319a(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319b  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319b"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ba"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319b.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319b(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319bb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319b.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319b(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+                            </LinearLayout>
+
+                            <!-- a319c  Radio   -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319c"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319c"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ca"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319c.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319c(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319cb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319c.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319c(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319d  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319d"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319da"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319d.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319d(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319db"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319d.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319d(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319e  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319e"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319e"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ea"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319e.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319e(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319eb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319e.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319e(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319f  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319f"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319f"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319fa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319f.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319f(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319fb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319f.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319f(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319g  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319g"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319g"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ga"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319g.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319g(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319gb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319g.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319g(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319h  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319h"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319h"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ha"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319h.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319h(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319hb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319h.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319h(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319i  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319i"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319i"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ia"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319i.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319i(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319ib"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319i.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319i(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319j  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319j"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319j"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ja"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319j.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319j(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319jb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319j.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319j(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319k  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319k"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319k"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ka"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319k.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319k(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319kb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319k.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319k(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319l  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319l"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319l"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319la"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319l.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319l(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319lb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319l.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319l(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319m  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319m"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319m"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ma"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319m.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319m(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319mb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319m.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319m(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319n  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319n"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319n"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319na"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319n.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319n(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319nb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319n.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319n(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319o  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319o"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319o"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319oa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319o.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319o(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319ob"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319o.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319o(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319p  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319p"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319p"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319pa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319p.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319p(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319pb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319p.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319p(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319q  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319q"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319qa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319q.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319q(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319qb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319q.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319q(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a319r  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a319r"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a319r"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a319ra"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319r.equals(`1`)}"
+                                        android:onClick="@{()->form.setA319r(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a319rb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a319r.equals(`2`)}"
+                                        android:onClick="@{()->form.setA319r(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <!-- a319a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa319a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319a" />
-
-                            <RadioGroup
-                                android:id="@+id/a319a"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319aa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319a(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319ab"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319a.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319a(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319b  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319b" />
-
-                            <RadioGroup
-                                android:id="@+id/a319b"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ba"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319b.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319b(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319bb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319b(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-                        </LinearLayout>
-
-                        <!-- a319c  Radio   -->
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319c" />
-
-                            <RadioGroup
-                                android:id="@+id/a319c"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ca"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319c.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319c(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319cb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319c.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319c(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319d  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319d" />
-
-                            <RadioGroup
-                                android:id="@+id/a319d"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319da"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319d.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319d(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319db"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319d.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319d(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319e  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319e" />
-
-                            <RadioGroup
-                                android:id="@+id/a319e"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ea"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319e.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319e(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319eb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319e.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319e(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319f  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319f" />
-
-                            <RadioGroup
-                                android:id="@+id/a319f"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319fa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319f.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319f(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319fb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319f.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319f(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319g  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319g" />
-
-                            <RadioGroup
-                                android:id="@+id/a319g"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ga"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319g.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319g(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319gb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319g.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319g(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319h  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319h" />
-
-                            <RadioGroup
-                                android:id="@+id/a319h"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ha"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319h.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319h(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319hb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319h.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319h(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319i  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319i" />
-
-                            <RadioGroup
-                                android:id="@+id/a319i"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ia"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319i.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319i(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319ib"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319i.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319i(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319j  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319j" />
-
-                            <RadioGroup
-                                android:id="@+id/a319j"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ja"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319j.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319j(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319jb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319j.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319j(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319k  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319k" />
-
-                            <RadioGroup
-                                android:id="@+id/a319k"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ka"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319k.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319k(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319kb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319k.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319k(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319l  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319l" />
-
-                            <RadioGroup
-                                android:id="@+id/a319l"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319la"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319l.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319l(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319lb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319l.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319l(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319m  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319m" />
-
-                            <RadioGroup
-                                android:id="@+id/a319m"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ma"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319m.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319m(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319mb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319m.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319m(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319n  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319n" />
-
-                            <RadioGroup
-                                android:id="@+id/a319n"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319na"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319n.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319n(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319nb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319n.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319n(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319o  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319o" />
-
-                            <RadioGroup
-                                android:id="@+id/a319o"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319oa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319o.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319o(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319ob"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319o.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319o(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319p  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319p" />
-
-                            <RadioGroup
-                                android:id="@+id/a319p"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319pa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319p.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319p(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319pb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319p.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319p(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319q  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319q" />
-
-                            <RadioGroup
-                                android:id="@+id/a319q"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319qa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319q.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319q(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319qb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319q.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319q(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a319r  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a319r" />
-
-                            <RadioGroup
-                                android:id="@+id/a319r"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a319ra"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319r.equals(`1`)}"
-                                    android:onClick="@{()->form.setA319r(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a319rb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a319r.equals(`2`)}"
-                                    android:onClick="@{()->form.setA319r(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
 
 
                 <!-- a320  Radio   -->
@@ -981,427 +974,420 @@
                             android:text="@string/a321" />
 
                     </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321a"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321aa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321a.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321a(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321ab"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321a.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321a(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321b  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321b"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ba"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321b.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321b(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321bb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321b.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321b(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321c  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321c"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321c"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ca"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321c.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321c(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321cb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321c.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321c(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321d  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321d"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321da"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321d.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321d(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321db"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321d.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321d(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321e  Radio   -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321e"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321e"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ea"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321e.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321e(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321eb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321e.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321e(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321f  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321f"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321f"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321fa"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321f.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321f(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321fb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321f.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321f(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321g  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321g"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321g"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ga"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321g.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321g(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321gb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321g.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321g(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321h  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321h"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321h"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ha"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321h.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321h(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321hb"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321h.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321h(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- a321i  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a321i"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/a321i"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/a321ia"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321i.equals(`1`)}"
+                                        android:onClick="@{()->form.setA321i(`1`)}"
+                                        android:text="@string/a319aa" />
+
+                                    <RadioButton
+                                        android:id="@+id/a321ib"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.a321i.equals(`2`)}"
+                                        android:onClick="@{()->form.setA321i(`2`)}"
+                                        android:text="@string/a319ab" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <!-- a321a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa321a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321a" />
-
-                            <RadioGroup
-                                android:id="@+id/a321a"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321aa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321a(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321ab"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321a.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321a(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321b  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321b" />
-
-                            <RadioGroup
-                                android:id="@+id/a321b"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ba"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321b.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321b(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321bb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321b(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321c  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321c" />
-
-                            <RadioGroup
-                                android:id="@+id/a321c"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ca"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321c.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321c(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321cb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321c.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321c(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321d  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321d" />
-
-                            <RadioGroup
-                                android:id="@+id/a321d"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321da"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321d.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321d(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321db"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321d.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321d(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321e  Radio   -->
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321e" />
-
-                            <RadioGroup
-                                android:id="@+id/a321e"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ea"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321e.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321e(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321eb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321e.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321e(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321f  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321f" />
-
-                            <RadioGroup
-                                android:id="@+id/a321f"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321fa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321f.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321f(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321fb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321f.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321f(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321g  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321g" />
-
-                            <RadioGroup
-                                android:id="@+id/a321g"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ga"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321g.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321g(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321gb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321g.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321g(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321h  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321h" />
-
-                            <RadioGroup
-                                android:id="@+id/a321h"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ha"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321h.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321h(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321hb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321h.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321h(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- a321i  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a321i" />
-
-                            <RadioGroup
-                                android:id="@+id/a321i"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                                <RadioButton
-                                    android:id="@+id/a321ia"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321i.equals(`1`)}"
-                                    android:onClick="@{()->form.setA321i(`1`)}"
-                                    android:text="@string/a319aa" />
-
-                                <RadioButton
-                                    android:id="@+id/a321ib"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a321i.equals(`2`)}"
-                                    android:onClick="@{()->form.setA321i(`2`)}"
-                                    android:text="@string/a319ab" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
 
                 <!-- a322  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1431,6 +1417,12 @@
                                 android:text="@string/a322" />
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/a322info" />
 
                         <RadioGroup
                             android:id="@+id/a322"
@@ -1562,7 +1554,8 @@
                 <!-- a323  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa323"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.a322.equals(`11`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1627,7 +1620,8 @@
                 <!-- a324  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa324"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1683,7 +1677,8 @@
                 <!-- a325  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa325"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1815,17 +1810,18 @@
                 <!-- a327  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa327"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a326.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
                         <TextView
@@ -1865,6 +1861,7 @@
                             android:gravity="center"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:enabled="@{!form.a327c.equals(`98`)}"
                             android:text="@={form.a327a}"
                             app:maxValue="15"
                             app:minValue="1"
@@ -1888,6 +1885,7 @@
                             android:gravity="center"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:enabled="@{!form.a327c.equals(`98`)}"
                             android:text="@={form.a327b}"
                             app:maxValue="15"
                             app:minValue="1"
@@ -1899,7 +1897,6 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:checked="@{form.a327c.equals(`98`)}"
-                            android:enabled="@{!form.a327c.equals(`98`)}"
                             android:onClick="@{()->form.setA327c(form.a327c.equals(`98`)?``:`98`)}"
                             android:text="@string/a327c" />
 
@@ -1975,7 +1972,8 @@
                 <!-- a329  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa329"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a328.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2000,227 +1998,217 @@
                                 android:text="@string/a329" />
 
                         </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/fldGrpCVa329a"
-                            style="@style/cardView">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
+                            <!--329a-->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <!--329a-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
 
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329a" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329a"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329a"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329a}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
-                                <!--329b-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329b" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329b"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329b}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
-                                <!--329c-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329c" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329c"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329c}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
-                                <!--329d-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329d" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329d"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329d}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
-                                <!--329e-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329e" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329e"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329e}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
-                                <!--329f-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-
-                                    <TextView
-                                        android:backgroundTint="#DCFAE5"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:gravity="center"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/a329f" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/a329f"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:gravity="center"
-                                        android:maxLength="2"
-                                        android:text="@={form.a329f}"
-                                        app:maxValue="10"
-                                        app:minValue="1"
-                                        app:type="range" />
-
-
-                                </LinearLayout>
-
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329a}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
 
 
                             </LinearLayout>
-                        </androidx.cardview.widget.CardView>
 
+                            <!--329b-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329b"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329b}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+
+                            </LinearLayout>
+
+                            <!--329c-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329c"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329c"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329c}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+
+                            </LinearLayout>
+
+                            <!--329d-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329d"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329d}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+
+                            </LinearLayout>
+
+                            <!--329e-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329e"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329e"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329e}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+
+                            </LinearLayout>
+
+                            <!--329f-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/a329f"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a329f"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.a329f}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
                 <!-- a330  Radio   -->
@@ -2550,12 +2538,12 @@
                                 android:onClick="@{()->form.setA333(`97`)}"
                                 android:text="@string/a333e" />
 
-                            <CheckBox
+                            <RadioButton
                                 android:id="@+id/a333x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a333x.equals(`96`)}"
-                                android:onClick="@{()->form.setA333x(form.a333x.equals(`96`)?``:`96`)}"
+                                android:checked="@{form.a333.equals(`96`)}"
+                                android:onClick="@{()->form.setA333(`96`)}"
                                 android:text="@string/a333x" />
 
                             <EditText
@@ -2566,7 +2554,7 @@
                                 android:hint="@string/a333x"
                                 android:tag="a333x"
                                 android:text="@={form.a333xx}"
-                                android:visibility="@{form.a333x.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.a333.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -2574,7 +2562,8 @@
                 <!-- a334  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa334"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.a333.equals(`97`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2631,12 +2620,12 @@
                                 android:onClick="@{()->form.setA334(`3`)}"
                                 android:text="@string/a334c" />
 
-                            <CheckBox
+                            <RadioButton
                                 android:id="@+id/a334x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a334x.equals(`96`)}"
-                                android:onClick="@{()->form.setA334x(form.a334x.equals(`96`)?``:`96`)}"
+                                android:checked="@{form.a334.equals(`96`)}"
+                                android:onClick="@{()->form.setA334(`96`)}"
                                 android:text="@string/a334x" />
 
                             <EditText
@@ -2647,7 +2636,7 @@
                                 android:hint="@string/a334x"
                                 android:tag="a334x"
                                 android:text="@={form.a334xx}"
-                                android:visibility="@{form.a334x.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.a334.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

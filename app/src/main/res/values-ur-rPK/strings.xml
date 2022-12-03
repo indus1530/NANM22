@@ -130,18 +130,28 @@
     <string name="options" translatable="false">Options</string>
 
 
-    <string name="ending">سرگرمي ختم ٿيڻ</string>
+    <string name="ending">Ending Activity</string>
     <string name="Q_istatus">istatus</string>
-    <string name="istatus">گھر جي سوالن جي انٽرويو جو نتيجو</string>
-    <string name="istatusi">ٽيم جي اڳواڻ سان مڪمل نه ٿيل نتيجن تي بحث ڪريو</string>
-    <string name="istatus01">پورو ٿيو</string>
-    <string name="istatus02">گهر ۾ نه ڪو گهر جو ميمبر آهي نه گهر ۾ ڪو قابل جوابدار</string>
-    <string name="istatus03">وڌايل مدي تائين سڄو گھر غير حاضر</string>
-    <string name="istatus04">انڪار ڪري ڇڏيو</string>
-    <string name="istatus05">رهائش خالي يا پتو، رهائش نه آهي</string>
-    <string name="istatus06">رهائش نه ملي</string>
-    <string name="istatus07">هن گهر ۾ 06–23 مهينن جو ڪو به ٻار ناهي</string>
-    <string name="istatus96">ڪو ٻيو سبب (وضاحت ڪريو)</string>
+    <string name="istatus">گھرانے کے انٹرویوکا نتیجہ</string>
+    <string name="istatusi">انٹرویومکمل نہ ہونے کی صورت میں ٹیم لیڈر سے مشورہ کریں</string>
+    <string name="istatus01">مکمل </string>
+    <string name="istatus02"> گھرانے کا کوئی فرد یا باصلاحیت جواب دہندہ گھر پر موجود نہیں </string>
+    <string name="istatus03">گھرانے کے تمام افراد لمبے عرصے کے لیے گھر سے غیر حاضر تھے</string>
+    <string name="istatus04">انکار کردیا</string>
+    <string name="istatus05">خالی گھر/غیر رہائشی</string>
+    <string name="istatus06">گھر نہیں ملا </string>
+    <string name="istatus07">10-15 سال کے درمیان کوئی نوجوان نہیں۔</string>
+    <string name="istatus96">دیگر وضاحت کریں</string>
+
+    <string name="a114">گھرانے کے انٹرویوکا نتیجہ:انٹرویومکمل نہ ہونے کی صورت میں ٹیم لیڈر سے مشورہ کریں</string>
+    <string name="a114a">مکمل </string>
+    <string name="a114b"> گھرانے کا کوئی فرد یا باصلاحیت جواب دہندہ گھر پر موجود نہیں </string>
+    <string name="a114c">گھرانے کے تمام افراد لمبے عرصے کے لیے گھر سے غیر حاضر تھے</string>
+    <string name="a114d">انکار کردیا</string>
+    <string name="a114e">خالی گھر/غیر رہائشی</string>
+    <string name="a114f">گھر نہیں ملا </string>
+    <string name="a114g">10-15 سال کے درمیان کوئی نوجوان نہیں۔</string>
+    <string name="a11496">دیگر وضاحت کریں</string>
 
     <string name="title_activity_change_password">ChangePasswordActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -1500,6 +1510,7 @@
 
     <!--NANM-->
     <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">گھرانے کی شناخت اوررضامندی:  سیکشن ااے 1 :  گھرانے کی شناخت اوررضامندی</string>
     <string name="sectiona1_mainheading">سیکشن ااے 1:</string>
     <string name="sectiona3socioeconomicstatusofhouseholdss_mainheading">گھرانے کی اقتصادی اور سماجی حیثیت</string>
@@ -1597,15 +1608,6 @@
     <string name="a113">کیا آپ کے گھرانے میں 15 سے10 سال کی عمرکا کوئی بچہ ہے؟</string>
     <string name="a113a">ہاں</string>
     <string name="a113b">ہاں</string>
-    <string name="a114">گھرانے کے انٹرویوکا نتیجہ:انٹرویومکمل نہ ہونے کی صورت میں ٹیم لیڈر سے مشورہ کریں</string>
-    <string name="a114a">مکمل </string>
-    <string name="a114b"> گھرانے کا کوئی فرد یا باصلاحیت جواب دہندہ گھر پر موجود نہیں </string>
-    <string name="a114c">گھرانے کے تمام افراد لمبے عرصے کے لیے گھر سے غیر حاضر تھے</string>
-    <string name="a114d">انکار کردیا</string>
-    <string name="a114e">خالی گھر/غیر رہائشی</string>
-    <string name="a114f">گھر نہیں ملا </string>
-    <string name="a114g">10-15 سال کے درمیان کوئی نوجوان نہیں۔</string>
-    <string name="a11496">دیگر وضاحت کریں</string>
     <string name="a301">آپ عام طور پر اپنےگھر میں کون سی زبان بولتے ہیں؟</string>
     <string name="a301a">پنجابی</string>
     <string name="a301b">ہند کو</string>
@@ -1868,6 +1870,7 @@
     <string name="a321ia">ہاں </string>
     <string name="a321ib">نہیں</string>
     <string name="a322">آپ کے گھرانے کے افراد عام طورپر کس قسم کا بیت الخلاء استعمال کرتے ہیں ؟</string>
+    <string name="a322info">Note for DC: (If not possible to determine, ask permission to observe the facility)</string>
     <string name="a322a_title"> فلش یا انڈیل کر پانی ڈالنے والا</string>
     <string name="a322a"> فلش   سیوریج کے نظام سے منسلک  </string>
     <string name="a322b">فلش سپٹک ٹینک سے منسلک  </string>
@@ -1923,8 +1926,8 @@
     <string name="a332c">معلوم نہیں</string>
     <string name="a331">آپ کے گھر کی آمدنی کا بنیادی ذریعہ کیا ہے؟</string>
     <string name="a331a">غیرہنرمندمزدور</string>
-    <string name="a331f">Professional public </string>
-    <string name="a331g">Professional private </string>
+    <string name="a331f">ہنرمند پیشہ عوامی</string>
+    <string name="a331g">نجی ہنرمند پیشہ </string>
     <string name="a333">کیا آپ یا آپ کے خاندان کو نقد یا کسی قسم کی شکل میں کوئی مدد ملتی ہے؟ (ایک سے زیادہ منتخب کریں)</string>
     <string name="a333a">بے نظیر انکم سپورٹ پروگرام</string>
     <string name="a333b">ماہانہ فوڈ واؤچر</string>
@@ -1934,7 +1937,7 @@
     <string name="a333x">دیگر وضاحت کریں  </string>
     <string name="a331b">ہنرمند مزدور </string>
     <string name="a331c">زراعت</string>
-    <string name="a331d">Domestic service </string>
+    <string name="a331d">گھریلو خدمت</string>
     <string name="a331e">فروخت اور خدمات</string>
     <string name="a331x">دیگر وضاحت کریں  </string>
     <string name="a334">یہ مدد کون کرتا ہے؟</string>
@@ -2477,7 +2480,8 @@
     <string name="cb404c">کافی بری </string>
     <string name="cb404d">بہت بری </string>
     <string name="a201">لائن نمبر</string>
-    <string name="a202">برا ئےمہربانی پہلے مجھے ان تمام افراد کانام بتائیں جو عام طور پر یہاں رہتے ہیں، خاندان کے سربراہ سے شروع کریںگھر کے دیگر  افراد کے بارے میں پوچھیں</string>
+    <string name="a202t">برا ئےمہربانی پہلے مجھے ان تمام افراد کانام بتائیں جو عام طور پر یہاں رہتے ہیں، خاندان کے سربراہ سے شروع کریںگھر کے دیگر  افراد کے بارے میں پوچھیں</string>
+    <string name="a202">نام</string>
     <string name="a203">گھر کے سربراہ سے رشتہ ؟</string>
     <string name="a203a">گھر کا سربراہ</string>
     <string name="a203b">بیوی/شوہر </string>
