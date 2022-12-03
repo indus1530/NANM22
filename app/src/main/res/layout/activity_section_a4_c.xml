@@ -1274,28 +1274,32 @@
                         <RadioGroup
                             android:id="@+id/a415"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/a415a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a415.equals(`1`)}"
                                 android:onClick="@{()->form.setA415(`1`)}"
                                 android:text="@string/a415a" />
 
                             <RadioButton
                                 android:id="@+id/a415b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a415.equals(`2`)}"
                                 android:onClick="@{()->form.setA415(`2`)}"
                                 android:text="@string/a415b" />
 
                             <RadioButton
                                 android:id="@+id/a41598"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a415.equals(`98`)}"
                                 android:onClick="@{()->form.setA415(`98`)}"
                                 android:text="@string/a41598" />
@@ -1627,7 +1631,8 @@
                 <!-- a418  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa418"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a417.equals(`13`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
