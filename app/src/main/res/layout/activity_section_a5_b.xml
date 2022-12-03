@@ -110,7 +110,8 @@
                 <!-- a515  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa515"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a514.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -187,17 +188,18 @@
                 <!-- a516  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa516"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a514.equals(`1`) ? View.VISIBLE : View.GONE}">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/Q_a516" />
 
@@ -301,7 +303,8 @@
                 <!-- a518  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa518"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a517.equals(`2`) || form.a517.equals(`98`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -465,6 +468,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a51896.equals(`96`)}"
+                                android:enabled="@{!form.a51898.equals(`98`)}"
                                 android:onClick="@{()->form.setA51896(form.a51896.equals(`96`)?``:`96`)}"
                                 android:text="@string/a51896" />
 
@@ -483,7 +487,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a51898.equals(`98`)}"
-                                android:enabled="@{!form.a51898.equals(`98`)}"
                                 android:onClick="@{()->form.setA51898(form.a51898.equals(`98`)?``:`98`)}"
                                 android:text="@string/a51898" />
                         </LinearLayout>
@@ -546,8 +549,8 @@
                                 android:id="@+id/a51901"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a519.equals(``)}"
-                                android:onClick="@{()->form.setA519(``)}"
+                                android:checked="@{form.a519.equals(`1`)}"
+                                android:onClick="@{()->form.setA519(`1`)}"
                                 android:text="@string/a51901" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -559,7 +562,7 @@
                                 android:maxLength="3"
                                 android:tag="a51901"
                                 android:text="@={form.a51901x}"
-                                android:visibility="@{form.a519.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:visibility="@{form.a519.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -568,16 +571,16 @@
                                 android:id="@+id/a51902"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a519.equals(`1`)}"
-                                android:onClick="@{()->form.setA519(`1`)}"
+                                android:checked="@{form.a519.equals(`2`)}"
+                                android:onClick="@{()->form.setA519(`2`)}"
                                 android:text="@string/a51902" />
 
                             <RadioButton
                                 android:id="@+id/a51903"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a519.equals(`2`)}"
-                                android:onClick="@{()->form.setA519(`2`)}"
+                                android:checked="@{form.a519.equals(`3`)}"
+                                android:onClick="@{()->form.setA519(`3`)}"
                                 android:text="@string/a51903" />
                         </RadioGroup>
                     </LinearLayout>
@@ -796,7 +799,6 @@
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.a52098.equals(`98`)}"
-                                android:enabled="@{!form.a52098.equals(`98`)}"
                                 android:onClick="@{()->form.setA52098(form.a52098.equals(`98`)?``:`98`)}"
                                 android:text="@string/a52098" />
 
@@ -814,6 +816,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.a52096.equals(`96`)}"
+                                android:enabled="@{!form.a52098.equals(`98`)}"
                                 android:onClick="@{()->form.setA52096(form.a52096.equals(`96`)?``:`96`)}"
                                 android:text="@string/a52096" />
 
