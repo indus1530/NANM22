@@ -1645,8 +1645,8 @@
     <string name="a305e">Stone with mud  </string>
     <string name="a305f">Uncovered adobe</string>
     <string name="a305g">Plywood </string>
-    <string name="a305h">Cardboard گّتہ</string>
-    <string name="a305i">Reused wood استعمال شدہ لکڑی</string>
+    <string name="a305h">Cardboard</string>
+    <string name="a305i">Reused wood</string>
     <string name="a305j">Cloth/Curtain/Tent </string>
     <string name="a305k_title">Finished walls</string>
     <string name="a305k">Cement </string>
@@ -1899,8 +1899,8 @@
     <string name="a332c">Don’t Know </string>
     <string name="a331">What is the main source of income of your household? </string>
     <string name="a331a">Unskilled manual </string>
-    <string name="a331f">ہنرمند پیشہ عوامی</string>
-    <string name="a331g">نجی ہنرمند پیشہ </string>
+    <string name="a331f">Professional public </string>
+    <string name="a331g">Professional private </string>
     <string name="a333">Do you or your family receive any support in the form of cash or kind? (select as many as apply) </string>
     <string name="a333a">BISP </string>
     <string name="a333b">Food Voucher per month </string>
@@ -1910,7 +1910,7 @@
     <string name="a333x">Other specify </string>
     <string name="a331b">Skilled manual</string>
     <string name="a331c">Agriculture</string>
-    <string name="a331d">گھریلو خدمت</string>
+    <string name="a331d">Domestic service </string>
     <string name="a331e">Sales and services </string>
     <string name="a331x">Other specify </string>
     <string name="a334">Who provides this support? (select as many as apply)</string>

@@ -1926,8 +1926,8 @@
     <string name="a332c">معلوم نہیں</string>
     <string name="a331">آپ کے گھر کی آمدنی کا بنیادی ذریعہ کیا ہے؟</string>
     <string name="a331a">غیرہنرمندمزدور</string>
-    <string name="a331f">Professional public </string>
-    <string name="a331g">Professional private </string>
+    <string name="a331f">ہنرمند پیشہ عوامی</string>
+    <string name="a331g">نجی ہنرمند پیشہ </string>
     <string name="a333">کیا آپ یا آپ کے خاندان کو نقد یا کسی قسم کی شکل میں کوئی مدد ملتی ہے؟ (ایک سے زیادہ منتخب کریں)</string>
     <string name="a333a">بے نظیر انکم سپورٹ پروگرام</string>
     <string name="a333b">ماہانہ فوڈ واؤچر</string>
@@ -1937,7 +1937,7 @@
     <string name="a333x">دیگر وضاحت کریں  </string>
     <string name="a331b">ہنرمند مزدور </string>
     <string name="a331c">زراعت</string>
-    <string name="a331d">Domestic service </string>
+    <string name="a331d">گھریلو خدمت</string>
     <string name="a331e">فروخت اور خدمات</string>
     <string name="a331x">دیگر وضاحت کریں  </string>
     <string name="a334">یہ مدد کون کرتا ہے؟</string>
