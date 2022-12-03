@@ -125,20 +125,23 @@
                         <RadioGroup
                             android:id="@+id/c201"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c201a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c201.equals(`1`)}"
                                 android:onClick="@{()->form.setC201(`1`)}"
                                 android:text="@string/c201a" />
 
                             <RadioButton
                                 android:id="@+id/c201b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c201.equals(`2`)}"
                                 android:onClick="@{()->form.setC201(`2`)}"
                                 android:text="@string/c201b" />
@@ -307,20 +310,23 @@
                         <RadioGroup
                             android:id="@+id/c203"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c203a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c203.equals(`1`)}"
                                 android:onClick="@{()->form.setC203(`1`)}"
                                 android:text="@string/c203a" />
 
                             <RadioButton
                                 android:id="@+id/c203b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c203.equals(`2`)}"
                                 android:onClick="@{()->form.setC203(`2`)}"
                                 android:text="@string/c203b" />
@@ -425,27 +431,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_c205" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/c205" />
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:backgroundTint="#DCFAE5"
+                            android:gravity="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:text="@string/c205a" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/c205a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c205a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="####"
+                            android:gravity="center"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.c205a}"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
+
+
+                    </LinearLayout>
 
                         <CheckBox
                             android:id="@+id/c20598"
@@ -468,27 +504,55 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_c206" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/c206" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c206a" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                    <TextView
+                        android:backgroundTint="#DCFAE5"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/c206a" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/c206a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c206a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="####"
+                            android:gravity="center"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.c206a}"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
+                    </LinearLayout>
 
                         <CheckBox
                             android:id="@+id/c20698"
@@ -534,11 +598,12 @@
                             android:id="@+id/c207"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c207"
+                            android:hint="##"
+                            android:gravity="center"
                             android:inputType="number"
                             android:maxLength="1"
                             android:text="@={form.c207}"
-                            app:maxValue="0"
+                            app:maxValue="12"
                             app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
@@ -576,20 +641,23 @@
                         <RadioGroup
                             android:id="@+id/c208"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c208a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c208.equals(`1`)}"
                                 android:onClick="@{()->form.setC208(`1`)}"
                                 android:text="@string/c208a" />
 
                             <RadioButton
                                 android:id="@+id/c208b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c208.equals(`2`)}"
                                 android:onClick="@{()->form.setC208(`2`)}"
                                 android:text="@string/c208b" />
@@ -993,20 +1061,23 @@
                         <RadioGroup
                             android:id="@+id/c213"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c213a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c213.equals(`1`)}"
                                 android:onClick="@{()->form.setC213(`1`)}"
                                 android:text="@string/c213a" />
 
                             <RadioButton
                                 android:id="@+id/c213b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c213.equals(`2`)}"
                                 android:onClick="@{()->form.setC213(`2`)}"
                                 android:text="@string/c213b" />
@@ -1046,20 +1117,23 @@
                         <RadioGroup
                             android:id="@+id/c214"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c214a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c214.equals(`1`)}"
                                 android:onClick="@{()->form.setC214(`1`)}"
                                 android:text="@string/c214a" />
 
                             <RadioButton
                                 android:id="@+id/c214b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.c214.equals(`2`)}"
                                 android:onClick="@{()->form.setC214(`2`)}"
                                 android:text="@string/c214b" />
