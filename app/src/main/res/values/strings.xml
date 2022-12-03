@@ -117,8 +117,19 @@
     <string name="istatus04"> Refused </string>
     <string name="istatus05"> Dwelling vacant or address not a dwelling </string>
     <string name="istatus06"> Dwelling not found </string>
-    <string name="istatus07"> No child of 06-23 months in this household </string>
+    <string name="istatus07"> No adolescents between 10-15 years </string>
     <string name="istatus96"> Other (Specify) </string>
+
+    <string name="a114">Result of Household Questionnaire interview: Discuss any result not completed with team leader.</string>
+    <string name="a114a">Completed</string>
+    <string name="a114b">No household member at home or no competent respondent at home at time of visit</string>
+    <string name="a114c">Entire household absent for extended period of time </string>
+    <string name="a114d">Refused</string>
+    <string name="a114e">Dwelling vacant or address not a dwelling </string>
+    <string name="a114f">Dwelling not found</string>
+    <string name="a114g">No adolescents between 10-15 years </string>
+    <string name="a11496">Other (Specify</string>
+
 
     <string name="title_activity_change_password">ChangePasswordActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -1472,6 +1483,7 @@
 
     <!--NANM-->
     <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">HOUSEHOLD IDENTIFICATION &amp; CONSENT </string>
     <string name="sectiona1_mainheading"> SECTION A1:</string>
     <string name="sectiona3socioeconomicstatusofhouseholdss_mainheading">SOCIO ECONOMIC STATUS OF HOUSEHOLD (SS)</string>
@@ -1569,15 +1581,6 @@
     <string name="a113">Does your HH Have a  young adolescents aged 5-10-year? </string>
     <string name="a113a">Yes </string>
     <string name="a113b">No </string>
-    <string name="a114">Result of Household Questionnaire interview: Discuss any result not completed with team leader.</string>
-    <string name="a114a">Completed</string>
-    <string name="a114b">No household member at home or no competent respondent at home at time of visit</string>
-    <string name="a114c">Entire household absent for extended period of time </string>
-    <string name="a114d">Refused</string>
-    <string name="a114e">Dwelling vacant or address not a dwelling </string>
-    <string name="a114f">Dwelling not found</string>
-    <string name="a114g">No adolescents between 10-15 years </string>
-    <string name="a11496">Other (Specify</string>
     <string name="a301">What language do you usually speak in your household?</string>
     <string name="a301a">Punjabi </string>
     <string name="a301b">Hindko </string>

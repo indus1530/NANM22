@@ -136,6 +136,7 @@
 
                 <!-- concent  Title   -->
                 <androidx.cardview.widget.CardView
+                    android:visibility="gone"
                     android:id="@+id/fldGrpCVconcent"
                     style="@style/cardView">
 

@@ -2,7 +2,6 @@ package edu.aku.abdulsajid.nanm2022.ui.lists;
 
 import static android.view.View.VISIBLE;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.allAdolList;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.allChildrenList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.allMWRAList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
@@ -44,6 +43,7 @@ import edu.aku.abdulsajid.nanm2022.databinding.ActivityFamilyListBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA3AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -101,9 +101,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         }
 
                         /**
-                         *  Populate All Adolescent between 10-19
+                         *  Populate All Adolescent between 10-15
                          */
-                        if (MainApp.familyMember.getA211().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) > 9 && Integer.parseInt(MainApp.familyMember.getA206yy()) < 20) {
+                        if (MainApp.familyMember.getA211().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) > 9 && Integer.parseInt(MainApp.familyMember.getA206yy()) < 15) {
                             MainApp.allAdolList.add(MainApp.familyMember);
 
                         }
@@ -198,7 +198,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 }
 
                 // Populate All Adolescent
-                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 20)
+                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 15)
                     MainApp.allAdolList.add(fm);
 
 
@@ -233,7 +233,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             if (MainApp.familyList.get(i).getIndexed().equals("1")) {
                 selectedMWRA = familyList.get(i).getA201();
                 bi.btnRand.setVisibility(View.INVISIBLE);
-                //bi.btnContinue.setVisibility(View.VISIBLE);
                 bi.btnContinue.setEnabled(true);
                 bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
                 // break;
@@ -324,14 +323,14 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         finish();
-//        startActivity(new Intent(this, selectedMWRA.equals("") ? EndingActivity.class : SectionE1AActivity.class).putExtra("complete", true));
+        startActivity(new Intent(this, selectedAdol.equals("") ? EndingActivity.class : SectionA3AActivity.class).putExtra("complete", true));
 
     }
 
 
     private void proceedSelect() {
 
-        if (!allMWRAList.isEmpty()) {
+        /*if (!allMWRAList.isEmpty()) {
             // Select MWRA
             MainApp.familyMember = allMWRAList.get(new Random().nextInt(allMWRAList.size()));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
@@ -345,9 +344,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         if (!allChildrenList.isEmpty()) {
 
-            /**
-             * Select youngest child on basis of age in days
-             * */
+            *//**
+         * Select youngest child on basis of age in days
+         * *//*
             int youngestChildDays = 0;
             for (FamilyMembers ch : allChildrenList) {
                 if (ch.getA213().equals(selectedMWRA)) {
@@ -373,7 +372,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             } else
                 Toast.makeText(this, "Selected MWRA HAVE NO under 5 CHILD", Toast.LENGTH_SHORT).show();
 
-        } else Toast.makeText(this, "NO CHILD IN HH", Toast.LENGTH_SHORT).show();
+        } else Toast.makeText(this, "NO CHILD IN HH", Toast.LENGTH_SHORT).show();*/
 
 
         // Updating database to mark selected Adol

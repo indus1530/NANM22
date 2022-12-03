@@ -82,5 +82,7 @@
     <color name="girl_pink">#FF80AB</color>
     <color name="boy_blue">#82B1FF</color>
     <color name="red">#990000</color>
+    <color name="orange">#EEDA773B</color>
+    <color name="grayOverlay">#7f7f7f7f</color>
 
 </resources>
