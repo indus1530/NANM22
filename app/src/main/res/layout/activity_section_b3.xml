@@ -225,16 +225,22 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b302check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b302a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302a.equals(`1`)}"
                                 android:onClick="@{()->form.setB302a(form.b302a.equals(`1`)?``:`1`)}"
@@ -242,7 +248,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302b.equals(`2`)}"
                                 android:onClick="@{()->form.setB302b(form.b302b.equals(`2`)?``:`2`)}"
@@ -250,7 +256,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302c.equals(`3`)}"
                                 android:onClick="@{()->form.setB302c(form.b302c.equals(`3`)?``:`3`)}"
@@ -258,7 +264,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302d.equals(`4`)}"
                                 android:onClick="@{()->form.setB302d(form.b302d.equals(`4`)?``:`4`)}"
@@ -266,7 +272,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302e.equals(`5`)}"
                                 android:onClick="@{()->form.setB302e(form.b302e.equals(`5`)?``:`5`)}"
@@ -274,7 +280,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302f.equals(`6`)}"
                                 android:onClick="@{()->form.setB302f(form.b302f.equals(`6`)?``:`6`)}"
@@ -282,7 +288,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302g.equals(`7`)}"
                                 android:onClick="@{()->form.setB302g(form.b302g.equals(`7`)?``:`7`)}"
@@ -290,7 +296,7 @@
 
                             <CheckBox
                                 android:id="@+id/b302h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b302h.equals(`8`)}"
                                 android:onClick="@{()->form.setB302h(form.b302h.equals(`8`)?``:`8`)}"
@@ -298,22 +304,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30296"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30296.equals(`96`)}"
                                 android:onClick="@{()->form.setB30296(form.b30296.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30296" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30296x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30296"
-                                android:tag="b30296"
-                                android:text="@={form.b30296x}"
-                                android:visibility="@{form.b30296.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30296x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30296"
+                            android:tag="b30296"
+                            android:text="@={form.b30296x}"
+                            android:visibility="@{form.b30296.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -346,16 +352,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b303check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b303a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303a.equals(`1`)}"
                                 android:onClick="@{()->form.setB303a(form.b303a.equals(`1`)?``:`1`)}"
@@ -363,7 +374,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303b.equals(`2`)}"
                                 android:onClick="@{()->form.setB303b(form.b303b.equals(`2`)?``:`2`)}"
@@ -371,7 +382,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303c.equals(`3`)}"
                                 android:onClick="@{()->form.setB303c(form.b303c.equals(`3`)?``:`3`)}"
@@ -379,7 +390,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303d.equals(`4`)}"
                                 android:onClick="@{()->form.setB303d(form.b303d.equals(`4`)?``:`4`)}"
@@ -387,7 +398,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303e.equals(`5`)}"
                                 android:onClick="@{()->form.setB303e(form.b303e.equals(`5`)?``:`5`)}"
@@ -395,7 +406,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303f.equals(`6`)}"
                                 android:onClick="@{()->form.setB303f(form.b303f.equals(`6`)?``:`6`)}"
@@ -403,7 +414,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303g.equals(`7`)}"
                                 android:onClick="@{()->form.setB303g(form.b303g.equals(`7`)?``:`7`)}"
@@ -411,7 +422,7 @@
 
                             <CheckBox
                                 android:id="@+id/b303h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b303h.equals(`8`)}"
                                 android:onClick="@{()->form.setB303h(form.b303h.equals(`8`)?``:`8`)}"
@@ -419,22 +430,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30396"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30396.equals(`96`)}"
                                 android:onClick="@{()->form.setB30396(form.b30396.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30396" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30396x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30396"
-                                android:tag="b30396"
-                                android:text="@={form.b30396x}"
-                                android:visibility="@{form.b30396.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30396x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30396"
+                            android:tag="b30396"
+                            android:text="@={form.b30396x}"
+                            android:visibility="@{form.b30396.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -467,16 +478,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b304check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b304a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304a.equals(`1`)}"
                                 android:onClick="@{()->form.setB304a(form.b304a.equals(`1`)?``:`1`)}"
@@ -484,7 +500,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304b.equals(`2`)}"
                                 android:onClick="@{()->form.setB304b(form.b304b.equals(`2`)?``:`2`)}"
@@ -492,7 +508,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304c.equals(`3`)}"
                                 android:onClick="@{()->form.setB304c(form.b304c.equals(`3`)?``:`3`)}"
@@ -500,7 +516,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304d.equals(`4`)}"
                                 android:onClick="@{()->form.setB304d(form.b304d.equals(`4`)?``:`4`)}"
@@ -508,7 +524,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304e.equals(`5`)}"
                                 android:onClick="@{()->form.setB304e(form.b304e.equals(`5`)?``:`5`)}"
@@ -516,7 +532,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304f.equals(`6`)}"
                                 android:onClick="@{()->form.setB304f(form.b304f.equals(`6`)?``:`6`)}"
@@ -524,7 +540,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304g.equals(`7`)}"
                                 android:onClick="@{()->form.setB304g(form.b304g.equals(`7`)?``:`7`)}"
@@ -532,7 +548,7 @@
 
                             <CheckBox
                                 android:id="@+id/b304h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b304h.equals(`8`)}"
                                 android:onClick="@{()->form.setB304h(form.b304h.equals(`8`)?``:`8`)}"
@@ -540,22 +556,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30496"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30496.equals(`96`)}"
                                 android:onClick="@{()->form.setB30496(form.b30496.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30496" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30496x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30496"
-                                android:tag="b30496"
-                                android:text="@={form.b30496x}"
-                                android:visibility="@{form.b30496.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30496x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30496"
+                            android:tag="b30496"
+                            android:text="@={form.b30496x}"
+                            android:visibility="@{form.b30496.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -588,16 +604,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b305check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b305a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305a.equals(`1`)}"
                                 android:onClick="@{()->form.setB305a(form.b305a.equals(`1`)?``:`1`)}"
@@ -605,7 +626,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305b.equals(`2`)}"
                                 android:onClick="@{()->form.setB305b(form.b305b.equals(`2`)?``:`2`)}"
@@ -613,7 +634,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305c.equals(`3`)}"
                                 android:onClick="@{()->form.setB305c(form.b305c.equals(`3`)?``:`3`)}"
@@ -621,7 +642,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305d.equals(`4`)}"
                                 android:onClick="@{()->form.setB305d(form.b305d.equals(`4`)?``:`4`)}"
@@ -629,7 +650,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305e.equals(`5`)}"
                                 android:onClick="@{()->form.setB305e(form.b305e.equals(`5`)?``:`5`)}"
@@ -637,7 +658,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305f.equals(`6`)}"
                                 android:onClick="@{()->form.setB305f(form.b305f.equals(`6`)?``:`6`)}"
@@ -645,7 +666,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305g.equals(`7`)}"
                                 android:onClick="@{()->form.setB305g(form.b305g.equals(`7`)?``:`7`)}"
@@ -653,7 +674,7 @@
 
                             <CheckBox
                                 android:id="@+id/b305h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b305h.equals(`8`)}"
                                 android:onClick="@{()->form.setB305h(form.b305h.equals(`8`)?``:`8`)}"
@@ -661,22 +682,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30596"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30596.equals(`96`)}"
                                 android:onClick="@{()->form.setB30596(form.b30596.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30596" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30596x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30596"
-                                android:tag="b30596"
-                                android:text="@={form.b30596x}"
-                                android:visibility="@{form.b30596.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30596x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30596"
+                            android:tag="b30596"
+                            android:text="@={form.b30596x}"
+                            android:visibility="@{form.b30596.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -709,16 +730,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b306check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b306a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306a.equals(`1`)}"
                                 android:onClick="@{()->form.setB306a(form.b306a.equals(`1`)?``:`1`)}"
@@ -726,7 +752,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306b.equals(`2`)}"
                                 android:onClick="@{()->form.setB306b(form.b306b.equals(`2`)?``:`2`)}"
@@ -734,7 +760,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306c.equals(`3`)}"
                                 android:onClick="@{()->form.setB306c(form.b306c.equals(`3`)?``:`3`)}"
@@ -742,7 +768,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306d.equals(`4`)}"
                                 android:onClick="@{()->form.setB306d(form.b306d.equals(`4`)?``:`4`)}"
@@ -750,7 +776,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306e.equals(`5`)}"
                                 android:onClick="@{()->form.setB306e(form.b306e.equals(`5`)?``:`5`)}"
@@ -758,7 +784,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306f.equals(`6`)}"
                                 android:onClick="@{()->form.setB306f(form.b306f.equals(`6`)?``:`6`)}"
@@ -766,7 +792,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306g.equals(`7`)}"
                                 android:onClick="@{()->form.setB306g(form.b306g.equals(`7`)?``:`7`)}"
@@ -774,7 +800,7 @@
 
                             <CheckBox
                                 android:id="@+id/b306h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b306h.equals(`8`)}"
                                 android:onClick="@{()->form.setB306h(form.b306h.equals(`8`)?``:`8`)}"
@@ -782,22 +808,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30696"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30696.equals(`96`)}"
                                 android:onClick="@{()->form.setB30696(form.b30696.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30696" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30696x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30696"
-                                android:tag="b30696"
-                                android:text="@={form.b30696x}"
-                                android:visibility="@{form.b30696.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30696x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30696"
+                            android:tag="b30696"
+                            android:text="@={form.b30696x}"
+                            android:visibility="@{form.b30696.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -830,16 +856,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b307check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b307a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307a.equals(`1`)}"
                                 android:onClick="@{()->form.setB307a(form.b307a.equals(`1`)?``:`1`)}"
@@ -847,7 +878,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307b.equals(`2`)}"
                                 android:onClick="@{()->form.setB307b(form.b307b.equals(`2`)?``:`2`)}"
@@ -855,7 +886,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307c.equals(`3`)}"
                                 android:onClick="@{()->form.setB307c(form.b307c.equals(`3`)?``:`3`)}"
@@ -863,7 +894,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307d.equals(`4`)}"
                                 android:onClick="@{()->form.setB307d(form.b307d.equals(`4`)?``:`4`)}"
@@ -871,7 +902,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307e.equals(`5`)}"
                                 android:onClick="@{()->form.setB307e(form.b307e.equals(`5`)?``:`5`)}"
@@ -879,7 +910,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307f.equals(`6`)}"
                                 android:onClick="@{()->form.setB307f(form.b307f.equals(`6`)?``:`6`)}"
@@ -887,7 +918,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307g.equals(`7`)}"
                                 android:onClick="@{()->form.setB307g(form.b307g.equals(`7`)?``:`7`)}"
@@ -895,7 +926,7 @@
 
                             <CheckBox
                                 android:id="@+id/b307h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b307h.equals(`8`)}"
                                 android:onClick="@{()->form.setB307h(form.b307h.equals(`8`)?``:`8`)}"
@@ -903,22 +934,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30796"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30796.equals(`96`)}"
                                 android:onClick="@{()->form.setB30796(form.b30796.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30796" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30796x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30796"
-                                android:tag="b30796"
-                                android:text="@={form.b30796x}"
-                                android:visibility="@{form.b30796.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30796x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30796"
+                            android:tag="b30796"
+                            android:text="@={form.b30796x}"
+                            android:visibility="@{form.b30796.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -951,16 +982,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b308check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b308a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308a.equals(`1`)}"
                                 android:onClick="@{()->form.setB308a(form.b308a.equals(`1`)?``:`1`)}"
@@ -968,7 +1004,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308b.equals(`2`)}"
                                 android:onClick="@{()->form.setB308b(form.b308b.equals(`2`)?``:`2`)}"
@@ -976,7 +1012,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308c.equals(`3`)}"
                                 android:onClick="@{()->form.setB308c(form.b308c.equals(`3`)?``:`3`)}"
@@ -984,7 +1020,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308d.equals(`4`)}"
                                 android:onClick="@{()->form.setB308d(form.b308d.equals(`4`)?``:`4`)}"
@@ -992,7 +1028,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308e.equals(`5`)}"
                                 android:onClick="@{()->form.setB308e(form.b308e.equals(`5`)?``:`5`)}"
@@ -1000,7 +1036,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308f.equals(`6`)}"
                                 android:onClick="@{()->form.setB308f(form.b308f.equals(`6`)?``:`6`)}"
@@ -1008,7 +1044,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308g.equals(`7`)}"
                                 android:onClick="@{()->form.setB308g(form.b308g.equals(`7`)?``:`7`)}"
@@ -1016,7 +1052,7 @@
 
                             <CheckBox
                                 android:id="@+id/b308h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b308h.equals(`8`)}"
                                 android:onClick="@{()->form.setB308h(form.b308h.equals(`8`)?``:`8`)}"
@@ -1024,22 +1060,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30896"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30896.equals(`96`)}"
                                 android:onClick="@{()->form.setB30896(form.b30896.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30896" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30896x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30896"
-                                android:tag="b30896"
-                                android:text="@={form.b30896x}"
-                                android:visibility="@{form.b30896.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30896x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30896"
+                            android:tag="b30896"
+                            android:text="@={form.b30896x}"
+                            android:visibility="@{form.b30896.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1072,16 +1108,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b309check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b309a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309a.equals(`1`)}"
                                 android:onClick="@{()->form.setB309a(form.b309a.equals(`1`)?``:`1`)}"
@@ -1089,7 +1130,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309b.equals(`2`)}"
                                 android:onClick="@{()->form.setB309b(form.b309b.equals(`2`)?``:`2`)}"
@@ -1097,7 +1138,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309c.equals(`3`)}"
                                 android:onClick="@{()->form.setB309c(form.b309c.equals(`3`)?``:`3`)}"
@@ -1105,7 +1146,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309d.equals(`4`)}"
                                 android:onClick="@{()->form.setB309d(form.b309d.equals(`4`)?``:`4`)}"
@@ -1113,7 +1154,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309e.equals(`5`)}"
                                 android:onClick="@{()->form.setB309e(form.b309e.equals(`5`)?``:`5`)}"
@@ -1121,7 +1162,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309f.equals(`6`)}"
                                 android:onClick="@{()->form.setB309f(form.b309f.equals(`6`)?``:`6`)}"
@@ -1129,7 +1170,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309g.equals(`7`)}"
                                 android:onClick="@{()->form.setB309g(form.b309g.equals(`7`)?``:`7`)}"
@@ -1137,7 +1178,7 @@
 
                             <CheckBox
                                 android:id="@+id/b309h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b309h.equals(`8`)}"
                                 android:onClick="@{()->form.setB309h(form.b309h.equals(`8`)?``:`8`)}"
@@ -1145,22 +1186,22 @@
 
                             <CheckBox
                                 android:id="@+id/b30996"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30996.equals(`96`)}"
                                 android:onClick="@{()->form.setB30996(form.b30996.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30996" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30996x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30996"
-                                android:tag="b30996"
-                                android:text="@={form.b30996x}"
-                                android:visibility="@{form.b30996.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30996x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30996"
+                            android:tag="b30996"
+                            android:text="@={form.b30996x}"
+                            android:visibility="@{form.b30996.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1193,16 +1234,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b310check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b310a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310a.equals(`1`)}"
                                 android:onClick="@{()->form.setB310a(form.b310a.equals(`1`)?``:`1`)}"
@@ -1210,7 +1256,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310b.equals(`2`)}"
                                 android:onClick="@{()->form.setB310b(form.b310b.equals(`2`)?``:`2`)}"
@@ -1218,7 +1264,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310c.equals(`3`)}"
                                 android:onClick="@{()->form.setB310c(form.b310c.equals(`3`)?``:`3`)}"
@@ -1226,7 +1272,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310d.equals(`4`)}"
                                 android:onClick="@{()->form.setB310d(form.b310d.equals(`4`)?``:`4`)}"
@@ -1234,7 +1280,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310e.equals(`5`)}"
                                 android:onClick="@{()->form.setB310e(form.b310e.equals(`5`)?``:`5`)}"
@@ -1242,7 +1288,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310f.equals(`6`)}"
                                 android:onClick="@{()->form.setB310f(form.b310f.equals(`6`)?``:`6`)}"
@@ -1250,7 +1296,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310g.equals(`7`)}"
                                 android:onClick="@{()->form.setB310g(form.b310g.equals(`7`)?``:`7`)}"
@@ -1258,7 +1304,7 @@
 
                             <CheckBox
                                 android:id="@+id/b310h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b310h.equals(`8`)}"
                                 android:onClick="@{()->form.setB310h(form.b310h.equals(`8`)?``:`8`)}"
@@ -1266,22 +1312,22 @@
 
                             <CheckBox
                                 android:id="@+id/b31096"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b31096.equals(`96`)}"
                                 android:onClick="@{()->form.setB31096(form.b31096.equals(`96`)?``:`96`)}"
                                 android:text="@string/b31096" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b31096x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b31096"
-                                android:tag="b31096"
-                                android:text="@={form.b31096x}"
-                                android:visibility="@{form.b31096.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b31096x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b31096"
+                            android:tag="b31096"
+                            android:text="@={form.b31096x}"
+                            android:visibility="@{form.b31096.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1314,16 +1360,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b311check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b311a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311a.equals(`1`)}"
                                 android:onClick="@{()->form.setB311a(form.b311a.equals(`1`)?``:`1`)}"
@@ -1331,7 +1382,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311b.equals(`2`)}"
                                 android:onClick="@{()->form.setB311b(form.b311b.equals(`2`)?``:`2`)}"
@@ -1339,7 +1390,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311c.equals(`3`)}"
                                 android:onClick="@{()->form.setB311c(form.b311c.equals(`3`)?``:`3`)}"
@@ -1347,7 +1398,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311d.equals(`4`)}"
                                 android:onClick="@{()->form.setB311d(form.b311d.equals(`4`)?``:`4`)}"
@@ -1355,7 +1406,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311e.equals(`5`)}"
                                 android:onClick="@{()->form.setB311e(form.b311e.equals(`5`)?``:`5`)}"
@@ -1363,7 +1414,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311f.equals(`6`)}"
                                 android:onClick="@{()->form.setB311f(form.b311f.equals(`6`)?``:`6`)}"
@@ -1371,7 +1422,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311g.equals(`7`)}"
                                 android:onClick="@{()->form.setB311g(form.b311g.equals(`7`)?``:`7`)}"
@@ -1379,7 +1430,7 @@
 
                             <CheckBox
                                 android:id="@+id/b311h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b311h.equals(`8`)}"
                                 android:onClick="@{()->form.setB311h(form.b311h.equals(`8`)?``:`8`)}"
@@ -1387,22 +1438,22 @@
 
                             <CheckBox
                                 android:id="@+id/b31196"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b31196.equals(`96`)}"
                                 android:onClick="@{()->form.setB31196(form.b31196.equals(`96`)?``:`96`)}"
                                 android:text="@string/b31196" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b31196x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b31196"
-                                android:tag="b31196"
-                                android:text="@={form.b31196x}"
-                                android:visibility="@{form.b31196.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b31196x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b31196"
+                            android:tag="b31196"
+                            android:text="@={form.b31196x}"
+                            android:visibility="@{form.b31196.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1435,16 +1486,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b312check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b312a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312a.equals(`1`)}"
                                 android:onClick="@{()->form.setB312a(form.b312a.equals(`1`)?``:`1`)}"
@@ -1452,7 +1508,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312b.equals(`2`)}"
                                 android:onClick="@{()->form.setB312b(form.b312b.equals(`2`)?``:`2`)}"
@@ -1460,7 +1516,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312c.equals(`3`)}"
                                 android:onClick="@{()->form.setB312c(form.b312c.equals(`3`)?``:`3`)}"
@@ -1468,7 +1524,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312d.equals(`4`)}"
                                 android:onClick="@{()->form.setB312d(form.b312d.equals(`4`)?``:`4`)}"
@@ -1476,7 +1532,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312e.equals(`5`)}"
                                 android:onClick="@{()->form.setB312e(form.b312e.equals(`5`)?``:`5`)}"
@@ -1484,7 +1540,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312f.equals(`6`)}"
                                 android:onClick="@{()->form.setB312f(form.b312f.equals(`6`)?``:`6`)}"
@@ -1492,7 +1548,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312g.equals(`7`)}"
                                 android:onClick="@{()->form.setB312g(form.b312g.equals(`7`)?``:`7`)}"
@@ -1500,7 +1556,7 @@
 
                             <CheckBox
                                 android:id="@+id/b312h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b312h.equals(`8`)}"
                                 android:onClick="@{()->form.setB312h(form.b312h.equals(`8`)?``:`8`)}"
@@ -1508,22 +1564,22 @@
 
                             <CheckBox
                                 android:id="@+id/b31296"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b31296.equals(`96`)}"
                                 android:onClick="@{()->form.setB31296(form.b31296.equals(`96`)?``:`96`)}"
                                 android:text="@string/b31296" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b31296x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b31296"
-                                android:tag="b31296"
-                                android:text="@={form.b31296x}"
-                                android:visibility="@{form.b31296.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b31296x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b31296"
+                            android:tag="b31296"
+                            android:text="@={form.b31296x}"
+                            android:visibility="@{form.b31296.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1556,16 +1612,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b313check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b313a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313a.equals(`1`)}"
                                 android:onClick="@{()->form.setB313a(form.b313a.equals(`1`)?``:`1`)}"
@@ -1573,7 +1634,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313b.equals(`2`)}"
                                 android:onClick="@{()->form.setB313b(form.b313b.equals(`2`)?``:`2`)}"
@@ -1581,7 +1642,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313c.equals(`3`)}"
                                 android:onClick="@{()->form.setB313c(form.b313c.equals(`3`)?``:`3`)}"
@@ -1589,7 +1650,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313d.equals(`4`)}"
                                 android:onClick="@{()->form.setB313d(form.b313d.equals(`4`)?``:`4`)}"
@@ -1597,7 +1658,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313e.equals(`5`)}"
                                 android:onClick="@{()->form.setB313e(form.b313e.equals(`5`)?``:`5`)}"
@@ -1605,7 +1666,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313f.equals(`6`)}"
                                 android:onClick="@{()->form.setB313f(form.b313f.equals(`6`)?``:`6`)}"
@@ -1613,7 +1674,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313g.equals(`7`)}"
                                 android:onClick="@{()->form.setB313g(form.b313g.equals(`7`)?``:`7`)}"
@@ -1621,7 +1682,7 @@
 
                             <CheckBox
                                 android:id="@+id/b313h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b313h.equals(`8`)}"
                                 android:onClick="@{()->form.setB313h(form.b313h.equals(`8`)?``:`8`)}"
@@ -1629,22 +1690,22 @@
 
                             <CheckBox
                                 android:id="@+id/b31396"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b31396.equals(`96`)}"
                                 android:onClick="@{()->form.setB31396(form.b31396.equals(`96`)?``:`96`)}"
                                 android:text="@string/b31396" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b31396x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b31396"
-                                android:tag="b31396"
-                                android:text="@={form.b31396x}"
-                                android:visibility="@{form.b31396.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b31396x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b31396"
+                            android:tag="b31396"
+                            android:text="@={form.b31396x}"
+                            android:visibility="@{form.b31396.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1677,16 +1738,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b314check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b314a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314a.equals(`1`)}"
                                 android:onClick="@{()->form.setB314a(form.b314a.equals(`1`)?``:`1`)}"
@@ -1694,7 +1760,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314b.equals(`2`)}"
                                 android:onClick="@{()->form.setB314b(form.b314b.equals(`2`)?``:`2`)}"
@@ -1702,7 +1768,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314c.equals(`3`)}"
                                 android:onClick="@{()->form.setB314c(form.b314c.equals(`3`)?``:`3`)}"
@@ -1710,7 +1776,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314d.equals(`4`)}"
                                 android:onClick="@{()->form.setB314d(form.b314d.equals(`4`)?``:`4`)}"
@@ -1718,7 +1784,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314e.equals(`5`)}"
                                 android:onClick="@{()->form.setB314e(form.b314e.equals(`5`)?``:`5`)}"
@@ -1726,7 +1792,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314f.equals(`6`)}"
                                 android:onClick="@{()->form.setB314f(form.b314f.equals(`6`)?``:`6`)}"
@@ -1734,7 +1800,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314g.equals(`7`)}"
                                 android:onClick="@{()->form.setB314g(form.b314g.equals(`7`)?``:`7`)}"
@@ -1742,7 +1808,7 @@
 
                             <CheckBox
                                 android:id="@+id/b314h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b314h.equals(`8`)}"
                                 android:onClick="@{()->form.setB314h(form.b314h.equals(`8`)?``:`8`)}"
@@ -1750,22 +1816,22 @@
 
                             <CheckBox
                                 android:id="@+id/b31496"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b31496.equals(`96`)}"
                                 android:onClick="@{()->form.setB31496(form.b31496.equals(`96`)?``:`96`)}"
                                 android:text="@string/b31496" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b31496x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b31496"
-                                android:tag="b31496"
-                                android:text="@={form.b31496x}"
-                                android:visibility="@{form.b31496.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b31496x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b31496"
+                            android:tag="b31496"
+                            android:text="@={form.b31496x}"
+                            android:visibility="@{form.b31496.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
