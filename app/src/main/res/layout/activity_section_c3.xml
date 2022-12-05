@@ -466,9 +466,6 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- ca305_title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVca305_title"
-                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -476,11 +473,11 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/ca305_title" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- ca305  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1033,9 +1030,6 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- cb309_title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcb309_title"
-                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1043,11 +1037,12 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cb309_title" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
 
                 <!-- cb309  Radio   -->
                 <androidx.cardview.widget.CardView
