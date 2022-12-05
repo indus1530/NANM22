@@ -187,4 +187,7 @@ dependencies {
     // GOOGLE: Flexbox Layout
     implementation 'com.google.android:flexbox:2.0.1'
 
+    // MultiLineRadioGroup
+    implementation 'com.github.Gavras:MultiLineRadioGroup:v1.0.0.6'
+
 }

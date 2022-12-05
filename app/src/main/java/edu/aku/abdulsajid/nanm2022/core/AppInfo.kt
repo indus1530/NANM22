@@ -33,10 +33,10 @@ class AppInfo {
                 context.applicationContext.packageName,
                 0
             ).lastUpdateTime
-            versionCode = context.packageManager.getPackageInfo(
+            /*versionCode = context.packageManager.getPackageInfo(
                 context.applicationContext.packageName,
                 0
-            ).versionCode
+            ).versionCode*/
             versionName = context.packageManager.getPackageInfo(
                 context.applicationContext.packageName,
                 0

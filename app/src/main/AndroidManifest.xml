@@ -36,8 +36,17 @@
             android:name=".ui.sections.SectionD1Activity"
             android:exported="true" />
         <activity
-            android:name=".SectionA4CActivity"
-            android:exported="false" />
+            android:name=".ui.sections.SectionA4CActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".ui.sections.SectionA4AActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.sections.SectionA4BActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.sections.SectionC7Activity"
             android:exported="true" />
@@ -68,9 +77,12 @@
         <activity
             android:name=".ui.sections.SectionA5AActivity"
             android:exported="true" />
+
+
         <activity
-            android:name=".ui.sections.SectionA4AActivity"
+            android:name=".ui.sections.SectionA5BActivity"
             android:exported="true" />
+
         <activity
             android:name=".ui.sections.SectionA3AActivity"
             android:exported="true" />
