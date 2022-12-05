@@ -42,24 +42,28 @@ public class TableContracts {
         public static final String COLUMN_DIST_ID = "dist_id";
     }
 
-    public static abstract class ClusterTable implements BaseColumns {
+    public static abstract class VillageTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "Clusters";
+        public static final String TABLE_NAME = "villages";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_DIST_ID = "dist_id";
         public static final String COLUMN_GEOAREA = "geoarea";
-        public static final String COLUMN_CLUSTER_CODE = "cluster_no";
+        public static final String COLUMN_VILLAGE_CODE = "village_code";
 
     }
 
-    public static abstract class RandomHHTable implements BaseColumns {
+    public static abstract class ChildTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "bl_randomised";
+        public static final String TABLE_NAME = "child_list";
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_CLUSTER_CODE = "hh01";
-        public static final String COLUMN_HEAD_HH = "hh08";
-        public static final String COLUMN_HH_NO = "hhno";
+        public static final String COLUMN_VILLAGE_CODE = "village_code";
+        public static final String COLUMN_CHILD_ID = "child_id";
+        public static final String COLUMN_MOTHER_NAME = "mother_name";
+        public static final String COLUMN_CHILD_NAME = "child_name";
+        public static final String COLUMN_HH_HEAD = "hh_head";
+        public static final String COLUMN_GENDER = "gender";
+        public static final String COLUMN_DOB = "dob";
+        public static final String COLUMN_PROJECT = "project";
 
     }
 
