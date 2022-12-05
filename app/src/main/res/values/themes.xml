@@ -374,9 +374,9 @@
 
     <style name="textView">
         <item name="android:gravity">center</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/material_dynamic_neutral_variant80</item>
         <item name="android:padding">10dp</item>
-        <item name="android:layout_margin">7dp</item>
+        <item name="android:layout_margin">5dp</item>
         <item name="android:minHeight">16dp</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>

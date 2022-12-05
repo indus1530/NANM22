@@ -299,7 +299,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a303a_title" />
@@ -321,7 +321,7 @@
                                 android:text="@string/a303b" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a303c_title" />
@@ -343,7 +343,7 @@
                                 android:text="@string/a303d" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a303e_title" />
@@ -460,7 +460,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a304a_title" />
@@ -490,7 +490,7 @@
                                 android:text="@string/a304c" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a304d_title" />
@@ -528,7 +528,7 @@
                                 android:text="@string/a304g" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a304h_title" />
@@ -653,7 +653,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a305a_title" />
@@ -683,7 +683,7 @@
                                 android:text="@string/a305c" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a305d_title" />
@@ -745,7 +745,7 @@
                                 android:text="@string/a305j" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a305k_title" />
@@ -854,7 +854,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a306a_title" />
@@ -900,7 +900,7 @@
                                 android:text="@string/a306e" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a306f_title" />
@@ -922,7 +922,7 @@
                                 android:text="@string/a306g" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a306h_title" />
@@ -1095,7 +1095,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a307a_title" />
@@ -1133,7 +1133,7 @@
                                 android:text="@string/a307d" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a307e_title" />
@@ -1163,7 +1163,7 @@
                                 android:text="@string/a307g" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a307h_title" />
@@ -1868,42 +1868,46 @@
                         <RadioGroup
                             android:id="@+id/a316"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/a316a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a316.equals(`1`)}"
                                 android:onClick="@{()->form.setA316(`1`)}"
                                 android:text="@string/a316a" />
 
                             <RadioButton
                                 android:id="@+id/a316b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a316.equals(`2`)}"
                                 android:onClick="@{()->form.setA316(`2`)}"
                                 android:text="@string/a316b" />
 
                             <RadioButton
                                 android:id="@+id/a316x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.a316.equals(`96`)}"
                                 android:onClick="@{()->form.setA316(`96`)}"
                                 android:text="@string/a316x" />
 
-                            <EditText
-                                android:id="@+id/a316xx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/a316x"
-                                android:tag="a316x"
-                                android:text="@={form.a316xx}"
-                                android:visibility="@{form.a316.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
+                        <EditText
+                            android:id="@+id/a316xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/a316x"
+                            android:tag="a316x"
+                            android:text="@={form.a316xx}"
+                            android:visibility="@{form.a316.equals(`96`) ? View.VISIBLE : View.GONE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1942,6 +1946,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"

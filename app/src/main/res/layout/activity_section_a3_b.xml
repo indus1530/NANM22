@@ -1430,7 +1430,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a322a_title" />
@@ -1476,7 +1476,7 @@
                                 android:text="@string/a322e" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
@@ -1710,7 +1710,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/a325a_title" />
@@ -2318,19 +2318,7 @@
                                 android:onClick="@{()->form.setA332(`1`)}"
                                 android:text="@string/a332a" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a332ax"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/a332a"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:tag="a332a"
-                                android:text="@={form.a332ax}"
-                                android:visibility="@{form.a332.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="99999"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/a332b"
@@ -2347,6 +2335,20 @@
                                 android:checked="@{form.a332.equals(`98`)}"
                                 android:onClick="@{()->form.setA332(`98`)}"
                                 android:text="@string/a332c" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a332ax"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="#####"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:tag="a332a"
+                                android:text="@={form.a332ax}"
+                                android:visibility="@{form.a332.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="99999"
+                                app:minValue="1"
+                                app:type="range" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

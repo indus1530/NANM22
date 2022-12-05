@@ -429,7 +429,7 @@
                         </LinearLayout>
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/a406_title2" />
@@ -1303,7 +1303,7 @@
                     </LinearLayout>
 
                     <TextView
-                        style="@style/sub_labels"
+                        style="@style/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/a408_title2" />
