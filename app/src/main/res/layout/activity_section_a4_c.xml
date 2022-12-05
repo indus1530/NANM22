@@ -72,15 +72,18 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <com.askjeffreyliu.flexboxradiogroup.FlexBoxRadioGroup
                             android:id="@+id/a412h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            multi_line_radio_group:max_in_row="4">
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:justifyContent="space_evenly"
+                            app:flexWrap="wrap">
 
                             <RadioButton
                                 android:id="@+id/a412h01"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`1`)}"
                                 android:onClick="@{()->form.setA412h(`1`)}"
@@ -88,7 +91,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h02"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`2`)}"
                                 android:onClick="@{()->form.setA412h(`2`)}"
@@ -96,7 +99,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h03"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`3`)}"
                                 android:onClick="@{()->form.setA412h(`3`)}"
@@ -104,7 +107,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h04"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`4`)}"
                                 android:onClick="@{()->form.setA412h(`4`)}"
@@ -112,7 +115,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h05"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`5`)}"
                                 android:onClick="@{()->form.setA412h(`5`)}"
@@ -120,7 +123,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h06"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`6`)}"
                                 android:onClick="@{()->form.setA412h(`6`)}"
@@ -128,7 +131,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h07"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`7`)}"
                                 android:onClick="@{()->form.setA412h(`7`)}"
@@ -136,7 +139,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h08"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`8`)}"
                                 android:onClick="@{()->form.setA412h(`8`)}"
@@ -144,7 +147,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h09"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`9`)}"
                                 android:onClick="@{()->form.setA412h(`9`)}"
@@ -152,7 +155,7 @@
 
                             <RadioButton
                                 android:id="@+id/a412h10"
-                                android:layout_width="match_parent"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`10`)}"
                                 android:onClick="@{()->form.setA412h(`10`)}"
@@ -160,12 +163,12 @@
 
                             <RadioButton
                                 android:id="@+id/a412h98"
-                                android:layout_width="match_parent"
+                                android:layout_width="560dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a412h.equals(`98`)}"
                                 android:onClick="@{()->form.setA412h(`98`)}"
                                 android:text="@string/a412h98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </com.askjeffreyliu.flexboxradiogroup.FlexBoxRadioGroup>>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
