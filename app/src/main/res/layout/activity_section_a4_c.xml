@@ -72,11 +72,11 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            multi_line_radio_group:max_in_row="5">
+                            >
 
                             <RadioButton
                                 android:id="@+id/a412h01"
@@ -166,9 +166,8 @@
                                 android:buttonTint="@color/red"
                                 android:checked="@{form.a412h.equals(`98`)}"
                                 android:onClick="@{()->form.setA412h(`98`)}"
-                                android:text="@string/a412h98"
-                                android:textColor="@color/redDark" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                                android:text="@string/a412h98" />
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -201,12 +200,10 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412i"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            multi_line_radio_group:max_in_row="5"
-                            >
+                            android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/a412i01"
@@ -298,7 +295,7 @@
                                 android:checked="@{form.a412i.equals(`98`)}"
                                 android:onClick="@{()->form.setA412i(`98`)}"
                                 android:text="@string/a412i98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -331,11 +328,11 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412j"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            multi_line_radio_group:max_in_row="5">
+                            >
 
                             <RadioButton
                                 android:id="@+id/a412j01"
@@ -427,7 +424,7 @@
                                 android:buttonTint="@color/red"
                                 android:text="@string/a412j98"
                                 android:textColor="@color/redDark" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -460,11 +457,11 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412k"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            multi_line_radio_group:max_in_row="5">
+                            >
 
                             <RadioButton
                                 android:id="@+id/a412k01"
@@ -556,7 +553,7 @@
                                 android:checked="@{form.a412k.equals(`98`)}"
                                 android:onClick="@{()->form.setA412k(`98`)}"
                                 android:text="@string/a412k98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -589,7 +586,7 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412l"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -685,7 +682,7 @@
                                 android:checked="@{form.a412l.equals(`98`)}"
                                 android:onClick="@{()->form.setA412l(`98`)}"
                                 android:text="@string/a412l98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -718,7 +715,7 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -814,7 +811,7 @@
                                 android:checked="@{form.a412m.equals(`98`)}"
                                 android:onClick="@{()->form.setA412m(`98`)}"
                                 android:text="@string/a412m98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -847,7 +844,7 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412n"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -944,7 +941,7 @@
                                 android:checked="@{form.a412n.equals(`98`)}"
                                 android:onClick="@{()->form.setA412n(`98`)}"
                                 android:text="@string/a412n98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -977,7 +974,7 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a412o"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1073,7 +1070,7 @@
                                 android:checked="@{form.a412o.equals(`98`)}"
                                 android:onClick="@{()->form.setA412o(`98`)}"
                                 android:text="@string/a412o98" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1227,7 +1224,7 @@
 
                         </LinearLayout>
 
-                        <com.whygraphics.multilineradiogroup.MultiLineRadioGroup
+                        <RadioGroup
                             android:id="@+id/a414"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1264,7 +1261,7 @@
                                 android:checked="@{form.a414.equals(`1`)}"
                                 android:onClick="@{()->form.setA414(`1`)}"
                                 android:text="@string/a414a" />
-                        </com.whygraphics.multilineradiogroup.MultiLineRadioGroup>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
