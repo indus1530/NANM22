@@ -2548,6 +2548,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60101(String c60101) {
+        if (this.c60101.equals(c60101)) return; // for all checkboxes
         this.c60101 = c60101;
         notifyPropertyChanged(BR.c60101);
     }
@@ -2558,6 +2559,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60102(String c60102) {
+        if (this.c60102.equals(c60102)) return; // for all checkboxes
         this.c60102 = c60102;
         notifyPropertyChanged(BR.c60102);
     }
@@ -2568,6 +2570,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60103(String c60103) {
+        if (this.c60103.equals(c60103)) return; // for all checkboxes
         this.c60103 = c60103;
         notifyPropertyChanged(BR.c60103);
     }
@@ -2578,6 +2581,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60104(String c60104) {
+        if (this.c60104.equals(c60104)) return; // for all checkboxes
         this.c60104 = c60104;
         notifyPropertyChanged(BR.c60104);
     }
@@ -2588,6 +2592,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60105(String c60105) {
+        if (this.c60105.equals(c60105)) return; // for all checkboxes
         this.c60105 = c60105;
         notifyPropertyChanged(BR.c60105);
     }
@@ -2598,6 +2603,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60106(String c60106) {
+        if (this.c60106.equals(c60106)) return; // for all checkboxes
         this.c60106 = c60106;
         notifyPropertyChanged(BR.c60106);
     }
@@ -2608,6 +2614,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60107(String c60107) {
+        if (this.c60107.equals(c60107)) return; // for all checkboxes
         this.c60107 = c60107;
         notifyPropertyChanged(BR.c60107);
     }
@@ -2618,6 +2625,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60108(String c60108) {
+        if (this.c60108.equals(c60108)) return; // for all checkboxes
         this.c60108 = c60108;
         notifyPropertyChanged(BR.c60108);
     }
@@ -2628,7 +2636,16 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC60109(String c60109) {
+        if (this.c60109.equals(c60109)) return; // for all checkboxes
         this.c60109 = c60109;
+        setC60101(c60109.equals("9") ? "" : this.c60101);
+        setC60102(c60109.equals("9") ? "" : this.c60102);
+        setC60103(c60109.equals("9") ? "" : this.c60103);
+        setC60104(c60109.equals("9") ? "" : this.c60104);
+        setC60105(c60109.equals("9") ? "" : this.c60105);
+        setC60106(c60109.equals("9") ? "" : this.c60106);
+        setC60107(c60109.equals("9") ? "" : this.c60107);
+        setC60108(c60109.equals("9") ? "" : this.c60108);
         notifyPropertyChanged(BR.c60109);
     }
 
@@ -2639,6 +2656,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC602(String c602) {
         this.c602 = c602;
+        setC60296x(c602.equals("96") ? this.c60296x : "");
         notifyPropertyChanged(BR.c602);
     }
 
@@ -2659,6 +2677,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC603(String c603) {
         this.c603 = c603;
+        setC604(c603.equals("5") ? this.c604 : "");
+        setC60396x(c603.equals("96") ? this.c60396x : "");
         notifyPropertyChanged(BR.c603);
     }
 
@@ -2699,6 +2719,12 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC605(String c605) {
         this.c605 = c605;
+        setC606a(c605.equals("1") ? this.c606a : "");
+        setC606b(c605.equals("1") ? this.c606b : "");
+        setC606c(c605.equals("1") ? this.c606c : "");
+        setC606d(c605.equals("1") ? this.c606d : "");
+        setC606e(c605.equals("1") ? this.c606e : "");
+        setC60696(c605.equals("1") ? this.c60696 : "");
         notifyPropertyChanged(BR.c605);
     }
 
