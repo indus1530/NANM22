@@ -44,30 +44,30 @@
 
                 <!-- b301_title1  Title   -->
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/labelsHead"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/labelsHead"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/b301_title1" />
-                    </LinearLayout>
+                        android:text="@string/b301_title1" />
+                </LinearLayout>
                 <!-- b301_title2  Title   -->
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/sub_labels"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/b301_title2" />
-                    </LinearLayout>
+                        android:text="@string/b301_title2" />
+                </LinearLayout>
 
                 <!-- b301  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -98,16 +98,21 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.google.android.flexbox.FlexboxLayout
                             android:id="@+id/b301check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            app:alignContent="stretch"
+                            app:alignItems="stretch"
+                            app:flexDirection="row"
+                            app:flexWrap="wrap"
+                            app:justifyContent="space_evenly">
 
                             <CheckBox
                                 android:id="@+id/b301a"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301a.equals(`1`)}"
                                 android:onClick="@{()->form.setB301a(form.b301a.equals(`1`)?``:`1`)}"
@@ -115,7 +120,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301b"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301b.equals(`2`)}"
                                 android:onClick="@{()->form.setB301b(form.b301b.equals(`2`)?``:`2`)}"
@@ -123,7 +128,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301c"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301c.equals(`3`)}"
                                 android:onClick="@{()->form.setB301c(form.b301c.equals(`3`)?``:`3`)}"
@@ -131,7 +136,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301d"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301d.equals(`4`)}"
                                 android:onClick="@{()->form.setB301d(form.b301d.equals(`4`)?``:`4`)}"
@@ -139,7 +144,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301e"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301e.equals(`5`)}"
                                 android:onClick="@{()->form.setB301e(form.b301e.equals(`5`)?``:`5`)}"
@@ -147,7 +152,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301f"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301f.equals(`6`)}"
                                 android:onClick="@{()->form.setB301f(form.b301f.equals(`6`)?``:`6`)}"
@@ -155,7 +160,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301g"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301g.equals(`7`)}"
                                 android:onClick="@{()->form.setB301g(form.b301g.equals(`7`)?``:`7`)}"
@@ -163,7 +168,7 @@
 
                             <CheckBox
                                 android:id="@+id/b301h"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b301h.equals(`8`)}"
                                 android:onClick="@{()->form.setB301h(form.b301h.equals(`8`)?``:`8`)}"
@@ -171,22 +176,23 @@
 
                             <CheckBox
                                 android:id="@+id/b30196"
-                                android:layout_width="match_parent"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b30196.equals(`96`)}"
                                 android:onClick="@{()->form.setB30196(form.b30196.equals(`96`)?``:`96`)}"
                                 android:text="@string/b30196" />
+                        </com.google.android.flexbox.FlexboxLayout>
 
-                            <EditText
-                                android:id="@+id/b30196x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/b30196"
-                                android:tag="b30196"
-                                android:text="@={form.b30196x}"
-                                android:visibility="@{form.b30196.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/b30196x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/b30196"
+                            android:tag="b30196"
+                            android:text="@={form.b30196x}"
+                            android:visibility="@{form.b30196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
