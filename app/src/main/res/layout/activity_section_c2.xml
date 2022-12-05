@@ -477,6 +477,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.c20598.equals(`98`)}"
                                     android:gravity="center"
                                     android:hint="####"
                                     android:inputType="number"
@@ -486,17 +487,18 @@
                                     app:minValue="1"
                                     app:type="range" />
 
+                                <CheckBox
+                                    android:id="@+id/c20598"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{form.c20598.equals(`98`)}"
+                                    android:onClick="@{()->form.setC20598(form.c20598.equals(`98`)?``:`98`)}"
+                                    android:tag="-1"
+                                    android:text="@string/c20598" />
+
 
                             </LinearLayout>
-
-                            <CheckBox
-                                android:id="@+id/c20598"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.c20598.equals(`98`)}"
-                                android:enabled="@{!form.c20598.equals(`98`)}"
-                                android:onClick="@{()->form.setC20598(form.c20598.equals(`98`)?``:`98`)}"
-                                android:text="@string/c20598" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -558,16 +560,18 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-                            </LinearLayout>
+                                <CheckBox
+                                    android:id="@+id/c20698"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{form.c20698.equals(`98`)}"
+                                    android:enabled="@{!form.c20698.equals(`98`)}"
+                                    android:onClick="@{()->form.setC20698(form.c20698.equals(`98`)?``:`98`)}"
+                                    android:tag="-1"
+                                    android:text="@string/c20698" />
 
-                            <CheckBox
-                                android:id="@+id/c20698"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.c20698.equals(`98`)}"
-                                android:enabled="@{!form.c20698.equals(`98`)}"
-                                android:onClick="@{()->form.setC20698(form.c20698.equals(`98`)?``:`98`)}"
-                                android:text="@string/c20698" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -594,24 +598,26 @@
                                     android:text="@string/Q_c207" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="2"
                                     android:text="@string/c207" />
 
-                            </LinearLayout>
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/c207"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="1"
+                                    android:text="@={form.c207}"
+                                    app:maxValue="12"
+                                    app:minValue="0"
+                                    app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/c207"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text="@={form.c207}"
-                                app:maxValue="12"
-                                app:minValue="0"
-                                app:type="range" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 

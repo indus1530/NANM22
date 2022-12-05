@@ -1064,6 +1064,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC204(String c204) {
         this.c204 = c204;
+        setC20496x(c204.equals("96") ? this.c20496x : "");
         notifyPropertyChanged(BR.c204);
     }
 
@@ -1093,7 +1094,9 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC20598(String c20598) {
+        if (this.c20598.equals(c20598)) return; // for all checkboxes
         this.c20598 = c20598;
+        setC205a(c20598.equals("98") ? "" : this.c205a);
         notifyPropertyChanged(BR.c20598);
     }
 
@@ -1113,7 +1116,9 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC20698(String c20698) {
+        if (this.c20698.equals(c20698)) return; // for all checkboxes
         this.c20698 = c20698;
+        setC206a(c20698.equals("98") ? "" : this.c206a);
         notifyPropertyChanged(BR.c20698);
     }
 
@@ -1555,6 +1560,15 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC502(String c502) {
         this.c502 = c502;
+        setC50301(c502.equals("1") ? this.c50301 : "");
+        setC50302(c502.equals("1") ? this.c50302 : "");
+        setC50303(c502.equals("1") ? this.c50303 : "");
+        setC50304(c502.equals("1") ? this.c50304 : "");
+        setC50305(c502.equals("1") ? this.c50305 : "");
+        setC50306(c502.equals("1") ? this.c50306 : "");
+        setC50307(c502.equals("1") ? this.c50307 : "");
+        setC50308(c502.equals("1") ? this.c50308 : "");
+        setC50396(c502.equals("1") ? this.c50396 : "");
         notifyPropertyChanged(BR.c502);
     }
 
@@ -1574,6 +1588,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50301(String c50301) {
+        if (this.c50301.equals(c50301)) return; // for all checkboxes
         this.c50301 = c50301;
         notifyPropertyChanged(BR.c50301);
     }
@@ -1584,6 +1599,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50302(String c50302) {
+        if (this.c50302.equals(c50302)) return; // for all checkboxes
         this.c50302 = c50302;
         notifyPropertyChanged(BR.c50302);
     }
@@ -1594,6 +1610,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50303(String c50303) {
+        if (this.c50303.equals(c50303)) return; // for all checkboxes
         this.c50303 = c50303;
         notifyPropertyChanged(BR.c50303);
     }
@@ -1604,6 +1621,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50304(String c50304) {
+        if (this.c50304.equals(c50304)) return; // for all checkboxes
         this.c50304 = c50304;
         notifyPropertyChanged(BR.c50304);
     }
@@ -1614,6 +1632,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50305(String c50305) {
+        if (this.c50305.equals(c50305)) return; // for all checkboxes
         this.c50305 = c50305;
         notifyPropertyChanged(BR.c50305);
     }
@@ -1624,6 +1643,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50306(String c50306) {
+        if (this.c50306.equals(c50306)) return; // for all checkboxes
         this.c50306 = c50306;
         notifyPropertyChanged(BR.c50306);
     }
@@ -1634,6 +1654,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50307(String c50307) {
+        if (this.c50307.equals(c50307)) return; // for all checkboxes
         this.c50307 = c50307;
         notifyPropertyChanged(BR.c50307);
     }
@@ -1644,6 +1665,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50308(String c50308) {
+        if (this.c50308.equals(c50308)) return; // for all checkboxes
         this.c50308 = c50308;
         notifyPropertyChanged(BR.c50308);
     }
@@ -1654,7 +1676,9 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50396(String c50396) {
+        if (this.c50396.equals(c50396)) return; // for all checkboxes
         this.c50396 = c50396;
+        setC50396x(c50396.equals("96") ? this.c50396 : "");
         notifyPropertyChanged(BR.c50396);
     }
 
@@ -1684,6 +1708,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50401(String c50401) {
+        if (this.c50401.equals(c50401)) return; // for all checkboxes
         this.c50401 = c50401;
         notifyPropertyChanged(BR.c50401);
     }
@@ -1694,6 +1719,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50402(String c50402) {
+        if (this.c50402.equals(c50402)) return; // for all checkboxes
         this.c50402 = c50402;
         notifyPropertyChanged(BR.c50402);
     }
@@ -1704,6 +1730,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50403(String c50403) {
+        if (this.c50403.equals(c50403)) return; // for all checkboxes
         this.c50403 = c50403;
         notifyPropertyChanged(BR.c50403);
     }
@@ -1714,6 +1741,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50404(String c50404) {
+        if (this.c50404.equals(c50404)) return; // for all checkboxes
         this.c50404 = c50404;
         notifyPropertyChanged(BR.c50404);
     }
@@ -1724,6 +1752,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50405(String c50405) {
+        if (this.c50405.equals(c50405)) return; // for all checkboxes
         this.c50405 = c50405;
         notifyPropertyChanged(BR.c50405);
     }
@@ -1734,6 +1763,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50406(String c50406) {
+        if (this.c50406.equals(c50406)) return; // for all checkboxes
         this.c50406 = c50406;
         notifyPropertyChanged(BR.c50406);
     }
@@ -1744,6 +1774,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50407(String c50407) {
+        if (this.c50407.equals(c50407)) return; // for all checkboxes
         this.c50407 = c50407;
         notifyPropertyChanged(BR.c50407);
     }
@@ -1754,7 +1785,9 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50496(String c50496) {
+        if (this.c50496.equals(c50496)) return; // for all checkboxes
         this.c50496 = c50496;
+        setC50496x(c50496.equals("96") ? this.c50496x : "");
         notifyPropertyChanged(BR.c50496);
     }
 
@@ -1775,6 +1808,16 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC505(String c505) {
         this.c505 = c505;
+        setC50601(c505.equals("1") ? this.c50601 : "");
+        setC50602(c505.equals("1") ? this.c50602 : "");
+        setC50603(c505.equals("1") ? this.c50603 : "");
+        setC50604(c505.equals("1") ? this.c50604 : "");
+        setC50605(c505.equals("1") ? this.c50605 : "");
+        setC50606(c505.equals("1") ? this.c50606 : "");
+        setC50607(c505.equals("1") ? this.c50607 : "");
+        setC50608(c505.equals("1") ? this.c50608 : "");
+        setC50609(c505.equals("1") ? this.c50609 : "");
+        setC50696(c505.equals("1") ? this.c50696 : "");
         notifyPropertyChanged(BR.c505);
     }
 
@@ -1794,6 +1837,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50601(String c50601) {
+        if (this.c50601.equals(c50601)) return; // for all checkboxes
         this.c50601 = c50601;
         notifyPropertyChanged(BR.c50601);
     }
@@ -1804,6 +1848,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50602(String c50602) {
+        if (this.c50602.equals(c50602)) return; // for all checkboxes
         this.c50602 = c50602;
         notifyPropertyChanged(BR.c50602);
     }
@@ -1814,6 +1859,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50603(String c50603) {
+        if (this.c50603.equals(c50603)) return; // for all checkboxes
         this.c50603 = c50603;
         notifyPropertyChanged(BR.c50603);
     }
@@ -1824,6 +1870,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50604(String c50604) {
+        if (this.c50604.equals(c50604)) return; // for all checkboxes
         this.c50604 = c50604;
         notifyPropertyChanged(BR.c50604);
     }
@@ -1834,6 +1881,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50605(String c50605) {
+        if (this.c50605.equals(c50605)) return; // for all checkboxes
         this.c50605 = c50605;
         notifyPropertyChanged(BR.c50605);
     }
@@ -1844,6 +1892,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50606(String c50606) {
+        if (this.c50606.equals(c50606)) return; // for all checkboxes
         this.c50606 = c50606;
         notifyPropertyChanged(BR.c50606);
     }
@@ -1854,6 +1903,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50607(String c50607) {
+        if (this.c50607.equals(c50607)) return; // for all checkboxes
         this.c50607 = c50607;
         notifyPropertyChanged(BR.c50607);
     }
@@ -1864,6 +1914,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50608(String c50608) {
+        if (this.c50608.equals(c50608)) return; // for all checkboxes
         this.c50608 = c50608;
         notifyPropertyChanged(BR.c50608);
     }
@@ -1874,6 +1925,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50609(String c50609) {
+        if (this.c50609.equals(c50609)) return; // for all checkboxes
         this.c50609 = c50609;
         notifyPropertyChanged(BR.c50609);
     }
@@ -1884,6 +1936,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50610(String c50610) {
+        if (this.c50610.equals(c50610)) return; // for all checkboxes
         this.c50610 = c50610;
         notifyPropertyChanged(BR.c50610);
     }
@@ -1894,6 +1947,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50611(String c50611) {
+        if (this.c50611.equals(c50611)) return; // for all checkboxes
         this.c50611 = c50611;
         notifyPropertyChanged(BR.c50611);
     }
@@ -1904,7 +1958,9 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public void setC50696(String c50696) {
+        if (this.c50696.equals(c50696)) return; // for all checkboxes
         this.c50696 = c50696;
+        setC50696x(c50696.equals("96") ? this.c50696x : "");
         notifyPropertyChanged(BR.c50696);
     }
 
