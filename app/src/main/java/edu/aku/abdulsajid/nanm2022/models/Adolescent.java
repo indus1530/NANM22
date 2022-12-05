@@ -859,6 +859,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC112(String c112) {
         this.c112 = c112;
+        setC113(c112.equals("1") ? this.c113 : "");
+        setC114(c112.equals("1") ? this.c114 : "");
         notifyPropertyChanged(BR.c112);
     }
 
