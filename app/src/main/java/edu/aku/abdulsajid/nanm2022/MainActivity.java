@@ -25,9 +25,9 @@ import java.util.Locale;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.AndroidManager;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityMainBinding;
+import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.ui.ChangePasswordActivity;
-import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 import edu.aku.abdulsajid.nanm2022.ui.IdentificationActivity;
 import edu.aku.abdulsajid.nanm2022.ui.SyncActivity;
 import edu.aku.abdulsajid.nanm2022.ui.TakePhoto;
@@ -38,6 +38,23 @@ import edu.aku.abdulsajid.nanm2022.ui.sections.ConsentActivity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA1Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA3AActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA3BActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA4AActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA4BActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA4CActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA5AActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA5BActivity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionB1Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionB3Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC1Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC2Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC3Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC4Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC5Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC6Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC7Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD1Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD2Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         //getSupportActionBar().setIcon(R.drawable.app_icon);
-        bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
+//        bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
         bi.toolbar.setSubtitle("Welcome, " + MainApp.user.getFullname() + (MainApp.admin ? " (Admin)" : "") + "!");
         invalidateOptionsMenu();
 
@@ -132,28 +149,108 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Forms();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
-            case R.id.seca1:
+            case R.id.secCon:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, ConsentActivity.class));
+                break;
+            case R.id.secA1:
                 MainApp.form = new Forms();
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
-            case R.id.seca2:
+
+            case R.id.secA2:
                 MainApp.form = new Forms();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 
-            case R.id.seca3:
+            case R.id.secA3a:
                 MainApp.form = new Forms();
                 startActivity(new Intent(this, SectionA3AActivity.class));
                 break;
 
-            case R.id.seccs:
+            case R.id.secA3b:
                 MainApp.form = new Forms();
-                startActivity(new Intent(this, ConsentActivity.class));
+                startActivity(new Intent(this, SectionA3BActivity.class));
                 break;
 
-            case R.id.secis:
+            case R.id.secA4a:
                 MainApp.form = new Forms();
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, SectionA4AActivity.class));
+                break;
+
+            case R.id.secA4b:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionA4BActivity.class));
+                break;
+
+            case R.id.seca4c:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionA4CActivity.class));
+                break;
+
+            case R.id.seceA5a:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionA5AActivity.class));
+                break;
+
+            case R.id.seceA5b:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionA5BActivity.class));
+                break;
+
+            case R.id.secB1:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionB1Activity.class));
+                break;
+
+            case R.id.secB3:
+                MainApp.form = new Forms();
+                startActivity(new Intent(this, SectionB3Activity.class));
+                break;
+
+            case R.id.secC1:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC1Activity.class));
+                break;
+
+            case R.id.secC2:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC2Activity.class));
+                break;
+
+            case R.id.secC3:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC3Activity.class));
+                break;
+
+            case R.id.secC4:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC4Activity.class));
+                break;
+
+            case R.id.secC5:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC5Activity.class));
+                break;
+
+            case R.id.secC6:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC6Activity.class));
+                break;
+
+            case R.id.secC7:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC7Activity.class));
+                break;
+
+            case R.id.secD1:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionD1Activity.class));
+                break;
+
+            case R.id.secD2:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionD2Activity.class));
                 break;
 
             case R.id.dbManager:
