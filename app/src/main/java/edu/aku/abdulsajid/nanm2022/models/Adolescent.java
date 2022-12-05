@@ -128,7 +128,11 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String c209 = _EMPTY_;
     @Ignore
+    private String c20996x = _EMPTY_;
+    @Ignore
     private String c210 = _EMPTY_;
+    @Ignore
+    private String c21096x = _EMPTY_;
     @Ignore
     private String c211 = _EMPTY_;
     @Ignore
@@ -1150,7 +1154,18 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC209(String c209) {
         this.c209 = c209;
+        setC20996x(c209.equals("96") ? this.c20996x : "");
         notifyPropertyChanged(BR.c209);
+    }
+
+    @Bindable
+    public String getC20996x() {
+        return c20996x;
+    }
+
+    public void setC20996x(String c20996x) {
+        this.c20996x = c20996x;
+        notifyPropertyChanged(BR.c20996x);
     }
 
     @Bindable
@@ -1160,7 +1175,18 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC210(String c210) {
         this.c210 = c210;
+        setC21096x(c210.equals("96") ? this.c21096x : "");
         notifyPropertyChanged(BR.c210);
+    }
+
+    @Bindable
+    public String getC21096x() {
+        return c21096x;
+    }
+
+    public void setC21096x(String c21096x) {
+        this.c21096x = c21096x;
+        notifyPropertyChanged(BR.c21096x);
     }
 
     @Bindable
@@ -3248,7 +3274,9 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c207 = json.getString("c207");
             this.c208 = json.getString("c208");
             this.c209 = json.getString("c209");
+            this.c20996x = json.getString("c20996x");
             this.c210 = json.getString("c210");
+            this.c21096x = json.getString("c21096x");
             this.c211 = json.getString("c211");
             this.c212 = json.getString("c212");
             this.c213 = json.getString("c213");
@@ -3519,7 +3547,9 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c207", c207)
                 .put("c208", c208)
                 .put("c209", c209)
+                .put("c20996x", c20996x)
                 .put("c210", c210)
+                .put("c21096x", c21096x)
                 .put("c211", c211)
                 .put("c212", c212)
                 .put("c213", c213)
