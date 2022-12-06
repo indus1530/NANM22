@@ -26,6 +26,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA2Binding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 
 public class SectionA2Activity extends AppCompatActivity {
@@ -153,7 +154,8 @@ public class SectionA2Activity extends AppCompatActivity {
 
         long rowId = 0;
         try {
-            rowId = db.addFamilyMembers(familyMember);
+            //rowId = db.addFamilyMembers(familyMember);
+            rowId = NANMRoomDatabase.getDbInstance().familyMembersDao().addFamilyMembers(familyMember);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
@@ -162,7 +164,8 @@ public class SectionA2Activity extends AppCompatActivity {
         familyMember.setId(rowId);
         if (rowId > 0) {
             familyMember.setUid(familyMember.getDeviceId() + familyMember.getId());
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());
+            NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(familyMember);
+            //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -176,7 +179,10 @@ public class SectionA2Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SD, familyMember.sDtoString());
+            //updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SD, familyMember.sDtoString());
+            FamilyMembers updatedFamilyMember = familyMember;
+            updatedFamilyMember.setSD(familyMember.sDtoString());
+            updcount = NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(updatedFamilyMember);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

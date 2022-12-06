@@ -41,6 +41,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityFamilyListBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA2Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA3AActivity;
@@ -166,7 +167,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.motherList = new ArrayList<>();
         Log.d(TAG, "onCreate(familyList): " + MainApp.familyList.size());
         try {
-            MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
+            //MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
+            familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
             int fmCount = 0;
             for (FamilyMembers fm : MainApp.familyList) {
                 fmCount++;
@@ -315,7 +317,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     public void btnContinue(View view) {
 
         try {
-            MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid());
+            //MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid());
+            familyMember = NANMRoomDatabase.getDbInstance().familyMembersDao().getSelectedMemberBYUID(MainApp.form.getUid());
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -386,13 +389,21 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
             if (!selectedAdol.equals("")) {
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1);
-                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
+                FamilyMembers updateFamilyMembers = familyMember;
+                updateFamilyMembers.setIndexed("3");
+                NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(updateFamilyMembers);
+
+                //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
                 // Updating adapter
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("3");
             } else {
                 MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
-                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+                FamilyMembers updateFamilyMembers = familyMember;
+                updateFamilyMembers.setIndexed("4");
+                NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(updateFamilyMembers);
+
+                //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
                 selectedAdol = familyMember.getA201();
 
                 // Updating adapter
