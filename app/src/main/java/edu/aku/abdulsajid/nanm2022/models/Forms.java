@@ -50,10 +50,10 @@ public class Forms extends BaseObservable implements Observable {
     private String userName = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
-    @ColumnInfo(name = FormsTable.COLUMN_CLUSTER_CODE)
-    private String clusterCode = _EMPTY_;
-    @ColumnInfo(name = FormsTable.COLUMN_HHID)
-    private String hhid = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_VILLAGE_CODE)
+    private String villageCode = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_CHILD_ID)
+    private String childID = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_SNO)
     private String sno = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_DEVICEID)
@@ -1335,16 +1335,15 @@ public class Forms extends BaseObservable implements Observable {
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setClusterCode(MainApp.currentHousehold.getClusterCode());
-        setHhid(MainApp.currentHousehold.getHhno());
-        setSno(MainApp.currentHousehold.getSno());
+        setVillageCode(MainApp.currentHousehold.getVillage_code());
+        setChildID(MainApp.currentHousehold.getChild_id());
 
         //SECTION VARIABLES
-        setA109(MainApp.currentHousehold.getClusterCode());
+        setA109(MainApp.currentHousehold.getVillage_code());
         setA106(selectedDistrict);
         setA107(selectedTehsil);
         setA108(selectedUC);
-        setA105(MainApp.currentHousehold.getHhno());
+        setA105(MainApp.currentHousehold.getChild_id());
 
     }
 
@@ -1382,23 +1381,23 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getClusterCode() {
-        return clusterCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setClusterCode(String clusterCode) {
-        this.clusterCode = clusterCode;
-        notifyPropertyChanged(BR.clusterCode);
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
+        notifyPropertyChanged(BR.villageCode);
     }
 
     @Bindable
-    public String getHhid() {
-        return hhid;
+    public String getChildID() {
+        return childID;
     }
 
-    public void setHhid(String hhid) {
-        this.hhid = hhid;
-        notifyPropertyChanged(BR.hhid);
+    public void setChildID(String childID) {
+        this.childID = childID;
+        notifyPropertyChanged(BR.childID);
     }
 
     @Bindable
@@ -8346,8 +8345,8 @@ public class Forms extends BaseObservable implements Observable {
         this.id = cursor.getLong(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
-        this.clusterCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE));
+        this.childID = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
@@ -9008,8 +9007,8 @@ public class Forms extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);
         json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FormsTable.COLUMN_CLUSTER_CODE, this.clusterCode);
-        json.put(FormsTable.COLUMN_HHID, this.hhid);
+        json.put(FormsTable.COLUMN_VILLAGE_CODE, this.villageCode);
+        json.put(FormsTable.COLUMN_CHILD_ID, this.childID);
         json.put(FormsTable.COLUMN_SNO, this.sno);
         json.put(FormsTable.COLUMN_USERNAME, this.userName);
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);

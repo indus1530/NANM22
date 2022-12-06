@@ -211,7 +211,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:drawableStart="@drawable/search"
-                                android:onClick="checkHousehold"
+                                android:onClick="checkChild"
                                 android:text="Search"
                                 android:textColor="@color/colorPrimary" />
 

@@ -44,7 +44,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Forms();
 
 
-        bi.a109.addTextChangedListener(new TextWatcher() {
+        /*bi.a109.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -62,7 +62,7 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
             }
-        });
+        });*/
 
 
         bi.a105.addTextChangedListener(new TextWatcher() {
@@ -266,93 +266,35 @@ public class IdentificationActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
-    public void checkHousehold(View view) {
+    public void checkChild(View view) {
         if (!formValidation()) return;
-/*
-        RandomHH testRand = new RandomHH();
-        testRand.setSno("1");
-        testRand.setClusteCcode("9000001");
-        testRand.setHeadhh("Test Head");
-        testRand.setHhno("999");*/
+
         ChildList childList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
-      /*  if (!bi.a101.getText().toString().equals("9000001")) {
-            randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
-        } else {
-            randHH = testRand;
-        }*/
+
         if (!childList.getChild_id().equals("")) {
-         /*   bi.ahhead.setError(null);
-            bi.ahhead.setText(randHH.getHeadhh());*/
+
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
             MainApp.currentHousehold = childList;
 
         } else {
-/*
-            bi.ahhead.setError("Not Found!");
-*/
+
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
         }
-        /*ArrayList<String> households = new ArrayList<String>();
-        for (RandomHH r : randHH) {
-            households.add(r.getHhno());
-            headHH = new ArrayList<String>();
-            headHH.add(r.getHeadhh());
-        }*/
     }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        hhExists();
+        childExists();
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
             startActivity(new Intent(this, SectionA1Activity.class));
         }
-
     }
-
-    /*public void searchCluster(View view) {
-        bi.btnContinue.setEnabled(false);
-        Villages testClusters = new Villages();
-        testClusters.setPsucode("909090909");
-        testClusters.setDistrictName("Test District 9");
-        testClusters.setTehsilName("Test Tehsil 9");
-        Villages clusters = new Villages();
-        if (!bi.a101.getText().toString().equals(testClusters.getPsucode())) {
-            clusters = db.getPS(bi.a105.getText().toString());
-        } else {
-            clusters = testClusters;
-        }
-
-       *//* ebCode = new ArrayList<>();
-        tehsilNames = new ArrayList<>();
-        tehsilNames = new ArrayList<>();
-        for (EnumBlocks eb : enumBlocks) {
-            ebCode.add(eb.getEnumBlock());
-            tehsilNames.add(eb.getDistrictName());
-            tehsilNames.add(eb.getTehsilName()); //
-        }*//*
-        if (!clusters.getEnumBlock().equals("")) {
-            bi.a107.setError(null);
-            bi.a108.setError(null);
-            bi.a107.setText(clusters.getDistrictName());
-            bi.a108.setText(clusters.getTehsilName());
-            bi.fldGrpHH.setVisibility(View.VISIBLE);
-
-        } else {
-            bi.a107.setError("Not Found!");
-            bi.a108.setError("Not Found!");
-            bi.a110.setText(null);
-            bi.ahhead.setText(null);
-            bi.fldGrpHH.setVisibility(View.GONE);
-        }
-    }
-*/
-
 
     public void btnEnd(View view) {
         finish();
@@ -360,25 +302,21 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    private boolean hhExists() {
-
+    private boolean childExists() {
 
         MainApp.form = new Forms();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
+            MainApp.form = db.getFormByChildID(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return MainApp.form != null;
-
-
     }
 
 
     public void searchVillage(View view) {
         bi.btnContinue.setEnabled(false);
-
         bi.a106.setText(null);
         bi.a107.setText(null);
         bi.a108.setText(null);

@@ -36,7 +36,7 @@ public class SectionA1Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        form.setA103(MainApp.currentHousehold.getSno());
+//        form.setA103(MainApp.currentHousehold.getSno());
         bi.setForm(form);
     }
 

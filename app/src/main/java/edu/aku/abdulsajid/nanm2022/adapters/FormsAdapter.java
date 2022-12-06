@@ -90,8 +90,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
                 break;
 
         }
-        holder.hhno.setText(fc.get(position).getHhid() + " \t\t(" + fc.get(position).getSysDate() + ")");
-        holder.cluster.setText(fc.get(position).getClusterCode());
+        holder.hhno.setText(fc.get(position).getChildID() + " \t\t(" + fc.get(position).getSysDate() + ")");
+        holder.cluster.setText(fc.get(position).getVillageCode());
         holder.istatus.setText(iStatus);
         holder.istatus.setTextColor(iColor);
     }

@@ -102,8 +102,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
-        values.put(FormsTable.COLUMN_CLUSTER_CODE, form.getClusterCode());
-        values.put(FormsTable.COLUMN_HHID, form.getHhid());
+        values.put(FormsTable.COLUMN_VILLAGE_CODE, form.getVillageCode());
+        values.put(FormsTable.COLUMN_CHILD_ID, form.getChildID());
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
@@ -163,8 +163,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_FMUID, adol.getFmuid());
         values.put(AdolescentTable.COLUMN_MUID, adol.getMuid());
         values.put(AdolescentTable.COLUMN_SNO, adol.getSno());
-        values.put(AdolescentTable.COLUMN_PSU_CODE, adol.getpsuCode());
-        values.put(AdolescentTable.COLUMN_HHID, adol.getHhid());
+        values.put(AdolescentTable.COLUMN_VILLAGE_CODE, adol.getpsuCode());
+        values.put(AdolescentTable.COLUMN_CHILD_ID, adol.getChildID());
         values.put(AdolescentTable.COLUMN_USERNAME, adol.getUserName());
         values.put(AdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
         values.put(AdolescentTable.COLUMN_INDEXED, adol.getIndexed());
@@ -784,8 +784,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_CLUSTER_CODE + "=? AND " +
-                FormsTable.COLUMN_HHID + " =? ";
+        whereClause = FormsTable.COLUMN_VILLAGE_CODE + "=? AND " +
+                FormsTable.COLUMN_CHILD_ID + " =? ";
 
         String[] whereArgs = {ebCode, hhid};
 
@@ -822,7 +822,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_CLUSTER_CODE + " = ? ";
+        String whereClause = FormsTable.COLUMN_VILLAGE_CODE + " = ? ";
         String[] whereArgs = new String[]{cluster};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
@@ -846,8 +846,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setId(c.getInt(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-            fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
-            fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
+            fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
+            fc.setChildID(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID)));
             fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
             fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
@@ -890,8 +890,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setId(c.getInt(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-            fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
-            fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
+            fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
+            fc.setChildID(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID)));
             fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
@@ -935,8 +935,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setId(c.getInt(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-            fc.setClusterCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER_CODE)));
-            fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
+            fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
+            fc.setChildID(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID)));
             fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
             fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
@@ -958,35 +958,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ChildTable.COLUMN_CHILD_ID + " = ?";
 
         String[] whereArgs = {villageCode, childID};
-
         String groupBy = null;
         String having = null;
-
         String orderBy = ChildTable.COLUMN_CHILD_ID + " ASC";
-
-        String limit = "5000";
+//        String limit = "5000";
 
         ChildList childList = new ChildList();
-        c = db.query(true,
+        c = db.query(
                 ChildTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
                 groupBy,                   // don't group the rows
                 having,                    // don't filter by row groups
-                orderBy,
-                limit
-                // The sort order
+                orderBy                    // The sort order
+//                limit
         );
         while (c.moveToNext()) {
             childList = new ChildList().hydrate(c);
         }
-
-        if (c != null && !c.isClosed()) {
-            c.close();
-        }
-
-
         return childList;
     }
 
@@ -1349,8 +1339,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_CLUSTER_CODE + "=? AND " +
-                FormsTable.COLUMN_HHID + " =? ";
+        whereClause = FormsTable.COLUMN_VILLAGE_CODE + "=? AND " +
+                FormsTable.COLUMN_CHILD_ID + " =? ";
 
         String[] whereArgs = {psuCode, hhid};
 
@@ -1384,7 +1374,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return form;
     }
 
-    public Forms getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {
+    public Forms getFormByChildID(String childID, String villageCode) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1392,9 +1382,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Boolean distinct = false;
         String tableName = FormsTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_CLUSTER_CODE + "= ? AND " +
-                FormsTable.COLUMN_HHID + "= ? ";
-        String[] whereArgs = {psuCode, hhid};
+        String whereClause = FormsTable.COLUMN_VILLAGE_CODE + "= ? AND " +
+                FormsTable.COLUMN_CHILD_ID + "= ? ";
+        String[] whereArgs = {childID, villageCode};
         String groupBy = null;
         String having = null;
         String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";

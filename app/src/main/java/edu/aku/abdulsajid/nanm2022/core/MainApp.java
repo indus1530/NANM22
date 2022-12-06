@@ -105,7 +105,6 @@ public class MainApp extends Application {
     public static String selectedMWRA;
     public static String selectedChild;
     public static String selectedAdol;
-    public static String indexedPreg = _EMPTY_;
     public static String selectedChildName = _EMPTY_;
     public static int memberCountComplete;
     public static boolean memberComplete;
@@ -117,17 +116,8 @@ public class MainApp extends Application {
     public static int selectedLanguage = 0;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
-    public static int totalPreg = 0;
-    public static int totalMortalities = 0;
-    public static int pregCount = 0;
-    public static int pregCountComplete = 0;
-    public static boolean pregComplete = false;
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
-    public static int mortalityCounter = 0;
     public static Villages selectedVillages;
-    public static List<Integer> childCompleted;
-    public static boolean householdChecked = false;
-    public static long preAgeInMonths;
     public static CountDownTimer timer;
     protected static LocationManager locationManager;
     static ToneGenerator toneGen1;

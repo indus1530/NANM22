@@ -37,8 +37,8 @@ public class Adolescent extends BaseObservable implements Observable {
     private String sysDate = _EMPTY_;
     private String indexed = _EMPTY_;
     private String name = _EMPTY_;
-    private String psuCode = _EMPTY_;
-    private String hhid = _EMPTY_;
+    private String villageCode = _EMPTY_;
+    private String childID = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
@@ -530,8 +530,8 @@ public class Adolescent extends BaseObservable implements Observable {
         setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.currentHousehold.getClusterCode());
-        setHhid(MainApp.currentHousehold.getHhno());
+        setVillageCode(MainApp.currentHousehold.getVillage_code());
+        setChildID(MainApp.currentHousehold.getChild_id());
         setSno(selectedAdol);
         setFmuid(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getUid()); //// not applicable in Form table
         setIndexed(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
@@ -605,15 +605,15 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public String getpsuCode() {
-        return psuCode;
+        return villageCode;
     }
 
-    public String getHhid() {
-        return hhid;
+    public String getChildID() {
+        return childID;
     }
 
-    public void setHhid(String hhid) {
-        this.hhid = hhid;
+    public void setChildID(String childID) {
+        this.childID = childID;
     }
 
     public String getSno() {
@@ -704,8 +704,8 @@ public class Adolescent extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
 
@@ -3223,8 +3223,8 @@ public class Adolescent extends BaseObservable implements Observable {
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_MUID));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_INDEXED));
         this.name = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_HHID));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_VILLAGE_CODE));
+        this.childID = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_CHILD_ID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_USERNAME));
@@ -3494,8 +3494,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
         json.put(AdolescentTable.COLUMN_ID, this.id);
         json.put(AdolescentTable.COLUMN_UID, this.uid);
-        json.put(AdolescentTable.COLUMN_PSU_CODE, this.psuCode);
-        json.put(AdolescentTable.COLUMN_HHID, this.hhid);
+        json.put(AdolescentTable.COLUMN_VILLAGE_CODE, this.villageCode);
+        json.put(AdolescentTable.COLUMN_CHILD_ID, this.childID);
         json.put(AdolescentTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(AdolescentTable.COLUMN_UUID, this.uuid);
         json.put(AdolescentTable.COLUMN_FMUID, this.fmuid);
