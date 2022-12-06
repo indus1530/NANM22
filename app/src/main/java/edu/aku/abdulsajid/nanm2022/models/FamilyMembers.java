@@ -95,8 +95,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-        setClusterCode(MainApp.form.getClusterCode());
-        setHhid(MainApp.form.getHhid());
+        setClusterCode(MainApp.form.getVillageCode());
+        setHhid(MainApp.form.getChildID());
         setSno(getA201());
         CaluculateAge();
 
