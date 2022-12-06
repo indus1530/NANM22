@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import edu.aku.abdulsajid.nanm2022.core.MainApp
-import edu.aku.abdulsajid.nanm2022.models.Forms
+import edu.aku.abdulsajid.nanm2022.models.*
 import net.sqlcipher.database.SupportFactory
 
 //
@@ -20,7 +20,13 @@ import net.sqlcipher.database.SupportFactory
 @Database(
         version = NANMRoomDatabase.DATABASE_VERSION,
         entities = [
-            Forms::class
+            Forms::class,
+            FamilyMembers::class,
+            Users::class,
+            Villages::class,
+            ChildList::class
+
+
         ]
 )
 
@@ -28,6 +34,10 @@ abstract class NANMRoomDatabase : RoomDatabase(){
 
     abstract fun formsDao() : FormsDao
     abstract fun syncFunctionsDao() : SyncFunctionsDao
+    abstract fun familyMembersDao() : FamilyMembersDao
+    abstract fun usersDao() : UsersDao
+    abstract fun villagesDao() : VillagesDao
+    abstract fun childListDao() : ChildListDao
 
 
     companion object {

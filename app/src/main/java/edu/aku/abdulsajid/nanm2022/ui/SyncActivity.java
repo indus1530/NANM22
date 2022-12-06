@@ -62,6 +62,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySyncBinding;
 import edu.aku.abdulsajid.nanm2022.models.SyncModel;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.workers.DataDownWorkerALL;
 import edu.aku.abdulsajid.nanm2022.workers.DataUpWorkerALL;
 import edu.aku.abdulsajid.nanm2022.workers.PhotoUploadWorker2;
@@ -274,13 +275,13 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " enabled = '1' ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel("versionApp"));
+                    //downloadTables.add(new SyncModel("versionApp"));
                 } else {
 
                     select = " * ";
                     filter = " (colflag != '0' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(TableContracts.VillageTable.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, select, filter));
+                    //downloadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
@@ -348,7 +349,7 @@ public class SyncActivity extends AppCompatActivity {
                             //int insertCount = 0;
 
                             Method method = null;
-                            for (Method method1 : db.getClass().getDeclaredMethods()) {
+                            for (Method method1 : NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getDeclaredMethods()) {
 
                                 // Log.d(TAG, "onChanged Methods: " + method1.getName());
                                 /**
@@ -410,7 +411,7 @@ public class SyncActivity extends AppCompatActivity {
                                                 });
                                                 int insertCount = 0;
                                                 try {
-                                                    insertCount = (int) finalMethod.invoke(db, finalJsonArray);
+                                                    insertCount = (int) finalMethod.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), finalJsonArray);
                                                 } catch (IllegalAccessException | InvocationTargetException ite) {
                                                     ite.printStackTrace();
                                                     downloadTable.setstatus("Process Failed2");
@@ -449,7 +450,7 @@ public class SyncActivity extends AppCompatActivity {
                             } else {
 
                                 // NOTE: Name of sync function in DataBaseHelper must match pattern 'sync'+TABLE_NAME e.g. syncAppUser()
-                                downloadTables.get(position).setmessage("Method not found in " + db.getClass().getSimpleName() + ": sync" + tableName);
+                                downloadTables.get(position).setmessage("Method not found in " + NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getSimpleName() + ": sync" + tableName);
                                 downloadTables.get(position).setstatus("Process Failed3");
                                 downloadTables.get(position).setstatusID(1);
                                 downloadTables.get(position).setInfo("Time: " + time + "/" + getTime() + "\t Size: " + size);
@@ -632,7 +633,8 @@ public class SyncActivity extends AppCompatActivity {
                                 // DatabaseHelper db = new DatabaseHelper(SyncActivity.this); // Database Helper
 
                                 Method method = null;
-                                for (Method method1 : db.getClass().getDeclaredMethods()) {
+                                for (Method method1 : NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getDeclaredMethods()) {
+
 
                                     // Log.d(TAG, "onChanged Methods: " + method1.getName());
                                     /**
@@ -657,10 +659,10 @@ public class SyncActivity extends AppCompatActivity {
                                         JSONObject jsonObject = new JSONObject(json.getString(i));
                                         Log.d(TAG, "onChanged: " + json.getString(i));
                                         if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                                            method.invoke(db, jsonObject.getString("id"));
+                                            method.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), jsonObject.getString("id"));
                                             sSynced++;
                                         } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                                            method.invoke(db, jsonObject.getString("id"));
+                                            method.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), jsonObject.getString("id"));
                                             sDuplicate++;
                                         } else {
                                             sSyncedError.append("\nError: ").append(jsonObject.getString("message"));

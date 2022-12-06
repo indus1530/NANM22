@@ -12,6 +12,8 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.Ignore;
 
 import org.json.JSONException;
@@ -21,14 +23,20 @@ import edu.aku.abdulsajid.nanm2022.BR;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.AdolescentTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
+@Entity(tableName = AdolescentTable.TABLE_NAME)
 public class Adolescent extends BaseObservable implements Observable {
 
+    @Ignore
     private final String TAG = "Adolescent";
+    @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
+    @ColumnInfo(name = AdolescentTable.COLUMN_PROJECT_NAME)
     private String projectName = MainApp.PROJECT_NAME;
     // APP VARIABLES
-    private String id = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_ID)
+    private long id = 0;
+    @ColumnInfo(name = AdolescentTable.COLUMN_UID)
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
@@ -514,7 +522,9 @@ public class Adolescent extends BaseObservable implements Observable {
     private String d204 = _EMPTY_;
 
 
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC)
     private String sC = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SD)
     private String sD = _EMPTY_;
 
 
@@ -548,11 +558,11 @@ public class Adolescent extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -3216,7 +3226,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public Adolescent Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_UUID));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_FMUID));

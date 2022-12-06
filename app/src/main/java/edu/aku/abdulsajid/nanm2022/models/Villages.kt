@@ -1,6 +1,9 @@
 package edu.aku.abdulsajid.nanm2022.models
 
 import android.database.Cursor
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.VillageTable
 import edu.aku.abdulsajid.nanm2022.core.MainApp._EMPTY_
 import org.json.JSONException
@@ -9,10 +12,18 @@ import org.json.JSONObject
 /**
  * Created by hassan.naqvi on 11/30/2016.
  */
+
+@Entity(tableName = VillageTable.TABLE_NAME)
 class Villages {
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = VillageTable._ID)
     var ID: Long = 0
+
+    @ColumnInfo(name = VillageTable.COLUMN_VILLAGE_CODE, defaultValue = _EMPTY_)
     var village_code: String = _EMPTY_
+    @ColumnInfo(name = VillageTable.COLUMN_GEOAREA, defaultValue = _EMPTY_)
     var geoarea: String = _EMPTY_
+    @ColumnInfo(name = VillageTable.COLUMN_DIST_ID, defaultValue = _EMPTY_)
     var distId: String = _EMPTY_
 
 

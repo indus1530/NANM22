@@ -6,10 +6,15 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp._EMPTY_;
 import android.database.Cursor;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,63 +28,107 @@ import edu.aku.abdulsajid.nanm2022.BR;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
-
+@Entity(tableName = FamilyMembersTable.TABLE_NAME)
 public class FamilyMembers extends BaseObservable implements Observable {
 
+    @Ignore
     private final String TAG = "FamilyMembers";
+    @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_PROJECT_NAME)
     private String projectName = MainApp.PROJECT_NAME;
+
     // APP VARIABLES
-    private String id = _EMPTY_;
+    @PrimaryKey (autoGenerate = true)
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_ID)
+    private long id = 0;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_UID)
     private String uid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_CLUSTER_CODE)
     private String clusterCode = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_HHID)
     private String hhid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
+    @Ignore
     private String endTime = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+    @Ignore
     private String iStatus96x = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
 
     // SECTION VARIABLES
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SD)
     private String sD = _EMPTY_;
 
     // FIELD VARIABLES
+    @Ignore
     private String a201 = _EMPTY_;
+    @Ignore
     private String a202 = _EMPTY_;
+    @Ignore
     private String a204 = _EMPTY_;
+    @Ignore
     private String a203 = _EMPTY_;
+    @Ignore
     private String a20396x = _EMPTY_;
+    @Ignore
     private String a205dd = _EMPTY_;
+    @Ignore
     private String a205mm = _EMPTY_;
+    @Ignore
     private String a205yy = _EMPTY_;
+    @Ignore
     private String a206yy = _EMPTY_;
+    @Ignore
     private String a206mm = _EMPTY_;
+    @Ignore
     private String a206dd = _EMPTY_;
+    @Ignore
     private String a212 = _EMPTY_;
+    @Ignore
     private String a213 = _EMPTY_;
+    @Ignore
     private String a207 = _EMPTY_;
+    @Ignore
     private String a208 = _EMPTY_;
+    @Ignore
     private String a209 = _EMPTY_;
+    @Ignore
     private String a210 = _EMPTY_;
+    @Ignore
     private String a211 = _EMPTY_;
 
-
-    private boolean expanded;
+    @Ignore
     private boolean mwra;
+    @Ignore
     private String ageInMonths;
+    @Ignore
     private String muid;
+    @Ignore
     private String motherPresent;
+    @Ignore
     private String indexed = _EMPTY_;
+    @Ignore
     private String memCate = _EMPTY_;
 
     public FamilyMembers() {
@@ -103,6 +152,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
+
+
     public String getProjectName() {
         return projectName;
     }
@@ -111,11 +162,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -235,11 +286,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
@@ -268,11 +319,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-    public String getsD() {
+    public String getSD() {
         return sD;
     }
 
-    public void setsD(String sD) {
+    public void setSD(String sD) {
         this.sD = sD;
     }
 
@@ -505,7 +556,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
     public FamilyMembers Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PROJECT_NAME));

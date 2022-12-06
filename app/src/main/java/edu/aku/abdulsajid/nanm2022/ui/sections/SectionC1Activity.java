@@ -62,7 +62,7 @@ public class SectionC1Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.adol.setId(String.valueOf(rowId));
+        MainApp.adol.setId(rowId);
         if (rowId > 0) {
             MainApp.adol.setUid(MainApp.adol.getDeviceId() + MainApp.adol.getId());
             db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_UID, MainApp.adol.getUid());

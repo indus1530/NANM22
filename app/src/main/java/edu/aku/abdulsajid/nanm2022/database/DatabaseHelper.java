@@ -140,7 +140,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
         values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
-        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
+        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getIStatus());
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());

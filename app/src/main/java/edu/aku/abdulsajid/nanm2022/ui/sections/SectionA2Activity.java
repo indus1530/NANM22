@@ -159,7 +159,7 @@ public class SectionA2Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        familyMember.setId(String.valueOf(rowId));
+        familyMember.setId(rowId);
         if (rowId > 0) {
             familyMember.setUid(familyMember.getDeviceId() + familyMember.getId());
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());

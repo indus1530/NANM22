@@ -1,7 +1,11 @@
 package edu.aku.abdulsajid.nanm2022.room
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
+import edu.aku.abdulsajid.nanm2022.models.Users
+import edu.aku.abdulsajid.nanm2022.models.Villages
 import org.json.JSONArray
 import org.json.JSONException
 import java.util.*
@@ -143,7 +147,58 @@ interface SyncFunctionsDao {
     }*/
 
 
+    //************************************************* DOWNLOAD FUNCTIONS*************************************************************
 
+
+    @Throws(JSONException::class)
+    fun syncvillages(villagesList: JSONArray): Int {
+        var insertCount = 0
+        deleteVillagesTable()
+        for(i in 0 until villagesList.length()) {
+            val jsonObjectUser = villagesList.optJSONObject(i)
+
+            val villages = Villages()
+            villages.sync(jsonObjectUser)
+
+            val rowId = insertVillages(villages)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+
+    @Insert
+    fun insertVillages(villages: Villages): Long
+
+    @Query("DELETE FROM " + TableContracts.VillageTable.TABLE_NAME)
+    fun deleteVillagesTable()
+
+
+    // Users
+
+    @Throws(JSONException::class)
+    fun syncAppUser(usersList: JSONArray): Int {
+        var insertCount = 0
+        deleteUsersTable()
+        for(i in 0 until usersList.length()) {
+            val jsonObjectUser = usersList.optJSONObject(i)
+
+            val user = Users()
+            user.sync(jsonObjectUser)
+
+            val rowId = insertUser(user)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertUser(user: Users): Long
+
+    @Query("DELETE FROM " + TableContracts.UsersTable.TABLE_NAME)
+    fun deleteUsersTable()
 
 
 }
