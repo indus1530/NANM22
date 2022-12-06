@@ -95,17 +95,17 @@
 
                 <!-- c501title  Title   -->
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/labelsHead"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/labelsHead"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c501title" />
-                    </LinearLayout>
+                        android:text="@string/c501title" />
+                </LinearLayout>
 
 
                 <!-- c501  Title   -->
@@ -118,37 +118,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_c501" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c501" />
-
-                    </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- c501a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc501a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -156,449 +125,462 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="0dp"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501a"
-                                />
-
-
-                            <RadioGroup
-                                android:id="@+id/c501a"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501a01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501a.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501a(`1`)}"
-                                    android:text="@string/c501a01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501a02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501a.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501a(`2`)}"
-                                    android:text="@string/c501a02" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- c501b  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                                android:text="@string/Q_c501" />
 
                             <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501b" />
-
-                            <RadioGroup
-                                android:id="@+id/c501b"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501b01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501b.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501b(`1`)}"
-                                    android:text="@string/c501b01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501b02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501b.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501b(`2`)}"
-                                    android:text="@string/c501b02" />
-                            </RadioGroup>
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/c501" />
 
                         </LinearLayout>
-
-                        <!-- c501c  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501c" />
-
-                            <RadioGroup
-                                android:id="@+id/c501c"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501c01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501c.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501c(`1`)}"
-                                    android:text="@string/c501c01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501c02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501c.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501c(`2`)}"
-                                    android:text="@string/c501c02" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- c501d  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501d" />
-
-                            <RadioGroup
-                                android:id="@+id/c501d"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501d01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501d.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501d(`1`)}"
-                                    android:text="@string/c501d01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501d02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501d.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501d(`2`)}"
-                                    android:text="@string/c501d02" />
-                            </RadioGroup>
-
-
-                        </LinearLayout>
-
-                        <!-- c501e  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501e" />
-
-                            <RadioGroup
-                                android:id="@+id/c501e"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501e01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501e.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501e(`1`)}"
-                                    android:text="@string/c501e01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501e02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501e.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501e(`2`)}"
-                                    android:text="@string/c501e02" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- c501f  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501f" />
-
-                            <RadioGroup
-                                android:id="@+id/c501f"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/c501f01"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501f.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501f(`1`)}"
-                                    android:text="@string/c501f01" />
-
-                                <RadioButton
-                                    android:id="@+id/c501f02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.c501f.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501f(`2`)}"
-                                    android:text="@string/c501f02" />
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <!-- c501g  Radio   -->
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501g" />
-
-                            <RadioGroup
-                                android:id="@+id/c501g"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                                 android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/c501g01"
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501g.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501g(`1`)}"
-                                    android:text="@string/c501g01" />
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501a"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                                <RadioButton
-                                    android:id="@+id/c501g02"
+
+                                <RadioGroup
+                                    android:id="@+id/c501a"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501g.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501g(`2`)}"
-                                    android:text="@string/c501g02" />
-                            </RadioGroup>
+                                    android:orientation="horizontal">
 
-                        </LinearLayout>
+                                    <RadioButton
+                                        android:id="@+id/c501a01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501a.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501a(`1`)}"
+                                        android:text="@string/c501a01" />
 
-                        <!-- c501h  Radio   -->
+                                    <RadioButton
+                                        android:id="@+id/c501a02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501a.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501a(`2`)}"
+                                        android:text="@string/c501a02" />
+                                </RadioGroup>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            </LinearLayout>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501h" />
-
-                            <RadioGroup
-                                android:id="@+id/c501h"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                            <!-- c501b  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                                 android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/c501h01"
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501h.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501h(`1`)}"
-                                    android:text="@string/c501h01" />
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501b"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                                <RadioButton
-                                    android:id="@+id/c501h02"
+                                <RadioGroup
+                                    android:id="@+id/c501b"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501h.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501h(`2`)}"
-                                    android:text="@string/c501h02" />
-                            </RadioGroup>
+                                    android:orientation="horizontal">
 
-                        </LinearLayout>
+                                    <RadioButton
+                                        android:id="@+id/c501b01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501b.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501b(`1`)}"
+                                        android:text="@string/c501b01" />
 
-                        <!-- c501i  Radio   -->
+                                    <RadioButton
+                                        android:id="@+id/c501b02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501b.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501b(`2`)}"
+                                        android:text="@string/c501b02" />
+                                </RadioGroup>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            </LinearLayout>
 
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501i" />
-
-                            <RadioGroup
-                                android:id="@+id/c501i"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                            <!-- c501c  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                                 android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/c501i01"
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501i.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501i(`1`)}"
-                                    android:text="@string/c501i01" />
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501c"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                                <RadioButton
-                                    android:id="@+id/c501i02"
+                                <RadioGroup
+                                    android:id="@+id/c501c"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501i.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501i(`2`)}"
-                                    android:text="@string/c501i02" />
-                            </RadioGroup>
+                                    android:orientation="horizontal">
 
-                        </LinearLayout>
+                                    <RadioButton
+                                        android:id="@+id/c501c01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501c.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501c(`1`)}"
+                                        android:text="@string/c501c01" />
 
-                        <!-- c501j  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                                    <RadioButton
+                                        android:id="@+id/c501c02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501c.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501c(`2`)}"
+                                        android:text="@string/c501c02" />
+                                </RadioGroup>
 
+                            </LinearLayout>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c501j" />
-
-                            <RadioGroup
-                                android:id="@+id/c501j"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                            <!-- c501d  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                                 android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/c501j01"
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501j.equals(`1`)}"
-                                    android:onClick="@{()->form.setC501j(`1`)}"
-                                    android:text="@string/c501j01" />
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501d"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                                <RadioButton
-                                    android:id="@+id/c501j02"
+                                <RadioGroup
+                                    android:id="@+id/c501d"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.c501j.equals(`2`)}"
-                                    android:onClick="@{()->form.setC501j(`2`)}"
-                                    android:text="@string/c501j02" />
-                            </RadioGroup>
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501d01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501d.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501d(`1`)}"
+                                        android:text="@string/c501d01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501d02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501d.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501d(`2`)}"
+                                        android:text="@string/c501d02" />
+                                </RadioGroup>
+
+
+                            </LinearLayout>
+
+                            <!-- c501e  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501e"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501e"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501e01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501e.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501e(`1`)}"
+                                        android:text="@string/c501e01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501e02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501e.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501e(`2`)}"
+                                        android:text="@string/c501e02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- c501f  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501f"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501f"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501f01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501f.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501f(`1`)}"
+                                        android:text="@string/c501f01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501f02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501f.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501f(`2`)}"
+                                        android:text="@string/c501f02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- c501g  Radio   -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501g"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501g"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501g01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501g.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501g(`1`)}"
+                                        android:text="@string/c501g01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501g02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501g.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501g(`2`)}"
+                                        android:text="@string/c501g02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- c501h  Radio   -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501h"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501h"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501h01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501h.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501h(`1`)}"
+                                        android:text="@string/c501h01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501h02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501h.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501h(`2`)}"
+                                        android:text="@string/c501h02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- c501i  Radio   -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501i"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501i"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501i01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501i.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501i(`1`)}"
+                                        android:text="@string/c501i01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501i02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501i.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501i(`2`)}"
+                                        android:text="@string/c501i02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!-- c501j  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c501j"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c501j"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c501j01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501j.equals(`1`)}"
+                                        android:onClick="@{()->form.setC501j(`1`)}"
+                                        android:text="@string/c501j01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c501j02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c501j.equals(`2`)}"
+                                        android:onClick="@{()->form.setC501j(`2`)}"
+                                        android:text="@string/c501j02" />
+                                </RadioGroup>
+
+                            </LinearLayout>
 
                         </LinearLayout>
-
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
 
                 <!-- c502  Radio   -->
@@ -669,7 +651,8 @@
                 <!-- c503  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc503"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -968,7 +951,8 @@
                 <!-- c506  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc506"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.c505.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1410,53 +1394,46 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="C511" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c511titile" />
-
-                    </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- c511a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc511a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="C511" />
 
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:text="@string/c511a" />
+                                android:layout_height="wrap_content"
+                                android:text="@string/c511titile" />
 
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511a"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/c511a"
@@ -1504,24 +1481,24 @@
                                     android:text="@string/c511a05" />
                             </RadioGroup>
 
-                        <!-- c511b  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511b  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511b" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511b"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                        <RadioGroup
+                            </LinearLayout>
+
+                            <RadioGroup
                                 android:id="@+id/c511b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
@@ -1567,21 +1544,22 @@
                                     android:text="@string/c511b05" />
                             </RadioGroup>
 
-                        <!-- c511c  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511c  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511c" />
-                        </LinearLayout>
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511c"
+                                    android:textColor="@color/colorPrimaryDark" />
+                            </LinearLayout>
+
                             <RadioGroup
                                 android:id="@+id/c511c"
                                 android:layout_width="match_parent"
@@ -1628,22 +1606,22 @@
                                     android:text="@string/c511c05" />
                             </RadioGroup>
 
-                        <!-- c511d  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511d  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511d" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511d"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/c511d"
@@ -1692,21 +1670,22 @@
                             </RadioGroup>
 
 
-                        <!-- c511e  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511e  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511e" />
-                        </LinearLayout>
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511e"
+                                    android:textColor="@color/colorPrimaryDark" />
+                            </LinearLayout>
+
                             <RadioGroup
                                 android:id="@+id/c511e"
                                 android:layout_width="match_parent"
@@ -1753,22 +1732,22 @@
                                     android:text="@string/c511e05" />
                             </RadioGroup>
 
-                        <!-- c511f  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511f  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511f" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511f"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/c511f"
@@ -1816,22 +1795,22 @@
                                     android:text="@string/c511f05" />
                             </RadioGroup>
 
-                        <!-- c511g  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511g  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511g" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511g"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/c511g"
@@ -1880,22 +1859,23 @@
                             </RadioGroup>
 
 
-                        <!-- c511h  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511h  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511h" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511h"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
+
                             <RadioGroup
                                 android:id="@+id/c511h"
                                 android:layout_width="match_parent"
@@ -1942,22 +1922,22 @@
                                     android:text="@string/c511h05" />
                             </RadioGroup>
 
-                        <!-- c511i  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511i  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511i" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511i"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/c511i"
@@ -2006,23 +1986,24 @@
                             </RadioGroup>
 
 
-                        <!-- c511j  Radio   -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:backgroundTint="#DCFAE5"
-                                android:gravity="center"
-                                android:textColor="@color/colorPrimaryDark"
+                            <!-- c511j  Radio   -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c511j" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                        </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:gravity="center"
+                                    android:text="@string/c511j"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </LinearLayout>
+
                             <RadioGroup
                                 android:id="@+id/c511j"
                                 android:layout_width="match_parent"
@@ -2070,6 +2051,7 @@
                             </RadioGroup>
 
 
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

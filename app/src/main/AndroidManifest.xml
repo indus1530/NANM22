@@ -201,10 +201,10 @@
         -->
         <meta-data
             android:name="YEK_REVRES"
-            android:value="!D(G+KbPeShVkYp3s6v9y$B8E)H@McQfTjWnZq4t7w!z%C*F-JaNdRgUkXp2s5u8" />
+            android:value="t7w!z%C8F)J@NcRfUjXn2r5u8x/A!D(G-KaPdSgVkYp3s6v9y7B8E)H@MbQeThWm" />
         <meta-data
             android:name="YEK_TRATS"
-            android:value="18" />
+            android:value="28" />
     </application>
 
 </manifest>

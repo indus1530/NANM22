@@ -79,18 +79,18 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="######"
+                                android:hint="####"
                                 android:inputType="number"
-                                android:maxLength="6"
-                                app:maxValue="999999"
-                                app:minValue="111111"
+                                android:maxLength="4"
+                                app:maxValue="9999"
+                                app:minValue="1111"
                                 app:type="range" />
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:drawableStart="@drawable/search"
-                                android:onClick="searchCluster"
+                                android:onClick="searchVillage"
                                 android:text="Search"
                                 android:textColor="@color/colorPrimary" />
 

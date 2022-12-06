@@ -3,6 +3,46 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/bg_rounded_app_color_bordered.xml" value="0.3880208333333333" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/ic_locked.xml" value="0.3880208333333333" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/ic_unlocked.xml" value="0.225" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/ic_user.xml" value="0.3880208333333333" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/splash_screen.xml" value="0.3880208333333333" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_adol_select.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_consent.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_ending.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_family_list.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_identification.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_login.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_main.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a1.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a2.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a3.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a3_a.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a3_b.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a4.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a4_a.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a4_b.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a4_c.xml" value="0.25" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5_a.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5_b.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_b1.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_b3.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c1.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c2.xml" value="0.2876712328767123" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c3.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c4.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c5.xml" value="0.3591666666666667" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c6.xml" value="0.3072289156626506" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c7.xml" value="0.3591666666666667" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d.xml" value="0.2895377128953771" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d1.xml" value="0.2735632183908046" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d2.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_e1a.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/content_section_d2.xml" value="0.20885416666666667" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/menu/main_menu.xml" value="0.20885416666666667" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/drawable/ic_home.xml" value="0.3880208333333333" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/layout/activity_camera.xml" value="0.35625" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/layout/activity_change_password.xml" value="0.27" />
@@ -181,66 +221,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/smkHhMl2022/app/src/main/res/layout/custom_spinner.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/smkHhMl2022/app/src/main/res/layout/famlily_member_row.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/smkHhMl2022/app/src/main/res/layout/preg_row.xml" value="0.55859375" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable-v24/capsuler.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/all_round_corners_stroke.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/bottom.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/button_shape_gray.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/button_shape_green.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/button_shape_red.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/camera.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/camera_checked.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/capsule.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/capsuley.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/card_design.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/drawable_floral_design.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/edit_text_selector.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/female.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/grad_lable.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_alert_24.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_baseline_bloodtype_24.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_calculate.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_camera.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_children.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_close.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_followup_24.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_girl.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_home.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_home_form.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_house.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_upload.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_username.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/ic_weddingring2.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/login_eyestyle.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/male.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/new_form.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/onhold_forms.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/options_separator.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/top_round_shape.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/top_round_shape_transparent.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/drawable/vignette_effect.xml" value="0.2105" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a1.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a2.xml" value="0.1" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a3.xml" value="0.21302083333333333" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a3_a.xml" value="0.33" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a3_b.xml" value="0.25" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a4.xml" value="0.21302083333333333" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a4_a.xml" value="0.33" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a4_b.xml" value="0.22" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a4_c.xml" value="0.1488756048961002" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a5_a.xml" value="0.22" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_a5_b.xml" value="0.11419857675364284" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_b3.xml" value="0.31648936170212766" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c1.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c2.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c3.xml" value="0.25" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c4.xml" value="0.3016666666666667" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c5.xml" value="0.1" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c6.xml" value="0.2" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_c7.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_d.xml" value="0.29333333333333333" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_d1.xml" value="0.33" />
-        <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_d2.xml" value="0.5" />
         <entry key="..\:/Users/gul.sanober/StudioProjects/NANM22/app/src/main/res/layout/activity_section_e1a.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/smkHhMl2022/app/src/main/res/layout/activity_consent.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/smkHhMl2022/app/src/main/res/layout/activity_household_screen.xml" value="0.19907407407407407" />
@@ -278,7 +259,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

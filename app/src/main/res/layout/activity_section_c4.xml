@@ -116,20 +116,23 @@
                                 android:text="@string/Q_ca402" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="match_parent"
                                 android:text="@string/ca402" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ca402"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ca402}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/ca402"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -212,20 +215,23 @@
                                 android:text="@string/Q_ca404" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="match_parent"
                                 android:text="@string/ca404" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ca404"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ca404}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/ca404"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -252,20 +258,23 @@
                                 android:text="@string/Q_ca405" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="match_parent"
                                 android:text="@string/ca405" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ca405"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ca405}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/ca405"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -357,36 +366,41 @@
                         <RadioGroup
                             android:id="@+id/ca407"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ca407a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.ca407.equals(`1`)}"
                                 android:onClick="@{()->form.setCa407(`1`)}"
                                 android:text="@string/ca407a" />
 
                             <RadioButton
                                 android:id="@+id/ca407b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.ca407.equals(`2`)}"
                                 android:onClick="@{()->form.setCa407(`2`)}"
                                 android:text="@string/ca407b" />
 
                             <RadioButton
                                 android:id="@+id/ca407c"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.ca407.equals(`3`)}"
                                 android:onClick="@{()->form.setCa407(`3`)}"
                                 android:text="@string/ca407c" />
 
                             <RadioButton
                                 android:id="@+id/ca407d"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.ca407.equals(`4`)}"
                                 android:onClick="@{()->form.setCa407(`4`)}"
                                 android:text="@string/ca407d" />
@@ -433,20 +447,23 @@
                                 android:text="@string/Q_cb401" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="match_parent"
                                 android:text="@string/cb401" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/cb401"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.cb401}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/cb401"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -473,20 +490,23 @@
                                 android:text="@string/Q_cb402" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="match_parent"
                                 android:text="@string/cb402" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/cb402"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.cb402}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/cb402"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -578,36 +598,41 @@
                         <RadioGroup
                             android:id="@+id/cb404"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/cb404a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.cb404.equals(`1`)}"
                                 android:onClick="@{()->form.setCb404(`1`)}"
                                 android:text="@string/cb404a" />
 
                             <RadioButton
                                 android:id="@+id/cb404b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.cb404.equals(`2`)}"
                                 android:onClick="@{()->form.setCb404(`2`)}"
                                 android:text="@string/cb404b" />
 
                             <RadioButton
                                 android:id="@+id/cb404c"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.cb404.equals(`3`)}"
                                 android:onClick="@{()->form.setCb404(`3`)}"
                                 android:text="@string/cb404c" />
 
                             <RadioButton
                                 android:id="@+id/cb404d"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.cb404.equals(`4`)}"
                                 android:onClick="@{()->form.setCb404(`4`)}"
                                 android:text="@string/cb404d" />

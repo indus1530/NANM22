@@ -20,9 +20,9 @@ import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
-import edu.aku.abdulsajid.nanm2022.models.Clusters;
+import edu.aku.abdulsajid.nanm2022.models.ChildList;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
-import edu.aku.abdulsajid.nanm2022.models.RandomHH;
+import edu.aku.abdulsajid.nanm2022.models.Villages;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA1Activity;
 
 
@@ -274,19 +274,19 @@ public class IdentificationActivity extends AppCompatActivity {
         testRand.setClusteCcode("9000001");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999");*/
-        RandomHH randHH = db.getHHbyCluster(bi.a109.getText().toString(), bi.a105.getText().toString());
+        ChildList childList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
       /*  if (!bi.a101.getText().toString().equals("9000001")) {
             randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
             randHH = testRand;
         }*/
-        if (!randHH.getClusterCode().equals("")) {
+        if (!childList.getChild_id().equals("")) {
          /*   bi.ahhead.setError(null);
             bi.ahhead.setText(randHH.getHeadhh());*/
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
-            MainApp.currentHousehold = randHH;
+            MainApp.currentHousehold = childList;
 
         } else {
 /*
@@ -365,7 +365,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         MainApp.form = new Forms();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.currentHousehold.getClusterCode(), MainApp.currentHousehold.getHhno());
+            MainApp.form = db.getFormByPSUHHNo(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -376,7 +376,7 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    public void searchCluster(View view) {
+    public void searchVillage(View view) {
         bi.btnContinue.setEnabled(false);
 
         bi.a106.setText(null);
@@ -385,18 +385,19 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a105.setText(null);
         bi.fldGrpA105.setVisibility(View.GONE);
 
-        Clusters clusters = db.getCluster(bi.a109.getText().toString());
+//        Clusters clusters = db.getCluster(bi.a109.getText().toString());
+        Villages villages = db.getVillage(bi.a109.getText().toString());
 
-        String geoarea = clusters.getGeoarea();
-        if (!clusters.getClusterCode().equals("")) {
-            bi.a105.setText(geoarea.split("\\|")[0]);
-            bi.a106.setText(geoarea.split("\\|")[1]);
-            bi.a107.setText(geoarea.split("\\|")[2]);
+        String geoarea = villages.getGeoarea();
+        if (!villages.getVillage_code().equals("")) {
+            bi.a106.setText(geoarea.split("\\|")[0]);
+            bi.a107.setText(geoarea.split("\\|")[1]);
+            bi.a108.setText(geoarea.split("\\|")[2]);
 
             bi.fldGrpA105.setVisibility(View.VISIBLE);
 
-            MainApp.selectedTehsil = bi.a106.getText().toString();
-            MainApp.selectedUC = bi.a107.getText().toString();
+            MainApp.selectedTehsil = bi.a107.getText().toString();
+            MainApp.selectedUC = bi.a108.getText().toString();
 
         }
     }

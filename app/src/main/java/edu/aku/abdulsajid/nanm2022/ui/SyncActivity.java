@@ -52,12 +52,11 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.adapters.SyncListAdapter;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.AdolescentTable;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.ClusterTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.EntryLogTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.RandomHHTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
@@ -279,9 +278,9 @@ public class SyncActivity extends AppCompatActivity {
                 } else {
 
                     select = " * ";
-                    filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
-                    downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
+                    filter = " (colflag != '0' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    downloadTables.add(new SyncModel(TableContracts.VillageTable.TABLE_NAME, select, filter));
+                    downloadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);

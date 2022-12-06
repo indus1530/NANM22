@@ -4,8 +4,7 @@ package edu.aku.abdulsajid.nanm2022.database;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.IBAHC;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.PROJECT_NAME;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedCluster;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedHousehold;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedVillages;
 import static edu.aku.abdulsajid.nanm2022.core.UserAuth.checkPassword;
 
 import android.content.ContentValues;
@@ -30,20 +29,20 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.AdolescentTable;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.ClusterTable;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.ChildTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.EntryLogTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.RandomHHTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.VillageTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.Clusters;
+import edu.aku.abdulsajid.nanm2022.models.ChildList;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
-import edu.aku.abdulsajid.nanm2022.models.RandomHH;
 import edu.aku.abdulsajid.nanm2022.models.Users;
+import edu.aku.abdulsajid.nanm2022.models.Villages;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -54,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = PROJECT_NAME + ".db";
     public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
     public static final String DATABASE_PASSWORD = IBAHC;
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
     private final String TAG = "DatabaseHelper";
 
     public DatabaseHelper(Context context) {
@@ -65,8 +64,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CreateTable.SQL_CREATE_USERS);
-        db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
-        db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
+        db.execSQL(CreateTable.SQL_CREATE_CHILD_LIST);
+        db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
@@ -472,46 +471,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-    public int syncClusters(JSONArray clusterList) throws JSONException {
+    public int syncchild_list(JSONArray childs) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(ClusterTable.TABLE_NAME, null, null);
+        db.delete(ChildTable.TABLE_NAME, null, null);
         int insertCount = 0;
-        for (int i = 0; i < clusterList.length(); i++) {
+        for (int i = 0; i < childs.length(); i++) {
 
-            JSONObject json = clusterList.getJSONObject(i);
+            JSONObject json = childs.getJSONObject(i);
 
-            Clusters clusters = new Clusters();
-            clusters.sync(json);
+            ChildList childList = new ChildList();
+            childList.sync(json);
             ContentValues values = new ContentValues();
 
-            values.put(ClusterTable.COLUMN_GEOAREA, clusters.getGeoarea());
-            values.put(ClusterTable.COLUMN_DIST_ID, clusters.getDistId());
-            values.put(ClusterTable.COLUMN_CLUSTER_CODE, clusters.getClusterCode());
+            values.put(ChildTable.COLUMN_CHILD_ID, childList.getChild_id());
+            values.put(ChildTable.COLUMN_VILLAGE_CODE, childList.getVillage_code());
+            values.put(ChildTable.COLUMN_MOTHER_NAME, childList.getMother_name());
+            values.put(ChildTable.COLUMN_CHILD_NAME, childList.getChild_name());
+            values.put(ChildTable.COLUMN_HH_HEAD, childList.getHh_head());
+            values.put(ChildTable.COLUMN_GENDER, childList.getGender());
+            values.put(ChildTable.COLUMN_DOB, childList.getDob());
+            values.put(ChildTable.COLUMN_PROJECT, childList.getProject());
 
-            long rowID = db.insertOrThrow(ClusterTable.TABLE_NAME, null, values);
+            long rowID = db.insertOrThrow(ChildTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
         return insertCount;
     }
 
-
-    public int syncbl_randomised(JSONArray list) throws JSONException {
+    public int syncvillages(JSONArray villageList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(RandomHHTable.TABLE_NAME, null, null);
+        db.delete(VillageTable.TABLE_NAME, null, null);
         int insertCount = 0;
-        for (int i = 0; i < list.length(); i++) {
-            JSONObject json = list.getJSONObject(i);
-            RandomHH ran = new RandomHH();
-            ran.sync(json);
+        for (int i = 0; i < villageList.length(); i++) {
+
+            JSONObject json = villageList.getJSONObject(i);
+
+            Villages villages = new Villages();
+            villages.sync(json);
             ContentValues values = new ContentValues();
-            values.put(RandomHHTable.COLUMN_SNO, ran.getSno());
-            values.put(RandomHHTable.COLUMN_CLUSTER_CODE, ran.getClusterCode());
-            values.put(RandomHHTable.COLUMN_HH_NO, ran.getHhno());
-            values.put(RandomHHTable.COLUMN_HEAD_HH, ran.getHeadhh());
-            long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
+
+            values.put(VillageTable.COLUMN_GEOAREA, villages.getGeoarea());
+            values.put(VillageTable.COLUMN_DIST_ID, villages.getDistId());
+            values.put(VillageTable.COLUMN_VILLAGE_CODE, villages.getVillage_code());
+
+            long rowID = db.insertOrThrow(VillageTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
         return insertCount;
     }
 
@@ -944,67 +949,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Forms getFormByhhid() throws JSONException {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-
-        Boolean distinct = false;
-        String tableName = FormsTable.TABLE_NAME;
-        String[] columns = null;
-        String whereClause = FormsTable.COLUMN_CLUSTER_CODE + "= ? AND " +
-                FormsTable.COLUMN_HHID + "= ? ";
-        String[] whereArgs = {selectedCluster.getClusterCode(), selectedHousehold.getHhno()};
-        String groupBy = null;
-        String having = null;
-        String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
-        String limitRows = "1";
-
-        c = db.query(
-                distinct,       // Distinct values
-                tableName,      // The table to query
-                columns,        // The columns to return
-                whereClause,    // The columns for the WHERE clause
-                whereArgs,      // The values for the WHERE clause
-                groupBy,        // don't group the rows
-                having,         // don't filter by row groups
-                orderBy,
-                limitRows
-        );
-
-        Forms form = new Forms();
-        while (c.moveToNext()) {
-            form = (new Forms().Hydrate(c));
-        }
-
-        if (c != null && !c.isClosed()) {
-            c.close();
-        }
-        return form;
-
-    }
-
-
-    public RandomHH getHHbyCluster(String clustercode, String hhid) {
+    public ChildList getChildBychildid(String villageCode, String childID) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = RandomHHTable.COLUMN_CLUSTER_CODE + " = ? AND " +
-                RandomHHTable.COLUMN_HH_NO + " = ?";
+        String whereClause = ChildTable.COLUMN_VILLAGE_CODE + " = ? AND " +
+                ChildTable.COLUMN_CHILD_ID + " = ?";
 
-        String[] whereArgs = {clustercode, hhid};
+        String[] whereArgs = {villageCode, childID};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = RandomHHTable.COLUMN_HH_NO + " ASC";
+        String orderBy = ChildTable.COLUMN_CHILD_ID + " ASC";
 
         String limit = "5000";
 
-        RandomHH randHH = new RandomHH();
+        ChildList childList = new ChildList();
         c = db.query(true,
-                RandomHHTable.TABLE_NAME,  // The table to query
+                ChildTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
@@ -1015,7 +979,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 // The sort order
         );
         while (c.moveToNext()) {
-            randHH = new RandomHH().hydrate(c);
+            childList = new ChildList().hydrate(c);
         }
 
         if (c != null && !c.isClosed()) {
@@ -1023,27 +987,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
 
-        return randHH;
+        return childList;
     }
 
-    public Clusters getCluster(String ebCode) {
+    public Villages getVillage(String villageCode) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = ClusterTable.COLUMN_CLUSTER_CODE + " =?";
-        String[] whereArgs = new String[]{ebCode};
+        String whereClause = VillageTable.COLUMN_VILLAGE_CODE + " =?";
+        String[] whereArgs = new String[]{villageCode};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                ClusterTable._ID + " ASC";
+                VillageTable._ID + " ASC";
 
-        Clusters cluster = new Clusters();
+        Villages villages = new Villages();
 
         c = db.query(
-                ClusterTable.TABLE_NAME,  // The table to query
+                VillageTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
@@ -1052,14 +1016,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                    // The sort order
         );
         while (c.moveToNext()) {
-            cluster = new Clusters().hydrate(c);
+            villages = new Villages().hydrate(c);
         }
 
         if (c != null && !c.isClosed()) {
             c.close();
         }
 
-        return cluster;
+        return villages;
 
     }
 
@@ -1079,24 +1043,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public Clusters getClusterByEBNum(String ebCode) {
+    public ChildList getRandomBychildid(String child_id) {
+
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
+        String whereClause = ChildTable.COLUMN_VILLAGE_CODE + " = ? AND " +
+                ChildTable.COLUMN_CHILD_ID + " = ? ";
 
-        String whereClause = ClusterTable.COLUMN_CLUSTER_CODE + " = ? ";
-
-        String[] whereArgs = {ebCode};
-
+        String[] whereArgs = {selectedVillages.getVillage_code(), child_id};
         String groupBy = null;
         String having = null;
-
         String orderBy = null;
 
-
-        Clusters cluster = null;
+        ChildList childList = null;
         c = db.query(
-                ClusterTable.TABLE_NAME,   // The table to query
+                ChildTable.TABLE_NAME,   // The table to query
                 columns,                    // The columns to return
                 whereClause,                // The columns for the WHERE clause
                 whereArgs,                  // The values for the WHERE clause
@@ -1105,48 +1067,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                     // The sort order
         );
         while (c.moveToNext()) {
-            cluster = new Clusters().hydrate(c);
-        }
-
-        if (c != null && !c.isClosed()) {
-            c.close();
-        }
-
-
-        return cluster;
-
-    }
-
-    public RandomHH getRandomByhhid(String hhid) {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause = RandomHHTable.COLUMN_CLUSTER_CODE + " = ? AND " +
-                RandomHHTable.COLUMN_HH_NO + " = ? ";
-
-        String[] whereArgs = {selectedCluster.getClusterCode(), hhid};
-        String groupBy = null;
-        String having = null;
-        String orderBy = null;
-
-        RandomHH randomHH = null;
-        c = db.query(
-                RandomHHTable.TABLE_NAME,   // The table to query
-                columns,                    // The columns to return
-                whereClause,                // The columns for the WHERE clause
-                whereArgs,                  // The values for the WHERE clause
-                groupBy,                    // don't group the rows
-                having,                     // don't filter by row groups
-                orderBy                     // The sort order
-        );
-        while (c.moveToNext()) {
-            randomHH = new RandomHH().hydrate(c);
+            childList = new ChildList().hydrate(c);
         }
         if (c != null && !c.isClosed()) {
             c.close();
         }
-        return randomHH;
+        return childList;
     }
 
     public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {

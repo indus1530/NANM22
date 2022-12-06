@@ -117,22 +117,27 @@ object CreateTable {
             )
 
 
-    const val SQL_CREATE_CLUSTERS = ("CREATE TABLE "
-            + ClusterTable.TABLE_NAME + "("
-            + ClusterTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + ClusterTable.COLUMN_GEOAREA + " TEXT,"
-            + ClusterTable.COLUMN_DIST_ID + " TEXT,"
-            + ClusterTable.COLUMN_CLUSTER_CODE + " TEXT"
+    const val SQL_CREATE_VILLAGES = ("CREATE TABLE "
+            + VillageTable.TABLE_NAME + "("
+            + VillageTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + VillageTable.COLUMN_GEOAREA + " TEXT,"
+            + VillageTable.COLUMN_DIST_ID + " TEXT,"
+            + VillageTable.COLUMN_VILLAGE_CODE + " TEXT"
             + " );"
             )
 
-    const val SQL_CREATE_RANDOM_HH = ("CREATE TABLE "
-            + RandomHHTable.TABLE_NAME + "("
-            + RandomHHTable.COLUMN_ID + " INTEGER PRIMARY KEY,"
-            + RandomHHTable.COLUMN_SNO + " TEXT,"
-            + RandomHHTable.COLUMN_CLUSTER_CODE + " TEXT,"
-            + RandomHHTable.COLUMN_HH_NO + " TEXT,"
-            + RandomHHTable.COLUMN_HEAD_HH + " TEXT"
+
+    const val SQL_CREATE_CHILD_LIST = ("CREATE TABLE "
+            + ChildTable.TABLE_NAME + "("
+            + ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildTable.COLUMN_CHILD_ID + " TEXT,"
+            + ChildTable.COLUMN_VILLAGE_CODE + " TEXT,"
+            + ChildTable.COLUMN_MOTHER_NAME + " TEXT,"
+            + ChildTable.COLUMN_CHILD_NAME + " TEXT,"
+            + ChildTable.COLUMN_HH_HEAD + " TEXT,"
+            + ChildTable.COLUMN_GENDER + " TEXT,"
+            + ChildTable.COLUMN_DOB + " TEXT,"
+            + ChildTable.COLUMN_PROJECT + " TEXT"
             + " );"
             )
 }

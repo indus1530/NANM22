@@ -222,7 +222,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d202.equals(`1`)}"
-                                android:onClick="@{()->form.setD202(`1`)}"
+                                android:onClick="@{()->form.setD202(`1`) + d203.clearCheck()}"
                                 android:text="@string/d20201" />
 
                             <RadioButton

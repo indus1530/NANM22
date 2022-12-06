@@ -39,30 +39,30 @@ import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.Clusters;
+import edu.aku.abdulsajid.nanm2022.models.ChildList;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
-import edu.aku.abdulsajid.nanm2022.models.RandomHH;
 import edu.aku.abdulsajid.nanm2022.models.Users;
+import edu.aku.abdulsajid.nanm2022.models.Villages;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.LockActivity;
 
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "smkHhMl2022";
+    public static final String PROJECT_NAME = "matiari_cohort_2022";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     // public static final String _IP = "https://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/smk_ml/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/matiari_cohort/api/";// .TEST server;
     public static final String _SERVER_URL = "syncgcm.php";
     public static final String _USER_URL = "resetpassword.php";
     public static final String _SERVER_GET_URL = "getDatagcm.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/smk_ml/app/survey";
+    public static final String _UPDATE_URL = MainApp._IP + "/matiari_cohort/app/survey";
     public static final String _APP_FOLDER = "../app/";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
@@ -80,7 +80,7 @@ public class MainApp extends Application {
     public static Forms form;
     public static Adolescent adol;
     public static FamilyMembers familyMember;
-    public static RandomHH currentHousehold;
+    public static ChildList currentHousehold;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
@@ -114,7 +114,6 @@ public class MainApp extends Application {
     public static String selectedDistrict = "";
     public static String selectedTehsil = "";
     public static String selectedUC = "";
-    public static RandomHH selectedHousehold;
     public static int selectedLanguage = 0;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
@@ -125,7 +124,7 @@ public class MainApp extends Application {
     public static boolean pregComplete = false;
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
     public static int mortalityCounter = 0;
-    public static Clusters selectedCluster;
+    public static Villages selectedVillages;
     public static List<Integer> childCompleted;
     public static boolean householdChecked = false;
     public static long preAgeInMonths;
