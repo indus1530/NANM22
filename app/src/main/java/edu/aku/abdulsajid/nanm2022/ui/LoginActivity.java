@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -68,6 +69,7 @@ import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityLoginBinding;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
 import edu.aku.abdulsajid.nanm2022.models.Users;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -348,7 +350,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
                         || (username.equals("test1234") && password.equals("test1234"))
-                        || db.doLogin(username, password)
+                        || NANMRoomDatabase.getDbInstance().usersDao().doLogin(username, password)
                 ) {
 
                     MainApp.user.setUserName(username);
@@ -379,13 +381,6 @@ public class LoginActivity extends AppCompatActivity {
                     bi.password.requestFocus();
                     //  Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
                 }
-            } catch (InvalidKeySpecException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "InvalidKeySpecException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "NoSuchAlgorithmException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
-
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
                 Toast.makeText(this, "IllegalArgumentException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();

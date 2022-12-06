@@ -167,8 +167,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.motherList = new ArrayList<>();
         Log.d(TAG, "onCreate(familyList): " + MainApp.familyList.size());
         try {
-            //MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
-            familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
+            MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
+            //familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
             int fmCount = 0;
             for (FamilyMembers fm : MainApp.familyList) {
                 fmCount++;
@@ -218,8 +218,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
             }
-
-
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();

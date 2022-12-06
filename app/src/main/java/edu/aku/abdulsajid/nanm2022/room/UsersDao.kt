@@ -47,15 +47,19 @@ interface UsersDao {
     @Query("SELECT * FROM " + TableContracts.UsersTable.TABLE_NAME +
             " WHERE " + TableContracts.UsersTable.COLUMN_USERNAME + " LIKE :username ORDER By "
             + TableContracts.UsersTable.COLUMN_ID + " ASC")
-    fun doLogin_internal(username: String, password : String) : Users
+    fun getUserByUsername_internal(username: String) : Users?
 
-    @kotlin.jvm.Throws(InvalidKeyException::class, NoSuchAlgorithmException::class, IllegalArgumentException::class)
     fun doLogin(username: String, password: String) : Boolean
     {
-        val user = doLogin_internal(username, password)
-
-
-        return true
+        val loggedInUser = getUserByUsername_internal(username)
+        if (loggedInUser != null) {
+            if (UserAuth.checkPassword(password, loggedInUser.password)) {
+                MainApp.user = loggedInUser
+                MainApp.selectedDistrict = loggedInUser.dist_id
+                return true
+            }
+        }
+        return false
     }
 
 

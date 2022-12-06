@@ -30,7 +30,7 @@ interface FamilyMembersDao {
     )
     fun getMemberBYUID_Internal(uid : String) : List<FamilyMembers>
 
-    @Throws(JSONException::class)
+
     fun getMemberBYUID(uid: String) : List<FamilyMembers>
     {
         val members = getMemberBYUID_Internal(uid)
@@ -42,9 +42,9 @@ interface FamilyMembersDao {
     }
 
     @Query("SELECT * FROM " + TableContracts.FamilyMembersTable.TABLE_NAME
-            + " WHERE " + TableContracts.FamilyMembersTable.COLUMN_UUID + " LIKE :uid AND "
-            + TableContracts.FamilyMembersTable.COLUMN_INDEXED + " LIKE '1' ORDER BY "
-            + TableContracts.FamilyMembersTable.COLUMN_ID + " ASC")
+            + " WHERE " + TableContracts.FamilyMembersTable.COLUMN_UUID + " LIKE :uid "
+            //+ TableContracts.FamilyMembersTable.COLUMN_INDEXED + " LIKE '1'
+            + "ORDER BY " + TableContracts.FamilyMembersTable.COLUMN_ID + " ASC")
     fun getSelectedMemberBYUID_internal(uid: String) : FamilyMembers
 
     @Throws(JSONException::class)
