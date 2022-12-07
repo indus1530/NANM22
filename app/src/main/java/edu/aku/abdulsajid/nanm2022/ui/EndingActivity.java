@@ -21,6 +21,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityEndingBinding;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 
 public class EndingActivity extends AppCompatActivity {
@@ -93,14 +94,16 @@ public class EndingActivity extends AppCompatActivity {
         entryLog.populateMeta();
         Long rowId = null;
         try {
-            rowId = db.addEntryLog(entryLog);
-        } catch (SQLiteException e) {
+            //rowId = db.addEntryLog(entryLog);
+            rowId = NANMRoomDatabase.getDbInstance().entryLogDao().addEntryLog(entryLog);
+        } catch (SQLiteException | JSONException e) {
             Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
         }
         if (rowId != -1) {
-            entryLog.setId(String.valueOf(rowId));
+            entryLog.setId(rowId);
             entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
-            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+            //db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+            NANMRoomDatabase.getDbInstance().entryLogDao().updateEntryLog(entryLog);
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 

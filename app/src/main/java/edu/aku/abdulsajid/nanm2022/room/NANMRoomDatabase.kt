@@ -24,7 +24,8 @@ import net.sqlcipher.database.SupportFactory
             FamilyMembers::class,
             Users::class,
             Villages::class,
-            ChildList::class
+            ChildList::class,
+            EntryLog::class
 
 
         ]
@@ -38,6 +39,7 @@ abstract class NANMRoomDatabase : RoomDatabase(){
     abstract fun usersDao() : UsersDao
     abstract fun villagesDao() : VillagesDao
     abstract fun childListDao() : ChildListDao
+    abstract fun entryLogDao() : EntryLogDao
 
 
     companion object {

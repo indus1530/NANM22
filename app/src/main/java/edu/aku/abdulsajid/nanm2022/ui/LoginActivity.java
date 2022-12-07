@@ -41,6 +41,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import net.sqlcipher.database.SQLiteException;
 
+import org.json.JSONException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -404,16 +406,18 @@ public class LoginActivity extends AppCompatActivity {
         entryLog.setDeviceId(MainApp.deviceid);
         Long rowId = null;
         try {
-            rowId = db.addEntryLog(entryLog);
+            //rowId = db.addEntryLog(entryLog);
+            rowId = NANMRoomDatabase.getDbInstance().entryLogDao().addEntryLog(entryLog);
             if (rowId != -1) {
-                entryLog.setId(String.valueOf(rowId));
+                entryLog.setId(rowId);
                 entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
-                db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+                //db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), String.valueOf(entryLog.getId()));
+                NANMRoomDatabase.getDbInstance().entryLogDao().updateEntryLog(entryLog);
             } else {
                 Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 
             }
-        } catch (SQLiteException e) {
+        } catch (SQLiteException | JSONException e) {
             Toast.makeText(this, "SQLiteException(EntryLog)" + e.getMessage(), Toast.LENGTH_SHORT).show();
             Log.d(TAG, "recordEntry: " + e.getMessage());
         }
