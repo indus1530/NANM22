@@ -82,8 +82,8 @@ public class EntryLog extends BaseObservable implements Observable {
         setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setEbCode(MainApp.form.getVillageCode());
         setHhid(MainApp.form.getChildID());
-        setiStatus(MainApp.form.getIStatus());
-        setiStatus96x(MainApp.form.getIStatus96x());
+        setIStatus(MainApp.form.getIStatus());
+        setIStatus96x(MainApp.form.getIStatus96x());
         setAppver(MainApp.appInfo.getAppVersion());
         setDeviceId(MainApp.deviceid);
 
@@ -200,19 +200,19 @@ public class EntryLog extends BaseObservable implements Observable {
         this.appver = appver;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
-    public String getiStatus96x() {
+    public String getIStatus96x() {
         return iStatus96x;
     }
 
-    public void setiStatus96x(String iStatus96x) {
+    public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 

@@ -79,11 +79,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="####"
+                                android:hint="#####"
                                 android:inputType="number"
-                                android:maxLength="4"
-                                app:maxValue="9999"
-                                app:minValue="1111"
+                                android:maxLength="5"
+                                app:maxValue="99999"
+                                app:minValue="11111"
                                 app:type="range" />
 
                             <Button
@@ -184,36 +184,108 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
-                            android:orientation="horizontal"
+                            android:orientation="vertical"
                             android:visibility="gone"
                             tools:visibility="visible">
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/a105" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a105"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:digits="ABCD0123456789"
-                                android:gravity="center"
-                                android:hint="#-####-###"
-                                android:inputType="textCapCharacters"
-                                android:maxLength="10"
-                                android:text="@={form.a105}" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/a105" />
 
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:drawableStart="@drawable/search"
-                                android:onClick="checkChild"
-                                android:text="Search"
-                                android:textColor="@color/colorPrimary" />
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a105"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.a105}" />
+
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:drawableStart="@drawable/search"
+                                    android:onClick="checkChild"
+                                    android:text="Search"
+                                    android:textColor="@color/colorPrimary" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/child"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:text="@string/childName" />
+
+                                <TextView
+                                    android:id="@+id/childName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <CheckBox
+                                    android:id="@+id/checkChild"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:text="@string/confirm" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/headhh"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:text="@string/hhhead" />
+
+                                <TextView
+                                    android:id="@+id/hhhead"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <CheckBox
+                                    android:id="@+id/checkHhhead"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:text="@string/confirm" />
+                            </LinearLayout>
 
                         </LinearLayout>
 

@@ -281,7 +281,11 @@ public class SyncActivity extends AppCompatActivity {
                     select = " * ";
                     filter = " (colflag != '0' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(TableContracts.VillageTable.TABLE_NAME, select, filter));
-                    //downloadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, select, filter));
+
+                    select = " * ";
+//                    filter = " (colflag != '0' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " colflag != '0' ";
+                    downloadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);

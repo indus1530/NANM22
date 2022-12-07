@@ -57,6 +57,7 @@ public class TableContracts {
         public static final String TABLE_NAME = "child_list";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_VILLAGE_CODE = "village_code";
+        public static final String COLUMN_SR_NO = "srno";
         public static final String COLUMN_CHILD_ID = "child_id";
         public static final String COLUMN_MOTHER_NAME = "mother_name";
         public static final String COLUMN_CHILD_NAME = "child_name";

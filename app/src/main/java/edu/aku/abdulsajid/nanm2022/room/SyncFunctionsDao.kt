@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
+import edu.aku.abdulsajid.nanm2022.models.ChildList
 import edu.aku.abdulsajid.nanm2022.models.Users
 import edu.aku.abdulsajid.nanm2022.models.Villages
 import org.json.JSONArray
@@ -149,7 +150,7 @@ interface SyncFunctionsDao {
 
     //************************************************* DOWNLOAD FUNCTIONS*************************************************************
 
-
+// Villages
     @Throws(JSONException::class)
     fun syncvillages(villagesList: JSONArray): Int {
         var insertCount = 0
@@ -199,6 +200,33 @@ interface SyncFunctionsDao {
 
     @Query("DELETE FROM " + TableContracts.UsersTable.TABLE_NAME)
     fun deleteUsersTable()
+
+
+    // Child
+    @Throws(JSONException::class)
+    fun syncchild_list(childList: JSONArray): Int {
+        var insertCount = 0
+        deleteChildTable()
+        for(i in 0 until childList.length()) {
+            val jsonObject = childList.optJSONObject(i)
+
+            val child = ChildList()
+            child.sync(jsonObject)
+
+
+            val rowId = insertChild(child)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertChild(child: ChildList): Long
+
+    @Query("DELETE FROM " + TableContracts.ChildTable.TABLE_NAME)
+    fun deleteChildTable()
+
 
 
 }
