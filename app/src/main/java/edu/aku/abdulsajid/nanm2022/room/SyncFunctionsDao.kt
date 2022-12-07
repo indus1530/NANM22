@@ -3,159 +3,157 @@ package edu.aku.abdulsajid.nanm2022.room
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
-import edu.aku.abdulsajid.nanm2022.models.ChildList
-import edu.aku.abdulsajid.nanm2022.models.Users
-import edu.aku.abdulsajid.nanm2022.models.Villages
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.*
+import edu.aku.abdulsajid.nanm2022.models.*
 import org.json.JSONArray
 import org.json.JSONException
 import java.util.*
 
-//
-// Created by gul.sanober on 12/1/2022.
-// Copyright (c) 2022 COE. All rights reserved.
-//
+/*
+ Created by gul.sanober on 12/1/2022.
+ Updated by muhammad.hussain on 12/06/2022.
+ Copyright (c) 2022 COE. All rights reserved.
+*/
 
 @Dao
 interface SyncFunctionsDao {
 
+    /*upload function*/
+    /*EntryLog*/
+    @Query(
+        "SELECT * FROM " + EntryLogTable.TABLE_NAME + " WHERE " + EntryLogTable.COLUMN_SYNCED
+                + " ORDER BY " + EntryLogTable.COLUMN_ID + " ASC"
+    )
+    fun getUnsyncedEntryLog_Internal(): List<Forms>
 
-    // upload function
-/*
-
-    @Query("SELECT * FROM " + TableContracts.HouseholdTable.TABLE_NAME + " WHERE " + TableContracts.HouseholdTable.COLUMN_SYNCED
-            + " is \'\' AND (" + TableContracts.HouseholdTable.COLUMN_ISTATUS  + " = 1 OR "
-            + TableContracts.HouseholdTable.COLUMN_VISIT_NO + " > 2) ORDER BY " + TableContracts.HouseholdTable.COLUMN_ID + " ASC")
-    fun getUnsyncedHousehols_internal() : List<Households>
-*/
-
-   /* @kotlin.jvm.Throws(JSONException :: class)
-    fun getUnsyncedHouseholds() : JSONArray?
-    {
-        val allForms = getUnsyncedHousehols_internal()
-
+    @kotlin.jvm.Throws(JSONException::class)
+    fun getUnsyncedEntryLog(): JSONArray? {
+        val allForms = getUnsyncedEntryLog_Internal()
         val jsonArray = JSONArray()
-        for (i in allForms)
-        {
-
+        for (i in allForms) {
             jsonArray.put(i.toJSONObject())
-
         }
-
         return jsonArray
+    }
 
-    }*/
+    /*Forms*/
+    @Query(
+        "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_SYNCED
+                + " is \'\' AND (" + FormsTable.COLUMN_ISTATUS + " = 1 ORDER BY " + FormsTable.COLUMN_ID + " ASC"
+    )
+    fun getUnsyncedFormHH_Internal(): List<Forms>
+
+    @kotlin.jvm.Throws(JSONException::class)
+    fun getUnsyncedFormHH(): JSONArray? {
+        val allForms = getUnsyncedFormHH_Internal()
+        val jsonArray = JSONArray()
+        for (i in allForms) {
+            jsonArray.put(i.toJSONObject())
+        }
+        return jsonArray
+    }
+
+    /*Family Members*/
+    @Query(
+        "SELECT * FROM " + FamilyMembersTable.TABLE_NAME + " WHERE " + FamilyMembersTable.COLUMN_SYNCED
+                + " ORDER BY " + FamilyMembersTable.COLUMN_ID + " ASC"
+    )
+    fun getUnsyncedFamilyMembers_Internal(): List<Forms>
+
+    @kotlin.jvm.Throws(JSONException::class)
+    fun getUnsyncedFamilyMembers(): JSONArray? {
+        val allForms = getUnsyncedFamilyMembers_Internal()
+        val jsonArray = JSONArray()
+        for (i in allForms) {
+            jsonArray.put(i.toJSONObject())
+        }
+        return jsonArray
+    }
+
+    /*Adolescent*/
+    @Query(
+        "SELECT * FROM " + AdolescentTable.TABLE_NAME + " WHERE " + AdolescentTable.COLUMN_SYNCED
+                + " is \'\' AND (" + AdolescentTable.COLUMN_ISTATUS + " = 1 ORDER BY " + AdolescentTable.COLUMN_ID + " ASC"
+    )
+    fun getUnsyncedAdolescent_Internal(): List<Forms>
+
+    @kotlin.jvm.Throws(JSONException::class)
+    fun getUnsyncedAdolescent(): JSONArray? {
+        val allForms = getUnsyncedAdolescent_Internal()
+        val jsonArray = JSONArray()
+        for (i in allForms) {
+            jsonArray.put(i.toJSONObject())
+        }
+        return jsonArray
+    }
 
 
+    /*update SyncedTables */
+    /*EntryLog*/
+    @Query(
+        "SELECT * FROM " + EntryLogTable.TABLE_NAME
+                + " WHERE " + EntryLogTable.COLUMN_ID + " LIKE :id "
+    )
+    fun updateQueryEntryLog(id: String?): EntryLog
 
-    // Households
+    fun updateSyncedEntryLog(id: String?): EntryLog {
+        val synced = updateQueryEntryLog(id)
+        synced.synced = "1"
+        synced.syncDate = Date().toString()
+        return synced
+    }
 
+    /*Forms*/
+    @Query(
+        "SELECT * FROM " + FormsTable.TABLE_NAME
+                + " WHERE " + FormsTable.COLUMN_ID + " LIKE :id "
+    )
+    fun updateQueryhhs(id: String?): Forms
 
-
-    /*@Query("SELECT * FROM " + TableContracts.HouseholdTable.TABLE_NAME
-            + " WHERE " + TableContracts.HouseholdTable.COLUMN_ID + " LIKE :id ")
-    fun updateQueryhhs(id: String?) : Households
-
-
-    fun updateSyncedhhs(id: String?) : Households
-    {
+    fun updateSyncedFormHH(id: String?): Forms {
         val synced = updateQueryhhs(id)
-
         synced.synced = "1"
         synced.syncDate = Date().toString()
         return synced
     }
-*/
 
-    // MWRA
+    /*Family Members*/
+    @Query(
+        "SELECT * FROM " + FamilyMembersTable.TABLE_NAME
+                + " WHERE " + FamilyMembersTable.COLUMN_ID + " LIKE :id "
+    )
+    fun updateQueryFM(id: String?): FamilyMembers
 
-
-    /*@Query("SELECT * FROM " + TableContracts.MWRATable.TABLE_NAME
-            + " WHERE " + TableContracts.MWRATable.COLUMN_SYNCED
-            + " is \'\' ORDER BY " + TableContracts.MWRATable.COLUMN_ID + " ASC")
-    fun getUnsyncedMWRAS_internal() : List<Mwra>
-
-    @kotlin.jvm.Throws(JSONException :: class)
-    fun getUnsyncedMwras() : JSONArray?
-    {
-        val allForms = getUnsyncedMWRAS_internal()
-
-        val jsonArray = JSONArray()
-        for (i in allForms)
-        {
-
-            jsonArray.put(i.toJSONObject())
-
-        }
-
-        return jsonArray
-
-    }*/
-
-
-   /* @Query("SELECT * FROM " + TableContracts.MWRATable.TABLE_NAME
-            + " WHERE " + TableContracts.MWRATable.COLUMN_ID + " LIKE :id ")
-    fun updateQueryMWRA(id: String?) : Mwra
-
-
-    fun updateSyncedMWRA(id: String?) : Mwra
-    {
-        val synced = updateQueryMWRA(id)
-
+    fun updateSyncedFamilyMembers(id: String?): FamilyMembers {
+        val synced = updateQueryFM(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
         return synced
-    }*/
-
-
-    // Outcome
-
-   /* @Query("SELECT * FROM " + TableContracts.OutcomeTable.TABLE_NAME
-            + " WHERE " + TableContracts.OutcomeTable.COLUMN_SYNCED
-            + " is \'\' ORDER BY " + TableContracts.OutcomeTable.COLUMN_ID + " ASC")
-    fun getUnsyncedOutcome_internal() : List<Outcome>
-
-    @kotlin.jvm.Throws(JSONException :: class)
-    fun getUnsyncedOutcome() : JSONArray?
-    {
-        val allForms = getUnsyncedOutcome_internal()
-
-        val jsonArray = JSONArray()
-        for (i in allForms)
-        {
-
-            jsonArray.put(i.toJSONObject())
-
-        }
-
-        return jsonArray
-
     }
 
+    /*Adolescent*/
+    @Query(
+        "SELECT * FROM " + AdolescentTable.TABLE_NAME
+                + " WHERE " + AdolescentTable.COLUMN_ID + " LIKE :id "
+    )
+    fun updateQueryAdol(id: String?): Adolescent
 
-    @Query("SELECT * FROM " + TableContracts.OutcomeTable.TABLE_NAME
-            + " WHERE " + TableContracts.OutcomeTable.COLUMN_ID + " LIKE :id ")
-    fun updateQueryOutcome(id: String?) : Outcome
-
-
-    fun updateSyncedOutcome(id: String?) : Outcome
-    {
-        val synced = updateQueryOutcome(id)
-
+    fun updateSyncedAdolescent(id: String?): Adolescent {
+        val synced = updateQueryAdol(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
         return synced
-    }*/
+    }
 
 
     //************************************************* DOWNLOAD FUNCTIONS*************************************************************
 
-// Villages
+    // Villages
     @Throws(JSONException::class)
     fun syncvillages(villagesList: JSONArray): Int {
         var insertCount = 0
         deleteVillagesTable()
-        for(i in 0 until villagesList.length()) {
+        for (i in 0 until villagesList.length()) {
             val jsonObjectUser = villagesList.optJSONObject(i)
 
             val villages = Villages()
@@ -172,7 +170,7 @@ interface SyncFunctionsDao {
     @Insert
     fun insertVillages(villages: Villages): Long
 
-    @Query("DELETE FROM " + TableContracts.VillageTable.TABLE_NAME)
+    @Query("DELETE FROM " + VillageTable.TABLE_NAME)
     fun deleteVillagesTable()
 
 
@@ -182,7 +180,7 @@ interface SyncFunctionsDao {
     fun syncAppUser(usersList: JSONArray): Int {
         var insertCount = 0
         deleteUsersTable()
-        for(i in 0 until usersList.length()) {
+        for (i in 0 until usersList.length()) {
             val jsonObjectUser = usersList.optJSONObject(i)
 
             val user = Users()
@@ -198,7 +196,7 @@ interface SyncFunctionsDao {
     @Insert
     fun insertUser(user: Users): Long
 
-    @Query("DELETE FROM " + TableContracts.UsersTable.TABLE_NAME)
+    @Query("DELETE FROM " + UsersTable.TABLE_NAME)
     fun deleteUsersTable()
 
 
@@ -207,7 +205,7 @@ interface SyncFunctionsDao {
     fun syncchild_list(childList: JSONArray): Int {
         var insertCount = 0
         deleteChildTable()
-        for(i in 0 until childList.length()) {
+        for (i in 0 until childList.length()) {
             val jsonObject = childList.optJSONObject(i)
 
             val child = ChildList()
@@ -224,9 +222,8 @@ interface SyncFunctionsDao {
     @Insert
     fun insertChild(child: ChildList): Long
 
-    @Query("DELETE FROM " + TableContracts.ChildTable.TABLE_NAME)
+    @Query("DELETE FROM " + ChildTable.TABLE_NAME)
     fun deleteChildTable()
-
 
 
 }
