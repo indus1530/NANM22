@@ -159,7 +159,7 @@ public class SectionA2Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        familyMember.setId(String.valueOf(rowId));
+        familyMember.setId(rowId);
         if (rowId > 0) {
             familyMember.setUid(familyMember.getDeviceId() + familyMember.getId());
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());
@@ -176,7 +176,7 @@ public class SectionA2Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SD, familyMember.sDtoString());
+            updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_A2, familyMember.sA2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

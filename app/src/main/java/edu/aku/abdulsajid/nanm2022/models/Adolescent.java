@@ -12,7 +12,10 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,32 +24,57 @@ import edu.aku.abdulsajid.nanm2022.BR;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.AdolescentTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
+@Entity(tableName = AdolescentTable.TABLE_NAME)
 public class Adolescent extends BaseObservable implements Observable {
 
+    @Ignore
     private final String TAG = "Adolescent";
+    @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
+    @ColumnInfo(name = AdolescentTable.COLUMN_PROJECT_NAME)
     private String projectName = MainApp.PROJECT_NAME;
     // APP VARIABLES
-    private String id = _EMPTY_;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = AdolescentTable.COLUMN_ID)
+    private long id = 0;
+    @ColumnInfo(name = AdolescentTable.COLUMN_UID)
     private String uid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_FMUID)
     private String fmuid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_MUID)
     private String muid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_INDEXED)
     private String indexed = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_NAME)
     private String name = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_VILLAGE_CODE)
     private String villageCode = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_CHILD_ID)
     private String childID = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
+    @Ignore
     private String endTime = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+    @Ignore
     private String iStatus96x = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
 
@@ -514,7 +542,9 @@ public class Adolescent extends BaseObservable implements Observable {
     private String d204 = _EMPTY_;
 
 
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC1)
     private String sC = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SD1)
     private String sD = _EMPTY_;
 
 
@@ -540,6 +570,19 @@ public class Adolescent extends BaseObservable implements Observable {
 
     }
 
+    public String getTAG() {
+        return TAG;
+    }
+
+    public PropertyChangeRegistry getPropertyChangeRegistry() {
+        return propertyChangeRegistry;
+    }
+
+    public String getVillageCode() {
+        return villageCode;
+    }
+
+
     public String getProjectName() {
         return projectName;
     }
@@ -548,11 +591,11 @@ public class Adolescent extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -672,19 +715,19 @@ public class Adolescent extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
-    public String getiStatus96x() {
+    public String getIStatus96x() {
         return iStatus96x;
     }
 
-    public void setiStatus96x(String iStatus96x) {
+    public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 
@@ -3216,7 +3259,7 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     public Adolescent Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_UUID));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_FMUID));
@@ -3236,13 +3279,20 @@ public class Adolescent extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SYNC_DATE));
 
-        sCHydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC)));
-        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SD)));
+        sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC1)));
+        sC2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC2)));
+        sC3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC3)));
+        sC4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC4)));
+        sC5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC5)));
+        sC6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC6)));
+        sC7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SC7)));
+        sD1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SD1)));
+        sD2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SD2)));
 
         return this;
     }
 
-    public void sCHydrate(String string) throws JSONException {
+    /*public void sC1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sCHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
@@ -3443,7 +3493,7 @@ public class Adolescent extends BaseObservable implements Observable {
         }
     }
 
-    public void sDHydrate(String string) throws JSONException {
+    public void sD1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sDHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
@@ -3486,6 +3536,309 @@ public class Adolescent extends BaseObservable implements Observable {
             this.d203 = json.getString("d203");
             this.d204 = json.getString("d204");
         }
+    }*/
+
+    public void sC1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC1Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.c101 = json.getString("c101");
+            this.c102 = json.getString("c102");
+            this.c103 = json.getString("c103");
+            this.c104a = json.getString("c104a");
+            this.c104b = json.getString("c104b");
+            this.c104c = json.getString("c104c");
+            this.c105 = json.getString("c105");
+            this.c106 = json.getString("c106");
+            this.c107 = json.getString("c107");
+            this.c108 = json.getString("c108");
+            this.c109 = json.getString("c109");
+            this.c110 = json.getString("c110");
+            this.c111 = json.getString("c111");
+            this.c112 = json.getString("c112");
+            this.c113 = json.getString("c113");
+            this.c114 = json.getString("c114");
+        }
+    }
+
+    public void sC2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.c201 = json.getString("c201");
+            this.c202 = json.getString("c202");
+            this.c202a = json.getString("c202a");
+            this.c202b = json.getString("c202b");
+            this.c202c = json.getString("c202c");
+            this.c202d = json.getString("c202d");
+            this.c202e = json.getString("c202e");
+            this.c202f = json.getString("c202f");
+            this.c202g = json.getString("c202g");
+            this.c202h = json.getString("c202h");
+            this.c20296 = json.getString("c20296");
+            this.c20296x = json.getString("c20296x");
+            this.c203 = json.getString("c203");
+            this.c204 = json.getString("c204");
+            this.c20496x = json.getString("c20496x");
+            this.c205a = json.getString("c205a");
+            this.c20598 = json.getString("c20598");
+            this.c206a = json.getString("c206a");
+            this.c20698 = json.getString("c20698");
+            this.c207 = json.getString("c207");
+            this.c208 = json.getString("c208");
+            this.c209 = json.getString("c209");
+            this.c20996x = json.getString("c20996x");
+            this.c210 = json.getString("c210");
+            this.c21096x = json.getString("c21096x");
+            this.c211 = json.getString("c211");
+            this.c212 = json.getString("c212");
+            this.c213 = json.getString("c213");
+            this.c214 = json.getString("c214");
+            this.c215 = json.getString("c215");
+        }
+    }
+
+    public void sC3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.ca301 = json.getString("ca301");
+            this.ca302 = json.getString("ca302");
+            this.ca303 = json.getString("ca303");
+            this.ca304 = json.getString("ca304");
+            this.ca305 = json.getString("ca305");
+            this.ca306 = json.getString("ca306");
+            this.ca307 = json.getString("ca307");
+            this.ca309 = json.getString("ca309");
+            this.ca310 = json.getString("ca310");
+            this.ca308 = json.getString("ca308");
+            this.cb309 = json.getString("cb309");
+            this.cb310 = json.getString("cb310");
+            this.cb311 = json.getString("cb311");
+            this.cb312 = json.getString("cb312");
+        }
+    }
+
+    public void sC4Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC4Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.ca402 = json.getString("ca402");
+            this.ca403 = json.getString("ca403");
+            this.ca404 = json.getString("ca404");
+            this.ca405 = json.getString("ca405");
+            this.ca406 = json.getString("ca406");
+            this.ca407 = json.getString("ca407");
+            this.cb401 = json.getString("cb401");
+            this.cb402 = json.getString("cb402");
+            this.cb403 = json.getString("cb403");
+            this.cb404 = json.getString("cb404");
+        }
+    }
+
+    public void sC5Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC5Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+
+            this.c501a = json.getString("c501a");
+            this.c501b = json.getString("c501b");
+            this.c501c = json.getString("c501c");
+            this.c501d = json.getString("c501d");
+            this.c501e = json.getString("c501e");
+            this.c501f = json.getString("c501f");
+            this.c501g = json.getString("c501g");
+            this.c501h = json.getString("c501h");
+            this.c501i = json.getString("c501i");
+            this.c501j = json.getString("c501j");
+            this.c502 = json.getString("c502");
+            this.c503 = json.getString("c503");
+            this.c50301 = json.getString("c50301");
+            this.c50302 = json.getString("c50302");
+            this.c50303 = json.getString("c50303");
+            this.c50304 = json.getString("c50304");
+            this.c50305 = json.getString("c50305");
+            this.c50306 = json.getString("c50306");
+            this.c50307 = json.getString("c50307");
+            this.c50308 = json.getString("c50308");
+            this.c50396 = json.getString("c50396");
+            this.c50396x = json.getString("c50396x");
+            this.c504 = json.getString("c504");
+            this.c50401 = json.getString("c50401");
+            this.c50402 = json.getString("c50402");
+            this.c50403 = json.getString("c50403");
+            this.c50404 = json.getString("c50404");
+            this.c50405 = json.getString("c50405");
+            this.c50406 = json.getString("c50406");
+            this.c50407 = json.getString("c50407");
+            this.c50496 = json.getString("c50496");
+            this.c50496x = json.getString("c50496x");
+            this.c505 = json.getString("c505");
+            this.c506 = json.getString("c506");
+            this.c50601 = json.getString("c50601");
+            this.c50602 = json.getString("c50602");
+            this.c50603 = json.getString("c50603");
+            this.c50604 = json.getString("c50604");
+            this.c50605 = json.getString("c50605");
+            this.c50606 = json.getString("c50606");
+            this.c50607 = json.getString("c50607");
+            this.c50608 = json.getString("c50608");
+            this.c50609 = json.getString("c50609");
+            this.c50610 = json.getString("c50610");
+            this.c50611 = json.getString("c50611");
+            this.c50696 = json.getString("c50696");
+            this.c50696x = json.getString("c50696x");
+            this.c507 = json.getString("c507");
+            this.c508 = json.getString("c508");
+            this.c509 = json.getString("c509");
+            this.c510 = json.getString("c510");
+            this.c51096x = json.getString("c51096x");
+            this.c511a = json.getString("c511a");
+            this.c511b = json.getString("c511b");
+            this.c511c = json.getString("c511c");
+            this.c511d = json.getString("c511d");
+            this.c511e = json.getString("c511e");
+            this.c511f = json.getString("c511f");
+            this.c511g = json.getString("c511g");
+            this.c511h = json.getString("c511h");
+            this.c511i = json.getString("c511i");
+            this.c511j = json.getString("c511j");
+        }
+    }
+
+    public void sC6Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC6Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.c601 = json.getString("c601");
+            this.c60101 = json.getString("c60101");
+            this.c60102 = json.getString("c60102");
+            this.c60103 = json.getString("c60103");
+            this.c60104 = json.getString("c60104");
+            this.c60105 = json.getString("c60105");
+            this.c60106 = json.getString("c60106");
+            this.c60107 = json.getString("c60107");
+            this.c60108 = json.getString("c60108");
+            this.c60109 = json.getString("c60109");
+            this.c602 = json.getString("c602");
+            this.c60296x = json.getString("c60296x");
+            this.c603 = json.getString("c603");
+            this.c60396x = json.getString("c60396x");
+            this.c604 = json.getString("c604");
+            this.c60496x = json.getString("c60496x");
+            this.c605 = json.getString("c605");
+            this.c606a = json.getString("c606a");
+            this.c606b = json.getString("c606b");
+            this.c606c = json.getString("c606c");
+            this.c606d = json.getString("c606d");
+            this.c606e = json.getString("c606e");
+            this.c60696 = json.getString("c60696");
+            this.c60701 = json.getString("c60701");
+            this.c608 = json.getString("c608");
+        }
+    }
+
+    public void sC7Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC7Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.c701 = json.getString("c701");
+            this.c702 = json.getString("c702");
+            this.c70201 = json.getString("c70201");
+            this.c70202 = json.getString("c70202");
+            this.c70203 = json.getString("c70203");
+            this.c70204 = json.getString("c70204");
+            this.c70205 = json.getString("c70205");
+            this.c70206 = json.getString("c70206");
+            this.c70207 = json.getString("c70207");
+            this.c70208 = json.getString("c70208");
+            this.c70296 = json.getString("c70296");
+            this.c70296x = json.getString("c70296x");
+            this.c703 = json.getString("c703");
+            this.c704 = json.getString("c704");
+            this.c70401 = json.getString("c70401");
+            this.c70402 = json.getString("c70402");
+            this.c70403 = json.getString("c70403");
+            this.c70404 = json.getString("c70404");
+            this.c70405 = json.getString("c70405");
+            this.c70406 = json.getString("c70406");
+            this.c70407 = json.getString("c70407");
+            this.c70408 = json.getString("c70408");
+            this.c70496 = json.getString("c70496");
+            this.c70496x = json.getString("c70496x");
+            this.c705 = json.getString("c705");
+            this.c70501 = json.getString("c70501");
+            this.c70502 = json.getString("c70502");
+            this.c70503 = json.getString("c70503");
+            this.c70504 = json.getString("c70504");
+            this.c70505 = json.getString("c70505");
+            this.c70506 = json.getString("c70506");
+            this.c70507 = json.getString("c70507");
+            this.c70508 = json.getString("c70508");
+            this.c70596 = json.getString("c70596");
+            this.c70596x = json.getString("c70596x");
+            this.c706 = json.getString("c706");
+        }
+    }
+
+    public void sD1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD1Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.d1001 = json.getString("d1001");
+            this.d101 = json.getString("d101");
+            this.d102 = json.getString("d102");
+            this.d1102 = json.getString("d1102");
+            this.d103 = json.getString("d103");
+            this.d104 = json.getString("d104");
+            this.d105 = json.getString("d105");
+            this.d106 = json.getString("d106");
+            this.d1203 = json.getString("d1203");
+            this.d107 = json.getString("d107");
+            this.d108 = json.getString("d108");
+            this.d1304 = json.getString("d1304");
+            this.d1304ax = json.getString("d1304ax");
+            this.d109 = json.getString("d109");
+            this.d1title2 = json.getString("d1title2");
+            this.d110 = json.getString("d110");
+            this.d111 = json.getString("d111");
+            this.d112 = json.getString("d112");
+            this.d113 = json.getString("d113");
+            this.d11301x = json.getString("d11301x");
+            this.d114 = json.getString("d114");
+            this.d115 = json.getString("d115");
+            this.d116 = json.getString("d116");
+            this.d117 = json.getString("d117");
+            this.d118 = json.getString("d118");
+            this.d119 = json.getString("d119");
+            this.d120 = json.getString("d120");
+            this.d121 = json.getString("d121");
+            this.d122 = json.getString("d122");
+            this.d123 = json.getString("d123");
+            this.d124 = json.getString("d124");
+            this.d125 = json.getString("d125");
+            this.d126 = json.getString("d126");
+        }
+    }
+
+    public void sD2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.d201 = json.getString("d201");
+            this.d202 = json.getString("d202");
+            this.d203 = json.getString("d203");
+            this.d204 = json.getString("d204");
+        }
     }
 
 
@@ -3511,13 +3864,20 @@ public class Adolescent extends BaseObservable implements Observable {
         json.put(AdolescentTable.COLUMN_SYNCED, this.synced);
         json.put(AdolescentTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(AdolescentTable.COLUMN_APPVERSION, this.appver);
-        json.put(AdolescentTable.COLUMN_SC, new JSONObject(sCtoString()));
-        json.put(AdolescentTable.COLUMN_SD, new JSONObject(sDtoString()));
+        json.put(AdolescentTable.COLUMN_SC1, new JSONObject(sC1toString()));
+        json.put(AdolescentTable.COLUMN_SC2, new JSONObject(sC2toString()));
+        json.put(AdolescentTable.COLUMN_SC3, new JSONObject(sC3toString()));
+        json.put(AdolescentTable.COLUMN_SC4, new JSONObject(sC4toString()));
+        json.put(AdolescentTable.COLUMN_SC5, new JSONObject(sC5toString()));
+        json.put(AdolescentTable.COLUMN_SC6, new JSONObject(sC6toString()));
+        json.put(AdolescentTable.COLUMN_SC7, new JSONObject(sC7toString()));
+        json.put(AdolescentTable.COLUMN_SD1, new JSONObject(sD1toString()));
+        json.put(AdolescentTable.COLUMN_SD2, new JSONObject(sD2toString()));
 
         return json;
     }
 
-    public String sCtoString() throws JSONException {
+    /*public String sC1toString() throws JSONException {
         Log.d(TAG, "sCtoString: ");
         JSONObject json = new JSONObject();
         json.put("c101", c101)
@@ -3714,9 +4074,293 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c60701", c60701)
                 .put("c608", c608);
         return json.toString();
+    }*/
+
+    public String sC1toString() throws JSONException {
+        Log.d(TAG, "sC1toString: ");
+        JSONObject json = new JSONObject();
+        json.put("c101", c101)
+                .put("c102", c102)
+                .put("c103", c103)
+                .put("c104a", c104a)
+                .put("c104b", c104b)
+                .put("c104c", c104c)
+                .put("c105", c105)
+                .put("c106", c106)
+                .put("c107", c107)
+                .put("c108", c108)
+                .put("c109", c109)
+                .put("c110", c110)
+                .put("c111", c111)
+                .put("c112", c112)
+                .put("c113", c113)
+                .put("c114", c114);
+        return json.toString();
     }
 
-    public String sDtoString() throws JSONException {
+    public String sC2toString() throws JSONException {
+        Log.d(TAG, "sC2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("c201", c201)
+                .put("c202", c202)
+                .put("c202a", c202a)
+                .put("c202b", c202b)
+                .put("c202c", c202c)
+                .put("c202d", c202d)
+                .put("c202e", c202e)
+                .put("c202f", c202f)
+                .put("c202g", c202g)
+                .put("c202h", c202h)
+                .put("c20296", c20296)
+                .put("c20296x", c20296x)
+                .put("c203", c203)
+                .put("c204", c204)
+                .put("c20496x", c20496x)
+                .put("c205a", c205a)
+                .put("c20598", c20598)
+                .put("c206a", c206a)
+                .put("c20698", c20698)
+                .put("c207", c207)
+                .put("c208", c208)
+                .put("c209", c209)
+                .put("c20996x", c20996x)
+                .put("c210", c210)
+                .put("c21096x", c21096x)
+                .put("c211", c211)
+                .put("c212", c212)
+                .put("c213", c213)
+                .put("c214", c214)
+                .put("c215", c215);
+        return json.toString();
+    }
+
+    public String sC3toString() throws JSONException {
+        Log.d(TAG, "sC3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("ca301", ca301)
+                .put("ca302", ca302)
+                .put("ca303", ca303)
+                .put("ca304", ca304)
+                .put("ca305", ca305)
+                .put("ca306", ca306)
+                .put("ca307", ca307)
+                .put("ca309", ca309)
+                .put("ca310", ca310)
+                .put("ca308", ca308)
+                .put("cb309", cb309)
+                .put("cb310", cb310)
+                .put("cb311", cb311)
+                .put("cb312", cb312);
+        return json.toString();
+    }
+
+    public String sC4toString() throws JSONException {
+        Log.d(TAG, "sC4toString: ");
+        JSONObject json = new JSONObject();
+        json.put("ca402", ca402)
+                .put("ca403", ca403)
+                .put("ca404", ca404)
+                .put("ca405", ca405)
+                .put("ca406", ca406)
+                .put("ca407", ca407)
+                .put("cb401", cb401)
+                .put("cb402", cb402)
+                .put("cb403", cb403)
+                .put("cb404", cb404);
+        return json.toString();
+    }
+
+    public String sC5toString() throws JSONException {
+        Log.d(TAG, "sC5toString: ");
+        JSONObject json = new JSONObject();
+        json.put("c501a", c501a)
+                .put("c501b", c501b)
+                .put("c501c", c501c)
+                .put("c501d", c501d)
+                .put("c501e", c501e)
+                .put("c501f", c501f)
+                .put("c501g", c501g)
+                .put("c501h", c501h)
+                .put("c501i", c501i)
+                .put("c501j", c501j)
+                .put("c502", c502)
+                .put("c503", c503)
+                .put("c50301", c50301)
+                .put("c50302", c50302)
+                .put("c50303", c50303)
+                .put("c50304", c50304)
+                .put("c50305", c50305)
+                .put("c50306", c50306)
+                .put("c50307", c50307)
+                .put("c50308", c50308)
+                .put("c50396", c50396)
+                .put("c50396x", c50396x)
+                .put("c504", c504)
+                .put("c50401", c50401)
+                .put("c50402", c50402)
+                .put("c50403", c50403)
+                .put("c50404", c50404)
+                .put("c50405", c50405)
+                .put("c50406", c50406)
+                .put("c50407", c50407)
+                .put("c50496", c50496)
+                .put("c50496x", c50496x)
+                .put("c505", c505)
+                .put("c506", c506)
+                .put("c50601", c50601)
+                .put("c50602", c50602)
+                .put("c50603", c50603)
+                .put("c50604", c50604)
+                .put("c50605", c50605)
+                .put("c50606", c50606)
+                .put("c50607", c50607)
+                .put("c50608", c50608)
+                .put("c50609", c50609)
+                .put("c50610", c50610)
+                .put("c50611", c50611)
+                .put("c50696", c50696)
+                .put("c50696x", c50696x)
+                .put("c507", c507)
+                .put("c508", c508)
+                .put("c509", c509)
+                .put("c510", c510)
+                .put("c51096x", c51096x)
+                .put("c511a", c511a)
+                .put("c511b", c511b)
+                .put("c511c", c511c)
+                .put("c511d", c511d)
+                .put("c511e", c511e)
+                .put("c511f", c511f)
+                .put("c511g", c511g)
+                .put("c511h", c511h)
+                .put("c511i", c511i)
+                .put("c511j", c511j);
+        return json.toString();
+    }
+
+    public String sC6toString() throws JSONException {
+        Log.d(TAG, "sC6toString: ");
+        JSONObject json = new JSONObject();
+        json.put("c601", c601)
+                .put("c60101", c60101)
+                .put("c60102", c60102)
+                .put("c60103", c60103)
+                .put("c60104", c60104)
+                .put("c60105", c60105)
+                .put("c60106", c60106)
+                .put("c60107", c60107)
+                .put("c60108", c60108)
+                .put("c60109", c60109)
+                .put("c602", c602)
+                .put("c60296x", c60296x)
+                .put("c603", c603)
+                .put("c60396x", c60396x)
+                .put("c604", c604)
+                .put("c60496x", c60496x)
+                .put("c605", c605)
+                .put("c606a", c606a)
+                .put("c606b", c606b)
+                .put("c606c", c606c)
+                .put("c606d", c606d)
+                .put("c606e", c606e)
+                .put("c60696", c60696)
+                .put("c60701", c60701)
+                .put("c608", c608);
+        return json.toString();
+    }
+
+    public String sC7toString() throws JSONException {
+        Log.d(TAG, "sC7toString: ");
+        JSONObject json = new JSONObject();
+        json.put("c701", c701)
+                .put("c702", c702)
+                .put("c70201", c70201)
+                .put("c70202", c70202)
+                .put("c70203", c70203)
+                .put("c70204", c70204)
+                .put("c70205", c70205)
+                .put("c70206", c70206)
+                .put("c70207", c70207)
+                .put("c70208", c70208)
+                .put("c70296", c70296)
+                .put("c70296x", c70296x)
+                .put("c703", c703)
+                .put("c704", c704)
+                .put("c70401", c70401)
+                .put("c70402", c70402)
+                .put("c70403", c70403)
+                .put("c70404", c70404)
+                .put("c70405", c70405)
+                .put("c70406", c70406)
+                .put("c70407", c70407)
+                .put("c70408", c70408)
+                .put("c70496", c70496)
+                .put("c70496x", c70496x)
+                .put("c705", c705)
+                .put("c70501", c70501)
+                .put("c70502", c70502)
+                .put("c70503", c70503)
+                .put("c70504", c70504)
+                .put("c70505", c70505)
+                .put("c70506", c70506)
+                .put("c70507", c70507)
+                .put("c70508", c70508)
+                .put("c70596", c70596)
+                .put("c70596x", c70596x)
+                .put("c706", c706);
+        return json.toString();
+    }
+
+    public String sD1toString() throws JSONException {
+        Log.d(TAG, "sD1toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d1001", d1001)
+                .put("d101", d101)
+                .put("d102", d102)
+                .put("d1102", d1102)
+                .put("d103", d103)
+                .put("d104", d104)
+                .put("d105", d105)
+                .put("d106", d106)
+                .put("d1203", d1203)
+                .put("d107", d107)
+                .put("d108", d108)
+                .put("d1304", d1304)
+                .put("d1304ax", d1304ax)
+                .put("d109", d109)
+                .put("d1title2", d1title2)
+                .put("d110", d110)
+                .put("d111", d111)
+                .put("d112", d112)
+                .put("d113", d113)
+                .put("d11301x", d11301x)
+                .put("d114", d114)
+                .put("d115", d115)
+                .put("d116", d116)
+                .put("d117", d117)
+                .put("d118", d118)
+                .put("d119", d119)
+                .put("d120", d120)
+                .put("d121", d121)
+                .put("d122", d122)
+                .put("d123", d123)
+                .put("d124", d124)
+                .put("d125", d125)
+                .put("d126", d126);
+        return json.toString();
+    }
+
+    public String sD2toString() throws JSONException {
+        Log.d(TAG, "sD2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d201", d201)
+                .put("d202", d202)
+                .put("d203", d203)
+                .put("d204", d204);
+        return json.toString();
+    }
+
+    /*public String sD1toString() throws JSONException {
         Log.d(TAG, "sDtoString: ");
         JSONObject json = new JSONObject();
         json.put("d1001", d1001)
@@ -3757,6 +4401,6 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("d203", d203)
                 .put("d204", d204);
         return json.toString();
-    }
+    }*/
 
 }

@@ -39,6 +39,9 @@
             android:name=".ui.sections.SectionA4CActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".ui.LockActivity"
+            android:exported="true" />
 
         <activity
             android:name=".ui.sections.SectionA4AActivity"

@@ -18,7 +18,7 @@ import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
-import edu.aku.abdulsajid.nanm2022.models.ChildList;
+import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Villages;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA1Activity;
@@ -270,26 +270,26 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.childName.setText(null);
         bi.child.setVisibility(View.GONE);
         bi.hhhead.setText(null);
-        bi.hhhead.setVisibility(View.GONE);
+        bi.headhh.setVisibility(View.GONE);
 
-        ChildList childList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
+        AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
-        if (!childList.getChild_id().equals("")) {
+        if (!adolList.getChild_id().equals("")) {
 
-            bi.childName.setText(childList.getChild_name());
+            bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
-            bi.hhhead.setText(childList.getHh_head());
-            bi.hhhead.setVisibility(View.VISIBLE);
+            bi.hhhead.setText(adolList.getHh_head());
+            bi.headhh.setVisibility(View.VISIBLE);
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
-            MainApp.currentHousehold = childList;
+            MainApp.currentHousehold = adolList;
 
         } else {
-
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
+            Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -349,6 +349,8 @@ public class IdentificationActivity extends AppCompatActivity {
             MainApp.selectedTehsil = bi.a107.getText().toString();
             MainApp.selectedUC = bi.a108.getText().toString();
 
+        } else {
+            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
         }
     }
 

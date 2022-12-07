@@ -50,7 +50,7 @@ public class SectionC5Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC, adol.sCtoString());
+            updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC5, adol.sC5toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

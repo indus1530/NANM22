@@ -10,6 +10,10 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,63 +27,107 @@ import edu.aku.abdulsajid.nanm2022.BR;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
-
+@Entity(tableName = FamilyMembersTable.TABLE_NAME)
 public class FamilyMembers extends BaseObservable implements Observable {
 
+    @Ignore
     private final String TAG = "FamilyMembers";
+    @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_PROJECT_NAME)
     private String projectName = MainApp.PROJECT_NAME;
+
     // APP VARIABLES
-    private String id = _EMPTY_;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_ID)
+    private long id = 0;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_UID)
     private String uid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_CLUSTER_CODE)
     private String clusterCode = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_HHID)
     private String hhid = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
+    @Ignore
     private String endTime = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+    @Ignore
     private String iStatus96x = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
 
     // SECTION VARIABLES
-    private String sD = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_A2)
+    private String sA2 = _EMPTY_;
 
     // FIELD VARIABLES
+    @Ignore
     private String a201 = _EMPTY_;
+    @Ignore
     private String a202 = _EMPTY_;
-    private String a204 = _EMPTY_;
+    @Ignore
     private String a203 = _EMPTY_;
+    @Ignore
     private String a20396x = _EMPTY_;
+    @Ignore
+    private String a204 = _EMPTY_;
+    @Ignore
     private String a205dd = _EMPTY_;
+    @Ignore
     private String a205mm = _EMPTY_;
+    @Ignore
     private String a205yy = _EMPTY_;
+    @Ignore
     private String a206yy = _EMPTY_;
+    @Ignore
     private String a206mm = _EMPTY_;
+    @Ignore
     private String a206dd = _EMPTY_;
-    private String a212 = _EMPTY_;
-    private String a213 = _EMPTY_;
+    @Ignore
     private String a207 = _EMPTY_;
+    @Ignore
     private String a208 = _EMPTY_;
+    @Ignore
     private String a209 = _EMPTY_;
+    @Ignore
     private String a210 = _EMPTY_;
+    @Ignore
     private String a211 = _EMPTY_;
+    @Ignore
+    private String a212 = _EMPTY_;
+    @Ignore
+    private String a213 = _EMPTY_;
 
-
-    private boolean expanded;
+    @Ignore
     private boolean mwra;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_AGE_MONTHS)
     private String ageInMonths;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_MUID)
     private String muid;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_MOTHER_PRESENT)
     private String motherPresent;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_INDEXED)
     private String indexed = _EMPTY_;
+    @Ignore
     private String memCate = _EMPTY_;
 
     public FamilyMembers() {
@@ -111,11 +159,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -124,7 +172,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         return ageInMonths;
     }
 
-    public void setAgeInMonth(String ageInMonths) {
+    public void setAgeInMonths(String ageInMonths) {
         this.ageInMonths = ageInMonths;
     }
 
@@ -235,11 +283,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
@@ -268,12 +316,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-    public String getsD() {
-        return sD;
+    public String getSA2() {
+        return sA2;
     }
 
-    public void setsD(String sD) {
-        this.sD = sD;
+    public void setSA2(String sA2) {
+        this.sA2 = sA2;
     }
 
 
@@ -505,7 +553,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
     public FamilyMembers Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PROJECT_NAME));
@@ -525,14 +573,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNC_DATE));
 
-        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SD)));
+        sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_A2)));
         updateMemCategory();
 
         return this;
     }
 
-    public void sDHydrate(String string) throws JSONException {
-        Log.d(TAG, "sDHydrate: " + string);
+    public void sA2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sA2Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -581,12 +629,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FamilyMembersTable.COLUMN_APPVERSION, this.appver);
 
-        json.put(FamilyMembersTable.COLUMN_SD, new JSONObject(sDtoString()));
+        json.put(FamilyMembersTable.COLUMN_A2, new JSONObject(sA2toString()));
         return json;
     }
 
-    public String sDtoString() throws JSONException {
-        Log.d(TAG, "sDtoString: ");
+    public String sA2toString() throws JSONException {
+        Log.d(TAG, "sA2toString: ");
         JSONObject json = new JSONObject();
         json.put("a201", a201)
                 .put("a202", a202)
@@ -664,7 +712,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 setA206yy(String.valueOf(tYear));
                 setA206mm(String.valueOf(tMonth));
                 setA206dd(String.valueOf(tDay));
-                setAgeInMonth(String.valueOf((int) inDays));
+                setAgeInMonths(String.valueOf((int) inDays));
                 if (tYear < 0)
                     setA206yy("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
@@ -696,7 +744,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 if (Integer.parseInt(this.a206dd) < 30)
                     inDays = Integer.parseInt(this.a206dd);
 
-                setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
+                setAgeInMonths(String.valueOf(inDays + monthsToDays + yearToDays));
 
             }
         }

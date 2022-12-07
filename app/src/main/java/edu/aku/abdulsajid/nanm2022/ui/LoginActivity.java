@@ -413,9 +413,9 @@ public class LoginActivity extends AppCompatActivity {
         try {
             rowId = db.addEntryLog(entryLog);
             if (rowId != -1) {
-                entryLog.setId(String.valueOf(rowId));
+                entryLog.setId(rowId);
                 entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
-                db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+                db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), String.valueOf(entryLog.getId()));
             } else {
                 Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 

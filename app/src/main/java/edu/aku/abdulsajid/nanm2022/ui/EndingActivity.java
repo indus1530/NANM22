@@ -13,8 +13,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import net.sqlcipher.database.SQLiteException;
 
-import org.json.JSONException;
-
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
@@ -98,9 +96,9 @@ public class EndingActivity extends AppCompatActivity {
             Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
         }
         if (rowId != -1) {
-            entryLog.setId(String.valueOf(rowId));
+            entryLog.setId(rowId);
             entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
-            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), String.valueOf(entryLog.getId()));
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 
@@ -111,12 +109,7 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         if (MainApp.superuser) return true;
-        try {
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, form.sAtoString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "JSONException(Forms): ", Toast.LENGTH_SHORT).show();
-        }
+//        db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getIStatus());
         int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getIStatus());
         return updcount > 0;
     }

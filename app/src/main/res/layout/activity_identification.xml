@@ -81,10 +81,7 @@
                                 android:gravity="center"
                                 android:hint="#####"
                                 android:inputType="number"
-                                android:maxLength="5"
-                                app:maxValue="99999"
-                                app:minValue="11111"
-                                app:type="range" />
+                                android:maxLength="5" />
 
                             <Button
                                 android:layout_width="wrap_content"

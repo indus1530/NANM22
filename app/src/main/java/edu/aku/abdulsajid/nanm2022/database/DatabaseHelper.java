@@ -36,8 +36,8 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.VillageTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
+import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.ChildList;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
@@ -107,9 +107,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_SA, form.sAtoString());
-        values.put(FormsTable.COLUMN_SB, form.sBtoString());
+        values.put(FormsTable.COLUMN_SA1, form.sA1toString());
+        values.put(FormsTable.COLUMN_SA3A, form.sA3AtoString());
+        values.put(FormsTable.COLUMN_SA3B, form.sA3BtoString());
+        values.put(FormsTable.COLUMN_SA4A, form.sA4AtoString());
+        values.put(FormsTable.COLUMN_SA4B, form.sA4BtoString());
+        values.put(FormsTable.COLUMN_SA4C, form.sA4CtoString());
+        values.put(FormsTable.COLUMN_SA5A, form.sA5AtoString());
+        values.put(FormsTable.COLUMN_SA5B, form.sA5BtoString());
+        values.put(FormsTable.COLUMN_SB1, form.sB1toString());
+        values.put(FormsTable.COLUMN_SB3, form.sB3toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
+        values.put(FormsTable.COLUMN_ISTATUS_96X, form.getIStatus96x());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
@@ -139,8 +148,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
-        values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
-        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
+        values.put(FamilyMembersTable.COLUMN_A2, members.sA2toString());
+        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getIStatus());
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
@@ -169,9 +178,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
         values.put(AdolescentTable.COLUMN_INDEXED, adol.getIndexed());
         values.put(AdolescentTable.COLUMN_NAME, adol.getName());
-        values.put(AdolescentTable.COLUMN_SC, adol.sCtoString());
-        values.put(AdolescentTable.COLUMN_SD, adol.sDtoString());
-        values.put(AdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
+        values.put(AdolescentTable.COLUMN_SC1, adol.sC1toString());
+        values.put(AdolescentTable.COLUMN_SC2, adol.sC2toString());
+        values.put(AdolescentTable.COLUMN_SC3, adol.sC3toString());
+        values.put(AdolescentTable.COLUMN_SC4, adol.sC4toString());
+        values.put(AdolescentTable.COLUMN_SC5, adol.sC5toString());
+        values.put(AdolescentTable.COLUMN_SC6, adol.sC6toString());
+        values.put(AdolescentTable.COLUMN_SC7, adol.sC7toString());
+        values.put(AdolescentTable.COLUMN_SD1, adol.sD1toString());
+        values.put(AdolescentTable.COLUMN_SD2, adol.sD2toString());
+        values.put(AdolescentTable.COLUMN_ISTATUS, adol.getIStatus());
         values.put(AdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(AdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
         values.put(AdolescentTable.COLUMN_APPVERSION, adol.getAppver());
@@ -194,8 +210,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
         values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
         values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
-        values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
-        values.put(EntryLogTable.COLUMN_ISTATUS96x, entryLog.getiStatus96x());
+        values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getIStatus());
+        values.put(EntryLogTable.COLUMN_ISTATUS96x, entryLog.getIStatus96x());
         values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
         values.put(EntryLogTable.COLUMN_ENTRY_DATE, entryLog.getEntryDate());
         values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
@@ -416,9 +432,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         JSONObject jsonObjectVersion = ((JSONArray) VersionList.getJSONObject(0).get("elements")).getJSONObject(0);
 
-        String appPath = jsonObjectVersion.getString("outputFile");
+        /*String appPath = jsonObjectVersion.getString("outputFile");
         String versionCode = jsonObjectVersion.getString("versionCode");
-
+*/
         MainApp.editor.putString("outputFile", jsonObjectVersion.getString("outputFile"));
         MainApp.editor.putString("versionCode", jsonObjectVersion.getString("versionCode"));
         MainApp.editor.putString("versionName", jsonObjectVersion.getString("versionName") + ".");
@@ -479,19 +495,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             JSONObject json = childs.getJSONObject(i);
 
-            ChildList childList = new ChildList();
-            childList.sync(json);
+            AdolList adolList = new AdolList();
+            adolList.sync(json);
             ContentValues values = new ContentValues();
 
-            values.put(ChildTable.COLUMN_SR_NO, childList.getSrno());
-            values.put(ChildTable.COLUMN_CHILD_ID, childList.getChild_id());
-            values.put(ChildTable.COLUMN_VILLAGE_CODE, childList.getVillage_code());
-            values.put(ChildTable.COLUMN_MOTHER_NAME, childList.getMother_name());
-            values.put(ChildTable.COLUMN_CHILD_NAME, childList.getChild_name());
-            values.put(ChildTable.COLUMN_HH_HEAD, childList.getHh_head());
-            values.put(ChildTable.COLUMN_GENDER, childList.getGender());
-            values.put(ChildTable.COLUMN_DOB, childList.getDob());
-            values.put(ChildTable.COLUMN_PROJECT, childList.getProject());
+            values.put(ChildTable.COLUMN_SR_NO, adolList.getSrno());
+            values.put(ChildTable.COLUMN_CHILD_ID, adolList.getChild_id());
+            values.put(ChildTable.COLUMN_VILLAGE_CODE, adolList.getVillage_code());
+            values.put(ChildTable.COLUMN_MOTHER_NAME, adolList.getMother_name());
+            values.put(ChildTable.COLUMN_CHILD_NAME, adolList.getChild_name());
+            values.put(ChildTable.COLUMN_HH_HEAD, adolList.getHh_head());
+            values.put(ChildTable.COLUMN_GENDER, adolList.getGender());
+            values.put(ChildTable.COLUMN_DOB, adolList.getDob());
+            values.put(ChildTable.COLUMN_PROJECT, adolList.getProject());
 
             long rowID = db.insertOrThrow(ChildTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
@@ -514,6 +530,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(VillageTable.COLUMN_GEOAREA, villages.getGeoarea());
             values.put(VillageTable.COLUMN_DIST_ID, villages.getDistId());
             values.put(VillageTable.COLUMN_VILLAGE_CODE, villages.getVillage_code());
+            values.put(VillageTable.COLUMN_VILLAGE, villages.getVillage());
+            values.put(VillageTable.COLUMN_UC_CODE, villages.getUc_code());
+            values.put(VillageTable.COLUMN_UC, villages.getUc());
 
             long rowID = db.insertOrThrow(VillageTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
@@ -950,7 +969,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public ChildList getChildBychildid(String villageCode, String srno) {
+    public AdolList getChildBychildid(String villageCode, String srno) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -964,7 +983,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ChildTable.COLUMN_SR_NO + " ASC";
 //        String limit = "5000";
 
-        ChildList childList = new ChildList();
+        AdolList adolList = new AdolList();
         c = db.query(
                 ChildTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
@@ -976,9 +995,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                limit
         );
         while (c.moveToNext()) {
-            childList = new ChildList().hydrate(c);
+            adolList = new AdolList().hydrate(c);
         }
-        return childList;
+        return adolList;
     }
 
     public Villages getVillage(String villageCode) {
@@ -1034,7 +1053,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public ChildList getRandomBySrno(String srno) {
+    public AdolList getRandomBySrno(String srno) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1047,7 +1066,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
         String orderBy = null;
 
-        ChildList childList = null;
+        AdolList adolList = null;
         c = db.query(
                 ChildTable.TABLE_NAME,   // The table to query
                 columns,                    // The columns to return
@@ -1058,12 +1077,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                     // The sort order
         );
         while (c.moveToNext()) {
-            childList = new ChildList().hydrate(c);
+            adolList = new AdolList().hydrate(c);
         }
         if (c != null && !c.isClosed()) {
             c.close();
         }
-        return childList;
+        return adolList;
     }
 
     public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {

@@ -9,6 +9,10 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,27 +26,45 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.EntryLogTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 
 
+@Entity(tableName = EntryLogTable.TABLE_NAME)
 public class EntryLog extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
-    private String id = _EMPTY_;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = EntryLogTable.COLUMN_ID)
+    private long id = 0;
+    @ColumnInfo(name = EntryLogTable.COLUMN_UID)
     private String uid = _EMPTY_;
     // APP VARIABLES
+    @ColumnInfo(name = EntryLogTable.COLUMN_PROJECT_NAME)
     private String projectName = PROJECT_NAME;
+    @ColumnInfo(name = EntryLogTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_ENTRY_DATE)
     private String entryDate = _EMPTY_;         //
+    @ColumnInfo(name = EntryLogTable.COLUMN_EB_CODE)
     private String ebCode = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_HHID)
     private String hhid = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;            //
+    @ColumnInfo(name = EntryLogTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+    @Ignore
     private String iStatus96x = _EMPTY_;        //
+    @ColumnInfo(name = EntryLogTable.COLUMN_ENTRY_TYPE)
     private String entryType = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = EntryLogTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
     public EntryLog() {
@@ -60,8 +82,8 @@ public class EntryLog extends BaseObservable implements Observable {
         setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setEbCode(MainApp.form.getVillageCode());
         setHhid(MainApp.form.getChildID());
-        setiStatus(MainApp.form.getIStatus());
-        setiStatus96x(MainApp.form.getIStatus96x());
+        setIStatus(MainApp.form.getIStatus());
+        setIStatus96x(MainApp.form.getIStatus96x());
         setAppver(MainApp.appInfo.getAppVersion());
         setDeviceId(MainApp.deviceid);
 
@@ -76,11 +98,11 @@ public class EntryLog extends BaseObservable implements Observable {
         this.projectName = projectName;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -178,19 +200,19 @@ public class EntryLog extends BaseObservable implements Observable {
         this.appver = appver;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
-    public String getiStatus96x() {
+    public String getIStatus96x() {
         return iStatus96x;
     }
 
-    public void setiStatus96x(String iStatus96x) {
+    public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 
@@ -211,7 +233,7 @@ public class EntryLog extends BaseObservable implements Observable {
     }
 
     public EntryLog Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ID));
+        this.id = cursor.getLong(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PROJECT_NAME));
