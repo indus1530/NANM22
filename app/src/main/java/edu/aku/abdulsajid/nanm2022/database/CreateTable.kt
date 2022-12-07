@@ -105,8 +105,15 @@ object CreateTable {
             + AdolescentTable.COLUMN_SYNCED + " TEXT, "
             + AdolescentTable.COLUMN_SYNC_DATE + " TEXT, "
             + AdolescentTable.COLUMN_APPVERSION + " TEXT, "
-            + AdolescentTable.COLUMN_SC + " TEXT, "
-            + AdolescentTable.COLUMN_SD + " TEXT"
+            + AdolescentTable.COLUMN_SC1 + " TEXT, "
+            + AdolescentTable.COLUMN_SC2 + " TEXT, "
+            + AdolescentTable.COLUMN_SC3 + " TEXT, "
+            + AdolescentTable.COLUMN_SC4 + " TEXT, "
+            + AdolescentTable.COLUMN_SC5 + " TEXT, "
+            + AdolescentTable.COLUMN_SC6 + " TEXT, "
+            + AdolescentTable.COLUMN_SC7 + " TEXT, "
+            + AdolescentTable.COLUMN_SD1 + " TEXT, "
+            + AdolescentTable.COLUMN_SD2 + " TEXT"
             + " );"
             )
 

@@ -178,8 +178,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
         values.put(AdolescentTable.COLUMN_INDEXED, adol.getIndexed());
         values.put(AdolescentTable.COLUMN_NAME, adol.getName());
-        values.put(AdolescentTable.COLUMN_SC, adol.sCtoString());
-        values.put(AdolescentTable.COLUMN_SD, adol.sDtoString());
+        values.put(AdolescentTable.COLUMN_SC1, adol.sC1toString());
+        values.put(AdolescentTable.COLUMN_SC2, adol.sC2toString());
+        values.put(AdolescentTable.COLUMN_SC3, adol.sC3toString());
+        values.put(AdolescentTable.COLUMN_SC4, adol.sC4toString());
+        values.put(AdolescentTable.COLUMN_SC5, adol.sC5toString());
+        values.put(AdolescentTable.COLUMN_SC6, adol.sC6toString());
+        values.put(AdolescentTable.COLUMN_SC7, adol.sC7toString());
+        values.put(AdolescentTable.COLUMN_SD1, adol.sD1toString());
+        values.put(AdolescentTable.COLUMN_SD2, adol.sD2toString());
         values.put(AdolescentTable.COLUMN_ISTATUS, adol.getIStatus());
         values.put(AdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(AdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());

@@ -141,8 +141,15 @@ public class TableContracts {
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_SC = "sC";
-        public static final String COLUMN_SD = "sD";
+        public static final String COLUMN_SC1 = "sC1";
+        public static final String COLUMN_SC2 = "sC2";
+        public static final String COLUMN_SC3 = "sC3";
+        public static final String COLUMN_SC4 = "sC4";
+        public static final String COLUMN_SC5 = "sC5";
+        public static final String COLUMN_SC6 = "sC6";
+        public static final String COLUMN_SC7 = "sC7";
+        public static final String COLUMN_SD1 = "sD1";
+        public static final String COLUMN_SD2 = "sD2";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

@@ -3,9 +3,7 @@ package edu.aku.abdulsajid.nanm2022.room
 import androidx.room.*
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.models.Adolescent
-import edu.aku.abdulsajid.nanm2022.models.FamilyMembers
 import org.json.JSONException
-import kotlin.jvm.Throws
 
 //
 // Created by gul.sanober on 12/6/2022.
@@ -39,8 +37,8 @@ interface AdolescentDao {
             val tempMembers = Adolescent()
             return tempMembers
         }else{
-            members.sCHydrate(members.sc)
-            members.sDHydrate(members.sd)
+            members.sC1Hydrate(members.sc)
+            members.sD1Hydrate(members.sd)
         }
         return members
     }
@@ -61,9 +59,9 @@ interface AdolescentDao {
         {
             val tempMembers = Adolescent()
             return tempMembers
-        }else{
-            members.sCHydrate(members.sc)
-            members.sDHydrate(members.sd)
+        }else {
+            members.sC1Hydrate(members.sc)
+            members.sD1Hydrate(members.sd)
         }
         return members
     }
