@@ -483,6 +483,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             childList.sync(json);
             ContentValues values = new ContentValues();
 
+            values.put(ChildTable.COLUMN_SR_NO, childList.getSrno());
             values.put(ChildTable.COLUMN_CHILD_ID, childList.getChild_id());
             values.put(ChildTable.COLUMN_VILLAGE_CODE, childList.getVillage_code());
             values.put(ChildTable.COLUMN_MOTHER_NAME, childList.getMother_name());
@@ -949,18 +950,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public ChildList getChildBychildid(String villageCode, String childID) {
+    public ChildList getChildBychildid(String villageCode, String srno) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
         String whereClause = ChildTable.COLUMN_VILLAGE_CODE + " = ? AND " +
-                ChildTable.COLUMN_CHILD_ID + " = ?";
+                ChildTable.COLUMN_SR_NO + " = ?";
 
-        String[] whereArgs = {villageCode, childID};
+        String[] whereArgs = {villageCode, srno};
         String groupBy = null;
         String having = null;
-        String orderBy = ChildTable.COLUMN_CHILD_ID + " ASC";
+        String orderBy = ChildTable.COLUMN_SR_NO + " ASC";
 //        String limit = "5000";
 
         ChildList childList = new ChildList();
@@ -1033,15 +1034,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public ChildList getRandomBychildid(String child_id) {
+    public ChildList getRandomBySrno(String srno) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause = ChildTable.COLUMN_VILLAGE_CODE + " = ? AND " +
-                ChildTable.COLUMN_CHILD_ID + " = ? ";
+                ChildTable.COLUMN_SR_NO + " = ? ";
 
-        String[] whereArgs = {selectedVillages.getVillage_code(), child_id};
+        String[] whereArgs = {selectedVillages.getVillage_code(), srno};
         String groupBy = null;
         String having = null;
         String orderBy = null;

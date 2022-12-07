@@ -203,7 +203,6 @@
     <string name="hh15">Is respondent Head of Household?</string>
     <string name="hh16">Name and contact number of the head of Household: </string>
     <string name="hh15a">Yes</string>
-    <string name="hh16a">Head of Households</string>
     <string name="hh15b">No</string>
     <string name="hh16b">Head of Households Contact No </string>
     <string name="hh19">How many members are living in this household? (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumorators: Persons who live in this dwelling/ compound and usually share a meal together </string>
@@ -1509,6 +1508,8 @@
 
 
     <!--NANM-->
+    <string name="hhhead">Head of Households</string>
+    <string name="childName">Child Name</string>
     <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
     <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">گھرانے کی شناخت اوررضامندی:  سیکشن ااے 1 :  گھرانے کی شناخت اوررضامندی</string>

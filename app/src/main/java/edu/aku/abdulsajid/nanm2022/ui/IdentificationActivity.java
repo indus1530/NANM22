@@ -2,8 +2,6 @@ package edu.aku.abdulsajid.nanm2022.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -65,7 +63,7 @@ public class IdentificationActivity extends AppCompatActivity {
         });*/
 
 
-        bi.a105.addTextChangedListener(new TextWatcher() {
+        /*bi.a105.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 c = charSequence.length();
@@ -93,7 +91,7 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
             }
-        });
+        });*/
 
 
     }
@@ -269,9 +267,19 @@ public class IdentificationActivity extends AppCompatActivity {
     public void checkChild(View view) {
         if (!formValidation()) return;
 
+        bi.childName.setText(null);
+        bi.child.setVisibility(View.GONE);
+        bi.hhhead.setText(null);
+        bi.hhhead.setVisibility(View.GONE);
+
         ChildList childList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
         if (!childList.getChild_id().equals("")) {
+
+            bi.childName.setText(childList.getChild_name());
+            bi.child.setVisibility(View.VISIBLE);
+            bi.hhhead.setText(childList.getHh_head());
+            bi.hhhead.setVisibility(View.VISIBLE);
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
@@ -321,6 +329,10 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a107.setText(null);
         bi.a108.setText(null);
         bi.a105.setText(null);
+        bi.childName.setText(null);
+        bi.hhhead.setText(null);
+        bi.checkHhhead.setChecked(false);
+        bi.checkChild.setChecked(false);
         bi.fldGrpA105.setVisibility(View.GONE);
 
 //        Clusters clusters = db.getCluster(bi.a109.getText().toString());

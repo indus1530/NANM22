@@ -130,6 +130,7 @@ object CreateTable {
     const val SQL_CREATE_CHILD_LIST = ("CREATE TABLE "
             + ChildTable.TABLE_NAME + "("
             + ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildTable.COLUMN_SR_NO + " TEXT,"
             + ChildTable.COLUMN_CHILD_ID + " TEXT,"
             + ChildTable.COLUMN_VILLAGE_CODE + " TEXT,"
             + ChildTable.COLUMN_MOTHER_NAME + " TEXT,"
