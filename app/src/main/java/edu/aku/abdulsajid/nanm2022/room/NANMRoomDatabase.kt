@@ -1,8 +1,6 @@
 package edu.aku.abdulsajid.nanm2022.room
 
-import android.app.admin.SystemUpdatePolicy
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -24,7 +22,8 @@ import net.sqlcipher.database.SupportFactory
             FamilyMembers::class,
             Users::class,
             Villages::class,
-            ChildList::class,
+            AdolList::class,
+            Adolescent::class,
             EntryLog::class
 
 
@@ -36,9 +35,10 @@ abstract class NANMRoomDatabase : RoomDatabase(){
     abstract fun formsDao() : FormsDao
     abstract fun syncFunctionsDao() : SyncFunctionsDao
     abstract fun familyMembersDao() : FamilyMembersDao
+    abstract fun adolescentDao() : AdolescentDao
     abstract fun usersDao() : UsersDao
     abstract fun villagesDao() : VillagesDao
-    abstract fun childListDao() : ChildListDao
+    abstract fun adolListDao() : AdolListDao
     abstract fun entryLogDao() : EntryLogDao
 
 

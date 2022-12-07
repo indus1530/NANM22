@@ -18,6 +18,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityFormsReportBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class FormsReportPending extends AppCompatActivity {
     DatabaseHelper db;
@@ -43,7 +44,8 @@ public class FormsReportPending extends AppCompatActivity {
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.filter.setVisibility(View.GONE);
         db = MainApp.appInfo.dbHelper;
-        fc = db.getPendingForms();
+        //fc = db.getPendingForms();
+        fc = NANMRoomDatabase.getDbInstance().formsDao().getPendingForms();
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter(fc, this);

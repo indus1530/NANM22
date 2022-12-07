@@ -15,7 +15,7 @@ import org.json.JSONObject
  */
 
 @Entity(tableName = ChildTable.TABLE_NAME)
-class ChildList {
+class AdolList {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(
             name = ChildTable.COLUMN_ID,
@@ -68,7 +68,7 @@ class ChildList {
     }
 
     @Throws(JSONException::class)
-    fun sync(jsonObject: JSONObject): ChildList {
+    fun sync(jsonObject: JSONObject): AdolList {
         srno = jsonObject.getString(ChildTable.COLUMN_SR_NO)
         village_code = jsonObject.getString(ChildTable.COLUMN_VILLAGE_CODE)
         child_id = jsonObject.getString(ChildTable.COLUMN_CHILD_ID)
@@ -83,7 +83,7 @@ class ChildList {
         return this
     }
 
-    fun hydrate(cursor: Cursor): ChildList {
+    fun hydrate(cursor: Cursor): AdolList {
         ID = cursor.getLong(cursor.getColumnIndexOrThrow(ChildTable.COLUMN_ID))
         village_code =
             cursor.getString(cursor.getColumnIndexOrThrow(ChildTable.COLUMN_VILLAGE_CODE))

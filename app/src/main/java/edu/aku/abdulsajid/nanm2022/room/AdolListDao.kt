@@ -4,8 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
-import edu.aku.abdulsajid.nanm2022.models.ChildList
-import edu.aku.abdulsajid.nanm2022.models.Users
+import edu.aku.abdulsajid.nanm2022.models.AdolList
 import org.json.JSONArray
 import org.json.JSONException
 
@@ -15,7 +14,7 @@ import org.json.JSONException
 //
 
 @Dao
-interface ChildListDao {
+interface AdolListDao {
     @Throws(JSONException::class)
     fun syncChildList(childList: JSONArray): Int {
         var insertCount = 0
@@ -23,10 +22,10 @@ interface ChildListDao {
         for(i in 0 until childList.length()) {
             val jsonObjectUser = childList.optJSONObject(i)
 
-            val childList = ChildList()
-            childList.sync(jsonObjectUser)
+            val adolList = AdolList()
+            adolList.sync(jsonObjectUser)
 
-            val rowId = insertChildList(childList)
+            val rowId = insertChildList(adolList)
             if (rowId != -1L)
                 insertCount++
         }
@@ -34,7 +33,7 @@ interface ChildListDao {
     }
 
     @Insert
-    fun insertChildList(childList: ChildList): Long
+    fun insertChildList(adolList: AdolList): Long
 
     @Query("DELETE FROM " + TableContracts.ChildTable.TABLE_NAME)
     fun deleteChildListTable()
@@ -42,9 +41,16 @@ interface ChildListDao {
 
     @Query("SELECT * FROM " + TableContracts.ChildTable.TABLE_NAME +
             " WHERE " + TableContracts.ChildTable.COLUMN_VILLAGE_CODE + " LIKE :villageCode AND "
-            + TableContracts.ChildTable.COLUMN_CHILD_ID + " LIKE :childID  ORDER BY "
-            + TableContracts.ChildTable.COLUMN_CHILD_ID + " ASC")
-    fun getChildBychildid(villageCode : String, childID: String) : ChildList
+            + TableContracts.ChildTable.COLUMN_SR_NO + " LIKE :srNo  ORDER BY "
+            + TableContracts.ChildTable.COLUMN_SR_NO + " ASC")
+    fun getChildBychildid(villageCode : String, srNo: String) : AdolList
+
+
+    @Query("SELECT * FROM " + TableContracts.ChildTable.TABLE_NAME  +
+            " WHERE " + TableContracts.ChildTable.COLUMN_VILLAGE_CODE + " LIKE :villageCode AND " +
+            TableContracts.ChildTable.COLUMN_SR_NO + " LIKE :srNo" )
+    fun getRandomBySrno(srNo: String, villageCode: String) : AdolList
+
 
 
 

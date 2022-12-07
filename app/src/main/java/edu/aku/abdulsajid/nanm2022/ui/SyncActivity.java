@@ -158,7 +158,7 @@ public class SyncActivity extends AppCompatActivity {
                 // Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedFormHH());
+                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedFormHH());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Forms): " + e.getMessage());
@@ -168,7 +168,7 @@ public class SyncActivity extends AppCompatActivity {
                 //FamilyMembers
                 uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
+                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedFamilyMembers());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(FamilyMembers): " + e.getMessage());
@@ -176,62 +176,10 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
-                //MWRA
-               /* uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedMWRA());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(MWRA): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(MWRA)" + e.getMessage(), Toast.LENGTH_LONG).show();
-
-                }
-
-                //PregnancyDetails
-                uploadTables.add(new SyncModel(PregnancyDetailsTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedPregnancyDetails());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(PregnancyDetails): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(PregnancyDetails)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-                //PregnancyMaster
-                uploadTables.add(new SyncModel(PregnancyMasterTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedPregnancyMaster());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(PregnancyMaster): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(PregnancyMaster)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-                //MaternalMortality
-                uploadTables.add(new SyncModel(MaternalMortalityTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedMortalityTable());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(MaternalMortality): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(MaternalMortality)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-                //Child
-                uploadTables.add(new SyncModel(ChildTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedChild());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(Child): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG).show();
-
-                }*/
-
                 //Adolescent
                 uploadTables.add(new SyncModel(AdolescentTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedAdolescent());
+                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedAdolescent());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Adolescent): " + e.getMessage());
@@ -242,7 +190,7 @@ public class SyncActivity extends AppCompatActivity {
                 //Entry Log
                 uploadTables.add(new SyncModel(EntryLogTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedEntryLog());
+                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedEntryLog());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Forms): " + e.getMessage());
@@ -460,69 +408,6 @@ public class SyncActivity extends AppCompatActivity {
                                 downloadTables.get(position).setInfo("Time: " + time + "/" + getTime() + "\t Size: " + size);
                                 syncListAdapter.updatesyncList(downloadTables);
                             }
-                          /*  switch (tableName) {
-                                case UsersTable.TABLE_NAME:
-                                    try {
-                                        jsonArray = new JSONArray(result);
-
-                                        insertCount = db.syncUser(jsonArray);
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                        downloadTables.get(position).setstatus("Process Failed");
-                                        downloadTables.get(position).setstatusID(1);
-                                        downloadTables.get(position).setmessage(e.getMessage());
-                                        syncListAdapter.updatesyncList(downloadTables);
-                                    }
-                                    break;
-                                case VersionTable.TABLE_NAME:
-                                    try {
-                                        insertCount = db.syncVersionApp(new JSONObject(result));
-
-                                        if (insertCount == 1) jsonArray.put("1");
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                        downloadTables.get(position).setstatus("Process Failed");
-                                        downloadTables.get(position).setstatusID(1);
-                                        downloadTables.get(position).setmessage(e.getMessage());
-                                        syncListAdapter.updatesyncList(downloadTables);
-                                    }
-                                    break;
-
-                                case ClusterTable.TABLE_NAME:
-                                    try {
-                                        jsonArray = new JSONArray(result);
-
-                                        insertCount = db.syncClusters(jsonArray);
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                        downloadTables.get(position).setstatus("Process Failed");
-                                        downloadTables.get(position).setstatusID(1);
-                                        downloadTables.get(position).setmessage(e.getMessage());
-                                        syncListAdapter.updatesyncList(downloadTables);
-                                    }
-                                    break;
-
-                                case RandomHHTable.TABLE_NAME:
-                                    try {
-                                        jsonArray = new JSONArray(result);
-
-                                        insertCount = db.syncRandom(jsonArray);
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                        downloadTables.get(position).setstatus("Process Failed");
-                                        downloadTables.get(position).setstatusID(1);
-                                        downloadTables.get(position).setmessage(e.getMessage());
-                                        syncListAdapter.updatesyncList(downloadTables);
-                                    }
-                                    break;
-                            }*/
-
-    /*                        downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
-                            downloadTables.get(position).setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
-                            downloadTables.get(position).setstatusID(insertCount == 0 ? 1 : 3);
-                            syncListAdapter.updatesyncList(downloadTables);*/
-
-//                    pd.show();
 
                         } else {
                             downloadTables.get(position).setmessage("Received: " + result.length() + "");

@@ -39,7 +39,7 @@ import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.ChildList;
+import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Users;
@@ -80,7 +80,7 @@ public class MainApp extends Application {
     public static Forms form;
     public static Adolescent adol;
     public static FamilyMembers familyMember;
-    public static ChildList currentHousehold;
+    public static AdolList currentHousehold;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;

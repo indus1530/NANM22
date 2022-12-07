@@ -40,6 +40,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.core.UserAuth;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityChangePasswordBinding;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.workers.UserWorker;
 
 public class ChangePasswordActivity extends AppCompatActivity {
@@ -127,7 +128,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                     workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
                                 Log.d(TAG, "onChanged: SUCCEEDED");
-                                db.updatePassword(hashedPassword);
+                                NANMRoomDatabase.getDbInstance().usersDao().updatePassword(MainApp.user.getUserName(), hashedPassword);
+                                //db.updatePassword(hashedPassword);
 
                                 //Displaying the status into TextView
                                 //mTextView1.append("\n" + workInfo.getState().name());

@@ -19,6 +19,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityFormsReportBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class FormsReportCluster extends AppCompatActivity {
     DatabaseHelper db;
@@ -47,7 +48,8 @@ public class FormsReportCluster extends AppCompatActivity {
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.clusterFilter.setVisibility(View.VISIBLE);
         db = MainApp.appInfo.dbHelper;
-        fc = db.getFormsByCluster("0000000");
+        //fc = db.getFormsByCluster("0000000");
+        fc = NANMRoomDatabase.getDbInstance().formsDao().getFormsByCluster("0000000");
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter(fc, this);
@@ -56,7 +58,9 @@ public class FormsReportCluster extends AppCompatActivity {
 
     public void filterForms(View view) {
         Toast.makeText(this, "updated", Toast.LENGTH_SHORT).show();
-        fc = db.getFormsByCluster(bi.clusterFilter.getText().toString());
+        //fc = db.getFormsByCluster(bi.clusterFilter.getText().toString());
+        fc = NANMRoomDatabase.getDbInstance().formsDao().getFormsByCluster(bi.clusterFilter.getText().toString());
+
         formsAdapter = new FormsAdapter(fc, this);
         formsAdapter.notifyDataSetChanged();
         bi.fcRecyclerView.setAdapter(formsAdapter);

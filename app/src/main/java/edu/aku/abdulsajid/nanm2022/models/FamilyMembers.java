@@ -6,7 +6,6 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp._EMPTY_;
 import android.database.Cursor;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
@@ -120,13 +119,13 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     @Ignore
     private boolean mwra;
-    @Ignore
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_AGE_MONTHS)
     private String ageInMonths;
-    @Ignore
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_MUID)
     private String muid;
-    @Ignore
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_MOTHER_PRESENT)
     private String motherPresent;
-    @Ignore
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_INDEXED)
     private String indexed = _EMPTY_;
     @Ignore
     private String memCate = _EMPTY_;
@@ -175,7 +174,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         return ageInMonths;
     }
 
-    public void setAgeInMonth(String ageInMonths) {
+    public void setAgeInMonths(String ageInMonths) {
         this.ageInMonths = ageInMonths;
     }
 
@@ -715,7 +714,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 setA206yy(String.valueOf(tYear));
                 setA206mm(String.valueOf(tMonth));
                 setA206dd(String.valueOf(tDay));
-                setAgeInMonth(String.valueOf((int) inDays));
+                setAgeInMonths(String.valueOf((int) inDays));
                 if (tYear < 0)
                     setA206yy("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
@@ -747,7 +746,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 if (Integer.parseInt(this.a206dd) < 30)
                     inDays = Integer.parseInt(this.a206dd);
 
-                setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
+                setAgeInMonths(String.valueOf(inDays + monthsToDays + yearToDays));
 
             }
         }

@@ -15,6 +15,7 @@ import androidx.databinding.PropertyChangeRegistry;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,27 +35,46 @@ public class Adolescent extends BaseObservable implements Observable {
     @ColumnInfo(name = AdolescentTable.COLUMN_PROJECT_NAME)
     private String projectName = MainApp.PROJECT_NAME;
     // APP VARIABLES
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = AdolescentTable.COLUMN_ID)
     private long id = 0;
     @ColumnInfo(name = AdolescentTable.COLUMN_UID)
     private String uid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_FMUID)
     private String fmuid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_MUID)
     private String muid = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_INDEXED)
     private String indexed = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_NAME)
     private String name = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_VILLAGE_CODE)
     private String villageCode = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_CHILD_ID)
     private String childID = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
+    @Ignore
     private String endTime = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+    @Ignore
     private String iStatus96x = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
 
@@ -550,6 +570,19 @@ public class Adolescent extends BaseObservable implements Observable {
 
     }
 
+    public String getTAG() {
+        return TAG;
+    }
+
+    public PropertyChangeRegistry getPropertyChangeRegistry() {
+        return propertyChangeRegistry;
+    }
+
+    public String getVillageCode() {
+        return villageCode;
+    }
+
+
     public String getProjectName() {
         return projectName;
     }
@@ -682,19 +715,19 @@ public class Adolescent extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
+    public String getIStatus() {
         return iStatus;
     }
 
-    public void setiStatus(String iStatus) {
+    public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
     }
 
-    public String getiStatus96x() {
+    public String getIStatus96x() {
         return iStatus96x;
     }
 
-    public void setiStatus96x(String iStatus96x) {
+    public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
     }
 

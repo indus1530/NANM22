@@ -42,13 +42,13 @@ interface FamilyMembersDao {
     }
 
     @Query("SELECT * FROM " + TableContracts.FamilyMembersTable.TABLE_NAME
-            + " WHERE " + TableContracts.FamilyMembersTable.COLUMN_UUID + " LIKE :uid "
-            //+ TableContracts.FamilyMembersTable.COLUMN_INDEXED + " LIKE '1'
-            + "ORDER BY " + TableContracts.FamilyMembersTable.COLUMN_ID + " ASC")
-    fun getSelectedMemberBYUID_internal(uid: String) : FamilyMembers
+            + " WHERE " + TableContracts.FamilyMembersTable.COLUMN_UUID + " LIKE :uid AND "
+            + TableContracts.FamilyMembersTable.COLUMN_INDEXED + "= '1' ORDER BY "
+            + TableContracts.FamilyMembersTable.COLUMN_ID + " ASC")
+    fun getSelectedMemberBYUID_internal(uid: String) : FamilyMembers?
 
     @Throws(JSONException::class)
-    fun getSelectedMemberBYUID(uid: String) : FamilyMembers
+    fun getSelectedMemberBYUID(uid: String) : FamilyMembers?
     {
         val members = getSelectedMemberBYUID_internal(uid)
         if(members == null)

@@ -23,6 +23,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionC1Binding;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 
 public class SectionC1Activity extends AppCompatActivity {
@@ -43,7 +44,8 @@ public class SectionC1Activity extends AppCompatActivity {
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
 
         try {
-            MainApp.adol = db.getAdolByUUid();
+            //MainApp.adol = db.getAdolByUUid();
+            adol = NANMRoomDatabase.getDbInstance().adolescentDao().getAdolByUUid(MainApp.form.getUid());
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Adolescent): " + e.getMessage(), Toast.LENGTH_SHORT).show();

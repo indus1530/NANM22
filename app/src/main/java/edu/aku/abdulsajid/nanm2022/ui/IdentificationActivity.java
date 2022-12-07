@@ -2,9 +2,6 @@ package edu.aku.abdulsajid.nanm2022.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -21,7 +18,7 @@ import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
-import edu.aku.abdulsajid.nanm2022.models.ChildList;
+import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Villages;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -276,19 +273,20 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.hhhead.setText(null);
         bi.hhhead.setVisibility(View.GONE);
 
-        ChildList childList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
+        //AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
+        AdolList adolList = NANMRoomDatabase.getDbInstance().adolListDao().getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
-        if (!childList.getChild_id().equals("")) {
+        if (!adolList.getChild_id().equals("")) {
 
-            bi.childName.setText(childList.getChild_name());
+            bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
-            bi.hhhead.setText(childList.getHh_head());
+            bi.hhhead.setText(adolList.getHh_head());
             bi.hhhead.setVisibility(View.VISIBLE);
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
-            MainApp.currentHousehold = childList;
+            MainApp.currentHousehold = adolList;
 
         } else {
 

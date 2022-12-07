@@ -24,7 +24,7 @@ interface SyncFunctionsDao {
         "SELECT * FROM " + EntryLogTable.TABLE_NAME + " WHERE " + EntryLogTable.COLUMN_SYNCED
                 + " ORDER BY " + EntryLogTable.COLUMN_ID + " ASC"
     )
-    fun getUnsyncedEntryLog_Internal(): List<Forms>
+    fun getUnsyncedEntryLog_Internal(): List<EntryLog>
 
     @kotlin.jvm.Throws(JSONException::class)
     fun getUnsyncedEntryLog(): JSONArray? {
@@ -37,10 +37,8 @@ interface SyncFunctionsDao {
     }
 
     /*Forms*/
-    @Query(
-        "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_SYNCED
-                + " is \'\' AND (" + FormsTable.COLUMN_ISTATUS + " = 1 ORDER BY " + FormsTable.COLUMN_ID + " ASC"
-    )
+    @Query("SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_SYNCED
+                + " is \'\' AND " + FormsTable.COLUMN_ISTATUS + " is not \'\' ORDER BY " + FormsTable.COLUMN_ID + " ASC")
     fun getUnsyncedFormHH_Internal(): List<Forms>
 
     @kotlin.jvm.Throws(JSONException::class)
@@ -58,7 +56,7 @@ interface SyncFunctionsDao {
         "SELECT * FROM " + FamilyMembersTable.TABLE_NAME + " WHERE " + FamilyMembersTable.COLUMN_SYNCED
                 + " ORDER BY " + FamilyMembersTable.COLUMN_ID + " ASC"
     )
-    fun getUnsyncedFamilyMembers_Internal(): List<Forms>
+    fun getUnsyncedFamilyMembers_Internal(): List<FamilyMembers>
 
     @kotlin.jvm.Throws(JSONException::class)
     fun getUnsyncedFamilyMembers(): JSONArray? {
@@ -71,11 +69,10 @@ interface SyncFunctionsDao {
     }
 
     /*Adolescent*/
-    @Query(
-        "SELECT * FROM " + AdolescentTable.TABLE_NAME + " WHERE " + AdolescentTable.COLUMN_SYNCED
-                + " is \'\' AND (" + AdolescentTable.COLUMN_ISTATUS + " = 1 ORDER BY " + AdolescentTable.COLUMN_ID + " ASC"
-    )
-    fun getUnsyncedAdolescent_Internal(): List<Forms>
+
+    @Query("SELECT * FROM " + AdolescentTable.TABLE_NAME + " WHERE " + AdolescentTable.COLUMN_SYNCED
+            + " is \'\' AND " + AdolescentTable.COLUMN_ISTATUS + " is not null ORDER BY " + AdolescentTable.COLUMN_ID + " ASC")
+    fun getUnsyncedAdolescent_Internal(): List<Adolescent>
 
     @kotlin.jvm.Throws(JSONException::class)
     fun getUnsyncedAdolescent(): JSONArray? {
@@ -208,7 +205,7 @@ interface SyncFunctionsDao {
         for (i in 0 until childList.length()) {
             val jsonObject = childList.optJSONObject(i)
 
-            val child = ChildList()
+            val child = AdolList()
             child.sync(jsonObject)
 
 
@@ -220,7 +217,7 @@ interface SyncFunctionsDao {
     }
 
     @Insert
-    fun insertChild(child: ChildList): Long
+    fun insertChild(child: AdolList): Long
 
     @Query("DELETE FROM " + ChildTable.TABLE_NAME)
     fun deleteChildTable()

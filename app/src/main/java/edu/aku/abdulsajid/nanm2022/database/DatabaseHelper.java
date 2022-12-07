@@ -37,7 +37,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.VillageTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
-import edu.aku.abdulsajid.nanm2022.models.ChildList;
+import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
@@ -171,7 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_NAME, adol.getName());
         values.put(AdolescentTable.COLUMN_SC, adol.sCtoString());
         values.put(AdolescentTable.COLUMN_SD, adol.sDtoString());
-        values.put(AdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
+        values.put(AdolescentTable.COLUMN_ISTATUS, adol.getIStatus());
         values.put(AdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
         values.put(AdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
         values.put(AdolescentTable.COLUMN_APPVERSION, adol.getAppver());
@@ -416,9 +416,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         JSONObject jsonObjectVersion = ((JSONArray) VersionList.getJSONObject(0).get("elements")).getJSONObject(0);
 
-        String appPath = jsonObjectVersion.getString("outputFile");
+        /*String appPath = jsonObjectVersion.getString("outputFile");
         String versionCode = jsonObjectVersion.getString("versionCode");
-
+*/
         MainApp.editor.putString("outputFile", jsonObjectVersion.getString("outputFile"));
         MainApp.editor.putString("versionCode", jsonObjectVersion.getString("versionCode"));
         MainApp.editor.putString("versionName", jsonObjectVersion.getString("versionName") + ".");
@@ -479,19 +479,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             JSONObject json = childs.getJSONObject(i);
 
-            ChildList childList = new ChildList();
-            childList.sync(json);
+            AdolList adolList = new AdolList();
+            adolList.sync(json);
             ContentValues values = new ContentValues();
 
-            values.put(ChildTable.COLUMN_SR_NO, childList.getSrno());
-            values.put(ChildTable.COLUMN_CHILD_ID, childList.getChild_id());
-            values.put(ChildTable.COLUMN_VILLAGE_CODE, childList.getVillage_code());
-            values.put(ChildTable.COLUMN_MOTHER_NAME, childList.getMother_name());
-            values.put(ChildTable.COLUMN_CHILD_NAME, childList.getChild_name());
-            values.put(ChildTable.COLUMN_HH_HEAD, childList.getHh_head());
-            values.put(ChildTable.COLUMN_GENDER, childList.getGender());
-            values.put(ChildTable.COLUMN_DOB, childList.getDob());
-            values.put(ChildTable.COLUMN_PROJECT, childList.getProject());
+            values.put(ChildTable.COLUMN_SR_NO, adolList.getSrno());
+            values.put(ChildTable.COLUMN_CHILD_ID, adolList.getChild_id());
+            values.put(ChildTable.COLUMN_VILLAGE_CODE, adolList.getVillage_code());
+            values.put(ChildTable.COLUMN_MOTHER_NAME, adolList.getMother_name());
+            values.put(ChildTable.COLUMN_CHILD_NAME, adolList.getChild_name());
+            values.put(ChildTable.COLUMN_HH_HEAD, adolList.getHh_head());
+            values.put(ChildTable.COLUMN_GENDER, adolList.getGender());
+            values.put(ChildTable.COLUMN_DOB, adolList.getDob());
+            values.put(ChildTable.COLUMN_PROJECT, adolList.getProject());
 
             long rowID = db.insertOrThrow(ChildTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
@@ -950,7 +950,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public ChildList getChildBychildid(String villageCode, String srno) {
+    public AdolList getChildBychildid(String villageCode, String srno) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -964,7 +964,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = ChildTable.COLUMN_SR_NO + " ASC";
 //        String limit = "5000";
 
-        ChildList childList = new ChildList();
+        AdolList adolList = new AdolList();
         c = db.query(
                 ChildTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
@@ -976,9 +976,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                limit
         );
         while (c.moveToNext()) {
-            childList = new ChildList().hydrate(c);
+            adolList = new AdolList().hydrate(c);
         }
-        return childList;
+        return adolList;
     }
 
     public Villages getVillage(String villageCode) {
@@ -1034,7 +1034,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public ChildList getRandomBySrno(String srno) {
+    public AdolList getRandomBySrno(String srno) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1047,7 +1047,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
         String orderBy = null;
 
-        ChildList childList = null;
+        AdolList adolList = null;
         c = db.query(
                 ChildTable.TABLE_NAME,   // The table to query
                 columns,                    // The columns to return
@@ -1058,12 +1058,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                     // The sort order
         );
         while (c.moveToNext()) {
-            childList = new ChildList().hydrate(c);
+            adolList = new AdolList().hydrate(c);
         }
         if (c != null && !c.isClosed()) {
             c.close();
         }
-        return childList;
+        return adolList;
     }
 
     public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {

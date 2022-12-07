@@ -166,61 +166,57 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
         Log.d(TAG, "onCreate(familyList): " + MainApp.familyList.size());
-        try {
-            MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
-            //familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
-            int fmCount = 0;
-            for (FamilyMembers fm : MainApp.familyList) {
-                fmCount++;
+        //MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
 
-                // Adding Parents
-                boolean memAgeCheck = Integer.parseInt(fm.getA206yy()) > 14;
-                boolean memMarriedCheck = !fm.getA207().equals("2");
-                String memGender = fm.getA204();
-                if (memMarriedCheck && memAgeCheck) {
-                    switch (memGender) {
-                        case "1":
-                            MainApp.fatherList.add(fm);
-                            //MainApp.mwraCount++;
-                            break;
-                        case "2":
-                            MainApp.motherList.add(fm);
+        familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
+        int fmCount = 0;
+        for (FamilyMembers fm : MainApp.familyList) {
+            fmCount++;
 
-                            if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 50) {
-                                MainApp.allMWRAList.add(fm);
-                            }
-                            //MainApp.adolCount++;
-                            break;
-                    }
+            // Adding Parents
+            boolean memAgeCheck = Integer.parseInt(fm.getA206yy()) > 14;
+            boolean memMarriedCheck = !fm.getA207().equals("2");
+            String memGender = fm.getA204();
+            if (memMarriedCheck && memAgeCheck) {
+                switch (memGender) {
+                    case "1":
+                        MainApp.fatherList.add(fm);
+                        //MainApp.mwraCount++;
+                        break;
+                    case "2":
+                        MainApp.motherList.add(fm);
+
+                        if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 50) {
+                            MainApp.allMWRAList.add(fm);
+                        }
+                        //MainApp.adolCount++;
+                        break;
                 }
-
-                // Populate All U-5 Children
-                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 5) {
-                    MainApp.allChildrenList.add(fm);
-                }
-
-                // Populate All Adolescent
-                if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 15)
-                    MainApp.allAdolList.add(fm);
-
-
-                // Populate mothers' list
-                String motherSno = fm.getA213(); // mother's line number from child
-                if (Integer.parseInt(fm.getA206yy()) < 5 && fm.getA211().equals("1") &&
-                        !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
-                    // MainApp.mwraList.add(Integer.parseInt(motherSno));
-                    FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
-
-                    if (mother.getA211().equals("1") && Integer.parseInt(mother.getA206yy()) > 14 && Integer.parseInt(mother.getA206yy()) < 50) {
-                        MainApp.mwraList.add(Integer.parseInt(motherSno));
-                    }
-                }
-
-
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
+
+            // Populate All U-5 Children
+            if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) < 5) {
+                MainApp.allChildrenList.add(fm);
+            }
+
+            // Populate All Adolescent
+            if (fm.getA211().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 15)
+                MainApp.allAdolList.add(fm);
+
+
+            // Populate mothers' list
+            String motherSno = fm.getA213(); // mother's line number from child
+            if (Integer.parseInt(fm.getA206yy()) < 5 && fm.getA211().equals("1") &&
+                    !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
+                // MainApp.mwraList.add(Integer.parseInt(motherSno));
+                FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
+
+                if (mother.getA211().equals("1") && Integer.parseInt(mother.getA206yy()) > 14 && Integer.parseInt(mother.getA206yy()) < 50) {
+                    MainApp.mwraList.add(Integer.parseInt(motherSno));
+                }
+            }
+
+
         }
         selectedMWRA = "";
         selectedChild = "";

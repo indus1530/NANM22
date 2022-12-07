@@ -25,6 +25,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityAdolSelectBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 
 
@@ -103,7 +104,8 @@ public class AdolSelectionActivity extends AppCompatActivity {
 
                 //  if (position == 0) return;
                 try {
-                    adol = db.getAdolByUUID(adolFmUID.get(bi.a202.getSelectedItemPosition()));
+                    //adol = db.getAdolByUUID(adolFmUID.get(bi.a202.getSelectedItemPosition()));
+                    adol = NANMRoomDatabase.getDbInstance().adolescentDao().getAdolByUUid(MainApp.form.getUid(), adolFmUID.get(bi.a202.getSelectedItemPosition()));
                     if (MainApp.adol.getUid().equals("")) {
                         MainApp.adol.setFmuid(adolFmUID.get(bi.a202.getSelectedItemPosition()));
                         MainApp.adol.setSno(adolCodes.get(bi.a202.getSelectedItemPosition()));

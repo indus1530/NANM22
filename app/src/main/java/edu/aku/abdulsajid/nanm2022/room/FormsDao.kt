@@ -44,4 +44,22 @@ interface FormsDao {
         return forms
     }
 
+    @Query("SELECT * FROM " + TableContracts.FormsTable.TABLE_NAME
+            + " WHERE " + TableContracts.FormsTable.COLUMN_ISTATUS + " is \'\' ORDER BY "
+            + TableContracts.FormsTable.COLUMN_ID + " DESC")
+    fun getPendingForms() : List<Forms>
+
+    @Query("SELECT * FROM " + TableContracts.FormsTable.TABLE_NAME
+            + " WHERE " + TableContracts.FormsTable.COLUMN_VILLAGE_CODE
+            + " LIKE :cluster ORDER BY " + TableContracts.FormsTable.COLUMN_ID + " ASC" )
+    fun getFormsByCluster(cluster : String) : List<Forms>
+
+    @Query("SELECT * FROM " + TableContracts.FormsTable.TABLE_NAME
+            + " WHERE " + TableContracts.FormsTable.COLUMN_SYSDATE
+            + " LIKE '%' || :sysdate || '%' ORDER BY "
+            + TableContracts.FormsTable.COLUMN_ID + " DESC")
+    fun getTodayForms(sysdate : String) : List<Forms>
+
+
+
 }

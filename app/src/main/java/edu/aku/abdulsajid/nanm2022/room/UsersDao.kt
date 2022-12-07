@@ -6,11 +6,13 @@ import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.core.UserAuth
+import edu.aku.abdulsajid.nanm2022.models.EntryLog
 import edu.aku.abdulsajid.nanm2022.models.Users
 import org.json.JSONArray
 import org.json.JSONException
 import java.security.InvalidKeyException
 import java.security.NoSuchAlgorithmException
+import java.util.*
 
 //
 // Created by gul.sanober on 12/6/2022.
@@ -60,6 +62,19 @@ interface UsersDao {
             }
         }
         return false
+    }
+
+
+    @Query("SELECT * FROM " + TableContracts.UsersTable.TABLE_NAME
+                    + " WHERE " + TableContracts.UsersTable.COLUMN_USERNAME + " LIKE :user "
+    )
+    fun UpdateQueryUsersPassword(user: String): Users
+
+    fun updatePassword(user: String, password: String): Users {
+        val synced = UpdateQueryUsersPassword(user)
+        synced.password = password
+        synced.newUser = ""
+        return synced
     }
 
 
