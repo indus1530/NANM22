@@ -80,14 +80,23 @@ public class TableContracts {
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_SA = "sA";
-        public static final String COLUMN_SB = "sB";
+        public static final String COLUMN_SA1 = "sA1";
+        public static final String COLUMN_SA3A = "sA3A";
+        public static final String COLUMN_SA3B = "sA3B";
+        public static final String COLUMN_SA4A = "sA4A";
+        public static final String COLUMN_SA4B = "sA4B";
+        public static final String COLUMN_SA4C = "sA4C";
+        public static final String COLUMN_SA5A = "sA5A";
+        public static final String COLUMN_SA5B = "sA5B";
+        public static final String COLUMN_SB1 = "sB1";
+        public static final String COLUMN_SB3 = "sB3";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNC_DATE = "sync_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_ISTATUS_96X = "istatus96x";
     }
 
     public static abstract class FamilyMembersTable implements BaseColumns {
@@ -106,7 +115,7 @@ public class TableContracts {
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_SD = "sd";
+        public static final String COLUMN_A2 = "sA2";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

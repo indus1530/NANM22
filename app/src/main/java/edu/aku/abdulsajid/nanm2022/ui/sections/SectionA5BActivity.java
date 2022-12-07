@@ -47,7 +47,7 @@ public class SectionA5BActivity extends AppCompatActivity {
         try {
             //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
             Forms updateForms = form;
-            updateForms.setSA(form.sAtoString());
+            updateForms.setSA5B(form.sA5BtoString());
             updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {

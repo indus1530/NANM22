@@ -4,7 +4,6 @@ import androidx.room.*
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.models.Forms
 import org.json.JSONException
-import kotlin.jvm.Throws
 
 //
 // Created by gul.sanober on 11/30/2022.
@@ -37,8 +36,8 @@ interface FormsDao {
             val tempForms = Forms()
             return tempForms
         }else{
-            forms.sAHydrate(forms.sa)
-            forms.sBHydrate(forms.sb)
+            forms.sA1Hydrate(forms.sA1)
+            forms.sB1Hydrate(forms.sB1)
         }
 
         return forms

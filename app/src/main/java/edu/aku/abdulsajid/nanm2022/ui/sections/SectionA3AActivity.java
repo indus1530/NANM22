@@ -19,7 +19,6 @@ import org.json.JSONException;
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
-
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA3ABinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -48,7 +47,7 @@ public class SectionA3AActivity extends AppCompatActivity {
         try {
             //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
             Forms updateForms = form;
-            updateForms.setSA(form.sAtoString());
+            updateForms.setSA3A(form.sA3AtoString());
             updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {
@@ -69,7 +68,7 @@ public class SectionA3AActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionA4AActivity.class));
+            startActivity(new Intent(this, SectionA3BActivity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

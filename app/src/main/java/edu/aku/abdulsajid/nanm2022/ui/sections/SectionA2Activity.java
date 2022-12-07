@@ -21,7 +21,6 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA2Binding;
@@ -181,7 +180,7 @@ public class SectionA2Activity extends AppCompatActivity {
         try {
             //updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SD, familyMember.sDtoString());
             FamilyMembers updatedFamilyMember = familyMember;
-            updatedFamilyMember.setSD(familyMember.sDtoString());
+            updatedFamilyMember.setSA2(familyMember.sA2toString());
             updcount = NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(updatedFamilyMember);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();

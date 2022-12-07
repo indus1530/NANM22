@@ -76,8 +76,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
     // SECTION VARIABLES
-    @ColumnInfo(name = FamilyMembersTable.COLUMN_SD)
-    private String sD = _EMPTY_;
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_A2)
+    private String sA2 = _EMPTY_;
 
     // FIELD VARIABLES
     @Ignore
@@ -85,11 +85,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
     @Ignore
     private String a202 = _EMPTY_;
     @Ignore
-    private String a204 = _EMPTY_;
-    @Ignore
     private String a203 = _EMPTY_;
     @Ignore
     private String a20396x = _EMPTY_;
+    @Ignore
+    private String a204 = _EMPTY_;
     @Ignore
     private String a205dd = _EMPTY_;
     @Ignore
@@ -103,10 +103,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     @Ignore
     private String a206dd = _EMPTY_;
     @Ignore
-    private String a212 = _EMPTY_;
-    @Ignore
-    private String a213 = _EMPTY_;
-    @Ignore
     private String a207 = _EMPTY_;
     @Ignore
     private String a208 = _EMPTY_;
@@ -116,6 +112,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a210 = _EMPTY_;
     @Ignore
     private String a211 = _EMPTY_;
+    @Ignore
+    private String a212 = _EMPTY_;
+    @Ignore
+    private String a213 = _EMPTY_;
 
     @Ignore
     private boolean mwra;
@@ -318,12 +318,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-    public String getSD() {
-        return sD;
+    public String getSA2() {
+        return sA2;
     }
 
-    public void setSD(String sD) {
-        this.sD = sD;
+    public void setSA2(String sA2) {
+        this.sA2 = sA2;
     }
 
 
@@ -575,14 +575,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNC_DATE));
 
-        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SD)));
+        sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_A2)));
         updateMemCategory();
 
         return this;
     }
 
-    public void sDHydrate(String string) throws JSONException {
-        Log.d(TAG, "sDHydrate: " + string);
+    public void sA2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sA2Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -631,12 +631,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FamilyMembersTable.COLUMN_APPVERSION, this.appver);
 
-        json.put(FamilyMembersTable.COLUMN_SD, new JSONObject(sDtoString()));
+        json.put(FamilyMembersTable.COLUMN_A2, new JSONObject(sA2toString()));
         return json;
     }
 
-    public String sDtoString() throws JSONException {
-        Log.d(TAG, "sDtoString: ");
+    public String sA2toString() throws JSONException {
+        Log.d(TAG, "sA2toString: ");
         JSONObject json = new JSONObject();
         json.put("a201", a201)
                 .put("a202", a202)

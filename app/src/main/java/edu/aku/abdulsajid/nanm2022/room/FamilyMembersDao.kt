@@ -3,10 +3,7 @@ package edu.aku.abdulsajid.nanm2022.room
 import androidx.room.*
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers
-import edu.aku.abdulsajid.nanm2022.models.Forms
-import edu.aku.abdulsajid.nanm2022.ui.lists.FamilyMembersListActivity
 import org.json.JSONException
-import kotlin.jvm.Throws
 
 //
 // Created by gul.sanober on 12/6/2022.
@@ -35,7 +32,7 @@ interface FamilyMembersDao {
     {
         val members = getMemberBYUID_Internal(uid)
         members.forEach {
-            it.sDHydrate(it.sd)
+            it.sA2Hydrate(it.sA2)
         }
         return members
 
@@ -56,7 +53,7 @@ interface FamilyMembersDao {
             val tempMembers = FamilyMembers()
             return tempMembers
         }else{
-            members.sDHydrate(members.sd)
+            members.sA2Hydrate(members.sA2)
         }
         return members
     }

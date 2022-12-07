@@ -2,15 +2,15 @@ package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -47,7 +47,7 @@ public class SectionA4CActivity extends AppCompatActivity {
         try {
             //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
             Forms updateForms = form;
-            updateForms.setSA(form.sAtoString());
+            updateForms.setSA4C(form.sA4CtoString());
             updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {

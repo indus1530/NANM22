@@ -1320,8 +1320,17 @@ public class Forms extends BaseObservable implements Observable {
 
     // Section Variables
 
-    private String sA = _EMPTY_;
-    private String sB = _EMPTY_;
+    private String sA1 = _EMPTY_;
+    private String sA2 = _EMPTY_;
+    private String sA3A = _EMPTY_;
+    private String sA3B = _EMPTY_;
+    private String sA4A = _EMPTY_;
+    private String sA4B = _EMPTY_;
+    private String sA4C = _EMPTY_;
+    private String sA5A = _EMPTY_;
+    private String sA5B = _EMPTY_;
+    private String sB1 = _EMPTY_;
+    private String sB3 = _EMPTY_;
 
 
     public Forms() {
@@ -1493,21 +1502,93 @@ public class Forms extends BaseObservable implements Observable {
     }
 
 
-    public String getSA() {
-        return sA;
+    public String getSA1() {
+        return sA1;
     }
 
-    public void setSA(String sA) {
-        this.sA = sA;
+    public void setSA1(String sA1) {
+        this.sA1 = sA1;
     }
 
 
-    public String getSB() {
-        return sB;
+    public String getSA2() {
+        return sA2;
     }
 
-    public void setSB(String sB) {
-        this.sB = sB;
+    public void setSA2(String sA2) {
+        this.sA2 = sA2;
+    }
+
+    public String getSA3A() {
+        return sA3A;
+    }
+
+    public void setSA3A(String sA3A) {
+        this.sA3A = sA3A;
+    }
+
+    public String getSA3B() {
+        return sA3B;
+    }
+
+    public void setSA3B(String sA3B) {
+        this.sA3B = sA3B;
+    }
+
+    public String getSA4A() {
+        return sA4A;
+    }
+
+    public void setSA4A(String sA4A) {
+        this.sA4A = sA4A;
+    }
+
+    public String getSA4B() {
+        return sA4B;
+    }
+
+    public void setSA4B(String sA4B) {
+        this.sA4B = sA4B;
+    }
+
+    public String getSA4C() {
+        return sA4C;
+    }
+
+    public void setSA4C(String sA4C) {
+        this.sA4C = sA4C;
+    }
+
+    public String getSA5A() {
+        return sA5A;
+    }
+
+    public void setSA5A(String sA5A) {
+        this.sA5A = sA5A;
+    }
+
+    public String getSA5B() {
+        return sA5B;
+    }
+
+    public void setSA5B(String sA5B) {
+        this.sA5B = sA5B;
+    }
+
+    public String getSB1() {
+        return sB1;
+    }
+
+    public void setSB1(String sB1) {
+        this.sB1 = sB1;
+    }
+
+    public String getSB3() {
+        return sB3;
+    }
+
+    public void setSB3(String sB3) {
+        this.sB3 = sB3;
     }
 
     @Bindable
@@ -8354,16 +8435,26 @@ public class Forms extends BaseObservable implements Observable {
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS_96X));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNC_DATE));
 
-        sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
-        sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB)));
+        sA1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
+//        sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA2)));
+        sA3AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3A)));
+        sA3BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3B)));
+        sA4AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA4A)));
+        sA4BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA4B)));
+        sA4CHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA4C)));
+        sA5AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA5A)));
+        sA5BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA5B)));
+        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB1)));
+        sB3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB3)));
         return this;
     }
 
-    public void sAHydrate(String string) throws JSONException {
-        Log.d(TAG, "sAHydrate: " + string);
+    /*public void sA1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sA1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -8818,12 +8909,534 @@ public class Forms extends BaseObservable implements Observable {
             this.a53498 = json.getString("a53498");
             this.a53496 = json.getString("a53496");
             this.a53496x = json.getString("a53496x");
-            this.iStatus96x = json.has("iStatus96x") ? json.getString("iStatus96x") : "";
+        }
+    }*/
+
+    public void sA1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sA1Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a109 = json.getString("a109");
+            this.a106 = json.getString("a106");
+            this.a107 = json.getString("a107");
+            this.a108 = json.getString("a108");
+            this.a105 = json.getString("a105");
+            this.a101 = json.getString("a101");
+            this.a102 = json.getString("a102");
+            this.a103 = json.getString("a103");
+            this.a104 = json.getString("a104");
+            this.a110 = json.getString("a110");
+            this.a111 = json.getString("a111");
+            this.a112 = json.getString("a112");
+            this.a113 = json.getString("a113");
+            this.a114 = json.getString("a114");
+            this.a11496x = json.getString("a11496x");
         }
     }
 
-    public void sBHydrate(String string) throws JSONException {
-        Log.d(TAG, "sBHydrate: " + string);
+    /*public void sA2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sA2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a201 = json.getString("a201");
+            this.a202 = json.getString("a202");
+            this.a203 = json.getString("a203");
+            this.a203xx = json.getString("a203xx");
+            this.a204 = json.getString("a204");
+            this.a205dd = json.getString("a205dd");
+            this.a205mm = json.getString("a205mm");
+            this.a205yy = json.getString("a205yy");
+            this.a206dd = json.getString("a206dd");
+            this.a206mm = json.getString("a206mm");
+            this.a206yy = json.getString("a206yy");
+            this.a207 = json.getString("a207");
+            this.a208 = json.getString("a208");
+            this.a209 = json.getString("a209");
+            this.a210 = json.getString("a210");
+            this.a211 = json.getString("a211");
+            this.a212 = json.getString("a212");
+            this.a213 = json.getString("a213");
+        }
+    }*/
+
+    public void sA3AHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA3AHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a301 = json.getString("a301");
+            this.a301xx = json.getString("a301xx");
+            this.a302 = json.getString("a302");
+            this.a302xx = json.getString("a302xx");
+            this.a303 = json.getString("a303");
+            this.a303xx = json.getString("a303xx");
+            this.a304 = json.getString("a304");
+            this.a304xx = json.getString("a304xx");
+            this.a305 = json.getString("a305");
+            this.a305xx = json.getString("a305xx");
+            this.a306 = json.getString("a306");
+            this.a306xx = json.getString("a306xx");
+            this.a306aa = json.getString("a306aa");
+            this.a307 = json.getString("a307");
+            this.a307xx = json.getString("a307xx");
+            this.a307aa = json.getString("a307aa");
+            this.a308 = json.getString("a308");
+            this.a309 = json.getString("a309");
+            this.a309a = json.getString("a309a");
+            this.a310 = json.getString("a310");
+            this.a311 = json.getString("a311");
+            this.a312 = json.getString("a312");
+            this.a313 = json.getString("a313");
+            this.a314 = json.getString("a314");
+            this.a314xx = json.getString("a314xx");
+            this.a315 = json.getString("a315");
+            this.a316 = json.getString("a316");
+            this.a316xx = json.getString("a316xx");
+            this.a317 = json.getString("a317");
+            this.a317xx = json.getString("a317xx");
+            this.a318 = json.getString("a318");
+            this.a318xx = json.getString("a318xx");
+        }
+    }
+
+    public void sA3BHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA3BHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a319a = json.getString("a319a");
+            this.a319b = json.getString("a319b");
+            this.a319c = json.getString("a319c");
+            this.a319d = json.getString("a319d");
+            this.a319e = json.getString("a319e");
+            this.a319f = json.getString("a319f");
+            this.a319g = json.getString("a319g");
+            this.a319h = json.getString("a319h");
+            this.a319i = json.getString("a319i");
+            this.a319j = json.getString("a319j");
+            this.a319k = json.getString("a319k");
+            this.a319l = json.getString("a319l");
+            this.a319m = json.getString("a319m");
+            this.a319n = json.getString("a319n");
+            this.a319o = json.getString("a319o");
+            this.a319p = json.getString("a319p");
+            this.a319q = json.getString("a319q");
+            this.a319r = json.getString("a319r");
+            this.a320 = json.getString("a320");
+            this.a321a = json.getString("a321a");
+            this.a321b = json.getString("a321b");
+            this.a321c = json.getString("a321c");
+            this.a321d = json.getString("a321d");
+            this.a321e = json.getString("a321e");
+            this.a321f = json.getString("a321f");
+            this.a321g = json.getString("a321g");
+            this.a321h = json.getString("a321h");
+            this.a321i = json.getString("a321i");
+            this.a322 = json.getString("a322");
+            this.a322xx = json.getString("a322xx");
+            this.a323 = json.getString("a323");
+            this.a324 = json.getString("a324");
+            this.a325 = json.getString("a325");
+            this.a326 = json.getString("a326");
+            this.a327a = json.getString("a327a");
+            this.a327b = json.getString("a327b");
+            this.a327c = json.getString("a327c");
+            this.a328 = json.getString("a328");
+            this.a329a = json.getString("a329a");
+            this.a329b = json.getString("a329b");
+            this.a329c = json.getString("a329c");
+            this.a329d = json.getString("a329d");
+            this.a329e = json.getString("a329e");
+            this.a329f = json.getString("a329f");
+            this.a330 = json.getString("a330");
+            this.a332 = json.getString("a332");
+            this.a332ax = json.getString("a332ax");
+            this.a331 = json.getString("a331");
+            this.a331xx = json.getString("a331xx");
+            this.a333 = json.getString("a333");
+            this.a333xx = json.getString("a333xx");
+            this.a334 = json.getString("a334");
+            this.a334xx = json.getString("a334xx");
+        }
+    }
+
+    public void sA4AHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA4AHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a401 = json.getString("a401");
+            this.a402 = json.getString("a402");
+            this.a403 = json.getString("a403");
+            this.a404 = json.getString("a404");
+            this.a405 = json.getString("a405");
+            this.a40601 = json.getString("a40601");
+            this.a40602 = json.getString("a40602");
+            this.a40603 = json.getString("a40603");
+            this.a40604 = json.getString("a40604");
+            this.a40605 = json.getString("a40605");
+            this.a40606 = json.getString("a40606");
+            this.a40607 = json.getString("a40607");
+            this.a40608 = json.getString("a40608");
+            this.a40609 = json.getString("a40609");
+            this.a40610 = json.getString("a40610");
+            this.a40611 = json.getString("a40611");
+            this.a40612 = json.getString("a40612");
+            this.a40613 = json.getString("a40613");
+            this.a40614 = json.getString("a40614");
+            this.a40615 = json.getString("a40615");
+            this.a407 = json.getString("a407");
+            this.a40801 = json.getString("a40801");
+            this.a40802 = json.getString("a40802");
+            this.a40803 = json.getString("a40803");
+            this.a40804 = json.getString("a40804");
+            this.a40805 = json.getString("a40805");
+            this.a40806 = json.getString("a40806");
+            this.a40807 = json.getString("a40807");
+            this.a40808 = json.getString("a40808");
+            this.a40809 = json.getString("a40809");
+            this.a40810 = json.getString("a40810");
+            this.a40811 = json.getString("a40811");
+            this.a40812 = json.getString("a40812");
+            this.a40813 = json.getString("a40813");
+            this.a40814 = json.getString("a40814");
+            this.a40815 = json.getString("a40815");
+            this.a409 = json.getString("a409");
+            this.a40901 = json.getString("a40901");
+            this.a40902 = json.getString("a40902");
+            this.a40903 = json.getString("a40903");
+            this.a40904 = json.getString("a40904");
+            this.a40905 = json.getString("a40905");
+            this.a40906 = json.getString("a40906");
+            this.a40907 = json.getString("a40907");
+            this.a40908 = json.getString("a40908");
+            this.a40998 = json.getString("a40998");
+            this.a40996 = json.getString("a40996");
+            this.a40996x = json.getString("a40996x");
+            this.a410 = json.getString("a410");
+        }
+    }
+
+    public void sA4BHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA4BHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a41101 = json.getString("a41101");
+            this.a41102 = json.getString("a41102");
+            this.a41103 = json.getString("a41103");
+            this.a41104 = json.getString("a41104");
+            this.a41105 = json.getString("a41105");
+            this.a41106 = json.getString("a41106");
+            this.a41107 = json.getString("a41107");
+            this.a41108 = json.getString("a41108");
+            this.a41109 = json.getString("a41109");
+            this.a41110 = json.getString("a41110");
+            this.a41111 = json.getString("a41111");
+            this.a412a = json.getString("a412a");
+            this.a412b = json.getString("a412b");
+            this.a412c = json.getString("a412c");
+            this.a412d = json.getString("a412d");
+            this.a412e = json.getString("a412e");
+            this.a412f = json.getString("a412f");
+            this.a412g = json.getString("a412g");
+        }
+    }
+
+    public void sA4CHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA4CHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a412h = json.getString("a412h");
+            this.a412i = json.getString("a412i");
+            this.a412j = json.getString("a412j");
+            this.a412k = json.getString("a412k");
+            this.a412l = json.getString("a412l");
+            this.a412m = json.getString("a412m");
+            this.a412n = json.getString("a412n");
+            this.a412o = json.getString("a412o");
+            this.a413 = json.getString("a413");
+            this.a41301 = json.getString("a41301");
+            this.a41302 = json.getString("a41302");
+            this.a41303 = json.getString("a41303");
+            this.a41304 = json.getString("a41304");
+            this.a41305 = json.getString("a41305");
+            this.a41306 = json.getString("a41306");
+            this.a41307 = json.getString("a41307");
+            this.a41396 = json.getString("a41396");
+            this.a41396x = json.getString("a41396x");
+            this.a414 = json.getString("a414");
+            this.a415 = json.getString("a415");
+            this.a416 = json.getString("a416");
+            this.a41601 = json.getString("a41601");
+            this.a41602 = json.getString("a41602");
+            this.a41603 = json.getString("a41603");
+            this.a41604 = json.getString("a41604");
+            this.a41605 = json.getString("a41605");
+            this.a41606 = json.getString("a41606");
+            this.a41607 = json.getString("a41607");
+            this.a41608 = json.getString("a41608");
+            this.a41609 = json.getString("a41609");
+            this.a41698 = json.getString("a41698");
+            this.a41696 = json.getString("a41696");
+            this.a417 = json.getString("a417");
+            this.a41701 = json.getString("a41701");
+            this.a41702 = json.getString("a41702");
+            this.a41703 = json.getString("a41703");
+            this.a41704 = json.getString("a41704");
+            this.a41705 = json.getString("a41705");
+            this.a41706 = json.getString("a41706");
+            this.a41707 = json.getString("a41707");
+            this.a41708 = json.getString("a41708");
+            this.a41709 = json.getString("a41709");
+            this.a41710 = json.getString("a41710");
+            this.a41711 = json.getString("a41711");
+            this.a41712 = json.getString("a41712");
+            this.a41713 = json.getString("a41713");
+            this.a41798 = json.getString("a41798");
+            this.a41796 = json.getString("a41796");
+            this.a41796x = json.getString("a41796x");
+            this.a418 = json.getString("a418");
+            this.a41801 = json.getString("a41801");
+            this.a41802 = json.getString("a41802");
+            this.a41803 = json.getString("a41803");
+            this.a41804 = json.getString("a41804");
+            this.a41805 = json.getString("a41805");
+            this.a41898 = json.getString("a41898");
+            this.a41896 = json.getString("a41896");
+            this.a41896x = json.getString("a41896x");
+            this.a419 = json.getString("a419");
+            this.a41901 = json.getString("a41901");
+            this.a41902 = json.getString("a41902");
+            this.a41903 = json.getString("a41903");
+            this.a41904 = json.getString("a41904");
+            this.a41905 = json.getString("a41905");
+            this.a41906 = json.getString("a41906");
+            this.a41907 = json.getString("a41907");
+            this.a41908 = json.getString("a41908");
+            this.a41909 = json.getString("a41909");
+            this.a41910 = json.getString("a41910");
+            this.a41911 = json.getString("a41911");
+            this.a41912 = json.getString("a41912");
+            this.a41913 = json.getString("a41913");
+            this.a41914 = json.getString("a41914");
+            this.a41915 = json.getString("a41915");
+            this.a41998 = json.getString("a41998");
+            this.a41996 = json.getString("a41996");
+            this.a41996x = json.getString("a41996x");
+        }
+    }
+
+    public void sA5AHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA5AHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a501 = json.getString("a501");
+            this.a50101 = json.getString("a50101");
+            this.a50102 = json.getString("a50102");
+            this.a50103 = json.getString("a50103");
+            this.a50198 = json.getString("a50198");
+            this.a50105 = json.getString("a50105");
+            this.a502 = json.getString("a502");
+            this.a50301 = json.getString("a50301");
+            this.a50302 = json.getString("a50302");
+            this.a50303 = json.getString("a50303");
+            this.a50304 = json.getString("a50304");
+            this.a50305 = json.getString("a50305");
+            this.a50401 = json.getString("a50401");
+            this.a50402 = json.getString("a50402");
+            this.a50403 = json.getString("a50403");
+            this.a50404 = json.getString("a50404");
+            this.a50497 = json.getString("a50497");
+            this.a50501 = json.getString("a50501");
+            this.a50502 = json.getString("a50502");
+            this.a50503 = json.getString("a50503");
+            this.a50504 = json.getString("a50504");
+            this.a50597 = json.getString("a50597");
+            this.a506 = json.getString("a506");
+            this.a507 = json.getString("a507");
+            this.a508 = json.getString("a508");
+            this.a509 = json.getString("a509");
+            this.a510 = json.getString("a510");
+            this.a511 = json.getString("a511");
+            this.a512 = json.getString("a512");
+            this.a51201 = json.getString("a51201");
+            this.a51202 = json.getString("a51202");
+            this.a51203 = json.getString("a51203");
+            this.a51204 = json.getString("a51204");
+            this.a51205 = json.getString("a51205");
+            this.a51298 = json.getString("a51298");
+            this.a51296 = json.getString("a51296");
+            this.a51296x = json.getString("a51296x");
+            this.a513a = json.getString("a513a");
+            this.a513b = json.getString("a513b");
+            this.a513c = json.getString("a513c");
+            this.a513d = json.getString("a513d");
+            this.a513e = json.getString("a513e");
+            this.a513f = json.getString("a513f");
+            this.a513g = json.getString("a513g");
+            this.a513h = json.getString("a513h");
+            this.a513i = json.getString("a513i");
+            this.a513j = json.getString("a513j");
+            this.a513k = json.getString("a513k");
+            this.a513l = json.getString("a513l");
+            this.a513m = json.getString("a513m");
+            this.a513n = json.getString("a513n");
+            this.a513o = json.getString("a513o");
+            this.a513p = json.getString("a513p");
+        }
+    }
+
+    public void sA5BHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA5BHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.a514 = json.getString("a514");
+            this.a515 = json.getString("a515");
+            this.a516 = json.getString("a516");
+            this.a517 = json.getString("a517");
+            this.a518 = json.getString("a518");
+            this.a51801 = json.getString("a51801");
+            this.a51802 = json.getString("a51802");
+            this.a51803 = json.getString("a51803");
+            this.a51804 = json.getString("a51804");
+            this.a51805 = json.getString("a51805");
+            this.a51806 = json.getString("a51806");
+            this.a51807 = json.getString("a51807");
+            this.a51808 = json.getString("a51808");
+            this.a51809 = json.getString("a51809");
+            this.a51810 = json.getString("a51810");
+            this.a51811 = json.getString("a51811");
+            this.a51812 = json.getString("a51812");
+            this.a51813 = json.getString("a51813");
+            this.a51814 = json.getString("a51814");
+            this.a51896 = json.getString("a51896");
+            this.a51896x = json.getString("a51896x");
+            this.a51898 = json.getString("a51898");
+            this.a519 = json.getString("a519");
+            this.a51901x = json.getString("a51901x");
+            this.a520 = json.getString("a520");
+            this.a52001 = json.getString("a52001");
+            this.a52001x = json.getString("a52001x");
+            this.a52002 = json.getString("a52002");
+            this.a52002x = json.getString("a52002x");
+            this.a52003 = json.getString("a52003");
+            this.a52003x = json.getString("a52003x");
+            this.a52004 = json.getString("a52004");
+            this.a52004x = json.getString("a52004x");
+            this.a52005 = json.getString("a52005");
+            this.a52005x = json.getString("a52005x");
+            this.a52098 = json.getString("a52098");
+            this.a52096 = json.getString("a52096");
+            this.a52096x = json.getString("a52096x");
+            this.a521 = json.getString("a521");
+            this.a52196x = json.getString("a52196x");
+            this.a5221 = json.getString("a5221");
+            this.a5221ax = json.getString("a5221ax");
+            this.a5221bx = json.getString("a5221bx");
+            this.a5221cx = json.getString("a5221cx");
+            this.a5222 = json.getString("a5222");
+            this.a5222ax = json.getString("a5222ax");
+            this.a5222bx = json.getString("a5222bx");
+            this.a5222cx = json.getString("a5222cx");
+            this.a5223 = json.getString("a5223");
+            this.a5223ax = json.getString("a5223ax");
+            this.a5223bx = json.getString("a5223bx");
+            this.a5223cx = json.getString("a5223cx");
+            this.a5224 = json.getString("a5224");
+            this.a5224ax = json.getString("a5224ax");
+            this.a5224bx = json.getString("a5224bx");
+            this.a5224cx = json.getString("a5224cx");
+            this.a5225 = json.getString("a5225");
+            this.a5225ax = json.getString("a5225ax");
+            this.a5225bx = json.getString("a5225bx");
+            this.a5225cx = json.getString("a5225cx");
+            this.a5226 = json.getString("a5226");
+            this.a5226ax = json.getString("a5226ax");
+            this.a5226bx = json.getString("a5226bx");
+            this.a5226cx = json.getString("a5226cx");
+            this.a52296x = json.getString("a52296x");
+            this.a523 = json.getString("a523");
+            this.a524 = json.getString("a524");
+            this.a52401 = json.getString("a52401");
+            this.a52401x = json.getString("a52401x");
+            this.a52402 = json.getString("a52402");
+            this.a52402x = json.getString("a52402x");
+            this.a52403 = json.getString("a52403");
+            this.a52403x = json.getString("a52403x");
+            this.a52404 = json.getString("a52404");
+            this.a52404x = json.getString("a52404x");
+            this.a52405 = json.getString("a52405");
+            this.a52405x = json.getString("a52405x");
+            this.a52496 = json.getString("a52496");
+            this.a52496x = json.getString("a52496x");
+            this.a52498 = json.getString("a52498");
+            this.a525 = json.getString("a525");
+            this.a526 = json.getString("a526");
+            this.a52696x = json.getString("a52696x");
+            this.a527 = json.getString("a527");
+            this.a528 = json.getString("a528");
+            this.a52802x = json.getString("a52802x");
+            this.a529 = json.getString("a529");
+            this.a52901 = json.getString("a52901");
+            this.a52902 = json.getString("a52902");
+            this.a52903 = json.getString("a52903");
+            this.a52904 = json.getString("a52904");
+            this.a52905 = json.getString("a52905");
+            this.a52906 = json.getString("a52906");
+            this.a52907 = json.getString("a52907");
+            this.a52908 = json.getString("a52908");
+            this.a52998 = json.getString("a52998");
+            this.a52996x = json.getString("a52996x");
+            this.a530 = json.getString("a530");
+            this.a53001 = json.getString("a53001");
+            this.a53002 = json.getString("a53002");
+            this.a53003 = json.getString("a53003");
+            this.a53004 = json.getString("a53004");
+            this.a53005 = json.getString("a53005");
+            this.a53006 = json.getString("a53006");
+            this.a53007 = json.getString("a53007");
+            this.a53008 = json.getString("a53008");
+            this.a53009 = json.getString("a53009");
+            this.a53010 = json.getString("a53010");
+            this.a53098 = json.getString("a53098");
+            this.a53096 = json.getString("a53096");
+            this.a53096x = json.getString("a53096x");
+            this.a531 = json.getString("a531");
+            this.a53196x = json.getString("a53196x");
+            this.a532 = json.getString("a532");
+            this.a533 = json.getString("a533");
+            this.a53301 = json.getString("a53301");
+            this.a53302 = json.getString("a53302");
+            this.a53303 = json.getString("a53303");
+            this.a53304 = json.getString("a53304");
+            this.a53398 = json.getString("a53398");
+            this.a53396 = json.getString("a53396");
+            this.a53396x = json.getString("a53396x");
+            this.a534 = json.getString("a534");
+            this.a53401 = json.getString("a53401");
+            this.a53402 = json.getString("a53402");
+            this.a53403 = json.getString("a53403");
+            this.a53404 = json.getString("a53404");
+            this.a53405 = json.getString("a53405");
+            this.a53406 = json.getString("a53406");
+            this.a53407 = json.getString("a53407");
+            this.a53408 = json.getString("a53408");
+            this.a53409 = json.getString("a53409");
+            this.a53410 = json.getString("a53410");
+            this.a53498 = json.getString("a53498");
+            this.a53496 = json.getString("a53496");
+            this.a53496x = json.getString("a53496x");
+        }
+    }
+
+    public void sB1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sB1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -8845,6 +9458,14 @@ public class Forms extends BaseObservable implements Observable {
             this.b116 = json.getString("b116");
             this.b117 = json.getString("b117");
             this.b118 = json.getString("b118");
+        }
+    }
+
+    public void sB3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sB3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.b301 = json.getString("b301");
             this.b301a = json.getString("b301a");
             this.b301b = json.getString("b301b");
@@ -9015,16 +9636,26 @@ public class Forms extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FormsTable.COLUMN_ISTATUS_96X, this.iStatus96x);
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
-        json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
-        json.put(FormsTable.COLUMN_SB, new JSONObject(sBtoString()));
+        json.put(FormsTable.COLUMN_SA1, new JSONObject(sA1toString()));
+//        json.put(FormsTable.COLUMN_SA2, new JSONObject(sA2toString()));
+        json.put(FormsTable.COLUMN_SA3A, new JSONObject(sA3AtoString()));
+        json.put(FormsTable.COLUMN_SA3B, new JSONObject(sA3BtoString()));
+        json.put(FormsTable.COLUMN_SA4A, new JSONObject(sA4AtoString()));
+        json.put(FormsTable.COLUMN_SA4B, new JSONObject(sA4BtoString()));
+        json.put(FormsTable.COLUMN_SA4C, new JSONObject(sA4CtoString()));
+        json.put(FormsTable.COLUMN_SA5A, new JSONObject(sA5AtoString()));
+        json.put(FormsTable.COLUMN_SA5B, new JSONObject(sA5BtoString()));
+        json.put(FormsTable.COLUMN_SB1, new JSONObject(sB1toString()));
+        json.put(FormsTable.COLUMN_SB3, new JSONObject(sB3toString()));
         return json;
     }
 
-    public String sAtoString() throws JSONException {
-        Log.d(TAG, "sAtoString: ");
+    /*public String sA1toString() throws JSONException {
+        Log.d(TAG, "sA1toString: ");
         JSONObject json = new JSONObject();
         json.put("a109", a109)
                 .put("a106", a106)
@@ -9479,10 +10110,515 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a53496x", a53496x)
                 .put("iStatus96x", iStatus96x);
         return json.toString();
+    }*/
+
+    public String sA1toString() throws JSONException {
+        Log.d(TAG, "sA1toString: ");
+        JSONObject json = new JSONObject();
+        json.put("a109", a109)
+                .put("a106", a106)
+                .put("a107", a107)
+                .put("a108", a108)
+                .put("a105", a105)
+                .put("a101", a101)
+                .put("a102", a102)
+                .put("a103", a103)
+                .put("a104", a104)
+                .put("a110", a110)
+                .put("a111", a111)
+                .put("a112", a112)
+                .put("a113", a113)
+                .put("a114", a114)
+                .put("a11496x", a11496x);
+        return json.toString();
     }
 
-    public String sBtoString() throws JSONException {
-        Log.d(TAG, "sBtoString: ");
+    /*public String sA2toString() throws JSONException {
+        Log.d(TAG, "sA2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("a201", a201)
+                .put("a202", a202)
+                .put("a203", a203)
+                .put("a203xx", a203xx)
+                .put("a204", a204)
+                .put("a205dd", a205dd)
+                .put("a205mm", a205mm)
+                .put("a205yy", a205yy)
+                .put("a206dd", a206dd)
+                .put("a206mm", a206mm)
+                .put("a206yy", a206yy)
+                .put("a207", a207)
+                .put("a208", a208)
+                .put("a209", a209)
+                .put("a210", a210)
+                .put("a211", a211)
+                .put("a212", a212)
+                .put("a213", a213);
+        return json.toString();
+    }*/
+
+    public String sA3AtoString() throws JSONException {
+        Log.d(TAG, "sA3AtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a301", a301)
+                .put("a301xx", a301xx)
+                .put("a302", a302)
+                .put("a302xx", a302xx)
+                .put("a303", a303)
+                .put("a303xx", a303xx)
+                .put("a304", a304)
+                .put("a304xx", a304xx)
+                .put("a305", a305)
+                .put("a305xx", a305xx)
+                .put("a306", a306)
+                .put("a306xx", a306xx)
+                .put("a306aa", a306aa)
+                .put("a307", a307)
+                .put("a307xx", a307xx)
+                .put("a307aa", a307aa)
+                .put("a308", a308)
+                .put("a309", a309)
+                .put("a309a", a309a)
+                .put("a310", a310)
+                .put("a311", a311)
+                .put("a312", a312)
+                .put("a313", a313)
+                .put("a314", a314)
+                .put("a314xx", a314xx)
+                .put("a315", a315)
+                .put("a316", a316)
+                .put("a316xx", a316xx)
+                .put("a317", a317)
+                .put("a317xx", a317xx)
+                .put("a318", a318)
+                .put("a318xx", a318xx);
+        return json.toString();
+    }
+
+    public String sA3BtoString() throws JSONException {
+        Log.d(TAG, "sA3BtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a319a", a319a)
+                .put("a319b", a319b)
+                .put("a319c", a319c)
+                .put("a319d", a319d)
+                .put("a319e", a319e)
+                .put("a319f", a319f)
+                .put("a319g", a319g)
+                .put("a319h", a319h)
+                .put("a319i", a319i)
+                .put("a319j", a319j)
+                .put("a319k", a319k)
+                .put("a319l", a319l)
+                .put("a319m", a319m)
+                .put("a319n", a319n)
+                .put("a319o", a319o)
+                .put("a319p", a319p)
+                .put("a319q", a319q)
+                .put("a319r", a319r)
+                .put("a320", a320)
+                .put("a321a", a321a)
+                .put("a321b", a321b)
+                .put("a321c", a321c)
+                .put("a321d", a321d)
+                .put("a321e", a321e)
+                .put("a321f", a321f)
+                .put("a321g", a321g)
+                .put("a321h", a321h)
+                .put("a321i", a321i)
+                .put("a322", a322)
+                .put("a322xx", a322xx)
+                .put("a323", a323)
+                .put("a324", a324)
+                .put("a325", a325)
+                .put("a326", a326)
+                .put("a327a", a327a)
+                .put("a327b", a327b)
+                .put("a327c", a327c)
+                .put("a328", a328)
+                .put("a329a", a329a)
+                .put("a329b", a329b)
+                .put("a329c", a329c)
+                .put("a329d", a329d)
+                .put("a329e", a329e)
+                .put("a329f", a329f)
+                .put("a330", a330)
+                .put("a332", a332)
+                .put("a332ax", a332ax)
+                .put("a331", a331)
+                .put("a331xx", a331xx)
+                .put("a333", a333)
+                .put("a333xx", a333xx)
+                .put("a334", a334)
+                .put("a334xx", a334xx);
+        return json.toString();
+    }
+
+    public String sA4AtoString() throws JSONException {
+        Log.d(TAG, "sA4AtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a401", a401)
+                .put("a402", a402)
+                .put("a403", a403)
+                .put("a404", a404)
+                .put("a405", a405)
+                .put("a40601", a40601)
+                .put("a40602", a40602)
+                .put("a40603", a40603)
+                .put("a40604", a40604)
+                .put("a40605", a40605)
+                .put("a40606", a40606)
+                .put("a40607", a40607)
+                .put("a40608", a40608)
+                .put("a40609", a40609)
+                .put("a40610", a40610)
+                .put("a40611", a40611)
+                .put("a40612", a40612)
+                .put("a40613", a40613)
+                .put("a40614", a40614)
+                .put("a40615", a40615)
+                .put("a407", a407)
+                .put("a40801", a40801)
+                .put("a40802", a40802)
+                .put("a40803", a40803)
+                .put("a40804", a40804)
+                .put("a40805", a40805)
+                .put("a40806", a40806)
+                .put("a40807", a40807)
+                .put("a40808", a40808)
+                .put("a40809", a40809)
+                .put("a40810", a40810)
+                .put("a40811", a40811)
+                .put("a40812", a40812)
+                .put("a40813", a40813)
+                .put("a40814", a40814)
+                .put("a40815", a40815)
+                .put("a409", a409)
+                .put("a40901", a40901)
+                .put("a40902", a40902)
+                .put("a40903", a40903)
+                .put("a40904", a40904)
+                .put("a40905", a40905)
+                .put("a40906", a40906)
+                .put("a40907", a40907)
+                .put("a40908", a40908)
+                .put("a40998", a40998)
+                .put("a40996", a40996)
+                .put("a40996x", a40996x)
+                .put("a410", a410);
+        return json.toString();
+    }
+
+    public String sA4BtoString() throws JSONException {
+        Log.d(TAG, "sA4BtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a41101", a41101)
+                .put("a41102", a41102)
+                .put("a41103", a41103)
+                .put("a41104", a41104)
+                .put("a41105", a41105)
+                .put("a41106", a41106)
+                .put("a41107", a41107)
+                .put("a41108", a41108)
+                .put("a41109", a41109)
+                .put("a41110", a41110)
+                .put("a41111", a41111)
+                .put("a412a", a412a)
+                .put("a412b", a412b)
+                .put("a412c", a412c)
+                .put("a412d", a412d)
+                .put("a412e", a412e)
+                .put("a412f", a412f)
+                .put("a412g", a412g);
+        return json.toString();
+    }
+
+    public String sA4CtoString() throws JSONException {
+        Log.d(TAG, "sA4CtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a412h", a412h)
+                .put("a412i", a412i)
+                .put("a412j", a412j)
+                .put("a412k", a412k)
+                .put("a412l", a412l)
+                .put("a412m", a412m)
+                .put("a412n", a412n)
+                .put("a412o", a412o)
+                .put("a413", a413)
+                .put("a41301", a41301)
+                .put("a41302", a41302)
+                .put("a41303", a41303)
+                .put("a41304", a41304)
+                .put("a41305", a41305)
+                .put("a41306", a41306)
+                .put("a41307", a41307)
+                .put("a41396", a41396)
+                .put("a41396x", a41396x)
+                .put("a414", a414)
+                .put("a415", a415)
+                .put("a416", a416)
+                .put("a41601", a41601)
+                .put("a41602", a41602)
+                .put("a41603", a41603)
+                .put("a41604", a41604)
+                .put("a41605", a41605)
+                .put("a41606", a41606)
+                .put("a41607", a41607)
+                .put("a41608", a41608)
+                .put("a41609", a41609)
+                .put("a41698", a41698)
+                .put("a41696", a41696)
+                .put("a417", a417)
+                .put("a41701", a41701)
+                .put("a41702", a41702)
+                .put("a41703", a41703)
+                .put("a41704", a41704)
+                .put("a41705", a41705)
+                .put("a41706", a41706)
+                .put("a41707", a41707)
+                .put("a41708", a41708)
+                .put("a41709", a41709)
+                .put("a41710", a41710)
+                .put("a41711", a41711)
+                .put("a41712", a41712)
+                .put("a41713", a41713)
+                .put("a41798", a41798)
+                .put("a41796", a41796)
+                .put("a41796x", a41796x)
+                .put("a418", a418)
+                .put("a41801", a41801)
+                .put("a41802", a41802)
+                .put("a41803", a41803)
+                .put("a41804", a41804)
+                .put("a41805", a41805)
+                .put("a41898", a41898)
+                .put("a41896", a41896)
+                .put("a41896x", a41896x)
+                .put("a419", a419)
+                .put("a41901", a41901)
+                .put("a41902", a41902)
+                .put("a41903", a41903)
+                .put("a41904", a41904)
+                .put("a41905", a41905)
+                .put("a41906", a41906)
+                .put("a41907", a41907)
+                .put("a41908", a41908)
+                .put("a41909", a41909)
+                .put("a41910", a41910)
+                .put("a41911", a41911)
+                .put("a41912", a41912)
+                .put("a41913", a41913)
+                .put("a41914", a41914)
+                .put("a41915", a41915)
+                .put("a41998", a41998)
+                .put("a41996", a41996)
+                .put("a41996x", a41996x);
+        return json.toString();
+    }
+
+    public String sA5AtoString() throws JSONException {
+        Log.d(TAG, "sA5AtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a501", a501)
+                .put("a50101", a50101)
+                .put("a50102", a50102)
+                .put("a50103", a50103)
+                .put("a50198", a50198)
+                .put("a50105", a50105)
+                .put("a502", a502)
+                .put("a50301", a50301)
+                .put("a50302", a50302)
+                .put("a50303", a50303)
+                .put("a50304", a50304)
+                .put("a50305", a50305)
+                .put("a50401", a50401)
+                .put("a50402", a50402)
+                .put("a50403", a50403)
+                .put("a50404", a50404)
+                .put("a50497", a50497)
+                .put("a50501", a50501)
+                .put("a50502", a50502)
+                .put("a50503", a50503)
+                .put("a50504", a50504)
+                .put("a50597", a50597)
+                .put("a506", a506)
+                .put("a507", a507)
+                .put("a508", a508)
+                .put("a509", a509)
+                .put("a510", a510)
+                .put("a511", a511)
+                .put("a512", a512)
+                .put("a51201", a51201)
+                .put("a51202", a51202)
+                .put("a51203", a51203)
+                .put("a51204", a51204)
+                .put("a51205", a51205)
+                .put("a51298", a51298)
+                .put("a51296", a51296)
+                .put("a51296x", a51296x)
+                .put("a513a", a513a)
+                .put("a513b", a513b)
+                .put("a513c", a513c)
+                .put("a513d", a513d)
+                .put("a513e", a513e)
+                .put("a513f", a513f)
+                .put("a513g", a513g)
+                .put("a513h", a513h)
+                .put("a513i", a513i)
+                .put("a513j", a513j)
+                .put("a513k", a513k)
+                .put("a513l", a513l)
+                .put("a513m", a513m)
+                .put("a513n", a513n)
+                .put("a513o", a513o)
+                .put("a513p", a513p);
+        return json.toString();
+    }
+
+    public String sA5BtoString() throws JSONException {
+        Log.d(TAG, "sA5BtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("a514", a514)
+                .put("a515", a515)
+                .put("a516", a516)
+                .put("a517", a517)
+                .put("a518", a518)
+                .put("a51801", a51801)
+                .put("a51802", a51802)
+                .put("a51803", a51803)
+                .put("a51804", a51804)
+                .put("a51805", a51805)
+                .put("a51806", a51806)
+                .put("a51807", a51807)
+                .put("a51808", a51808)
+                .put("a51809", a51809)
+                .put("a51810", a51810)
+                .put("a51811", a51811)
+                .put("a51812", a51812)
+                .put("a51813", a51813)
+                .put("a51814", a51814)
+                .put("a51896", a51896)
+                .put("a51896x", a51896x)
+                .put("a51898", a51898)
+                .put("a519", a519)
+                .put("a51901x", a51901x)
+                .put("a520", a520)
+                .put("a52001", a52001)
+                .put("a52001x", a52001x)
+                .put("a52002", a52002)
+                .put("a52002x", a52002x)
+                .put("a52003", a52003)
+                .put("a52003x", a52003x)
+                .put("a52004", a52004)
+                .put("a52004x", a52004x)
+                .put("a52005", a52005)
+                .put("a52005x", a52005x)
+                .put("a52098", a52098)
+                .put("a52096", a52096)
+                .put("a52096x", a52096x)
+                .put("a521", a521)
+                .put("a52196x", a52196x)
+                .put("a5221", a5221)
+                .put("a5221ax", a5221ax)
+                .put("a5221bx", a5221bx)
+                .put("a5221cx", a5221cx)
+                .put("a5222", a5222)
+                .put("a5222ax", a5222ax)
+                .put("a5222bx", a5222bx)
+                .put("a5222cx", a5222cx)
+                .put("a5223", a5223)
+                .put("a5223ax", a5223ax)
+                .put("a5223bx", a5223bx)
+                .put("a5223cx", a5223cx)
+                .put("a5224", a5224)
+                .put("a5224ax", a5224ax)
+                .put("a5224bx", a5224bx)
+                .put("a5224cx", a5224cx)
+                .put("a5225", a5225)
+                .put("a5225ax", a5225ax)
+                .put("a5225bx", a5225bx)
+                .put("a5225cx", a5225cx)
+                .put("a5226", a5226)
+                .put("a5226ax", a5226ax)
+                .put("a5226bx", a5226bx)
+                .put("a5226cx", a5226cx)
+                .put("a52296x", a52296x)
+                .put("a523", a523)
+                .put("a524", a524)
+                .put("a52401", a52401)
+                .put("a52401x", a52401x)
+                .put("a52402", a52402)
+                .put("a52402x", a52402x)
+                .put("a52403", a52403)
+                .put("a52403x", a52403x)
+                .put("a52404", a52404)
+                .put("a52404x", a52404x)
+                .put("a52405", a52405)
+                .put("a52405x", a52405x)
+                .put("a52496", a52496)
+                .put("a52496x", a52496x)
+                .put("a52498", a52498)
+                .put("a525", a525)
+                .put("a526", a526)
+                .put("a52696x", a52696x)
+                .put("a527", a527)
+                .put("a528", a528)
+                .put("a52802x", a52802x)
+                .put("a529", a529)
+                .put("a52901", a52901)
+                .put("a52902", a52902)
+                .put("a52903", a52903)
+                .put("a52904", a52904)
+                .put("a52905", a52905)
+                .put("a52906", a52906)
+                .put("a52907", a52907)
+                .put("a52908", a52908)
+                .put("a52998", a52998)
+                .put("a52996x", a52996x)
+                .put("a530", a530)
+                .put("a53001", a53001)
+                .put("a53002", a53002)
+                .put("a53003", a53003)
+                .put("a53004", a53004)
+                .put("a53005", a53005)
+                .put("a53006", a53006)
+                .put("a53007", a53007)
+                .put("a53008", a53008)
+                .put("a53009", a53009)
+                .put("a53010", a53010)
+                .put("a53098", a53098)
+                .put("a53096", a53096)
+                .put("a53096x", a53096x)
+                .put("a531", a531)
+                .put("a53196x", a53196x)
+                .put("a532", a532)
+                .put("a533", a533)
+                .put("a53301", a53301)
+                .put("a53302", a53302)
+                .put("a53303", a53303)
+                .put("a53304", a53304)
+                .put("a53398", a53398)
+                .put("a53396", a53396)
+                .put("a53396x", a53396x)
+                .put("a534", a534)
+                .put("a53401", a53401)
+                .put("a53402", a53402)
+                .put("a53403", a53403)
+                .put("a53404", a53404)
+                .put("a53405", a53405)
+                .put("a53406", a53406)
+                .put("a53407", a53407)
+                .put("a53408", a53408)
+                .put("a53409", a53409)
+                .put("a53410", a53410)
+                .put("a53498", a53498)
+                .put("a53496", a53496)
+                .put("a53496x", a53496x);
+        return json.toString();
+    }
+
+    public String sB1toString() throws JSONException {
+        Log.d(TAG, "sB1toString: ");
         JSONObject json = new JSONObject();
         json.put("b101", b101)
                 .put("b101", b101)
@@ -9495,15 +10631,18 @@ public class Forms extends BaseObservable implements Observable {
                 .put("b108", b108)
                 .put("b109", b109)
                 .put("b110", b110)
-                .put("b111", b111)
-                .put("b112", b112)
-                .put("b113", b113)
                 .put("b114", b114)
                 .put("b115", b115)
                 .put("b116", b116)
                 .put("b117", b117)
-                .put("b118", b118)
-                .put("b301", b301)
+                .put("b118", b118);
+        return json.toString();
+    }
+
+    public String sB3toString() throws JSONException {
+        Log.d(TAG, "sB3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("b301", b301)
                 .put("b301a", b301a)
                 .put("b301b", b301b)
                 .put("b301c", b301c)

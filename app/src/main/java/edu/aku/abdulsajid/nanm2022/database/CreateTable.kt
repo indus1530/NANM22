@@ -18,13 +18,22 @@ object CreateTable {
             + FormsTable.COLUMN_USERNAME + " TEXT,"
             + FormsTable.COLUMN_SYSDATE + " TEXT,"
             + FormsTable.COLUMN_ISTATUS + " TEXT,"
+            + FormsTable.COLUMN_ISTATUS_96X + " TEXT,"
             + FormsTable.COLUMN_DEVICEID + " TEXT,"
             + FormsTable.COLUMN_DEVICETAGID + " TEXT,"
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNC_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_SA + " TEXT,"
-            + FormsTable.COLUMN_SB + " TEXT"
+            + FormsTable.COLUMN_SA1 + " TEXT,"
+            + FormsTable.COLUMN_SA3A + " TEXT,"
+            + FormsTable.COLUMN_SA3B + " TEXT,"
+            + FormsTable.COLUMN_SA4A + " TEXT,"
+            + FormsTable.COLUMN_SA4B + " TEXT,"
+            + FormsTable.COLUMN_SA4C + " TEXT,"
+            + FormsTable.COLUMN_SA5A + " TEXT,"
+            + FormsTable.COLUMN_SA5B + " TEXT,"
+            + FormsTable.COLUMN_SB1 + " TEXT,"
+            + FormsTable.COLUMN_SB3 + " TEXT"
             + " );"
             )
 
@@ -71,7 +80,7 @@ object CreateTable {
             + FamilyMembersTable.COLUMN_SYNCED + " TEXT,"
             + FamilyMembersTable.COLUMN_SYNC_DATE + " TEXT,"
             + FamilyMembersTable.COLUMN_APPVERSION + " TEXT,"
-            + FamilyMembersTable.COLUMN_SD + " TEXT"
+            + FamilyMembersTable.COLUMN_A2 + " TEXT"
             + " );"
             )
 
