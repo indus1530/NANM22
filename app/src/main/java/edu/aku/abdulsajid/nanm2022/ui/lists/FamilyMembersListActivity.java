@@ -168,7 +168,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate(familyList): " + MainApp.familyList.size());
         //MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
 
-        familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
+        try {
+            familyList = NANMRoomDatabase.getDbInstance().familyMembersDao().getMemberBYUID(MainApp.form.getUid());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         int fmCount = 0;
         for (FamilyMembers fm : MainApp.familyList) {
             fmCount++;

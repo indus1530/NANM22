@@ -20,6 +20,8 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityConsentBinding;
+import edu.aku.abdulsajid.nanm2022.models.Forms;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 import edu.aku.abdulsajid.nanm2022.ui.lists.FamilyMembersListActivity;
 
@@ -47,7 +49,9 @@ public class ConsentActivity extends AppCompatActivity {
     private boolean updateDB() {
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, MainApp.form.sA1toString());
+            Forms updateForms = form;
+            updateForms.setSA1(form.sA1toString());
+            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -72,7 +76,7 @@ public class ConsentActivity extends AppCompatActivity {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);
             }
             finish();
-            //startActivity(i);
+            startActivity(i);
         } else {
             Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
         }

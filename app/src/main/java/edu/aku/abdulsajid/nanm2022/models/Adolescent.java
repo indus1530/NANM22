@@ -541,11 +541,25 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String d204 = _EMPTY_;
 
-
+    // Section Variables
     @ColumnInfo(name = AdolescentTable.COLUMN_SC1)
-    private String sC = _EMPTY_;
+    private String sC1 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC2)
+    private String sC2 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC3)
+    private String sC3 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC4)
+    private String sC4 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC5)
+    private String sC5 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC6)
+    private String sC6 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SC7)
+    private String sC7 = _EMPTY_;
     @ColumnInfo(name = AdolescentTable.COLUMN_SD1)
-    private String sD = _EMPTY_;
+    private String sD1 = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_SD2)
+    private String sD2 = _EMPTY_;
 
 
     public void Adolescent() {
@@ -752,21 +766,77 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
 
-    public String getSC() {
-        return sC;
+    public String getSC1() {
+        return sC1;
     }
 
-    public void setSC(String sC) {
-        this.sC = sC;
+    public void setSC1(String sC1) {
+        this.sC1 = sC1;
+    }
+
+    public String getSC2() {
+        return sC2;
+    }
+
+    public void setSC2(String sC2) {
+        this.sC2 = sC2;
+    }
+
+    public String getSC3() {
+        return sC3;
+    }
+
+    public void setSC3(String sC3) {
+        this.sC3 = sC3;
+    }
+
+    public String getSC4() {
+        return sC4;
+    }
+
+    public void setSC4(String sC4) {
+        this.sC4 = sC4;
+    }
+
+    public String getSC5() {
+        return sC5;
+    }
+
+    public void setSC5(String sC5) {
+        this.sC5 = sC5;
+    }
+
+    public String getSC6() {
+        return sC6;
+    }
+
+    public void setSC6(String sC6) {
+        this.sC6 = sC6;
+    }
+
+    public String getSC7() {
+        return sC7;
+    }
+
+    public void setSC7(String sC7) {
+        this.sC7 = sC7;
+    }
+
+    public String getSD1() {
+        return sD1;
+    }
+
+    public void setSD1(String sD1) {
+        this.sD1 = sD1;
     }
 
 
-    public String getSD() {
-        return sD;
+    public String getSD2() {
+        return sD2;
     }
 
-    public void setSD(String sD) {
-        this.sD = sD;
+    public void setSD2(String sD2) {
+        this.sD2 = sD2;
     }
 
     @Bindable

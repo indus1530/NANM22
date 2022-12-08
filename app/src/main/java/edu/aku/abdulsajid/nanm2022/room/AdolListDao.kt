@@ -43,7 +43,7 @@ interface AdolListDao {
             " WHERE " + TableContracts.ChildTable.COLUMN_VILLAGE_CODE + " LIKE :villageCode AND "
             + TableContracts.ChildTable.COLUMN_SR_NO + " LIKE :srNo  ORDER BY "
             + TableContracts.ChildTable.COLUMN_SR_NO + " ASC")
-    fun getChildBychildid(villageCode : String, srNo: String) : AdolList
+    fun getAdolBySno(villageCode : String, srNo: String) : AdolList?
 
 
     @Query("SELECT * FROM " + TableContracts.ChildTable.TABLE_NAME  +

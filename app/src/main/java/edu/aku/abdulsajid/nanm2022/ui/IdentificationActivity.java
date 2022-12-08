@@ -43,222 +43,10 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Forms();
 
 
-        /*bi.a109.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bi.btnContinue.setEnabled(false);
-                bi.a106.setText(null);
-                bi.a107.setText(null);
-                bi.a108.setText(null);
-                bi.a109.setText(null);
-                bi.fldGrpA105.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });*/
-
-
-        /*bi.a105.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                c = charSequence.length();
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                c1 = charSequence.length();
-                String txt = charSequence.toString();
-                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
-                bi.btnContinue.setEnabled(false);
-                Log.d(TAG, "onTextChanged: c-" + c + " c1-" + c1 + "\t\t\tCHAR: " + charSequence);
-                Log.d(TAG, "onTextChanged: i-" + i + " i1-" + i1 + " i2-" + i2 + "\t\t\tCHAR: " + charSequence);
-                if (c1 > 1 && charSequence.charAt(1) != '-') {
-                    txt = txt.charAt(0) + "-" + txt.substring(1);
-                    bi.a105.setText(txt);
-                }
-                if (c1 > 6 && charSequence.charAt(6) != '-') {
-                    txt = txt.substring(0, 6) + "-" + txt.substring(6);
-                    bi.a105.setText(txt);
-                }
-                bi.a105.setSelection(bi.a105.getText().length());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });*/
-
 
     }
 
-   /* private void populateSpinner() {
 
-        bi.a105.setText(db.getDistrictNameByCode());
-        // Populate Provinces
-        List<Villages> tehsils = db.getTehsilsByDistrict(String.valueOf(MainApp.selectedDistrict));
-
-        tehsilNames = new ArrayList<>();
-        tehsilCodes = new ArrayList<>();
-
-        tehsilNames.add("...");
-        tehsilCodes.add("...");
-        if (MainApp.user.getUserName().equals("test1234")) {
-            tehsilNames.add("Test Tehsil 1");
-            tehsilNames.add("Test Tehsil 2");
-            tehsilNames.add("Test Tehsil 3");
-
-            tehsilCodes.add("91");
-            tehsilCodes.add("92");
-            tehsilCodes.add("93");
-        }
-
-        for (Villages t : tehsils) {
-
-            tehsilNames.add(t.getTehsilName());
-            tehsilCodes.add(t.getTcode());
-
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                R.layout.custom_spinner, tehsilNames);
-
-        bi.a106.setAdapter(adapter);
-
-        bi.a106.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a107.setAdapter(null);
-                bi.a101.setText(null);
-                bi.a113.setText(null);
-
-                if (position == 0) return;
-                MainApp.selectedTehsil = tehsilCodes.get(position);
-                // Populate UCs
-                List<Villages> ucs = db.getUCsByTehsil(MainApp.selectedDistrict, MainApp.selectedTehsil);
-
-                ucNames = new ArrayList<>();
-                ucCodes = new ArrayList<>();
-
-                ucNames.add("...");
-                ucCodes.add("...");
-                if (MainApp.user.getUserName().equals("test1234")) {
-                    ucNames.add("Test UC 1");
-                    ucNames.add("Test UC 2");
-                    ucNames.add("Test UC 3");
-
-                    ucCodes.add("9101");
-                    ucCodes.add("9202");
-                    ucCodes.add("9303");
-                }
-                psuCode = new ArrayList<>();
-
-                for (Villages uc : ucs) {
-
-                    ucNames.add(uc.getUcName());
-                    ucCodes.add(uc.getUccode());
-                    psuCode.add(uc.getPsucode());
-
-                }
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, ucNames);
-
-                bi.a107.setAdapter(adapter);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-        bi.a107.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a101.setText(null);
-                bi.a113.setText(null);
-                if (position == 0) return;
-
-                MainApp.selectedUC = ucCodes.get(position);
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-    }
-
-    public void btnContinue(View view) {
-        if (!formValidation()) return;
-        MainApp.selectedHHID = bi.a101.getText().toString();
-
-        if (!hhExists()) {
-            saveDraftForm();
-            finish();
-            startActivity(new Intent(this, SectionA1Activity.class));
-        } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
-            Toast.makeText(this, String.format("This form has been entered as %s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
-
-        } else if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
-            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
-        } else {
-            finish();
-            startActivity(new Intent(this, SectionA1Activity.class));
-        }
-
-    }*/
-
-
-/*    private void saveDraftForm() {
-        MainApp.form = new Form();
-
-        MainApp.form.setUserName(MainApp.user.getUserName());
-        MainApp.form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.form.setDeviceId(MainApp.deviceid);
-        MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-
-        MainApp.form.setA104(String.valueOf(MainApp.selectedCountry));
-        MainApp.form.setA105(MainApp.selectedProvince);
-        MainApp.form.setA106(MainApp.selectedDistrict);
-        MainApp.form.setA107(MainApp.selectedPSU);
-        MainApp.form.setA109(MainApp.selectedPSU);
-        MainApp.form.setA101(MainApp.selectedHHID);
-        MainApp.form.setpSno(MainApp.selectedHHID);
-
-    }*/
-
-   /* private void saveDraftAnthro() {
-        MainApp.anthro = new Anthro();
-
-        MainApp.anthro.setUserName(MainApp.user.getUserName());
-        MainApp.anthro.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.anthro.setDeviceId(MainApp.deviceid);
-        MainApp.anthro.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-
-    }
-
-    private void saveDraftSamples() {
-
-        MainApp.samples = new Samples();
-        MainApp.samples.setUserName(MainApp.user.getUserName());
-        MainApp.samples.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.samples.setDeviceId(MainApp.deviceid);
-        MainApp.samples.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-    }*/
 
 
     private boolean formValidation() {
@@ -277,13 +65,16 @@ public class IdentificationActivity extends AppCompatActivity {
         //AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
         try {
-            adolList = NANMRoomDatabase.getDbInstance().adolListDao().getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
+            adolList = NANMRoomDatabase.getDbInstance().adolListDao().getAdolBySno(bi.a109.getText().toString(), bi.a105.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if(!adolList.equals(null) && !adolList.getChild_id().equals("") || !adolList.getChild_id().equals(null) )
-        {
+        assert adolList != null;
+        if (adolList.getChild_id().equals("")) {
+            adolList.getChild_id();
+            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
+        }else {
 
             bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
@@ -294,13 +85,8 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.btnContinue.setEnabled(true);
 
             MainApp.currentHousehold = adolList;
-
-        } else {
-
-            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
-            bi.btnContinue.setEnabled(false);
-            Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void btnContinue(View view) {
@@ -325,7 +111,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Forms();
         try {
             //MainApp.form = db.formsDao().getFormByChildID(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
-            MainApp.form = NANMRoomDatabase.getDbInstance().formsDao().getFormByChildID(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
+            MainApp.form = NANMRoomDatabase.getDbInstance().formsDao().getFormByAdolSno(MainApp.currentHousehold.getSrno(), MainApp.currentHousehold.getVillage_code());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -356,9 +142,11 @@ public class IdentificationActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         String geoarea = villages.getGeoarea();
-        if (!villages.getVillage_code().equals("") || villages.getVillage_code() != null) {
+        if (villages.getVillage_code().equals("")) {
+            villages.getVillage_code();
+            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
+        }else {
             bi.a106.setText(geoarea.split("\\|")[0]);
             bi.a107.setText(geoarea.split("\\|")[1]);
             bi.a108.setText(geoarea.split("\\|")[2]);
@@ -367,10 +155,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
             MainApp.selectedTehsil = bi.a107.getText().toString();
             MainApp.selectedUC = bi.a108.getText().toString();
-
-        } else {
-            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     @Override
