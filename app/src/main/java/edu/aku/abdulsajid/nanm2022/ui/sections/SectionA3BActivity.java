@@ -36,6 +36,15 @@ public class SectionA3BActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
+        if(form.getUid() != null)
+        {
+            try {
+                form.sA3BHydrate(form.getSA3B());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         bi.setForm(form);
     }
 

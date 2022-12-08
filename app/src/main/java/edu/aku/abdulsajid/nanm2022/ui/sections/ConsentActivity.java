@@ -37,6 +37,14 @@ public class ConsentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_consent);
+        if(form.getUid() != null)
+        {
+            try {
+                form.sA1Hydrate(form.getSA1());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);

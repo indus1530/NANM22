@@ -33,7 +33,7 @@ interface FormsDao {
         if (forms == null) {
             val tempForms = Forms()
             return tempForms
-        } else {
+        } /*else {
             forms.sA1Hydrate(forms.sA1)
             forms.sA3AHydrate(forms.sA3A)
             forms.sA3BHydrate(forms.sA3B)
@@ -44,7 +44,7 @@ interface FormsDao {
             forms.sB3Hydrate(forms.sB3)
 
         }
-
+*/
         return forms
     }
 

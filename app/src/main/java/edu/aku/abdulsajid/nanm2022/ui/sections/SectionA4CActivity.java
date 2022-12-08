@@ -36,6 +36,15 @@ public class SectionA4CActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a4_c);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
+        if(form.getUid() != null)
+        {
+            try {
+                form.sA4CHydrate(form.getSA4C());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         bi.setForm(form);
     }
 

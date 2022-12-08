@@ -37,6 +37,17 @@ public class SectionA1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 //        form.setA103(MainApp.currentHousehold.getSno());
+
+
+        if(form.getUid() != null)
+        {
+            try {
+                form.sA1Hydrate(form.getSA1());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
         bi.setForm(form);
     }
 

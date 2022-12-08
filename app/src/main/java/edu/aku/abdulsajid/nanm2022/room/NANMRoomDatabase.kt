@@ -6,9 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.util.EncodingUtils.getBytes
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.models.*
+import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+
 
 //
 // Created by gul.sanober on 11/30/2022.
@@ -57,11 +60,11 @@ abstract class NANMRoomDatabase : RoomDatabase(){
                 return dbInstance!!
 
             synchronized(this) {
-                val passphrase: ByteArray = net.sqlcipher.database.SQLiteDatabase.getBytes(password.toCharArray())
+                val passphrase: ByteArray = SQLiteDatabase.getBytes(password.toCharArray())
                 val factory = SupportFactory(passphrase)
 
                 dbInstance = Room.databaseBuilder(context, NANMRoomDatabase::class.java, DATABASE_NAME)
-                        .openHelperFactory(factory)
+ //                       .openHelperFactory(factory)
                         .addMigrations(MIGRATION_1_2)
                         .fallbackToDestructiveMigration()
                         .allowMainThreadQueries()

@@ -27,7 +27,6 @@ import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 
-import com.facebook.flipper.BuildConfig;
 import com.facebook.flipper.android.AndroidFlipperClient;
 import com.facebook.flipper.android.utils.FlipperUtils;
 import com.facebook.flipper.core.FlipperClient;
@@ -45,6 +44,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.aku.abdulsajid.nanm2022.BuildConfig;
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
@@ -309,10 +309,10 @@ public class MainApp extends Application {
     private void initSecure() {
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
-        File databaseFile = getDatabasePath(DATABASE_NAME);
+//        File databaseFile = getDatabasePath(DATABASE_NAME);
        /* databaseFile.mkdirs();
         databaseFile.delete();*/
-        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
+//        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
         // Prepare encryption KEY
         ApplicationInfo ai = null;
         try {
