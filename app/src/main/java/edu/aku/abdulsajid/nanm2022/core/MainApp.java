@@ -80,7 +80,7 @@ public class MainApp extends Application {
     public static Forms form;
     public static Adolescent adol;
     public static FamilyMembers familyMember;
-    public static AdolList currentHousehold;
+    public static AdolList currentADOL;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
@@ -106,6 +106,7 @@ public class MainApp extends Application {
     public static String selectedChild;
     public static String selectedAdol;
     public static String selectedChildName = _EMPTY_;
+    public static String selectedAdolName = _EMPTY_;
     public static int memberCountComplete;
     public static boolean memberComplete;
     public static boolean hhheadSelected = false;
@@ -115,7 +116,7 @@ public class MainApp extends Application {
     public static String selectedUC = "";
     public static int selectedLanguage = 0;
     public static boolean langRTL = false;
-    public static int ageOfIndexChild;
+    public static int ageOfIndexAdol;
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
     public static Villages selectedVillages;
     public static CountDownTimer timer;

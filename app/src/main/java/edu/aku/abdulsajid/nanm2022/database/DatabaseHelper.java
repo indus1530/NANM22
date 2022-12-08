@@ -1394,7 +1394,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return form;
     }
 
-    public Forms getFormByChildID(String childID, String villageCode) throws JSONException {
+    public Forms getFormByAdolSNO(String adolSNO, String villageCode) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1402,16 +1402,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Boolean distinct = false;
         String tableName = FormsTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_VILLAGE_CODE + "= ? AND " +
-                FormsTable.COLUMN_CHILD_ID + "= ? ";
-        String[] whereArgs = {childID, villageCode};
+        String whereClause = FormsTable.COLUMN_SNO + " = ? AND " +
+                FormsTable.COLUMN_VILLAGE_CODE + " = ? ";
+        String[] whereArgs = {adolSNO, villageCode};
         String groupBy = null;
         String having = null;
         String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
         String limitRows = "1";
 
+//        Forms form = null;
         c = db.query(
-                distinct,       // Distinct values
+                distinct,
                 tableName,      // The table to query
                 columns,        // The columns to return
                 whereClause,    // The columns for the WHERE clause
@@ -1420,15 +1421,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 having,         // don't filter by row groups
                 orderBy,
                 limitRows
-        );
 
+        );
         Forms form = new Forms();
         while (c.moveToNext()) {
-            form = (new Forms().Hydrate(c));
+            form = new Forms().Hydrate(c);
         }
         c.close();
         return form;
-
     }
 
 

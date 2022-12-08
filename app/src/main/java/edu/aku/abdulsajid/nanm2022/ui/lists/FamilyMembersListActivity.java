@@ -7,7 +7,6 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedChild;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedChildName;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
 
 import android.annotation.SuppressLint;
@@ -229,7 +228,16 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Set Selected Members
         for (int i = 0; i < MainApp.familyList.size(); i++) {
 
-            // Set MWRA
+            // Set Adolescent
+            if (MainApp.familyList.get(i).getIndexed().equals("1")) {
+                selectedAdol = familyList.get(i).getA201();
+                bi.btnRand.setVisibility(View.INVISIBLE);
+                bi.btnContinue.setEnabled(true);
+                bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
+                // break;
+            }
+
+            /*// Set MWRA
             if (MainApp.familyList.get(i).getIndexed().equals("1")) {
                 selectedMWRA = familyList.get(i).getA201();
                 bi.btnRand.setVisibility(View.INVISIBLE);
@@ -251,14 +259,14 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Set Adolescent
             if (MainApp.familyList.get(i).getIndexed().equals("4"))
-                MainApp.selectedAdol = familyList.get(i).getA201();
+                MainApp.selectedAdol = familyList.get(i).getA201();*/
 
             MainApp.hhheadSelected = MainApp.familyList.get(i).getA203().equals("1");
         }
 
 
-        bi.btnContinue.setEnabled(!selectedMWRA.equals(""));
-        bi.btnContinue.setBackground(!selectedMWRA.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
+        bi.btnContinue.setEnabled(!selectedAdol.equals(""));
+        bi.btnContinue.setBackground(!selectedAdol.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
 
         //bi.btnContinue.setVisibility(!MainApp.selectedMWRA.equals("") ? View.VISIBLE : View.INVISIBLE);
         MainApp.memberCount = Math.round(MainApp.familyList.size());
@@ -295,11 +303,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
         // Family Complete criteria: MWRA must exist
-        if (MainApp.allMWRAList.size() > 0) bi.familyComplete.setVisibility(VISIBLE);
+        if (allAdolList.size() > 0) bi.familyComplete.setVisibility(VISIBLE);
         else bi.familyComplete.setVisibility(View.GONE);
 
         // Disable family complete check if MWRA indexed
-        if (!selectedMWRA.equals("")) {
+        if (!selectedAdol.equals("")) {
             bi.familyComplete.setChecked(true);
             bi.familyComplete.setEnabled(false);
         }
@@ -329,60 +337,26 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
     private void proceedSelect() {
-
-        /*if (!allMWRAList.isEmpty()) {
-            // Select MWRA
-            MainApp.familyMember = allMWRAList.get(new Random().nextInt(allMWRAList.size()));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
-            selectedMWRA = familyMember.getA201();
-
-            // Updating adapter for MWRA selection
-            MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).setIndexed("1");
-            familyMembersAdapter.notifyItemChanged(Integer.parseInt(selectedMWRA) - 1);
-        }
-
-
-        if (!allChildrenList.isEmpty()) {
-
-            *//**
-         * Select youngest child on basis of age in days
-         * *//*
-            int youngestChildDays = 0;
-            for (FamilyMembers ch : allChildrenList) {
-                if (ch.getA213().equals(selectedMWRA)) {
-                    int selectedChildDays = Integer.parseInt(ch.getAgeInMonths());
-                    if (youngestChildDays == 0) {
-                        youngestChildDays = selectedChildDays;
-                        selectedChild = ch.getA201();
-                    } else if (youngestChildDays > selectedChildDays) {
-                        youngestChildDays = selectedChildDays;
-                        selectedChild = ch.getA201();
-                    }
-                }
-            }
-            if (!selectedChild.equals("")) {
-                selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getA202();
-                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild) - 1).getA206yy());
-                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild) - 1);
-                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
-
-                // Updating adapter for Child selection
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild) - 1).setIndexed("2");
-                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild) - 1);
-            } else
-                Toast.makeText(this, "Selected MWRA HAVE NO under 5 CHILD", Toast.LENGTH_SHORT).show();
-
-        } else Toast.makeText(this, "NO CHILD IN HH", Toast.LENGTH_SHORT).show();*/
-
-
         // Updating database to mark selected Adol
-        // Select ADOL
+        /**
+         * Select youngest adol on basis of age in days
+         * */
         if (!allAdolList.isEmpty()) {
-            for (FamilyMembers ch : allAdolList) {
-                if (ch.getA201().equals(selectedMWRA)) {
-                    selectedAdol = ch.getA201();
-                    break;
+            bi.familyComplete.setEnabled(false);
+            int youngestAdolDays = 0;
+            for (FamilyMembers adol : allAdolList) {
+                int selectedAdolDays = Integer.parseInt(adol.getAgeInMonths());
+                if (youngestAdolDays == 0) {
+                    youngestAdolDays = selectedAdolDays;
+                    selectedAdol = adol.getA201();
+                } else if (youngestAdolDays > selectedAdolDays) {
+                    youngestAdolDays = selectedAdolDays;
+                    selectedAdol = adol.getA201();
                 }
+                /*if (adol.getA201().equals(selectedAdol)) {
+                    selectedAdol = adol.getA201();
+                    break;
+                }*/
             }
             if (!selectedAdol.equals("")) {
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1);
@@ -421,7 +395,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
     public void btnRand(View view) {
-        if (allMWRAList.size() > 0 && selectedMWRA.equals("")) proceedSelect();
+        if (allAdolList.size() > 0 && selectedAdol.equals("")) proceedSelect();
         else bi.btnRand.setVisibility(VISIBLE);
     }
 

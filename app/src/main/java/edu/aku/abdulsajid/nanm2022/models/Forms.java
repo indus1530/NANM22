@@ -1353,15 +1353,16 @@ public class Forms extends BaseObservable implements Observable {
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.currentHousehold.getVillage_code());
-        setChildID(MainApp.currentHousehold.getChild_id());
+        setVillageCode(MainApp.currentADOL.getVillage_code());
+        setChildID(MainApp.currentADOL.getChild_id());
+        setSno(MainApp.currentADOL.getSrno());
 
         //SECTION VARIABLES
-        setA109(MainApp.currentHousehold.getVillage_code());
+        setA109(MainApp.currentADOL.getVillage_code());
         setA106(selectedDistrict);
         setA107(selectedTehsil);
         setA108(selectedUC);
-        setA105(MainApp.currentHousehold.getChild_id());
+        setA105(MainApp.currentADOL.getChild_id());
 
     }
 
@@ -10631,6 +10632,9 @@ public class Forms extends BaseObservable implements Observable {
                 .put("b108", b108)
                 .put("b109", b109)
                 .put("b110", b110)
+                .put("b111", b111)
+                .put("b112", b112)
+                .put("b113", b113)
                 .put("b114", b114)
                 .put("b115", b115)
                 .put("b116", b116)

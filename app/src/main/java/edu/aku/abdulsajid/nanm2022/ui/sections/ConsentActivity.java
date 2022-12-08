@@ -72,7 +72,7 @@ public class ConsentActivity extends AppCompatActivity {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);
             }
             finish();
-            //startActivity(i);
+            startActivity(i);
         } else {
             Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
         }

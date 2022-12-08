@@ -16,11 +16,11 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA1Binding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
-import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class SectionA1Activity extends AppCompatActivity {
 
@@ -46,8 +46,8 @@ public class SectionA1Activity extends AppCompatActivity {
         MainApp.form.populateMeta();
         long rowId = 0;
         try {
-            //rowId = db.addForm(MainApp.form);
-            rowId = NANMRoomDatabase.getDbInstance().formsDao().addForm(form);
+            rowId = db.addForm(MainApp.form);
+//            rowId = NANMRoomDatabase.getDbInstance().formsDao().addForm(form);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
@@ -56,8 +56,8 @@ public class SectionA1Activity extends AppCompatActivity {
         MainApp.form.setId(rowId);
         if (rowId > 0) {
             MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            //db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            NANMRoomDatabase.getDbInstance().formsDao().updateForm(form);
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
+//            NANMRoomDatabase.getDbInstance().formsDao().updateForm(form);
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -70,10 +70,10 @@ public class SectionA1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, MainApp.form.sA1toString());
             Forms updateForms = form;
             updateForms.setSA1(form.sA1toString());
-            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
+//            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
