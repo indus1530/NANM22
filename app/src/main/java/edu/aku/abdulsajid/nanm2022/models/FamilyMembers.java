@@ -40,7 +40,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String projectName = MainApp.PROJECT_NAME;
 
     // APP VARIABLES
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = FamilyMembersTable.COLUMN_ID)
     private long id = 0;
     @ColumnInfo(name = FamilyMembersTable.COLUMN_UID)
@@ -149,8 +149,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
         CaluculateAge();
 
     }
-
-
 
 
     public String getProjectName() {

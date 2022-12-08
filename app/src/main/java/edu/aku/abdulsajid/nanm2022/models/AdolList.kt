@@ -18,47 +18,52 @@ import org.json.JSONObject
 class AdolList {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(
-            name = ChildTable.COLUMN_ID,
-            defaultValue = "0"
+        name = ChildTable.COLUMN_ID,
+        defaultValue = "0"
     )
     var ID: Long = 0
     var srno: String = _EMPTY_
     var child_id: String = _EMPTY_
 
     @ColumnInfo(
-            name = TableContracts.ChildTable.COLUMN_VILLAGE_CODE,
-            defaultValue = _EMPTY_
+        name = TableContracts.ChildTable.COLUMN_VILLAGE_CODE,
+        defaultValue = _EMPTY_
     )
     var village_code: String = _EMPTY_
+
     @ColumnInfo(
-            name = ChildTable.COLUMN_MOTHER_NAME,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_MOTHER_NAME,
+        defaultValue = _EMPTY_
     )
     var mother_name: String = _EMPTY_
+
     @ColumnInfo(
-            name = ChildTable.COLUMN_CHILD_NAME,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_CHILD_NAME,
+        defaultValue = _EMPTY_
     )
     var child_name: String = _EMPTY_
+
     @ColumnInfo(
-            name = ChildTable.COLUMN_HH_HEAD,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_HH_HEAD,
+        defaultValue = _EMPTY_
     )
     var hh_head: String = _EMPTY_
+
     @ColumnInfo(
-            name = ChildTable.COLUMN_GENDER,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_GENDER,
+        defaultValue = _EMPTY_
     )
     var gender: String = _EMPTY_
+
     @ColumnInfo(
-            name = ChildTable.COLUMN_DOB,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_DOB,
+        defaultValue = _EMPTY_
     )
     var dob: String = _EMPTY_
 
     @ColumnInfo(
-            name = ChildTable.COLUMN_PROJECT,
-            defaultValue = _EMPTY_
+        name = ChildTable.COLUMN_PROJECT,
+        defaultValue = _EMPTY_
     )
     var project: String = _EMPTY_
 

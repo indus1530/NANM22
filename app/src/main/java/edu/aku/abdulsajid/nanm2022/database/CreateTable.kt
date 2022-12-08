@@ -138,7 +138,10 @@ object CreateTable {
             + VillageTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + VillageTable.COLUMN_GEOAREA + " TEXT,"
             + VillageTable.COLUMN_DIST_ID + " TEXT,"
-            + VillageTable.COLUMN_VILLAGE_CODE + " TEXT"
+            + VillageTable.COLUMN_VILLAGE_CODE + " TEXT,"
+            + VillageTable.COLUMN_VILLAGE + " TEXT,"
+            + VillageTable.COLUMN_UC_CODE + " TEXT,"
+            + VillageTable.COLUMN_UC + " TEXT"
             + " );"
             )
 

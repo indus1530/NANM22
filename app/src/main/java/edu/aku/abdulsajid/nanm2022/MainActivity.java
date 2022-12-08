@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.wajahatkarim3.roomexplorer.RoomExplorer;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,7 +28,9 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.AndroidManager;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityMainBinding;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
+import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.ChangePasswordActivity;
 import edu.aku.abdulsajid.nanm2022.ui.IdentificationActivity;
 import edu.aku.abdulsajid.nanm2022.ui.SyncActivity;
@@ -159,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.secA2:
-                MainApp.form = new Forms();
+                MainApp.familyMember = new FamilyMembers();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 
@@ -254,7 +258,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.dbManager:
-                startActivity(new Intent(this, AndroidManager.class));
+                //startActivity(new Intent(this, AndroidManager.class));
+                RoomExplorer.show(this, NANMRoomDatabase.class, NANMRoomDatabase.DATABASE_NAME);
                 break;
         }
     }

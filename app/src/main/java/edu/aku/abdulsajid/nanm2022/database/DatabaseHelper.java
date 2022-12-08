@@ -530,6 +530,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(VillageTable.COLUMN_GEOAREA, villages.getGeoarea());
             values.put(VillageTable.COLUMN_DIST_ID, villages.getDistId());
             values.put(VillageTable.COLUMN_VILLAGE_CODE, villages.getVillage_code());
+            values.put(VillageTable.COLUMN_VILLAGE, villages.getVillage());
+            values.put(VillageTable.COLUMN_UC_CODE, villages.getUc_code());
+            values.put(VillageTable.COLUMN_UC, villages.getUc());
 
             long rowID = db.insertOrThrow(VillageTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;

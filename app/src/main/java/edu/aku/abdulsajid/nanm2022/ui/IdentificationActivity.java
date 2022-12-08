@@ -271,17 +271,24 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.childName.setText(null);
         bi.child.setVisibility(View.GONE);
         bi.hhhead.setText(null);
-        bi.hhhead.setVisibility(View.GONE);
+        bi.headhh.setVisibility(View.GONE);
+        AdolList adolList = new AdolList();
 
         //AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
-        AdolList adolList = NANMRoomDatabase.getDbInstance().adolListDao().getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
-        if (!adolList.getChild_id().equals("")) {
+        try {
+            adolList = NANMRoomDatabase.getDbInstance().adolListDao().getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if(!adolList.equals(null) && !adolList.getChild_id().equals("") || !adolList.getChild_id().equals(null) )
+        {
 
             bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
             bi.hhhead.setText(adolList.getHh_head());
-            bi.hhhead.setVisibility(View.VISIBLE);
+            bi.headhh.setVisibility(View.VISIBLE);
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
@@ -292,6 +299,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
+            Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -337,15 +345,20 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.checkHhhead.setChecked(false);
         bi.checkChild.setChecked(false);
         bi.fldGrpA105.setVisibility(View.GONE);
+        Villages villages = new Villages();
 
 //        Clusters clusters = db.getCluster(bi.a109.getText().toString());
         //Villages villages = db.villagesDao().getVillage(bi.a109.getText().toString());
 
-        Villages villages = NANMRoomDatabase.getDbInstance().villagesDao().getVillage(bi.a109.getText().toString());
+        try {
+            villages = NANMRoomDatabase.getDbInstance().villagesDao().getVillage(bi.a109.getText().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         String geoarea = villages.getGeoarea();
-        if (!villages.getVillage_code().equals("")) {
+        if (!villages.getVillage_code().equals("") || villages.getVillage_code() != null) {
             bi.a106.setText(geoarea.split("\\|")[0]);
             bi.a107.setText(geoarea.split("\\|")[1]);
             bi.a108.setText(geoarea.split("\\|")[2]);
@@ -355,6 +368,8 @@ public class IdentificationActivity extends AppCompatActivity {
             MainApp.selectedTehsil = bi.a107.getText().toString();
             MainApp.selectedUC = bi.a108.getText().toString();
 
+        } else {
+            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
         }
     }
 

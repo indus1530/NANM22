@@ -49,6 +49,9 @@ public class TableContracts {
         public static final String COLUMN_DIST_ID = "dist_id";
         public static final String COLUMN_GEOAREA = "geoarea";
         public static final String COLUMN_VILLAGE_CODE = "village_code";
+        public static final String COLUMN_VILLAGE = "village";
+        public static final String COLUMN_UC_CODE = "uc_code";
+        public static final String COLUMN_UC = "uc";
 
     }
 

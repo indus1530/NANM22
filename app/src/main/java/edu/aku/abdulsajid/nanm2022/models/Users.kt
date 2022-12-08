@@ -4,7 +4,6 @@ import android.database.Cursor
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.codec.binary.StringUtils
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable
 import edu.aku.abdulsajid.nanm2022.core.MainApp._EMPTY_
 import org.json.JSONException
@@ -17,50 +16,58 @@ import org.json.JSONObject
 @Entity(tableName = UsersTable.TABLE_NAME)
 class Users {
 
-    @ColumnInfo(name = UsersTable.COLUMN_ISNEW_USER,
-            defaultValue = _EMPTY_)
+    @ColumnInfo(
+        name = UsersTable.COLUMN_ISNEW_USER,
+        defaultValue = _EMPTY_
+    )
     var newUser: String = _EMPTY_
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(
-            name = UsersTable.COLUMN_ID,
-            defaultValue = "0"
+        name = UsersTable.COLUMN_ID,
+        defaultValue = "0"
     )
     var userID: Long = 0
 
     @ColumnInfo(
-            name = UsersTable.COLUMN_USERNAME,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_USERNAME,
+        defaultValue = _EMPTY_
     )
     var userName: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_PASSWORD,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_PASSWORD,
+        defaultValue = _EMPTY_
     )
     var password: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_FULLNAME,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_FULLNAME,
+        defaultValue = _EMPTY_
     )
     var fullname: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_DESIGNATION,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_DESIGNATION,
+        defaultValue = _EMPTY_
     )
     var designation: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_ENABLED,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_ENABLED,
+        defaultValue = _EMPTY_
     )
     var enabled: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_PWD_EXPIRY,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_PWD_EXPIRY,
+        defaultValue = _EMPTY_
     )
     var pwdExpiry: String = _EMPTY_
+
     @ColumnInfo(
-            name = UsersTable.COLUMN_DIST_ID,
-            defaultValue = _EMPTY_
+        name = UsersTable.COLUMN_DIST_ID,
+        defaultValue = _EMPTY_
     )
     var dist_id: String = _EMPTY_
 

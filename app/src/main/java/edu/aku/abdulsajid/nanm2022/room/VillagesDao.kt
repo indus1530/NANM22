@@ -19,7 +19,7 @@ interface VillagesDao {
 
     @Query("SELECT * FROM " + TableContracts.VillageTable.TABLE_NAME
             + " WHERE " + TableContracts.VillageTable.COLUMN_VILLAGE_CODE
-            + " LIKE :villageCode " + " ORDER BY "
+            + " LIKE :villageCode ORDER BY "
             + TableContracts.VillageTable.COLUMN_ID + " ASC")
     fun getVillage(villageCode : String) : Villages
 

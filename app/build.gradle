@@ -194,4 +194,11 @@ dependencies {
     // MultiLineRadioGroup
     implementation 'com.github.Gavras:MultiLineRadioGroup:v1.0.0.6'
 
+    // Flipper
+    debugImplementation 'com.facebook.flipper:flipper:0.173.0'
+    debugImplementation 'com.facebook.soloader:soloader:0.10.4'
+
+    releaseImplementation 'com.facebook.flipper:flipper-noop:0.173.0'
+
+
 }
