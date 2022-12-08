@@ -1320,16 +1320,25 @@ public class Forms extends BaseObservable implements Observable {
 
     // Section Variables
 
+    @ColumnInfo(name = FormsTable.COLUMN_SA1)
     private String sA1 = _EMPTY_;
-    private String sA2 = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA3A)
     private String sA3A = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA3B)
     private String sA3B = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA4A)
     private String sA4A = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA4B)
     private String sA4B = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA4C)
     private String sA4C = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA5A)
     private String sA5A = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SA5B)
     private String sA5B = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SB1)
     private String sB1 = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_SB3)
     private String sB3 = _EMPTY_;
 
 
@@ -1508,15 +1517,6 @@ public class Forms extends BaseObservable implements Observable {
 
     public void setSA1(String sA1) {
         this.sA1 = sA1;
-    }
-
-
-    public String getSA2() {
-        return sA2;
-    }
-
-    public void setSA2(String sA2) {
-        this.sA2 = sA2;
     }
 
     public String getSA3A() {
