@@ -103,6 +103,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
     @Ignore
     private String a206dd = _EMPTY_;
     @Ignore
+    private String a211 = _EMPTY_;
+    @Ignore
     private String a207 = _EMPTY_;
     @Ignore
     private String a208 = _EMPTY_;
@@ -111,11 +113,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
     @Ignore
     private String a210 = _EMPTY_;
     @Ignore
-    private String a211 = _EMPTY_;
-    @Ignore
     private String a212 = _EMPTY_;
     @Ignore
     private String a213 = _EMPTY_;
+    @Ignore
+    private String a214 = _EMPTY_;
 
     @Ignore
     private boolean mwra;
@@ -427,6 +429,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206yy(String a206yy) {
         this.a206yy = a206yy;
+        setA207(a206yy.length() > 0 && Integer.parseInt(a206yy) > 9 || Integer.parseInt(a206yy) < 16 ? this.a207 : "");
         notifyPropertyChanged(BR.a206yy);
     }
 
@@ -451,16 +454,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA212() {
-        return a212;
-    }
-
-    public void setA212(String a212) {
-        this.a212 = a212;
-        notifyPropertyChanged(BR.a212);
-    }
-
-    @Bindable
     public String getA213() {
         return a213;
     }
@@ -468,6 +461,26 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA213(String a213) {
         this.a213 = a213;
         notifyPropertyChanged(BR.a213);
+    }
+
+    @Bindable
+    public String getA214() {
+        return a214;
+    }
+
+    public void setA214(String a214) {
+        this.a214 = a214;
+        notifyPropertyChanged(BR.a214);
+    }
+
+    @Bindable
+    public String getA211() {
+        return a211;
+    }
+
+    public void setA211(String a211) {
+        this.a211 = a211;
+        notifyPropertyChanged(BR.a211);
     }
 
     @Bindable
@@ -511,13 +524,13 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA211() {
-        return a211;
+    public String getA212() {
+        return a212;
     }
 
-    public void setA211(String a211) {
-        this.a211 = a211;
-        notifyPropertyChanged(BR.a211);
+    public void setA212(String a212) {
+        this.a212 = a212;
+        notifyPropertyChanged(BR.a212);
     }
 
 
@@ -595,13 +608,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a206yy = json.getString("a206yy");
             this.a206mm = json.getString("a206mm");
             this.a206dd = json.getString("a206dd");
-            this.a212 = json.getString("a212");
             this.a213 = json.getString("a213");
+            this.a214 = json.getString("a214");
+            this.a211 = json.getString("a211");
             this.a207 = json.getString("a207");
             this.a208 = json.getString("a208");
             this.a209 = json.getString("a209");
             this.a210 = json.getString("a210");
-            this.a211 = json.getString("a211");
+            this.a212 = json.getString("a212");
         }
     }
 
@@ -647,13 +661,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a206yy", a206yy)
                 .put("a206mm", a206mm)
                 .put("a206dd", a206dd)
-                .put("a212", a212)
                 .put("a213", a213)
+                .put("a214", a214)
+                .put("a211", a211)
                 .put("a207", a207)
                 .put("a208", a208)
                 .put("a209", a209)
                 .put("a210", a210)
-                .put("a211", a211);
+                .put("a212", a212);
         return json.toString();
     }
 
@@ -758,9 +773,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
      * 4 = Adol
      */
     private void updateMemCategory() {
-        if (a204.equals("") || a206yy.equals("") || a207.equals("") || !a211.equals("1")) return;
+        if (a204.equals("") || a206yy.equals("") || a211.equals("") || !a212.equals("1")) return;
         String memGender = getA204();
-        String memMaritalStatus = getA207();
+        String memMaritalStatus = getA211();
         int memAge = Integer.parseInt(getA206yy());
 
         // MWRA
@@ -773,7 +788,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         }
 
         // Child
-        if (memAge < 5 && !a213.equals("") && !a213.equals("97")) setMemCate("2");
+        if (memAge < 5 && !a214.equals("") && !a214.equals("97")) setMemCate("2");
 
 
         // Adolescent

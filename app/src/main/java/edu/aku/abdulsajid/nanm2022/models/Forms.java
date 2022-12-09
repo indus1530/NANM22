@@ -271,42 +271,6 @@ public class Forms extends BaseObservable implements Observable {
     @Ignore
     private String a334xx = _EMPTY_;
     @Ignore
-    private String a201 = _EMPTY_;
-    @Ignore
-    private String a202 = _EMPTY_;
-    @Ignore
-    private String a203 = _EMPTY_;
-    @Ignore
-    private String a203xx = _EMPTY_;
-    @Ignore
-    private String a204 = _EMPTY_;
-    @Ignore
-    private String a205dd = _EMPTY_;
-    @Ignore
-    private String a205mm = _EMPTY_;
-    @Ignore
-    private String a205yy = _EMPTY_;
-    @Ignore
-    private String a206dd = _EMPTY_;
-    @Ignore
-    private String a206mm = _EMPTY_;
-    @Ignore
-    private String a206yy = _EMPTY_;
-    @Ignore
-    private String a207 = _EMPTY_;
-    @Ignore
-    private String a208 = _EMPTY_;
-    @Ignore
-    private String a209 = _EMPTY_;
-    @Ignore
-    private String a210 = _EMPTY_;
-    @Ignore
-    private String a211 = _EMPTY_;
-    @Ignore
-    private String a212 = _EMPTY_;
-    @Ignore
-    private String a213 = _EMPTY_;
-    @Ignore
     private String a401 = _EMPTY_;
     @Ignore
     private String a402 = _EMPTY_;
@@ -2629,186 +2593,6 @@ public class Forms extends BaseObservable implements Observable {
     public void setA334xx(String a334xx) {
         this.a334xx = a334xx;
         notifyPropertyChanged(BR.a334xx);
-    }
-
-    @Bindable
-    public String getA201() {
-        return a201;
-    }
-
-    public void setA201(String a201) {
-        this.a201 = a201;
-        notifyPropertyChanged(BR.a201);
-    }
-
-    @Bindable
-    public String getA202() {
-        return a202;
-    }
-
-    public void setA202(String a202) {
-        this.a202 = a202;
-        notifyPropertyChanged(BR.a202);
-    }
-
-    @Bindable
-    public String getA203() {
-        return a203;
-    }
-
-    public void setA203(String a203) {
-        this.a203 = a203;
-        notifyPropertyChanged(BR.a203);
-    }
-
-    @Bindable
-    public String getA203xx() {
-        return a203xx;
-    }
-
-    public void setA203xx(String a203xx) {
-        this.a203xx = a203xx;
-        notifyPropertyChanged(BR.a203xx);
-    }
-
-    @Bindable
-    public String getA204() {
-        return a204;
-    }
-
-    public void setA204(String a204) {
-        this.a204 = a204;
-        notifyPropertyChanged(BR.a204);
-    }
-
-    @Bindable
-    public String getA205dd() {
-        return a205dd;
-    }
-
-    public void setA205dd(String a205dd) {
-        this.a205dd = a205dd;
-        notifyPropertyChanged(BR.a205dd);
-    }
-
-    @Bindable
-    public String getA205mm() {
-        return a205mm;
-    }
-
-    public void setA205mm(String a205mm) {
-        this.a205mm = a205mm;
-        notifyPropertyChanged(BR.a205mm);
-    }
-
-    @Bindable
-    public String getA205yy() {
-        return a205yy;
-    }
-
-    public void setA205yy(String a205yy) {
-        this.a205yy = a205yy;
-        notifyPropertyChanged(BR.a205yy);
-    }
-
-    @Bindable
-    public String getA206dd() {
-        return a206dd;
-    }
-
-    public void setA206dd(String a206dd) {
-        this.a206dd = a206dd;
-        notifyPropertyChanged(BR.a206dd);
-    }
-
-    @Bindable
-    public String getA206mm() {
-        return a206mm;
-    }
-
-    public void setA206mm(String a206mm) {
-        this.a206mm = a206mm;
-        notifyPropertyChanged(BR.a206mm);
-    }
-
-    @Bindable
-    public String getA206yy() {
-        return a206yy;
-    }
-
-    public void setA206yy(String a206yy) {
-        this.a206yy = a206yy;
-        notifyPropertyChanged(BR.a206yy);
-    }
-
-    @Bindable
-    public String getA207() {
-        return a207;
-    }
-
-    public void setA207(String a207) {
-        this.a207 = a207;
-        notifyPropertyChanged(BR.a207);
-    }
-
-    @Bindable
-    public String getA208() {
-        return a208;
-    }
-
-    public void setA208(String a208) {
-        this.a208 = a208;
-        notifyPropertyChanged(BR.a208);
-    }
-
-    @Bindable
-    public String getA209() {
-        return a209;
-    }
-
-    public void setA209(String a209) {
-        this.a209 = a209;
-        notifyPropertyChanged(BR.a209);
-    }
-
-    @Bindable
-    public String getA210() {
-        return a210;
-    }
-
-    public void setA210(String a210) {
-        this.a210 = a210;
-        notifyPropertyChanged(BR.a210);
-    }
-
-    @Bindable
-    public String getA211() {
-        return a211;
-    }
-
-    public void setA211(String a211) {
-        this.a211 = a211;
-        notifyPropertyChanged(BR.a211);
-    }
-
-    @Bindable
-    public String getA212() {
-        return a212;
-    }
-
-    public void setA212(String a212) {
-        this.a212 = a212;
-        notifyPropertyChanged(BR.a212);
-    }
-
-    @Bindable
-    public String getA213() {
-        return a213;
-    }
-
-    public void setA213(String a213) {
-        this.a213 = a213;
-        notifyPropertyChanged(BR.a213);
     }
 
     @Bindable
@@ -9275,24 +9059,6 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a333xx", a333xx)
                 .put("a334", a334)
                 .put("a334xx", a334xx)
-                .put("a201", a201)
-                .put("a202", a202)
-                .put("a203", a203)
-                .put("a203xx", a203xx)
-                .put("a204", a204)
-                .put("a205dd", a205dd)
-                .put("a205mm", a205mm)
-                .put("a205yy", a205yy)
-                .put("a206dd", a206dd)
-                .put("a206mm", a206mm)
-                .put("a206yy", a206yy)
-                .put("a207", a207)
-                .put("a208", a208)
-                .put("a209", a209)
-                .put("a210", a210)
-                .put("a211", a211)
-                .put("a212", a212)
-                .put("a213", a213)
                 .put("a401", a401)
                 .put("a402", a402)
                 .put("a403", a403)
@@ -9670,8 +9436,7 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a209", a209)
                 .put("a210", a210)
                 .put("a211", a211)
-                .put("a212", a212)
-                .put("a213", a213);
+                .put("a212", a212);
         return json.toString();
     }*/
 

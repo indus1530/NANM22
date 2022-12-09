@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA2Binding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -98,7 +97,7 @@ public class SectionA2Activity extends AppCompatActivity {
             motherNames.add(fl.getA202());
             motherCodes.add(fl.getA201());
             motherUID.add(fl.getUid());
-            motherPresent.add(fl.getA211().equals("1") && Integer.parseInt(fl.getA206yy()) < 50 ? "1" : "2");
+            motherPresent.add(fl.getA212().equals("1") && Integer.parseInt(fl.getA206yy()) < 50 ? "1" : "2");
         }
         motherNames.add("Not Available/Died");
         motherCodes.add("97");
@@ -106,14 +105,14 @@ public class SectionA2Activity extends AppCompatActivity {
         motherPresent.add("");
 
         // Apply the adapter to the Father spinner
-        bi.a212.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, fatherNames));
+        bi.a213.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, fatherNames));
 
-        bi.a212.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a213.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position == 0) return;
-                MainApp.familyMember.setA212(fatherCodes.get(position));
+                MainApp.familyMember.setA213(fatherCodes.get(position));
             }
 
             @Override
@@ -123,14 +122,14 @@ public class SectionA2Activity extends AppCompatActivity {
         });
 
         // Apply the adapter to the Mother spinner
-        bi.a213.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, motherNames));
+        bi.a214.setAdapter(new ArrayAdapter<>(SectionA2Activity.this, R.layout.custom_spinner, motherNames));
 
-        bi.a213.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a214.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position == 0) return;
-                MainApp.familyMember.setA213(motherCodes.get(position));
+                MainApp.familyMember.setA214(motherCodes.get(position));
                 MainApp.familyMember.setMuid(motherUID.get(position));
                 MainApp.familyMember.setMotherPresent(motherPresent.get(position));
             }
