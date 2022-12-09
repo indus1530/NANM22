@@ -67,7 +67,7 @@ interface AdolescentDao {
         {
             val tempMembers = Adolescent()
             return tempMembers
-        }else {
+        }/*else {
             members.sC1Hydrate(members.sC1)
             members.sC2Hydrate(members.sC2)
             members.sC3Hydrate(members.sC3)
@@ -77,7 +77,7 @@ interface AdolescentDao {
             members.sC7Hydrate(members.sC7)
             members.sD1Hydrate(members.sD1)
             members.sD2Hydrate(members.sD2)
-        }
+        }*/
         return members
     }
 

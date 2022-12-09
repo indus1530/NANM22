@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.provider.Settings
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,7 +26,7 @@ class AppInfo {
         get() = versionName.split(".").first().toInt() > 0
 
 
-    lateinit var dbHelper: DatabaseHelper
+    lateinit var dbHelper: NANMRoomDatabase
 
     constructor(context: Context) {
         try {
@@ -46,7 +47,7 @@ class AppInfo {
             appVersion = "$versionName.$versionCode"
             tagName = getTagName(context)
             synchronized(this) {
-                dbHelper = DatabaseHelper(context)
+                dbHelper = NANMRoomDatabase.dbInstance!!
             }
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()

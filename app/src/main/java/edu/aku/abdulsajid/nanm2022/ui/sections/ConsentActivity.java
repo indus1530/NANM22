@@ -29,7 +29,7 @@ import edu.aku.abdulsajid.nanm2022.ui.lists.FamilyMembersListActivity;
 public class ConsentActivity extends AppCompatActivity {
     private static final String TAG = "ConsentActivity";
     ActivityConsentBinding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
 
     @Override
@@ -59,7 +59,7 @@ public class ConsentActivity extends AppCompatActivity {
         try {
             Forms updateForms = form;
             updateForms.setSA1(form.sA1toString());
-            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
+            updcount = db.formsDao().updateForm(updateForms);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

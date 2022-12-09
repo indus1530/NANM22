@@ -169,7 +169,7 @@ dependencies {
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
 
     // Android Database Browser
-    //debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 
     // COMPOSE
     // Integration with activities

@@ -29,7 +29,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private static final String TAG = "IdentificationActivity";
     ActivityIdentificationBinding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
     private int c, c1;
 
     @Override
@@ -41,12 +41,7 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.btnContinue.setText(R.string.open_hh_form);
         if (MainApp.superuser) bi.btnContinue.setText("Review Form");
         MainApp.form = new Forms();
-
-
-
     }
-
-
 
 
     private boolean formValidation() {
@@ -65,7 +60,7 @@ public class IdentificationActivity extends AppCompatActivity {
         //AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
 
         try {
-            adolList = NANMRoomDatabase.getDbInstance().adolListDao().getAdolBySno(bi.a109.getText().toString(), bi.a105.getText().toString());
+            adolList = db.adolListDao().getAdolBySno(bi.a109.getText().toString(), bi.a105.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,8 +68,11 @@ public class IdentificationActivity extends AppCompatActivity {
         assert adolList != null;
         if (adolList.getChild_id().equals("")) {
             adolList.getChild_id();
-            Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
-        }else {
+
+            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+            bi.btnContinue.setEnabled(false);
+            Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
+        } else {
 
             bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
@@ -84,7 +82,7 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
-            MainApp.currentHousehold = adolList;
+            MainApp.currentADOL = adolList;
         }
 
     }
@@ -111,7 +109,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form = new Forms();
         try {
             //MainApp.form = db.formsDao().getFormByChildID(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
-            MainApp.form = NANMRoomDatabase.getDbInstance().formsDao().getFormByAdolSno(MainApp.currentHousehold.getSrno(), MainApp.currentHousehold.getVillage_code());
+            MainApp.form = db.formsDao().getFormByAdolSno(MainApp.currentADOL.getSrno(), MainApp.currentADOL.getVillage_code());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -137,7 +135,7 @@ public class IdentificationActivity extends AppCompatActivity {
         //Villages villages = db.villagesDao().getVillage(bi.a109.getText().toString());
 
         try {
-            villages = NANMRoomDatabase.getDbInstance().villagesDao().getVillage(bi.a109.getText().toString());
+            villages = db.villagesDao().getVillage(bi.a109.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -146,7 +144,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (villages.getVillage_code().equals("")) {
             villages.getVillage_code();
             Toast.makeText(this, "Village not found", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             bi.a106.setText(geoarea.split("\\|")[0]);
             bi.a107.setText(geoarea.split("\\|")[1]);
             bi.a108.setText(geoarea.split("\\|")[2]);

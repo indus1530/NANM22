@@ -2,6 +2,7 @@ package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
 
@@ -23,6 +24,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionC1Binding;
+import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 
@@ -30,7 +32,7 @@ public class SectionC1Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionC1Activity";
     ActivitySectionC1Binding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,22 +45,24 @@ public class SectionC1Activity extends AppCompatActivity {
         bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
 
-        try {
-            //MainApp.adol = db.getAdolByUUid();
-            adol = NANMRoomDatabase.getDbInstance().adolescentDao().getAdolByUUid(MainApp.form.getUid());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "JSONException(Adolescent): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        if(adol.getUid() != null)
+        {
+            try {
+                adol.sC1Hydrate(adol.getSC1());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
         bi.setForm(adol);
     }
 
-    private boolean insertNewRecord() {
+    private boolean insertNewRecord() throws JSONException {
         if (!MainApp.adol.getUid().equals("") || MainApp.superuser) return true;
         MainApp.adol.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addAdolescent(MainApp.adol);
+            //rowId = db.addAdolescent(MainApp.adol);
+            db.adolescentDao().addAdolescent(adol);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
@@ -67,7 +71,8 @@ public class SectionC1Activity extends AppCompatActivity {
         MainApp.adol.setId(rowId);
         if (rowId > 0) {
             MainApp.adol.setUid(MainApp.adol.getDeviceId() + MainApp.adol.getId());
-            db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_UID, MainApp.adol.getUid());
+            //db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_UID, MainApp.adol.getUid());
+            db.adolescentDao().updateAdolescent(adol);
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -80,7 +85,10 @@ public class SectionC1Activity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         int updcount = 0;
         try {
-            updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC1, MainApp.adol.sC1toString());
+            Adolescent adol = MainApp.adol;
+            adol.setSC1(MainApp.adol.sC1toString());
+            updcount = db.adolescentDao().updateAdolescent(adol);
+            //updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC1, MainApp.adol.sC1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -93,7 +101,7 @@ public class SectionC1Activity extends AppCompatActivity {
 
     }
 
-    public void btnContinue(View view) {
+    public void btnContinue(View view) throws JSONException {
         bi.llbtn.setEnabled(false);
         new Handler().postDelayed(() -> bi.llbtn.setEnabled(true), 5000);
         if (!formValidation()) return;

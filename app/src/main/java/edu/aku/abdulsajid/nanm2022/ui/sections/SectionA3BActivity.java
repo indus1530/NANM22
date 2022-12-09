@@ -27,7 +27,7 @@ public class SectionA3BActivity extends AppCompatActivity {
 
     private static final String TAG = "SectionA3BActivity";
     ActivitySectionA3BBinding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class SectionA3BActivity extends AppCompatActivity {
             //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
             Forms updateForms = form;
             updateForms.setSA3B(form.sA3BtoString());
-            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
+            updcount = db.formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();

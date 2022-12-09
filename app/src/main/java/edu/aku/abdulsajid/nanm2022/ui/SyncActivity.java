@@ -71,7 +71,7 @@ import edu.aku.abdulsajid.nanm2022.workers.PhotoUploadWorker2;
 public class SyncActivity extends AppCompatActivity {
     private static final String TAG = "SyncActivity";
     final Handler handler = new Handler();
-    DatabaseHelper db;
+    NANMRoomDatabase db;
     SyncListAdapter syncListAdapter;
     ActivitySyncBinding bi;
     List<SyncModel> uploadTables;
@@ -158,7 +158,7 @@ public class SyncActivity extends AppCompatActivity {
                 // Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedFormHH());
+                    MainApp.uploadData.add(db.syncFunctionsDao().getUnsyncedFormHH());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Forms): " + e.getMessage());
@@ -168,7 +168,7 @@ public class SyncActivity extends AppCompatActivity {
                 //FamilyMembers
                 uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedFamilyMembers());
+                    MainApp.uploadData.add(db.syncFunctionsDao().getUnsyncedFamilyMembers());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(FamilyMembers): " + e.getMessage());
@@ -179,7 +179,7 @@ public class SyncActivity extends AppCompatActivity {
                 //Adolescent
                 uploadTables.add(new SyncModel(AdolescentTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedAdolescent());
+                    MainApp.uploadData.add(db.syncFunctionsDao().getUnsyncedAdolescent());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Adolescent): " + e.getMessage());
@@ -190,7 +190,7 @@ public class SyncActivity extends AppCompatActivity {
                 //Entry Log
                 uploadTables.add(new SyncModel(EntryLogTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(NANMRoomDatabase.getDbInstance().syncFunctionsDao().getUnsyncedEntryLog());
+                    MainApp.uploadData.add(db.syncFunctionsDao().getUnsyncedEntryLog());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Forms): " + e.getMessage());
@@ -301,7 +301,7 @@ public class SyncActivity extends AppCompatActivity {
                             //int insertCount = 0;
 
                             Method method = null;
-                            for (Method method1 : NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getDeclaredMethods()) {
+                            for (Method method1 : db.syncFunctionsDao().getClass().getDeclaredMethods()) {
 
                                 // Log.d(TAG, "onChanged Methods: " + method1.getName());
                                 /**
@@ -363,7 +363,7 @@ public class SyncActivity extends AppCompatActivity {
                                                 });
                                                 int insertCount = 0;
                                                 try {
-                                                    insertCount = (int) finalMethod.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), finalJsonArray);
+                                                    insertCount = (int) finalMethod.invoke(db.syncFunctionsDao(), finalJsonArray);
                                                 } catch (IllegalAccessException | InvocationTargetException ite) {
                                                     ite.printStackTrace();
                                                     downloadTable.setstatus("Process Failed2");
@@ -402,7 +402,7 @@ public class SyncActivity extends AppCompatActivity {
                             } else {
 
                                 // NOTE: Name of sync function in DataBaseHelper must match pattern 'sync'+TABLE_NAME e.g. syncAppUser()
-                                downloadTables.get(position).setmessage("Method not found in " + NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getSimpleName() + ": sync" + tableName);
+                                downloadTables.get(position).setmessage("Method not found in " + db.syncFunctionsDao().getClass().getSimpleName() + ": sync" + tableName);
                                 downloadTables.get(position).setstatus("Process Failed3");
                                 downloadTables.get(position).setstatusID(1);
                                 downloadTables.get(position).setInfo("Time: " + time + "/" + getTime() + "\t Size: " + size);
@@ -522,7 +522,7 @@ public class SyncActivity extends AppCompatActivity {
                                 // DatabaseHelper db = new DatabaseHelper(SyncActivity.this); // Database Helper
 
                                 Method method = null;
-                                for (Method method1 : NANMRoomDatabase.getDbInstance().syncFunctionsDao().getClass().getDeclaredMethods()) {
+                                for (Method method1 : db.syncFunctionsDao().getClass().getDeclaredMethods()) {
 
 
                                     // Log.d(TAG, "onChanged Methods: " + method1.getName());
@@ -548,10 +548,10 @@ public class SyncActivity extends AppCompatActivity {
                                         JSONObject jsonObject = new JSONObject(json.getString(i));
                                         Log.d(TAG, "onChanged: " + json.getString(i));
                                         if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                                            method.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), jsonObject.getString("id"));
+                                            method.invoke(db.syncFunctionsDao(), jsonObject.getString("id"));
                                             sSynced++;
                                         } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                                            method.invoke(NANMRoomDatabase.getDbInstance().syncFunctionsDao(), jsonObject.getString("id"));
+                                            method.invoke(db.syncFunctionsDao(), jsonObject.getString("id"));
                                             sDuplicate++;
                                         } else {
                                             sSyncedError.append("\nError: ").append(jsonObject.getString("message"));

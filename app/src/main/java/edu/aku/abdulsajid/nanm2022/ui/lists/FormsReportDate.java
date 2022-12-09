@@ -22,7 +22,7 @@ import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class FormsReportDate extends AppCompatActivity {
-    DatabaseHelper db;
+    NANMRoomDatabase db;
     List<Forms> fc;
     String sysdateToday = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     ActivityFormsReportBinding bi;
@@ -47,7 +47,7 @@ public class FormsReportDate extends AppCompatActivity {
         bi.dtFilter.setVisibility(View.VISIBLE);
         db = MainApp.appInfo.dbHelper;
         //fc = db.getTodayForms(sysdateToday);
-        fc = NANMRoomDatabase.getDbInstance().formsDao().getTodayForms(sysdateToday);
+        fc = db.formsDao().getTodayForms(sysdateToday);
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter(fc, this);
@@ -57,7 +57,7 @@ public class FormsReportDate extends AppCompatActivity {
     public void filterForms(View view) {
         Toast.makeText(this, "updated", Toast.LENGTH_SHORT).show();
         //fc = db.getTodayForms(bi.dtFilter.getText().toString());
-        fc = NANMRoomDatabase.getDbInstance().formsDao().getTodayForms(bi.dtFilter.getText().toString());
+        fc = db.formsDao().getTodayForms(bi.dtFilter.getText().toString());
         formsAdapter = new FormsAdapter(fc, this);
         formsAdapter.notifyDataSetChanged();
         bi.fcRecyclerView.setAdapter(formsAdapter);

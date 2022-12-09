@@ -1353,16 +1353,16 @@ public class Forms extends BaseObservable implements Observable {
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.currentHousehold.getVillage_code());
-        setChildID(MainApp.currentHousehold.getChild_id());
-        setSno(MainApp.currentHousehold.getSrno());
+        setVillageCode(MainApp.currentADOL.getVillage_code());
+        setChildID(MainApp.currentADOL.getChild_id());
+        setSno(MainApp.currentADOL.getSrno());
 
         //SECTION VARIABLES
-        setA109(MainApp.currentHousehold.getVillage_code());
+        setA109(MainApp.currentADOL.getVillage_code());
         setA106(selectedDistrict);
         setA107(selectedTehsil);
         setA108(selectedUC);
-        setA105(MainApp.currentHousehold.getChild_id());
+        setA105(MainApp.currentADOL.getChild_id());
 
     }
 

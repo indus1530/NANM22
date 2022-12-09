@@ -316,7 +316,7 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:shadowColor="@color/redDark"
-                    android:text="Select Indexed MWRA"
+                    android:text="Select Indexed ADOL"
                     android:textColor="@color/white"
                     android:visibility="invisible" />
 

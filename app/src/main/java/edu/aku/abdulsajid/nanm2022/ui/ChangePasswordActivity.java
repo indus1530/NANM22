@@ -47,7 +47,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     private static final String TAG = "ChangePasswordActivity";
     ActivityChangePasswordBinding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,7 +128,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                     workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
                                 Log.d(TAG, "onChanged: SUCCEEDED");
-                                NANMRoomDatabase.getDbInstance().usersDao().updatePassword(MainApp.user.getUserName(), hashedPassword);
+                                db.usersDao().updatePassword(MainApp.user.getUserName(), hashedPassword);
                                 //db.updatePassword(hashedPassword);
 
                                 //Displaying the status into TextView

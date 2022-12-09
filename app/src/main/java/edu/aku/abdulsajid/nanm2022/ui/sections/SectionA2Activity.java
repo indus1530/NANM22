@@ -32,7 +32,7 @@ public class SectionA2Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionA2Activity";
     ActivitySectionA2Binding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
     private ArrayList<String> fatherNames, fatherCodes, motherNames, motherCodes, motherUID, motherPresent;
 
     @Override
@@ -43,6 +43,7 @@ public class SectionA2Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         familyMember.setA201(String.valueOf(memberCount + 1));
+
         bi.setMember(familyMember);
         populateSpinner();
         setupListener();
@@ -154,7 +155,7 @@ public class SectionA2Activity extends AppCompatActivity {
         long rowId = 0;
         try {
             //rowId = db.addFamilyMembers(familyMember);
-            rowId = NANMRoomDatabase.getDbInstance().familyMembersDao().addFamilyMembers(familyMember);
+            rowId = db.familyMembersDao().addFamilyMembers(familyMember);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
@@ -163,7 +164,7 @@ public class SectionA2Activity extends AppCompatActivity {
         familyMember.setId(rowId);
         if (rowId > 0) {
             familyMember.setUid(familyMember.getDeviceId() + familyMember.getId());
-            NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(familyMember);
+            db.familyMembersDao().updateFamilyMembers(familyMember);
             //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());
             return true;
         } else {
@@ -181,7 +182,7 @@ public class SectionA2Activity extends AppCompatActivity {
             //updcount = db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_SD, familyMember.sDtoString());
             FamilyMembers updatedFamilyMember = familyMember;
             updatedFamilyMember.setSA2(familyMember.sA2toString());
-            updcount = NANMRoomDatabase.getDbInstance().familyMembersDao().updateFamilyMembers(updatedFamilyMember);
+            updcount = db.familyMembersDao().updateFamilyMembers(updatedFamilyMember);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

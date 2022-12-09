@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding bi;
     Spinner spinnerDistrict;
     String DirectoryName;
-    DatabaseHelper db;
+    NANMRoomDatabase db;
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
     String username = "";
@@ -352,7 +352,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
                         || (username.equals("test1234") && password.equals("test1234"))
-                        || NANMRoomDatabase.getDbInstance().usersDao().doLogin(username, password)
+                        || db.usersDao().doLogin(username, password)
                 ) {
 
                     MainApp.user.setUserName(username);
@@ -407,12 +407,12 @@ public class LoginActivity extends AppCompatActivity {
         Long rowId = null;
         try {
             //rowId = db.addEntryLog(entryLog);
-            rowId = NANMRoomDatabase.getDbInstance().entryLogDao().addEntryLog(entryLog);
+            rowId = db.entryLogDao().addEntryLog(entryLog);
             if (rowId != -1) {
                 entryLog.setId(rowId);
                 entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
                 //db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), String.valueOf(entryLog.getId()));
-                NANMRoomDatabase.getDbInstance().entryLogDao().updateEntryLog(entryLog);
+                db.entryLogDao().updateEntryLog(entryLog);
             } else {
                 Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 

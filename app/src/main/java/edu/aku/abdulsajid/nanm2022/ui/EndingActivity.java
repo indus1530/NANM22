@@ -20,7 +20,9 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityEndingBinding;
+import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
+import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 
@@ -28,7 +30,7 @@ public class EndingActivity extends AppCompatActivity {
 
     ActivityEndingBinding bi;
     int sectionMainCheck;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
 
     @Override
@@ -95,7 +97,7 @@ public class EndingActivity extends AppCompatActivity {
         Long rowId = null;
         try {
             //rowId = db.addEntryLog(entryLog);
-            rowId = NANMRoomDatabase.getDbInstance().entryLogDao().addEntryLog(entryLog);
+            rowId = db.entryLogDao().addEntryLog(entryLog);
         } catch (SQLiteException | JSONException e) {
             Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
         }
@@ -103,7 +105,7 @@ public class EndingActivity extends AppCompatActivity {
             entryLog.setId(rowId);
             entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
             //db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
-            NANMRoomDatabase.getDbInstance().entryLogDao().updateEntryLog(entryLog);
+            db.entryLogDao().updateEntryLog(entryLog);
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 
@@ -114,14 +116,21 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         if (MainApp.superuser) return true;
+        int updcount = 0;
         try {
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, form.sA1toString());
+            Forms forms = form;
+            forms.setSA1(form.sA1toString());
+            updcount = db.formsDao().updateForm(forms);
+            //updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC1, MainApp.adol.sC1toString());
         } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "JSONException(Forms): ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getIStatus());
-        return updcount > 0;
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 

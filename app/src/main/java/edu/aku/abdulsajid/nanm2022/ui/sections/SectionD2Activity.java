@@ -23,13 +23,15 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionD2Binding;
+import edu.aku.abdulsajid.nanm2022.models.Adolescent;
+import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 
 public class SectionD2Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionD2Activity";
     ActivitySectionD2Binding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,15 @@ public class SectionD2Activity extends AppCompatActivity {
         bi.sno.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA201());
         bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
+
+        if(adol.getUid() != null)
+        {
+            try {
+                adol.sD2Hydrate(adol.getSD2());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         bi.setForm(adol);
     }
 
@@ -50,7 +61,10 @@ public class SectionD2Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SD2, adol.sD2toString());
+            //updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SD2, adol.sD2toString());
+            Adolescent adol = MainApp.adol;
+            adol.setSD2(MainApp.adol.sD2toString());
+            updcount = db.adolescentDao().updateAdolescent(adol);
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

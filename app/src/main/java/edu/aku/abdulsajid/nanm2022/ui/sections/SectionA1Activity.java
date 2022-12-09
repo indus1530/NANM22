@@ -27,7 +27,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionAActivity";
     ActivitySectionA1Binding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,8 @@ public class SectionA1Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-//        form.setA103(MainApp.currentHousehold.getSno());
 
-
+        /* Here is the hydrate function to open in edit mode*/
         if(form.getUid() != null)
         {
             try {
@@ -58,7 +57,7 @@ public class SectionA1Activity extends AppCompatActivity {
         long rowId = 0;
         try {
             //rowId = db.addForm(MainApp.form);
-            rowId = NANMRoomDatabase.getDbInstance().formsDao().addForm(form);
+            rowId = db.formsDao().addForm(form);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
@@ -68,7 +67,7 @@ public class SectionA1Activity extends AppCompatActivity {
         if (rowId > 0) {
             MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
             //db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            NANMRoomDatabase.getDbInstance().formsDao().updateForm(form);
+            db.formsDao().updateForm(form);
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -84,7 +83,7 @@ public class SectionA1Activity extends AppCompatActivity {
             //updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
             Forms updateForms = form;
             updateForms.setSA1(form.sA1toString());
-            updcount = NANMRoomDatabase.getDbInstance().formsDao().updateForm(updateForms);
+            updcount = db.formsDao().updateForm(updateForms);
 
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();

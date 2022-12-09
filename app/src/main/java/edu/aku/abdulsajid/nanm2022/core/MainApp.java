@@ -88,7 +88,7 @@ public class MainApp extends Application {
     public static Forms form;
     public static Adolescent adol;
     public static FamilyMembers familyMember;
-    public static AdolList currentHousehold;
+    public static AdolList currentADOL;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
@@ -123,7 +123,7 @@ public class MainApp extends Application {
     public static String selectedUC = "";
     public static int selectedLanguage = 0;
     public static boolean langRTL = false;
-    public static int ageOfIndexChild;
+    public static int ageOfIndexAdol;
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
     public static Villages selectedVillages;
     public static CountDownTimer timer;
@@ -309,10 +309,10 @@ public class MainApp extends Application {
     private void initSecure() {
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
-//        File databaseFile = getDatabasePath(DATABASE_NAME);
+        File databaseFile = getDatabasePath(DATABASE_NAME);
        /* databaseFile.mkdirs();
         databaseFile.delete();*/
-//        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
+        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
         // Prepare encryption KEY
         ApplicationInfo ai = null;
         try {

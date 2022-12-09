@@ -32,7 +32,7 @@ import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 public class AdolSelectionActivity extends AppCompatActivity {
     private static final String TAG = "AdolSelectionActivity";
     ActivityAdolSelectBinding bi;
-    private DatabaseHelper db;
+    private NANMRoomDatabase db;
     private ArrayList<String> adolNames, adolCodes, adolAges, adolFmUID;
 
     @Override
@@ -105,7 +105,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
                 //  if (position == 0) return;
                 try {
                     //adol = db.getAdolByUUID(adolFmUID.get(bi.a202.getSelectedItemPosition()));
-                    adol = NANMRoomDatabase.getDbInstance().adolescentDao().getAdolByUUid(MainApp.form.getUid(), adolFmUID.get(bi.a202.getSelectedItemPosition()));
+                    adol = db.adolescentDao().getAdolByUUid(MainApp.form.getUid(), adolFmUID.get(bi.a202.getSelectedItemPosition()));
                     if (MainApp.adol.getUid().equals("")) {
                         MainApp.adol.setFmuid(adolFmUID.get(bi.a202.getSelectedItemPosition()));
                         MainApp.adol.setSno(adolCodes.get(bi.a202.getSelectedItemPosition()));
