@@ -265,8 +265,7 @@ public class MainApp extends Application {
             //System.exit(1);
         }
         //Initiate DateTime
-        //Initializ App info
-        appInfo = new AppInfo(this);
+
         sharedPref = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
         editor = sharedPref.edit();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -291,6 +290,8 @@ public class MainApp extends Application {
         );
 
         initSecure();
+        //Initializ App info
+        appInfo = new AppInfo(this);
 
         toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
 
