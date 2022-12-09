@@ -212,11 +212,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         MainApp.mwraList.add(Integer.parseInt(motherSno));
                     }
                 }
-
-
             }
-
-
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -236,6 +232,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
                 // break;
             }
+
+            // Set Adolescent
+            if (MainApp.familyList.get(i).getIndexed().equals("4"))
+                selectedAdol = familyList.get(i).getA201();
 
             /*// Set MWRA
             if (MainApp.familyList.get(i).getIndexed().equals("1")) {
@@ -359,19 +359,20 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 }*/
             }
             if (!selectedAdol.equals("")) {
-                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1);
-                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
-
-                // Updating adapter
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("3");
-            } else {
                 MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
                 selectedAdol = familyMember.getA201();
 
                 // Updating adapter
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
-            }
+            } /*else {
+                MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
+                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+                selectedAdol = familyMember.getA201();
+
+                // Updating adapter
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
+            }*/
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdol) - 1);
         } else Toast.makeText(this, "NO ADOLESCENT IN HH", Toast.LENGTH_SHORT).show();
 
