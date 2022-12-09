@@ -156,10 +156,9 @@ public class LoginActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
         setSupportActionBar(bi.toolbar);
 
-        db = MainApp.appInfo.getDbHelper();
-
 
         MainApp.appInfo = new AppInfo(this);
+        db = MainApp.appInfo.dbHelper;
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
