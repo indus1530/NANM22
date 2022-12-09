@@ -429,7 +429,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206yy(String a206yy) {
         this.a206yy = a206yy;
-        setA207(a206yy.length() > 0 && Integer.parseInt(a206yy) > 9 || Integer.parseInt(a206yy) < 16 ? this.a207 : "");
+        setA207(a206yy.length() > 0 && Integer.parseInt(a206yy) > 9 && Integer.parseInt(a206yy) < 15 ? this.a207 : "");
         notifyPropertyChanged(BR.a206yy);
     }
 

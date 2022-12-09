@@ -527,12 +527,6 @@
                                 android:onClick="@{()->form.setA304(`7`)}"
                                 android:text="@string/a304g" />
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/a304h_title" />
-
                             <RadioButton
                                 android:id="@+id/a304h"
                                 android:layout_width="match_parent"
@@ -540,6 +534,12 @@
                                 android:checked="@{form.a304.equals(`8`)}"
                                 android:onClick="@{()->form.setA304(`8`)}"
                                 android:text="@string/a304h" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/a304h_title" />
 
                             <RadioButton
                                 android:id="@+id/a304i"
@@ -921,12 +921,6 @@
                                 android:onClick="@{()->form.setA306(`7`)}"
                                 android:text="@string/a306g" />
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/a306h_title" />
-
                             <RadioButton
                                 android:id="@+id/a306h"
                                 android:layout_width="match_parent"
@@ -934,6 +928,12 @@
                                 android:checked="@{form.a306.equals(`8`)}"
                                 android:onClick="@{()->form.setA306(`8`)}"
                                 android:text="@string/a306h" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/a306i_title" />
 
                             <RadioButton
                                 android:id="@+id/a306i"
@@ -982,6 +982,14 @@
                                 android:checked="@{form.a306.equals(`14`)}"
                                 android:onClick="@{()->form.setA306(`14`)}"
                                 android:text="@string/a306n" />
+
+                            <RadioButton
+                                android:id="@+id/a306o"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a306.equals(`15`)}"
+                                android:onClick="@{()->form.setA306(`15`)}"
+                                android:text="@string/a306o" />
 
                             <RadioButton
                                 android:id="@+id/a306x"
