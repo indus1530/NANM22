@@ -41,6 +41,7 @@ public class SectionA2Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
         familyMember.setA201(String.valueOf(memberCount + 1));
 
         bi.setMember(familyMember);

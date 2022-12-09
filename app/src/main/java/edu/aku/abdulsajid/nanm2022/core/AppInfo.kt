@@ -1,10 +1,16 @@
 package edu.aku.abdulsajid.nanm2022.core
 
 import android.content.Context
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.os.Bundle
 import android.provider.Settings
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.Reflection.getPackageName
+import edu.aku.abdulsajid.nanm2022.core.MainApp.IBAHC
+import edu.aku.abdulsajid.nanm2022.core.MainApp.TRATS
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase
+import net.sqlcipher.database.SQLiteDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -46,9 +52,10 @@ class AppInfo {
                 Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
             appVersion = "$versionName.$versionCode"
             tagName = getTagName(context)
-            synchronized(this) {
-                dbHelper = NANMRoomDatabase.dbInstance!!
-            }
+            setupDatabase(context)
+            /*synchronized(this) {
+                 NANMRoomDatabase.dbInstance?.let{ dbHelper = it }
+            }*/
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }
@@ -81,4 +88,38 @@ class AppInfo {
             ).format(Date(getInfo().installedOn))
         } )"""
     }
+
+    private fun setupDatabase(context: Context) {
+        synchronized(this) {
+            dbHelper = if (NANMRoomDatabase.dbInstance != null)
+                NANMRoomDatabase.dbInstance!!
+            else {
+                initSecure(context)
+                NANMRoomDatabase.dbInstance!!
+            }
+        }
+    }
+
+    private fun initSecure(context: Context) = context.apply {
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+
+        try {
+            val ai: ApplicationInfo = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            val bundle: Bundle = ai.metaData;
+            val trats: Int = bundle.getInt("YEK_TRATS");
+            //IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            val ibahc: String? = bundle.getString("YEK_REVRES");
+
+            // Room DB
+            if (ibahc != null) {
+                NANMRoomDatabase.init(this, ibahc)
+            };
+
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
