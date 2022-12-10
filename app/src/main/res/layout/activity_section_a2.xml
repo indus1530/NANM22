@@ -526,6 +526,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/a206info" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -548,7 +554,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{()->a211.clearCheck() + a207.clearCheck()}"
+                                android:onTextChanged="@{()->a211.clearCheck() + a207.clearCheck() + a208.clearCheck() + a210.clearCheck()}"
                                 android:text="@={member.a206yy}"
                                 app:maxValue="95"
                                 app:minValue="0"
@@ -781,7 +787,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a211.equals(`1`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=10}"
                                 android:onClick="@{()->member.setA211(`1`)}"
                                 android:text="@string/a211a" />
 
@@ -800,7 +806,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a211.equals(`3`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=10}"
                                 android:onClick="@{()->member.setA211(`3`)}"
                                 android:text="@string/a211c" />
 
@@ -810,7 +816,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a211.equals(`4`)}"
-                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=14}"
+                                android:enabled="@{member.a206yy.length() > 0 &amp;&amp; Integer.parseInt(member.a206yy) >=10}"
                                 android:onClick="@{()->member.setA211(`4`)}"
                                 android:text="@string/a211d" />
 
@@ -823,7 +829,8 @@
                 <!-- a208  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa208"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{member.a206yy.length() &gt; 0 &amp;&amp; Integer.parseInt(member.a206yy) &gt; 2 ? View.VISIBLE : View.GONE }">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -880,7 +887,8 @@
                 <!-- a209  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{a208.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1104,7 +1112,8 @@
                 <!-- a210  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa210"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{member.a206yy.length() &gt; 0 &amp;&amp; Integer.parseInt(member.a206yy) &gt; 9 ? View.VISIBLE : View.GONE }">
 
                     <LinearLayout
                         android:layout_width="match_parent"

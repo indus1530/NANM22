@@ -2197,7 +2197,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a40998.equals(`98`)}"
-                                android:enabled="@{!form.a40998.equals(`98`)}"
                                 android:onClick="@{()->form.setA40998(form.a40998.equals(`98`)?``:`98`)}"
                                 android:text="@string/a40998" />
 
@@ -2206,6 +2205,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a40996.equals(`96`)}"
+                                android:enabled="@{!form.a40998.equals(`98`)}"
                                 android:onClick="@{()->form.setA40996(form.a40996.equals(`96`)?``:`96`)}"
                                 android:text="@string/a40996" />
 

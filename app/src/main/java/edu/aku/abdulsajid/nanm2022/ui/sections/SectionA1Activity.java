@@ -18,7 +18,6 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA1Binding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -26,7 +25,7 @@ import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 public class SectionA1Activity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionAActivity";
+    private static final String TAG = "SectionA1Activity";
     ActivitySectionA1Binding bi;
     private NANMRoomDatabase db;
 

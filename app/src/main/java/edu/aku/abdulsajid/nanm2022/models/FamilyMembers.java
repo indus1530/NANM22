@@ -430,6 +430,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA206yy(String a206yy) {
         this.a206yy = a206yy;
         setA207(a206yy.length() > 0 && Integer.parseInt(a206yy) > 9 && Integer.parseInt(a206yy) < 15 ? this.a207 : "");
+        setA208(a206yy.length() > 0 && Integer.parseInt(a206yy) > 2 ? this.a208 : "");
+        setA210(a206yy.length() > 0 && Integer.parseInt(a206yy) > 9 ? this.a210 : "");
         notifyPropertyChanged(BR.a206yy);
     }
 
@@ -500,6 +502,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA208(String a208) {
         this.a208 = a208;
+        setA209(a208.equals("1") ? this.a209 : "");
         notifyPropertyChanged(BR.a208);
     }
 

@@ -18,14 +18,13 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA3ABinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class SectionA3AActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionA3Activity";
+    private static final String TAG = "SectionA3AActivity";
     ActivitySectionA3ABinding bi;
     private NANMRoomDatabase db;
 
@@ -37,8 +36,7 @@ public class SectionA3AActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        if(form.getUid() != null)
-        {
+        if (form.getUid() != null) {
             try {
                 form.sA3AHydrate(form.getSA3A());
             } catch (JSONException e) {
