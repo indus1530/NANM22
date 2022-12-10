@@ -328,16 +328,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 // Updating adapter
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
-            } /*else {
-                MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
-                familyMember.setIndexed("4");
-                db.familyMembersDao().updateFamilyMembers(familyMember);
-                //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
-                selectedAdol = familyMember.getA201();
-
-                // Updating adapter
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
-            }*/
+            }
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdol) - 1);
         } else Toast.makeText(this, "NO ADOLESCENT IN HH", Toast.LENGTH_SHORT).show();
 
