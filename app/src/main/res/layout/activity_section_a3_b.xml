@@ -2499,6 +2499,12 @@
                             android:orientation="vertical"
                             android:tag="0">
 -->
+
+                        <RadioGroup
+                            android:id="@+id/a333"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
                             <RadioButton
                                 android:id="@+id/a333a"
                                 android:layout_width="match_parent"
@@ -2546,6 +2552,7 @@
                                 android:checked="@{form.a333.equals(`96`)}"
                                 android:onClick="@{()->form.setA333(`96`)}"
                                 android:text="@string/a333x" />
+                        </RadioGroup>
 
                             <EditText
                                 android:id="@+id/a333xx"
