@@ -2636,6 +2636,14 @@ public class Adolescent extends BaseObservable implements Observable {
     public void setC70508(String c70508) {
         if (this.c70508.equals(c70508)) return; // for all checkboxes
         this.c70508 = c70508;
+        setC70501(c70508.equals("8") ? "" : this.c70501);
+        setC70502(c70508.equals("8") ? "" : this.c70502);
+        setC70503(c70508.equals("8") ? "" : this.c70503);
+        setC70504(c70508.equals("8") ? "" : this.c70504);
+        setC70505(c70508.equals("8") ? "" : this.c70505);
+        setC70506(c70508.equals("8") ? "" : this.c70506);
+        setC70507(c70508.equals("8") ? "" : this.c70507);
+        setC70596(c70508.equals("8") ? "" : this.c70596);
         notifyPropertyChanged(BR.c70508);
     }
 

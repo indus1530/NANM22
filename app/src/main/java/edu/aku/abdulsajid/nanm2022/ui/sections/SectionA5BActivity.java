@@ -18,14 +18,13 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA5BBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class SectionA5BActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionA5Activity";
+    private static final String TAG = "SectionA5BActivity";
     ActivitySectionA5BBinding bi;
     private NANMRoomDatabase db;
 

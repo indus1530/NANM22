@@ -837,8 +837,6 @@ public class Forms extends BaseObservable implements Observable {
     @Ignore
     private String a52802x = _EMPTY_;
     @Ignore
-    private String a529 = _EMPTY_;
-    @Ignore
     private String a52901 = _EMPTY_;
     @Ignore
     private String a52902 = _EMPTY_;
@@ -854,6 +852,8 @@ public class Forms extends BaseObservable implements Observable {
     private String a52907 = _EMPTY_;
     @Ignore
     private String a52908 = _EMPTY_;
+    @Ignore
+    private String a52996 = _EMPTY_;
     @Ignore
     private String a52998 = _EMPTY_;
     @Ignore
@@ -5768,14 +5768,14 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA529() {
-        return a529;
+    public String getA52996() {
+        return a52996;
     }
 
-    public void setA529(String a529) {
-        this.a529 = a529;
-        setA52996x(a529.equals("96") ? this.a52996x : "");
-        notifyPropertyChanged(BR.a529);
+    public void setA52996(String a52996) {
+        this.a52996 = a52996;
+        setA52996x(a52996.equals("96") ? this.a52996x : "");
+        notifyPropertyChanged(BR.a52996);
     }
 
     @Bindable
@@ -5874,7 +5874,6 @@ public class Forms extends BaseObservable implements Observable {
     public void setA52998(String a52998) {
         if (this.a52998.equals(a52998)) return; // for all checkboxes
         this.a52998 = a52998;
-        setA529(a52998.equals("98") ? "" : this.a529);
         setA52901(a52998.equals("98") ? "" : this.a52901);
         setA52902(a52998.equals("98") ? "" : this.a52902);
         setA52903(a52998.equals("98") ? "" : this.a52903);
@@ -5883,6 +5882,7 @@ public class Forms extends BaseObservable implements Observable {
         setA52906(a52998.equals("98") ? "" : this.a52906);
         setA52907(a52998.equals("98") ? "" : this.a52907);
         setA52908(a52998.equals("98") ? "" : this.a52908);
+        setA52996(a52998.equals("98") ? "" : this.a52996);
         notifyPropertyChanged(BR.a52998);
     }
 
@@ -8684,7 +8684,6 @@ public class Forms extends BaseObservable implements Observable {
             this.a527 = json.getString("a527");
             this.a528 = json.getString("a528");
             this.a52802x = json.getString("a52802x");
-            this.a529 = json.getString("a529");
             this.a52901 = json.getString("a52901");
             this.a52902 = json.getString("a52902");
             this.a52903 = json.getString("a52903");
@@ -8694,6 +8693,7 @@ public class Forms extends BaseObservable implements Observable {
             this.a52907 = json.getString("a52907");
             this.a52908 = json.getString("a52908");
             this.a52998 = json.getString("a52998");
+            this.a52996 = json.getString("a52996");
             this.a52996x = json.getString("a52996x");
             this.a530 = json.getString("a530");
             this.a53001 = json.getString("a53001");
@@ -9847,7 +9847,6 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a527", a527)
                 .put("a528", a528)
                 .put("a52802x", a52802x)
-                .put("a529", a529)
                 .put("a52901", a52901)
                 .put("a52902", a52902)
                 .put("a52903", a52903)
@@ -9857,6 +9856,7 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a52907", a52907)
                 .put("a52908", a52908)
                 .put("a52998", a52998)
+                .put("a52996", a52996)
                 .put("a52996x", a52996x)
                 .put("a530", a530)
                 .put("a53001", a53001)

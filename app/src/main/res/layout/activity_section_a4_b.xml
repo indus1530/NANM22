@@ -117,6 +117,9 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="match_parent"
+                            android:background="#7fefd6d6"
+                            android:buttonTint="@color/redDark"
+                            android:textColor="@color/red"
                             android:checked="@{form.a41101.equals(`98`)}"
                             android:onClick="@{()->form.setA41101(`98`)}"
                             android:text="@string/a4110198" />
@@ -164,14 +167,17 @@
                             android:onClick="@{()->form.setA41102(`3`)}"
                             android:text="@string/a41102c" />
 
-                        <RadioButton
-                            android:id="@+id/a4110298"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:checked="@{form.a41102.equals(`98`)}"
-                            android:onClick="@{()->form.setA41102(`98`)}"
-                            android:text="@string/a4110298" />
+                            <RadioButton
+                                android:id="@+id/a4110298"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.a41102.equals(`98`)}"
+                                android:onClick="@{()->form.setA41102(`98`)}"
+                                android:text="@string/a4110298" />
 
                         </RadioGroup>
 
@@ -216,14 +222,17 @@
                             android:onClick="@{()->form.setA41103(`3`)}"
                             android:text="@string/a41103c" />
 
-                        <RadioButton
-                            android:id="@+id/a4110398"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:checked="@{form.a41103.equals(`98`)}"
-                            android:onClick="@{()->form.setA41103(`98`)}"
-                            android:text="@string/a4110398" />
+                            <RadioButton
+                                android:id="@+id/a4110398"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.a41103.equals(`98`)}"
+                                android:onClick="@{()->form.setA41103(`98`)}"
+                                android:text="@string/a4110398" />
 
                         </RadioGroup>
 
@@ -269,14 +278,17 @@
                             android:onClick="@{()->form.setA41104(`3`)}"
                             android:text="@string/a41104c" />
 
-                        <RadioButton
-                            android:id="@+id/a4110498"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:checked="@{form.a41104.equals(`98`)}"
-                            android:onClick="@{()->form.setA41104(`98`)}"
-                            android:text="@string/a4110498" />
+                            <RadioButton
+                                android:id="@+id/a4110498"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
+                                android:checked="@{form.a41104.equals(`98`)}"
+                                android:onClick="@{()->form.setA41104(`98`)}"
+                                android:text="@string/a4110498" />
 
                         </RadioGroup>
 
@@ -321,14 +333,17 @@
                             android:onClick="@{()->form.setA41105(`3`)}"
                             android:text="@string/a41105c" />
 
-                        <RadioButton
-                            android:id="@+id/a4110598"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:checked="@{form.a41105.equals(`98`)}"
-                            android:onClick="@{()->form.setA41105(`98`)}"
-                            android:text="@string/a4110598" />
+                            <RadioButton
+                                android:id="@+id/a4110598"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
+                                android:checked="@{form.a41105.equals(`98`)}"
+                                android:onClick="@{()->form.setA41105(`98`)}"
+                                android:text="@string/a4110598" />
 
                         </RadioGroup>
 
@@ -378,6 +393,9 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a41106.equals(`98`)}"
                                 android:onClick="@{()->form.setA41106(`98`)}"
                                 android:text="@string/a4110698" />
@@ -431,6 +449,9 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a41107.equals(`98`)}"
                                 android:onClick="@{()->form.setA41107(`98`)}"
                                 android:text="@string/a4110798" />
@@ -484,6 +505,9 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a41108.equals(`98`)}"
                                 android:onClick="@{()->form.setA41108(`98`)}"
                                 android:text="@string/a4110898" />
@@ -537,6 +561,9 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a41109.equals(`98`)}"
                                 android:onClick="@{()->form.setA41109(`98`)}"
                                 android:text="@string/a4110998" />
@@ -590,6 +617,9 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a41110.equals(`98`)}"
                                 android:onClick="@{()->form.setA41110(`98`)}"
                                 android:text="@string/a4111098" />
@@ -642,6 +672,9 @@
                                 android:id="@+id/a4111198"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.a41111.equals(`98`)}"
                                 android:onClick="@{()->form.setA41111(`98`)}"
@@ -779,6 +812,9 @@
                                 android:id="@+id/a412a98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412a.equals(`98`)}"
                                 android:onClick="@{()->form.setA412a(`98`)}"
                                 android:text="@string/a412a98" />
@@ -904,6 +940,9 @@
                                 android:id="@+id/a412b98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412b.equals(`98`)}"
                                 android:onClick="@{()->form.setA412b(`98`)}"
                                 android:text="@string/a412b98" />
@@ -1029,6 +1068,9 @@
                                 android:id="@+id/a412c98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412c.equals(`98`)}"
                                 android:onClick="@{()->form.setA412c(`98`)}"
                                 android:text="@string/a412c98" />
@@ -1154,6 +1196,9 @@
                                 android:id="@+id/a412d98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412d.equals(`98`)}"
                                 android:onClick="@{()->form.setA412d(`98`)}"
                                 android:text="@string/a412d98" />
@@ -1279,6 +1324,9 @@
                                 android:id="@+id/a412e98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412e.equals(`98`)}"
                                 android:onClick="@{()->form.setA412e(`98`)}"
                                 android:text="@string/a412e98" />
@@ -1404,6 +1452,9 @@
                                 android:id="@+id/a412f98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412f.equals(`98`)}"
                                 android:onClick="@{()->form.setA412f(`98`)}"
                                 android:text="@string/a412f98" />
@@ -1529,6 +1580,9 @@
                                 android:id="@+id/a412g98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="#7fefd6d6"
+                                android:buttonTint="@color/redDark"
+                                android:textColor="@color/red"
                                 android:checked="@{form.a412g.equals(`98`)}"
                                 android:onClick="@{()->form.setA412g(`98`)}"
                                 android:text="@string/a412g98" />

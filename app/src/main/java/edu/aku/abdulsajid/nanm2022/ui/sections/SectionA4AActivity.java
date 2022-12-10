@@ -18,14 +18,13 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA4ABinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 public class SectionA4AActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionA4Activity";
+    private static final String TAG = "SectionA4AActivity";
     ActivitySectionA4ABinding bi;
     private NANMRoomDatabase db;
 
@@ -33,12 +32,11 @@ public class SectionA4AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a4_a);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a4_a);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        if(form.getUid() != null)
-        {
+        if (form.getUid() != null) {
             try {
                 form.sA4AHydrate(form.getSA4A());
             } catch (JSONException e) {
