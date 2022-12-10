@@ -196,9 +196,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                     MainApp.allChildrenList.add(fm);
                 }
 
-                // Populate All Adolescent
-                if (fm.getA212().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 15)
-                    MainApp.allAdolList.add(fm);
+                // Populate All Adolescent between 10 to 15
+                /*if (fm.getA212().equals("1") && Integer.parseInt(fm.getA206yy()) > 9 && Integer.parseInt(fm.getA206yy()) < 15)
+                    MainApp.allAdolList.add(fm);*/
+                if (fm.getA212().equals("1") && fm.getA207().equals("1")) {
+                    allAdolList.add(fm);
+                }
 
 
                 // Populate mothers' list
@@ -232,31 +235,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
                 // break;
             }
-
-            /*// Set MWRA
-            if (MainApp.familyList.get(i).getIndexed().equals("1")) {
-                selectedMWRA = familyList.get(i).getA201();
-                bi.btnRand.setVisibility(View.INVISIBLE);
-                bi.btnContinue.setEnabled(true);
-                bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
-                // break;
-            }
-
-            // Set Child
-            if (MainApp.familyList.get(i).getIndexed().equals("2")) {
-                MainApp.selectedChild = familyList.get(i).getA201();
-                selectedChildName = MainApp.familyList.get(i).getA202();
-                MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getA206yy());
-            }
-
-            // Set Adol MWRA
-            if (MainApp.familyList.get(i).getIndexed().equals("3"))
-                selectedMWRA = familyList.get(i).getA201();
-
-            // Set Adolescent
-            if (MainApp.familyList.get(i).getIndexed().equals("4"))
-                MainApp.selectedAdol = familyList.get(i).getA201();*/
-
             MainApp.hhheadSelected = MainApp.familyList.get(i).getA203().equals("1");
         }
 
@@ -339,6 +317,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
          * */
         if (!allAdolList.isEmpty()) {
             bi.familyComplete.setEnabled(false);
+
+
             int youngestAdolDays = 0;
             for (FamilyMembers adol : allAdolList) {
                 int selectedAdolDays = Integer.parseInt(adol.getAgeInMonths());

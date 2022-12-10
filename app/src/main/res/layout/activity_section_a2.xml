@@ -888,7 +888,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
                     style="@style/cardView"
-                    android:visibility="@{a208.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{member.a208.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
