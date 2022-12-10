@@ -131,6 +131,7 @@
 
 
     <string name="ending">Ending Activity</string>
+    <string name="childEnding">Child Ending Activity</string>
     <string name="Q_istatus">istatus</string>
     <string name="istatus">گھرانے کے انٹرویوکا نتیجہ</string>
     <string name="istatusi">انٹرویومکمل نہ ہونے کی صورت میں ٹیم لیڈر سے مشورہ کریں</string>

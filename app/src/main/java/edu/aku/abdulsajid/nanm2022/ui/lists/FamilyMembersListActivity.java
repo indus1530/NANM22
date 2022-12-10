@@ -2,9 +2,9 @@ package edu.aku.abdulsajid.nanm2022.ui.lists;
 
 import static android.view.View.VISIBLE;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.allAdolList;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.allMWRAList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedChild;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
@@ -275,6 +275,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.lockScreen(this);
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
+        if (form.getUid() != null)
+            bi.familyComplete.setChecked(true);
+        bi.familyComplete.setEnabled(false);
+
         // Family Complete criteria: MWRA must exist
         if (allAdolList.size() > 0) bi.familyComplete.setVisibility(VISIBLE);
         else bi.familyComplete.setVisibility(View.GONE);
@@ -323,12 +327,21 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
             if (!selectedAdol.equals("")) {
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1);
-                familyMember.setIndexed("3");
+                familyMember.setIndexed("1");
                 db.familyMembersDao().updateFamilyMembers(familyMember);
 
                 // Updating adapter
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
-            }
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("1");
+            } /*else {
+                MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
+                familyMember.setIndexed("1");
+                db.familyMembersDao().updateFamilyMembers(familyMember);
+                //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
+                selectedAdol = familyMember.getA201();
+
+                // Updating adapter
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("1");
+            }*/
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdol) - 1);
         } else Toast.makeText(this, "NO ADOLESCENT IN HH", Toast.LENGTH_SHORT).show();
 
@@ -370,7 +383,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     public void finalizeFamily(View view) {
         if (bi.familyComplete.isChecked()) {
-            if (allMWRAList.size() > 0 && selectedMWRA.equals("")) {
+            if (allAdolList.size() > 0 && selectedAdol.equals("")) {
                 //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedMWRA))).setStatus("1");
                 bi.btnRand.setVisibility(VISIBLE);
                 // bi.btnContinue.setVisibility(View.INVISIBLE);

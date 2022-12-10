@@ -10,6 +10,7 @@
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/ic_user.xml" value="0.3880208333333333" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/drawable/splash_screen.xml" value="0.3880208333333333" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_adol_select.xml" value="0.31416666666666665" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_child_ending.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_consent.xml" value="0.31416666666666665" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_ending.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_family_list.xml" value="0.36083333333333334" />
@@ -28,7 +29,7 @@
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a4_c.xml" value="0.3591666666666667" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5.xml" value="0.36083333333333334" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5_a.xml" value="0.36083333333333334" />
-        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5_b.xml" value="0.36083333333333334" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_a5_b.xml" value="0.3275" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_b1.xml" value="0.36083333333333334" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_b3.xml" value="0.36083333333333334" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c1.xml" value="0.36083333333333334" />
@@ -39,7 +40,7 @@
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c6.xml" value="0.3072289156626506" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_c7.xml" value="0.3591666666666667" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d.xml" value="0.2895377128953771" />
-        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d1.xml" value="0.2735632183908046" />
+        <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d1.xml" value="0.3275" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_d2.xml" value="0.36083333333333334" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/activity_section_e1a.xml" value="0.31416666666666665" />
         <entry key="..\:/Android Office Work/NANM22/app/src/main/res/layout/content_section_d2.xml" value="0.20885416666666667" />
@@ -240,8 +241,6 @@
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/smkHhMl2022/app/src/main/res/layout/activity_section_m.xml" value="0.1638888888888889" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/smkHhMl2022/app/src/main/res/layout/activity_section_n.xml" value="0.1" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/smkHhMl2022/app/src/main/res/layout/activity_section_o.xml" value="0.1" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/NANM22/app/src/main/res/layout/activity_section_a5_a.xml" value="0.19791666666666666" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/NANM22/app/src/main/res/layout/activity_section_a5_b.xml" value="0.16" />
         <entry key="..\:/Users/ibrahim.mushtaque/AndroidStudioProjects/TPVICS_R2/app/src/main/res/layout/activity_consent.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/ibrahim.mushtaque/AndroidStudioProjects/TPVICS_R2/app/src/main/res/layout/activity_household_screen.xml" value="0.2859375" />
         <entry key="..\:/Users/ibrahim.mushtaque/AndroidStudioProjects/TPVICS_R2/app/src/main/res/layout/activity_identification.xml" value="0.36666666666666664" />

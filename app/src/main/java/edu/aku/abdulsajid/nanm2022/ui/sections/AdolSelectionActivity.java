@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityAdolSelectBinding;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -72,28 +71,8 @@ public class AdolSelectionActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdolSelectionActivity.this,
                 R.layout.custom_spinner, adolNames);
-
         bi.a202.setAdapter(adapter);
- /*       bi.es1resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ladol.setEs1respline(adolCodes.get(bi.es1resp.getSelectedItemPosition()));
-                ladol.setFmuid(adolFmUID.get(bi.es1resp.getSelectedItemPosition()));
-                bi.age.setText(adolAges.get(bi.es1resp.getSelectedItemPosition()));
-                if (position == 0) return;
-                if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
-                    bi.fldGrpCVes1cons.setVisibility(View.GONE);
-                    ladol.setEs1cons("99");
-                } else {
-                    bi.fldGrpCVes1cons.setVisibility(View.VISIBLE);
-                }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });*/
         bi.a202.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -108,7 +87,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
                     adol = db.adolescentDao().getAdolByUUid(MainApp.form.getUid(), adolFmUID.get(bi.a202.getSelectedItemPosition()));
                     if (MainApp.adol.getUid().equals("")) {
                         MainApp.adol.setFmuid(adolFmUID.get(bi.a202.getSelectedItemPosition()));
-                        MainApp.adol.setSno(adolCodes.get(bi.a202.getSelectedItemPosition()));
+                        MainApp.adol.setChildSno(adolCodes.get(bi.a202.getSelectedItemPosition()));
                         /*MainApp.adol.setEs1respline(adolCodes.get(bi.a202.getSelectedItemPosition()));
                         MainApp.adol.setEs1resp(adolNames.get(bi.a202.getSelectedItemPosition()));*/
                     }
@@ -118,14 +97,6 @@ public class AdolSelectionActivity extends AppCompatActivity {
                     e.printStackTrace();
                     Toast.makeText(AdolSelectionActivity.this, "JSONException(Adolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
-
-/*                if (Integer.parseInt(adolAges.get(bi.es1resp.getSelectedItemPosition())) >= 18) {
-                    bi.fldGrpCVes1cons.setVisibility(View.GONE);
-                    ladol.setEs1cons("99");
-                } else {
-                    bi.fldGrpCVes1cons.setVisibility(View.VISIBLE);
-                }*/
             }
 
             @Override
@@ -133,7 +104,6 @@ public class AdolSelectionActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private boolean insertNewRecord() {

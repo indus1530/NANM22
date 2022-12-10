@@ -1,7 +1,8 @@
 package edu.aku.abdulsajid.nanm2022.ui;
 
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,15 +18,15 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.databinding.ActivityEndingBinding;
+import edu.aku.abdulsajid.nanm2022.databinding.ActivityChildEndingBinding;
+import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
-import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 
 
-public class EndingActivity extends AppCompatActivity {
+public class ChildEndingActivity extends AppCompatActivity {
 
-    ActivityEndingBinding bi;
+    ActivityChildEndingBinding bi;
     int sectionMainCheck;
     private NANMRoomDatabase db;
 
@@ -34,8 +35,8 @@ public class EndingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
-        bi.setForm(form);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_child_ending);
+        bi.setForm(adol);
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("End Review");
         db = MainApp.appInfo.dbHelper;
@@ -45,26 +46,15 @@ public class EndingActivity extends AppCompatActivity {
         bi.istatusa.setEnabled(check);
         bi.istatusb.setEnabled(!check);
         bi.istatusc.setEnabled(!check);
-        bi.istatusd.setEnabled(!check);
-        bi.istatuse.setEnabled(!check);
-        bi.istatusf.setEnabled(!check);
-        bi.istatusg.setEnabled(!check);
-        bi.istatus96.setEnabled(!check);
 
 
     }
 
     private void saveDraft() {
-        form.setIStatus(bi.istatusa.isChecked() ? "1"
+        adol.setIStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
                 : bi.istatusc.isChecked() ? "3"
-                : bi.istatusd.isChecked() ? "4"
-                : bi.istatuse.isChecked() ? "5"
-                : bi.istatusf.isChecked() ? "6"
-                : bi.istatusg.isChecked() ? "7"
-                : bi.istatus96.isChecked() ? "96"
                 : "-1");
-        form.setIStatus96x(bi.istatus96x.getText().toString());
         // form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }
 
@@ -77,9 +67,8 @@ public class EndingActivity extends AppCompatActivity {
             recordEntry();
             finish();
             setResult(RESULT_OK);
-           /* Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, EndingActivity.class).putExtra("complete", true);
             startActivity(i);
-           */
             Toast.makeText(this, "Data has been updated.", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -116,9 +105,9 @@ public class EndingActivity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         int updcount = 0;
         try {
-            Forms forms = form;
-            forms.setSA1(form.sA1toString());
-            updcount = db.formsDao().updateForm(forms);
+            Adolescent adolescent = adol;
+            adolescent.setSD2(adol.sD2toString());
+            updcount = db.adolescentDao().updateAdolescent(adolescent);
             //updcount = db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_SC1, MainApp.adol.sC1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();

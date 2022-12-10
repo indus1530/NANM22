@@ -634,6 +634,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52001.equals(`1`)}"
+                                    android:enabled="@{!form.a52098.equals(`98`)}"
                                     android:onClick="@{()->form.setA52001(form.a52001.equals(`1`)?``:`1`)}"
                                     android:text="@string/a52001" />
 
@@ -667,6 +668,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52002.equals(`2`)}"
+                                    android:enabled="@{!form.a52098.equals(`98`)}"
                                     android:onClick="@{()->form.setA52002(form.a52002.equals(`2`)?``:`2`)}"
                                     android:text="@string/a52002" />
 
@@ -700,6 +702,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52003.equals(`3`)}"
+                                    android:enabled="@{!form.a52098.equals(`98`)}"
                                     android:onClick="@{()->form.setA52003(form.a52003.equals(`3`)?``:`3`)}"
                                     android:text="@string/a52003" />
 
@@ -733,6 +736,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52004.equals(`4`)}"
+                                    android:enabled="@{!form.a52098.equals(`98`)}"
                                     android:onClick="@{()->form.setA52004(form.a52004.equals(`4`)?``:`4`)}"
                                     android:text="@string/a52004" />
 
@@ -766,6 +770,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52005.equals(`5`)}"
+                                    android:enabled="@{!form.a52098.equals(`98`)}"
                                     android:onClick="@{()->form.setA52005(form.a52005.equals(`5`)?``:`5`)}"
                                     android:text="@string/a52005" />
 

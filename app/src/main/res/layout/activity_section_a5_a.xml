@@ -335,6 +335,7 @@
                                 android:background="#7fefd6d6"
                                 android:buttonTint="@color/redDark"
                                 android:textColor="@color/red"
+                                android:tag="-1"
                                 android:checked="@{form.a50305.equals(`1`)}"
                                 android:onClick="@{()->form.setA50305(form.a50305.equals(`1`)?``:`1`)}"
                                 android:text="@string/a50305" />
@@ -497,6 +498,7 @@
                                 android:background="#7fefd6d6"
                                 android:buttonTint="@color/redDark"
                                 android:textColor="@color/red"
+                                android:tag="-1"
                                 android:checked="@{form.a50497.equals(`1`)}"
                                 android:onClick="@{()->form.setA50497(form.a50497.equals(`1`)?``:`1`)}"
                                 android:text="@string/a50497" />
@@ -664,6 +666,7 @@
                                 android:background="#7fefd6d6"
                                 android:buttonTint="@color/redDark"
                                 android:textColor="@color/red"
+                                android:tag="-1"
                                 android:checked="@{form.a50597.equals(`1`)}"
                                 android:onClick="@{()->form.setA50597(form.a50597.equals(`1`)?``:`1`)}"
                                 android:text="@string/a50597" />

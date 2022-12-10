@@ -19,13 +19,11 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionD1Binding;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
-import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
+import edu.aku.abdulsajid.nanm2022.ui.ChildEndingActivity;
 
 public class SectionD1Activity extends AppCompatActivity {
 
@@ -43,6 +41,7 @@ public class SectionD1Activity extends AppCompatActivity {
         bi.sno.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA201());
         bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
+        bi.d105.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
 
         if(adol.getUid() != null)
         {
@@ -91,7 +90,7 @@ public class SectionD1Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, ChildEndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {

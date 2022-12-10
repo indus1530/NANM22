@@ -54,8 +54,8 @@ public class Forms extends BaseObservable implements Observable {
     private String villageCode = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_CHILD_ID)
     private String childID = _EMPTY_;
-    @ColumnInfo(name = FormsTable.COLUMN_SNO)
-    private String sno = _EMPTY_;
+    @ColumnInfo(name = FormsTable.COLUMN_CHILD_SNO)
+    private String childSno = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
     @ColumnInfo(name = FormsTable.COLUMN_DEVICETAGID)
@@ -1319,7 +1319,7 @@ public class Forms extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setVillageCode(MainApp.currentADOL.getVillage_code());
         setChildID(MainApp.currentADOL.getChild_id());
-        setSno(MainApp.currentADOL.getSrno());
+        setChildSno(MainApp.currentADOL.getSrno());
 
         //SECTION VARIABLES
         setA109(MainApp.currentADOL.getVillage_code());
@@ -1384,13 +1384,13 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getSno() {
-        return sno;
+    public String getChildSno() {
+        return childSno;
     }
 
-    public void setSno(String sno) {
-        this.sno = sno;
-        notifyPropertyChanged(BR.sno);
+    public void setChildSno(String childSno) {
+        this.childSno = childSno;
+        notifyPropertyChanged(BR.childSno);
     }
 
     public String getUserName() {
@@ -8213,7 +8213,7 @@ public class Forms extends BaseObservable implements Observable {
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
         this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE));
         this.childID = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
+        this.childSno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
@@ -8932,7 +8932,7 @@ public class Forms extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(FormsTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(FormsTable.COLUMN_CHILD_ID, this.childID);
-        json.put(FormsTable.COLUMN_SNO, this.sno);
+        json.put(FormsTable.COLUMN_CHILD_SNO, this.childSno);
         json.put(FormsTable.COLUMN_USERNAME, this.userName);
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);

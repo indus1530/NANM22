@@ -4,7 +4,6 @@ import androidx.room.*
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable
 import edu.aku.abdulsajid.nanm2022.models.Forms
 import org.json.JSONException
-import kotlin.jvm.Throws
 
 //
 // Created by gul.sanober on 11/30/2022.
@@ -23,7 +22,7 @@ interface FormsDao {
 
     @Query("SELECT * FROM " + FormsTable.TABLE_NAME +
             " WHERE " + FormsTable.COLUMN_VILLAGE_CODE + " LIKE :villageCode AND "
-            + FormsTable.COLUMN_SNO + " LIKE :childID  ORDER BY "
+            + FormsTable.COLUMN_CHILD_SNO + " LIKE :childID  ORDER BY "
             + FormsTable.COLUMN_SYSDATE + " ASC")
     fun getFormByChildID_internal(childID: String, villageCode: String): Forms?
 

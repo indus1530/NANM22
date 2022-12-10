@@ -30,8 +30,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 @Entity(tableName = FamilyMembersTable.TABLE_NAME)
 public class FamilyMembers extends BaseObservable implements Observable {
 
-    @Ignore
-    private final String TAG = "FamilyMembers";
+    private String TAG = "FamilyMembers";
     @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
@@ -43,34 +42,52 @@ public class FamilyMembers extends BaseObservable implements Observable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = FamilyMembersTable.COLUMN_ID)
     private long id = 0;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_UID)
     private String uid = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
-    @ColumnInfo(name = FamilyMembersTable.COLUMN_CLUSTER_CODE)
-    private String clusterCode = _EMPTY_;
-    @ColumnInfo(name = FamilyMembersTable.COLUMN_HHID)
-    private String hhid = _EMPTY_;
+
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_VILLAGE_CODE)
+    private String villageCode = _EMPTY_;
+
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_CHILDID)
+    private String childID = _EMPTY_;
+
+    @ColumnInfo(name = FamilyMembersTable.COLUMN_CHILD_SNO)
+    private String childSno = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_SNO)
     private String sno = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_DEVICETAGID)
     private String deviceTag = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_APPVERSION)
     private String appver = _EMPTY_;
+
     @Ignore
     private String endTime = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+
     @Ignore
     private String iStatus96x = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+
     @ColumnInfo(name = FamilyMembersTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
@@ -145,11 +162,21 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-        setClusterCode(MainApp.form.getVillageCode());
-        setHhid(MainApp.form.getChildID());
+        setVillageCode(MainApp.form.getVillageCode());
+        setChildID(MainApp.form.getChildID());
+        setChildSno(MainApp.form.getChildSno());
         setSno(getA201());
         CaluculateAge();
 
+    }
+
+    @Bindable
+    public String getTAG() {
+        return TAG;
+    }
+
+    public void setTAG(String tag) {
+        this.TAG = tag;
     }
 
 
@@ -211,21 +238,31 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getClusterCode() {
-        return clusterCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setClusterCode(String clusterCode) {
-        this.clusterCode = clusterCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
     @Bindable
-    public String getHhid() {
-        return hhid;
+    public String getChildID() {
+        return childID;
     }
 
-    public void setHhid(String hhid) {
-        this.hhid = hhid;
+    public void setChildID(String childID) {
+        this.childID = childID;
+    }
+
+    @Bindable
+    public String getChildSno() {
+        return childSno;
+    }
+
+    public void setChildSno(String childSno) {
+        this.childSno = childSno;
+        notifyPropertyChanged(BR.childSno);
     }
 
     @Bindable
@@ -573,8 +610,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PROJECT_NAME));
-        this.clusterCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_CLUSTER_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_HHID));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_VILLAGE_CODE));
+        this.childID = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_CHILDID));
+        this.childSno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_CHILD_SNO));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SNO));
         this.ageInMonths = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_AGE_MONTHS));
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_MUID));
@@ -630,8 +668,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_UID, this.uid);
         json.put(FamilyMembersTable.COLUMN_UUID, this.uuid);
         json.put(FamilyMembersTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FamilyMembersTable.COLUMN_CLUSTER_CODE, this.clusterCode);
-        json.put(FamilyMembersTable.COLUMN_HHID, this.hhid);
+        json.put(FamilyMembersTable.COLUMN_VILLAGE_CODE, this.villageCode);
+        json.put(FamilyMembersTable.COLUMN_CHILDID, this.childID);
+        json.put(FamilyMembersTable.COLUMN_CHILD_SNO, this.childSno);
         json.put(FamilyMembersTable.COLUMN_INDEXED, this.indexed);
         json.put(FamilyMembersTable.COLUMN_SNO, this.sno);
         json.put(FamilyMembersTable.COLUMN_AGE_MONTHS, this.ageInMonths);

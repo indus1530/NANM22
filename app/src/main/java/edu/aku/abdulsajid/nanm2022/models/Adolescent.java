@@ -27,8 +27,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 @Entity(tableName = AdolescentTable.TABLE_NAME)
 public class Adolescent extends BaseObservable implements Observable {
 
-    @Ignore
-    private final String TAG = "Adolescent";
+    private String TAG = "Adolescent";
     @Ignore
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
@@ -58,6 +57,8 @@ public class Adolescent extends BaseObservable implements Observable {
     private String villageCode = _EMPTY_;
     @ColumnInfo(name = AdolescentTable.COLUMN_CHILD_ID)
     private String childID = _EMPTY_;
+    @ColumnInfo(name = AdolescentTable.COLUMN_CHILD_SNO)
+    private String childSno = _EMPTY_;
     @ColumnInfo(name = AdolescentTable.COLUMN_SNO)
     private String sno = _EMPTY_;
     @ColumnInfo(name = AdolescentTable.COLUMN_DEVICEID)
@@ -576,7 +577,10 @@ public class Adolescent extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setVillageCode(MainApp.currentADOL.getVillage_code());
         setChildID(MainApp.currentADOL.getChild_id());
+        setChildSno(MainApp.currentADOL.getSrno());
         setSno(selectedAdol);
+        setD201(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
+        setD105(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         setFmuid(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getUid()); //// not applicable in Form table
         setIndexed(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
         setName(MainApp.familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
@@ -584,8 +588,13 @@ public class Adolescent extends BaseObservable implements Observable {
 
     }
 
+    @Bindable
     public String getTAG() {
         return TAG;
+    }
+
+    public void setTAG(String tag) {
+        this.TAG = tag;
     }
 
     public PropertyChangeRegistry getPropertyChangeRegistry() {
@@ -671,6 +680,14 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setChildID(String childID) {
         this.childID = childID;
+    }
+
+    public String getChildSno() {
+        return childSno;
+    }
+
+    public void setChildSno(String childSno) {
+        this.childSno = childSno;
     }
 
     public String getSno() {
@@ -1017,7 +1034,7 @@ public class Adolescent extends BaseObservable implements Observable {
         setC202g(c201.equals("2") ? this.c202g : "");
         setC20296(c201.equals("2") ? this.c20296 : "");
 
-        setC203(c201.equals("1") ? this.c201 : "");
+        setC203(c201.equals("1") ? this.c203 : "");
         setC204(c201.equals("1") ? this.c204 : "");
         setC205a(c201.equals("1") ? this.c205a : "");
         setC20598(c201.equals("1") ? this.c20598 : "");
@@ -3346,6 +3363,7 @@ public class Adolescent extends BaseObservable implements Observable {
         this.name = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_NAME));
         this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_VILLAGE_CODE));
         this.childID = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_CHILD_ID));
+        this.childSno = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_CHILD_SNO));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(AdolescentTable.COLUMN_USERNAME));
@@ -3927,6 +3945,7 @@ public class Adolescent extends BaseObservable implements Observable {
         json.put(AdolescentTable.COLUMN_UID, this.uid);
         json.put(AdolescentTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(AdolescentTable.COLUMN_CHILD_ID, this.childID);
+        json.put(AdolescentTable.COLUMN_CHILD_SNO, this.childSno);
         json.put(AdolescentTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(AdolescentTable.COLUMN_UUID, this.uuid);
         json.put(AdolescentTable.COLUMN_FMUID, this.fmuid);

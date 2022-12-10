@@ -108,6 +108,7 @@
 
 
     <string name="ending">Ending Activity</string>
+    <string name="childEnding">Child Ending Activity</string>
     <string name="Q_istatus">istatus</string>
     <string name="istatus"> Result of Household Questionnaire interview </string>
     <string name="istatusi"> Discuss any result not completed with team leader </string>

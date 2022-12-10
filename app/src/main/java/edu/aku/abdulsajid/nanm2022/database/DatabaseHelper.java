@@ -104,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsTable.COLUMN_VILLAGE_CODE, form.getVillageCode());
         values.put(FormsTable.COLUMN_CHILD_ID, form.getChildID());
-        values.put(FormsTable.COLUMN_SNO, form.getSno());
+        values.put(FormsTable.COLUMN_CHILD_SNO, form.getChildSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
@@ -140,8 +140,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
         values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
         values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMembersTable.COLUMN_CLUSTER_CODE, members.getClusterCode());
-        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
+        values.put(FamilyMembersTable.COLUMN_VILLAGE_CODE, members.getVillageCode());
+        values.put(FamilyMembersTable.COLUMN_CHILDID, members.getChildID());
+        values.put(FamilyMembersTable.COLUMN_CHILD_SNO, members.getSno());
         values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
         values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
         values.put(FamilyMembersTable.COLUMN_MOTHER_PRESENT, members.getMotherPresent());
@@ -171,6 +172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AdolescentTable.COLUMN_UUID, adol.getUuid());
         values.put(AdolescentTable.COLUMN_FMUID, adol.getFmuid());
         values.put(AdolescentTable.COLUMN_MUID, adol.getMuid());
+        values.put(AdolescentTable.COLUMN_CHILD_SNO, adol.getChildSno());
         values.put(AdolescentTable.COLUMN_SNO, adol.getSno());
         values.put(AdolescentTable.COLUMN_VILLAGE_CODE, adol.getpsuCode());
         values.put(AdolescentTable.COLUMN_CHILD_ID, adol.getChildID());
@@ -868,7 +870,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
             fc.setChildID(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID)));
-            fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
+            fc.setChildSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_SNO)));
             fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
@@ -957,7 +959,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
             fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
             fc.setChildID(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_ID)));
-            fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
+            fc.setChildSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CHILD_SNO)));
             fc.setIStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
@@ -1402,7 +1404,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Boolean distinct = false;
         String tableName = FormsTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_SNO + " = ? AND " +
+        String whereClause = FormsTable.COLUMN_CHILD_SNO + " = ? AND " +
                 FormsTable.COLUMN_VILLAGE_CODE + " = ? ";
         String[] whereArgs = {adolSNO, villageCode};
         String groupBy = null;

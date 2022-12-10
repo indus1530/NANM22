@@ -2,7 +2,6 @@ package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
 
@@ -20,13 +19,11 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionC1Binding;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
-import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
+import edu.aku.abdulsajid.nanm2022.ui.ChildEndingActivity;
 
 public class SectionC1Activity extends AppCompatActivity {
 
@@ -117,7 +114,7 @@ public class SectionC1Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, ChildEndingActivity.class).putExtra("complete", false));
     }
 
 
