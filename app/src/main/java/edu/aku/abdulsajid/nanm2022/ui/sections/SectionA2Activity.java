@@ -44,6 +44,9 @@ public class SectionA2Activity extends AppCompatActivity {
 
         familyMember.setA201(String.valueOf(memberCount + 1));
 
+        if (MainApp.allAdolList.size() > 0)
+            bi.a207a.setEnabled(false);
+
         bi.setMember(familyMember);
         populateSpinner();
         setupListener();

@@ -31,7 +31,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.adapters.FamilyMembersAdapter;
@@ -318,31 +317,18 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         if (!allAdolList.isEmpty()) {
             bi.familyComplete.setEnabled(false);
 
-
-            int youngestAdolDays = 0;
             for (FamilyMembers adol : allAdolList) {
-                int selectedAdolDays = Integer.parseInt(adol.getAgeInMonths());
-                if (youngestAdolDays == 0) {
-                    youngestAdolDays = selectedAdolDays;
+                if (allAdolList.size() > 0)
                     selectedAdol = adol.getA201();
-                } else if (youngestAdolDays > selectedAdolDays) {
-                    youngestAdolDays = selectedAdolDays;
-                    selectedAdol = adol.getA201();
-                }
-                /*if (adol.getA201().equals(selectedAdol)) {
-                    selectedAdol = adol.getA201();
-                    break;
-                }*/
             }
             if (!selectedAdol.equals("")) {
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1);
                 familyMember.setIndexed("3");
                 db.familyMembersDao().updateFamilyMembers(familyMember);
-                //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
                 // Updating adapter
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("3");
-            } else {
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
+            } /*else {
                 MainApp.familyMember = allAdolList.get(new Random().nextInt(allAdolList.size()));
                 familyMember.setIndexed("4");
                 db.familyMembersDao().updateFamilyMembers(familyMember);
@@ -351,7 +337,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 // Updating adapter
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdol) - 1).setIndexed("4");
-            }
+            }*/
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdol) - 1);
         } else Toast.makeText(this, "NO ADOLESCENT IN HH", Toast.LENGTH_SHORT).show();
 
