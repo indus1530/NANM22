@@ -62,7 +62,7 @@ public class SectionC1Activity extends AppCompatActivity {
         long rowId = 0;
         try {
             //rowId = db.addAdolescent(MainApp.adol);
-            db.adolescentDao().addAdolescent(adol);
+            rowId = db.adolescentDao().addAdolescent(adol);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
