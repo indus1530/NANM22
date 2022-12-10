@@ -36,6 +36,7 @@ public class SectionA3AActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_a);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
         if(form.getUid() != null)
         {
             try {
@@ -102,6 +103,6 @@ public class SectionA3AActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
-        setContentView(R.layout.activity_section_a3_a);
+        //setContentView(R.layout.activity_section_a3_a);
     }
 }

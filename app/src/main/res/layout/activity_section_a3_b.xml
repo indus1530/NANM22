@@ -2493,13 +2493,13 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <!--<LinearLayout
                             android:id="@+id/a333check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:tag="0">
-
+-->
                             <RadioButton
                                 android:id="@+id/a333a"
                                 android:layout_width="match_parent"
@@ -2557,7 +2557,7 @@
                                 android:tag="a333x"
                                 android:text="@={form.a333xx}"
                                 android:visibility="@{form.a333.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                       <!-- </LinearLayout>-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -2591,12 +2591,12 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <!--<LinearLayout
                             android:id="@+id/a334check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0">-->
 
                             <RadioButton
                                 android:id="@+id/a334a"
@@ -2639,7 +2639,7 @@
                                 android:tag="a334x"
                                 android:text="@={form.a334xx}"
                                 android:visibility="@{form.a334.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

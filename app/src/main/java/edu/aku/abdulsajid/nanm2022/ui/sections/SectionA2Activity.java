@@ -145,7 +145,7 @@ public class SectionA2Activity extends AppCompatActivity {
     }
 
 
-    private boolean insertNewRecord() {
+    private boolean insertNewRecord() throws JSONException {
         if (!familyMember.getUid().equals("")) return true;
         if (MainApp.superuser) return true;
 
@@ -164,7 +164,9 @@ public class SectionA2Activity extends AppCompatActivity {
         familyMember.setId(rowId);
         if (rowId > 0) {
             familyMember.setUid(familyMember.getDeviceId() + familyMember.getId());
+            familyMember.setSA2(familyMember.sA2toString());
             db.familyMembersDao().updateFamilyMembers(familyMember);
+
             //db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_UID, familyMember.getUid());
             return true;
         } else {
@@ -195,7 +197,7 @@ public class SectionA2Activity extends AppCompatActivity {
     }
 
 
-    public void btnContinue(View view) {
+    public void btnContinue(View view) throws JSONException {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;

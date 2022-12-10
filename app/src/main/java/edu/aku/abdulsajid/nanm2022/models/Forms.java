@@ -10085,4 +10085,8 @@ public class Forms extends BaseObservable implements Observable {
         return json.toString();
     }
 
+    public PropertyChangeRegistry getPropertyChangeRegistry() {
+        return propertyChangeRegistry;
+    }
+
 }

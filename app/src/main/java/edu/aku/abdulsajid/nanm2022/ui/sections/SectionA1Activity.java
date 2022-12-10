@@ -1,5 +1,6 @@
 package edu.aku.abdulsajid.nanm2022.ui.sections;
 
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 
 import android.content.Intent;
@@ -51,7 +52,7 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
 
-    private boolean insertNewRecord() {
+    private boolean insertNewRecord() throws JSONException {
         if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
         MainApp.form.populateMeta();
         long rowId = 0;
@@ -67,6 +68,7 @@ public class SectionA1Activity extends AppCompatActivity {
         if (rowId > 0) {
             MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
             //db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            form.setSA1(form.sA1toString());
             db.formsDao().updateForm(form);
             return true;
         } else {
@@ -96,7 +98,7 @@ public class SectionA1Activity extends AppCompatActivity {
         }
     }
 
-    public void btnContinue(View view) {
+    public void btnContinue(View view) throws JSONException {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;

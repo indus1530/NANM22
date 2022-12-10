@@ -103,6 +103,6 @@ public class SectionA3BActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
-        setContentView(R.layout.activity_section_a3_b);
+        //setContentView(R.layout.activity_section_a3_b);
     }
 }

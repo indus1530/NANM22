@@ -2489,11 +2489,11 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
+                        <!--<RadioGroup
                             android:id="@+id/a529"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
-
+-->
                             <CheckBox
                                 android:id="@+id/a52901"
                                 android:layout_width="match_parent"
@@ -2592,7 +2592,7 @@
                                 android:tag="a52996"
                                 android:text="@={form.a52996x}"
                                 android:visibility="@{form.a529.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </RadioGroup>
+                        <!--</RadioGroup>-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
