@@ -877,7 +877,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{member.a208.equals(`2`)}"
-                                android:onClick="@{()->member.setA208(`2`)}"
+                                android:onClick="@{()->member.setA208(`2`) + a209.clearCheck()}"
                                 android:text="@string/a208b" />
                         </RadioGroup>
                     </LinearLayout>
