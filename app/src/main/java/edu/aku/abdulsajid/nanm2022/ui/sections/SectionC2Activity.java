@@ -33,6 +33,8 @@ public class SectionC2Activity extends AppCompatActivity {
     ActivitySectionC2Binding bi;
     private NANMRoomDatabase db;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

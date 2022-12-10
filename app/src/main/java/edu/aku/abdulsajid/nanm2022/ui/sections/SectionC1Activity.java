@@ -72,7 +72,7 @@ public class SectionC1Activity extends AppCompatActivity {
         if (rowId > 0) {
             MainApp.adol.setUid(MainApp.adol.getDeviceId() + MainApp.adol.getId());
             //db.updatesAdolColumn(TableContracts.AdolescentTable.COLUMN_UID, MainApp.adol.getUid());
-            adol.setC101(adol.sC1toString());
+            adol.setSC1(adol.sC1toString());
             db.adolescentDao().updateAdolescent(adol);
             return true;
         } else {
