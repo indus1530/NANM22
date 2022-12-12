@@ -8225,7 +8225,6 @@ public class Forms extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNC_DATE));
 
         sA1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
-//        sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA2)));
         sA3AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3A)));
         sA3BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3B)));
         sA4AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA4A)));
@@ -8235,6 +8234,35 @@ public class Forms extends BaseObservable implements Observable {
         sA5BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA5B)));
         sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB1)));
         sB3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB3)));
+        return this;
+    }
+
+    public Forms Hydrate(Forms forms) throws JSONException {
+        this.id = forms.id;
+        this.uid = forms.uid;
+        this.projectName = forms.projectName;
+        this.villageCode = forms.villageCode;
+        this.childID = forms.childID;
+        this.childSno = forms.childSno;
+        this.userName = forms.userName;
+        this.sysDate = forms.deviceId;
+        this.deviceTag = forms.deviceTag;
+        this.appver = forms.appver;
+        this.iStatus = forms.iStatus;
+        this.iStatus96x = forms.iStatus96x;
+        this.synced = forms.synced;
+        this.syncDate = forms.syncDate;
+
+        sA1Hydrate(forms.sA1);
+        sA3AHydrate(forms.sA3A);
+        sA3BHydrate(forms.sA3B);
+        sA4AHydrate(forms.sA4A);
+        sA4BHydrate(forms.sA4B);
+        sA4CHydrate(forms.sA4C);
+        sA5AHydrate(forms.sA5A);
+        sA5BHydrate(forms.sA5B);
+        sB1Hydrate(forms.sB1);
+        sB3Hydrate(forms.sB3);
         return this;
     }
 
