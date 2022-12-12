@@ -43,7 +43,21 @@ interface AdolListDao {
             " WHERE " + TableContracts.ChildTable.COLUMN_VILLAGE_CODE + " LIKE :villageCode AND "
             + TableContracts.ChildTable.COLUMN_SR_NO + " LIKE :srNo  ORDER BY "
             + TableContracts.ChildTable.COLUMN_SR_NO + " ASC")
+    fun getAdolBySno_internal(villageCode : String, srNo: String) : AdolList?
+
     fun getAdolBySno(villageCode : String, srNo: String) : AdolList?
+    {
+        val adol =getAdolBySno_internal(villageCode, srNo)
+        if(adol == null)
+        {
+            val adolList = AdolList()
+            return adolList
+        }
+
+        return adol
+    }
+
+
 
 
     @Query("SELECT * FROM " + TableContracts.ChildTable.TABLE_NAME  +

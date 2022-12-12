@@ -14,6 +14,9 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
@@ -55,6 +58,7 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.child.setVisibility(View.GONE);
         bi.hhhead.setText(null);
         bi.headhh.setVisibility(View.GONE);
+
         AdolList adolList = new AdolList();
 
         //AdolList adolList = db.getChildBychildid(bi.a109.getText().toString(), bi.a105.getText().toString());
@@ -65,10 +69,8 @@ public class IdentificationActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        assert adolList != null;
         if (adolList.getChild_id().equals("")) {
             adolList.getChild_id();
-
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
             Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
