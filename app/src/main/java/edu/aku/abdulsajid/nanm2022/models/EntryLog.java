@@ -282,6 +282,29 @@ public class EntryLog extends BaseObservable implements Observable {
         return this;
     }
 
+    public EntryLog Hydrate(EntryLog entryLog) throws JSONException {
+
+        this.id = entryLog.id;
+        this.uid = entryLog.uid;
+        this.uuid = entryLog.uuid;
+        this.projectName = entryLog.projectName;
+        this.villageCode = entryLog.villageCode;
+        this.childID = entryLog.childID;
+        this.childSrno = entryLog.childSrno;
+        this.userName = entryLog.userName;
+        this.sysDate = entryLog.sysDate;
+        this.entryDate = entryLog.entryDate;
+        this.entryType = entryLog.entryType;
+        this.deviceId = entryLog.deviceId;
+        this.appver = entryLog.appver;
+        this.iStatus = entryLog.iStatus;
+        this.iStatus96x = entryLog.iStatus96x;
+        this.synced = entryLog.synced;
+        this.syncDate = entryLog.syncDate;
+
+        return this;
+    }
+
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();

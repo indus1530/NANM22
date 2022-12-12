@@ -31,6 +31,7 @@ interface SyncFunctionsDao {
         val allForms = getUnsyncedEntryLog_Internal()
         val jsonArray = JSONArray()
         for (i in allForms) {
+            i.Hydrate(i)
             jsonArray.put(i.toJSONObject())
         }
         return jsonArray
