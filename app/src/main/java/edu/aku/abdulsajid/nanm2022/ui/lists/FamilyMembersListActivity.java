@@ -4,7 +4,6 @@ import static android.view.View.VISIBLE;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.allAdolList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedChild;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
@@ -275,9 +274,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.lockScreen(this);
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
-        if (form.getUid() != null)
+        /*if (form.getUid() != null)
             bi.familyComplete.setChecked(true);
-        bi.familyComplete.setEnabled(false);
+        bi.familyComplete.setEnabled(false);*/
 
         // Family Complete criteria: MWRA must exist
         if (allAdolList.size() > 0) bi.familyComplete.setVisibility(VISIBLE);

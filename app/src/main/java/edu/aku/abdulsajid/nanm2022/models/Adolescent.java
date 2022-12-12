@@ -3407,6 +3407,41 @@ public class Adolescent extends BaseObservable implements Observable {
         return this;
     }
 
+    public Adolescent Hydrate(Adolescent adolescent) throws JSONException {
+        this.id = adolescent.id;
+        this.uid = adolescent.uid;
+        this.uuid = adolescent.uuid;
+        this.fmuid = adolescent.fmuid;
+        this.muid = adolescent.muid;
+        this.indexed = adolescent.indexed;
+        this.name = adolescent.name;
+        this.villageCode = adolescent.villageCode;
+        this.childID = adolescent.childID;
+        this.childSno = adolescent.childSno;
+        this.projectName = adolescent.projectName;
+        this.sno = adolescent.sno;
+        this.userName = adolescent.userName;
+        this.sysDate = adolescent.sysDate;
+        this.deviceId = adolescent.deviceId;
+        this.deviceTag = adolescent.deviceTag;
+        this.appver = adolescent.appver;
+        this.iStatus = adolescent.iStatus;
+        this.synced = adolescent.synced;
+        this.syncDate = adolescent.syncDate;
+
+        sC1Hydrate(adolescent.sC1);
+        sC2Hydrate(adolescent.sC2);
+        sC3Hydrate(adolescent.sC3);
+        sC4Hydrate(adolescent.sC4);
+        sC5Hydrate(adolescent.sC5);
+        sC6Hydrate(adolescent.sC6);
+        sC7Hydrate(adolescent.sC7);
+        sD1Hydrate(adolescent.sD1);
+        sD2Hydrate(adolescent.sD2);
+
+        return this;
+    }
+
     /*public void sC1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sCHydrate: " + string);
         if (string != null) {

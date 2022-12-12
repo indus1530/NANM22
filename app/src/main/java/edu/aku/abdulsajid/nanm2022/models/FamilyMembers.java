@@ -633,6 +633,33 @@ public class FamilyMembers extends BaseObservable implements Observable {
         return this;
     }
 
+    public FamilyMembers Hydrate(FamilyMembers familyMembers) throws JSONException {
+        this.id = familyMembers.id;
+        this.uid = familyMembers.uid;
+        this.uuid = familyMembers.uuid;
+        this.muid = familyMembers.muid;
+        this.indexed = familyMembers.indexed;
+        this.motherPresent = familyMembers.motherPresent;
+        this.villageCode = familyMembers.villageCode;
+        this.childID = familyMembers.childID;
+        this.childSno = familyMembers.childSno;
+        this.projectName = familyMembers.projectName;
+        this.sno = familyMembers.sno;
+        this.ageInMonths = familyMembers.ageInMonths;
+        this.userName = familyMembers.userName;
+        this.sysDate = familyMembers.sysDate;
+        this.deviceId = familyMembers.deviceId;
+        this.deviceTag = familyMembers.deviceTag;
+        this.appver = familyMembers.appver;
+        this.iStatus = familyMembers.iStatus;
+        this.synced = familyMembers.synced;
+        this.syncDate = familyMembers.syncDate;
+
+        sA2Hydrate(familyMembers.sA2);
+
+        return this;
+    }
+
     public void sA2Hydrate(String string) throws JSONException {
         Log.d(TAG, "sA2Hydrate: " + string);
         if (string != null) {
