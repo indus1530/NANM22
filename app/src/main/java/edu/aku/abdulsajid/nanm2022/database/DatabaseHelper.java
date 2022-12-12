@@ -208,8 +208,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
         values.put(EntryLogTable.COLUMN_UUID, entryLog.getUuid());
-        values.put(EntryLogTable.COLUMN_EB_CODE, entryLog.getEbCode());
-        values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
+        values.put(EntryLogTable.COLUMN_VILLAGE_CODE, entryLog.getVillageCode());
+        values.put(EntryLogTable.COLUMN_CHILD_ID, entryLog.getChildID());
+        values.put(EntryLogTable.COLUMN_CHILD_SRNO, entryLog.getChildSrno());
         values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
         values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
         values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getIStatus());
