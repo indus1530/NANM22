@@ -3193,8 +3193,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD114(String d114) {
         this.d114 = d114;
-        setD115(d108.equals("1") ? this.d115 : "");
-        setD116(d108.equals("1") ? this.d116 : "");
+        setD115(d114.equals("1") ? this.d115 : "");
+        setD116(d114.equals("1") ? this.d116 : "");
         setD117(d114.equals("1") ? this.d117 : "");
         setD118(d114.equals("1") ? this.d118 : "");
         setD119(d114.equals("1") ? this.d119 : "");

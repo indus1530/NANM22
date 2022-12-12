@@ -37,38 +37,54 @@ public class EntryLog extends BaseObservable implements Observable {
     private long id = 0;
     @ColumnInfo(name = EntryLogTable.COLUMN_UID)
     private String uid = _EMPTY_;
+
     // APP VARIABLES
     @ColumnInfo(name = EntryLogTable.COLUMN_PROJECT_NAME)
     private String projectName = PROJECT_NAME;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_UUID)
     private String uuid = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_USERNAME)
     private String userName = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_SYSDATE)
     private String sysDate = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_ENTRY_DATE)
-    private String entryDate = _EMPTY_;         //
-    @ColumnInfo(name = EntryLogTable.COLUMN_EB_CODE)
-    private String ebCode = _EMPTY_;
-    @ColumnInfo(name = EntryLogTable.COLUMN_HHID)
-    private String hhid = _EMPTY_;
+    private String entryDate = _EMPTY_;
+
+    @ColumnInfo(name = EntryLogTable.COLUMN_VILLAGE_CODE)
+    private String villageCode = _EMPTY_;
+
+    @ColumnInfo(name = EntryLogTable.COLUMN_CHILD_ID)
+    private String childID = _EMPTY_;
+
+    @ColumnInfo(name = EntryLogTable.COLUMN_CHILD_SRNO)
+    private String childSrno = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_APPVERSION)
-    private String appver = _EMPTY_;            //
+    private String appver = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_ISTATUS)
     private String iStatus = _EMPTY_;
+
     @Ignore
-    private String iStatus96x = _EMPTY_;        //
+    private String iStatus96x = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_ENTRY_TYPE)
     private String entryType = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_DEVICEID)
     private String deviceId = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_SYNCED)
     private String synced = _EMPTY_;
+
     @ColumnInfo(name = EntryLogTable.COLUMN_SYNC_DATE)
     private String syncDate = _EMPTY_;
 
     public EntryLog() {
-
 
     }
 
@@ -80,8 +96,9 @@ public class EntryLog extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setSysDate(MainApp.form.getSysDate());
         setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setEbCode(MainApp.form.getVillageCode());
-        setHhid(MainApp.form.getChildID());
+        setVillageCode(MainApp.form.getVillageCode());
+        setChildID(MainApp.form.getChildID());
+        setChildSrno(MainApp.form.getChildSno());
         setIStatus(MainApp.form.getIStatus());
         setIStatus96x(MainApp.form.getIStatus96x());
         setAppver(MainApp.appInfo.getAppVersion());
@@ -130,23 +147,34 @@ public class EntryLog extends BaseObservable implements Observable {
         this.deviceId = deviceId;
     }
 
-    public String getEbCode() {
-        return ebCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setEbCode(String ebCode) {
-        this.ebCode = ebCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
 
     @Bindable
-    public String getHhid() {
-        return hhid;
+    public String getChildID() {
+        return childID;
     }
 
-    public void setHhid(String hhid) {
-        this.hhid = hhid;
-        notifyPropertyChanged(BR.hhid);
+    public void setChildID(String childID) {
+        this.childID = childID;
+        notifyPropertyChanged(BR.childID);
+    }
+
+
+    @Bindable
+    public String getChildSrno() {
+        return childSrno;
+    }
+
+    public void setChildSrno(String childSrno) {
+        this.childSrno = childSrno;
+        notifyPropertyChanged(BR.childSrno);
     }
 
 
@@ -237,8 +265,9 @@ public class EntryLog extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PROJECT_NAME));
-        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_EB_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_HHID));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_VILLAGE_CODE));
+        this.childID = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_CHILD_ID));
+        this.childSrno = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_CHILD_SRNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYSDATE));
         this.entryDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ENTRY_DATE));
@@ -261,8 +290,9 @@ public class EntryLog extends BaseObservable implements Observable {
         json.put(EntryLogTable.COLUMN_UID, this.uid);
         json.put(EntryLogTable.COLUMN_UUID, this.uuid);
         json.put(EntryLogTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(EntryLogTable.COLUMN_EB_CODE, this.ebCode);
-        json.put(EntryLogTable.COLUMN_HHID, this.hhid);
+        json.put(EntryLogTable.COLUMN_VILLAGE_CODE, this.villageCode);
+        json.put(EntryLogTable.COLUMN_CHILD_ID, this.childID);
+        json.put(EntryLogTable.COLUMN_CHILD_SRNO, this.childSrno);
         json.put(EntryLogTable.COLUMN_USERNAME, this.userName);
         json.put(EntryLogTable.COLUMN_SYSDATE, this.sysDate);
         json.put(EntryLogTable.COLUMN_ENTRY_DATE, this.entryDate);
