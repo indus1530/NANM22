@@ -22,7 +22,7 @@ interface SyncFunctionsDao {
     /*EntryLog*/
     @Query(
         "SELECT * FROM " + EntryLogTable.TABLE_NAME + " WHERE " + EntryLogTable.COLUMN_SYNCED
-                + " ORDER BY " + EntryLogTable.COLUMN_ID + " ASC"
+                + " is \'\' " + " ORDER BY " + EntryLogTable.COLUMN_ID + " ASC"
     )
     fun getUnsyncedEntryLog_Internal(): List<EntryLog>
 
@@ -37,8 +37,10 @@ interface SyncFunctionsDao {
     }
 
     /*Forms*/
-    @Query("SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_SYNCED
-                + " is \'\' AND " + FormsTable.COLUMN_ISTATUS + " is not \'\' ORDER BY " + FormsTable.COLUMN_ID + " ASC")
+    @Query(
+        "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_SYNCED
+                + " is \'\' AND " + FormsTable.COLUMN_ISTATUS + " is not \'\' ORDER BY " + FormsTable.COLUMN_ID + " ASC"
+    )
     fun getUnsyncedFormHH_Internal(): List<Forms>
 
     @kotlin.jvm.Throws(JSONException::class)
@@ -54,7 +56,7 @@ interface SyncFunctionsDao {
     /*Family Members*/
     @Query(
         "SELECT * FROM " + FamilyMembersTable.TABLE_NAME + " WHERE " + FamilyMembersTable.COLUMN_SYNCED
-                + " ORDER BY " + FamilyMembersTable.COLUMN_ID + " ASC"
+                + " is \'\' " + " ORDER BY " + FamilyMembersTable.COLUMN_ID + " ASC"
     )
     fun getUnsyncedFamilyMembers_Internal(): List<FamilyMembers>
 
@@ -70,8 +72,10 @@ interface SyncFunctionsDao {
 
     /*Adolescent*/
 
-    @Query("SELECT * FROM " + AdolescentTable.TABLE_NAME + " WHERE " + AdolescentTable.COLUMN_SYNCED
-            + " is \'\' AND " + AdolescentTable.COLUMN_ISTATUS + " is not null ORDER BY " + AdolescentTable.COLUMN_ID + " ASC")
+    @Query(
+        "SELECT * FROM " + AdolescentTable.TABLE_NAME + " WHERE " + AdolescentTable.COLUMN_SYNCED
+                + " is \'\' AND " + AdolescentTable.COLUMN_ISTATUS + " is not null ORDER BY " + AdolescentTable.COLUMN_ID + " ASC"
+    )
     fun getUnsyncedAdolescent_Internal(): List<Adolescent>
 
     @kotlin.jvm.Throws(JSONException::class)
