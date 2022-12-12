@@ -3079,6 +3079,19 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD108(String d108) {
         this.d108 = d108;
+        setD114(d108.equals("1") ? this.d114 : "");
+        setD115(d108.equals("1") ? this.d115 : "");
+        setD116(d108.equals("1") ? this.d116 : "");
+        setD117(d108.equals("1") ? this.d117 : "");
+        setD118(d108.equals("1") ? this.d118 : "");
+        setD119(d108.equals("1") ? this.d119 : "");
+        setD120(d108.equals("1") ? this.d120 : "");
+        setD121(d108.equals("1") ? this.d121 : "");
+        setD122(d108.equals("1") ? this.d122 : "");
+        setD123(d108.equals("1") ? this.d123 : "");
+        setD124(d108.equals("1") ? this.d124 : "");
+        setD125(d108.equals("1") ? this.d125 : "");
+        setD126(d108.equals("1") ? this.d126 : "");
         notifyPropertyChanged(BR.d108);
     }
 
@@ -3180,6 +3193,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD114(String d114) {
         this.d114 = d114;
+        setD115(d108.equals("1") ? this.d115 : "");
+        setD116(d108.equals("1") ? this.d116 : "");
         setD117(d114.equals("1") ? this.d117 : "");
         setD118(d114.equals("1") ? this.d118 : "");
         setD119(d114.equals("1") ? this.d119 : "");
@@ -3220,6 +3235,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD117(String d117) {
         this.d117 = d117;
+        setD118(d117.equals("1") ? this.d118 : "");
         notifyPropertyChanged(BR.d117);
     }
 
@@ -3260,6 +3276,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD121(String d121) {
         this.d121 = d121;
+        setD122(d121.equals("1") ? this.d122 : "");
         notifyPropertyChanged(BR.d121);
     }
 
@@ -3300,6 +3317,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD125(String d125) {
         this.d125 = d125;
+        setD126(d125.equals("1") ? this.d126 : "");
         notifyPropertyChanged(BR.d125);
     }
 
@@ -3330,6 +3348,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD202(String d202) {
         this.d202 = d202;
+        setD204(d202.equals("1") ? this.d204 : "");
         notifyPropertyChanged(BR.d202);
     }
 

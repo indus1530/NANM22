@@ -3611,9 +3611,9 @@
     <string name="d1102b">higher than for his/her age </string>
     <string name="d105">Select the Child’s Name from drop down list</string>
     <string name="d1102c">lower than for his/her age</string>
-    <string name="d106">Study personnel name &amp; ID #1</string>
+    <string name="d106">Study person name &amp; ID #1</string>
     <string name="d1203">How tall is your husband (the father of Child name) than you? </string>
-    <string name="d107">Study personnel name &amp; ID #2</string>
+    <string name="d107">Study person name &amp; ID #2</string>
     <string name="d1203a">Taller than you </string>
     <string name="d108">Was informed consent taken?</string>
     <string name="d1203b">Same height as you </string>
@@ -3629,7 +3629,7 @@
     <string name="d10901">Completed</string>
     <string name="d10902">Withdrawn</string>
     <string name="d10999">Refused</string>
-    <string name="d1title2">Child’s Physical Information:</string>
+    <string name="d1title2">Child’s Physical Information: \n ANTHROPOMETRIC MEASUREMENTS</string>
     <string name="d110">Do you think that your (Child Name) height is appropriate for his/her age?</string>
     <string name="d11001">Height is Appropriate for his/her age</string>
     <string name="d11002">Taller than for his/her age</string>
@@ -3645,7 +3645,7 @@
     <string name="d113">Approximately how much taller/shorter is he? Please record in inches the difference indicated.</string>
     <string name="d11301">Inches</string>
     <string name="d11398">Don’t Know</string>
-    <string name="d1title3">ANTHROPOMETRIC MEASUREMENTS</string>
+    <string name="d1title3"></string>
     <string name="d114">Is the child available at home?</string>
     <string name="d11401">Yes</string>
     <string name="d11402">No</string>

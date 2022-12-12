@@ -43,8 +43,7 @@ public class SectionD1Activity extends AppCompatActivity {
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
         bi.d105.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
 
-        if(adol.getUid() != null)
-        {
+        if (adol.getUid() != null) {
             try {
                 adol.sD1Hydrate(adol.getSD1());
             } catch (JSONException e) {
@@ -81,7 +80,10 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionD2Activity.class));
+            if (adol.getD114().equals("1"))
+                startActivity(new Intent(this, SectionD2Activity.class).putExtra("complete", true));
+            else
+                startActivity(new Intent(this, ChildEndingActivity.class).putExtra("complete", false));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

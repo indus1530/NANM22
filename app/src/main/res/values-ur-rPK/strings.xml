@@ -3655,7 +3655,7 @@
     <string name="d10901">مکمل</string>
     <string name="d10902">دستبردار ہونا</string>
     <string name="d10999">انکار</string>
-    <string name="d1title2">شیرخوار کی جسمانی معلومات</string>
+    <string name="d1title2">شیرخوار کی جسمانی معلومات \n جسمانی پیمائش</string>
     <string name="d110">کیا آپ کو لگتا ہے کہ آپ کے بچے (بچے کا نام) کا قد اس کے عمر کے حساب سے مناسب/صحیع ہے؟</string>
     <string name="d11001">قد عمر کے حساب سے مناسب/صحیع ہے</string>
     <string name="d11002">قد عمر کے حساب سے لمبا ہے</string>
@@ -3671,7 +3671,7 @@
     <string name="d113">انداز&quot; قد کتنا لمبا /چھوٹا ہے براہ کرم فرق انچ میں ریکارڈ کریں</string>
     <string name="d11301">انچ</string>
     <string name="d11398">معلوم نہیں</string>
-    <string name="d1title3">جسمانی پیمائش</string>
+    <string name="d1title3"></string>
     <string name="d114">موجود ہے؟ کیا بچہ گھر پر</string>
     <string name="d11401">ہاں</string>
     <string name="d11402">نہیں</string>

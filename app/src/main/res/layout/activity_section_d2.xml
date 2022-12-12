@@ -100,37 +100,31 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_d201" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_d201" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="match_parent"
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                                 android:text="@string/d201" />
 
                             <TextView
                                 android:id="@+id/d201"
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_height="@dimen/_25sdp"
                                 android:layout_weight="1.5"
                                 android:hint="@string/d201" />
 
                         </LinearLayout>
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- d201_title  Title   -->
@@ -166,21 +160,6 @@
                             android:text="@string/d200" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>-->
-
-                <!-- d201_title2  Title   -->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/labelsHead"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/d201_title2" />
-                </LinearLayout>
-
 
                 <!-- d202  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -223,7 +202,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d202.equals(`1`)}"
-                                android:onClick="@{()->form.setD202(`1`) + d203.clearCheck()}"
+                                android:onClick="@{()->form.setD202(`1`)}"
                                 android:text="@string/d20201" />
 
                             <RadioButton
@@ -238,80 +217,22 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- d203  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd203"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_d203" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/d203" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/d203"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/d20301"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.d203.equals(`1`)}"
-                                android:onClick="@{()->form.setD203(`1`)}"
-                                android:text="@string/d20301" />
-
-                            <RadioButton
-                                android:id="@+id/d20302"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.d203.equals(`2`)}"
-                                android:onClick="@{()->form.setD203(`2`)}"
-                                android:text="@string/d20302" />
-
-                            <RadioButton
-                                android:id="@+id/d20303"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.d203.equals(`3`)}"
-                                android:onClick="@{()->form.setD203(`3`)}"
-                                android:text="@string/d20303" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- d204  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd204"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d202.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/d204_title" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -326,29 +247,26 @@
                                 android:text="@string/Q_d204" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/d204" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/d204"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.d204}"
+                                app:maxValue="100"
+                                app:minValue="1"
+                                app:type="range" />
+
                         </LinearLayout>
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d204_title" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/d204"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/d204"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.d204}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
