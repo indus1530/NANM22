@@ -106,6 +106,7 @@ interface SyncFunctionsDao {
         val synced = updateQueryEntryLog(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
+        NANMRoomDatabase.dbInstance?.entryLogDao()?.updateEntryLog(synced)
         return synced
     }
 
@@ -120,6 +121,7 @@ interface SyncFunctionsDao {
         val synced = updateQueryhhs(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
+        NANMRoomDatabase.dbInstance?.formsDao()?.updateForm(synced)
         return synced
     }
 
@@ -134,6 +136,7 @@ interface SyncFunctionsDao {
         val synced = updateQueryFM(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
+        NANMRoomDatabase.dbInstance?.familyMembersDao()?.updateFamilyMembers(synced)
         return synced
     }
 
@@ -148,6 +151,7 @@ interface SyncFunctionsDao {
         val synced = updateQueryAdol(id)
         synced.synced = "1"
         synced.syncDate = Date().toString()
+        NANMRoomDatabase.dbInstance?.adolescentDao()?.updateAdolescent(synced)
         return synced
     }
 
