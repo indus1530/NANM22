@@ -133,9 +133,6 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.fldGrpA105.setVisibility(View.GONE);
         Villages villages = new Villages();
 
-//        Clusters clusters = db.getCluster(bi.a109.getText().toString());
-        //Villages villages = db.villagesDao().getVillage(bi.a109.getText().toString());
-
         try {
             villages = db.villagesDao().getVillage(bi.a109.getText().toString());
         } catch (Exception e) {

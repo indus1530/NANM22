@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
+import edu.aku.abdulsajid.nanm2022.models.AdolList
 import edu.aku.abdulsajid.nanm2022.models.Users
 import edu.aku.abdulsajid.nanm2022.models.Villages
 import org.json.JSONArray
@@ -21,6 +22,18 @@ interface VillagesDao {
             + " WHERE " + TableContracts.VillageTable.COLUMN_VILLAGE_CODE
             + " LIKE :villageCode ORDER BY "
             + TableContracts.VillageTable.COLUMN_ID + " ASC")
-    fun getVillage(villageCode : String) : Villages
+    fun getVillage_internal(villageCode : String) : Villages?
+
+    fun getVillage(villageCode : String) : Villages?
+    {
+        val villages =getVillage_internal(villageCode)
+        if(villages == null)
+        {
+            val newVillages = Villages()
+            return newVillages
+        }
+
+        return villages
+    }
 
 }
