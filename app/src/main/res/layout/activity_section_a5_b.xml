@@ -589,7 +589,8 @@
                 <!-- a520  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa520"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a519.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1910,7 +1911,8 @@
                 <!-- a524  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa524"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a523.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2157,8 +2159,7 @@
                 <!-- a525  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa525"
-                    style="@style/cardView"
-                    android:visibility="@{!form.a52498.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2204,8 +2205,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="@{!form.a52498.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/labelsHead"
@@ -2217,8 +2217,7 @@
                 <!-- a526  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa526"
-                    style="@style/cardView"
-                    android:visibility="@{!form.a52498.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2338,7 +2337,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa527"
                     style="@style/cardView"
-                    android:visibility="@{!form.a52498.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{!form.a526.equals(`7`)  ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2404,7 +2403,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa528"
                     style="@style/cardView"
-                    android:visibility="@{!form.a52498.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{!form.a526.equals(`7`) &amp;&amp; form.a527.equals(`2`)  ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2460,7 +2459,7 @@
                                 android:maxLength="3"
                                 android:tag="a52802"
                                 android:text="@={form.a52802x}"
-                                android:visibility="@{form.a528.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:visibility="@{form.a528.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2797,73 +2796,83 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/a531"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
 
-                            <RadioButton
+                        <LinearLayout
+                            android:id="@+id/a531check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
                                 android:id="@+id/a53101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`1`)}"
-                                android:onClick="@{()->form.setA531(`1`)}"
+                                android:checked="@{form.a53101.equals(`1`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53101(form.a53101.equals(`1`)?``:`1`)}"
                                 android:text="@string/a53101" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`2`)}"
-                                android:onClick="@{()->form.setA531(`2`)}"
+                                android:checked="@{form.a53102.equals(`2`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53102(form.a53102.equals(`2`)?``:`2`)}"
                                 android:text="@string/a53102" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`3`)}"
-                                android:onClick="@{()->form.setA531(`3`)}"
+                                android:checked="@{form.a53103.equals(`3`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53103(form.a53103.equals(`3`)?``:`3`)}"
                                 android:text="@string/a53103" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`4`)}"
-                                android:onClick="@{()->form.setA531(`4`)}"
+                                android:checked="@{form.a53104.equals(`4`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53104(form.a53104.equals(`4`)?``:`4`)}"
                                 android:text="@string/a53104" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`5`)}"
-                                android:onClick="@{()->form.setA531(`5`)}"
+                                android:checked="@{form.a53105.equals(`5`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53105(form.a53105.equals(`5`)?``:`5`)}"
                                 android:text="@string/a53105" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`6`)}"
-                                android:onClick="@{()->form.setA531(`6`)}"
+                                android:checked="@{form.a53106.equals(`6`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53106(form.a53106.equals(`6`)?``:`6`)}"
                                 android:text="@string/a53106" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53198"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`98`)}"
-                                android:onClick="@{()->form.setA531(`98`)}"
+                                android:checked="@{form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53198(form.a53198.equals(`98`)?``:`98`)}"
                                 android:text="@string/a53198" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a53196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a531.equals(`96`)}"
-                                android:onClick="@{()->form.setA531(`96`)}"
+                                android:checked="@{form.a53196.equals(`96`)}"
+                                android:enabled="@{!form.a53198.equals(`98`)}"
+                                android:onClick="@{()->form.setA53196(form.a53196.equals(`96`)?``:`96`)}"
                                 android:text="@string/a53196" />
 
                             <EditText
@@ -2874,8 +2883,8 @@
                                 android:hint="@string/a53196"
                                 android:tag="a53196"
                                 android:text="@={form.a53196x}"
-                                android:visibility="@{form.a531.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </RadioGroup>
+                                android:visibility="@{form.a53196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -2947,7 +2956,8 @@
                 <!-- a533  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa533"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a532.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -3049,7 +3059,8 @@
                 <!-- a534  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa534"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a532.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -173,6 +173,8 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String c215 = _EMPTY_;
     @Ignore
+    private String c21596x = _EMPTY_;
+    @Ignore
     private String ca301 = _EMPTY_;
     @Ignore
     private String ca302 = _EMPTY_;
@@ -200,6 +202,8 @@ public class Adolescent extends BaseObservable implements Observable {
     private String cb311 = _EMPTY_;
     @Ignore
     private String cb312 = _EMPTY_;
+    @Ignore
+    private String ca401 = _EMPTY_;
     @Ignore
     private String ca402 = _EMPTY_;
     @Ignore
@@ -240,6 +244,10 @@ public class Adolescent extends BaseObservable implements Observable {
     private String c501i = _EMPTY_;
     @Ignore
     private String c501j = _EMPTY_;
+    @Ignore
+    private String c50196 = _EMPTY_;
+    @Ignore
+    private String c50196x = _EMPTY_;
     @Ignore
     private String c502 = _EMPTY_;
     @Ignore
@@ -464,6 +472,8 @@ public class Adolescent extends BaseObservable implements Observable {
     private String c60696 = _EMPTY_;
     @Ignore
     private String c60701 = _EMPTY_;
+    @Ignore
+    private String c60798 = _EMPTY_;
     @Ignore
     private String c608 = _EMPTY_;
 
@@ -1188,6 +1198,11 @@ public class Adolescent extends BaseObservable implements Observable {
     public void setC203(String c203) {
         this.c203 = c203;
         setC204(c203.equals("1") ? this.c204 : "");
+        setC205a(c203.equals("2") ? this.c205a : "");
+        setC20598(c203.equals("2") ? this.c20598 : "");
+        setC206a(c203.equals("2") ? this.c206a : "");
+        setC20698(c203.equals("2") ? this.c20698 : "");
+        setC207(c203.equals("2") ? this.c207 : "");
         notifyPropertyChanged(BR.c203);
     }
 
@@ -1370,6 +1385,16 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC21596x() {
+        return c21596x;
+    }
+
+    public void setC21596x(String c21596x) {
+        this.c21596x = c21596x;
+        notifyPropertyChanged(BR.c21596x);
+    }
+
+    @Bindable
     public String getCa301() {
         return ca301;
     }
@@ -1507,6 +1532,16 @@ public class Adolescent extends BaseObservable implements Observable {
     public void setCb312(String cb312) {
         this.cb312 = cb312;
         notifyPropertyChanged(BR.cb312);
+    }
+
+    @Bindable
+    public String getCa401() {
+        return ca401;
+    }
+
+    public void setCa401(String ca401) {
+        this.ca401 = ca401;
+        notifyPropertyChanged(BR.ca401);
     }
 
     @Bindable
@@ -1710,6 +1745,27 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC50196() {
+        return c50196;
+    }
+
+    public void setC50196(String c50196) {
+        this.c50196 = c50196;
+        setC50196x(c50196.equals("96") ? this.c50196x : "");
+        notifyPropertyChanged(BR.c50196);
+    }
+
+    @Bindable
+    public String getC50196x() {
+        return c50196x;
+    }
+
+    public void setC50196x(String c50196x) {
+        this.c50196x = c50196x;
+        notifyPropertyChanged(BR.c50196x);
+    }
+
+    @Bindable
     public String getC502() {
         return c502;
     }
@@ -1725,6 +1781,15 @@ public class Adolescent extends BaseObservable implements Observable {
         setC50307(c502.equals("1") ? this.c50307 : "");
         setC50308(c502.equals("1") ? this.c50308 : "");
         setC50396(c502.equals("1") ? this.c50396 : "");
+
+        setC50401(c502.equals("1") ? "" : this.c50401);
+        setC50402(c502.equals("1") ? "" : this.c50402);
+        setC50403(c502.equals("1") ? "" : this.c50403);
+        setC50404(c502.equals("1") ? "" : this.c50404);
+        setC50405(c502.equals("1") ? "" : this.c50405);
+        setC50406(c502.equals("1") ? "" : this.c50406);
+        setC50407(c502.equals("1") ? "" : this.c50407);
+        setC50496(c502.equals("1") ? "" : this.c50496);
         notifyPropertyChanged(BR.c502);
     }
 
@@ -1834,7 +1899,7 @@ public class Adolescent extends BaseObservable implements Observable {
     public void setC50396(String c50396) {
         if (this.c50396.equals(c50396)) return; // for all checkboxes
         this.c50396 = c50396;
-        setC50396x(c50396.equals("96") ? this.c50396 : "");
+        setC50396x(c50396.equals("96") ? this.c50396x : "");
         notifyPropertyChanged(BR.c50396);
     }
 
@@ -2963,6 +3028,18 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC60798() {
+        return c60798;
+    }
+
+    public void setC60798(String c60798) {
+        if (this.c60798.equals(c60798)) return; // for all checkboxes
+        this.c60798 = c60798;
+        setC60701(c60798.equals("98") ? "" : this.c60701);
+        notifyPropertyChanged(BR.c60798);
+    }
+
+    @Bindable
     public String getC608() {
         return c608;
     }
@@ -3747,6 +3824,7 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c213 = json.getString("c213");
             this.c214 = json.getString("c214");
             this.c215 = json.getString("c215");
+            this.c21596x = json.getString("c21596x");
         }
     }
 
@@ -3777,6 +3855,7 @@ public class Adolescent extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+            this.ca401 = json.getString("ca401");
             this.ca402 = json.getString("ca402");
             this.ca403 = json.getString("ca403");
             this.ca404 = json.getString("ca404");
@@ -3806,6 +3885,8 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c501h = json.getString("c501h");
             this.c501i = json.getString("c501i");
             this.c501j = json.getString("c501j");
+            this.c50196 = json.getString("c50196");
+            this.c50196x = json.getString("c50196x");
             this.c502 = json.getString("c502");
             this.c503 = json.getString("c503");
             this.c50301 = json.getString("c50301");
@@ -3890,6 +3971,7 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c606e = json.getString("c606e");
             this.c60696 = json.getString("c60696");
             this.c60701 = json.getString("c60701");
+            this.c60798 = json.getString("c60798");
             this.c608 = json.getString("c608");
         }
     }
@@ -4281,7 +4363,8 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c212", c212)
                 .put("c213", c213)
                 .put("c214", c214)
-                .put("c215", c215);
+                .put("c215", c215)
+                .put("c21596x", c21596x);
         return json.toString();
     }
 
@@ -4308,7 +4391,8 @@ public class Adolescent extends BaseObservable implements Observable {
     public String sC4toString() throws JSONException {
         Log.d(TAG, "sC4toString: ");
         JSONObject json = new JSONObject();
-        json.put("ca402", ca402)
+        json.put("ca401", ca401)
+                .put("ca402", ca402)
                 .put("ca403", ca403)
                 .put("ca404", ca404)
                 .put("ca405", ca405)
@@ -4334,6 +4418,8 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c501h", c501h)
                 .put("c501i", c501i)
                 .put("c501j", c501j)
+                .put("c50196", c50196)
+                .put("c50196x", c50196x)
                 .put("c502", c502)
                 .put("c503", c503)
                 .put("c50301", c50301)
@@ -4416,6 +4502,7 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c606e", c606e)
                 .put("c60696", c60696)
                 .put("c60701", c60701)
+                .put("c60798", c60798)
                 .put("c608", c608);
         return json.toString();
     }

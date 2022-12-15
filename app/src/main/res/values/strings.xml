@@ -1939,17 +1939,17 @@
     <string name="b106a">Rarely (once or twice in the past four weeks)</string>
     <string name="b106b">Sometimes (three to ten times in the past four weeks)</string>
     <string name="b106c">Often (more than ten times in the past four weeks)</string>
-    <string name="b107">Was there a time in the last month when you or others in your household ate only a few kinds of foods because of lack of money or other resources?</string>
+    <string name="b107">In the last month, did you or any household member have to eat some foods that you really did not want to eat because of a lack of resources to obtain other types of food?</string>
     <string name="b108">How often did this happen?</string>
     <string name="b108a">Rarely (once or twice in the past four weeks)</string>
     <string name="b108b">Sometimes (three to ten times in the past four weeks)</string>
     <string name="b108c">Often (more than ten times in the past four weeks)</string>
-    <string name="b109">In the last month, did you or any household member have to eat some foods that you really did not want to eat because of a lack of resources to obtain other types of food?</string>
+    <string name="b109">Was there a time in last month when you or others in your household had to skip a meal because there was not enough money or other resources to get food?</string>
     <string name="b110">How often did this happen?</string>
     <string name="b110a">Rarely (once or twice in the past four weeks)</string>
     <string name="b110b">Sometimes (three to ten times in the past four weeks)</string>
     <string name="b110c">Often (more than ten times in the past four weeks)</string>
-    <string name="b111">Was there a time in last month when you or others in your household had to skip a meal because there was not enough money or other resources to get food?</string>
+    <string name="b111">Still thinking about the last month, was there a time when you or others in your household ate less than you thought you should because of a lack of money or other resources?</string>
     <string name="b112">How often did this happen?</string>
     <string name="b112a">Rarely (once or twice in the past four weeks)</string>
     <string name="b112b">Sometimes (three to ten times in the past four weeks)</string>
@@ -2238,7 +2238,7 @@
     <string name="c114a">1-2</string>
     <string name="c114c">6-9</string>
     <string name="c114d">10 or more</string>
-    <string name="c201">Have (child name) ever attended school? If no, probe.</string>
+    <string name="c201">Have %1$s ever attended school? If no, probe.</string>
     <string name="c201a">Yes </string>
     <string name="c201b">No  </string>
     <string name="c202">Why (child name) didn’t attend school?    [Multiple responses]</string>
@@ -2266,7 +2266,7 @@
     <string name="c204c">Madrassa</string>
     <string name="c204d">Trust (NGO)</string>
     <string name="c20496">Other specify </string>
-    <string name="c206">In which calendar year did (child name) last attend school?</string>
+    <string name="c206">What was your age when you stopped attending school/college? </string>
     <string name="c206a">Year</string>
     <string name="c20698">Don’t Know</string>
     <string name="c207">What is the highest class that (child name) has completed?    Grade/Class</string>
@@ -2433,7 +2433,8 @@
     <string name="cb312g">6 days </string>
     <string name="cb312h">7 days </string>
     <string name="ca401_title">PART A: IN-SCHOOL </string>
-    <string name="ca402">During the weekdays, what time (child name) usually gone to sleep? (AM | PM))</string>
+    <string name="ca401">During the weekdays, what time (child name) usually gone to sleep? (AM | PM))</string>
+    <string name="ca402">During the weekdays, at what time do you usually wake up in the morning?</string>
     <string name="ca403">During the weekdays, does the child name afternoon nap?</string>
     <string name="ca403a">Yes   </string>
     <string name="ca403b">No. </string>
@@ -2542,8 +2543,8 @@
     <string name="a212">Is [name] available?</string>
     <string name="a212a">Yes</string>
     <string name="a212b">No</string>
-    <string name="a213">Father Line No  (Only for 5-10 year Children)</string>
-    <string name="a214">Mother Line No   (Only for U5 Children)</string>
+    <string name="a213">Father Line No</string>
+    <string name="a214">Mother Line No</string>
     <string name="d201_title1">Identification</string>
     <string name="d204a">Study personnel ID #1</string>
     <string name="d205">Study personnel name #2</string>
@@ -3107,7 +3108,7 @@
     <string name="a50804">Completely Destroyed </string>
     <string name="a50805">No separate kitchen before floods </string>
     <string name="a509">Situation of Toilet after floods</string>
-    <string name="a510">Situation of Toilet after floods</string>
+    <string name="a510">Situation of Animal Shed after floods</string>
     <string name="a511">Was your house accessible through road/street, immediate after floods? </string>
     <string name="a50901">No Damage </string>
     <string name="a51001">No Damage </string>
@@ -3387,6 +3388,7 @@
     <string name="c501i01">Yes   </string>
     <string name="c501i02">No</string>
     <string name="c501j">Cystic fibrosis</string>
+    <string name="c50196">Other specify</string>
     <string name="c501j01">Yes   </string>
     <string name="c501j02">No</string>
     <string name="c502">Did you seek any care for complications?</string>
@@ -3591,6 +3593,7 @@
     <string name="c60696">Other (Specify)  </string>
     <string name="c607title">What do you think about at what age a girl or boy should get marry?</string>
     <string name="c60701">Years</string>
+    <string name="c60798">Don`t Remember </string>
     <string name="c608">Do you have a say in choosing your life partner? </string>
     <string name="c60801">Yes   </string>
     <string name="c60802">No</string>
@@ -4050,6 +4053,7 @@
     <string name='Q_ca309'>ca309</string>
     <string name='Q_ca310'>ca310</string>
     <string name='Q_ca401_title'>ca401_title</string>
+    <string name='Q_ca401'>ca401</string>
     <string name='Q_ca402'>ca402</string>
     <string name='Q_ca403'>ca403</string>
     <string name='Q_ca404'>ca404</string>

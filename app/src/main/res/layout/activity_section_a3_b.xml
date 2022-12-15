@@ -1621,7 +1621,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa324"
                     style="@style/cardView"
-                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1678,7 +1678,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa325"
                     style="@style/cardView"
-                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{!form.a322.equals(`11`) &amp;&amp; !form.a323.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1864,7 +1864,7 @@
                             android:enabled="@{!form.a327c.equals(`98`)}"
                             android:text="@={form.a327a}"
                             app:maxValue="15"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                         <TextView
@@ -1888,7 +1888,7 @@
                             android:enabled="@{!form.a327c.equals(`98`)}"
                             android:text="@={form.a327b}"
                             app:maxValue="15"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                         <CheckBox
@@ -2033,7 +2033,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329a}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
 
@@ -2067,7 +2067,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329b}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
 
@@ -2101,7 +2101,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329c}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
 
@@ -2135,7 +2135,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329d}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
 
@@ -2169,7 +2169,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329e}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
 
@@ -2203,7 +2203,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.a329f}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -2320,22 +2320,6 @@
                                 android:text="@string/a331a" />
 
                             <RadioButton
-                                android:id="@+id/a331f"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.a331.equals(`6`)}"
-                                android:onClick="@{()->form.setA331(`6`)}"
-                                android:text="@string/a331f" />
-
-                            <RadioButton
-                                android:id="@+id/a331g"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.a331.equals(`7`)}"
-                                android:onClick="@{()->form.setA331(`7`)}"
-                                android:text="@string/a331g" />
-
-                            <RadioButton
                                 android:id="@+id/a331b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -2366,6 +2350,22 @@
                                 android:checked="@{form.a331.equals(`5`)}"
                                 android:onClick="@{()->form.setA331(`5`)}"
                                 android:text="@string/a331e" />
+
+                            <RadioButton
+                                android:id="@+id/a331f"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a331.equals(`6`)}"
+                                android:onClick="@{()->form.setA331(`6`)}"
+                                android:text="@string/a331f" />
+
+                            <RadioButton
+                                android:id="@+id/a331g"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a331.equals(`7`)}"
+                                android:onClick="@{()->form.setA331(`7`)}"
+                                android:text="@string/a331g" />
 
                             <RadioButton
                                 android:id="@+id/a331x"

@@ -116,6 +116,7 @@
                                 android:text="@string/Q_c201" />
 
                             <TextView
+                                android:id="@+id/c201text"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/c201" />
@@ -432,7 +433,8 @@
                     <!-- c205  Title   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVc205"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.c203.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -506,7 +508,8 @@
                     <!-- c206  Title   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVc206"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.c203.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -579,7 +582,8 @@
                     <!-- c207  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVc207"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.c203.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -612,7 +616,7 @@
                                     android:gravity="center"
                                     android:hint="##"
                                     android:inputType="number"
-                                    android:maxLength="1"
+                                    android:maxLength="2"
                                     android:text="@={form.c207}"
                                     app:maxValue="12"
                                     app:minValue="0"
@@ -833,12 +837,12 @@
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
-                                    android:id="@+id/c210a"
+                                    android:id="@+id/c210c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.c210.equals(`1`)}"
                                     android:onClick="@{()->form.setC210(`1`)}"
-                                    android:text="@string/c210a" />
+                                    android:text="@string/c210c" />
 
                                 <RadioButton
                                     android:id="@+id/c210b"
@@ -849,12 +853,12 @@
                                     android:text="@string/c210b" />
 
                                 <RadioButton
-                                    android:id="@+id/c210c"
+                                    android:id="@+id/c210a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.c210.equals(`3`)}"
                                     android:onClick="@{()->form.setC210(`3`)}"
-                                    android:text="@string/c210c" />
+                                    android:text="@string/c210a" />
 
                                 <RadioButton
                                     android:id="@+id/c21096"
@@ -1210,14 +1214,6 @@
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
-                                    android:id="@+id/c21596"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.c215.equals(`96`)}"
-                                    android:onClick="@{()->form.setC215(`96`)}"
-                                    android:text="@string/c21596" />
-
-                                <RadioButton
                                     android:id="@+id/c215a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -1256,7 +1252,25 @@
                                     android:checked="@{form.c215.equals(`5`)}"
                                     android:onClick="@{()->form.setC215(`5`)}"
                                     android:text="@string/c215e" />
+
+                                <RadioButton
+                                    android:id="@+id/c21596"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.c215.equals(`96`)}"
+                                    android:onClick="@{()->form.setC215(`96`)}"
+                                    android:text="@string/c21596" />
                             </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/c21596x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/c20296"
+                                android:tag="c20296"
+                                android:text="@={form.c21596x}"
+                                android:visibility="@{form.c215.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>

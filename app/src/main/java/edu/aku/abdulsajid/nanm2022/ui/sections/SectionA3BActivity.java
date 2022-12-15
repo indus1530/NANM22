@@ -18,7 +18,6 @@ import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA3BBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -37,8 +36,7 @@ public class SectionA3BActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        if(form.getUid() != null)
-        {
+        if (form.getUid() != null) {
             try {
                 form.sA3BHydrate(form.getSA3B());
             } catch (JSONException e) {
@@ -91,7 +89,18 @@ public class SectionA3BActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (form.getA327a().equals("0") && form.getA327b().equals("0"))
+            Validator.emptyCustomTextBox(this, bi.a327a, "Total cannot be 0");
+
+        if (form.getA329a().equals("0") && form.getA329b().equals("0") &&
+                form.getA329c().equals("0") && form.getA329d().equals("0") &&
+                form.getA329e().equals("0") && form.getA329f().equals("0"))
+            Validator.emptyCustomTextBox(this, bi.a329a, "Total cannot be 0");
+
+        return true;
     }
 
     @Override

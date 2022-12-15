@@ -50,10 +50,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,10 +62,8 @@ import java.util.Objects;
 
 import edu.aku.abdulsajid.nanm2022.MainActivity;
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.AppInfo;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityLoginBinding;
 import edu.aku.abdulsajid.nanm2022.models.EntryLog;
 import edu.aku.abdulsajid.nanm2022.models.Users;
@@ -538,6 +534,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 break;
 
+            case 2:
+                lang = "ur";
+                country = "PK";
+                MainApp.editor
+                        .putString("lang", "2")
+                        .apply();
+                MainApp.langRTL = true;
+
+                break;
 
             default:
                 lang = "en";
@@ -584,8 +589,13 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.NO:
                 return true;
 
-            case R.id.UR:
+            case R.id.SD:
                 MainApp.selectedLanguage = 1;
+                MainApp.langRTL = true;
+                break;
+
+            case R.id.UR:
+                MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
                 break;
 

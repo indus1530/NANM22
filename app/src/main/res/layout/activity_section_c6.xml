@@ -805,10 +805,21 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
+                                android:enabled="@{!form.c60798.equals(`98`)}"
                                 android:text="@={form.c60701}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
+
+                            <CheckBox
+                                android:id="@+id/c60798"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.c60798.equals(`98`)}"
+                                android:onClick="@{()->form.setC60798(form.c60798.equals(`98`)?``:`98`)}"
+                                android:tag="-1"
+                                android:text="@string/c60798" />
 
                         </LinearLayout>
 

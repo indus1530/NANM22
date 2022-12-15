@@ -44,8 +44,7 @@ public class SectionC2Activity extends AppCompatActivity {
         bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
 
-        if(adol.getUid() != null)
-        {
+        if (adol.getUid() != null) {
             try {
                 adol.sC2Hydrate(adol.getSC2());
             } catch (JSONException e) {
@@ -53,6 +52,8 @@ public class SectionC2Activity extends AppCompatActivity {
             }
         }
         bi.setForm(adol);
+
+        bi.c201text.setText(String.format(getResources().getString(R.string.c201), adol.getName()));
     }
 
 

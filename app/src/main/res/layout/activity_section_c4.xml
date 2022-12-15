@@ -93,6 +93,49 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <!-- ca401  Time   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVca401"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ca401" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:text="@string/ca401" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ca401"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ca401}"
+                                app:theme="@style/DatePickerStyle" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <!-- ca402  Time   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVca402"
@@ -117,8 +160,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
                                 android:layout_height="match_parent"
+                                android:layout_weight="2"
                                 android:text="@string/ca402" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText

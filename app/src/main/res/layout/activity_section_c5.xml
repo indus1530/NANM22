@@ -578,6 +578,59 @@
 
                             </LinearLayout>
 
+                            <!-- c50196  Radio   -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#DCFAE5"
+                                    android:text="@string/c50196"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                                <RadioGroup
+                                    android:id="@+id/c50196"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/c5019601"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c50196.equals(`1`)}"
+                                        android:onClick="@{()->form.setC50196(`1`)}"
+                                        android:text="@string/c501j01" />
+
+                                    <RadioButton
+                                        android:id="@+id/c5019602"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:checked="@{form.c50196.equals(`2`)}"
+                                        android:onClick="@{()->form.setC50196(`2`)}"
+                                        android:text="@string/c501j02" />
+                                </RadioGroup>
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/c50196x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/c20296"
+                                android:tag="c20296"
+                                android:text="@={form.c50196x}"
+                                android:visibility="@{form.c50196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -773,7 +826,8 @@
                 <!-- c504  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc504"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
