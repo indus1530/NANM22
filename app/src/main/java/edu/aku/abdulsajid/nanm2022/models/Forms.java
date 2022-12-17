@@ -3931,6 +3931,20 @@ public class Forms extends BaseObservable implements Observable {
     public void setA41713(String a41713) {
         if (this.a41713.equals(a41713)) return; // for all checkboxes
         this.a41713 = a41713;
+        setA41701(a41713.equals("13") ? "" : this.a41701);
+        setA41702(a41713.equals("13") ? "" : this.a41702);
+        setA41703(a41713.equals("13") ? "" : this.a41703);
+        setA41704(a41713.equals("13") ? "" : this.a41704);
+        setA41705(a41713.equals("13") ? "" : this.a41705);
+        setA41706(a41713.equals("13") ? "" : this.a41706);
+        setA41707(a41713.equals("13") ? "" : this.a41707);
+        setA41708(a41713.equals("13") ? "" : this.a41708);
+        setA41709(a41713.equals("13") ? "" : this.a41709);
+        setA41710(a41713.equals("13") ? "" : this.a41710);
+        setA41711(a41713.equals("13") ? "" : this.a41711);
+        setA41712(a41713.equals("13") ? "" : this.a41712);
+        setA41798(a41713.equals("13") ? "" : this.a41798);
+        setA41796(a41713.equals("13") ? "" : this.a41796);
         notifyPropertyChanged(BR.a41713);
     }
 
@@ -3954,7 +3968,7 @@ public class Forms extends BaseObservable implements Observable {
         setA41710(a41798.equals("98") ? "" : this.a41710);
         setA41711(a41798.equals("98") ? "" : this.a41711);
         setA41712(a41798.equals("98") ? "" : this.a41712);
-        setA41713(a41798.equals("98") ? "" : this.a41712);
+        setA41713(a41798.equals("98") ? "" : this.a41713);
         setA41796(a41798.equals("98") ? "" : this.a41796);
         notifyPropertyChanged(BR.a41798);
     }
