@@ -109,7 +109,13 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String c112 = _EMPTY_;
     @Ignore
-    private String c113 = _EMPTY_;
+    private String c113a = _EMPTY_;
+    @Ignore
+    private String c113b = _EMPTY_;
+    @Ignore
+    private String c113c = _EMPTY_;
+    @Ignore
+    private String c113d = _EMPTY_;
     @Ignore
     private String c114 = _EMPTY_;
     @Ignore
@@ -1003,19 +1009,52 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC112(String c112) {
         this.c112 = c112;
-        setC113(c112.equals("1") ? this.c113 : "");
+        setC113a(c112.equals("1") ? this.c113a : "");
+        setC113b(c112.equals("1") ? this.c113b : "");
+        setC113c(c112.equals("1") ? this.c113c : "");
+        setC113d(c112.equals("1") ? this.c113d : "");
         setC114(c112.equals("1") ? this.c114 : "");
         notifyPropertyChanged(BR.c112);
     }
 
     @Bindable
-    public String getC113() {
-        return c113;
+    public String getC113a() {
+        return c113a;
     }
 
-    public void setC113(String c113) {
-        this.c113 = c113;
-        notifyPropertyChanged(BR.c113);
+    public void setC113a(String c113a) {
+        this.c113a = c113a;
+        notifyPropertyChanged(BR.c113a);
+    }
+
+    @Bindable
+    public String getC113b() {
+        return c113b;
+    }
+
+    public void setC113b(String c113b) {
+        this.c113b = c113b;
+        notifyPropertyChanged(BR.c113b);
+    }
+
+    @Bindable
+    public String getC113c() {
+        return c113c;
+    }
+
+    public void setC113c(String c113c) {
+        this.c113c = c113c;
+        notifyPropertyChanged(BR.c113c);
+    }
+
+    @Bindable
+    public String getC113d() {
+        return c113d;
+    }
+
+    public void setC113d(String c113d) {
+        this.c113d = c113d;
+        notifyPropertyChanged(BR.c113d);
     }
 
     @Bindable
@@ -3813,7 +3852,10 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c110 = json.getString("c110");
             this.c111 = json.getString("c111");
             this.c112 = json.getString("c112");
-            this.c113 = json.getString("c113");
+            this.c113a = json.getString("c113a");
+            this.c113b = json.getString("c113b");
+            this.c113c = json.getString("c113c");
+            this.c113d = json.getString("c113d");
             this.c114 = json.getString("c114");
         }
     }
@@ -4355,7 +4397,10 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c110", c110)
                 .put("c111", c111)
                 .put("c112", c112)
-                .put("c113", c113)
+                .put("c113a", c113a)
+                .put("c113b", c113b)
+                .put("c113c", c113c)
+                .put("c113d", c113d)
                 .put("c114", c114);
         return json.toString();
     }

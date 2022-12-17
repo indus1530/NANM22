@@ -1172,7 +1172,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.c112.equals(`98`)}"
-                                android:onClick="@{()->form.setC112(`98`) + c113.clearCheck() + c114.clearCheck()}"
+                                android:onClick="@{()->form.setC112(`98`) + c114.clearCheck()}"
                                 android:text="@string/c112c" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1208,43 +1208,45 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/c113"
+                        <LinearLayout
+                            android:id="@+id/c113check"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/c113a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.c113.equals(`1`)}"
-                                android:onClick="@{()->form.setC113(`1`)}"
+                                android:checked="@{form.c113a.equals(`1`)}"
+                                android:onClick="@{()->form.setC113a(form.c113a.equals(`1`)?``:`1`)}"
                                 android:text="@string/c113a" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/c113b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.c113.equals(`2`)}"
-                                android:onClick="@{()->form.setC113(`2`)}"
+                                android:checked="@{form.c113b.equals(`2`)}"
+                                android:onClick="@{()->form.setC113b(form.c113b.equals(`2`)?``:`2`)}"
                                 android:text="@string/c113b" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/c113c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.c113.equals(`3`)}"
-                                android:onClick="@{()->form.setC113(`3`)}"
+                                android:checked="@{form.c113c.equals(`3`)}"
+                                android:onClick="@{()->form.setC113c(form.c113c.equals(`3`)?``:`3`)}"
                                 android:text="@string/c113c" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/c113d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.c113.equals(`4`)}"
-                                android:onClick="@{()->form.setC113(`4`)}"
+                                android:checked="@{form.c113d.equals(`4`)}"
+                                android:onClick="@{()->form.setC113d(form.c113d.equals(`4`)?``:`4`)}"
                                 android:text="@string/c113d" />
-                        </RadioGroup>
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
