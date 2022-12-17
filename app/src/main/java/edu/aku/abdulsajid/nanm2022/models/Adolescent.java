@@ -189,19 +189,19 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String ca307 = _EMPTY_;
     @Ignore
+    private String ca308 = _EMPTY_;
+    @Ignore
     private String ca309 = _EMPTY_;
     @Ignore
     private String ca310 = _EMPTY_;
     @Ignore
-    private String ca308 = _EMPTY_;
-    @Ignore
-    private String cb309 = _EMPTY_;
-    @Ignore
-    private String cb310 = _EMPTY_;
-    @Ignore
     private String cb311 = _EMPTY_;
     @Ignore
     private String cb312 = _EMPTY_;
+    @Ignore
+    private String cb313 = _EMPTY_;
+    @Ignore
+    private String cb314 = _EMPTY_;
     @Ignore
     private String ca401 = _EMPTY_;
     @Ignore
@@ -1059,6 +1059,35 @@ public class Adolescent extends BaseObservable implements Observable {
         setC213(c201.equals("1") ? this.c213 : "");
         setC214(c201.equals("1") ? this.c214 : "");
         setC215(c201.equals("1") ? this.c215 : "");
+
+        setCa301(c201.equals("1") ? this.ca301 : "");
+        setCa302(c201.equals("1") ? this.ca302 : "");
+        setCa303(c201.equals("1") ? this.ca303 : "");
+        setCa304(c201.equals("1") ? this.ca304 : "");
+        setCa305(c201.equals("1") ? this.ca305 : "");
+        setCa306(c201.equals("1") ? this.ca306 : "");
+        setCa307(c201.equals("1") ? this.ca307 : "");
+        setCa308(c201.equals("1") ? this.ca308 : "");
+        setCa309(c201.equals("1") ? this.ca309 : "");
+        setCa310(c201.equals("1") ? this.ca310 : "");
+
+        setCb311(c201.equals("2") ? this.cb311 : "");
+        setCb312(c201.equals("2") ? this.cb312 : "");
+        setCb313(c201.equals("2") ? this.cb313 : "");
+        setCb314(c201.equals("2") ? this.cb314 : "");
+
+        setCa401(c201.equals("1") ? this.ca401 : "");
+        setCa402(c201.equals("1") ? this.ca402 : "");
+        setCa403(c201.equals("1") ? this.ca403 : "");
+        setCa404(c201.equals("1") ? this.ca404 : "");
+        setCa405(c201.equals("1") ? this.ca405 : "");
+        setCa406(c201.equals("1") ? this.ca406 : "");
+        setCa407(c201.equals("1") ? this.ca407 : "");
+
+        setCb401(c201.equals("2") ? this.cb401 : "");
+        setCb402(c201.equals("2") ? this.cb402 : "");
+        setCb403(c201.equals("2") ? this.cb403 : "");
+        setCb404(c201.equals("2") ? this.cb404 : "");
         notifyPropertyChanged(BR.c201);
     }
 
@@ -1465,6 +1494,16 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getCa308() {
+        return ca308;
+    }
+
+    public void setCa308(String ca308) {
+        this.ca308 = ca308;
+        notifyPropertyChanged(BR.ca308);
+    }
+
+    @Bindable
     public String getCa309() {
         return ca309;
     }
@@ -1485,36 +1524,6 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getCa308() {
-        return ca308;
-    }
-
-    public void setCa308(String ca308) {
-        this.ca308 = ca308;
-        notifyPropertyChanged(BR.ca308);
-    }
-
-    @Bindable
-    public String getCb309() {
-        return cb309;
-    }
-
-    public void setCb309(String cb309) {
-        this.cb309 = cb309;
-        notifyPropertyChanged(BR.cb309);
-    }
-
-    @Bindable
-    public String getCb310() {
-        return cb310;
-    }
-
-    public void setCb310(String cb310) {
-        this.cb310 = cb310;
-        notifyPropertyChanged(BR.cb310);
-    }
-
-    @Bindable
     public String getCb311() {
         return cb311;
     }
@@ -1532,6 +1541,26 @@ public class Adolescent extends BaseObservable implements Observable {
     public void setCb312(String cb312) {
         this.cb312 = cb312;
         notifyPropertyChanged(BR.cb312);
+    }
+
+    @Bindable
+    public String getCb313() {
+        return cb313;
+    }
+
+    public void setCb313(String cb313) {
+        this.cb313 = cb313;
+        notifyPropertyChanged(BR.cb313);
+    }
+
+    @Bindable
+    public String getCb314() {
+        return cb314;
+    }
+
+    public void setCb314(String cb314) {
+        this.cb314 = cb314;
+        notifyPropertyChanged(BR.cb314);
     }
 
     @Bindable
@@ -3579,7 +3608,7 @@ public class Adolescent extends BaseObservable implements Observable {
             this.ca307 = json.getString("ca307");
             this.ca309 = json.getString("ca309");
             this.ca310 = json.getString("ca310");
-            this.ca308 = json.getString("ca308");
+            this.ca310 = json.getString("ca310");
             this.cb309 = json.getString("cb309");
             this.cb310 = json.getString("cb310");
             this.cb311 = json.getString("cb311");
@@ -3840,13 +3869,13 @@ public class Adolescent extends BaseObservable implements Observable {
             this.ca305 = json.getString("ca305");
             this.ca306 = json.getString("ca306");
             this.ca307 = json.getString("ca307");
+            this.ca308 = json.getString("ca308");
             this.ca309 = json.getString("ca309");
             this.ca310 = json.getString("ca310");
-            this.ca308 = json.getString("ca308");
-            this.cb309 = json.getString("cb309");
-            this.cb310 = json.getString("cb310");
             this.cb311 = json.getString("cb311");
             this.cb312 = json.getString("cb312");
+            this.cb313 = json.getString("cb313");
+            this.cb314 = json.getString("cb314");
         }
     }
 
@@ -4168,8 +4197,8 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("ca307", ca307)
                 .put("ca309", ca309)
                 .put("ca310", ca310)
-                .put("ca308", ca308)
-                .put("cb309", cb309)
+                .put("ca310", ca310)
+                .put("cb311", cb311)
                 .put("cb310", cb310)
                 .put("cb311", cb311)
                 .put("cb312", cb312)
@@ -4378,13 +4407,13 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("ca305", ca305)
                 .put("ca306", ca306)
                 .put("ca307", ca307)
+                .put("ca308", ca308)
                 .put("ca309", ca309)
                 .put("ca310", ca310)
-                .put("ca308", ca308)
-                .put("cb309", cb309)
-                .put("cb310", cb310)
                 .put("cb311", cb311)
-                .put("cb312", cb312);
+                .put("cb312", cb312)
+                .put("cb313", cb313)
+                .put("cb314", cb314);
         return json.toString();
     }
 

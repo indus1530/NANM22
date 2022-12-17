@@ -263,11 +263,27 @@ public class Forms extends BaseObservable implements Observable {
     @Ignore
     private String a331xx = _EMPTY_;
     @Ignore
-    private String a333 = _EMPTY_;
+    private String a333a = _EMPTY_;
+    @Ignore
+    private String a333b = _EMPTY_;
+    @Ignore
+    private String a333c = _EMPTY_;
+    @Ignore
+    private String a333d = _EMPTY_;
+    @Ignore
+    private String a333e = _EMPTY_;
+    @Ignore
+    private String a333x = _EMPTY_;
     @Ignore
     private String a333xx = _EMPTY_;
     @Ignore
-    private String a334 = _EMPTY_;
+    private String a334a = _EMPTY_;
+    @Ignore
+    private String a334b = _EMPTY_;
+    @Ignore
+    private String a334c = _EMPTY_;
+    @Ignore
+    private String a334x = _EMPTY_;
     @Ignore
     private String a334xx = _EMPTY_;
     @Ignore
@@ -2368,8 +2384,8 @@ public class Forms extends BaseObservable implements Observable {
 
     public void setA323(String a323) {
         this.a323 = a323;
-        setA324(a323.equals("1") ? "" : this.a324);
-        setA325(a323.equals("1") ? "" : this.a325);
+        setA324(a323.equals("1") ? this.a324 : "");
+        setA325(a323.equals("1") ? this.a325 : "");
         notifyPropertyChanged(BR.a323);
     }
 
@@ -2567,15 +2583,76 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA333() {
-        return a333;
+    public String getA333a() {
+        return a333a;
     }
 
-    public void setA333(String a333) {
-        this.a333 = a333;
-        setA333xx(a333.equals("96") ? this.a333xx : "");
-        setA334(a333.equals("97") ? "" : this.a334);
-        notifyPropertyChanged(BR.a333);
+    public void setA333a(String a333a) {
+        if (this.a333a.equals(a333a)) return; // for all checkboxes
+        this.a333a = a333a;
+        setA334a(a333a.equals("97") ? "" : this.a334a);
+        notifyPropertyChanged(BR.a333a);
+    }
+
+    @Bindable
+    public String getA333b() {
+        return a333b;
+    }
+
+    public void setA333b(String a333b) {
+        if (this.a333b.equals(a333b)) return; // for all checkboxes
+        this.a333b = a333b;
+        notifyPropertyChanged(BR.a333b);
+    }
+
+    @Bindable
+    public String getA333c() {
+        return a333c;
+    }
+
+    public void setA333c(String a333c) {
+        if (this.a333c.equals(a333c)) return; // for all checkboxes
+        this.a333c = a333c;
+        notifyPropertyChanged(BR.a333c);
+    }
+
+    @Bindable
+    public String getA333d() {
+        return a333d;
+    }
+
+    public void setA333d(String a333d) {
+        if (this.a333d.equals(a333d)) return; // for all checkboxes
+        this.a333d = a333d;
+        notifyPropertyChanged(BR.a333d);
+    }
+
+    @Bindable
+    public String getA333e() {
+        return a333e;
+    }
+
+    public void setA333e(String a333e) {
+        if (this.a333e.equals(a333e)) return; // for all checkboxes
+        this.a333e = a333e;
+        setA333a(a333e.equals("97") ? "" : this.a333a);
+        setA333b(a333e.equals("97") ? "" : this.a333b);
+        setA333c(a333e.equals("97") ? "" : this.a333c);
+        setA333d(a333e.equals("97") ? "" : this.a333d);
+        setA333x(a333e.equals("97") ? "" : this.a333x);
+        notifyPropertyChanged(BR.a333e);
+    }
+
+    @Bindable
+    public String getA333x() {
+        return a333x;
+    }
+
+    public void setA333x(String a333x) {
+        if (this.a333x.equals(a333x)) return; // for all checkboxes
+        this.a333x = a333x;
+        setA333xx(a333x.equals("96") ? this.a333xx : "");
+        notifyPropertyChanged(BR.a333x);
     }
 
     @Bindable
@@ -2589,14 +2666,48 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA334() {
-        return a334;
+    public String getA334a() {
+        return a334a;
     }
 
-    public void setA334(String a334) {
-        this.a334 = a334;
-        setA334xx(a334.equals("96") ? this.a334xx : "");
-        notifyPropertyChanged(BR.a334);
+    public void setA334a(String a334a) {
+        if (this.a334a.equals(a334a)) return; // for all checkboxes
+        this.a334a = a334a;
+        notifyPropertyChanged(BR.a334a);
+    }
+
+    @Bindable
+    public String getA334b() {
+        return a334b;
+    }
+
+    public void setA334b(String a334b) {
+        if (this.a334b.equals(a334b)) return; // for all checkboxes
+        this.a334b = a334b;
+        notifyPropertyChanged(BR.a334b);
+    }
+
+    @Bindable
+    public String getA334c() {
+        return a334c;
+    }
+
+    public void setA334c(String a334c) {
+        if (this.a334c.equals(a334c)) return; // for all checkboxes
+        this.a334c = a334c;
+        notifyPropertyChanged(BR.a334c);
+    }
+
+    @Bindable
+    public String getA334x() {
+        return a334x;
+    }
+
+    public void setA334x(String a334x) {
+        if (this.a334x.equals(a334x)) return; // for all checkboxes
+        this.a334x = a334x;
+        setA334xx(a334x.equals("96") ? this.a334xx : "");
+        notifyPropertyChanged(BR.a334x);
     }
 
     @Bindable
@@ -8643,9 +8754,9 @@ public class Forms extends BaseObservable implements Observable {
             this.a332ax = json.getString("a332ax");
             this.a331 = json.getString("a331");
             this.a331xx = json.getString("a331xx");
-            this.a333 = json.getString("a333");
+            this.a333a = json.getString("a333");
             this.a333xx = json.getString("a333xx");
-            this.a334 = json.getString("a334");
+            this.a334a = json.getString("a334");
             this.a334xx = json.getString("a334xx");
         }
     }
@@ -9823,9 +9934,9 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a332ax", a332ax)
                 .put("a331", a331)
                 .put("a331xx", a331xx)
-                .put("a333", a333)
+                .put("a333", a333a)
                 .put("a333xx", a333xx)
-                .put("a334", a334)
+                .put("a334", a334a)
                 .put("a334xx", a334xx);
         return json.toString();
     }

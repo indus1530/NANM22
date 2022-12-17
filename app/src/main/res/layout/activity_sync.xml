@@ -346,9 +346,7 @@
 
                     <Button
                         android:id="@+id/btnUploadPhotos"
-
                         style="@style/button"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/capsuley"
@@ -356,7 +354,8 @@
                         android:text="Upload Photos"
                         android:textColor="@color/white"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="gone" />
 
                     <View
                         android:layout_width="24dp"
