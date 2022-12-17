@@ -1488,6 +1488,16 @@
                                 android:enabled="@{!form.a41698.equals(`98`)}"
                                 android:onClick="@{()->form.setA41696(form.a41696.equals(`96`)?``:`96`)}"
                                 android:text="@string/a41696" />
+
+                            <EditText
+                                android:id="@+id/a41696x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/a41396"
+                                android:tag="a41696"
+                                android:text="@={form.a41696x}"
+                                android:visibility="@{form.a41696.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

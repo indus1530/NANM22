@@ -93,12 +93,12 @@ public class SectionA3BActivity extends AppCompatActivity {
             return false;
 
         if (form.getA327a().equals("0") && form.getA327b().equals("0"))
-            Validator.emptyCustomTextBox(this, bi.a327a, "Total cannot be 0");
+            return Validator.emptyCustomTextBox(this, bi.a327a, "Total cannot be 0");
 
-        if (form.getA329a().equals("0") && form.getA329b().equals("0") &&
-                form.getA329c().equals("0") && form.getA329d().equals("0") &&
-                form.getA329e().equals("0") && form.getA329f().equals("0"))
-            Validator.emptyCustomTextBox(this, bi.a329a, "Total cannot be 0");
+        if (form.getA329a().equals("0") && form.getA329b().equals("0")
+                && form.getA329c().equals("0") && form.getA329d().equals("0")
+                && form.getA329e().equals("0") && form.getA329f().equals("0"))
+            return Validator.emptyCustomTextBox(this, bi.a329a, "Total cannot be 0");
 
         return true;
     }

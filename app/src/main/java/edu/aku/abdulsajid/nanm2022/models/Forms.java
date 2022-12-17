@@ -485,6 +485,8 @@ public class Forms extends BaseObservable implements Observable {
     @Ignore
     private String a41696 = _EMPTY_;
     @Ignore
+    private String a41696x = _EMPTY_;
+    @Ignore
     private String a417 = _EMPTY_;
     @Ignore
     private String a41701 = _EMPTY_;
@@ -3758,7 +3760,18 @@ public class Forms extends BaseObservable implements Observable {
     public void setA41696(String a41696) {
         if (this.a41696.equals(a41696)) return; // for all checkboxes
         this.a41696 = a41696;
+        setA41696x(a41696.equals("96") ? this.a41696x : "");
         notifyPropertyChanged(BR.a41696);
+    }
+
+    @Bindable
+    public String getA41696x() {
+        return a41696x;
+    }
+
+    public void setA41696x(String a41696x) {
+        this.a41696x = a41696x;
+        notifyPropertyChanged(BR.a41696x);
     }
 
     @Bindable
@@ -4649,7 +4662,13 @@ public class Forms extends BaseObservable implements Observable {
 
     public void setA511(String a511) {
         this.a511 = a511;
-        setA512(a511.equals("1") ? this.a512 : "");
+        setA51201(a511.equals("1") ? this.a51201 : "");
+        setA51202(a511.equals("1") ? this.a51202 : "");
+        setA51203(a511.equals("1") ? this.a51203 : "");
+        setA51204(a511.equals("1") ? this.a51204 : "");
+        setA51205(a511.equals("1") ? this.a51205 : "");
+        setA51296(a511.equals("1") ? this.a51296 : "");
+        setA51298(a511.equals("1") ? this.a51298 : "");
         notifyPropertyChanged(BR.a511);
     }
 
@@ -8881,6 +8900,7 @@ public class Forms extends BaseObservable implements Observable {
             this.a41609 = json.getString("a41609");
             this.a41698 = json.getString("a41698");
             this.a41696 = json.getString("a41696");
+            this.a41696x = json.getString("a41696x");
             this.a417 = json.getString("a417");
             this.a41701 = json.getString("a41701");
             this.a41702 = json.getString("a41702");
@@ -10055,6 +10075,7 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a41609", a41609)
                 .put("a41698", a41698)
                 .put("a41696", a41696)
+                .put("a41696x", a41696x)
                 .put("a417", a417)
                 .put("a41701", a41701)
                 .put("a41702", a41702)
