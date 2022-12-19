@@ -484,10 +484,10 @@
                                     android:gravity="center"
                                     android:hint="####"
                                     android:inputType="number"
-                                    android:maxLength="2"
+                                    android:maxLength="4"
                                     android:text="@={form.c205a}"
-                                    app:maxValue="10"
-                                    app:minValue="1"
+                                    app:maxValue="2022"
+                                    app:minValue="2014"
                                     app:type="range" />
 
                                 <CheckBox
@@ -582,8 +582,7 @@
                     <!-- c207  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVc207"
-                        style="@style/cardView"
-                        android:visibility="@{form.c203.equals(`2`) ? View.VISIBLE : View.GONE}">
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"

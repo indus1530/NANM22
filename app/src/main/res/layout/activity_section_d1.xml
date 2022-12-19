@@ -563,13 +563,15 @@
                                 android:layout_weight="1"
                                 android:enabled="@{form.d113.equals(`1`)}"
                                 android:gravity="center"
-                                android:hint="@string/d11301"
+                                android:hint="###.#"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="4"
                                 android:tag="d11301"
                                 android:text="@={form.d11301x}"
-                                app:maxValue="100"
-                                app:minValue="1"
+                                app:mask="###.#"
+                                app:maxValue="160.0"
+                                app:minValue="100.0"
+                                app:pattern="^(\\d{3,1})$"
                                 app:type="range" />
 
                             <RadioButton
@@ -854,12 +856,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="###.#"
                                     android:inputType="number"
-                                    android:maxLength="3"
+                                    android:maxLength="4"
                                     android:text="@={form.d115}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="###.#"
+                                    app:maxValue="160.0"
+                                    app:minValue="100.0"
+                                    app:pattern="^(\\d{3,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -900,12 +904,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="###.#"
                                     android:inputType="number"
-                                    android:maxLength="3"
+                                    android:maxLength="4"
                                     android:text="@={form.d116}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="###.#"
+                                    app:maxValue="160.0"
+                                    app:minValue="100.0"
+                                    app:pattern="^(\\d{3,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1003,12 +1009,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="###.#"
                                     android:inputType="number"
-                                    android:maxLength="3"
+                                    android:maxLength="4"
                                     android:text="@={form.d118}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="###.#"
+                                    app:maxValue="160.0"
+                                    app:minValue="100.0"
+                                    app:pattern="^(\\d{3,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1049,12 +1057,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d119}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="60.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1095,12 +1105,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d120}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="60.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1198,12 +1210,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d122}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="60.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1244,12 +1258,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d123}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="10.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1290,12 +1306,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d124}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="10.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1393,12 +1411,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##.#"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.d126}"
-                                    app:maxValue="100"
-                                    app:minValue="1"
+                                    app:mask="##.#"
+                                    app:maxValue="10.0"
+                                    app:minValue="25.0"
+                                    app:pattern="^(\\d{2,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
