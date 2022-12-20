@@ -1225,7 +1225,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5222b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5222b(form.a5222b.equals(`2`)?``:`2`))}"
+                                    android:onClick="@{()->form.setA5222b(form.a5222b.equals(`2`)?``:`2`)}"
                                     android:text="@string/a5222b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1257,7 +1257,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5222c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5222c(form.a5222c.equals(`3`)?``:`3`))}"
+                                    android:onClick="@{()->form.setA5222c(form.a5222c.equals(`3`)?``:`3`)}"
                                     android:text="@string/a5222c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1271,7 +1271,7 @@
                                     android:maxLength="3"
                                     android:tag="a5222c"
                                     android:text="@={form.a5222cx}"
-                                    android:visibility="@{form.a5222.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.a5222c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1328,7 +1328,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5223a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5223a(form.a5223a.equals(`1`)?``:`1`))}"
+                                    android:onClick="@{()->form.setA5223a(form.a5223a.equals(`1`)?``:`1`)}"
                                     android:text="@string/a5223a" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1360,7 +1360,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5223b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5223b(form.a5223b.equals(`2`)?``:`2`))}"
+                                    android:onClick="@{()->form.setA5223b(form.a5223b.equals(`2`)?``:`2`)}"
                                     android:text="@string/a5223b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1392,7 +1392,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5223c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5223c(form.a5223c.equals(`3`)?``:`3`))}"
+                                    android:onClick="@{()->form.setA5223c(form.a5223c.equals(`3`)?``:`3`)}"
                                     android:text="@string/a5223c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1463,7 +1463,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5224a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5224a(form.a5224a.equals(`1`)?``:`1`))}"
+                                    android:onClick="@{()->form.setA5224a(form.a5224a.equals(`1`)?``:`1`)}"
                                     android:text="@string/a5224a" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1495,7 +1495,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5224b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5224b(form.a5224b.equals(`2`)?``:`2`))}"
+                                    android:onClick="@{()->form.setA5224b(form.a5224b.equals(`2`)?``:`2`)}"
                                     android:text="@string/a5224b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1527,7 +1527,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5224c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5224c(form.a5224c.equals(`3`)?``:`3`))}"
+                                    android:onClick="@{()->form.setA5224c(form.a5224c.equals(`3`)?``:`3`)}"
                                     android:text="@string/a5224c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1600,7 +1600,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5225a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5225a(form.a5225a.equals(`1`)?``:`1`))}"
+                                    android:onClick="@{()->form.setA5225a(form.a5225a.equals(`1`)?``:`1`)}"
                                     android:text="@string/a5225a" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1632,7 +1632,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5225b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5225b(form.a5225b.equals(`2`)?``:`2`))}"
+                                    android:onClick="@{()->form.setA5225b(form.a5225b.equals(`2`)?``:`2`)}"
                                     android:text="@string/a5225b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1664,7 +1664,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5225c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5225c(form.a5225c.equals(`3`)?``:`3`))}"
+                                    android:onClick="@{()->form.setA5225c(form.a5225c.equals(`3`)?``:`3`)}"
                                     android:text="@string/a5225c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1735,7 +1735,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5226a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5226a(form.a5226a.equals(`1`)?``:`1`))}"
+                                    android:onClick="@{()->form.setA5226a(form.a5226a.equals(`1`)?``:`1`)}"
                                     android:text="@string/a5226a" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1767,7 +1767,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5226b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5226b(form.a5226b.equals(`2`)?``:`2`))}"
+                                    android:onClick="@{()->form.setA5226b(form.a5226b.equals(`2`)?``:`2`)}"
                                     android:text="@string/a5226b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1799,7 +1799,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a5226c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5226c(form.a5226c.equals(`3`)?``:`3`))}"
+                                    android:onClick="@{()->form.setA5226c(form.a5226c.equals(`3`)?``:`3`)}"
                                     android:text="@string/a5226c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1831,7 +1831,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.a52296.equals(`96`)}"
-                                    android:onClick="@{()->form.setA52296(form.a52296.equals(`96`)?``:`96`))}"
+                                    android:onClick="@{()->form.setA52296(form.a52296.equals(`96`)?``:`96`)}"
                                     android:text="@string/a52296" />
 
                                 <EditText

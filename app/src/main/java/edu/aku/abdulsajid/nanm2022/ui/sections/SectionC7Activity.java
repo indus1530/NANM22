@@ -80,7 +80,7 @@ public class SectionC7Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionD1Activity.class));
+            startActivity(new Intent(this, SectionC8Activity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

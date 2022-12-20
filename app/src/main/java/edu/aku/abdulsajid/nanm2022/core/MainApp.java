@@ -5,12 +5,16 @@ import static edu.aku.abdulsajid.nanm2022.database.DatabaseHelper.DATABASE_PASSW
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -24,6 +28,8 @@ import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
 
@@ -129,6 +135,12 @@ public class MainApp extends Application {
     public static CountDownTimer timer;
     protected static LocationManager locationManager;
     static ToneGenerator toneGen1;
+
+    // FOOD AND INGREDIENTS CHANGES
+    public static int STANDARD_ADD = 1;
+    public static int STANDARD_DELETE = -1;
+    public static int NEW_ADD = 2;
+    public static int NOT_REPORTED = 9999;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
@@ -330,6 +342,58 @@ public class MainApp extends Application {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * DIETARY FOLLOWUP
+     */
+
+    // Check Edittext, TextView and String is not empty
+    public static boolean isNotEmpty(Object object) {
+        if (object instanceof EditText) {
+            return !((EditText) object).getText().toString().trim().equals("");
+        } else if (object instanceof TextView) {
+            return !((TextView) object).getText().toString().equals("");
+        } else if (object instanceof String) {
+            return !object.equals("");
+        }
+        return false;
+    }
+
+    // Simple Alert Dialog with Multiple Choice
+    public static void alert(int popupId, Activity activity, String title, String message,
+                             Object passObj, IAlertCallback iAlertCallback) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setCancelable(false);
+        builder.setTitle(title);
+        builder.setMessage(message);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        builder.setPositiveButton(activity.getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.cancel();
+                iAlertCallback.onClick(popupId, true, passObj);
+            }
+        });
+
+        builder.setNegativeButton(activity.getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.cancel();
+                iAlertCallback.onClick(popupId, false, passObj);
+            }
+        });
+
+        dialog.show();
+    }
+
+    // Alert dialog button click callback
+    public interface IAlertCallback {
+        void onClick(int popupId, boolean isPositiveClick, Object obj);
     }
 
 }

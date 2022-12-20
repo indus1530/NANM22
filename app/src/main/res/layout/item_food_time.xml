@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainItem"
+    android:layout_width="@dimen/_65sdp"
+    android:layout_height="@dimen/_23sdp"
+    android:background="@drawable/ic_step_mid"
+    android:backgroundTint="@color/chip_default_color">
+
+    <TextView
+        android:id="@+id/titleTV"
+        style="@style/Theme.main.RegularText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/_3sdp"
+        android:text="Breakfast"
+        android:textColor="@color/app_color" />
+
+</RelativeLayout>

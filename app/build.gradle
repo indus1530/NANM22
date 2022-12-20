@@ -201,5 +201,8 @@ dependencies {
 
     releaseImplementation 'com.facebook.flipper:flipper-noop:0.173.0'
 
+    /*GSON*/
+    implementation 'com.google.code.gson:gson:2.8.7'
+
 
 }

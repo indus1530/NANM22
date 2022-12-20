@@ -4,5 +4,12 @@
     <dimen name="app_bar_height">270sp</dimen>
     <dimen name="app_bar_height_selected_children_list">330sp</dimen>
     <dimen name="border_radius">@dimen/_4sdp</dimen>
+    <dimen name="text_size_small">@dimen/_8ssp</dimen>
+    <dimen name="text_size_regular">@dimen/_10ssp</dimen>
+    <dimen name="text_size_title">@dimen/_12ssp</dimen>
+    <dimen name="main_padding">@dimen/_13sdp</dimen>
+    <dimen name="card_elevation">@dimen/_3sdp</dimen>
+    <dimen name="chip_height">@dimen/_23sdp</dimen>
+    <dimen name="radiobutton_height">@dimen/_20sdp</dimen>
 
 </resources>

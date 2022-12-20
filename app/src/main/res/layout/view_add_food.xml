@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_alert"
+    app:cardElevation="@dimen/card_elevation">
+
+    <RelativeLayout
+        android:id="@+id/subLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_15sdp">
+
+        <TextView
+            android:id="@+id/titleTV"
+            style="@style/Theme.main.BoldFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/add_food" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/foodNameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@+id/quantityET"
+            android:hint="@string/enter_food_name"
+            android:inputType="numberDecimal"
+            app:minValue="0" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/quantityET"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTV"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:hint="@string/qty"
+            android:inputType="numberDecimal"
+            app:minValue="0" />
+
+        <LinearLayout
+            android:id="@+id/ingNameETLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foodNameET"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.edittextpicker.aliazaz.EditTextPicker
+                android:id="@+id/newIngrET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.95"
+                android:background="@null"
+                android:hint="@string/any_new_ingredient"
+                android:inputType="numberDecimal"
+                app:minValue="0" />
+
+            <ImageView
+                android:id="@+id/addNewIngrBtn"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.05"
+                android:clickable="true"
+                android:src="@drawable/ic_add_app_color"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ingrCGLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingNameETLayout"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:minHeight="@dimen/_100sdp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/ingrCG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="false" />
+
+            <TextView
+                android:id="@+id/ingrErrorTV"
+                style="@style/Theme.main.BoldText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/light_gray_color" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/posBtn"
+            style="@style/Theme.main.ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingrCGLayout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/add" />
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/buttonLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/ingrCG"-->
+        <!--            android:layout_marginTop="@dimen/_15sdp"-->
+        <!--            android:gravity="end"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:weightSum="1">-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/negBtn"-->
+        <!--                style="@style/Theme.main.ButtonStyle"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginEnd="@dimen/_20sdp"-->
+        <!--                android:layout_weight="0.5"-->
+        <!--               android:elevation="0dp"-->
+        <!--               app:elevation="0dp"-->
+        <!--                android:text="@string/cancel"-->
+        <!--                android:textColor="@color/text_color_light"-->
+        <!--                app:backgroundTint="@android:color/transparent" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/posBtn"-->
+        <!--                style="@style/Theme.main.ButtonStyle"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="0.5"-->
+        <!--                android:text="@string/add" />-->
+
+        <!--        </LinearLayout>-->
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

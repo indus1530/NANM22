@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.util.EncodingUtils.getBytes
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.models.*
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.*
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
 
@@ -27,22 +27,32 @@ import net.sqlcipher.database.SupportFactory
             Villages::class,
             AdolList::class,
             Adolescent::class,
-            EntryLog::class
-
-
+            EntryLog::class,
+            PatientFood::class,
+            FoodChange::class,
+            FoodTime::class,
+            Food::class,
+            Ingredient::class,
+            FoodIngredientMap::class
         ]
 )
 
-abstract class NANMRoomDatabase : RoomDatabase(){
+abstract class NANMRoomDatabase : RoomDatabase() {
 
-    abstract fun formsDao() : FormsDao
-    abstract fun syncFunctionsDao() : SyncFunctionsDao
-    abstract fun familyMembersDao() : FamilyMembersDao
-    abstract fun adolescentDao() : AdolescentDao
-    abstract fun usersDao() : UsersDao
-    abstract fun villagesDao() : VillagesDao
-    abstract fun adolListDao() : AdolListDao
-    abstract fun entryLogDao() : EntryLogDao
+    abstract fun formsDao(): FormsDao
+    abstract fun syncFunctionsDao(): SyncFunctionsDao
+    abstract fun familyMembersDao(): FamilyMembersDao
+    abstract fun adolescentDao(): AdolescentDao
+    abstract fun usersDao(): UsersDao
+    abstract fun villagesDao(): VillagesDao
+    abstract fun adolListDao(): AdolListDao
+    abstract fun entryLogDao(): EntryLogDao
+    abstract fun patientFoodDao(): DietaryFoodDao.PatientFoodDao?
+    abstract fun foodChangeDao(): DietaryFoodDao.FoodChangeDao?
+    abstract fun foodTimeDao(): DietaryFoodDao.FoodTimeDao?
+    abstract fun foodDao(): DietaryFoodDao.FoodDao?
+    abstract fun ingredientDao(): DietaryFoodDao.IngredientDao?
+    abstract fun foodIngrJTDao(): DietaryFoodDao.FoodIngredientMapDao?
 
 
     companion object {

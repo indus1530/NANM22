@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/bottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottomsheet"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <View
+            android:id="@+id/bsHandleView"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.3"
+            android:background="@color/black" />
+
+        <!--        <Button-->
+        <!--            android:id="@+id/bsCloseBtn"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="@dimen/_30sdp"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginBottom="@dimen/_10sdp"-->
+        <!--            android:background="@drawable/ic_close"-->
+        <!--            android:backgroundTint="@color/error_color"-->
+        <!--            android:padding="0dp"-->
+        <!--            android:textSize="@dimen/_13ssp"-->
+        <!--            app:backgroundTint="@null" />-->
+
+        <Button
+            android:id="@+id/bsCloseBtn"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/error_color"
+            android:padding="0dp"
+            android:textSize="@dimen/_13ssp"
+            app:backgroundTint="@null" />
+
+        <TextView
+            android:id="@+id/bsAddBtn"
+            style="@style/Theme.main.ButtonStyle"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:clickable="true"
+            android:text="@string/add" />
+
+        <TextView
+            android:id="@+id/bsTitleTV"
+            style="@style/Theme.main.TitleBoldText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bsCloseBtn"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:text="@string/add_food"
+            android:textColor="@color/text_color" />
+
+        <LinearLayout
+            android:id="@+id/foodNameETLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bsTitleTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@+id/quantityET"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <AutoCompleteTextView
+                android:id="@+id/foodNameACET"
+                style="@style/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.95"
+                android:background="@null"
+                android:completionThreshold="1"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/enter_food_name"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/bsFoodClearBtn"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.05"
+                android:background="@drawable/ic_close"
+                android:backgroundTint="@color/icon_color"
+                android:clickable="true"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/quantityET"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bsTitleTV"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:hint="@string/qty"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            tools:ignore="Autofill" />
+
+        <LinearLayout
+            android:id="@+id/ingrNameETLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foodNameETLayout"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <AutoCompleteTextView
+                android:id="@+id/newIngrACET"
+                style="@style/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.95"
+                android:background="@null"
+                android:completionThreshold="1"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/any_new_ingredient"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/addNewIngrBtn"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.05"
+                android:clickable="true"
+                android:src="@drawable/ic_add_app_color"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/ingrCGSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingrNameETLayout"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:id="@+id/ingrCGLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_200sdp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/ingrCG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="@dimen/_5sdp"
+                    app:chipSpacingVertical="@dimen/_5sdp"
+                    app:selectionRequired="true"
+                    app:singleSelection="false" />
+
+                <TextView
+                    android:id="@+id/ingrErrorTV"
+                    style="@style/Theme.main.BoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/light_gray_color" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/submitBtn"-->
+        <!--            style="@style/Theme.main.ButtonStyle"-->
+        <!--            android:layout_below="@+id/ingrCGSV"-->
+        <!--            android:layout_marginTop="@dimen/_15sdp"-->
+        <!--            android:clickable="true"-->
+        <!--            android:text="@string/add" />-->
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

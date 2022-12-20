@@ -37,6 +37,47 @@
     <string name="csMAexist" translatable="false">might be already exist</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <!--Dietry Followup-->
+    <string name="today">Today</string>
+    <string name="select">Select</string>
+    <string name="invalid_time_error">Invalid Date!</string>
+    <string name="invalid_time_error_desc">Please select the valid date</string>
+    <string name="invalid_time_max_error_desc">Maximum observation time would be %d days</string>
+    <string name="time_not_selected_error_desc">Valid date or time must be selected</string>
+    <string name="patients_list">Patients List</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="empty_patient_list">Patient list is empty</string>
+    <string name="patient_details">Patient Details</string>
+    <string name="patient_name">Patient name</string>
+    <string name="age">Age</string>
+    <string name="intake_followup">Intake Followup</string>
+    <string name="time_intake">Time Intake </string>
+    <string name="food_intake">Food Intake</string>
+    <string name="add_food">Add Food</string>
+    <string name="add">Add</string>
+    <string name="qty">Qty</string>
+    <string name="enter_food_name">Enter food name</string>
+    <string name="any_new_ingredient">Any new ingredient?</string>
+    <string name="no_ingredients_found">No ingredients found</string>
+    <string name="add_food_empty_error">Please add food first</string>
+    <string name="add_quantity_empty_error">Please add quantity</string>
+    <string name="add_ingredient_empty_error">Please add ingredients of food</string>
+    <string name="item_already_added_error_desc">Item already added in the list</string>
+    <string name="item_already_added_error">Already added!</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="are_you_sure_ingr">Are you sure you want to delete this ingredient?</string>
+    <string name="are_you_sure_food">Are you sure you want to remove this food?</string>
+    <string name="empty_food_list">Empty %s List</string>
+    <string name="no_meal_taken">No meal taken at this time</string>
+    <string name="be_careful">Be Careful!</string>
+    <string name="no_meal_taken_error_desc">Please add any food or check \'No Meal Taken\' checkbox to proceed</string>
+    <string name="all_ingr_checked_error_desc">All ingredients must be checked</string>
+    <string name="data_not_download_correctly">Data not downloaded correctly</string>
+    <string name="empty_ingredients_list">No Ingredients</string>
+    <string name="submit">Submit</string>
+
+
     <string name="netwrok" translatable="false">Network connection not available!</string>
     <string name="invalidpass" translatable="false">Invalid Password</string>
     <string name="unameRequired" translatable="false">Username is required.</string>
