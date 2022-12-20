@@ -37,7 +37,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_7sdp"
                     android:text="@string/time_intake"
-                    android:textColor="@color/grayDark" />
+                    android:textColor="@color/white" />
 
                 <!--                <androidx.recyclerview.widget.RecyclerView-->
                 <!--                    android:id="@+id/foodTimeRV"-->

@@ -20,7 +20,7 @@ import java.util.List;
 @Entity
 public class FoodChange implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int foodChangeId;
 
     private int patientId;

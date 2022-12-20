@@ -3,7 +3,6 @@ package edu.aku.abdulsajid.nanm2022.room.Form
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.*
 import edu.aku.abdulsajid.nanm2022.models.*
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food
@@ -267,7 +266,6 @@ interface SyncFunctionsDao {
     fun deleteFoodTable()
 
     // Food Time
-
     @Throws(JSONException::class)
     fun syncFoodTime(list: JSONArray): Int {
         var insertCount = 0
@@ -292,7 +290,6 @@ interface SyncFunctionsDao {
     fun deleteFoodTimeTable()
 
     // Ingredient
-
     @Throws(JSONException::class)
     fun syncIngredient(list: JSONArray): Int {
         var insertCount = 0

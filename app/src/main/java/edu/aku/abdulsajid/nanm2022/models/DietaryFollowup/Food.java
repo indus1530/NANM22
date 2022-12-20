@@ -14,7 +14,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 @Entity
 public class Food implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @ColumnInfo(name = TableContracts.FoodTable.COLUMN_FOOD_ID)
     private int foodId;
 

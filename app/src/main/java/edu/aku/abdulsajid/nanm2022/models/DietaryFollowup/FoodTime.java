@@ -15,7 +15,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 @Entity(tableName = TableContracts.FoodTimeTable.TABLE_NAME)
 public class FoodTime implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @ColumnInfo(name = TableContracts.FoodTimeTable.COLUMN_FOODTIME_ID)
     private int foodTimeId;
     @ColumnInfo(name = TableContracts.FoodTimeTable.COLUMN_TITLE)

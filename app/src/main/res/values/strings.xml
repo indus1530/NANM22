@@ -3712,7 +3712,7 @@
     <string name="d12502">No</string>
     <string name="d126">Left middle upper arm circumference measurement #3</string>
     <string name="d201">Select the Child’s Name from drop down list</string>
-    <string name="d201_title">This Section will be filled for index child         </string>
+    <string name="d201_title">This Section will be filled for index child</string>
     <string name="d200">NUTRITIONAL IRON STATUS ASSESSMENT</string>
     <string name="d200main">SECTION - D2:</string>
     <string name="d201_title2">Identification</string>
@@ -3720,7 +3720,7 @@
     <string name="d202a">Yes </string>
     <string name="d202b">No </string>
     <string name="d20201">Yes</string>
-    <string name="d204_title">Nutritional Iron status assessment of participant       Read aloud to participant: we are going to assess (CHILD NAME) iron status                                                               </string>
+    <string name="d204_title">Nutritional Iron status assessment of participant Read aloud to participant: we are going to assess (CHILD NAME) iron status                                                               </string>
     <string name="d20202">No</string>
     <string name="d203">Interview Status</string>
     <string name="d20301">Completed</string>
