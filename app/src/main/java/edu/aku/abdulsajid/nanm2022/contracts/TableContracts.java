@@ -26,7 +26,6 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS96x = "istatus96x";
     }
 
-
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String TABLE_NAME = "AppUser";
@@ -70,7 +69,6 @@ public class TableContracts {
         public static final String COLUMN_PROJECT = "project";
 
     }
-
 
     public static abstract class FormsTable implements BaseColumns {
         public static final String TABLE_NAME = "FormHH";
@@ -128,7 +126,6 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-
     public static abstract class AdolescentTable implements BaseColumns {
         public static final String TABLE_NAME = "Adolescent";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -162,6 +159,48 @@ public class TableContracts {
         public static final String COLUMN_SYNC_DATE = "sync_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+
+    public static abstract class FoodTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "Food";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_FOOD_ID = "foodId";
+        public static final String COLUMN_FOOD_NAME = "foodName";
+        public static final String COLUMN_MEASURING_UNIT = "measuringUnit";
+
+    }
+
+
+    public static abstract class IngredientTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "Ingredient";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_INGREDIENT_ID = "ingredientId";
+        public static final String COLUMN_INGREDIENT_NAME = "ingredientName";
+        public static final String COLUMN_ENERGY_COUNT = "energyCount";
+
+    }
+
+
+    public static abstract class FoodTimeTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "FoodTime";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_FOODTIME_ID = "foodTimeId";
+        public static final String COLUMN_TITLE = "title";
+
+    }
+
+
+    public static abstract class FoodIngredientMapTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "FoodIngredientMap";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_FOOD_ID = "foodId";
+        public static final String COLUMN_INGREDIENT_ID = "ingredientId";
+
     }
 
 
