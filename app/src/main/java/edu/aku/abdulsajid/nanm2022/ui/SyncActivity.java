@@ -59,7 +59,6 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySyncBinding;
 import edu.aku.abdulsajid.nanm2022.models.SyncModel;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -223,6 +222,10 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " enabled = '1' ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.FoodTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.FoodTimeTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.FoodIngredientMapTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.IngredientTable.TABLE_NAME));
                     //downloadTables.add(new SyncModel("versionApp"));
                 } else {
 
