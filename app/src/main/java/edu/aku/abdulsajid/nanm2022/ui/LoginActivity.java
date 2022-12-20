@@ -525,12 +525,12 @@ public class LoginActivity extends AppCompatActivity {
 
         switch (countryCode) {
             case 1:
-                lang = "sd";
-                country = "PK";
+                lang = "en";
+                country = "US";
                 MainApp.editor
                         .putString("lang", "1")
                         .apply();
-                MainApp.langRTL = true;
+                MainApp.langRTL = false;
 
                 break;
 
@@ -545,12 +545,14 @@ public class LoginActivity extends AppCompatActivity {
                 break;
 
             default:
-                lang = "en";
-                country = "US";
+                lang = "sd";
+                country = "PK";
                 MainApp.editor
                         .putString("lang", "0")
                         .apply();
-                MainApp.langRTL = false;
+                MainApp.langRTL = true;
+
+                break;
 
         }
 
@@ -589,9 +591,9 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.NO:
                 return true;
 
-            case R.id.SD:
+            case R.id.EN:
                 MainApp.selectedLanguage = 1;
-                MainApp.langRTL = true;
+                MainApp.langRTL = false;
                 break;
 
             case R.id.UR:
@@ -602,7 +604,7 @@ public class LoginActivity extends AppCompatActivity {
 
             default:
                 MainApp.selectedLanguage = 0;
-                MainApp.langRTL = false;
+                MainApp.langRTL = true;
 
         }
         changeLanguage(MainApp.selectedLanguage);
