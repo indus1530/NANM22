@@ -4,7 +4,12 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 
 @Entity
 public class FoodTime implements Serializable {
@@ -39,5 +44,23 @@ public class FoodTime implements Serializable {
 
     public void setSelected(boolean selected) {
         isSelected = selected;
+    }
+
+
+    public FoodTime Hydrate(FoodTime foodTime) throws JSONException {
+
+        this.foodTimeId = foodTime.foodTimeId;
+        this.title = foodTime.title;
+
+        return this;
+    }
+
+
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+
+        json.put(TableContracts.FoodTimeTable.COLUMN_FOODTIME_ID, this.foodTimeId);
+        json.put(TableContracts.FoodTimeTable.COLUMN_TITLE, this.title);
+        return json;
     }
 }
