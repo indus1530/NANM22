@@ -3,9 +3,13 @@ package edu.aku.abdulsajid.nanm2022.room.Form
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.*
 import edu.aku.abdulsajid.nanm2022.models.*
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodIngredientMap
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase
 import org.json.JSONArray
 import org.json.JSONException
@@ -261,6 +265,81 @@ interface SyncFunctionsDao {
 
     @Query("DELETE FROM " + FoodTable.TABLE_NAME)
     fun deleteFoodTable()
+
+    // Food Time
+
+    @Throws(JSONException::class)
+    fun syncFoodTime(list: JSONArray): Int {
+        var insertCount = 0
+        deleteFoodTimeTable()
+        for(i in 0 until list.length()) {
+            val jsonObject = list.optJSONObject(i)
+
+            val item = FoodTime()
+            item.sync(jsonObject)
+
+            val rowId = insertFoodTimeTable(item)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertFoodTimeTable(foodTime: FoodTime): Long
+
+    @Query("DELETE FROM " + FoodTimeTable.TABLE_NAME)
+    fun deleteFoodTimeTable()
+
+    // Ingredient
+
+    @Throws(JSONException::class)
+    fun syncIngredient(list: JSONArray): Int {
+        var insertCount = 0
+        deleteIngredientTable()
+        for(i in 0 until list.length()) {
+            val jsonObject = list.optJSONObject(i)
+
+            val item = Ingredient()
+            item.sync(jsonObject)
+
+            val rowId = insertIngredientTable(item)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertIngredientTable(ingredient: Ingredient): Long
+
+    @Query("DELETE FROM " + IngredientTable.TABLE_NAME)
+    fun deleteIngredientTable()
+
+
+// Food Ingredient
+    @Throws(JSONException::class)
+    fun syncFoodIngredeintMap(list: JSONArray): Int {
+        var insertCount = 0
+        deleteFIngTable()
+        for(i in 0 until list.length()) {
+            val jsonObject = list.optJSONObject(i)
+
+            val item = FoodIngredientMap()
+            item.sync(jsonObject)
+
+            val rowId = insertFIngTable(item)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertFIngTable(foodIngredientMap: FoodIngredientMap): Long
+
+    @Query("DELETE FROM " + TableContracts.FoodIngredientMapTable.TABLE_NAME)
+    fun deleteFIngTable()
 
 
 }

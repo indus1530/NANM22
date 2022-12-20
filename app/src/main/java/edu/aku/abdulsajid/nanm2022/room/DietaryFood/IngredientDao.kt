@@ -16,28 +16,7 @@ import org.json.JSONException
 @Dao
 interface IngredientDao {
 
-    @Throws(JSONException::class)
-    fun syncIngredient(list: JSONArray): Int {
-        var insertCount = 0
-        deleteTable()
-        for(i in 0 until list.length()) {
-            val jsonObject = list.optJSONObject(i)
 
-            val item = Ingredient()
-            item.sync(jsonObject)
-
-            val rowId = insertTable(item)
-            if (rowId != -1L)
-                insertCount++
-        }
-        return insertCount
-    }
-
-    @Insert
-    fun insertTable(ingredient: Ingredient): Long
-
-    @Query("DELETE FROM " + TableContracts.IngredientTable.TABLE_NAME)
-    fun deleteTable()
 
     @Query("SELECT * FROM ingredient")
     fun getAll(): List<Ingredient?>?
