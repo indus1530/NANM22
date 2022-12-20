@@ -19,10 +19,10 @@ interface IngredientDao {
 
 
     @Query("SELECT * FROM ingredient")
-    fun getAll(): List<Ingredient?>?
+    fun getAll(): List<Ingredient>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addAll(data: List<Ingredient?>?)
+    fun addAll(data: List<Ingredient>)
 
     @Query("SELECT * FROM ingredient WHERE ingredientId= :id")
     fun getById(id: Int): Ingredient?

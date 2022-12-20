@@ -16,34 +16,11 @@ import org.json.JSONException
 @Dao
 interface FoodDao {
 
-    @Throws(JSONException::class)
-    fun syncFood(foodList: JSONArray): Int {
-        var insertCount = 0
-        deleteFoodTable()
-        for(i in 0 until foodList.length()) {
-            val jsonObject = foodList.optJSONObject(i)
-
-            val food = Food()
-            food.sync(jsonObject)
-
-            val rowId = insertFood(food)
-            if (rowId != -1L)
-                insertCount++
-        }
-        return insertCount
-    }
-
-    @Insert
-    fun insertFood(food: Food): Long
-
-    @Query("DELETE FROM " + TableContracts.FoodTable.TABLE_NAME)
-    fun deleteFoodTable()
-
     @Query("SELECT * FROM food")
-    fun getAll(): List<Food?>?
+    fun getAll(): List<Food>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addAll(data: List<Food?>?)
+    fun addAll(data: List<Food>)
 
     @Query("SELECT * FROM food WHERE foodId= :id")
     fun getById(id: Int): Food?

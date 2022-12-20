@@ -1,5 +1,6 @@
 package edu.aku.abdulsajid.nanm2022.models.DietaryFollowup;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -13,9 +14,12 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 @Entity
 public class Ingredient implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = TableContracts.IngredientTable.COLUMN_INGREDIENT_ID)
     private int ingredientId;
+    @ColumnInfo(name = TableContracts.IngredientTable.COLUMN_INGREDIENT_NAME)
     private String ingredientName;
+    @ColumnInfo(name = TableContracts.IngredientTable.COLUMN_ENERGY_COUNT)
     private double energyCount;
 
     public int getIngredientId() {

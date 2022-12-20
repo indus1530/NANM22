@@ -319,7 +319,7 @@ interface SyncFunctionsDao {
 
 // Food Ingredient
     @Throws(JSONException::class)
-    fun syncFoodIngredeintMap(list: JSONArray): Int {
+    fun syncFoodIngredientMap(list: JSONArray): Int {
         var insertCount = 0
         deleteFIngTable()
         for(i in 0 until list.length()) {
@@ -338,7 +338,7 @@ interface SyncFunctionsDao {
     @Insert
     fun insertFIngTable(foodIngredientMap: FoodIngredientMap): Long
 
-    @Query("DELETE FROM " + TableContracts.FoodIngredientMapTable.TABLE_NAME)
+    @Query("DELETE FROM " + FoodIngredientMapTable.TABLE_NAME)
     fun deleteFIngTable()
 
 

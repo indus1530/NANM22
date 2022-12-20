@@ -17,13 +17,11 @@ import org.json.JSONException
 @Dao
 interface FoodIngredientMapDao {
 
-
-
     @Query("SELECT * FROM FoodIngredientMap")
     fun getAll(): List<FoodIngredientMap?>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addAll(data: List<FoodIngredientMap?>?)
+    fun addAll(data: List<FoodIngredientMap>)
 
     @Query("DELETE FROM FoodIngredientMap")
     fun deleteAll()
@@ -32,6 +30,6 @@ interface FoodIngredientMapDao {
         "SELECT * FROM ingredient LEFT JOIN foodingredientmap " +
                 "ON ingredient.ingredientId = foodingredientmap.ingredientId WHERE foodId = :foodId"
     )
-    fun getAllIngrByFoodId(foodId: Int): List<Ingredient?>?
+    fun getAllIngrByFoodId(foodId: Int): List<Ingredient>
 
 }
