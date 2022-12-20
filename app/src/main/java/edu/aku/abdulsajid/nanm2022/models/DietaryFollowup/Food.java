@@ -55,7 +55,7 @@ public class Food implements Serializable {
     }
 
 
-    public Food(){
+    public Food() {
 
     }
 

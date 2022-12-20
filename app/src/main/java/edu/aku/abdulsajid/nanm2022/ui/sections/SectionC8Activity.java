@@ -1,5 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui.sections;
 
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -39,7 +41,6 @@ import edu.aku.abdulsajid.nanm2022.adapters.GenericLVFilterAdapter;
 import edu.aku.abdulsajid.nanm2022.adapters.GenericRVAdapter;
 import edu.aku.abdulsajid.nanm2022.core.BottomSheet;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodChange;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
@@ -63,7 +64,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     // These tags are used to differentiate between multiple web calls
     private final String SUBMIT_PATIENT_FOOD = "submit-patient-food";
     private NANMRoomDatabase db;
-    private Adolescent adolescent;
     private ChipGroup foodIntakeCG;
     private RecyclerView foodTimeRV;
     private GenericRVAdapter<FoodTime> genericFoodTimeRVAdapter;
@@ -319,7 +319,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
             PatientFood patientFood = new PatientFood();
             patientFood.setFoodId(selectedFood.getFoodId());
-            patientFood.setPatientId(Integer.parseInt(adolescent.getChildID()));
+            patientFood.setPatientId(Integer.parseInt(adol.getChildID()));
             patientFood.setSerialNo(++serialNo);
             patientFood.setFoodTimeId(selectedFoodTime.getFoodTimeId());
             patientFood.setQuantity(Float.parseFloat(quantityET.getText().toString()));
@@ -512,7 +512,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
         Chip chip = (Chip) LayoutInflater.from(activity).inflate(R.layout.item_chip, null);
         FoodChange ingredientChange = new FoodChange();
-        ingredientChange.setPatientId(Integer.parseInt(adolescent.getChildID()));
+        ingredientChange.setPatientId(Integer.parseInt(adol.getChildID()));
         ingredientChange.setFoodId(selectedFood.getFoodId());
         ingredientChange.setFoodTimeId(selectedFoodTime.getFoodTimeId());
         String ingredientName;
@@ -754,7 +754,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         if (isStandardFoodIngredient(ingredientName)) {
             // Only add those ingredients in the food change list which are the standard ones
             FoodChange ingredientChange = new FoodChange();
-            ingredientChange.setPatientId(Integer.parseInt(adolescent.getChildID()));
+            ingredientChange.setPatientId(Integer.parseInt(adol.getChildID()));
             ingredientChange.setFoodId(selectedFood.getFoodId());
             ingredientChange.setFoodTimeId(selectedFoodTime.getFoodTimeId());
             ingredientChange.setIngredientId(ingredient.getIngredientId());
@@ -840,12 +840,16 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         int viewId = view.getId();
         if (viewId == R.id.submitBtn) {
             // Check if current list is empty or not to proceed to the next
-            if ((patientFoodMap.get(selectedFoodTime) == null
+            if (noMealCB.isChecked())
+                // Put null/empty list if food is not taken in the hashmap
+                patientFoodMap.put(selectedFoodTime, null);
+            else if ((patientFoodMap.get(selectedFoodTime) == null
                     || Objects.requireNonNull(patientFoodMap.get(selectedFoodTime)).size() == 0)
                     && !noMealCB.isChecked()) {
                 Toast.makeText(activity, "Be careful!", Toast.LENGTH_SHORT).show();
                 return;
             }
+
             List<PatientFood> patientFoodMainList = new ArrayList<>();
             for (Map.Entry<FoodTime, List<PatientFood>> pair : patientFoodMap.entrySet()) {
                 List<PatientFood> _patientFoodList = pair.getValue();
@@ -855,7 +859,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                     // This extra object is just to be sure the sequence of food intake
                     // i.e. Not Reported value 9999 means no food taken at this time point
                     PatientFood patientFood = new PatientFood();
-                    patientFood.setPatientId(Integer.parseInt(adolescent.getChildID()));
+                    patientFood.setPatientId(Integer.parseInt(adol.getChildID()));
                     patientFood.setFoodTimeId(pair.getKey().getFoodTimeId());
                     patientFood.setNotReported(MainApp.NOT_REPORTED);
                     patientFoodMainList.add(patientFood);

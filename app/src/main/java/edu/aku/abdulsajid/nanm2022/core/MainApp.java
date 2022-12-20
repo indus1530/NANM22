@@ -13,8 +13,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -365,12 +363,12 @@ public class MainApp extends Application {
                              Object passObj, IAlertCallback iAlertCallback) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setCancelable(false);
+//        builder.setCancelable(false);
         builder.setTitle(title);
         builder.setMessage(message);
 
         AlertDialog dialog = builder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         builder.setPositiveButton(activity.getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
