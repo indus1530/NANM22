@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.*
 import edu.aku.abdulsajid.nanm2022.models.*
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase
 import org.json.JSONArray
 import org.json.JSONException
@@ -187,7 +188,6 @@ interface SyncFunctionsDao {
 
 
     // Users
-
     @Throws(JSONException::class)
     fun syncAppUser(usersList: JSONArray): Int {
         var insertCount = 0
@@ -236,6 +236,31 @@ interface SyncFunctionsDao {
 
     @Query("DELETE FROM " + ChildTable.TABLE_NAME)
     fun deleteChildTable()
+
+
+    // Food
+    @Throws(JSONException::class)
+    fun syncFood(food: JSONArray): Int {
+        var insertCount = 0
+        deleteFoodTable()
+        for (i in 0 until food.length()) {
+            val jsonObject = food.optJSONObject(i)
+
+            val food = Food()
+            food.sync(jsonObject)
+
+            val rowId = insertFood(food)
+            if (rowId != -1L)
+                insertCount++
+        }
+        return insertCount
+    }
+
+    @Insert
+    fun insertFood(food: Food): Long
+
+    @Query("DELETE FROM " + FoodTable.TABLE_NAME)
+    fun deleteFoodTable()
 
 
 }
