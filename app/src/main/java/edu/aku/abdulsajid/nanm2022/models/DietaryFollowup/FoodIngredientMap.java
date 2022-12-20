@@ -3,7 +3,12 @@ package edu.aku.abdulsajid.nanm2022.models.DietaryFollowup;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 
 /*@Entity(primaryKeys = {"foodId", "ingredientId"},
         foreignKeys = {
@@ -52,4 +57,20 @@ public class FoodIngredientMap implements Serializable {
     }
 
 
+    public FoodIngredientMap Hydrate(FoodIngredientMap foodIngredientMap) throws JSONException {
+
+        this.foodId = foodIngredientMap.foodId;
+        this.ingredientId = foodIngredientMap.ingredientId;
+
+        return this;
+    }
+
+
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+
+        json.put(TableContracts.FoodIngredientMapTable.COLUMN_FOOD_ID, this.foodId);
+        json.put(TableContracts.FoodIngredientMapTable.COLUMN_INGREDIENT_ID, this.ingredientId);
+        return json;
+    }
 }
