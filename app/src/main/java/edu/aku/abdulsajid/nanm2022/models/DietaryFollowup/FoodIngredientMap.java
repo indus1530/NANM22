@@ -50,4 +50,6 @@ public class FoodIngredientMap implements Serializable {
     public void setIngredientId(int ingredientId) {
         this.ingredientId = ingredientId;
     }
+
+
 }

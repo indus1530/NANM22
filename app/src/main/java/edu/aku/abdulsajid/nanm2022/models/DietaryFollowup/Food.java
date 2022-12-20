@@ -1,5 +1,6 @@
 package edu.aku.abdulsajid.nanm2022.models.DietaryFollowup;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -13,9 +14,11 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 @Entity
 public class Food implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = TableContracts.FoodTable.COLUMN_FOOD_ID)
     private int foodId;
 
+    @ColumnInfo(name = TableContracts.FoodTable.COLUMN_FOOD_NAME)
     private String foodName;
 
     /**
@@ -23,6 +26,8 @@ public class Food implements Serializable {
      * 1 = Count
      * 2 = Plate/Portion
      **/
+
+    @ColumnInfo(name = TableContracts.FoodTable.COLUMN_MEASURING_UNIT)
     private int measuringUnit;
 
     public int getFoodId() {
@@ -59,12 +64,10 @@ public class Food implements Serializable {
     }
 
 
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
+    public Food sync(JSONObject json) throws JSONException {
         json.put(TableContracts.FoodTable.COLUMN_FOOD_ID, this.foodId);
         json.put(TableContracts.FoodTable.COLUMN_FOOD_NAME, this.foodName);
         json.put(TableContracts.FoodTable.COLUMN_MEASURING_UNIT, this.measuringUnit);
-        return json;
+        return this;
     }
 }

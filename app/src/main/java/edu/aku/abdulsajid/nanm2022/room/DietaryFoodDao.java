@@ -9,6 +9,10 @@ import androidx.room.Query;
 import androidx.room.RoomWarnings;
 import androidx.room.Update;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
@@ -17,6 +21,7 @@ import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodIngredientMap;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.PatientFood;
+import kotlin.jvm.Throws;
 
 public class DietaryFoodDao {
 
@@ -24,7 +29,7 @@ public class DietaryFoodDao {
     public interface BaseDao<T> {
 
         @Insert(onConflict = REPLACE)
-        void add(T obj);
+        long add(T obj);
 
         @Insert(onConflict = REPLACE)
         void addAll(List<T> list);
@@ -37,6 +42,7 @@ public class DietaryFoodDao {
 
         @Delete
         void delete(T obj);
+
     }
 
     @Dao
@@ -53,6 +59,7 @@ public class DietaryFoodDao {
 
         @Query("DELETE FROM food")
         void deleteAll();
+
     }
 
     @Dao
