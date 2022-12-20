@@ -46,6 +46,10 @@ public class Ingredient implements Serializable {
         this.energyCount = energyCount;
     }
 
+    public Ingredient()
+    {
+
+    }
 
     public Ingredient Hydrate(Ingredient ingredient) throws JSONException {
 

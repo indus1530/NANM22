@@ -50,6 +50,11 @@ public class FoodTime implements Serializable {
     }
 
 
+    public FoodTime()
+    {
+
+    }
+
     public FoodTime Hydrate(FoodTime foodTime) throws JSONException {
 
         this.foodTimeId = foodTime.foodTimeId;

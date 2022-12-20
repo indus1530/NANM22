@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class PatientFood implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int patientFoodId;
     private int serialNo;    // For help in the backend DB
     private int patientId;

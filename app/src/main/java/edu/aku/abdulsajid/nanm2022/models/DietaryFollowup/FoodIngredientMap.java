@@ -25,7 +25,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 public class FoodIngredientMap implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int id = 0;
 
     private int foodId;
 

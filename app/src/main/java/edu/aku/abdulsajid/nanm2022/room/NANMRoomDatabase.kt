@@ -51,7 +51,7 @@ abstract class NANMRoomDatabase : RoomDatabase() {
     abstract fun entryLogDao(): EntryLogDao
     abstract fun patientFoodDao(): DietaryFoodDao.PatientFoodDao?
     abstract fun foodChangeDao(): DietaryFoodDao.FoodChangeDao?
-    abstract fun foodTimeDao(): DietaryFoodDao.FoodTimeDao?
+    abstract fun foodTimeDao(): FoodTimeDao
     abstract fun foodDao(): FoodDao
     abstract fun ingredientDao(): IngredientDao
     abstract fun foodIngrJTDao(): FoodIngredientMapDao

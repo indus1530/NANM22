@@ -54,6 +54,12 @@ public class Food implements Serializable {
         this.measuringUnit = measuringUnit;
     }
 
+
+    public Food(){
+
+    }
+
+
     public Food Hydrate(Food food) throws JSONException {
 
         this.foodId = food.foodId;
