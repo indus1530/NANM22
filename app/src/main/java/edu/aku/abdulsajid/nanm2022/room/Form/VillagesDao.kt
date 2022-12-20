@@ -1,14 +1,9 @@
-package edu.aku.abdulsajid.nanm2022.room
+package edu.aku.abdulsajid.nanm2022.room.Form
 
 import androidx.room.Dao
-import androidx.room.Insert
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
-import edu.aku.abdulsajid.nanm2022.models.AdolList
-import edu.aku.abdulsajid.nanm2022.models.Users
 import edu.aku.abdulsajid.nanm2022.models.Villages
-import org.json.JSONArray
-import org.json.JSONException
 
 //
 // Created by gul.sanober on 12/6/2022.

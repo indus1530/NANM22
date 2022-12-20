@@ -1,4 +1,4 @@
-package edu.aku.abdulsajid.nanm2022.room;
+package edu.aku.abdulsajid.nanm2022.room.DietaryFood;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 

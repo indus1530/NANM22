@@ -53,12 +53,10 @@ public class Ingredient implements Serializable {
     }
 
 
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
+    public Ingredient sync(JSONObject json) throws JSONException {
         json.put(TableContracts.IngredientTable.COLUMN_INGREDIENT_ID, this.ingredientId);
         json.put(TableContracts.IngredientTable.COLUMN_INGREDIENT_NAME, this.ingredientName);
         json.put(TableContracts.IngredientTable.COLUMN_ENERGY_COUNT, this.energyCount);
-        return json;
+        return this;
     }
 }

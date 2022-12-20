@@ -9,6 +9,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.models.*
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.*
+import edu.aku.abdulsajid.nanm2022.room.Form.*
+import edu.aku.abdulsajid.nanm2022.room.DietaryFood.*
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
 
@@ -48,10 +50,10 @@ abstract class NANMRoomDatabase : RoomDatabase() {
     abstract fun adolListDao(): AdolListDao
     abstract fun entryLogDao(): EntryLogDao
     abstract fun patientFoodDao(): DietaryFoodDao.PatientFoodDao?
-    abstract fun foodChangeDao(): FoodChangeDao
+    abstract fun foodChangeDao(): DietaryFoodDao.FoodChangeDao?
     abstract fun foodTimeDao(): FoodTimeDao
     abstract fun foodDao(): FoodDao
-    abstract fun ingredientDao(): DietaryFoodDao.IngredientDao?
+    abstract fun ingredientDao(): IngredientDao
     abstract fun foodIngrJTDao(): FoodIngredientMapDao
 
 

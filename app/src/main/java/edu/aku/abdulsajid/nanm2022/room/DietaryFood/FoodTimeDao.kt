@@ -1,4 +1,4 @@
-package edu.aku.abdulsajid.nanm2022.room
+package edu.aku.abdulsajid.nanm2022.room.DietaryFood
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -50,4 +50,7 @@ interface FoodTimeDao {
 
     @Query("DELETE FROM foodtime")
     fun deleteAll()
+
+
+
 }

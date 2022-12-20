@@ -1,11 +1,10 @@
-package edu.aku.abdulsajid.nanm2022.room
+package edu.aku.abdulsajid.nanm2022.room.Form
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Update
 import edu.aku.abdulsajid.nanm2022.models.EntryLog
-import edu.aku.abdulsajid.nanm2022.models.Forms
 import org.json.JSONException
 import kotlin.jvm.Throws
 

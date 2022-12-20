@@ -1,4 +1,4 @@
-package edu.aku.abdulsajid.nanm2022.room
+package edu.aku.abdulsajid.nanm2022.room.Form
 
 import androidx.room.Dao
 import androidx.room.Insert

@@ -1,4 +1,4 @@
-package edu.aku.abdulsajid.nanm2022.room
+package edu.aku.abdulsajid.nanm2022.room.Form
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,13 +6,9 @@ import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.core.UserAuth
-import edu.aku.abdulsajid.nanm2022.models.EntryLog
 import edu.aku.abdulsajid.nanm2022.models.Users
 import org.json.JSONArray
 import org.json.JSONException
-import java.security.InvalidKeyException
-import java.security.NoSuchAlgorithmException
-import java.util.*
 
 //
 // Created by gul.sanober on 12/6/2022.
