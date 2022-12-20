@@ -6,6 +6,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodIngredientMap
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient
 import org.json.JSONArray
 import org.json.JSONException
 
@@ -17,16 +19,16 @@ import org.json.JSONException
 interface FoodIngredientMapDao {
 
     @Throws(JSONException::class)
-    fun syncFood(foodList: JSONArray): Int {
+    fun syncFoodIngredeintMap(list: JSONArray): Int {
         var insertCount = 0
-        deleteFoodTable()
-        for(i in 0 until foodList.length()) {
-            val jsonObject = foodList.optJSONObject(i)
+        deleteTable()
+        for(i in 0 until list.length()) {
+            val jsonObject = list.optJSONObject(i)
 
-            val food = Food()
-            food.sync(jsonObject)
+            val item = FoodIngredientMap()
+            item.sync(jsonObject)
 
-            val rowId = insertFood(food)
+            val rowId = insertTable(item)
             if (rowId != -1L)
                 insertCount++
         }
@@ -34,22 +36,24 @@ interface FoodIngredientMapDao {
     }
 
     @Insert
-    fun insertFood(food: Food): Long
+    fun insertTable(foodIngredientMap: FoodIngredientMap): Long
 
-    @Query("DELETE FROM " + TableContracts.FoodTable.TABLE_NAME)
-    fun deleteFoodTable()
+    @Query("DELETE FROM " + TableContracts.FoodIngredientMapTable.TABLE_NAME)
+    fun deleteTable()
 
-    @Query("SELECT * FROM food")
-    fun getAll(): List<Food?>?
+    @Query("SELECT * FROM FoodIngredientMap")
+    fun getAll(): List<FoodIngredientMap?>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addAll(data: List<Food?>?)
+    fun addAll(data: List<FoodIngredientMap?>?)
 
-    @Query("SELECT * FROM food WHERE foodId= :id")
-    fun getById(id: Int): Food?
-
-    @Query("DELETE FROM food")
+    @Query("DELETE FROM FoodIngredientMap")
     fun deleteAll()
 
+    @Query(
+        "SELECT * FROM ingredient LEFT JOIN foodingredientmap " +
+                "ON ingredient.ingredientId = foodingredientmap.ingredientId WHERE foodId = :foodId"
+    )
+    fun getAllIngrByFoodId(foodId: Int): List<Ingredient?>?
 
 }

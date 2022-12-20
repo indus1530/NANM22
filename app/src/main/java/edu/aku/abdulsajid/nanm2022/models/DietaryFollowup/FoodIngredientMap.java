@@ -66,11 +66,9 @@ public class FoodIngredientMap implements Serializable {
     }
 
 
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
+    public FoodIngredientMap sync(JSONObject json) throws JSONException {
         json.put(TableContracts.FoodIngredientMapTable.COLUMN_FOOD_ID, this.foodId);
         json.put(TableContracts.FoodIngredientMapTable.COLUMN_INGREDIENT_ID, this.ingredientId);
-        return json;
+        return this;
     }
 }
