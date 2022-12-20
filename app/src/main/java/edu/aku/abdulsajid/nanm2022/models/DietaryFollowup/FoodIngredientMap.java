@@ -67,8 +67,8 @@ public class FoodIngredientMap implements Serializable {
 
 
     public FoodIngredientMap sync(JSONObject json) throws JSONException {
-        json.put(TableContracts.FoodIngredientMapTable.COLUMN_FOOD_ID, this.foodId);
-        json.put(TableContracts.FoodIngredientMapTable.COLUMN_INGREDIENT_ID, this.ingredientId);
+        this.foodId = json.getInt(TableContracts.FoodIngredientMapTable.COLUMN_FOOD_ID);
+        this.ingredientId = json.getInt(TableContracts.FoodIngredientMapTable.COLUMN_INGREDIENT_ID);
         return this;
     }
 }

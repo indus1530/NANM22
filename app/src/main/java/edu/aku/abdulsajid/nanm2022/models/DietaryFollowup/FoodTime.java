@@ -60,8 +60,8 @@ public class FoodTime implements Serializable {
 
 
     public FoodTime sync(JSONObject json) throws JSONException {
-        json.put(TableContracts.FoodTimeTable.COLUMN_FOODTIME_ID, this.foodTimeId);
-        json.put(TableContracts.FoodTimeTable.COLUMN_TITLE, this.title);
+        this.foodTimeId = json.getInt(TableContracts.FoodTimeTable.COLUMN_FOODTIME_ID);
+        this.title = json.getString(TableContracts.FoodTimeTable.COLUMN_TITLE);
         return this;
     }
 }

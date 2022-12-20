@@ -58,9 +58,9 @@ public class Ingredient implements Serializable {
 
 
     public Ingredient sync(JSONObject json) throws JSONException {
-        json.put(TableContracts.IngredientTable.COLUMN_INGREDIENT_ID, this.ingredientId);
-        json.put(TableContracts.IngredientTable.COLUMN_INGREDIENT_NAME, this.ingredientName);
-        json.put(TableContracts.IngredientTable.COLUMN_ENERGY_COUNT, this.energyCount);
+        this.ingredientId = json.getInt(TableContracts.IngredientTable.COLUMN_INGREDIENT_ID);
+        this.ingredientName = json.getString(TableContracts.IngredientTable.COLUMN_INGREDIENT_NAME);
+        this.energyCount = json.getDouble(TableContracts.IngredientTable.COLUMN_ENERGY_COUNT);
         return this;
     }
 }

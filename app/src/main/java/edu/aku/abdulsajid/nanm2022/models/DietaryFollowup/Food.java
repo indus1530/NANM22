@@ -65,9 +65,9 @@ public class Food implements Serializable {
 
 
     public Food sync(JSONObject json) throws JSONException {
-        json.put(TableContracts.FoodTable.COLUMN_FOOD_ID, this.foodId);
-        json.put(TableContracts.FoodTable.COLUMN_FOOD_NAME, this.foodName);
-        json.put(TableContracts.FoodTable.COLUMN_MEASURING_UNIT, this.measuringUnit);
+        this.foodId = json.getInt(TableContracts.FoodTable.COLUMN_FOOD_ID);
+        this.foodName = json.getString(TableContracts.FoodTable.COLUMN_FOOD_NAME);
+        this.measuringUnit = json.getInt(TableContracts.FoodTable.COLUMN_MEASURING_UNIT);
         return this;
     }
 }
