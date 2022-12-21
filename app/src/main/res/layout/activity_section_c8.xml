@@ -1,220 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.sections.SectionC8Activity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!--<include layout="@layout/view_appbar" />-->
+    <data>
 
-    <!--android:layout_below="@+id/appBarLayout"-->
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.abdulsajid.nanm2022.models.Adolescent" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/main_padding">
+        android:background="@drawable/app_bg_effect"
+        tools:context=".ui.sections.SectionC8Activity">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/foodTimeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
-            app:cardCornerRadius="@dimen/border_radius"
-            app:cardElevation="@dimen/card_elevation">
+        <!--<include layout="@layout/view_appbar" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <!--android:layout_below="@+id/appBarLayout"-->
 
-                <TextView
-                    android:id="@+id/tiTitleTV"
-                    style="@style/Theme.main.BoldText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:text="@string/time_intake"
-                    android:textColor="@color/white" />
 
-                <!--                <androidx.recyclerview.widget.RecyclerView-->
-                <!--                    android:id="@+id/foodTimeRV"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginTop="@dimen/_5sdp"-->
-                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
-                <!--                    android:paddingStart="@dimen/_10sdp"-->
-                <!--                    android:paddingEnd="0dp"-->
-                <!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />-->
-
-                <!--                <RadioGroup-->
-                <!--                    android:id="@+id/foodTimeRG"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginTop="@dimen/_5sdp"-->
-                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
-                <!--                    android:paddingStart="@dimen/_10sdp"-->
-                <!--                    android:paddingEnd="0dp" />-->
-
-                <!--                <HorizontalScrollView-->
-                <!--                    android:id="@+id/foodTimeCGSV"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginTop="@dimen/_7sdp"-->
-                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
-                <!--                    android:scrollbars="none"-->
-                <!--                    tools:ignore="ScrollViewCount">-->
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/foodTimeCG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:selectionRequired="true"
-                    app:singleLine="true"
-                    app:singleSelection="true" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/foodTimeRV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-                <!--                </HorizontalScrollView>-->
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/footTimeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/foodTimeLayout"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
-            app:cardCornerRadius="@dimen/border_radius"
-            app:cardElevation="@dimen/card_elevation">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp">
-
-                <TextView
-                    android:id="@+id/fiTitleTV"
-                    style="@style/Theme.main.BoldText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/addPatientFoodBtn"
-                    android:layout_alignBottom="@+id/addPatientFoodBtn"
-                    android:layout_toStartOf="@+id/addPatientFoodBtn"
-                    android:gravity="center_vertical"
-                    android:text="@string/food_intake"
-                    android:textColor="@color/light_gray_color" />
-
-                <ImageView
-                    android:id="@+id/addPatientFoodBtn"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/ic_add"
-                    android:backgroundTint="@color/clickable_color"
-                    android:clickable="true"
-                    tools:ignore="ContentDescription" />
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/foodIntakeCG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/addPatientFoodBtn"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="0dp"
-                    app:selectionRequired="false"
-                    app:singleSelection="true" />
-
-                <TextView
-                    android:id="@+id/errorTV"
-                    style="@style/Theme.main.BoldText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/addPatientFoodBtn"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:textColor="@color/light_gray_color" />
-
-                <CheckBox
-                    android:id="@+id/noMealCB"
-                    style="@style/Theme.main.Checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/errorTV"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:background="@color/red_color_light"
-                    android:ems="14"
-                    android:gravity="center"
-                    android:text="@string/no_meal_taken"
-                    android:textColor="@color/red_color" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
+        <!--SELECTED PERSON-->
         <LinearLayout
-            android:id="@+id/buttonsLayout"
+            android:id="@+id/adolDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/prevBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.15"
-                android:background="@drawable/ic_arrow_prev"
-                android:backgroundTint="@color/chip_default_color"
-                tools:ignore="ContentDescription" />
+            <TextView
+                style="@style/sub_labels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sno"
+                android:textColor="@color/black" />
 
-            <Button
-                android:id="@+id/submitBtn"
-                style="@style/Theme.main.ButtonStyle"
-                android:layout_width="0dp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_weight="0.7"
-                android:enabled="false"
-                android:text="@string/submit" />
+            <TextView
+                android:id="@+id/sno"
+                style="@style/sub_labels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sno" />
 
-            <ImageView
-                android:id="@+id/nextBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="0.15"
-                android:background="@drawable/ic_arrow_next"
-                android:backgroundTint="@color/chip_new_color"
-                tools:ignore="ContentDescription" />
+            <TextView
+                style="@style/sub_labels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Index"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/index"
+                style="@style/sub_labels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Index" />
+
+            <TextView
+                style="@style/sub_labels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/sub_labels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/adolDetails"
+            android:padding="@dimen/main_padding">
 
-</RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/foodTimeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/border_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tiTitleTV"
+                        style="@style/Theme.main.BoldText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:text="@string/time_intake"
+                        android:textColor="@color/white" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/foodTimeCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/foodTimeRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/footTimeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/foodTimeLayout"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/border_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/fiTitleTV"
+                        style="@style/Theme.main.BoldText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/addPatientFoodBtn"
+                        android:layout_alignBottom="@+id/addPatientFoodBtn"
+                        android:layout_toStartOf="@+id/addPatientFoodBtn"
+                        android:gravity="center_vertical"
+                        android:text="@string/food_intake"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/addPatientFoodBtn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/ic_add"
+                        android:backgroundTint="@color/clickable_color"
+                        android:clickable="true"
+                        tools:ignore="ContentDescription" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/foodIntakeCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addPatientFoodBtn"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        app:selectionRequired="false"
+                        app:singleSelection="true" />
+
+                    <TextView
+                        android:id="@+id/errorTV"
+                        style="@style/Theme.main.BoldText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addPatientFoodBtn"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:textColor="@color/white" />
+
+                    <CheckBox
+                        android:id="@+id/noMealCB"
+                        style="@style/Theme.main.Checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/errorTV"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/red_color_light"
+                        android:ems="14"
+                        android:gravity="center"
+                        android:text="@string/no_meal_taken"
+                        android:textColor="@color/red_color" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/buttonsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/prevBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.15"
+                    android:background="@drawable/ic_arrow_prev"
+                    android:backgroundTint="@color/chip_default_color"
+                    tools:ignore="ContentDescription" />
+
+                <Button
+                    android:id="@+id/submitBtn"
+                    style="@style/Theme.main.ButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="0.7"
+                    android:enabled="false"
+                    android:text="@string/submit" />
+
+                <ImageView
+                    android:id="@+id/nextBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.15"
+                    android:background="@drawable/ic_arrow_next"
+                    android:backgroundTint="@color/chip_new_color"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

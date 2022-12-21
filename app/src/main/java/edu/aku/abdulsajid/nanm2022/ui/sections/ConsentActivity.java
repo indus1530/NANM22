@@ -1,6 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +17,7 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import edu.aku.abdulsajid.nanm2022.R;
-import edu.aku.abdulsajid.nanm2022.contracts.TableContracts;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityConsentBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
@@ -35,10 +34,9 @@ public class ConsentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_consent);
-        if(form.getUid() != null)
-        {
+        if(form.getUid() != null) {
             try {
                 form.sA1Hydrate(form.getSA1());
             } catch (JSONException e) {
@@ -48,8 +46,8 @@ public class ConsentActivity extends AppCompatActivity {
         bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-        String consentText = getString(R.string.consent, MainApp.user.getFullname());
-        bi.consentTextView.setText(consentText);
+        /*String consentText = getString(R.string.consent, MainApp.user.getFullname());
+        bi.consentTextView.setText(consentText);*/
 
     }
 

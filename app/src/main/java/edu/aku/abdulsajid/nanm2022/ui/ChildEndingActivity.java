@@ -1,6 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ public class ChildEndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_child_ending);
         bi.setForm(adol);
         setSupportActionBar(bi.toolbar);

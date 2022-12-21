@@ -8984,9 +8984,17 @@ public class Forms extends BaseObservable implements Observable {
             this.a332ax = json.getString("a332ax");
             this.a331 = json.getString("a331");
             this.a331xx = json.getString("a331xx");
-            this.a333a = json.getString("a333");
+            this.a333a = json.getString("a333a");
+            this.a333b = json.getString("a333b");
+            this.a333c = json.getString("a333c");
+            this.a333d = json.getString("a333d");
+            this.a333e = json.getString("a333e");
+            this.a333x = json.getString("a333x");
             this.a333xx = json.getString("a333xx");
-            this.a334a = json.getString("a334");
+            this.a334a = json.getString("a334a");
+            this.a334b = json.getString("a334b");
+            this.a334c = json.getString("a334c");
+            this.a334x = json.getString("a334x");
             this.a334xx = json.getString("a334xx");
         }
     }
@@ -10178,9 +10186,17 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a332ax", a332ax)
                 .put("a331", a331)
                 .put("a331xx", a331xx)
-                .put("a333", a333a)
+                .put("a333a", a333a)
+                .put("a333b", a333b)
+                .put("a333c", a333c)
+                .put("a333d", a333d)
+                .put("a333e", a333e)
+                .put("a333x", a333x)
                 .put("a333xx", a333xx)
-                .put("a334", a334a)
+                .put("a334a", a334a)
+                .put("a334b", a334b)
+                .put("a334c", a334c)
+                .put("a334x", a334x)
                 .put("a334xx", a334xx);
         return json.toString();
     }

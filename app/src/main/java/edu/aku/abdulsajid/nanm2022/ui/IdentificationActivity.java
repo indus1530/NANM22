@@ -1,5 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui;
 
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,12 +16,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
-import edu.aku.abdulsajid.nanm2022.database.DatabaseHelper;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
@@ -38,7 +36,7 @@ public class IdentificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
         bi.btnContinue.setText(R.string.open_hh_form);

@@ -1,6 +1,9 @@
 package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -23,6 +26,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,6 +45,7 @@ import edu.aku.abdulsajid.nanm2022.adapters.GenericLVFilterAdapter;
 import edu.aku.abdulsajid.nanm2022.adapters.GenericRVAdapter;
 import edu.aku.abdulsajid.nanm2022.core.BottomSheet;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
+import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionC8Binding;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodChange;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
@@ -53,6 +58,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
     private static final int REMOVE_FOOD_POPUP = 101;
     private static final int REMOVE_INGR_POPUP = 102;
+    ActivitySectionC8Binding bi;
 
     /*private ConnectionDetector connDetector;
     private WebAPI webAPI;
@@ -163,7 +169,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_c8);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c8);
 
         // Init Toolbar
         /*AppConstants.initToolbar(activity, getString(R.string.intake_followup), false);
@@ -178,6 +184,12 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 //        adolescent = TestData.getPatientDetails();
 
         db = MainApp.appInfo.dbHelper;
+
+        bi.sno.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA201());
+        bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
+        bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
+
+        bi.setForm(adol);
 
         patientFoodMap = new HashMap<>();
 
@@ -226,6 +238,36 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         addFoodBottomSheet = BottomSheet.getBottomSheetDialog(activity, R.style.Theme_main_BottomSheetStyle,
                 R.layout.view_bottomsheet_add_food, true, null);
         addFoodBottomSheet.setCancelable(false);
+
+        // Check and set if the patient food is already exists
+        presetValues();
+    }
+
+    private void presetValues() {
+        for (int i = 0; i < foodTimeList.size(); i++) {
+            FoodTime foodTime = foodTimeList.get(i);
+            List<PatientFood> selectedTimeFoodList = Objects.requireNonNull(db.patientFoodDao()).getAllByPatientAndTimeId(Integer.parseInt(adol.getChildID()), foodTime.getFoodTimeId());
+            for (int j = 0; j < selectedTimeFoodList.size(); j++) {
+                if (selectedTimeFoodList.get(j).getNotReported() == MainApp.NOT_REPORTED) {
+                    // No food taken at this particular time
+                    patientFoodMap.put(foodTimeList.get(i), null);
+                } else {
+                    // Some food taken at this particular time
+                    // Selected food time patient food intake list
+                    if (selectedTimeFoodList.get(j).getFoodChangeStatus() != MainApp.NO_CHANGE) {
+                        List<FoodChange> foodChangeList = Objects.requireNonNull(db.foodChangeDao()).getAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()), selectedTimeFoodList.get(j).getFoodId(), foodTime.getFoodTimeId());
+                        selectedTimeFoodList.get(j).setFoodChangeList(foodChangeList);
+                    }
+
+                    if (j == selectedTimeFoodList.size() - 1)
+                        patientFoodMap.put(foodTimeList.get(i), selectedTimeFoodList);
+                }
+            }
+        }
+        // If patient food hash map is not empty then load patient foods of the very first food time;
+        if (patientFoodMap.size() > 0) {
+            loadPatientFood(0);
+        }
     }
 
     /*
@@ -479,6 +521,8 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         for (int i = 0; i < patientFoodList.size(); i++) {
             Chip chip = (Chip) LayoutInflater.from(activity).inflate(R.layout.item_chip, null);
             chip.setId(i);
+            if (!MainApp.isNotEmpty(patientFoodList.get(i).getFoodName()))
+                patientFoodList.get(i).setFoodName(Objects.requireNonNull(db.foodDao().getById(patientFoodList.get(i).getFoodId())).getFoodName());
             chip.setText(patientFoodList.get(i).getFoodName());
             chip.setCloseIconVisible(true);
             chip.setCloseIconTint(ColorStateList.valueOf(

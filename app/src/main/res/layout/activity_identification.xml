@@ -32,7 +32,7 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/householdidentification_mainheading"
+            app:title="@string/householdidentificationmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 

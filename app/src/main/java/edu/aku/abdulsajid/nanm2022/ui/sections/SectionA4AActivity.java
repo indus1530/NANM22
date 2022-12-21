@@ -1,6 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,7 +32,7 @@ public class SectionA4AActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a4_a);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

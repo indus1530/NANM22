@@ -4,6 +4,7 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp.adol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyList;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,8 @@ public class SectionC7Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+//        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c7);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
@@ -42,8 +44,7 @@ public class SectionC7Activity extends AppCompatActivity {
         bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
         bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
 
-        if(adol.getUid() != null)
-        {
+        if (adol.getUid() != null) {
             try {
                 adol.sC7Hydrate(adol.getSC7());
             } catch (JSONException e) {

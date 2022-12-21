@@ -1,6 +1,7 @@
 package edu.aku.abdulsajid.nanm2022.ui;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
+import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,7 @@ public class EndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(MainApp.langRTL ? R.style.AppThemeSindhi : R.style.AppThemeEnglish1);
+        setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);

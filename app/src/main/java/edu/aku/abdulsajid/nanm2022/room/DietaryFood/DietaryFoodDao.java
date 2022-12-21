@@ -9,10 +9,6 @@ import androidx.room.Query;
 import androidx.room.RoomWarnings;
 import androidx.room.Update;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.List;
 
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
@@ -21,7 +17,6 @@ import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodIngredientMap;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.PatientFood;
-import kotlin.jvm.Throws;
 
 public class DietaryFoodDao {
 
@@ -140,7 +135,10 @@ public class DietaryFoodDao {
         void deleteAll();
 
         @Query("SELECT * FROM patientfood WHERE patientId= :id")
-        List<PatientFood> getByPatientId(int id);
+        List<PatientFood> getAllByPatientId(int id);
+
+        @Query("SELECT * FROM patientfood WHERE patientId= :patientId AND foodTimeId = :foodTimeId")
+        List<PatientFood> getAllByPatientAndTimeId(int patientId, int foodTimeId);
 
 //        @Transaction
 //        @Query("SELECT * FROM patient WHERE patientId = :patientId")
@@ -167,7 +165,7 @@ public class DietaryFoodDao {
 //        List<FoodChange> getByPatientFoodId(int id);
 
         @Query("SELECT * FROM foodchange WHERE patientId= :patientId AND foodId = :foodId AND foodTimeId = :foodTimeId")
-        List<FoodChange> getByPatientFoodId(int patientId, int foodId, int foodTimeId);
+        List<FoodChange> getAllByPatientAndFoodAndTimeId(int patientId, int foodId, int foodTimeId);
 
     }
 

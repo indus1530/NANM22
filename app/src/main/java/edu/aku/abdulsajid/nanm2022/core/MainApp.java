@@ -135,6 +135,7 @@ public class MainApp extends Application {
     static ToneGenerator toneGen1;
 
     // FOOD AND INGREDIENTS CHANGES
+    public static int NO_CHANGE = 0;
     public static int STANDARD_ADD = 1;
     public static int STANDARD_DELETE = -1;
     public static int NEW_ADD = 2;
@@ -367,13 +368,10 @@ public class MainApp extends Application {
         builder.setTitle(title);
         builder.setMessage(message);
 
-        AlertDialog dialog = builder.create();
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
         builder.setPositiveButton(activity.getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dialog.cancel();
+                dialogInterface.cancel();
                 iAlertCallback.onClick(popupId, true, passObj);
             }
         });
@@ -381,11 +379,11 @@ public class MainApp extends Application {
         builder.setNegativeButton(activity.getString(R.string.no), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dialog.cancel();
+                dialogInterface.cancel();
                 iAlertCallback.onClick(popupId, false, passObj);
             }
         });
-
+        AlertDialog dialog = builder.create();
         dialog.show();
     }
 

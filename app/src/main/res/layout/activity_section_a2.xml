@@ -431,7 +431,7 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/d108d" />
+                                android:text="@string/a205dd" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a205dd"
@@ -452,7 +452,7 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/d108m" />
+                                android:text="@string/a205mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a205mm"
@@ -473,7 +473,7 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/d108y" />
+                                android:text="@string/a205yy" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a205yy"
@@ -1357,7 +1357,7 @@
                         android:onClick="btnContinue"
                         android:padding="10dp"
                         android:text="Save"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
