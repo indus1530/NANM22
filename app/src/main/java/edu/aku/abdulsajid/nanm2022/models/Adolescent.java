@@ -161,7 +161,23 @@ public class Adolescent extends BaseObservable implements Observable {
     @Ignore
     private String c208 = _EMPTY_;
     @Ignore
-    private String c209 = _EMPTY_;
+    private String c209a = _EMPTY_;
+    @Ignore
+    private String c209b = _EMPTY_;
+    @Ignore
+    private String c209c = _EMPTY_;
+    @Ignore
+    private String c209d = _EMPTY_;
+    @Ignore
+    private String c209e = _EMPTY_;
+    @Ignore
+    private String c209f = _EMPTY_;
+    @Ignore
+    private String c209g = _EMPTY_;
+    @Ignore
+    private String c209h = _EMPTY_;
+    @Ignore
+    private String c209x = _EMPTY_;
     @Ignore
     private String c20996x = _EMPTY_;
     @Ignore
@@ -1091,7 +1107,15 @@ public class Adolescent extends BaseObservable implements Observable {
         setC20698(c201.equals("1") ? this.c20698 : "");
         setC207(c201.equals("1") ? this.c207 : "");
         setC208(c201.equals("1") ? this.c208 : "");
-        setC209(c201.equals("1") ? this.c209 : "");
+        setC209a(c201.equals("1") ? this.c209a : "");
+        setC209b(c201.equals("1") ? this.c209b : "");
+        setC209c(c201.equals("1") ? this.c209c : "");
+        setC209d(c201.equals("1") ? this.c209d : "");
+        setC209e(c201.equals("1") ? this.c209e : "");
+        setC209f(c201.equals("1") ? this.c209f : "");
+        setC209g(c201.equals("1") ? this.c209g : "");
+        setC209h(c201.equals("1") ? this.c209h : "");
+        setC209x(c201.equals("1") ? this.c209x : "");
         setC210(c201.equals("1") ? this.c210 : "");
         setC211(c201.equals("1") ? this.c211 : "");
         setC212(c201.equals("1") ? this.c212 : "");
@@ -1355,19 +1379,107 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC208(String c208) {
         this.c208 = c208;
-        setC209(c208.equals("1") ? this.c209 : "");
+        setC209a(c208.equals("1") ? this.c209a : "");
+        setC209b(c208.equals("1") ? this.c209b : "");
+        setC209c(c208.equals("1") ? this.c209c : "");
+        setC209d(c208.equals("1") ? this.c209d : "");
+        setC209e(c208.equals("1") ? this.c209e : "");
+        setC209f(c208.equals("1") ? this.c209f : "");
+        setC209g(c208.equals("1") ? this.c209g : "");
+        setC209h(c208.equals("1") ? this.c209h : "");
+        setC209x(c208.equals("1") ? this.c209x : "");
         notifyPropertyChanged(BR.c208);
     }
 
     @Bindable
-    public String getC209() {
-        return c209;
+    public String getC209a() {
+        return c209a;
     }
 
-    public void setC209(String c209) {
-        this.c209 = c209;
-        setC20996x(c209.equals("96") ? this.c20996x : "");
-        notifyPropertyChanged(BR.c209);
+    public void setC209a(String c209a) {
+        this.c209a = c209a;
+        notifyPropertyChanged(BR.c209a);
+    }
+
+    @Bindable
+    public String getC209b() {
+        return c209b;
+    }
+
+    public void setC209b(String c209b) {
+        this.c209b = c209b;
+        notifyPropertyChanged(BR.c209b);
+    }
+
+    @Bindable
+    public String getC209c() {
+        return c209c;
+    }
+
+    public void setC209c(String c209c) {
+        this.c209c = c209c;
+        notifyPropertyChanged(BR.c209c);
+    }
+
+    @Bindable
+    public String getC209d() {
+        return c209d;
+    }
+
+    public void setC209d(String c209d) {
+        this.c209d = c209d;
+        notifyPropertyChanged(BR.c209d);
+    }
+
+    @Bindable
+    public String getC209e() {
+        return c209e;
+    }
+
+    public void setC209e(String c209e) {
+        this.c209e = c209e;
+        notifyPropertyChanged(BR.c209e);
+    }
+
+    @Bindable
+    public String getC209f() {
+        return c209f;
+    }
+
+    public void setC209f(String c209f) {
+        this.c209f = c209f;
+        notifyPropertyChanged(BR.c209f);
+    }
+
+    @Bindable
+    public String getC209g() {
+        return c209g;
+    }
+
+    public void setC209g(String c209g) {
+        this.c209g = c209g;
+        notifyPropertyChanged(BR.c209g);
+    }
+
+    @Bindable
+    public String getC209h() {
+        return c209h;
+    }
+
+    public void setC209h(String c209h) {
+        this.c209h = c209h;
+        notifyPropertyChanged(BR.c209h);
+    }
+
+    @Bindable
+    public String getC209x() {
+        return c209x;
+    }
+
+    public void setC209x(String c209x) {
+        this.c209x = c209x;
+        setC20996x(c209x.equals("96") ? this.c20996x : "");
+        notifyPropertyChanged(BR.c209x);
     }
 
     @Bindable
@@ -1818,7 +1930,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC50196(String c50196) {
         this.c50196 = c50196;
-        setC50196x(c50196.equals("96") ? this.c50196x : "");
+        setC50196x(c50196.equals("1") ? this.c50196x : "");
         notifyPropertyChanged(BR.c50196);
     }
 
@@ -3885,7 +3997,15 @@ public class Adolescent extends BaseObservable implements Observable {
             this.c20698 = json.getString("c20698");
             this.c207 = json.getString("c207");
             this.c208 = json.getString("c208");
-            this.c209 = json.getString("c209");
+            this.c209a = json.getString("c209a");
+            this.c209b = json.getString("c209b");
+            this.c209c = json.getString("c209c");
+            this.c209d = json.getString("c209d");
+            this.c209e = json.getString("c209e");
+            this.c209f = json.getString("c209f");
+            this.c209g = json.getString("c209g");
+            this.c209h = json.getString("c209h");
+            this.c209x = json.getString("c209x");
             this.c20996x = json.getString("c20996x");
             this.c210 = json.getString("c210");
             this.c21096x = json.getString("c21096x");
@@ -4229,7 +4349,15 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("c20698", c20698)
                 .put("c207", c207)
                 .put("c208", c208)
-                .put("c209", c209)
+                .put("c209a", c209a)
+                .put("c209b", c209b)
+                .put("c209c", c209c)
+                .put("c209d", c209d)
+                .put("c209e", c209e)
+                .put("c209f", c209f)
+                .put("c209g", c209g)
+                .put("c209h", c209h)
+                .put("c209x", c209x)
                 .put("c20996x", c20996x)
                 .put("c210", c210)
                 .put("c21096x", c21096x)

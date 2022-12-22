@@ -3971,6 +3971,14 @@ public class Forms extends BaseObservable implements Observable {
         setA41712(a41713.equals("13") ? "" : this.a41712);
         setA41798(a41713.equals("13") ? "" : this.a41798);
         setA41796(a41713.equals("13") ? "" : this.a41796);
+
+        setA41801(a41713.equals("13") ? "" : this.a41801);
+        setA41802(a41713.equals("13") ? "" : this.a41802);
+        setA41803(a41713.equals("13") ? "" : this.a41803);
+        setA41804(a41713.equals("13") ? "" : this.a41804);
+        setA41805(a41713.equals("13") ? "" : this.a41805);
+        setA41896(a41713.equals("13") ? "" : this.a41896);
+        setA41898(a41713.equals("13") ? "" : this.a41898);
         notifyPropertyChanged(BR.a41713);
     }
 
@@ -5734,7 +5742,7 @@ public class Forms extends BaseObservable implements Observable {
     public void setA5225a(String a5225a) {
         if (this.a5225a.equals(a5225a)) return; // for all checkboxes
         this.a5225a = a5225a;
-        setA5225cx(a5225a.equals("3") ? this.a5225cx : "");
+        setA5225cx(a5225a.equals("1") ? this.a5225cx : "");
         notifyPropertyChanged(BR.a5225a);
     }
 

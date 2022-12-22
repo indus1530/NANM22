@@ -181,6 +181,22 @@
                                 android:checked="@{form.a515.equals(`5`)}"
                                 android:onClick="@{()->form.setA515(`5`)}"
                                 android:text="@string/a51505" />
+
+                            <RadioButton
+                                android:id="@+id/a51506"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a515.equals(`6`)}"
+                                android:onClick="@{()->form.setA515(`6`)}"
+                                android:text="@string/a51506" />
+
+                            <RadioButton
+                                android:id="@+id/a51507"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a515.equals(`7`)}"
+                                android:onClick="@{()->form.setA515(`7`)}"
+                                android:text="@string/a51507" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1106,7 +1122,7 @@
                                     android:text="@={form.a5221bx}"
                                     android:visibility="@{form.a5221b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1138,7 +1154,7 @@
                                     android:text="@={form.a5221cx}"
                                     android:visibility="@{form.a5221c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1241,7 +1257,7 @@
                                     android:text="@={form.a5222bx}"
                                     android:visibility="@{form.a5222b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1273,7 +1289,7 @@
                                     android:text="@={form.a5222cx}"
                                     android:visibility="@{form.a5222c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1376,7 +1392,7 @@
                                     android:text="@={form.a5223bx}"
                                     android:visibility="@{form.a5223b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1408,7 +1424,7 @@
                                     android:text="@={form.a5223cx}"
                                     android:visibility="@{form.a5223c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1511,7 +1527,7 @@
                                     android:text="@={form.a5224bx}"
                                     android:visibility="@{form.a5224b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1543,7 +1559,7 @@
                                     android:text="@={form.a5224cx}"
                                     android:visibility="@{form.a5224c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1648,7 +1664,7 @@
                                     android:text="@={form.a5225bx}"
                                     android:visibility="@{form.a5225b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1680,7 +1696,7 @@
                                     android:text="@={form.a5225cx}"
                                     android:visibility="@{form.a5225c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1783,7 +1799,7 @@
                                     android:text="@={form.a5226bx}"
                                     android:visibility="@{form.a5226b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1815,7 +1831,7 @@
                                     android:text="@={form.a5226cx}"
                                     android:visibility="@{form.a5226c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>

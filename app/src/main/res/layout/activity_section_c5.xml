@@ -629,7 +629,7 @@
                                 android:hint="@string/c20296"
                                 android:tag="c20296"
                                 android:text="@={form.c50196x}"
-                                android:visibility="@{form.c50196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.c50196.equals(`1`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
                     </LinearLayout>

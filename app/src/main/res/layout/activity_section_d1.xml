@@ -571,7 +571,7 @@
                                 app:mask="###.#"
                                 app:maxValue="160.0"
                                 app:minValue="100.0"
-                                app:pattern="^(\\d{3,1})$"
+                                app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                 app:type="range" />
 
                             <RadioButton
@@ -614,12 +614,12 @@
                                 android:layout_weight="1"
                                 android:text="@string/d106" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/d106"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:inputType="number"
                                 android:hint="@string/d106"
                                 android:text="@={form.d106}" />
 
@@ -655,12 +655,12 @@
                                 android:layout_weight="1"
                                 android:text="@string/d107" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/d107"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:inputType="number"
                                 android:layout_weight="1"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/d107"
                                 android:text="@={form.d107}" />
 

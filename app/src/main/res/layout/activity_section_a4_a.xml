@@ -1767,7 +1767,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="match_parent"
                                     android:checked="@{form.a40809.equals(`98`)}"
-                                    android:onClick="@{()->form.setA40609(`98`)}"
+                                    android:onClick="@{()->form.setA40809(`98`)}"
                                     android:text="@string/a4080998" />
                             </RadioGroup>
 

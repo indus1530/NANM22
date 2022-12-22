@@ -144,7 +144,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c201.equals(`2`)}"
-                                android:onClick="@{()->form.setC201(`2`) + c203.clearCheck() + c204.clearCheck() + c208.clearCheck() + c209.clearCheck() + c210.clearCheck() + c211.clearCheck() + c212.clearCheck() + c213.clearCheck() + c214.clearCheck() + c215.clearCheck()}"
+                                android:onClick="@{()->form.setC201(`2`) + c203.clearCheck() + c204.clearCheck() + c208.clearCheck() + c210.clearCheck() + c211.clearCheck() + c212.clearCheck() + c213.clearCheck() + c214.clearCheck() + c215.clearCheck()}"
                                 android:text="@string/c201b" />
                         </RadioGroup>
                     </LinearLayout>
@@ -675,7 +675,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{form.c208.equals(`2`)}"
-                                    android:onClick="@{()->form.setC208(`2`) + c209.clearCheck()}"
+                                    android:onClick="@{()->form.setC208(`2`)}"
                                     android:text="@string/c208b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -711,81 +711,83 @@
 
                             </LinearLayout>
 
-                            <RadioGroup
-                                android:id="@+id/c209"
+                            <LinearLayout
+                                android:id="@+id/c209check"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:tag="0">
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`1`)}"
-                                    android:onClick="@{()->form.setC209(`1`)}"
+                                    android:checked="@{form.c209a.equals(`1`)}"
+                                    android:onClick="@{()->form.setC209a(`1`)}"
                                     android:text="@string/c209a" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`2`)}"
-                                    android:onClick="@{()->form.setC209(`2`)}"
+                                    android:checked="@{form.c209b.equals(`2`)}"
+                                    android:onClick="@{()->form.setC209b(`2`)}"
                                     android:text="@string/c209b" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`3`)}"
-                                    android:onClick="@{()->form.setC209(`3`)}"
+                                    android:checked="@{form.c209c.equals(`3`)}"
+                                    android:onClick="@{()->form.setC209c(`3`)}"
                                     android:text="@string/c209c" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209d"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`4`)}"
-                                    android:onClick="@{()->form.setC209(`4`)}"
+                                    android:checked="@{form.c209d.equals(`4`)}"
+                                    android:onClick="@{()->form.setC209d(`4`)}"
                                     android:text="@string/c209d" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209e"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`5`)}"
-                                    android:onClick="@{()->form.setC209(`5`)}"
+                                    android:checked="@{form.c209e.equals(`5`)}"
+                                    android:onClick="@{()->form.setC209e(`5`)}"
                                     android:text="@string/c209e" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209f"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`6`)}"
-                                    android:onClick="@{()->form.setC209(`6`)}"
+                                    android:checked="@{form.c209f.equals(`6`)}"
+                                    android:onClick="@{()->form.setC209f(`6`)}"
                                     android:text="@string/c209f" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209g"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`7`)}"
-                                    android:onClick="@{()->form.setC209(`7`)}"
+                                    android:checked="@{form.c209g.equals(`7`)}"
+                                    android:onClick="@{()->form.setC209g(`7`)}"
                                     android:text="@string/c209g" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209h"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`97`)}"
-                                    android:onClick="@{()->form.setC209(`97`)}"
+                                    android:checked="@{form.c209h.equals(`97`)}"
+                                    android:onClick="@{()->form.setC209h(`97`)}"
                                     android:text="@string/c209h" />
 
-                                <RadioButton
+                                <CheckBox
                                     android:id="@+id/c209x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.c209.equals(`96`)}"
-                                    android:onClick="@{()->form.setC209(`96`)}"
+                                    android:checked="@{form.c209x.equals(`96`)}"
+                                    android:onClick="@{()->form.setC209x(`96`)}"
                                     android:text="@string/c209x" />
 
                                 <EditText
@@ -796,8 +798,8 @@
                                     android:hint="@string/c20296"
                                     android:tag="c209x"
                                     android:text="@={form.c20996x}"
-                                    android:visibility="@{form.c209.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                            </RadioGroup>
+                                    android:visibility="@{form.c209x.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
