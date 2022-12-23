@@ -391,6 +391,9 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                 patientFood.setFoodChangeStatus(MainApp.NEW_ADD);
                 foodName = foodNameACET.getText().toString();
                 foodIntakeChip.setBackgroundColor(ContextCompat.getColor(activity, R.color.chip_new_color));
+
+                // This will give a new temporary id of new (not our standard) food added
+                newFoodId--;
             }
 //            patientFoodList.add(patientFood);
 
@@ -413,6 +416,10 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
             foodIntakeCG.addView(foodIntakeChip);
 
+            Objects.requireNonNull(db.patientFoodDao()).add(patientFood);
+            if (foodChangeList != null && foodChangeList.size() > 0)
+                Objects.requireNonNull(db.foodChangeDao()).addAll(foodChangeList);
+
 //            // This will give a new temporary id of new (not our standard) food added
 //            newFoodId--;
 //            selectedFoodIngrList = null;
@@ -420,9 +427,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
             noMealCB.setVisibility(View.GONE);
             errorTV.setVisibility(View.GONE);
-
-            // This will give a new temporary id of new (not our standard) food added
-            newFoodId--;
 
             resetVariables();
 
@@ -785,6 +789,20 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         List<PatientFood> patientFoodList = patientFoodMap.get(selectedFoodTime);
         for (int i = 0; i < Objects.requireNonNull(patientFoodList).size(); i++) {
             if (patientFoodList.get(i).getFoodName().equals(patientFoodName)) {
+                // Remove it from db if already exists
+                PatientFood patientFood = Objects.requireNonNull(db.patientFoodDao())
+                        .getByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+                                patientFoodList.get(i).getFoodId(), patientFoodList.get(i).getFoodTimeId());
+                if (patientFood != null) {
+                    Objects.requireNonNull(db.patientFoodDao()).delete(patientFood);
+                    List<FoodChange> foodChangeList = Objects.requireNonNull(db.foodChangeDao())
+                            .getAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+                                    patientFood.getFoodId(), patientFood.getFoodTimeId());
+                    if (foodChangeList != null && foodChangeList.size() > 0) {
+                        Objects.requireNonNull(db.foodChangeDao()).deleteAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+                                patientFood.getFoodId(), patientFood.getFoodTimeId());
+                    }
+                }
                 patientFoodList.remove(i);
                 serialNo--;
                 break;
@@ -918,9 +936,31 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 //            patient.setPatientFoodList(patientFoodMainList);
 //            String postJson = new Gson().toJson(patient);
 //            Log.e("POST_JSON: ", postJson);
-            db.patientFoodDao().addAll(patientFoodMainList);
-            if (foodChangeList != null && foodChangeList.size() > 0)
-                db.foodChangeDao().addAll(foodChangeList);
+
+//            for (int i = 0; i < patientFoodMainList.size(); i++) {
+//                PatientFood patientFood = Objects.requireNonNull(db.patientFoodDao())
+//                        .getByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+//                                patientFoodMainList.get(i).getFoodTimeId(), patientFoodMainList.get(i).getFoodId());
+//
+//                if (patientFood != null) {
+//                    // If patient food already exists just update it
+//                    patientFoodMainList.get(i).setPatientFoodId(patientFood.getPatientFoodId());
+//                    Objects.requireNonNull(db.patientFoodDao()).update(patientFoodMainList.get(i));
+//                } else {
+//                    // If patient food does not exists, add it
+//                    Objects.requireNonNull(db.patientFoodDao()).add(patientFoodMainList.get(i));
+//                }
+////                Objects.requireNonNull(db.foodChangeDao()).deleteAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+////                        patientFoodMainList.get(i).getFoodId(), patientFoodMainList.get(i).getFoodTimeId());
+////                if (foodChangeList != null && foodChangeList.size() > 0)
+////                    for (int j = 0; j < foodChangeList.size(); j++) {
+////
+////                    }
+//
+//            }
+//            db.patientFoodDao().addAll(patientFoodMainList);
+//            if (foodChangeList != null && foodChangeList.size() > 0)
+//                db.foodChangeDao().addAll(foodChangeList);
 
             finish();
             startActivity(new Intent(this, SectionD1Activity.class));
