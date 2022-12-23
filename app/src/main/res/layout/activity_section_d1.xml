@@ -228,6 +228,7 @@
                             <TextView
                                 android:id="@+id/d105"
                                 style="@style/sub_labels"
+                                android:background="@color/grayLight"
                                 android:layout_width="0dp"
                                 android:layout_height="@dimen/_25sdp"
                                 android:layout_weight="1.5"
@@ -563,15 +564,13 @@
                                 android:layout_weight="1"
                                 android:enabled="@{form.d113.equals(`1`)}"
                                 android:gravity="center"
-                                android:hint="###.#"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="4"
+                                android:maxLength="2"
                                 android:tag="d11301"
                                 android:text="@={form.d11301x}"
-                                app:mask="###.#"
-                                app:maxValue="160.0"
-                                app:minValue="100.0"
-                                app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                                app:maxValue="10"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -871,7 +870,7 @@
                                     app:mask="###.#"
                                     app:maxValue="160.0"
                                     app:minValue="100.0"
-                                    app:pattern="^(\\d{3,1})$"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -919,7 +918,7 @@
                                     app:mask="###.#"
                                     app:maxValue="160.0"
                                     app:minValue="100.0"
-                                    app:pattern="^(\\d{3,1})$"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1024,7 +1023,7 @@
                                     app:mask="###.#"
                                     app:maxValue="160.0"
                                     app:minValue="100.0"
-                                    app:pattern="^(\\d{3,1})$"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1072,7 +1071,7 @@
                                     app:mask="##.#"
                                     app:maxValue="60.0"
                                     app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1120,7 +1119,7 @@
                                     app:mask="##.#"
                                     app:maxValue="60.0"
                                     app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1225,7 +1224,7 @@
                                     app:mask="##.#"
                                     app:maxValue="60.0"
                                     app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1271,9 +1270,9 @@
                                     android:maxLength="3"
                                     android:text="@={form.d123}"
                                     app:mask="##.#"
-                                    app:maxValue="10.0"
-                                    app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:maxValue="25.0"
+                                    app:minValue="10.0"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1319,9 +1318,9 @@
                                     android:maxLength="3"
                                     android:text="@={form.d124}"
                                     app:mask="##.#"
-                                    app:maxValue="10.0"
-                                    app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:maxValue="25.0"
+                                    app:minValue="10.0"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1424,9 +1423,9 @@
                                     android:maxLength="3"
                                     android:text="@={form.d126}"
                                     app:mask="##.#"
-                                    app:maxValue="10.0"
-                                    app:minValue="25.0"
-                                    app:pattern="^(\\d{2,1})$"
+                                    app:maxValue="25.0"
+                                    app:minValue="10.0"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>

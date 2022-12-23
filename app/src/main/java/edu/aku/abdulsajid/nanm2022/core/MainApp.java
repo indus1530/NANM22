@@ -31,13 +31,6 @@ import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
 
-import com.facebook.flipper.android.AndroidFlipperClient;
-import com.facebook.flipper.android.utils.FlipperUtils;
-import com.facebook.flipper.core.FlipperClient;
-import com.facebook.flipper.plugins.databases.DatabasesFlipperPlugin;
-import com.facebook.flipper.plugins.inspector.DescriptorMapping;
-import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
-import com.facebook.soloader.SoLoader;
 import com.scottyab.rootbeer.RootBeer;
 
 import net.sqlcipher.database.SQLiteDatabase;
@@ -48,7 +41,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.aku.abdulsajid.nanm2022.BuildConfig;
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
@@ -306,15 +298,15 @@ public class MainApp extends Application {
 
         toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
 
-        SoLoader.init(this, false);
+        /*SoLoader.init(this, false);
 
-        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
+/*        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
             final FlipperClient client = AndroidFlipperClient.getInstance(this);
             client.addPlugin(new InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()));
             client.addPlugin(new DatabasesFlipperPlugin(this));
 
             client.start();
-        }
+        }*/
 
     }
 

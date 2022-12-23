@@ -3471,6 +3471,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD115(String d115) {
         this.d115 = d115;
+//        checkDiffer();
         notifyPropertyChanged(BR.d115);
     }
 
@@ -3481,8 +3482,16 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD116(String d116) {
         this.d116 = d116;
+//        checkDiffer();
         notifyPropertyChanged(BR.d116);
     }
+
+/*    private void checkDiffer(){
+        if (d115.length() > 0 && d116.length()> 0){
+            if((Integer.parseInt(d115) + Integer.parseInt(d116)) > 0.6) setD117("1");
+            else setD117("2");
+        }else setD117("");
+    }*/
 
     @Bindable
     public String getD117() {

@@ -387,10 +387,10 @@
     <string name="a306n">Surface water (river/dam/lake/pond/canal Irrigation channel) </string>
     <string name="a306o">Bottled water  </string>
     <string name="a306x">Other specify  </string>
-    <string name="a306aa">What is the main source of drinking water for members of your household? Municipal Community Water Connection</string>
+    <string name="a306aa">Municipal Community Water Connection</string>
     <string name="a306aaa">Yes</string>
     <string name="a306aab">No</string>
-    <string name="a307">What is the main source of drinking water for members of your household?</string>
+    <string name="a307">What is the main source of water used by your household for other purposes such as cooking and hand washing?</string>
     <string name="a307a_title">Piped water</string>
     <string name="a307a">Piped into dwelling  </string>
     <string name="a307b">Piped to yard/plot  </string>
@@ -410,7 +410,7 @@
     <string name="a307n">Bottled water  </string>
     <string name="a307o">Filtration plant on boring</string>
     <string name="a307x">Other specify  </string>
-    <string name="a307aa">What is the main source of water used by your household for other purposes such as cooking and hand washing? Municipal Community Water Connection</string>
+    <string name="a307aa">Municipal Community Water Connection</string>
     <string name="a307aaa">Yes</string>
     <string name="a307aab">No</string>
     <string name="a308">Where is that water source located?</string>

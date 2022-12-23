@@ -36,8 +36,7 @@ public class SectionA5BActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a5_b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        if(form.getUid() != null)
-        {
+        if (form.getUid() != null) {
             try {
                 form.sA5BHydrate(form.getSA5B());
             } catch (JSONException e) {
@@ -90,7 +89,28 @@ public class SectionA5BActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (Integer.parseInt(bi.a5221bx.getText().toString()) + Integer.parseInt(bi.a5221cx.getText().toString()) > Integer.parseInt(bi.a5221ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5221ax, "Invalid Count");
+
+        if (Integer.parseInt(bi.a5222bx.getText().toString()) + Integer.parseInt(bi.a5222cx.getText().toString()) > Integer.parseInt(bi.a5222ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5222ax, "Invalid Count");
+
+        if (Integer.parseInt(bi.a5223bx.getText().toString()) + Integer.parseInt(bi.a5223cx.getText().toString()) > Integer.parseInt(bi.a5223ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5223ax, "Invalid Count");
+
+        if (Integer.parseInt(bi.a5224bx.getText().toString()) + Integer.parseInt(bi.a5224cx.getText().toString()) > Integer.parseInt(bi.a5224ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5224ax, "Invalid Count");
+
+        if (Integer.parseInt(bi.a5225bx.getText().toString()) + Integer.parseInt(bi.a5225cx.getText().toString()) > Integer.parseInt(bi.a5225ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5225ax, "Invalid Count");
+
+        if (Integer.parseInt(bi.a5226bx.getText().toString()) + Integer.parseInt(bi.a5226cx.getText().toString()) > Integer.parseInt(bi.a5226ax.getText().toString()))
+            return Validator.emptyCustomTextBox(this, bi.a5226ax, "Invalid Count");
+
+        return true;
     }
 
     @Override

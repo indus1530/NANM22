@@ -408,10 +408,10 @@
     <string name="a306n">سطح والا پانی(دریا،جھیل ،ڈیم،تالاب/ ندی/نہر کا پانی</string>
     <string name="a306o">بوتل کا پانی</string>
     <string name="a306x">دیگر وضاحت کریں</string>
-    <string name="a306aa">آپ کے گھر میں پینے کے پانی کا سب سے اہم ذریعہ کیا ہے ؟ میونسپل کمیٹی کا پانی کاکنکشن </string>
+    <string name="a306aa">میونسپل کمیٹی کا پانی کاکنکشن </string>
     <string name="a306aaa">ہاں</string>
     <string name="a306aab">نہیں</string>
-    <string name="a307">آپ کے گھر میں پینے کے پانی کا سب سے اہم ذریعہ کیا ہے ؟</string>
+    <string name="a307">آپ کے گھر میں کھانا پکانے اور ہاتھ دھونے اور دوسرے مقاصد کے لئے استعمال کیے جانے والے پانی کا اہم ذریعہ کیا ہے</string>
     <string name="a307a_title">پائپڈ پانی</string>
     <string name="a307a"> گھر میں لگانلکا </string>
     <string name="a307b"> اپنى چارديوارى  / پلاٹ میں لگا نلکا</string>
@@ -431,7 +431,7 @@
     <string name="a307n">بوتل کا پانی</string>
     <string name="a307o"> بورنگ والا فلٹریشن پلانٹ </string>
     <string name="a307x">دیگر وضاحت کریں</string>
-    <string name="a307aa">آپ کے گھر میں کھانا پکانے  اور ہاتھ دھونے اور دوسرے مقاصد کے لئے استعمال کیے جانے والے پانی کا اہم ذریعہ کیا ہے؟ میونسپل کمیٹی کا پانی کاکنکشن </string>
+    <string name="a307aa">میونسپل کمیٹی کا پانی کاکنکشن </string>
     <string name="a307aaa">ہاں</string>
     <string name="a307aab">نہیں</string>
     <string name="a308">پانی کا ذریعہ کہاں واقع ہے؟</string>

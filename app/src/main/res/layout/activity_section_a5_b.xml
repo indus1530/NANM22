@@ -994,38 +994,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- a522  Title   -->
-                <!--<androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa522"
-                    style="@style/cardView">
--->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/labelsHead"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/a522" />
-                </LinearLayout>
-                <!--</androidx.cardview.widget.CardView>
--->
-                <!-- title02  Title   -->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/sub_labels"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/title02" />
-                </LinearLayout>
-
 
                 <!-- a5221  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1047,12 +1015,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_a5221" />
+                                android:text="@string/Q_a522" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/a5221" />
+                                android:text="@string/a522" />
 
                         </LinearLayout>
 
@@ -1060,22 +1028,58 @@
                             android:id="@+id/a5221check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5221a"
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:background="@color/grayLight"
+                                    android:text="@string/title02" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:background="@color/grayLight"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.a5221a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5221a(form.a5221a.equals(`1`)?``:`1`)}"
                                     android:text="@string/a5221a" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@color/grayLight"
+                                    android:text="@string/a5221b" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@color/grayLight"
+                                    android:text="@string/a5221c" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/a5221" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5221ax"
@@ -1086,28 +1090,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5221a"
                                     android:text="@={form.a5221ax}"
-                                    android:visibility="@{form.a5221a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5221b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5221b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5221b(form.a5221b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5221b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5221bx"
@@ -1116,30 +1102,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5221b"
                                     android:text="@={form.a5221bx}"
-                                    android:visibility="@{form.a5221b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5221c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5221c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5221c(form.a5221c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5221c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5221cx"
@@ -1148,69 +1117,27 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5221c"
                                     android:text="@={form.a5221cx}"
-                                    android:visibility="@{form.a5221c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- a5222  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa5222"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a5222" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a5222" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/a5222check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5222a"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5222a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5222a(form.a5222a.equals(`1`)?``:`1`)}"
-                                    android:text="@string/a5222a" />
+                                    android:layout_weight="2"
+                                    android:text="@string/a5222" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5222ax"
@@ -1221,28 +1148,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5222a"
                                     android:text="@={form.a5222ax}"
-                                    android:visibility="@{form.a5222a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5222b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5222b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5222b(form.a5222b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5222b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5222bx"
@@ -1251,30 +1160,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5222b"
                                     android:text="@={form.a5222bx}"
-                                    android:visibility="@{form.a5222b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5222c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5222c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5222c(form.a5222c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5222c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5222cx"
@@ -1283,69 +1175,27 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5222c"
                                     android:text="@={form.a5222cx}"
-                                    android:visibility="@{form.a5222c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- a5223  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa5223"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a5223" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a5223" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/a5223check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5223a"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5223a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5223a(form.a5223a.equals(`1`)?``:`1`)}"
-                                    android:text="@string/a5223a" />
+                                    android:layout_weight="2"
+                                    android:text="@string/a5223" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5223ax"
@@ -1356,28 +1206,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5223a"
                                     android:text="@={form.a5223ax}"
-                                    android:visibility="@{form.a5223a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5223b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5223b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5223b(form.a5223b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5223b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5223bx"
@@ -1386,30 +1218,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5223b"
                                     android:text="@={form.a5223bx}"
-                                    android:visibility="@{form.a5223b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5223c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5223c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5223c(form.a5223c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5223c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5223cx"
@@ -1418,69 +1233,27 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5223c"
                                     android:text="@={form.a5223cx}"
-                                    android:visibility="@{form.a5223c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- a5224  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa5224"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a5224" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a5224" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/a5224check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5224a"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5224a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5224a(form.a5224a.equals(`1`)?``:`1`)}"
-                                    android:text="@string/a5224a" />
+                                    android:layout_weight="2"
+                                    android:text="@string/a5224" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5224ax"
@@ -1491,28 +1264,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5224a"
                                     android:text="@={form.a5224ax}"
-                                    android:visibility="@{form.a5224a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5224b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5224b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5224b(form.a5224b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5224b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5224bx"
@@ -1521,30 +1276,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5224b"
                                     android:text="@={form.a5224bx}"
-                                    android:visibility="@{form.a5224b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5224c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5224c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5224c(form.a5224c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5224c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5224cx"
@@ -1553,71 +1291,26 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5224c"
                                     android:text="@={form.a5224cx}"
-                                    android:visibility="@{form.a5224c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
                             </LinearLayout>
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- a5225  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa5225"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a5225" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a5225" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/a5225check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5225a"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5225a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5225a(form.a5225a.equals(`1`)?``:`1`)}"
-                                    android:text="@string/a5225a" />
+                                    android:layout_weight="2"
+                                    android:text="@string/a5225" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5225ax"
@@ -1628,28 +1321,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5225a"
                                     android:text="@={form.a5225ax}"
-                                    android:visibility="@{form.a5225a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5225b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5225b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5225b(form.a5225b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5225b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5225bx"
@@ -1658,30 +1333,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5225b"
                                     android:text="@={form.a5225bx}"
-                                    android:visibility="@{form.a5225b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5225c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5225c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5225c(form.a5225c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5225c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5225cx"
@@ -1690,69 +1348,26 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5225c"
                                     android:text="@={form.a5225cx}"
-                                    android:visibility="@{form.a5225c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
                             </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- a5226  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa5226"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a5226" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a5226" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/a5226check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a5226a"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5226a.equals(`1`)}"
-                                    android:onClick="@{()->form.setA5226a(form.a5226a.equals(`1`)?``:`1`)}"
-                                    android:text="@string/a5226a" />
+                                    android:layout_weight="2"
+                                    android:text="@string/a5226" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5226ax"
@@ -1763,28 +1378,10 @@
                                     android:hint="###"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5226a"
                                     android:text="@={form.a5226ax}"
-                                    android:visibility="@{form.a5226a.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5226b"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5226b.equals(`2`)}"
-                                    android:onClick="@{()->form.setA5226b(form.a5226b.equals(`2`)?``:`2`)}"
-                                    android:text="@string/a5226b" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5226bx"
@@ -1793,30 +1390,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5226b"
                                     android:text="@={form.a5226bx}"
-                                    android:visibility="@{form.a5226b.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/a5226c"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.a5226c.equals(`3`)}"
-                                    android:onClick="@{()->form.setA5226c(form.a5226c.equals(`3`)?``:`3`)}"
-                                    android:text="@string/a5226c" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/a5226cx"
@@ -1825,15 +1405,13 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="###"
+                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:tag="a5226c"
                                     android:text="@={form.a5226cx}"
-                                    android:visibility="@{form.a5226c.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
-
                             </LinearLayout>
 
                             <LinearLayout
@@ -1841,28 +1419,26 @@
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
-                                <CheckBox
-                                    android:id="@+id/a52296"
+                                <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{form.a52296.equals(`96`)}"
-                                    android:onClick="@{()->form.setA52296(form.a52296.equals(`96`)?``:`96`)}"
                                     android:text="@string/a52296" />
 
                                 <EditText
                                     android:id="@+id/a52296x"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
+                                    android:layout_weight="1.5"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:gravity="center"
                                     android:hint="@string/a52296"
-                                    android:tag="a52296"
-                                    android:text="@={form.a52296x}"
-                                    android:visibility="@{form.a52296.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:tag="-1"
+                                    android:text="@={form.a52296x}" />
 
                             </LinearLayout>
+
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
