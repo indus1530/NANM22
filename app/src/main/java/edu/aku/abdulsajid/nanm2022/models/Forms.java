@@ -5742,7 +5742,7 @@ public class Forms extends BaseObservable implements Observable {
     public void setA5225a(String a5225a) {
         if (this.a5225a.equals(a5225a)) return; // for all checkboxes
         this.a5225a = a5225a;
-        setA5225cx(a5225a.equals("1") ? this.a5225cx : "");
+        setA5225ax(a5225a.equals("1") ? this.a5225ax : "");
         notifyPropertyChanged(BR.a5225a);
     }
 

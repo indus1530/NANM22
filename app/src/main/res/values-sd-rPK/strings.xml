@@ -998,6 +998,7 @@
     <string name="c208"> ڇا (نوجوان جو نالو) ڪووڊ لاڪ ڊائون / بندش کان سواءِ توهان گذريل سال گھٽ ۾ گھٽ هڪ مهيني لاءِ اسڪول نه ويو ؟ </string>
     <string name="c208a"> ها </string>
     <string name="c208b"> نه </string>
+    <string name="c20898"> لاڳو نه ٿو ٿئي </string>
     <string name="c209"> توهان جو باقائده اسڪول نه وڃڻ يا ڇڏڻ جا بنيادي سبب ڪهڙا هيا ؟ هڪ کان وڌيڪ جواب ملي سگھن ٿا </string>
     <string name="c209a"> گھريلو ڪم (مثال طور : ٻارن جي سنڀال، صفائي وغيره ) بغير ادا ڪيل </string>
     <string name="c209b"> گھر جي لاءِ ڪم ڪندڙ ( مثال طور: زراعت يا خانداني ڪاروبار) بغير ادا ڪيل </string>
@@ -1864,8 +1865,8 @@
     <string name="a51203"> روڊ کي نقصان </string>
     <string name="a51204"> پاڻي بيٺل ھو </string>
     <string name="a51205"> غير محفوظ حالات </string>
-    <string name="a51298"> ٻيو ڪجھ (وضاحت ڪريو) </string>
-    <string name="a51296"> معلوم نہ آھي </string>
+    <string name="a51298"> معلوم نہ آھي </string>
+    <string name="a51296"> ٻيو ڪجھ (وضاحت ڪريو) </string>
     <string name="a513c"> زرعي فصلن ۾ استعمال ٿيندڙ سامان (ڪيميائي ڀاڻ ۽ جيت مار دوائون) </string>
     <string name="a513c1"> ھا </string>
     <string name="a513c2"> نہ </string>
