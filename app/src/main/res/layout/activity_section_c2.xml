@@ -677,6 +677,15 @@
                                     android:checked="@{form.c208.equals(`2`)}"
                                     android:onClick="@{()->form.setC208(`2`)}"
                                     android:text="@string/c208b" />
+
+                                <RadioButton
+                                    android:id="@+id/c20898"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{form.c208.equals(`98`)}"
+                                    android:onClick="@{()->form.setC208(`98`)}"
+                                    android:text="@string/c20898" />
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

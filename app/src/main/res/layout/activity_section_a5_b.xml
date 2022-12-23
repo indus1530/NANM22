@@ -2621,9 +2621,9 @@
                                 android:id="@+id/a52996"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a52998.equals(`96`)}"
+                                android:checked="@{form.a52996.equals(`96`)}"
                                 android:enabled="@{!form.a52998.equals(`98`)}"
-                                android:onClick="@{()->form.setA52998(form.a52998.equals(`96`)?``:`96`)}"
+                                android:onClick="@{()->form.setA52996(form.a52996.equals(`96`)?``:`96`)}"
                                 android:text="@string/a52996" />
                         </LinearLayout>
 
