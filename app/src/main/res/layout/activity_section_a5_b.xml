@@ -2058,7 +2058,7 @@
                                 android:id="@+id/a52802x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/a52802"
+                                android:hint="@string/a52801"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="a52802"

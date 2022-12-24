@@ -965,6 +965,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d117.equals(`1`)}"
                                     android:onClick="@{()->form.setD117(`1`)}"
                                     android:text="@string/d11701" />
@@ -974,6 +975,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d117.equals(`2`)}"
                                     android:onClick="@{()->form.setD117(`2`)}"
                                     android:text="@string/d11702" />
@@ -1166,6 +1168,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d121.equals(`1`)}"
                                     android:onClick="@{()->form.setD121(`1`)}"
                                     android:text="@string/d12101" />
@@ -1175,6 +1178,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d121.equals(`2`)}"
                                     android:onClick="@{()->form.setD121(`2`)}"
                                     android:text="@string/d12102" />
@@ -1367,6 +1371,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d125.equals(`1`)}"
                                     android:onClick="@{()->form.setD125(`1`)}"
                                     android:text="@string/d12501" />
@@ -1376,6 +1381,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
                                     android:checked="@{form.d125.equals(`2`)}"
                                     android:onClick="@{()->form.setD125(`2`)}"
                                     android:text="@string/d12502" />

@@ -3471,7 +3471,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD115(String d115) {
         this.d115 = d115;
-//        checkDiffer();
+        checkDiffer();
         notifyPropertyChanged(BR.d115);
     }
 
@@ -3482,16 +3482,9 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD116(String d116) {
         this.d116 = d116;
-//        checkDiffer();
+        checkDiffer();
         notifyPropertyChanged(BR.d116);
     }
-
-/*    private void checkDiffer(){
-        if (d115.length() > 0 && d116.length()> 0){
-            if((Integer.parseInt(d115) + Integer.parseInt(d116)) > 0.6) setD117("1");
-            else setD117("2");
-        }else setD117("");
-    }*/
 
     @Bindable
     public String getD117() {
@@ -3521,6 +3514,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD119(String d119) {
         this.d119 = d119;
+        checkDiffer();
         notifyPropertyChanged(BR.d119);
     }
 
@@ -3531,6 +3525,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD120(String d120) {
         this.d120 = d120;
+        checkDiffer();
         notifyPropertyChanged(BR.d120);
     }
 
@@ -3562,6 +3557,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD123(String d123) {
         this.d123 = d123;
+        checkDiffer();
         notifyPropertyChanged(BR.d123);
     }
 
@@ -3572,6 +3568,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD124(String d124) {
         this.d124 = d124;
+        checkDiffer();
         notifyPropertyChanged(BR.d124);
     }
 
@@ -4607,6 +4604,42 @@ public class Adolescent extends BaseObservable implements Observable {
                 .put("d203", d203)
                 .put("d204", d204);
         return json.toString();
+    }
+
+    private void checkDiffer() {
+        if (d115.length() > 0 && d116.length() > 0) {
+            Float a = Float.parseFloat(d115);
+            Float b = Float.parseFloat(d116);
+            Float total;
+
+            total = a > b ? a - b : b - a;
+
+            if (total > 0.6) setD117("1");
+            else setD117("2");
+        } else setD117("");
+
+        if (d119.length() > 0 && d120.length() > 0) {
+            Float a = Float.parseFloat(d119);
+            Float b = Float.parseFloat(d120);
+            Float total;
+
+            total = a > b ? a - b : b - a;
+
+            if (total > 0.1) setD121("1");
+            else setD121("2");
+        } else setD121("");
+
+        if (d123.length() > 0 && d124.length() > 0) {
+            Float a = Float.parseFloat(d123);
+            Float b = Float.parseFloat(d124);
+            Float total;
+
+            total = a > b ? a - b : b - a;
+
+            if (total > 0.3) setD125("1");
+            else setD125("2");
+        } else setD125("");
+
     }
 
 }
