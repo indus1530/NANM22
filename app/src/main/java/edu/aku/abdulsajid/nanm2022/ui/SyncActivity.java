@@ -222,10 +222,10 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " enabled = '1' ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(TableContracts.FoodTable.TABLE_NAME));
+                    /*downloadTables.add(new SyncModel(TableContracts.FoodTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableContracts.FoodTimeTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableContracts.FoodIngredientMapTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(TableContracts.IngredientTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.IngredientTable.TABLE_NAME));*/
                     //downloadTables.add(new SyncModel("versionApp"));
                 } else {
 

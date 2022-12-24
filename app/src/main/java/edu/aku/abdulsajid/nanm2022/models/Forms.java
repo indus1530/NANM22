@@ -2630,6 +2630,11 @@ public class Forms extends BaseObservable implements Observable {
         setA333c(a333e.equals("97") ? "" : this.a333c);
         setA333d(a333e.equals("97") ? "" : this.a333d);
         setA333x(a333e.equals("97") ? "" : this.a333x);
+
+        setA334a(a333e.equals("97") ? "" : this.a334a);
+        setA334b(a333e.equals("97") ? "" : this.a334b);
+        setA334c(a333e.equals("97") ? "" : this.a334c);
+        setA334x(a333e.equals("97") ? "" : this.a334x);
         notifyPropertyChanged(BR.a333e);
     }
 
@@ -4985,22 +4990,22 @@ public class Forms extends BaseObservable implements Observable {
 
     public void setA517(String a517) {
         this.a517 = a517;
-        setA51801(a517.equals("2") || a517.equals("98") ? this.a51801 : "");
-        setA51802(a517.equals("2") || a517.equals("98") ? this.a51802 : "");
-        setA51803(a517.equals("2") || a517.equals("98") ? this.a51803 : "");
-        setA51804(a517.equals("2") || a517.equals("98") ? this.a51804 : "");
-        setA51805(a517.equals("2") || a517.equals("98") ? this.a51805 : "");
-        setA51806(a517.equals("2") || a517.equals("98") ? this.a51806 : "");
-        setA51807(a517.equals("2") || a517.equals("98") ? this.a51807 : "");
-        setA51808(a517.equals("2") || a517.equals("98") ? this.a51808 : "");
-        setA51809(a517.equals("2") || a517.equals("98") ? this.a51809 : "");
-        setA51810(a517.equals("2") || a517.equals("98") ? this.a51810 : "");
-        setA51811(a517.equals("2") || a517.equals("98") ? this.a51811 : "");
-        setA51812(a517.equals("2") || a517.equals("98") ? this.a51812 : "");
-        setA51813(a517.equals("2") || a517.equals("98") ? this.a51813 : "");
-        setA51814(a517.equals("2") || a517.equals("98") ? this.a51814 : "");
-        setA51896(a517.equals("2") || a517.equals("98") ? this.a51896 : "");
-        setA51898(a517.equals("2") || a517.equals("98") ? this.a51898 : "");
+        setA51801(a517.equals("1") ? this.a51801 : "");
+        setA51802(a517.equals("1") ? this.a51802 : "");
+        setA51803(a517.equals("1") ? this.a51803 : "");
+        setA51804(a517.equals("1") ? this.a51804 : "");
+        setA51805(a517.equals("1") ? this.a51805 : "");
+        setA51806(a517.equals("1") ? this.a51806 : "");
+        setA51807(a517.equals("1") ? this.a51807 : "");
+        setA51808(a517.equals("1") ? this.a51808 : "");
+        setA51809(a517.equals("1") ? this.a51809 : "");
+        setA51810(a517.equals("1") ? this.a51810 : "");
+        setA51811(a517.equals("1") ? this.a51811 : "");
+        setA51812(a517.equals("1") ? this.a51812 : "");
+        setA51813(a517.equals("1") ? this.a51813 : "");
+        setA51814(a517.equals("1") ? this.a51814 : "");
+        setA51896(a517.equals("1") ? this.a51896 : "");
+        setA51898(a517.equals("1") ? this.a51898 : "");
         notifyPropertyChanged(BR.a517);
     }
 

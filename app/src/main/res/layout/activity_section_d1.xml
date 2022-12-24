@@ -147,7 +147,8 @@
                                 android:text="@={form.d101}"
                                 app:dateFormat="dd-MM-yyyy"
                                 app:maxDate="CR_DATE"
-                                app:minDate="01/01/2020" />
+                                app:minDate="01/01/2020"
+                                app:theme="@style/DatePickerEditTextDialogTheme" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -191,6 +192,7 @@
                                 android:hint="HH:mm"
                                 android:text="@={form.d102}"
                                 app:is24HourView="true"
+                                app:theme="@style/DatePickerEditTextDialogTheme"
                                 app:timeFormat="HH:mm" />
 
                         </LinearLayout>
@@ -228,10 +230,10 @@
                             <TextView
                                 android:id="@+id/d105"
                                 style="@style/sub_labels"
-                                android:background="@color/grayLight"
                                 android:layout_width="0dp"
                                 android:layout_height="@dimen/_25sdp"
                                 android:layout_weight="1.5"
+                                android:background="@color/grayLight"
                                 android:hint="@string/d105" />
 
                         </LinearLayout>
@@ -618,13 +620,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:hint="@string/d106"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.d106}"
                                 app:maxValue="20"
                                 app:minValue="1"
-                                app:type="range"
-                                android:hint="@string/d106"
-                                android:text="@={form.d106}" />
+                                app:type="range" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -662,14 +664,14 @@
                                 android:id="@+id/d107"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:inputType="number"
                                 android:layout_weight="1"
+                                android:hint="@string/d107"
+                                android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.d107}"
                                 app:maxValue="20"
                                 app:minValue="1"
-                                app:type="range"
-                                android:hint="@string/d107"
-                                android:text="@={form.d107}" />
+                                app:type="range" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -731,39 +733,26 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- d1instruc  Title   -->
+                <!-- d1title2  Radio   -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="@{form.d108.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <TextView
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/d1instruc" />
-                </LinearLayout>
 
-                <!-- d1title2  Radio   -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
+                        style="@style/labelsHead"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:text="@string/d1title2" />
 
-
-                        <TextView
-                            style="@style/labelsHead"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/d1title2" />
-
-                    </LinearLayout>
                 </LinearLayout>
 
                 <!-- d114  Radio   -->
@@ -853,8 +842,8 @@
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/d115" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -901,8 +890,8 @@
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/d116" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -965,8 +954,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d117.equals(`1`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD117(`1`)}"
                                     android:text="@string/d11701" />
 
@@ -975,8 +964,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d117.equals(`2`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD117(`2`)}"
                                     android:text="@string/d11702" />
                             </RadioGroup>
@@ -1168,8 +1157,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d121.equals(`1`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD121(`1`)}"
                                     android:text="@string/d12101" />
 
@@ -1178,8 +1167,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d121.equals(`2`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD121(`2`)}"
                                     android:text="@string/d12102" />
                             </RadioGroup>
@@ -1371,8 +1360,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d125.equals(`1`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD125(`1`)}"
                                     android:text="@string/d12501" />
 
@@ -1381,8 +1370,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
                                     android:checked="@{form.d125.equals(`2`)}"
+                                    android:enabled="false"
                                     android:onClick="@{()->form.setD125(`2`)}"
                                     android:text="@string/d12502" />
                             </RadioGroup>

@@ -578,7 +578,7 @@
                                 android:maxLength="2"
                                 android:text="@={member.a206mm}"
                                 app:maxValue="12"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <TextView
@@ -599,7 +599,7 @@
                                 android:maxLength="2"
                                 android:text="@={member.a206dd}"
                                 app:maxValue="30"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

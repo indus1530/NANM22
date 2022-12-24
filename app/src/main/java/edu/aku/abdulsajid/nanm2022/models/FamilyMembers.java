@@ -785,13 +785,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
 */
                 long inDays = MILLISECONDS.toDays(millis);
-                long tYear = inDays / 365;
-                long tMonth = (inDays - (tYear * 365)) / 30;
-                long tDay = inDays - ((tYear * 365) + (tMonth * 30));
+                long tYear = (long) (inDays / 365.2425);
+                long tMonth = (long) ((inDays - (tYear * 365.2425)) / 30.43);
+                long tDay = (long) (inDays - ((tYear * 365.2425) + (tMonth * 30.43)));
 
                 Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
-               /* setH231d(String.valueOf(tDay));
-                setH231m(String.valueOf(tMonth));*/
 
                 setA206yy(String.valueOf(tYear));
                 setA206mm(String.valueOf(tMonth));

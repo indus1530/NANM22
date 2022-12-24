@@ -320,7 +320,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa518"
                     style="@style/cardView"
-                    android:visibility="@{form.a517.equals(`2`) || form.a517.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.a517.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1799,7 +1799,7 @@
                             android:maxLength="3"
                             android:text="@={form.a525}"
                             app:maxValue="100"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

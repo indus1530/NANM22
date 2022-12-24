@@ -2092,8 +2092,8 @@
     <!--    <string name="c501title"> نان ڪميونيڪبل ڊزيز </string>-->
     <string name="c501"> ڇا ( نوجوان جو نالو ) پنھنجي حياتيءَ دوران ھيٺين مان ڪنھن ھڪ بيماري يا ڪنهن ٻي بيماري ۾ مبتلا ٿيا آھيو؟ ڏانهن وڃو.C-505جيڪڏهن سڀ جواب نه آهن ته پوءِ </string>
     <string name="c501a"> دل جي بيماري </string>
-    <string name="c501a01"> میٹابولک / شُگر </string>
-    <string name="c501a02"> رت جي گھٽتائي </string>
+    <string name="c501a01"> ها </string>
+    <string name="c501a02"> نه </string>
     <string name="c501b"> میٹابولک / شُگر </string>
     <string name="c501b01"> ها </string>
     <string name="c501b02"> نه </string>
