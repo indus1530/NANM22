@@ -5,6 +5,8 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,12 +15,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import com.wajahatkarim3.roomexplorer.RoomExplorer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,6 +37,7 @@ import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.ChangePasswordActivity;
 import edu.aku.abdulsajid.nanm2022.ui.IdentificationActivity;
+import edu.aku.abdulsajid.nanm2022.ui.LoginActivity;
 import edu.aku.abdulsajid.nanm2022.ui.SyncActivity;
 import edu.aku.abdulsajid.nanm2022.ui.TakePhoto;
 import edu.aku.abdulsajid.nanm2022.ui.lists.FormsReportCluster;
@@ -293,6 +298,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, FormsReportCluster.class);
                 startActivity(intent);
                 break;
+            case R.id.sendDB:
+                sendEmail();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -377,6 +385,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
+    }
+
+    // Email database to specified email address as attachment
+    private void sendEmail() {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"hussain.siddiqui@aku.edu", "omar.shoaib@aku.edu"});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Matiari Cohort NANM Database - For Issue Monitoring");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Matiari Cohort NANM database upload from the device which has issues while uploading the data." +
+                "This is just for testing/checking purpose.");
+        File file = LoginActivity.dbBackup(MainActivity.this);
+//        File file = copyFileToFilesDir(DATABASE_NAME);
+        if (file == null || !file.exists() || !file.canRead()) {
+            Toast.makeText(this, getString(R.string.file_not_found), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Uri uri;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            emailIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            uri = FileProvider.getUriForFile(this, "edu.aku.abdulsajid.nanm2022.fileProvider", file);
+        } else {
+            uri = Uri.fromFile(file);
+        }
+//        emailIntent.setDataAndType(uri, type);
+        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(Intent.createChooser(emailIntent, "Pick an email provider"));
     }
 
 }
