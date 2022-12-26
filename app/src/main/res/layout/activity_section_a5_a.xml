@@ -84,7 +84,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a50101.equals(`1`)}"
-                                android:enabled="@{!form.a50198.equals(`98`)}"
+                                android:enabled="@{!form.a50198.equals(`98`) || !form.a50105.equals(`5`)}"
                                 android:onClick="@{()->form.setA50101(form.a50101.equals(`1`)?``:`1`)}"
                                 android:text="@string/a50101" />
 
@@ -93,7 +93,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a50102.equals(`2`)}"
-                                android:enabled="@{!form.a50198.equals(`98`)}"
+                                android:enabled="@{!form.a50198.equals(`98`) || !form.a50105.equals(`5`)}"
                                 android:onClick="@{()->form.setA50102(form.a50102.equals(`2`)?``:`2`)}"
                                 android:text="@string/a50102" />
 
@@ -102,7 +102,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a50103.equals(`3`)}"
-                                android:enabled="@{!form.a50198.equals(`98`)}"
+                                android:enabled="@{!form.a50198.equals(`98`) || !form.a50105.equals(`5`)}"
                                 android:onClick="@{()->form.setA50103(form.a50103.equals(`3`)?``:`3`)}"
                                 android:text="@string/a50103" />
 
@@ -111,6 +111,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a50198.equals(`98`)}"
+                                android:enabled="@{!form.a50105.equals(`5`)}"
                                 android:onClick="@{()->form.setA50198(form.a50198.equals(`98`)?``:`98`)}"
                                 android:text="@string/a50198" />
 

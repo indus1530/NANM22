@@ -4390,6 +4390,12 @@ public class Forms extends BaseObservable implements Observable {
     public void setA50105(String a50105) {
         if (this.a50105.equals(a50105)) return; // for all checkboxes
         this.a50105 = a50105;
+
+        setA50101(a50105.equals("5") ? "" : this.a50101);
+        setA50102(a50105.equals("5") ? "" : this.a50102);
+        setA50103(a50105.equals("5") ? "" : this.a50103);
+        setA50198(a50105.equals("5") ? "" : this.a50198);
+
         setA502(a50105.equals("5") ? "" : this.a502);
         setA502(a50105.equals("5") ? "" : this.a502);
 
@@ -4442,6 +4448,128 @@ public class Forms extends BaseObservable implements Observable {
         setA513n(a50105.equals("5") ? "" : this.a513n);
         setA513o(a50105.equals("5") ? "" : this.a513o);
         setA513p(a50105.equals("5") ? "" : this.a513p);
+
+        setA514(a50105.equals("5") ? "" : this.a514);
+        setA515(a50105.equals("5") ? "" : this.a515);
+        setA516(a50105.equals("5") ? "" : this.a516);
+        setA517(a50105.equals("5") ? "" : this.a517);
+
+        setA51801(a50105.equals("5") ? "" : this.a51801);
+        setA51802(a50105.equals("5") ? "" : this.a51802);
+        setA51803(a50105.equals("5") ? "" : this.a51803);
+        setA51804(a50105.equals("5") ? "" : this.a51804);
+        setA51805(a50105.equals("5") ? "" : this.a51805);
+        setA51806(a50105.equals("5") ? "" : this.a51806);
+        setA51807(a50105.equals("5") ? "" : this.a51807);
+        setA51808(a50105.equals("5") ? "" : this.a51808);
+        setA51809(a50105.equals("5") ? "" : this.a51809);
+        setA51810(a50105.equals("5") ? "" : this.a51810);
+        setA51811(a50105.equals("5") ? "" : this.a51811);
+        setA51812(a50105.equals("5") ? "" : this.a51812);
+        setA51813(a50105.equals("5") ? "" : this.a51813);
+        setA51814(a50105.equals("5") ? "" : this.a51814);
+        setA51896(a50105.equals("5") ? "" : this.a51896);
+        setA51898(a50105.equals("5") ? "" : this.a51898);
+
+        setA519(a50105.equals("5") ? "" : this.a519);
+
+        setA52001(a50105.equals("5") ? "" : this.a52001);
+        setA52002(a50105.equals("5") ? "" : this.a52002);
+        setA52003(a50105.equals("5") ? "" : this.a52003);
+        setA52004(a50105.equals("5") ? "" : this.a52004);
+        setA52005(a50105.equals("5") ? "" : this.a52005);
+        setA52096(a50105.equals("5") ? "" : this.a52096);
+        setA52098(a50105.equals("5") ? "" : this.a52098);
+
+        setA521(a50105.equals("5") ? "" : this.a521);
+
+        setA5222ax(a50105.equals("5") ? "" : this.a5222ax);
+        setA5222bx(a50105.equals("5") ? "" : this.a5222bx);
+        setA5222cx(a50105.equals("5") ? "" : this.a5222cx);
+        setA5223ax(a50105.equals("5") ? "" : this.a5223ax);
+        setA5223bx(a50105.equals("5") ? "" : this.a5223bx);
+        setA5223cx(a50105.equals("5") ? "" : this.a5223cx);
+        setA5224ax(a50105.equals("5") ? "" : this.a5224ax);
+        setA5224bx(a50105.equals("5") ? "" : this.a5224bx);
+        setA5224cx(a50105.equals("5") ? "" : this.a5224cx);
+        setA5225ax(a50105.equals("5") ? "" : this.a5225ax);
+        setA5225bx(a50105.equals("5") ? "" : this.a5225bx);
+        setA5225cx(a50105.equals("5") ? "" : this.a5225cx);
+        setA5226ax(a50105.equals("5") ? "" : this.a5226ax);
+        setA5226bx(a50105.equals("5") ? "" : this.a5226bx);
+        setA5226cx(a50105.equals("5") ? "" : this.a5226cx);
+        setA52296x(a50105.equals("5") ? "" : this.a52296x);
+
+        setA523(a50105.equals("5") ? "" : this.a523);
+
+        setA52401(a50105.equals("5") ? "" : this.a52401);
+        setA52402(a50105.equals("5") ? "" : this.a52402);
+        setA52403(a50105.equals("5") ? "" : this.a52403);
+        setA52404(a50105.equals("5") ? "" : this.a52404);
+        setA52405(a50105.equals("5") ? "" : this.a52405);
+        setA52496(a50105.equals("5") ? "" : this.a52496);
+        setA52498(a50105.equals("5") ? "" : this.a52498);
+
+        setA525(a50105.equals("5") ? "" : this.a525);
+        setA526(a50105.equals("5") ? "" : this.a526);
+        setA527(a50105.equals("5") ? "" : this.a527);
+        setA528(a50105.equals("5") ? "" : this.a528);
+
+        setA52901(a50105.equals("5") ? "" : this.a52901);
+        setA52902(a50105.equals("5") ? "" : this.a52902);
+        setA52903(a50105.equals("5") ? "" : this.a52903);
+        setA52904(a50105.equals("5") ? "" : this.a52904);
+        setA52905(a50105.equals("5") ? "" : this.a52905);
+        setA52906(a50105.equals("5") ? "" : this.a52906);
+        setA52907(a50105.equals("5") ? "" : this.a52907);
+        setA52908(a50105.equals("5") ? "" : this.a52908);
+        setA52996(a50105.equals("5") ? "" : this.a52996);
+        setA52998(a50105.equals("5") ? "" : this.a52998);
+
+        setA53001(a50105.equals("5") ? "" : this.a53001);
+        setA53002(a50105.equals("5") ? "" : this.a53002);
+        setA53003(a50105.equals("5") ? "" : this.a53003);
+        setA53004(a50105.equals("5") ? "" : this.a53004);
+        setA53005(a50105.equals("5") ? "" : this.a53005);
+        setA53006(a50105.equals("5") ? "" : this.a53006);
+        setA53007(a50105.equals("5") ? "" : this.a53007);
+        setA53008(a50105.equals("5") ? "" : this.a53008);
+        setA53009(a50105.equals("5") ? "" : this.a53009);
+        setA53010(a50105.equals("5") ? "" : this.a53010);
+        setA53096(a50105.equals("5") ? "" : this.a53096);
+        setA53098(a50105.equals("5") ? "" : this.a53098);
+
+        setA53101(a50105.equals("5") ? "" : this.a53101);
+        setA53102(a50105.equals("5") ? "" : this.a53102);
+        setA53103(a50105.equals("5") ? "" : this.a53103);
+        setA53104(a50105.equals("5") ? "" : this.a53104);
+        setA53105(a50105.equals("5") ? "" : this.a53105);
+        setA53106(a50105.equals("5") ? "" : this.a53106);
+        setA53196(a50105.equals("5") ? "" : this.a53196);
+        setA53198(a50105.equals("5") ? "" : this.a53198);
+
+        setA532(a50105.equals("5") ? "" : this.a532);
+
+        setA53301(a50105.equals("5") ? "" : this.a53301);
+        setA53302(a50105.equals("5") ? "" : this.a53302);
+        setA53303(a50105.equals("5") ? "" : this.a53303);
+        setA53304(a50105.equals("5") ? "" : this.a53304);
+        setA53396(a50105.equals("5") ? "" : this.a53396);
+        setA53398(a50105.equals("5") ? "" : this.a53398);
+
+        setA53401(a50105.equals("5") ? "" : this.a53401);
+        setA53402(a50105.equals("5") ? "" : this.a53402);
+        setA53403(a50105.equals("5") ? "" : this.a53403);
+        setA53404(a50105.equals("5") ? "" : this.a53404);
+        setA53405(a50105.equals("5") ? "" : this.a53405);
+        setA53406(a50105.equals("5") ? "" : this.a53406);
+        setA53407(a50105.equals("5") ? "" : this.a53407);
+        setA53408(a50105.equals("5") ? "" : this.a53408);
+        setA53409(a50105.equals("5") ? "" : this.a53409);
+        setA53410(a50105.equals("5") ? "" : this.a53410);
+        setA53496(a50105.equals("5") ? "" : this.a53496);
+        setA53498(a50105.equals("5") ? "" : this.a53498);
+
         notifyPropertyChanged(BR.a50105);
     }
 
