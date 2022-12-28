@@ -3952,7 +3952,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC1Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.c101 = json.getString("c101");
@@ -3979,7 +3979,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC2Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC2Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.c201 = json.getString("c201");
@@ -4026,7 +4026,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC3Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC3Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.ca301 = json.getString("ca301");
@@ -4048,7 +4048,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC4Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC4Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.ca401 = json.getString("ca401");
@@ -4067,7 +4067,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC5Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC5Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
 
@@ -4140,7 +4140,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC6Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC6Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.c601 = json.getString("c601");
@@ -4174,7 +4174,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sC7Hydrate(String string) throws JSONException {
         Log.d(TAG, "sC7Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.c701 = json.getString("c701");
@@ -4218,7 +4218,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sD1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sD1Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.d1001 = json.getString("d1001");
@@ -4259,7 +4259,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void sD2Hydrate(String string) throws JSONException {
         Log.d(TAG, "sD2Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.d201 = json.getString("d201");
