@@ -30,8 +30,8 @@
             app:menu="@menu/item_menu"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
-            app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimary" />
+            app:title="@string/project_name"
+            app:titleTextColor="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/message"

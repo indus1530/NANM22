@@ -216,7 +216,8 @@
     <!--NANM-->
     <string name="hhhead">Head of Households</string>
     <string name="childName">Child Name</string>
-    <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="app_name">Matiari Cohorts FollowUp</string>
+    <string name="project_name">Matiari Cohorts FollowUp - Urdu</string>
     <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">گھرانے کی شناخت اوررضامندی:  سیکشن ااے 1 :  گھرانے کی شناخت اوررضامندی</string>
     <string name="sectiona1_mainheading">سیکشن ااے 1:</string>

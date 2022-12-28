@@ -77,7 +77,7 @@ public class SectionA5AActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            if (form.getA501().equals("5"))
+            if (form.getA50105().equals("5"))
                 startActivity(new Intent(this, SectionB1Activity.class));
             else
                 startActivity(new Intent(this, SectionA5BActivity.class));

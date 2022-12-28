@@ -8749,7 +8749,7 @@ public class Forms extends BaseObservable implements Observable {
         this.childID = forms.childID;
         this.childSno = forms.childSno;
         this.userName = forms.userName;
-        this.sysDate = forms.deviceId;
+        this.sysDate = forms.sysDate;
         this.deviceTag = forms.deviceTag;
         this.appver = forms.appver;
         this.iStatus = forms.iStatus;
@@ -9136,7 +9136,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA5BHydrate(String string) throws JSONException {
         Log.d(TAG, "sA5BHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a514 = json.getString("a514");

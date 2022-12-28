@@ -28,8 +28,8 @@
             app:menu="@menu/language_menu"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
-            app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimary" />
+            app:title="@string/project_name"
+            app:titleTextColor="@color/colorPrimaryDark" />
 
         <!-- Login progress -->
         <!--<ProgressBar
