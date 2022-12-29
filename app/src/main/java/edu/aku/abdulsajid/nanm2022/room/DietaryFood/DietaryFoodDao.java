@@ -14,6 +14,8 @@ import java.util.List;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodChange;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodIngredientMap;
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodScale;
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodSize;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.PatientFood;
@@ -131,11 +133,8 @@ public class DietaryFoodDao {
         @Query("SELECT * FROM patientfood WHERE patientFoodId= :id")
         PatientFood getById(int id);
 
-        @Query("DELETE FROM patientfood")
-        void deleteAll();
-
         @Query("SELECT * FROM patientfood WHERE patientId= :id")
-        List<PatientFood> getAllByPatientId(int id);
+        List<PatientFood> getByPatientId(int id);
 
         @Query("SELECT * FROM patientfood WHERE patientId= :patientId AND foodTimeId = :foodTimeId")
         List<PatientFood> getAllByPatientAndTimeId(int patientId, int foodTimeId);
@@ -143,9 +142,18 @@ public class DietaryFoodDao {
         @Query("SELECT * FROM patientfood WHERE patientId= :patientId AND foodId = :foodId AND foodTimeId = :foodTimeId")
         PatientFood getByPatientAndFoodAndTimeId(int patientId, int foodId, int foodTimeId);
 
+        @Query("DELETE FROM patientfood WHERE patientId= :patientId AND foodTimeId = :foodTimeId")
+        void deleteAllByPatientAndTimeId(int patientId, int foodTimeId);
+
+        @Query("SELECT * FROM patientfood WHERE patientId= :patientId AND foodTimeId = :foodTimeId AND notReported = :notReported")
+        PatientFood getNotReportedByPatientAndTimeId(int patientId, int foodTimeId, int notReported);
+
 //        @Transaction
 //        @Query("SELECT * FROM patient WHERE patientId = :patientId")
 //        Relation.Patient_PatientFood getAllFoodByPatientId(int patientId);
+
+        @Query("DELETE FROM patientfood")
+        void deleteAll();
 
     }
 
@@ -170,9 +178,49 @@ public class DietaryFoodDao {
         @Query("DELETE FROM foodchange WHERE patientId= :patientId AND foodId = :foodId AND foodTimeId = :foodTimeId")
         void deleteAllByPatientAndFoodAndTimeId(int patientId, int foodId, int foodTimeId);
 
+        @Query("DELETE FROM foodchange WHERE patientId= :patientId AND foodTimeId = :foodTimeId")
+        void deleteAllByPatientAndTimeId(int patientId, int foodTimeId);
+
         @Query("DELETE FROM foodchange")
         void deleteAll();
+    }
 
+    @Dao
+    public interface FoodScaleDao extends BaseDao<FoodScale> {
+
+        @Query("SELECT * FROM foodscale")
+        List<FoodScale> getAll();
+
+        @Insert(onConflict = REPLACE)
+        void add(FoodScale foodScale, List<FoodSize> foodSizes);
+
+        @Insert(onConflict = REPLACE)
+        void addAll(List<FoodScale> data);
+
+        @Query("SELECT * FROM foodscale WHERE foodScaleId= :id")
+        FoodScale getById(int id);
+
+        @Query("DELETE FROM foodscale")
+        void deleteAll();
+    }
+
+    @Dao
+    public interface FoodSizeDao extends BaseDao<FoodSize> {
+
+        @Query("SELECT * FROM foodsize")
+        List<FoodSize> getAll();
+
+        @Insert(onConflict = REPLACE)
+        void addAll(List<FoodSize> data);
+
+        @Query("SELECT * FROM foodsize WHERE foodSizeId= :id")
+        FoodSize getById(int id);
+
+        @Query("SELECT * FROM foodsize WHERE foodScaleId= :foodScaleId")
+        List<FoodSize> getAllByFoodScaleId(int foodScaleId);
+
+        @Query("DELETE FROM foodsize")
+        void deleteAll();
     }
 
 }

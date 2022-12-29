@@ -35,7 +35,9 @@ import net.sqlcipher.database.SupportFactory
             FoodTime::class,
             Food::class,
             Ingredient::class,
-            FoodIngredientMap::class
+            FoodIngredientMap::class,
+            FoodScale::class,
+            FoodSize::class
         ]
 )
 
@@ -55,6 +57,8 @@ abstract class NANMRoomDatabase : RoomDatabase() {
     abstract fun foodDao(): FoodDao
     abstract fun ingredientDao(): IngredientDao
     abstract fun foodIngrJTDao(): FoodIngredientMapDao
+    abstract fun foodScaleDao(): DietaryFoodDao.FoodScaleDao
+    abstract fun foodSizeDao(): DietaryFoodDao.FoodSizeDao
 
 
     companion object {

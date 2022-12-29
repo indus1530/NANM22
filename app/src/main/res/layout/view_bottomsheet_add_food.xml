@@ -66,117 +66,294 @@
             android:text="@string/add_food"
             android:textColor="@color/text_color" />
 
-        <LinearLayout
-            android:id="@+id/foodNameETLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bsTitleTV"
-            android:layout_alignParentStart="true"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_toStartOf="@+id/quantityET"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <AutoCompleteTextView
-                android:id="@+id/foodNameACET"
-                style="@style/textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.95"
-                android:background="@null"
-                android:completionThreshold="1"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/enter_food_name"
-                android:inputType="text" />
-
-            <ImageView
-                android:id="@+id/bsFoodClearBtn"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.05"
-                android:background="@drawable/ic_close"
-                android:backgroundTint="@color/icon_color"
-                android:clickable="true"
-                tools:ignore="ContentDescription" />
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/quantityET"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bsTitleTV"
-            android:layout_alignParentEnd="true"
-            android:gravity="center"
-            android:hint="@string/qty"
-            android:inputType="numberDecimal"
-            android:maxLength="4"
-            tools:ignore="Autofill" />
-
-        <LinearLayout
-            android:id="@+id/ingrNameETLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/foodNameETLayout"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <AutoCompleteTextView
-                android:id="@+id/newIngrACET"
-                style="@style/textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.95"
-                android:background="@null"
-                android:completionThreshold="1"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/any_new_ingredient"
-                android:inputType="text" />
-
-            <ImageView
-                android:id="@+id/addNewIngrBtn"
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.05"
-                android:clickable="true"
-                android:src="@drawable/ic_add_app_color"
-                tools:ignore="ContentDescription" />
-
-        </LinearLayout>
-
         <ScrollView
             android:id="@+id/ingrCGSV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ingrNameETLayout"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_below="@+id/bsTitleTV"
+            android:focusable="false"
+            android:focusableInTouchMode="false">
 
             <RelativeLayout
-                android:id="@+id/ingrCGLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="@dimen/_200sdp">
+                android:layout_height="wrap_content">
 
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/ingrCG"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/timeLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:chipSpacingHorizontal="@dimen/_5sdp"
-                    app:chipSpacingVertical="@dimen/_5sdp"
-                    app:selectionRequired="true"
-                    app:singleSelection="false" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/ingrErrorTV"
-                    style="@style/Theme.main.BoldText"
-                    android:layout_width="wrap_content"
+                    <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                        android:id="@+id/timePickerET"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext_3"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawableTint="@color/clickable_color"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:hint="@string/select_meal_time"
+                        android:textColor="@color/clickable_color"
+                        android:textColorHint="@color/clickable_color"
+                        app:is24HourView="false"
+                        app:timeFormat="hh:mm aa" />
+
+                    <EditText
+                        android:id="@+id/placePreparedET"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableEnd="@drawable/ic_dropdown"
+                        android:drawablePadding="0dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:hint="@string/place_prepared"
+                        android:inputType="textCapWords"
+                        tools:ignore="Autofill" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/foodNameETLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/light_gray_color" />
+                    android:layout_below="@+id/timeLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_edittext"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
+                    <AutoCompleteTextView
+                        android:id="@+id/foodNameACET"
+                        style="@style/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:background="@null"
+                        android:completionThreshold="1"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:hint="@string/enter_food_name"
+                        android:inputType="text" />
+
+                    <ImageView
+                        android:id="@+id/bsFoodClearBtn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.05"
+                        android:background="@drawable/ic_close"
+                        android:backgroundTint="@color/icon_color"
+                        android:clickable="true"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+                <!--                <EditText-->
+                <!--                    android:id="@+id/quantityET"-->
+                <!--                    android:layout_width="@dimen/_60sdp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_below="@+id/bsTitleTV"-->
+                <!--                    android:layout_alignParentEnd="true"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:hint="@string/qty"-->
+                <!--                    android:inputType="numberDecimal"-->
+                <!--                    android:maxLength="4"-->
+                <!--                    tools:ignore="Autofill" />-->
+
+                <LinearLayout
+                    android:id="@+id/scaleLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/foodNameETLayout"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_edittext"
+                    android:clickable="false"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_1sdp"
+                    android:weightSum="1">
+
+                    <RadioGroup
+                        android:id="@+id/scaleRG"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_weight="0.5"
+                        android:background="@null"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/unitRB"
+                            style="@style/Theme.main.RegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/app_color"
+                            android:text="@string/unit" />
+
+                        <RadioButton
+                            android:id="@+id/scaleRB"
+                            style="@style/Theme.main.RegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/app_color"
+                            android:text="@string/scale" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/scaleET"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_weight="0.25"
+                        android:background="@drawable/bg_edittext_2"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableEnd="@drawable/ic_dropdown"
+                        android:drawablePadding="0dp"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:hint="@string/scale"
+                        android:inputType="text"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/sizeET"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_weight="0.25"
+                        android:background="@drawable/bg_edittext_2"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableEnd="@drawable/ic_dropdown"
+                        android:drawablePadding="0dp"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:hint="@string/size"
+                        android:inputType="text"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        tools:ignore="Autofill,TextFields" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quantityLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_below="@+id/scaleLayout"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/quantityTV"
+                        style="@style/Theme.main.RegularText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.12"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/text_color"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/quantitySlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.88"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:stepSize="0.5"
+                        android:valueFrom="0.0"
+                        android:valueTo="5.0"
+                        app:labelBehavior="floating"
+                        app:thumbColor="@color/app_color"
+                        app:thumbRadius="@dimen/_8sdp"
+                        app:tickColor="@color/app_color"
+                        app:trackColor="@color/colorAccent"
+                        app:trackColorActive="@color/red_color"
+                        app:trackColorInactive="@color/app_color_dark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ingrNameETLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quantityLayout"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_edittext"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/newIngrACET"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/field_height"
+                        android:layout_weight="0.95"
+                        android:background="@null"
+                        android:completionThreshold="1"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:hint="@string/any_new_ingredient"
+                        android:inputType="text" />
+
+                    <ImageView
+                        android:id="@+id/addNewIngrBtn"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.05"
+                        android:clickable="true"
+                        android:src="@drawable/ic_add_app_color"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ingrCGLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ingrNameETLayout"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:minHeight="@dimen/_100sdp">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/ingrCG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipSpacingHorizontal="@dimen/_5sdp"
+                        app:chipSpacingVertical="@dimen/_5sdp"
+                        app:selectionRequired="true"
+                        app:singleSelection="false" />
+
+                    <TextView
+                        android:id="@+id/ingrErrorTV"
+                        style="@style/Theme.main.BoldText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/light_gray_color" />
+
+
+                </RelativeLayout>
 
             </RelativeLayout>
 

@@ -38,8 +38,13 @@ import net.sqlcipher.database.SQLiteDatabase;
 import org.json.JSONArray;
 
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.abdulsajid.nanm2022.R;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
@@ -79,6 +84,14 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
 
+    public static String APP_DATE_FORMAT = "YYYY-MM-DD";
+    public static String APP_DATE_TIME_FORMAT = "YYYY-MM-DD HH:mm:ss";
+    public static String ISO_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ";
+    public static String FOOD_INTAKE_DATE_FORMAT = "EEEE, MMMM d, yyyy";
+
+    // Place Prepared Ids
+    public static int HOME = 1;
+    public static int MARKET = 2;
 
     //public static Samples samples;
     public static Forms form;
@@ -351,6 +364,52 @@ public class MainApp extends Application {
         return false;
     }
 
+    // DateTime formatter
+    public static String getFormattedDateTime(String dateTime, String inputFormat, String outputFormat) {
+        try {
+            SimpleDateFormat oFormat = new SimpleDateFormat(inputFormat, Locale.getDefault());
+            Date date = oFormat.parse(dateTime);
+            SimpleDateFormat cFormat = new SimpleDateFormat(outputFormat, Locale.getDefault());
+            assert date != null;
+            return cFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Get Simple Current Date Time
+    public static Date getSimpleCurrentDateTime() {
+        return Calendar.getInstance().getTime();
+    }
+
+    // Convert Date Time to ISO 8601 formatted Date Time
+    public static String convertDateToISO8601DateTime(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(ISO_DATE_TIME_FORMAT,
+                Locale.getDefault());
+        return dateFormat.format(date);
+    }
+
+    // Place Prepared Array
+    public static String[] getPlacePreparedList(Activity activity) {
+        return new String[]{activity.getString(R.string.home), activity.getString(R.string.market)};
+    }
+
+    // Simple Alert Dialog
+    public static void alert(Activity activity, String title, String message) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+//        builder.setCancelable(false);
+        builder.setTitle(title);
+        builder.setMessage(message);
+
+        builder.setPositiveButton(activity.getString(R.string.yes),
+                (dialogInterface, i) -> dialogInterface.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     // Simple Alert Dialog with Multiple Choice
     public static void alert(int popupId, Activity activity, String title, String message,
                              Object passObj, IAlertCallback iAlertCallback) {
@@ -360,20 +419,14 @@ public class MainApp extends Application {
         builder.setTitle(title);
         builder.setMessage(message);
 
-        builder.setPositiveButton(activity.getString(R.string.yes), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                iAlertCallback.onClick(popupId, true, passObj);
-            }
+        builder.setPositiveButton(activity.getString(R.string.yes), (dialogInterface, i) -> {
+            dialogInterface.cancel();
+            iAlertCallback.onClick(popupId, true, passObj);
         });
 
-        builder.setNegativeButton(activity.getString(R.string.no), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                iAlertCallback.onClick(popupId, false, passObj);
-            }
+        builder.setNegativeButton(activity.getString(R.string.no), (dialogInterface, i) -> {
+            dialogInterface.cancel();
+            iAlertCallback.onClick(popupId, false, passObj);
         });
         AlertDialog dialog = builder.create();
         dialog.show();

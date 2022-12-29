@@ -19,8 +19,13 @@ public class PatientFood implements Serializable {
     private int patientFoodId;
     private int serialNo;    // For help in the backend DB
     private int patientId;
+    private String dateOfIntake;    // Date on which food intake is being recorded
+    private String time;    // Particular food add time
+    private int placePrepared;
     private int foodId;
     private int foodTimeId;
+    private int foodScaleId;
+    private int foodSizeId;
     private float quantity;
 
     /**
@@ -74,6 +79,30 @@ public class PatientFood implements Serializable {
         this.patientId = patientId;
     }
 
+    public String getDateOfIntake() {
+        return dateOfIntake;
+    }
+
+    public void setDateOfIntake(String dateOfIntake) {
+        this.dateOfIntake = dateOfIntake;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public int getPlacePrepared() {
+        return placePrepared;
+    }
+
+    public void setPlacePrepared(int placePrepared) {
+        this.placePrepared = placePrepared;
+    }
+
     public int getFoodId() {
         return foodId;
     }
@@ -88,6 +117,22 @@ public class PatientFood implements Serializable {
 
     public void setFoodTimeId(int foodTimeId) {
         this.foodTimeId = foodTimeId;
+    }
+
+    public int getFoodScaleId() {
+        return foodScaleId;
+    }
+
+    public void setFoodScaleId(int foodScaleId) {
+        this.foodScaleId = foodScaleId;
+    }
+
+    public int getFoodSizeId() {
+        return foodSizeId;
+    }
+
+    public void setFoodSizeId(int foodSizeId) {
+        this.foodSizeId = foodSizeId;
     }
 
     public String getOther() {

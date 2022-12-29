@@ -7,12 +7,18 @@ import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedMWRA;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
@@ -21,9 +27,14 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
@@ -33,10 +44,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.slider.Slider;
+import com.google.gson.Gson;
+import com.wajahatkarim3.roomexplorer.RoomExplorer;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
@@ -48,10 +64,14 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionC8Binding;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Food;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodChange;
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodScale;
+import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodSize;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.FoodTime;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.Ingredient;
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.PatientFood;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
+import io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText;
 
 
 public class SectionC8Activity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -67,6 +87,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     private Loading loading;*/
     private final String TAG = getClass().getName();
     private final Activity activity = SectionC8Activity.this;
+    private DatePickerEditText datePickerET;
     // These tags are used to differentiate between multiple web calls
     private final String SUBMIT_PATIENT_FOOD = "submit-patient-food";
     private NANMRoomDatabase db;
@@ -79,92 +100,29 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     private Button submitBtn;
     private List<FoodTime> foodTimeList;
     private BottomSheetDialog addFoodBottomSheet;
+    private AlertDialog alertDialog;
     private ChipGroup ingrCG;
     private HashMap<FoodTime, List<PatientFood>> patientFoodMap;
     private List<Food> foodList;
     private List<Ingredient> ingredientList;
+
     private FoodTime selectedFoodTime;
     private int selectedFoodTimeIndex;
     private Food selectedFood;
+    private FoodScale selectedFoodScale;
+    private FoodSize selectedFoodSize;
     private List<Ingredient> selectedFoodIngrList;
+    private List<FoodScale> foodScaleList;
+    private List<FoodSize> foodSizeList;
     // This list is the combination of selected food ingredients
     // and food changes
 //    private List<Ingredient> updatedFoodIngrList;
     private List<FoodChange> foodChangeList;
     // For help in the backend DB
     private int serialNo;
-    MainApp.IAlertCallback iAlertCallback = new MainApp.IAlertCallback() {
-        @Override
-        public void onClick(int popupId, boolean isPositiveClick, Object obj) {
-            if (popupId == REMOVE_FOOD_POPUP) {
-                if (isPositiveClick) {
-                    foodIntakeCG.removeView((Chip) obj);
-                    removePatientFood(((Chip) obj).getText().toString());
-                    if (foodIntakeCG.getChildCount() == 0) {
-                        errorTV.setVisibility(View.VISIBLE);
-                        errorTV.setText(getString(R.string.empty_food_list, selectedFoodTime.getTitle()));
-                        noMealCB.setVisibility(View.VISIBLE);
-                        noMealCB.setChecked(false);
-                    }
-                }
-            } else if (popupId == REMOVE_INGR_POPUP) {
-                if (isPositiveClick) {
-                    ingrCG.removeView((Chip) obj);
-                    removeIngredient(((Chip) obj).getText().toString());
-                    if (ingrCG.getChildCount() == 0) {
-                        ingrErrorTV.setVisibility(View.VISIBLE);
-                        ingrErrorTV.setText(getString(R.string.empty_ingredients_list));
-                    }
-                }
-            }
-        }
-    };
     // This is a temporary id that will increment negatively for every new food
     // The server will give them an actual id of sync/upload
     private int newFoodId = -1;
-    GenericLVFilterAdapter.ILVOnItemClickListener ilvOnItemClickListener = new GenericLVFilterAdapter.ILVOnItemClickListener() {
-        @Override
-        public void onItemClick(AutoCompleteTextView autoCompleteTextView, Object obj, int index) {
-            int viewId = autoCompleteTextView.getId();
-            if (viewId == R.id.foodNameACET) {
-                selectedFood = (Food) obj;
-                assert selectedFood != null;
-
-                if (checkIfItemExistsInCG(foodIntakeCG, selectedFood.getFoodName())) {
-                    autoCompleteTextView.setText(null);
-                    Toast.makeText(activity, "Item already added", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                autoCompleteTextView.setText(selectedFood.getFoodName());
-
-                selectedFoodIngrList = db.foodIngrJTDao().getAllIngrByFoodId(selectedFood.getFoodId());
-                // For testing purpose
-//                selectedFoodIngrList = TestData.getFoodIngredients(selectedFood.getFoodId());
-                if (selectedFoodIngrList != null && selectedFoodIngrList.size() > 0) {
-//                    updatedFoodIngrList = selectedFoodIngrList;
-                    initFoodIngredientsCG(ingrCG, selectedFoodIngrList);
-                } else {
-                    if (ingrCG.getChildCount() > 0)
-                        ingrCG.removeAllViews();
-                    ingrErrorTV.setText(getString(R.string.no_ingredients_found));
-                    ingrErrorTV.setVisibility(View.VISIBLE);
-                }
-            } else if (viewId == R.id.newIngrACET) {
-                // Ingredient found in the list
-                Ingredient ingredient = (Ingredient) obj;
-                if (checkIfItemExistsInCG(ingrCG, ingredient.getIngredientName())) {
-                    autoCompleteTextView.setText(null);
-                    Toast.makeText(activity, "Item already added", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-//                autoCompleteTextView.setText(ingredient.getIngredientName());
-                addNewIngredient(ingredient, null);
-                autoCompleteTextView.setText(null);
-            }
-            autoCompleteTextView.dismissDropDown();
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,23 +133,27 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         /*AppConstants.initToolbar(activity, getString(R.string.intake_followup), false);
 
         connDetector = new ConnectionDetector(this);
-        appDatabase = AppDatabase.getDBInstance(activity);
+        appDatabase = AppDatabase.getDBInstance();
         loading = new Loading(activity, false);
-        webAPI = WebClient.getInstance().getWebAPI();*/
+        webAPI = WebClient.getInstance(activity).getWebAPI();*/
+//        dateTimePicker = new DateTimePicker(activity, iDateTimePickerCallback);
 //        webCall = new WebCall(activity, connDetector, loading, iWebCallback);
-
-        // For testing purpose
-//        adolescent = TestData.getPatientDetails();
 
         db = MainApp.appInfo.dbHelper;
 
-        bi.sno.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA201());
-        bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
-        bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
+        // For testing purpose
+//        patient = TestData.getPatientDetails();
+
+//        bi.sno.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA201());
+//        bi.name.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getA202());
+//        bi.index.setText(familyList.get(Integer.parseInt(selectedAdol.isEmpty() ? selectedMWRA : selectedAdol) - 1).getIndexed());
 
         bi.setForm(adol);
 
         patientFoodMap = new HashMap<>();
+
+        datePickerET = findViewById(R.id.datePickerET);
+        datePickerET.setThemeId(R.style.DatePickerStyle);
 
         foodTimeRV = findViewById(R.id.foodTimeRV);
         ((LinearLayoutManager) Objects.requireNonNull(foodTimeRV.getLayoutManager()))
@@ -212,9 +174,16 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         nextBtn = findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(this);
 
+        foodScaleList =Objects.requireNonNull(db.foodScaleDao()).getAll();
         foodList = Objects.requireNonNull(db.foodDao()).getAll();
+//        foodList = new ArrayList<>();
+        // For testing purpose
+//        foodList = TestData.getFoodList();
 
         ingredientList = Objects.requireNonNull(db.ingredientDao()).getAll();
+//        ingredientList = new ArrayList<>();
+        // For testing purpose
+//        ingredientList = TestData.getIngredientList();
 
         foodTimeList = new ArrayList<>();
 
@@ -222,6 +191,8 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         submitBtn.setOnClickListener(this);
 
         foodTimeList = Objects.requireNonNull(db.foodTimeDao()).getAll();
+        // For testing purpose
+//        foodTimeList = TestData.getFoodTimeData();
         // To automatically select first item in the list
         if (foodTimeList != null && foodTimeList.size() > 0)
             foodTimeList.get(0).setSelected(true);
@@ -235,33 +206,50 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 //        initFoodTimeCG();
 //        initFoodTimeRV();
 
-        addFoodBottomSheet = BottomSheet.getBottomSheetDialog(activity, R.style.Theme_main_BottomSheetStyle,
-                R.layout.view_bottomsheet_add_food, true, null);
-        addFoodBottomSheet.setCancelable(false);
+//        addFoodBottomSheet = BottomSheet.getBottomSheetDialog(activity, R.style.Theme_DietaryFollowup_BottomSheetStyle,
+//                R.layout.view_bottomsheet_add_food, true, null);
+//        addFoodBottomSheet.setCancelable(false);
 
         // Check and set if the patient food is already exists
         presetValues();
     }
 
+    /*
+     * PRESET VALUES IF DATA EXISTS
+     */
     private void presetValues() {
         for (int i = 0; i < foodTimeList.size(); i++) {
             FoodTime foodTime = foodTimeList.get(i);
-            List<PatientFood> selectedTimeFoodList = Objects.requireNonNull(db.patientFoodDao()).getAllByPatientAndTimeId(Integer.parseInt(adol.getChildID()), foodTime.getFoodTimeId());
-            for (int j = 0; j < selectedTimeFoodList.size(); j++) {
-                if (selectedTimeFoodList.get(j).getNotReported() == MainApp.NOT_REPORTED) {
-                    // No food taken at this particular time
-                    patientFoodMap.put(foodTimeList.get(i), null);
-                } else {
-                    // Some food taken at this particular time
-                    // Selected food time patient food intake list
-                    if (selectedTimeFoodList.get(j).getFoodChangeStatus() != MainApp.NO_CHANGE) {
-                        List<FoodChange> foodChangeList = Objects.requireNonNull(db.foodChangeDao()).getAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()), selectedTimeFoodList.get(j).getFoodId(), foodTime.getFoodTimeId());
-                        selectedTimeFoodList.get(j).setFoodChangeList(foodChangeList);
-                    }
+            List<PatientFood> selectedTimeFoodList = Objects.requireNonNull(db.patientFoodDao())
+                    .getAllByPatientAndTimeId(Integer.parseInt(adol.getChildID()), foodTime.getFoodTimeId());
+            if (selectedTimeFoodList == null || selectedTimeFoodList.size() == 0)
+                continue;
 
-                    if (j == selectedTimeFoodList.size() - 1)
-                        patientFoodMap.put(foodTimeList.get(i), selectedTimeFoodList);
+            if (!MainApp.isNotEmpty(Objects.requireNonNull(datePickerET.getText()).toString()))
+                datePickerET.setText(MainApp.getFormattedDateTime(selectedTimeFoodList.get(0)
+                        .getDateOfIntake(), MainApp.ISO_DATE_TIME_FORMAT, MainApp.FOOD_INTAKE_DATE_FORMAT));
+
+            for (int j = 0; j < selectedTimeFoodList.size(); j++) {
+                if (selectedTimeFoodList.get(j).getFoodId() == 0) {
+                    patientFoodMap.put(foodTimeList.get(i), null);
+                    continue;
                 }
+//                if (selectedTimeFoodList.get(j).getNotReported() == AppConstants.NOT_REPORTED) {
+//                    // No food taken at this particular time
+//                    patientFoodMap.put(foodTimeList.get(i), null);
+//                } else {
+                // Some food taken at this particular time
+                // Selected food time patient food intake list
+                if (selectedTimeFoodList.get(j).getFoodChangeStatus() != MainApp.NO_CHANGE) {
+                    List<FoodChange> foodChangeList = Objects.requireNonNull(db.foodChangeDao())
+                            .getAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+                                    selectedTimeFoodList.get(j).getFoodId(), foodTime.getFoodTimeId());
+                    selectedTimeFoodList.get(j).setFoodChangeList(foodChangeList);
+                }
+
+                if (j == selectedTimeFoodList.size() - 1)
+                    patientFoodMap.put(foodTimeList.get(i), selectedTimeFoodList);
+//                }
             }
         }
         // If patient food hash map is not empty then load patient foods of the very first food time;
@@ -273,12 +261,39 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     /*
      * SHOW ADD PATIENT FOOD BOTTOMSHEET
      */
+    private float quantity;
+    private LinearLayout quantityLayout;
+    private Slider quantitySlider;
+    private TextView quantityTV;
+    private EditText scaleET, sizeET;
+
     private void showAddFoodBottomSheet() {
+
+        LayoutInflater inflater = LayoutInflater.from(activity);
+        View addFoodBottomSheet = inflater.inflate(R.layout.view_bottomsheet_add_food, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setView(addFoodBottomSheet);
+        builder.setCancelable(false);
 
 //        patientFoodList = new ArrayList<>();
         foodChangeList = new ArrayList<>();
 
         ingrErrorTV = addFoodBottomSheet.findViewById(R.id.ingrErrorTV);
+
+        TimePickerEditText timePickerET = addFoodBottomSheet.findViewById(R.id.timePickerET);
+        assert timePickerET != null;
+        timePickerET.setThemeId(R.style.DatePickerStyle);
+
+        EditText placePreparedET = addFoodBottomSheet.findViewById(R.id.placePreparedET);
+        assert placePreparedET != null;
+        placePreparedET.setOnClickListener(view -> {
+            showPlacePreparedPopup(placePreparedET);
+        });
+
+//        dateTimePicker.initDateTimePicker(timeET, activity.getString(R.string.select_meal_time),
+//                true, true, true, false,
+//                false, false, false);
 
         AutoCompleteTextView foodNameACET = addFoodBottomSheet.findViewById(R.id.foodNameACET);
         assert foodNameACET != null;
@@ -310,61 +325,167 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         assert newIngrACET != null;
         newIngrACET.setAdapter(getIngredientACETAdapter(newIngrACET, ingredientList));
 
-        EditText quantityET = addFoodBottomSheet.findViewById(R.id.quantityET);
-        assert quantityET != null;
-
-        ImageView addNewIngrBtn = addFoodBottomSheet.findViewById(R.id.addNewIngrBtn);
-        assert addNewIngrBtn != null;
-        addNewIngrBtn.setOnClickListener(new View.OnClickListener() {
+        quantityLayout = addFoodBottomSheet.findViewById(R.id.quantityLayout);
+        quantityTV = addFoodBottomSheet.findViewById(R.id.quantityTV);
+        quantitySlider = addFoodBottomSheet.findViewById(R.id.quantitySlider);
+        assert quantitySlider != null;
+        quantitySlider.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
-            public void onClick(View view) {
-                // Ingredient NOT found in the list
-                if (MainApp.isNotEmpty(newIngrACET)) {
-                    if (checkIfItemExistsInCG(ingrCG, newIngrACET.getText().toString())) {
-                        newIngrACET.setText(null);
-                        Toast.makeText(activity, "Item already added", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    addNewIngredient(null, newIngrACET.getText().toString());
-                    newIngrACET.setText(null);
+            public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
+                quantity = value;
+                quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
+            }
+        });
+
+        LinearLayout scaleLayout = addFoodBottomSheet.findViewById(R.id.scaleLayout);
+        assert scaleLayout != null;
+
+        sizeET = addFoodBottomSheet.findViewById(R.id.sizeET);
+        assert sizeET != null;
+        sizeET.setOnClickListener(view -> showFoodSizePopup(sizeET));
+
+        scaleET = addFoodBottomSheet.findViewById(R.id.scaleET);
+        assert scaleET != null;
+        scaleET.setOnClickListener(view -> showFoodScalePopup(scaleET, sizeET));
+
+//        EditText quantityET = addFoodBottomSheet.findViewById(R.id.quantityET);
+        RadioGroup scaleRG = addFoodBottomSheet.findViewById(R.id.scaleRG);
+        assert scaleRG != null;
+        scaleRG.setOnCheckedChangeListener((radioGroup, checkedId) -> {
+            quantity = 0;
+            scaleET.setText(null);
+            sizeET.setText(null);
+            quantitySlider.setValue(0);
+            quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
+            RadioButton checkedRB = radioGroup.findViewById(checkedId);
+            if (checkedRB != null) {
+                if (checkedRB.getId() == R.id.unitRB) {
+                    // Show quantity slider
+                    quantityLayout.setVisibility(View.VISIBLE);
+                    scaleET.setEnabled(false);
+                    sizeET.setEnabled(false);
+                } else {
+                    // Show/Enable scale dropdown
+                    quantityLayout.setVisibility(View.GONE);
+                    scaleET.setEnabled(true);
                 }
             }
         });
+
+        ImageView addNewIngrBtn = addFoodBottomSheet.findViewById(R.id.addNewIngrBtn);
+        assert addNewIngrBtn != null;
+        addNewIngrBtn.setOnClickListener(view -> {
+            // Ingredient NOT found in the list
+            if (MainApp.isNotEmpty(newIngrACET)) {
+                if (checkIfItemExistsInCG(ingrCG, newIngrACET.getText().toString())) {
+                    newIngrACET.setText(null);
+                    MainApp.alert(activity, getString(R.string.item_already_added_error),
+                            getString(R.string.item_already_added_error_desc));
+                    return;
+                }
+                addNewIngredient(null, newIngrACET.getText().toString());
+                newIngrACET.setText(null);
+            }
+        });
+
+        Button bsCloseBtn = addFoodBottomSheet.findViewById(R.id.bsCloseBtn);
+        assert bsCloseBtn != null;
+        bsCloseBtn.setOnClickListener(view -> alertDialog.dismiss());
 
         // There is a theming issue with Button in bottomsheet so TextView is used
         TextView bsAddBtn = addFoodBottomSheet.findViewById(R.id.bsAddBtn);
         assert bsAddBtn != null;
         bsAddBtn.setOnClickListener(view -> {
-//            if (!foodNameET.isEmptyTextBox() || !quantityET.isEmptyTextBox()) return;
-            if (!MainApp.isNotEmpty(foodNameACET)) {
-                Toast.makeText(activity, "field cannot be empty", Toast.LENGTH_SHORT).show();
+
+            if (!MainApp.isNotEmpty(Objects.requireNonNull(timePickerET.getText()).toString())) {
+                MainApp.alert(activity, getString(R.string.select_food_time),
+                        getString(R.string.select_food_time_desc));
                 return;
             }
-            if (!MainApp.isNotEmpty(quantityET)) {
-                Toast.makeText(activity, "field cannot be empty", Toast.LENGTH_SHORT).show();
+
+            if (!MainApp.isNotEmpty(placePreparedET)) {
+                MainApp.alert(activity, getString(R.string.place_prepared_error),
+                        getString(R.string.place_prepared_error_desc));
+                return;
+            }
+
+//            if (!foodNameET.isEmptyTextBox() || !quantityET.isEmptyTextBox()) return;
+            if (!MainApp.isNotEmpty(foodNameACET)) {
+                MainApp.alert(activity, getString(R.string.field_empty_error),
+                        getString(R.string.add_food_empty_error));
+//                AppConstants.showSimpleSnackBar(activity, getString(R.string.add_food_empty_error),
+//                        AppConstants.SNACK_BAR_DEFAULT_DURATION, AppConstants.TYPE_ERROR);
+                return;
+            }
+
+            if (scaleRG.getCheckedRadioButtonId() == -1) {
+                MainApp.alert(activity, getString(R.string.select_scale_type_error),
+                        getString(R.string.select_scale_type_error_desc));
+                return;
+            }
+
+            if (scaleRG.getCheckedRadioButtonId() == R.id.scaleET && !MainApp.isNotEmpty(scaleET)) {
+                MainApp.alert(activity, getString(R.string.select_scale_error),
+                        getString(R.string.select_scale_error_desc));
+                return;
+            }
+
+            if (MainApp.isNotEmpty(scaleET) && !MainApp.isNotEmpty(sizeET)) {
+                MainApp.alert(activity, getString(R.string.select_size_error),
+                        getString(R.string.select_size_error_desc));
+                return;
+            }
+
+//            if (!AppConstants.isNotEmpty(quantityET)) {
+            if (quantity == 0) {
+                MainApp.alert(activity, getString(R.string.field_empty_error),
+                        getString(R.string.add_quantity_empty_error));
+//                AppConstants.showSimpleSnackBar(activity, getString(R.string.add_quantity_empty_error),
+//                        AppConstants.SNACK_BAR_DEFAULT_DURATION, AppConstants.TYPE_ERROR);
                 return;
             }
 
             if (ingrCG.getChildCount() == 0) {
-                Toast.makeText(activity, "field cannot be empty", Toast.LENGTH_SHORT).show();
+                MainApp.alert(activity, getString(R.string.field_empty_error),
+                        getString(R.string.add_ingredient_empty_error));
 //                AppConstants.showSimpleSnackBar(activity, getString(R.string.add_ingredient_empty_error),
 //                        AppConstants.SNACK_BAR_DEFAULT_DURATION, AppConstants.TYPE_ERROR);
                 return;
             }
 
             if (!validateIngrCG()) {
-                Toast.makeText(activity, "Be Careful!", Toast.LENGTH_SHORT).show();
+                MainApp.alert(activity, getString(R.string.be_careful),
+                        getString(R.string.all_ingr_checked_error_desc));
                 return;
             }
 
             Chip foodIntakeChip = (Chip) LayoutInflater.from(activity).inflate(R.layout.item_chip, null);
 
             PatientFood patientFood = new PatientFood();
+            patientFood.setCreatedDate(MainApp.getFormattedDateTime(
+                    MainApp.convertDateToISO8601DateTime(MainApp.getSimpleCurrentDateTime()),
+                    MainApp.ISO_DATE_TIME_FORMAT, MainApp.ISO_DATE_TIME_FORMAT));
+            int selectedPlacePrepared = placePreparedET.getText().toString().toLowerCase()
+                    .equals(activity.getString(R.string.home).toUpperCase()) ?
+                    MainApp.HOME : MainApp.MARKET;
+            patientFood.setPlacePrepared(selectedPlacePrepared);
+            patientFood.setDateOfIntake(MainApp.getFormattedDateTime(
+                    Objects.requireNonNull(datePickerET.getText()).toString(),
+                    MainApp.FOOD_INTAKE_DATE_FORMAT, MainApp.ISO_DATE_TIME_FORMAT));
+            patientFood.setTime(MainApp.getFormattedDateTime(
+                    MainApp.convertDateToISO8601DateTime(Objects.requireNonNull(timePickerET.getTime()).getTime()),
+                    datePickerET.getDateFormat(), MainApp.ISO_DATE_TIME_FORMAT));
             patientFood.setFoodId(selectedFood.getFoodId());
             patientFood.setPatientId(Integer.parseInt(adol.getChildID()));
             patientFood.setSerialNo(++serialNo);
             patientFood.setFoodTimeId(selectedFoodTime.getFoodTimeId());
-            patientFood.setQuantity(Float.parseFloat(quantityET.getText().toString()));
+//            patientFood.setQuantity(Float.parseFloat(quantityET.getText().toString()));
+            if (selectedFoodScale != null) {
+                patientFood.setFoodScaleId(selectedFoodScale.getFoodScaleId());
+                patientFood.setFoodSizeId(selectedFoodSize.getFoodSizeId());
+            } else
+                patientFood.setFoodScaleId(-1);
+            patientFood.setQuantity(quantity);
             String foodName;
             if (selectedFood.getFoodId() > 0) {
 
@@ -406,6 +527,8 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             foodIntakeChip.setText(foodName);
             foodIntakeChip.setClickable(false);
             foodIntakeChip.setCloseIconVisible(true);
+            foodIntakeChip.setCloseIconTint(ColorStateList.valueOf(
+                    ContextCompat.getColor(activity, R.color.light_gray_color)));
             foodIntakeChip.setOnCloseIconClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -415,6 +538,16 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             });
 
             foodIntakeCG.addView(foodIntakeChip);
+
+            // Delete empty/not reported food if exists
+            PatientFood pf = Objects.requireNonNull(db.patientFoodDao())
+                    .getNotReportedByPatientAndTimeId(Integer.parseInt(adol.getChildID()),
+                    selectedFoodTime.getFoodTimeId(), MainApp.NOT_REPORTED);
+            if (pf != null) {
+                Objects.requireNonNull(db.patientFoodDao())
+                        .deleteAllByPatientAndTimeId(Integer.parseInt(adol.getChildID()),
+                        selectedFoodTime.getFoodTimeId());
+            }
 
             Objects.requireNonNull(db.patientFoodDao()).add(patientFood);
             if (foodChangeList != null && foodChangeList.size() > 0)
@@ -430,7 +563,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 
             resetVariables();
 
-            addFoodBottomSheet.dismiss();
+            alertDialog.dismiss();
         });
 
         foodNameACET.addTextChangedListener(new TextWatcher() {
@@ -447,15 +580,25 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             @Override
             public void afterTextChanged(Editable editable) {
                 if (editable.length() > 0) {
-                    quantityET.setEnabled(true);
+//                    quantityET.setEnabled(true);
                     newIngrACET.setEnabled(true);
-                    newIngrACET.setEnabled(true);
+//                    newIngrACET.setEnabled(true);
                     addNewIngrBtn.setEnabled(true);
+                    scaleLayout.setVisibility(View.VISIBLE);
                 } else {
-                    quantityET.setEnabled(false);
+//                    quantityET.setEnabled(false);
                     newIngrACET.setEnabled(false);
-                    newIngrACET.setEnabled(false);
+//                    newIngrACET.setEnabled(false);
                     addNewIngrBtn.setEnabled(false);
+                    scaleLayout.setVisibility(View.GONE);
+                    if (scaleRG.getCheckedRadioButtonId() != -1)
+                        scaleRG.clearCheck();
+                    scaleET.setText(null);
+                    scaleET.setEnabled(false);
+                    sizeET.setText(null);
+                    sizeET.setEnabled(false);
+                    quantitySlider.setValue(0);
+                    quantityLayout.setVisibility(View.GONE);
                     resetVariables();
                 }
                 if (ingrCG.getChildCount() > 0)
@@ -465,13 +608,23 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         });
 
         foodNameACET.setText(null);
-        quantityET.setText(null);
+//        quantityET.setText(null);
+        quantity = 0;
+        quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
+        if (scaleRG.getCheckedRadioButtonId() != -1)
+            scaleRG.clearCheck();
+        scaleET.setText(null);
+        scaleET.setEnabled(false);
+        sizeET.setText(null);
+        sizeET.setEnabled(false);
         newIngrACET.setText(null);
         if (ingrCG.getChildCount() > 0)
             ingrCG.removeAllViews();
 
         selectedFood = null;
-        addFoodBottomSheet.show();
+        alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
     }
 
     /*
@@ -512,10 +665,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
     }
 
     /*
-     * LOAD PATIENT FOOD WITH RESPECT TO THE SELECTED TIME OF FOOD TIME LIST/RECYCLERVIEW
-     */
-
-    /*
      * INIT/UPDATE PATIENT FOOD INTAKE CHIP GROUP (ON IN SCREEN)
      */
     // Add Patient Food to food intake chip group on main screen
@@ -525,9 +674,12 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         for (int i = 0; i < patientFoodList.size(); i++) {
             Chip chip = (Chip) LayoutInflater.from(activity).inflate(R.layout.item_chip, null);
             chip.setId(i);
-            if (!MainApp.isNotEmpty(patientFoodList.get(i).getFoodName()))
-                patientFoodList.get(i).setFoodName(Objects.requireNonNull(db.foodDao().getById(patientFoodList.get(i).getFoodId())).getFoodName());
+            if (MainApp.isNotEmpty(patientFoodList.get(i).getOther()))
+                patientFoodList.get(i).setFoodName(patientFoodList.get(i).getOther());
+            else if (!MainApp.isNotEmpty(patientFoodList.get(i).getFoodName()))
+                patientFoodList.get(i).setFoodName(db.foodDao().getById(patientFoodList.get(i).getFoodId()).getFoodName());
             chip.setText(patientFoodList.get(i).getFoodName());
+            chip.setClickable(false);
             chip.setCloseIconVisible(true);
             chip.setCloseIconTint(ColorStateList.valueOf(
                     ContextCompat.getColor(activity, R.color.light_gray_color)));
@@ -541,11 +693,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             foodIntakeCG.addView(chip);
         }
     }
-
-    /* ==============================
-     * ADAPTERS
-     * ==============================
-     * */
 
     /*
      * ADD NEW INGREDIENT IN INGREDIENT CHIP GROUP WHICH IS NOT IN THE SELECTED FOOD INGREDIENTS LIST
@@ -618,6 +765,10 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         ingrErrorTV.setVisibility(View.GONE);
     }
 
+    /*
+     * LOAD PATIENT FOOD WITH RESPECT TO THE SELECTED TIME OF FOOD TIME LIST/RECYCLERVIEW
+     */
+
     // Load Patient Food by Time
     @SuppressLint("NotifyDataSetChanged")
     private void loadPatientFood(int index) {
@@ -647,10 +798,10 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         genericFoodTimeRVAdapter.notifyDataSetChanged();
     }
 
-    /**
+    /* ==============================
      * ADAPTERS
-     * BIND FOOD AUTOCOMPLETE EDITTEXT WITH FOOD LIST
-     */
+     * ==============================
+     * */
 
     /*
      * INIT FOOD TIME
@@ -671,7 +822,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                 if (item.isSelected()) {
                     // Food time tab selected
                     viewHolder.itemView.setBackgroundTintList(
-                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.chip_new_color)));
+                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.clickable_color)));
                     selectedFoodTime = item;
                     selectedFoodTimeIndex = position;
                     errorTV.setText(getString(R.string.empty_food_list, selectedFoodTime.getTitle()));
@@ -679,11 +830,11 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                         && Objects.requireNonNull(patientFoodMap.get(item)).size() > 0) {
                     // Food Taken at particular time
                     viewHolder.itemView.setBackgroundTintList(
-                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.app_color)));
+                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.app_color)).withAlpha(75));
                 } else if (patientFoodMap.containsKey(item) && (patientFoodMap.get(item) == null)) {
                     // // No food taken at particular time
                     viewHolder.itemView.setBackgroundTintList(
-                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.red_color)));
+                            ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.red_color)).withAlpha(75));
                 } else {
                     // Food time new tab i.e. none of the actions are performed at this food time tab
                     viewHolder.itemView.setBackgroundTintList(
@@ -694,10 +845,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         };
         return genericFoodTimeRVAdapter;
     }
-
-    /*
-     * HELPER FUNCTIONS
-     */
 
     // Food autocomplete list adapter
     private GenericLVFilterAdapter<Food> getFoodACETAdapter(AutoCompleteTextView autoCompleteTextView, List<Food> foodList) {
@@ -756,6 +903,10 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         };
     }
 
+    /*
+     * HELPER FUNCTIONS
+     */
+
     // Reset Food time list state
     private void resetFoodTimeList() {
 //        int drawable, color;
@@ -799,11 +950,14 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                             .getAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
                                     patientFood.getFoodId(), patientFood.getFoodTimeId());
                     if (foodChangeList != null && foodChangeList.size() > 0) {
-                        Objects.requireNonNull(db.foodChangeDao()).deleteAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
+                        Objects.requireNonNull(db.foodChangeDao())
+                                .deleteAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
                                 patientFood.getFoodId(), patientFood.getFoodTimeId());
                     }
                 }
+
                 patientFoodList.remove(i);
+                patientFoodMap.put(selectedFoodTime, patientFoodList);
                 serialNo--;
                 break;
             }
@@ -819,7 +973,7 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             ingredientChange.setPatientId(Integer.parseInt(adol.getChildID()));
             ingredientChange.setFoodId(selectedFood.getFoodId());
             ingredientChange.setFoodTimeId(selectedFoodTime.getFoodTimeId());
-            ingredientChange.setIngredientId(ingredient.getIngredientId());
+            ingredientChange.setIngredientId(Objects.requireNonNull(ingredient).getIngredientId());
             ingredientChange.setIngrChangeStatus(MainApp.STANDARD_DELETE);
             foodChangeList.add(ingredientChange);
         } else if (ingredient != null) {
@@ -874,10 +1028,6 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
 //        }
 //    };
 
-    /*
-     * CLICK/ITEM-CLICK/CHECK-CHANGED LISTENERS
-     */
-
     // Check if added ingredient is already exists in the standard food ingredients
     // This extra avoid the case when the user deletes an standard ingredient and then re-add
     // the same. So in this case we need to avoid this addition in the food change list
@@ -891,16 +1041,168 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         return false;
     }
 
+    private void showFoodScalePopup(EditText foodScaleET, EditText foodSizeET) {
+        PopupMenu popupMenu = new PopupMenu(activity, foodScaleET);
+        for (int i = 0; i < foodScaleList.size(); i++) {
+            popupMenu.getMenu().add(foodScaleList.get(i).getTitle());
+        }
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                for (int i = 0; i < foodScaleList.size(); i++) {
+                    if (foodScaleList.get(i).getTitle().equals(menuItem.getTitle().toString())) {
+                        selectedFoodScale = foodScaleList.get(i);
+                        // init food sizes list
+                        foodSizeList = db.foodSizeDao().getAllByFoodScaleId(selectedFoodScale.getFoodScaleId());
+                        foodSizeET.setEnabled(true);
+                        foodSizeET.setText(null);
+//                        // Show quantity slider
+//                        quantity = 0;
+//                        quantitySlider.setValue(0);
+//                        quantityLayout.setVisibility(View.VISIBLE);
+//                        quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
+                        scaleET.setText(selectedFoodScale.getTitle());
+                    }
+                }
+                return true;
+            }
+        });
+        popupMenu.show();
+    }
+
+    private void showFoodSizePopup(EditText foodSizeET) {
+        PopupMenu popupMenu = new PopupMenu(activity, foodSizeET);
+        for (int i = 0; i < foodSizeList.size(); i++) {
+            popupMenu.getMenu().add(foodSizeList.get(i).getTitle());
+        }
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                for (int i = 0; i < foodSizeList.size(); i++) {
+                    if (foodSizeList.get(i).getTitle().equals(menuItem.getTitle().toString())) {
+                        selectedFoodSize = foodSizeList.get(i);
+                        // Show quantity slider
+                        quantity = 0;
+                        quantitySlider.setValue(0);
+                        quantityLayout.setVisibility(View.VISIBLE);
+                        quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
+                        foodSizeET.setText(selectedFoodSize.getTitle());
+                    }
+                }
+                return true;
+            }
+        });
+        popupMenu.show();
+    }
+
+    private void showPlacePreparedPopup(EditText placePreparedET) {
+        String[] placePreparedArr = MainApp.getPlacePreparedList(activity);
+        PopupMenu popupMenu = new PopupMenu(activity, placePreparedET);
+        for (int i = 0; i < placePreparedArr.length; i++) {
+            popupMenu.getMenu().add(placePreparedArr[i]);
+        }
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                String title = menuItem.getTitle().toString();
+                placePreparedET.setText(title);
+                return true;
+            }
+        });
+        popupMenu.show();
+    }
+
     // reset variables to add new food
     private void resetVariables() {
         selectedFood = null;
         selectedFoodIngrList = null;
+        quantity = 0;
+        quantityTV.setText(String.format(Locale.getDefault(), "%.1f", quantity));
     }
+
+    MainApp.IAlertCallback iAlertCallback = new MainApp.IAlertCallback() {
+        @Override
+        public void onClick(int popupId, boolean isPositiveClick, Object obj) {
+            if (popupId == REMOVE_FOOD_POPUP) {
+                if (isPositiveClick) {
+                    foodIntakeCG.removeView((Chip) obj);
+                    removePatientFood(((Chip) obj).getText().toString());
+                    if (foodIntakeCG.getChildCount() == 0) {
+                        errorTV.setVisibility(View.VISIBLE);
+                        errorTV.setText(getString(R.string.empty_food_list, selectedFoodTime.getTitle()));
+                        noMealCB.setVisibility(View.VISIBLE);
+                        noMealCB.setChecked(false);
+                    }
+                }
+            } else if (popupId == REMOVE_INGR_POPUP) {
+                if (isPositiveClick) {
+                    ingrCG.removeView((Chip) obj);
+                    removeIngredient(((Chip) obj).getText().toString());
+                    if (ingrCG.getChildCount() == 0) {
+                        ingrErrorTV.setVisibility(View.VISIBLE);
+                        ingrErrorTV.setText(getString(R.string.empty_ingredients_list));
+                    }
+                }
+            }
+        }
+    };
+
+    GenericLVFilterAdapter.ILVOnItemClickListener ilvOnItemClickListener = new GenericLVFilterAdapter.ILVOnItemClickListener() {
+        @Override
+        public void onItemClick(AutoCompleteTextView autoCompleteTextView, Object obj, int index) {
+            int viewId = autoCompleteTextView.getId();
+            if (viewId == R.id.foodNameACET) {
+                selectedFood = (Food) obj;
+                assert selectedFood != null;
+
+                if (checkIfItemExistsInCG(foodIntakeCG, selectedFood.getFoodName())) {
+                    autoCompleteTextView.setText(null);
+                    MainApp.alert(activity, getString(R.string.item_already_added_error),
+                            getString(R.string.item_already_added_error_desc));
+                    return;
+                }
+
+                autoCompleteTextView.setText(selectedFood.getFoodName());
+
+                selectedFoodIngrList = db.foodIngrJTDao().getAllIngrByFoodId(selectedFood.getFoodId());
+                // For testing purpose
+//                selectedFoodIngrList = TestData.getFoodIngredients(selectedFood.getFoodId());
+                if (selectedFoodIngrList != null && selectedFoodIngrList.size() > 0) {
+//                    updatedFoodIngrList = selectedFoodIngrList;
+                    initFoodIngredientsCG(ingrCG, selectedFoodIngrList);
+                } else {
+                    if (ingrCG.getChildCount() > 0)
+                        ingrCG.removeAllViews();
+                    ingrErrorTV.setText(getString(R.string.no_ingredients_found));
+                    ingrErrorTV.setVisibility(View.VISIBLE);
+                }
+            } else if (viewId == R.id.newIngrACET) {
+                // Ingredient found in the list
+                Ingredient ingredient = (Ingredient) obj;
+                if (checkIfItemExistsInCG(ingrCG, ingredient.getIngredientName())) {
+                    autoCompleteTextView.setText(null);
+                    MainApp.alert(activity, getString(R.string.item_already_added_error),
+                            getString(R.string.item_already_added_error_desc));
+                    return;
+                }
+//                autoCompleteTextView.setText(ingredient.getIngredientName());
+                addNewIngredient(ingredient, null);
+                autoCompleteTextView.setText(null);
+            }
+            autoCompleteTextView.dismissDropDown();
+        }
+    };
 
     @Override
     public void onClick(View view) {
         int viewId = view.getId();
         if (viewId == R.id.submitBtn) {
+            if (!MainApp.isNotEmpty(Objects.requireNonNull(datePickerET.getText()).toString())) {
+                MainApp.alert(activity, getString(R.string.select_food_date),
+                        getString(R.string.select_food_date_desc));
+                return;
+            }
+
             // Check if current list is empty or not to proceed to the next
             if (noMealCB.isChecked())
                 // Put null/empty list if food is not taken in the hashmap
@@ -908,12 +1210,21 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
             else if ((patientFoodMap.get(selectedFoodTime) == null
                     || Objects.requireNonNull(patientFoodMap.get(selectedFoodTime)).size() == 0)
                     && !noMealCB.isChecked()) {
-                Toast.makeText(activity, "Be careful!", Toast.LENGTH_SHORT).show();
+                MainApp.alert(activity, getString(R.string.be_careful),
+                        getString(R.string.no_meal_taken_error_desc));
                 return;
             }
-
             List<PatientFood> patientFoodMainList = new ArrayList<>();
             for (Map.Entry<FoodTime, List<PatientFood>> pair : patientFoodMap.entrySet()) {
+                // Delete empty/not reported food if exists
+                PatientFood pf = Objects.requireNonNull(db.patientFoodDao())
+                        .getNotReportedByPatientAndTimeId(Integer.parseInt(adol.getChildID()),
+                        pair.getKey().getFoodTimeId(), MainApp.NOT_REPORTED);
+                if (pf != null) {
+                    Objects.requireNonNull(db.patientFoodDao())
+                            .deleteAllByPatientAndTimeId(Integer.parseInt(adol.getChildID()),
+                            pair.getKey().getFoodTimeId());
+                }
                 List<PatientFood> _patientFoodList = pair.getValue();
                 if (_patientFoodList != null) {
                     patientFoodMainList.addAll(_patientFoodList);
@@ -924,48 +1235,34 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                     patientFood.setPatientId(Integer.parseInt(adol.getChildID()));
                     patientFood.setFoodTimeId(pair.getKey().getFoodTimeId());
                     patientFood.setNotReported(MainApp.NOT_REPORTED);
+                    patientFood.setDateOfIntake(MainApp.getFormattedDateTime(
+                            Objects.requireNonNull(datePickerET.getText()).toString(),
+                            MainApp.FOOD_INTAKE_DATE_FORMAT, MainApp.ISO_DATE_TIME_FORMAT));
+                    patientFood.setCreatedDate(MainApp.getFormattedDateTime(
+                            MainApp.convertDateToISO8601DateTime(MainApp.getSimpleCurrentDateTime()),
+                            MainApp.ISO_DATE_TIME_FORMAT, MainApp.ISO_DATE_TIME_FORMAT));
                     patientFoodMainList.add(patientFood);
+
+//                    appDatabase.patientFoodDao().deleteAllByPatientAndTimeId(patient.getPatientId(),
+//                            selectedFoodTime.getFoodTimeId());
+
+//                    // Add empty patient food object for a time when no meal taken is true
+                    db.patientFoodDao().add(patientFood);
                 }
 //                else{
 //                    // This extra object is just to add an empty when the patient does not take
 //                    // any meal at the particular time
 //                }
             }
-            /*TODO
-             *  List to be saved in the db*/
-//            patient.setPatientFoodList(patientFoodMainList);
-//            String postJson = new Gson().toJson(patient);
-//            Log.e("POST_JSON: ", postJson);
-
-//            for (int i = 0; i < patientFoodMainList.size(); i++) {
-//                PatientFood patientFood = Objects.requireNonNull(db.patientFoodDao())
-//                        .getByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
-//                                patientFoodMainList.get(i).getFoodTimeId(), patientFoodMainList.get(i).getFoodId());
-//
-//                if (patientFood != null) {
-//                    // If patient food already exists just update it
-//                    patientFoodMainList.get(i).setPatientFoodId(patientFood.getPatientFoodId());
-//                    Objects.requireNonNull(db.patientFoodDao()).update(patientFoodMainList.get(i));
-//                } else {
-//                    // If patient food does not exists, add it
-//                    Objects.requireNonNull(db.patientFoodDao()).add(patientFoodMainList.get(i));
-//                }
-////                Objects.requireNonNull(db.foodChangeDao()).deleteAllByPatientAndFoodAndTimeId(Integer.parseInt(adol.getChildID()),
-////                        patientFoodMainList.get(i).getFoodId(), patientFoodMainList.get(i).getFoodTimeId());
-////                if (foodChangeList != null && foodChangeList.size() > 0)
-////                    for (int j = 0; j < foodChangeList.size(); j++) {
-////
-////                    }
-//
-//            }
-//            db.patientFoodDao().addAll(patientFoodMainList);
-//            if (foodChangeList != null && foodChangeList.size() > 0)
-//                db.foodChangeDao().addAll(foodChangeList);
 
             finish();
             startActivity(new Intent(this, SectionD1Activity.class));
-
         } else if (viewId == R.id.addPatientFoodBtn) {
+            if (!MainApp.isNotEmpty(Objects.requireNonNull(datePickerET.getText()).toString())) {
+                MainApp.alert(activity, getString(R.string.select_food_date),
+                        getString(R.string.select_food_date_desc));
+                return;
+            }
             showAddFoodBottomSheet();
         } else if (viewId == R.id.nextBtn) {
             if (selectedFoodTimeIndex < foodTimeList.size() - 1) {
@@ -973,7 +1270,8 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                 if ((patientFoodMap.get(selectedFoodTime) == null
                         || Objects.requireNonNull(patientFoodMap.get(selectedFoodTime)).size() == 0)
                         && !noMealCB.isChecked()) {
-                    Toast.makeText(activity, "Be Careful!", Toast.LENGTH_SHORT).show();
+                    MainApp.alert(activity, getString(R.string.be_careful),
+                            getString(R.string.no_meal_taken_error_desc));
                     return;
                 } else if (noMealCB.isChecked()) {
                     // Put null/empty list if food is not taken in the hashmap
@@ -1014,7 +1312,12 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
                 if (selectedFoodTimeIndex == 2)
                     foodTimeRV.smoothScrollToPosition(0);
             }
-
+        } else if (viewId == R.id.dateLayout) {
+            Calendar cal = Calendar.getInstance();
+            DatePickerDialog dpd = new DatePickerDialog(activity, (view1, year, month, dayOfMonth) -> {
+//                Toast.makeText(MainActivity.this, String.format("%d", year) + "-" + String.format("%02d", month + 1) + "-" + String.format("%02d", dayOfMonth), Toast.LENGTH_SHORT).show();
+            }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+            dpd.show();
         }
     }
 
@@ -1024,13 +1327,11 @@ public class SectionC8Activity extends AppCompatActivity implements View.OnClick
         if (viewId == R.id.noMealCB) {
             if (isChecked) {
                 // No food taken at particular time
-//                foodTimeList.get(selectedFoodTimeIndex).setFoodNotTaken(true);
                 addPatientFoodBtn.setEnabled(false);
                 addPatientFoodBtn.setBackgroundTintList(ColorStateList.valueOf(
                         ContextCompat.getColor(activity, R.color.disabled_text_color)));
             } else {
                 // Food taken at particular time
-//                foodTimeList.get(selectedFoodTimeIndex).setFoodNotTaken(false);
                 addPatientFoodBtn.setEnabled(true);
                 addPatientFoodBtn.setBackgroundTintList(ColorStateList.valueOf(
                         ContextCompat.getColor(activity, R.color.clickable_color)));
