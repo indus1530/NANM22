@@ -20,6 +20,8 @@ import androidx.room.PrimaryKey;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 import edu.aku.abdulsajid.nanm2022.BR;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.AdolescentTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
@@ -1294,6 +1296,16 @@ public class Adolescent extends BaseObservable implements Observable {
         setC20598(c203.equals("2") ? this.c20598 : "");
         setC206a(c203.equals("2") ? this.c206a : "");
         setC20698(c203.equals("2") ? this.c20698 : "");
+
+        setCb311(c203.equals("2") ? this.cb311 : "");
+        setCb312(c203.equals("2") ? this.cb312 : "");
+        setCb313(c203.equals("2") ? this.cb313 : "");
+        setCb314(c203.equals("2") ? this.cb314 : "");
+
+        setCb401(c203.equals("2") ? this.cb401 : "");
+        setCb402(c203.equals("2") ? this.cb402 : "");
+        setCb403(c203.equals("2") ? this.cb403 : "");
+        setCb404(c203.equals("2") ? this.cb404 : "");
         notifyPropertyChanged(BR.c203);
     }
 
@@ -4613,9 +4625,11 @@ public class Adolescent extends BaseObservable implements Observable {
             Float total;
 
             total = a > b ? a - b : b - a;
-
-            if (total > 0.6) setD117("1");
-            else setD117("2");
+            float _total = Float.parseFloat(String.format(Locale.getDefault(), "%.1f", total));
+            if (_total > 0.6f)
+                setD117("1");
+            else
+                setD117("2");
         } else setD117("");
 
         if (d119.length() > 0 && d120.length() > 0) {
@@ -4624,8 +4638,8 @@ public class Adolescent extends BaseObservable implements Observable {
             Float total;
 
             total = a > b ? a - b : b - a;
-
-            if (total > 0.1) setD121("1");
+            float _total = Float.parseFloat(String.format(Locale.getDefault(), "%.1f", total));
+            if (_total > 0.1f) setD121("1");
             else setD121("2");
         } else setD121("");
 
@@ -4636,7 +4650,8 @@ public class Adolescent extends BaseObservable implements Observable {
 
             total = a > b ? a - b : b - a;
 
-            if (total > 0.3) setD125("1");
+            float _total = Float.parseFloat(String.format(Locale.getDefault(), "%.1f", total));
+            if (_total > 0.3f) setD125("1");
             else setD125("2");
         } else setD125("");
 
