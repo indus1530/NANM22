@@ -62,6 +62,7 @@ import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC4Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC5Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC6Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC7Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC8Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD1Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD2Activity;
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         //getSupportActionBar().setIcon(R.drawable.app_icon);
-        bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
+//        bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
         bi.toolbar.setSubtitle("Welcome, " + MainApp.user.getFullname() + (MainApp.admin ? " (Admin)" : "") + "!");
         invalidateOptionsMenu();
 
@@ -250,6 +251,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.secC7:
                 MainApp.adol = new Adolescent();
                 startActivity(new Intent(this, SectionC7Activity.class));
+                break;
+
+            case R.id.secC8:
+                MainApp.adol = new Adolescent();
+                startActivity(new Intent(this, SectionC8Activity.class));
                 break;
 
             case R.id.secD1:

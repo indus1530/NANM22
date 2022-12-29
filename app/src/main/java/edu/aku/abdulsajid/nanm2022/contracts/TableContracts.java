@@ -204,4 +204,25 @@ public class TableContracts {
     }
 
 
+    public static abstract class FoodScaleTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "FoodScale";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_FOOD_SCALE_ID = "foodScaleId";
+        public static final String COLUMN_TITLE = "title";
+
+    }
+
+
+    public static abstract class FoodSizeTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "FoodSize";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_FOOD_SIZE_ID = "foodSizeId";
+        public static final String COLUMN_FOOD_SCALE_ID = "foodScaleId";
+        public static final String COLUMN_TITLE = "title";
+
+    }
+
+
 }

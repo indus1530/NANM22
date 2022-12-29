@@ -86,7 +86,7 @@
     <color name="grayOverlay">#7f7f7f7f</color>
 
 
-    <!--Dietry Followup-->
+    <!--Dietary Followup-->
     <color name="app_color">#098A0B</color>
     <color name="app_color_dark">#056A07</color>
     <color name="app_color_light">#54DA56</color>
@@ -101,6 +101,7 @@
     <color name="divider_color_light">#1F000000</color>
     <color name="edittext_color">#FFFFFF</color>
     <color name="edittext_border_color">#979797</color>
+    <color name="disabled_edittext_color">#F8F8F8</color>
     <color name="button_color">#098A0B</color>
     <color name="icon_color">#B5B5B5</color>
     <color name="red_color">#B10827</color>
@@ -115,7 +116,10 @@
     <color name="picker_default_divider_color">#6e6e6e</color>
 
     <color name="light_gray_color">#8B8B8B</color>
+    <color name="lighter_gray_color">#EFEFEF</color>
     <color name="clickable_color">#2E94F1</color>
+    <color name="light_clickable_color">#BF2E94F1</color>
+    <color name="lighter_clickable_color">#0D2E94F1</color>
     <color name="chip_default_color">#E8E8E8</color>
     <color name="chip_new_color">#B86706</color>
 
