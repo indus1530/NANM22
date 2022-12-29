@@ -219,11 +219,11 @@
     <string name="consentsubheading">Introduce yourself to the respondent and explain the reason for your visit and ask for permission</string>
 
 
-
     <!--NANM-->
     <string name="hhhead">Head of Households</string>
     <string name="childName">Child Name</string>
-    <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="app_name">Matiari Cohorts FollowUp</string>
+    <string name="project_name">Matiari Cohorts FollowUp - English</string>
     <string name="downloadDataDesc">Please download the data before login</string>
     <string name="sectiona1householdidentificationconsent_mainheading">HOUSEHOLD IDENTIFICATION &amp; CONSENT </string>
     <string name="sectiona1_mainheading"> SECTION A1:</string>

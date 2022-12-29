@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "nanm2022"
+rootProject.name = "matiari_cohorts_followup"
 include ':app'

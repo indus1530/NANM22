@@ -662,7 +662,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void sA2Hydrate(String string) throws JSONException {
         Log.d(TAG, "sA2Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a201 = json.getString("a201");

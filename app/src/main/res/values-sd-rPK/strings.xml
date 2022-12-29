@@ -40,7 +40,8 @@
 
 
     <!--Dietry Followup-->
-    <string name="app_name"><big>N A N M</big> <i><u><small>2022</small></u></i></string>
+    <string name="app_name">Matiari Cohorts FollowUp</string>
+    <string name="project_name">Matiari Cohorts FollowUp - Sindhi</string>
     <string name="today">Today</string>
     <string name="select">Select</string>
     <string name="invalid_time_error">Invalid Date!</string>

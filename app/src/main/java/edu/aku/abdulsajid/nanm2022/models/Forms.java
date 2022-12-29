@@ -8749,7 +8749,7 @@ public class Forms extends BaseObservable implements Observable {
         this.childID = forms.childID;
         this.childSno = forms.childSno;
         this.userName = forms.userName;
-        this.sysDate = forms.deviceId;
+        this.sysDate = forms.sysDate;
         this.deviceTag = forms.deviceTag;
         this.appver = forms.appver;
         this.iStatus = forms.iStatus;
@@ -8772,7 +8772,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sA1Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a109 = json.getString("a109");
@@ -8797,7 +8797,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA3AHydrate(String string) throws JSONException {
         Log.d(TAG, "sA3AHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a301 = json.getString("a301");
@@ -8837,7 +8837,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA3BHydrate(String string) throws JSONException {
         Log.d(TAG, "sA3BHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a319a = json.getString("a319a");
@@ -8906,7 +8906,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA4AHydrate(String string) throws JSONException {
         Log.d(TAG, "sA4AHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a401 = json.getString("a401");
@@ -8963,7 +8963,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA4BHydrate(String string) throws JSONException {
         Log.d(TAG, "sA4BHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a41101 = json.getString("a41101");
@@ -8989,7 +8989,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA4CHydrate(String string) throws JSONException {
         Log.d(TAG, "sA4CHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a412h = json.getString("a412h");
@@ -9075,7 +9075,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA5AHydrate(String string) throws JSONException {
         Log.d(TAG, "sA5AHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a501 = json.getString("a501");
@@ -9136,7 +9136,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sA5BHydrate(String string) throws JSONException {
         Log.d(TAG, "sA5BHydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a514 = json.getString("a514");
@@ -9281,7 +9281,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sB1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sB1Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.b101 = json.getString("b101");
@@ -9307,7 +9307,7 @@ public class Forms extends BaseObservable implements Observable {
 
     public void sB3Hydrate(String string) throws JSONException {
         Log.d(TAG, "sB3Hydrate: " + string);
-        if (string != null) {
+        if (string != null && !string.equals("")) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.b301 = json.getString("b301");
