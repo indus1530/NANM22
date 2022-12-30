@@ -2,7 +2,6 @@ package edu.aku.abdulsajid.nanm2022.ui.sections;
 
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.familyMember;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.memberCount;
-import static edu.aku.abdulsajid.nanm2022.core.MainApp.selectedAdol;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
 import android.app.Activity;
@@ -46,7 +45,7 @@ public class SectionA2Activity extends AppCompatActivity {
 
         familyMember.setA201(String.valueOf(memberCount + 1));
 
-        if (MainApp.allAdolList.size() > 0 && !selectedAdol.equals(""))
+        if (MainApp.allAdolList.size() > 0)
             bi.a207a.setEnabled(false);
 
         bi.setMember(familyMember);
@@ -209,6 +208,7 @@ public class SectionA2Activity extends AppCompatActivity {
         if (MainApp.familyMember.getUid().equals("") ? insertNewRecord() : updateDB()) {
             setResult(RESULT_OK);
             finish();
+//            startActivity(new Intent(this, FamilyMembersListActivity.class));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

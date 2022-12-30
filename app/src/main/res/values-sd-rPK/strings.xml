@@ -246,8 +246,8 @@
     <string name="sectionc7_mainheading"> سيڪشن C7: </string>
     <string name="sectionc6personalhygienebehaviourshabits_mainheading"> ذاتي صفائي، عمل، عادتون </string>
     <string name="sectionc6_mainheading"> سيڪشن C6: </string>
-    <string name="btnSync"> ڊائون لوڊ ڊيٽا </string>
-    <string name="btnUpload"> اپلوڊ ڊيٽا </string>
+    <string name="btnSync">Download Data</string>
+    <string name="btnUpload">Upload Data</string>
     <string name="prompt_email"> Email </string>
     <string name="prompt_password"> Password </string>
     <string name="action_sign_in"> Login </string>

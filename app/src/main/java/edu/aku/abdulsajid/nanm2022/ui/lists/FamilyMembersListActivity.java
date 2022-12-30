@@ -99,7 +99,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         /**
                          *  Populate All Adolescent between 10-15
                          */
-                        if (MainApp.familyMember.getA212().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) > 9 && Integer.parseInt(MainApp.familyMember.getA206yy()) < 15) {
+                        if (MainApp.familyMember.getA212().equals("1") && Integer.parseInt(MainApp.familyMember.getA206yy()) > 9 && Integer.parseInt(MainApp.familyMember.getA206yy()) < 15 && familyMember.getA207().equals("1")) {
                             MainApp.allAdolList.add(MainApp.familyMember);
 
                         }
@@ -355,6 +355,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.familyMember = new FamilyMembers();
         Intent intent = new Intent(this, SectionA2Activity.class);
         MemberInfoLauncher.launch(intent);
+//        finish();
+//        startActivity(intent);
     }
 
     public void btnEnd(View view) {

@@ -857,8 +857,8 @@
                                     android:maxLength="4"
                                     android:text="@={form.d115}"
                                     app:mask="###.#"
-                                    app:maxValue="160.0"
-                                    app:minValue="100.0"
+                                    app:maxValue="180.0"
+                                    app:minValue="090.0"
                                     app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -905,8 +905,8 @@
                                     android:maxLength="4"
                                     android:text="@={form.d116}"
                                     app:mask="###.#"
-                                    app:maxValue="160.0"
-                                    app:minValue="100.0"
+                                    app:maxValue="180.0"
+                                    app:minValue="090.0"
                                     app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -1012,8 +1012,8 @@
                                     android:maxLength="4"
                                     android:text="@={form.d118}"
                                     app:mask="###.#"
-                                    app:maxValue="160.0"
-                                    app:minValue="100.0"
+                                    app:maxValue="180.0"
+                                    app:minValue="090.0"
                                     app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -1060,8 +1060,8 @@
                                     android:maxLength="3"
                                     android:text="@={form.d119}"
                                     app:mask="##.#"
-                                    app:maxValue="60.0"
-                                    app:minValue="25.0"
+                                    app:maxValue="98.0"
+                                    app:minValue="15.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -1108,8 +1108,8 @@
                                     android:maxLength="3"
                                     android:text="@={form.d120}"
                                     app:mask="##.#"
-                                    app:maxValue="60.0"
-                                    app:minValue="25.0"
+                                    app:maxValue="98.0"
+                                    app:minValue="15.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -1215,8 +1215,8 @@
                                     android:maxLength="3"
                                     android:text="@={form.d122}"
                                     app:mask="##.#"
-                                    app:maxValue="60.0"
-                                    app:minValue="25.0"
+                                    app:maxValue="98.0"
+                                    app:minValue="15.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
@@ -1263,7 +1263,7 @@
                                     android:maxLength="3"
                                     android:text="@={form.d123}"
                                     app:mask="##.#"
-                                    app:maxValue="25.0"
+                                    app:maxValue="45.0"
                                     app:minValue="10.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
@@ -1311,7 +1311,7 @@
                                     android:maxLength="3"
                                     android:text="@={form.d124}"
                                     app:mask="##.#"
-                                    app:maxValue="25.0"
+                                    app:maxValue="45.0"
                                     app:minValue="10.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
@@ -1418,7 +1418,7 @@
                                     android:maxLength="3"
                                     android:text="@={form.d126}"
                                     app:mask="##.#"
-                                    app:maxValue="25.0"
+                                    app:maxValue="45.0"
                                     app:minValue="10.0"
                                     app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />

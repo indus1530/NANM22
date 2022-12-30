@@ -577,7 +577,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={member.a206mm}"
-                                app:maxValue="12"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -598,7 +598,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={member.a206dd}"
-                                app:maxValue="30"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 

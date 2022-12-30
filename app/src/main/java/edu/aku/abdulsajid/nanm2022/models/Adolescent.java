@@ -1306,6 +1306,27 @@ public class Adolescent extends BaseObservable implements Observable {
         setCb402(c203.equals("2") ? this.cb402 : "");
         setCb403(c203.equals("2") ? this.cb403 : "");
         setCb404(c203.equals("2") ? this.cb404 : "");
+
+
+        setCa301(c203.equals("1") ? this.ca301 : "");
+        setCa302(c203.equals("1") ? this.ca302 : "");
+        setCa303(c203.equals("1") ? this.ca303 : "");
+        setCa304(c203.equals("1") ? this.ca304 : "");
+        setCa305(c203.equals("1") ? this.ca305 : "");
+        setCa306(c203.equals("1") ? this.ca306 : "");
+        setCa307(c203.equals("1") ? this.ca307 : "");
+        setCa308(c203.equals("1") ? this.ca308 : "");
+        setCa309(c203.equals("1") ? this.ca309 : "");
+        setCa310(c203.equals("1") ? this.ca310 : "");
+
+        setCa401(c203.equals("1") ? this.ca401 : "");
+        setCa402(c203.equals("1") ? this.ca402 : "");
+        setCa403(c203.equals("1") ? this.ca403 : "");
+        setCa404(c203.equals("1") ? this.ca404 : "");
+        setCa405(c203.equals("1") ? this.ca405 : "");
+        setCa406(c203.equals("1") ? this.ca406 : "");
+        setCa407(c203.equals("1") ? this.ca407 : "");
+
         notifyPropertyChanged(BR.c203);
     }
 
@@ -1842,6 +1863,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501a(String c501a) {
         this.c501a = c501a;
+        c501Skip();
         notifyPropertyChanged(BR.c501a);
     }
 
@@ -1852,6 +1874,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501b(String c501b) {
         this.c501b = c501b;
+        c501Skip();
         notifyPropertyChanged(BR.c501b);
     }
 
@@ -1862,6 +1885,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501c(String c501c) {
         this.c501c = c501c;
+        c501Skip();
         notifyPropertyChanged(BR.c501c);
     }
 
@@ -1872,6 +1896,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501d(String c501d) {
         this.c501d = c501d;
+        c501Skip();
         notifyPropertyChanged(BR.c501d);
     }
 
@@ -1882,6 +1907,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501e(String c501e) {
         this.c501e = c501e;
+        c501Skip();
         notifyPropertyChanged(BR.c501e);
     }
 
@@ -1892,6 +1918,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501f(String c501f) {
         this.c501f = c501f;
+        c501Skip();
         notifyPropertyChanged(BR.c501f);
     }
 
@@ -1902,6 +1929,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501g(String c501g) {
         this.c501g = c501g;
+        c501Skip();
         notifyPropertyChanged(BR.c501g);
     }
 
@@ -1912,6 +1940,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501h(String c501h) {
         this.c501h = c501h;
+        c501Skip();
         notifyPropertyChanged(BR.c501h);
     }
 
@@ -1922,6 +1951,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501i(String c501i) {
         this.c501i = c501i;
+        c501Skip();
         notifyPropertyChanged(BR.c501i);
     }
 
@@ -1932,6 +1962,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC501j(String c501j) {
         this.c501j = c501j;
+        c501Skip();
         notifyPropertyChanged(BR.c501j);
     }
 
@@ -1942,6 +1973,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setC50196(String c50196) {
         this.c50196 = c50196;
+        c501Skip();
         setC50196x(c50196.equals("1") ? this.c50196x : "");
         notifyPropertyChanged(BR.c50196);
     }
@@ -3441,6 +3473,7 @@ public class Adolescent extends BaseObservable implements Observable {
 
     public void setD113(String d113) {
         this.d113 = d113;
+        setD11301x(d113.equals("1") ? this.d11301x : "");
         notifyPropertyChanged(BR.d113);
     }
 
@@ -4655,6 +4688,31 @@ public class Adolescent extends BaseObservable implements Observable {
             else setD125("2");
         } else setD125("");
 
+    }
+
+    private void c501Skip() {
+        boolean b = c501a.equals("1") && c501b.equals("1") && c501c.equals("1") &&
+                c501d.equals("1") && c501e.equals("1") && c501f.equals("1") &&
+                c501g.equals("1") && c501h.equals("1") && c501i.equals("1") &&
+                c501j.equals("1") && c50196.equals("1");
+        setC502(b ? this.c502 : "");
+        setC50301(b ? this.c50301 : "");
+        setC50302(b ? this.c50302 : "");
+        setC50303(b ? this.c50303 : "");
+        setC50304(b ? this.c50304 : "");
+        setC50305(b ? this.c50305 : "");
+        setC50306(b ? this.c50306 : "");
+        setC50307(b ? this.c50307 : "");
+        setC50308(b ? this.c50308 : "");
+        setC50396(b ? this.c50396 : "");
+        setC50401(b ? this.c50401 : "");
+        setC50402(b ? this.c50402 : "");
+        setC50403(b ? this.c50403 : "");
+        setC50404(b ? this.c50404 : "");
+        setC50405(b ? this.c50405 : "");
+        setC50406(b ? this.c50406 : "");
+        setC50407(b ? this.c50407 : "");
+        setC50496(b ? this.c50496 : "");
     }
 
 }
