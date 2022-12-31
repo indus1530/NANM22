@@ -252,6 +252,39 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/childID"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:text="@string/childID" />
+
+                                <TextView
+                                    android:id="@+id/adolID"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <CheckBox
+                                    android:id="@+id/checkChildID"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:text="@string/confirm" />
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:id="@+id/headhh"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

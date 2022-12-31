@@ -54,6 +54,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
         bi.childName.setText(null);
         bi.child.setVisibility(View.GONE);
+        bi.adolID.setText(null);
+        bi.childID.setVisibility(View.GONE);
         bi.hhhead.setText(null);
         bi.headhh.setVisibility(View.GONE);
 
@@ -76,6 +78,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
             bi.childName.setText(adolList.getChild_name());
             bi.child.setVisibility(View.VISIBLE);
+            bi.adolID.setText(adolList.getChild_id());
+            bi.childID.setVisibility(View.VISIBLE);
             bi.hhhead.setText(adolList.getHh_head());
             bi.headhh.setVisibility(View.VISIBLE);
 
@@ -125,6 +129,7 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a108.setText(null);
         bi.a105.setText(null);
         bi.childName.setText(null);
+        bi.adolID.setText(null);
         bi.hhhead.setText(null);
         bi.checkHhhead.setChecked(false);
         bi.checkChild.setChecked(false);

@@ -218,6 +218,7 @@
     <!--NANM-->
     <string name="hhhead"> گهر جو سربراهه </string>
     <string name="childName"> ٻار جو نالو </string>
+    <string name="childID">ٻار جي آءِ ڊي</string>
     <string name="downloadDataDesc"> لاگ ان ٿيڻ کان پهريان مهرباني ڪري ڊيٽا ڊائون لوڊ ڪريو </string>
     <string name="sectiona1householdidentificationconsent_mainheading"> گھر جي سڃاڻپ رضامندي </string>
     <string name="sectiona1_mainheading"> سيڪشن A1: </string>
