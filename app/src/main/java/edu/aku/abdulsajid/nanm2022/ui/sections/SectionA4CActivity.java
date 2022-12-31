@@ -3,7 +3,6 @@ package edu.aku.abdulsajid.nanm2022.ui.sections;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.form;
 import static edu.aku.abdulsajid.nanm2022.core.MainApp.sharedPref;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +21,7 @@ import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySectionA4CBinding;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
+import edu.aku.abdulsajid.nanm2022.ui.EndingActivity;
 
 public class SectionA4CActivity extends AppCompatActivity {
 
@@ -85,8 +85,8 @@ public class SectionA4CActivity extends AppCompatActivity {
 
 
     public void btnEnd(View view) {
-        setResult(Activity.RESULT_CANCELED);
         finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

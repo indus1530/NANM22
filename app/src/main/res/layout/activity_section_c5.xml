@@ -639,7 +639,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{form.c501a.equals(`1`) &amp;&amp; form.c501b.equals(`1`) &amp;&amp; form.c501c.equals(`1`) &amp;&amp; form.c501d.equals(`1`) &amp;&amp; form.c501e.equals(`1`) &amp;&amp; form.c501f.equals(`1`) &amp;&amp; form.c501g.equals(`1`) &amp;&amp; form.c501h.equals(`1`) &amp;&amp; form.c501i.equals(`1`) &amp;&amp; form.c501j.equals(`1`) &amp;&amp; form.c50196.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.c501a.equals(`2`) &amp;&amp; form.c501b.equals(`2`) &amp;&amp; form.c501c.equals(`2`) &amp;&amp; form.c501d.equals(`2`) &amp;&amp; form.c501e.equals(`2`) &amp;&amp; form.c501f.equals(`2`) &amp;&amp; form.c501g.equals(`2`) &amp;&amp; form.c501h.equals(`2`) &amp;&amp; form.c501i.equals(`2`) &amp;&amp; form.c501j.equals(`2`) &amp;&amp; form.c50196.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <!-- c502  Radio   -->
                     <androidx.cardview.widget.CardView

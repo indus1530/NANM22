@@ -150,6 +150,7 @@
                         android:elevation="20dp"
                         android:onClick="btnEnd"
                         android:text="Cancel"
+                        android:visibility="gone"
                         android:textColor="@color/white" />
 
                     <Button
@@ -160,7 +161,7 @@
                         android:background="@drawable/capsuley"
                         android:elevation="20dp"
                         android:onClick="btnContinue"
-                        android:text="Save"
+                        android:text="Continue"
                         android:textColor="@color/white" />
 
                 </LinearLayout>

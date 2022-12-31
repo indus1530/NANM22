@@ -4691,28 +4691,28 @@ public class Adolescent extends BaseObservable implements Observable {
     }
 
     private void c501Skip() {
-        boolean b = c501a.equals("1") && c501b.equals("1") && c501c.equals("1") &&
-                c501d.equals("1") && c501e.equals("1") && c501f.equals("1") &&
-                c501g.equals("1") && c501h.equals("1") && c501i.equals("1") &&
-                c501j.equals("1") && c50196.equals("1");
-        setC502(b ? this.c502 : "");
-        setC50301(b ? this.c50301 : "");
-        setC50302(b ? this.c50302 : "");
-        setC50303(b ? this.c50303 : "");
-        setC50304(b ? this.c50304 : "");
-        setC50305(b ? this.c50305 : "");
-        setC50306(b ? this.c50306 : "");
-        setC50307(b ? this.c50307 : "");
-        setC50308(b ? this.c50308 : "");
-        setC50396(b ? this.c50396 : "");
-        setC50401(b ? this.c50401 : "");
-        setC50402(b ? this.c50402 : "");
-        setC50403(b ? this.c50403 : "");
-        setC50404(b ? this.c50404 : "");
-        setC50405(b ? this.c50405 : "");
-        setC50406(b ? this.c50406 : "");
-        setC50407(b ? this.c50407 : "");
-        setC50496(b ? this.c50496 : "");
+        boolean b = c501a.equals("2") && c501b.equals("2") && c501c.equals("2") &&
+                c501d.equals("2") && c501e.equals("2") && c501f.equals("2") &&
+                c501g.equals("2") && c501h.equals("2") && c501i.equals("2") &&
+                c501j.equals("2") && c50196.equals("2");
+        setC502(b ? "" : this.c502);
+        setC50301(b ? "" : this.c50301);
+        setC50302(b ? "" : this.c50302);
+        setC50303(b ? "" : this.c50303);
+        setC50304(b ? "" : this.c50304);
+        setC50305(b ? "" : this.c50305);
+        setC50306(b ? "" : this.c50306);
+        setC50307(b ? "" : this.c50307);
+        setC50308(b ? "" : this.c50308);
+        setC50396(b ? "" : this.c50396);
+        setC50401(b ? "" : this.c50401);
+        setC50402(b ? "" : this.c50402);
+        setC50403(b ? "" : this.c50403);
+        setC50404(b ? "" : this.c50404);
+        setC50405(b ? "" : this.c50405);
+        setC50406(b ? "" : this.c50406);
+        setC50407(b ? "" : this.c50407);
+        setC50496(b ? "" : this.c50496);
     }
 
 }
