@@ -463,7 +463,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{form.c201.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.c201.equals(`2`) || form.c203.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <!-- cb401_title  Title   -->
                     <LinearLayout

@@ -226,7 +226,7 @@ public class SectionA2Activity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (!MainApp.familyMember.getA206dd().equals("98") && Integer.parseInt(MainApp.familyMember.getA206dd()) > 29) {
+        if (!MainApp.familyMember.getA206dd().equals("98") && Integer.parseInt(MainApp.familyMember.getA206dd()) > 30) {
             Validator.emptyCustomTextBox(this, bi.a206dd, "Invalid day's value");
             return false;
         }

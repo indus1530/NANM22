@@ -394,11 +394,11 @@
     <string name="a306c"> پاڙي ۾پائيپ وارو پاڻي </string>
     <string name="a306d"> عوامي نلڪو / اسٽينڊ پائپ </string>
     <string name="a306e"> فلٽرشن پلانٽ </string>
-    <string name="a306f_title"> زير زمين پاڻي </string>
+    <string name="a306f_title"> جر جو پاڻ ي </string>
     <string name="a306f"> ٽيوب ويل/ بورنگ جو پاڻي </string>
     <string name="a306g"> هٿ وارو نلڪو </string>
     <string name="a306h"> بورنگ تي فلٽريشن پلانٽ </string>
-    <string name="a306i_title"> جر جو پاڻي </string>
+    <string name="a306i_title"> کوهه </string>
     <string name="a306i"> ڍڪيل کوهه </string>
     <string name="a306j"> غير محفوظ/ کليل کوهه </string>
     <string name="a306k"> مينهن جو پاڻي </string>
@@ -416,11 +416,11 @@
     <string name="a307b"> گھر جي آڳر ۾ پائيپ وارو پاڻي </string>
     <string name="a307c"> پاڙي ۾پائيپ وارو پاڻي </string>
     <string name="a307d"> عوامي نلڪو / اسٽينڊ پائپ </string>
-    <string name="a307e_title"> زير زمين پاڻي </string>
+    <string name="a307e_title"> جر جو پاڻي </string>
     <string name="a307e"> فلٽرشن پلانٽ </string>
     <string name="a307f"> ٽيوب ويل/ بورنگ جو پاڻي </string>
     <string name="a307g"> هٿ وارو نلڪو </string>
-    <string name="a307h_title"> جر جو پاڻي </string>
+    <string name="a307h_title"> کوهه </string>
     <string name="a307h"> ڍڪيل کوهه </string>
     <string name="a307i"> غير محفوظ/ کليل کوهه </string>
     <string name="a307j"> مينهن جو پاڻي </string>
@@ -2433,7 +2433,7 @@
     <string name="a305d"> بانس ۽ مٽيءَ جي ٺهيل </string>
     <string name="a305g"> ڪاٺ جي تختن سان ٺهيل </string>
     <string name="a305p"> ڪاٺ جا تختا </string>
-    <string name="a306l"> گاڏي سان گڏ هڪ ننڍي ٽانڪي </string>
+    <string name="a306l"> ٽينڪر واو پاڻي </string>
     <string name="a307aa"> ميونسپل ڪميٽي واٽرڪنيڪشن </string>
     <string name="a307l"> گاڏي سان گڏ هڪ ننڍي ٽانڪي </string>
     <string name="a309"> پاڻي حاصل ڪرڻ لاءِ(اچڻ ۽ وڃڻ ) ڪيترو وقت لڳندو آهي ؟ وقت منٽن ۾ لکو </string>
