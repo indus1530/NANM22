@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280041973250",
+    "project_id": "matiari-cohorts-followup",
+    "storage_bucket": "matiari-cohorts-followup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280041973250:android:f55a1d56d0418a6b10691b",
+        "android_client_info": {
+          "package_name": "edu.aku.abdulsajid.nanm2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280041973250-r6b7qulh526ouja3g8pntqo2he5j7j36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfiHANTobnP89aZhMgDC8Ant4NtwHFeog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280041973250-r6b7qulh526ouja3g8pntqo2he5j7j36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
