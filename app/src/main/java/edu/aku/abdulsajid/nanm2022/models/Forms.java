@@ -759,7 +759,27 @@ public class Forms extends BaseObservable implements Observable {
     @Ignore
     private String a52096x = _EMPTY_;
     @Ignore
-    private String a521 = _EMPTY_;
+    private String a52101 = _EMPTY_;
+    @Ignore
+    private String a52102 = _EMPTY_;
+    @Ignore
+    private String a52103 = _EMPTY_;
+    @Ignore
+    private String a52104 = _EMPTY_;
+    @Ignore
+    private String a52105 = _EMPTY_;
+    @Ignore
+    private String a52106 = _EMPTY_;
+    @Ignore
+    private String a52107 = _EMPTY_;
+    @Ignore
+    private String a52108 = _EMPTY_;
+    @Ignore
+    private String a52109 = _EMPTY_;
+    @Ignore
+    private String a52198 = _EMPTY_;
+    @Ignore
+    private String a52196 = _EMPTY_;
     @Ignore
     private String a52196x = _EMPTY_;
     @Ignore
@@ -4481,7 +4501,17 @@ public class Forms extends BaseObservable implements Observable {
         setA52096(a50105.equals("5") ? "" : this.a52096);
         setA52098(a50105.equals("5") ? "" : this.a52098);
 
-        setA521(a50105.equals("5") ? "" : this.a521);
+        setA52101(a50105.equals("5") ? "" : this.a52101);
+        setA52102(a50105.equals("5") ? "" : this.a52102);
+        setA52103(a50105.equals("5") ? "" : this.a52103);
+        setA52104(a50105.equals("5") ? "" : this.a52104);
+        setA52105(a50105.equals("5") ? "" : this.a52105);
+        setA52106(a50105.equals("5") ? "" : this.a52106);
+        setA52107(a50105.equals("5") ? "" : this.a52107);
+        setA52108(a50105.equals("5") ? "" : this.a52108);
+        setA52109(a50105.equals("5") ? "" : this.a52109);
+        setA52196(a50105.equals("5") ? "" : this.a52196);
+        setA52198(a50105.equals("5") ? "" : this.a52198);
 
         setA5222ax(a50105.equals("5") ? "" : this.a5222ax);
         setA5222bx(a50105.equals("5") ? "" : this.a5222bx);
@@ -5545,14 +5575,135 @@ public class Forms extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA521() {
-        return a521;
+    public String getA52101() {
+        return a52101;
     }
 
-    public void setA521(String a521) {
-        this.a521 = a521;
-        setA52196x(a521.equals("96") ? this.a52196x : "");
-        notifyPropertyChanged(BR.a521);
+    public void setA52101(String a52101) {
+        if (this.a52101.equals(a52101)) return; // for all checkboxes
+        this.a52101 = a52101;
+        notifyPropertyChanged(BR.a52101);
+    }
+
+    @Bindable
+    public String getA52102() {
+        return a52102;
+    }
+
+    public void setA52102(String a52102) {
+        if (this.a52102.equals(a52102)) return; // for all checkboxes
+        this.a52102 = a52102;
+        notifyPropertyChanged(BR.a52102);
+    }
+
+    @Bindable
+    public String getA52103() {
+        return a52103;
+    }
+
+    public void setA52103(String a52103) {
+        if (this.a52103.equals(a52103)) return; // for all checkboxes
+        this.a52103 = a52103;
+        notifyPropertyChanged(BR.a52103);
+    }
+
+    @Bindable
+    public String getA52104() {
+        return a52104;
+    }
+
+    public void setA52104(String a52104) {
+        if (this.a52104.equals(a52104)) return; // for all checkboxes
+        this.a52104 = a52104;
+        notifyPropertyChanged(BR.a52104);
+    }
+
+    @Bindable
+    public String getA52105() {
+        return a52105;
+    }
+
+    public void setA52105(String a52105) {
+        if (this.a52105.equals(a52105)) return; // for all checkboxes
+        this.a52105 = a52105;
+        notifyPropertyChanged(BR.a52105);
+    }
+
+    @Bindable
+    public String getA52106() {
+        return a52106;
+    }
+
+    public void setA52106(String a52106) {
+        if (this.a52106.equals(a52106)) return; // for all checkboxes
+        this.a52106 = a52106;
+        notifyPropertyChanged(BR.a52106);
+    }
+
+    @Bindable
+    public String getA52107() {
+        return a52107;
+    }
+
+    public void setA52107(String a52107) {
+        if (this.a52107.equals(a52107)) return; // for all checkboxes
+        this.a52107 = a52107;
+        notifyPropertyChanged(BR.a52107);
+    }
+
+    @Bindable
+    public String getA52108() {
+        return a52108;
+    }
+
+    public void setA52108(String a52108) {
+        if (this.a52108.equals(a52108)) return; // for all checkboxes
+        this.a52108 = a52108;
+        notifyPropertyChanged(BR.a52108);
+    }
+
+    @Bindable
+    public String getA52109() {
+        return a52109;
+    }
+
+    public void setA52109(String a52109) {
+        if (this.a52109.equals(a52109)) return; // for all checkboxes
+        this.a52109 = a52109;
+        notifyPropertyChanged(BR.a52109);
+    }
+
+    @Bindable
+    public String getA52198() {
+        return a52198;
+    }
+
+    public void setA52198(String a52198) {
+        if (this.a52198.equals(a52198)) return; // for all checkboxes
+        this.a52198 = a52198;
+        setA52101(a52198.equals("98") ? "" : this.a52101);
+        setA52102(a52198.equals("98") ? "" : this.a52102);
+        setA52103(a52198.equals("98") ? "" : this.a52103);
+        setA52104(a52198.equals("98") ? "" : this.a52104);
+        setA52105(a52198.equals("98") ? "" : this.a52105);
+        setA52106(a52198.equals("98") ? "" : this.a52106);
+        setA52107(a52198.equals("98") ? "" : this.a52107);
+        setA52108(a52198.equals("98") ? "" : this.a52108);
+        setA52109(a52198.equals("98") ? "" : this.a52109);
+        setA52196(a52198.equals("98") ? "" : this.a52196);
+        notifyPropertyChanged(BR.a52198);
+    }
+
+    @Bindable
+    public String getA52196() {
+        return a52196;
+    }
+
+    public void setA52196(String a52196) {
+        if (this.a52196.equals(a52196)) return; // for all checkboxes
+        this.a52196 = a52196;
+        setA52196x(a51296.equals("98") ? this.a52196x : "");
+        notifyPropertyChanged(BR.a52196);
     }
 
     @Bindable
@@ -9177,7 +9328,17 @@ public class Forms extends BaseObservable implements Observable {
             this.a52098 = json.getString("a52098");
             this.a52096 = json.getString("a52096");
             this.a52096x = json.getString("a52096x");
-            this.a521 = json.getString("a521");
+            this.a52101 = json.getString("a52101");
+            this.a52102 = json.getString("a52102");
+            this.a52103 = json.getString("a52103");
+            this.a52104 = json.getString("a52104");
+            this.a52105 = json.getString("a52105");
+            this.a52106 = json.getString("a52106");
+            this.a52107 = json.getString("a52107");
+            this.a52108 = json.getString("a52108");
+            this.a52109 = json.getString("a52109");
+            this.a52198 = json.getString("a52198");
+            this.a52196 = json.getString("a52196");
             this.a52196x = json.getString("a52196x");
             this.a5221ax = json.getString("a5221ax");
             this.a5221bx = json.getString("a5221bx");
@@ -10350,7 +10511,17 @@ public class Forms extends BaseObservable implements Observable {
                 .put("a52098", a52098)
                 .put("a52096", a52096)
                 .put("a52096x", a52096x)
-                .put("a521", a521)
+                .put("a52101", a52101)
+                .put("a52102", a52102)
+                .put("a52103", a52103)
+                .put("a52104", a52104)
+                .put("a52105", a52105)
+                .put("a52106", a52106)
+                .put("a52107", a52107)
+                .put("a52108", a52108)
+                .put("a52109", a52109)
+                .put("a52198", a52198)
+                .put("a52196", a52196)
                 .put("a52196x", a52196x)
                 .put("a5221ax", a5221ax)
                 .put("a5221bx", a5221bx)

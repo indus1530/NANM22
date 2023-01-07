@@ -22,8 +22,10 @@ import edu.aku.abdulsajid.nanm2022.databinding.ActivityIdentificationBinding;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Villages;
+import edu.aku.abdulsajid.nanm2022.models.WISC;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionA1Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.WISCActivity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -40,8 +42,14 @@ public class IdentificationActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
         bi.btnContinue.setText(R.string.open_hh_form);
+
+        if (MainApp.user.getDesignation().equals("WISC Data Collector")) {
+            bi.btnWISC.setVisibility(View.VISIBLE);
+            bi.btnWISC.setText(R.string.open_wisc_form);
+        } else bi.btnContinue.setVisibility(View.VISIBLE);
         if (MainApp.superuser) bi.btnContinue.setText("Review Form");
         MainApp.form = new Forms();
+        MainApp.wisc = new WISC();
     }
 
 
@@ -72,7 +80,9 @@ public class IdentificationActivity extends AppCompatActivity {
         if (adolList.getChild_id().equals("")) {
             adolList.getChild_id();
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+            bi.btnWISC.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
+            bi.btnWISC.setEnabled(false);
             Toast.makeText(this, "Child not found", Toast.LENGTH_SHORT).show();
         } else {
 
@@ -84,7 +94,9 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.headhh.setVisibility(View.VISIBLE);
 
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+            bi.btnWISC.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
+            bi.btnWISC.setEnabled(true);
 
             MainApp.currentADOL = adolList;
         }
@@ -99,6 +111,17 @@ public class IdentificationActivity extends AppCompatActivity {
         } else {
             finish();
             startActivity(new Intent(this, SectionA1Activity.class));
+        }
+    }
+
+    public void btnWisc(View view) {
+        if (!formValidation()) return;
+        childExists();
+        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
+            startActivity(new Intent(this, WISCActivity.class));
         }
     }
 
@@ -124,6 +147,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void searchVillage(View view) {
         bi.btnContinue.setEnabled(false);
+        bi.btnWISC.setEnabled(false);
         bi.a106.setText(null);
         bi.a107.setText(null);
         bi.a108.setText(null);

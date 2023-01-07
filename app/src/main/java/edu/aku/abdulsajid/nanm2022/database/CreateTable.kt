@@ -163,4 +163,26 @@ object CreateTable {
             + ChildTable.COLUMN_PROJECT + " TEXT"
             + " );"
             )
+
+
+    const val SQL_CREATE_WISC = ("CREATE TABLE "
+            + WiscTable.TABLE_NAME + "("
+            + WiscTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + WiscTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + WiscTable.COLUMN_UID + " TEXT,"
+            + WiscTable.COLUMN_VILLAGE_CODE + " TEXT,"
+            + WiscTable.COLUMN_CHILD_ID + " TEXT,"
+            + WiscTable.COLUMN_CHILD_SNO + " TEXT,"
+            + WiscTable.COLUMN_USERNAME + " TEXT,"
+            + WiscTable.COLUMN_SYSDATE + " TEXT,"
+            + WiscTable.COLUMN_ISTATUS + " TEXT,"
+            + WiscTable.COLUMN_ISTATUS_96X + " TEXT,"
+            + WiscTable.COLUMN_DEVICEID + " TEXT,"
+            + WiscTable.COLUMN_DEVICETAGID + " TEXT,"
+            + WiscTable.COLUMN_SYNCED + " TEXT,"
+            + WiscTable.COLUMN_SYNC_DATE + " TEXT,"
+            + WiscTable.COLUMN_APPVERSION + " TEXT,"
+            + WiscTable.COLUMN_SA1 + " TEXT"
+            + " );"
+            )
 }

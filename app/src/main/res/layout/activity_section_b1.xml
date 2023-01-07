@@ -96,15 +96,6 @@
                                 android:text="@string/b101b" />
 
                             <RadioButton
-                                android:id="@+id/b10199"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.b101.equals(`99`)}"
-                                android:onClick="@{()->form.setB101(`99`) + b102.clearCheck()}"
-                                android:text="@string/b10199" />
-
-                            <RadioButton
                                 android:id="@+id/b10198"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -112,6 +103,15 @@
                                 android:checked="@{form.b101.equals(`98`)}"
                                 android:onClick="@{()->form.setB101(`98`) + b102.clearCheck()}"
                                 android:text="@string/b10198" />
+
+                            <RadioButton
+                                android:id="@+id/b10199"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.b101.equals(`99`)}"
+                                android:onClick="@{()->form.setB101(`99`) + b102.clearCheck()}"
+                                android:text="@string/b10199" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

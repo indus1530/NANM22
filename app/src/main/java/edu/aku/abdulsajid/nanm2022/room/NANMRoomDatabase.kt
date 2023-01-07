@@ -9,8 +9,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import edu.aku.abdulsajid.nanm2022.core.MainApp
 import edu.aku.abdulsajid.nanm2022.models.*
 import edu.aku.abdulsajid.nanm2022.models.DietaryFollowup.*
-import edu.aku.abdulsajid.nanm2022.room.Form.*
 import edu.aku.abdulsajid.nanm2022.room.DietaryFood.*
+import edu.aku.abdulsajid.nanm2022.room.Form.*
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
 
@@ -37,7 +37,8 @@ import net.sqlcipher.database.SupportFactory
             Ingredient::class,
             FoodIngredientMap::class,
             FoodScale::class,
-            FoodSize::class
+            FoodSize::class,
+            WISC::class
         ]
 )
 
@@ -59,10 +60,11 @@ abstract class NANMRoomDatabase : RoomDatabase() {
     abstract fun foodIngrJTDao(): FoodIngredientMapDao
     abstract fun foodScaleDao(): DietaryFoodDao.FoodScaleDao
     abstract fun foodSizeDao(): DietaryFoodDao.FoodSizeDao
+    abstract fun wiscDao(): WiscDao
 
 
     companion object {
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
         const val DATABASE_NAME = MainApp.PROJECT_NAME + "1.db"
 
 
@@ -80,8 +82,8 @@ abstract class NANMRoomDatabase : RoomDatabase() {
                 val factory = SupportFactory(passphrase)
 
                 dbInstance = Room.databaseBuilder(context, NANMRoomDatabase::class.java, DATABASE_NAME)
- //                       .openHelperFactory(factory)
-                        .addMigrations(MIGRATION_1_2)
+                    //                       .openHelperFactory(factory)
+//                        .addMigrations(MIGRATION_1_2)
                         .fallbackToDestructiveMigration()
                         .allowMainThreadQueries()
                         .build()

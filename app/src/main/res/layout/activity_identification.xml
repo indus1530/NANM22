@@ -348,6 +348,27 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:visibility="gone"
+                        tools:ignore="OnClick" />
+
+
+                    <Button
+                        android:id="@+id/btn_WISC"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsuley"
+                        android:backgroundTint="@color/gray"
+                        android:backgroundTintMode="src_atop"
+                        android:enabled="false"
+                        android:onClick="btnWisc"
+                        android:text="Save"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
                         tools:ignore="OnClick" />
 
                 </LinearLayout>

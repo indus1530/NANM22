@@ -35,6 +35,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.VillageTable;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.WiscTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.models.AdolList;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
@@ -43,6 +44,7 @@ import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Users;
 import edu.aku.abdulsajid.nanm2022.models.Villages;
+import edu.aku.abdulsajid.nanm2022.models.WISC;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -70,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
+        db.execSQL(CreateTable.SQL_CREATE_WISC);
 
     }
 
@@ -199,6 +202,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 AdolescentTable.TABLE_NAME,
                 AdolescentTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addWisc(WISC wisc) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(WiscTable.COLUMN_PROJECT_NAME, wisc.getProjectName());
+        values.put(WiscTable.COLUMN_UID, wisc.getUid());
+        values.put(WiscTable.COLUMN_VILLAGE_CODE, wisc.getVillageCode());
+        values.put(WiscTable.COLUMN_CHILD_ID, wisc.getChildID());
+        values.put(WiscTable.COLUMN_CHILD_SNO, wisc.getChildSno());
+        values.put(WiscTable.COLUMN_USERNAME, wisc.getUserName());
+        values.put(WiscTable.COLUMN_SYSDATE, wisc.getSysDate());
+        values.put(WiscTable.COLUMN_SA1, wisc.sA1toString());
+        values.put(WiscTable.COLUMN_ISTATUS, wisc.getIStatus());
+        values.put(WiscTable.COLUMN_ISTATUS_96X, wisc.getIStatus96x());
+        values.put(WiscTable.COLUMN_DEVICETAGID, wisc.getDeviceTag());
+        values.put(WiscTable.COLUMN_DEVICEID, wisc.getDeviceId());
+        values.put(WiscTable.COLUMN_APPVERSION, wisc.getAppver());
+        values.put(WiscTable.COLUMN_SYNCED, wisc.getSynced());
+        values.put(WiscTable.COLUMN_SYNC_DATE, wisc.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insert(
+                WiscTable.TABLE_NAME,
+                WiscTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }

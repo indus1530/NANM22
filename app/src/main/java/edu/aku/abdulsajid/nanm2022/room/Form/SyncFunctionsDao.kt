@@ -99,6 +99,25 @@ interface SyncFunctionsDao {
         return jsonArray
     }
 
+    /*WISC*/
+
+    @Query(
+        "SELECT * FROM " + WiscTable.TABLE_NAME + " WHERE " + WiscTable.COLUMN_SYNCED
+                + " is \'\' AND " + WiscTable.COLUMN_ISTATUS + " is not null ORDER BY " + WiscTable.COLUMN_ID + " ASC"
+    )
+    fun getUnsyncedWisc_Internal(): List<WISC>
+
+    @kotlin.jvm.Throws(JSONException::class)
+    fun getUnsyncedWisc(): JSONArray? {
+        val allForms = getUnsyncedWisc_Internal()
+        val jsonArray = JSONArray()
+        for (i in allForms) {
+            i.Hydrate(i)
+            jsonArray.put(i.toJSONObject())
+        }
+        return jsonArray
+    }
+
 
     /*update SyncedTables */
     /*EntryLog*/
@@ -158,6 +177,21 @@ interface SyncFunctionsDao {
         synced.synced = "1"
         synced.syncDate = Date().toString()
         NANMRoomDatabase.dbInstance?.adolescentDao()?.updateAdolescent(synced)
+        return synced
+    }
+
+    /*Wisc*/
+    @Query(
+        "SELECT * FROM " + WiscTable.TABLE_NAME
+                + " WHERE " + WiscTable.COLUMN_ID + " LIKE :id "
+    )
+    fun updateQuerywisc(id: String?): WISC
+
+    fun updateSyncedWisc(id: String?): WISC {
+        val synced = updateQuerywisc(id)
+        synced.synced = "1"
+        synced.syncDate = Date().toString()
+        NANMRoomDatabase.dbInstance?.wiscDao()?.updateWisc(synced)
         return synced
     }
 

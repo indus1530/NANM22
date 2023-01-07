@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -53,6 +52,7 @@ import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
 import edu.aku.abdulsajid.nanm2022.models.Users;
 import edu.aku.abdulsajid.nanm2022.models.Villages;
+import edu.aku.abdulsajid.nanm2022.models.WISC;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.LockActivity;
 
@@ -98,6 +98,7 @@ public class MainApp extends Application {
     public static Adolescent adol;
     public static FamilyMembers familyMember;
     public static AdolList currentADOL;
+    public static WISC wisc;
     public static int memberCount = 0;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;

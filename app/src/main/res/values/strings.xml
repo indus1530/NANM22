@@ -104,7 +104,6 @@
     <string name="records_added_successfully">Records added successfully</string>
 
 
-
     <string name="netwrok" translatable="false">Network connection not available!</string>
     <string name="invalidpass" translatable="false">Invalid Password</string>
     <string name="unameRequired" translatable="false">Username is required.</string>
@@ -169,6 +168,7 @@
     <string name="username_password_same" translatable="false"> Username and Password cannot be same. </string>
     <string name="incorrect_username_or_password" translatable="false">Incorrect Username or Password</string>
     <string name="open_hh_form" translatable="false"> Open Household Form </string>
+    <string name="open_wisc_form" translatable="false"> Open WISC Record Form </string>
     <string name="hh_not_found" translatable="false">Household not Found</string>
     <string name="hh_exists_form" translatable="false"> JSONException(Form): \t </string>
     <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
@@ -2853,6 +2853,49 @@
     <string name='Q_d204'>d204</string>
     <string name='Q_d204_title'>d204_title</string>
     <string name="file_not_found">File not found</string>
+
+    <!--WISC-IV-->
+    <string name="wisctitle">WECHSLER INTELLIGENCE SCALE FOR CHILDREN - FOURTH EDITION </string>
+    <string name="wisc_mainheading"> WISC-IV</string>
+    <string name="wisc01">Child Name</string>
+    <string name="wisc02">Gender </string>
+    <string name="wisc02a">Male</string>
+    <string name="wisc02b">Female</string>
+    <string name="wisc02c">Transgender</string>
+    <string name="wisc03">Parent / Guardian`s Name</string>
+    <string name="wisc04">Place of Testing</string>
+    <string name="wisc05">Examiner`s Name</string>
+    <string name="wisc06">Date of Testing</string>
+    <string name="wisc07">Date of Birth</string>
+    <string name="wisc07dd">Day</string>
+    <string name="wisc07mm">Month</string>
+    <string name="wisc07yy">Year</string>
+    <string name="wisc08">Age at Testing</string>
+    <string name="wisc08dd">Day</string>
+    <string name="wisc08mm">Month</string>
+    <string name="wisc08yy">Year</string>
+    <string name="wisc09">Subset</string>
+    <string name="wisc0901">Block Design</string>
+    <string name="wisc0902">Similarities</string>
+    <string name="wisc0903">Digit Span</string>
+    <string name="wisc0904">Picture Concepts</string>
+    <string name="wisc0905">Coding</string>
+    <string name="wisc0906">Vocabulary</string>
+    <string name="wisc0907">Letter-Number Seq</string>
+    <string name="wisc0908">Matrix Reasoning</string>
+    <string name="wisc0909">Comprehension</string>
+    <string name="wisc0910">Symbol Search</string>
+
+
+    <string name='Q_wisc01'>wisc01</string>
+    <string name='Q_wisc02'>wisc02</string>
+    <string name='Q_wisc03'>wisc03</string>
+    <string name='Q_wisc04'>wisc04</string>
+    <string name='Q_wisc05'>wisc05</string>
+    <string name='Q_wisc06'>wisc06</string>
+    <string name='Q_wisc07'>wisc07</string>
+    <string name='Q_wisc08'>wisc08</string>
+    <string name='Q_wisc09'>wisc09</string>
 
 
 </resources>

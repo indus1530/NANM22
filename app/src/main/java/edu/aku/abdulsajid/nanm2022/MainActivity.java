@@ -34,6 +34,7 @@ import edu.aku.abdulsajid.nanm2022.databinding.ActivityMainBinding;
 import edu.aku.abdulsajid.nanm2022.models.Adolescent;
 import edu.aku.abdulsajid.nanm2022.models.FamilyMembers;
 import edu.aku.abdulsajid.nanm2022.models.Forms;
+import edu.aku.abdulsajid.nanm2022.models.WISC;
 import edu.aku.abdulsajid.nanm2022.room.NANMRoomDatabase;
 import edu.aku.abdulsajid.nanm2022.ui.ChangePasswordActivity;
 import edu.aku.abdulsajid.nanm2022.ui.IdentificationActivity;
@@ -65,6 +66,7 @@ import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC7Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionC8Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD1Activity;
 import edu.aku.abdulsajid.nanm2022.ui.sections.SectionD2Activity;
+import edu.aku.abdulsajid.nanm2022.ui.sections.WISCActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -136,17 +138,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startInterview:
                 MainApp.entryType = 1;
                 break;
-/*            case R.id.startDataEntry:
+            case R.id.startWISC:
                 MainApp.entryType = 2;
-                break;*/
-/*
-            case R.id.updateBlood:
-                MainApp.entryType = 3;
                 break;
-
-            case R.id.updateStool:
-                MainApp.entryType = 4;
-                break;*/
             default:
                 MainApp.entryType = 0;
 
@@ -158,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startInterview:
                 MainApp.form = new Forms();
                 startActivity(new Intent(this, IdentificationActivity.class));
+                break;
+
+            case R.id.startWISC:
+                MainApp.wisc = new WISC();
+                startActivity(new Intent(this, WISCActivity.class));
                 break;
             case R.id.secCon:
                 MainApp.form = new Forms();

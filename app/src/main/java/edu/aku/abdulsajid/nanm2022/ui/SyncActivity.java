@@ -58,6 +58,7 @@ import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.EntryLogTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.FormsTable;
 import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.UsersTable;
+import edu.aku.abdulsajid.nanm2022.contracts.TableContracts.WiscTable;
 import edu.aku.abdulsajid.nanm2022.core.MainApp;
 import edu.aku.abdulsajid.nanm2022.databinding.ActivitySyncBinding;
 import edu.aku.abdulsajid.nanm2022.models.SyncModel;
@@ -182,6 +183,17 @@ public class SyncActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(Adolescent): " + e.getMessage());
+                    Toast.makeText(SyncActivity.this, "JSONException(Adolescent)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                }
+
+                //Adolescent
+                uploadTables.add(new SyncModel(WiscTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.syncFunctionsDao().getUnsyncedWisc());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart: JSONException(WISC): " + e.getMessage());
                     Toast.makeText(SyncActivity.this, "JSONException(Adolescent)" + e.getMessage(), Toast.LENGTH_LONG).show();
 
                 }

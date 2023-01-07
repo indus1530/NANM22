@@ -888,97 +888,109 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/a521"
+                        <LinearLayout
+                            android:id="@+id/a521check"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`1`)}"
-                                android:onClick="@{()->form.setA521(`1`)}"
+                                android:checked="@{form.a52101.equals(`1`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52101(form.a52101.equals(`1`)?``:`1`)}"
                                 android:text="@string/a52101" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`2`)}"
-                                android:onClick="@{()->form.setA521(`2`)}"
+                                android:checked="@{form.a52102.equals(`2`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52102(form.a52102.equals(`2`)?``:`2`)}"
                                 android:text="@string/a52102" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`3`)}"
-                                android:onClick="@{()->form.setA521(`3`)}"
+                                android:checked="@{form.a52103.equals(`3`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52103(form.a52103.equals(`3`)?``:`3`)}"
                                 android:text="@string/a52103" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`4`)}"
-                                android:onClick="@{()->form.setA521(`4`)}"
+                                android:checked="@{form.a52104.equals(`4`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52104(form.a52104.equals(`4`)?``:`4`)}"
                                 android:text="@string/a52104" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`5`)}"
-                                android:onClick="@{()->form.setA521(`5`)}"
+                                android:checked="@{form.a52105.equals(`5`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52105(form.a52105.equals(`5`)?``:`5`)}"
                                 android:text="@string/a52105" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`6`)}"
-                                android:onClick="@{()->form.setA521(`6`)}"
+                                android:checked="@{form.a52106.equals(`6`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52106(form.a52106.equals(`6`)?``:`6`)}"
                                 android:text="@string/a52106" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52107"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`7`)}"
-                                android:onClick="@{()->form.setA521(`7`)}"
+                                android:checked="@{form.a52107.equals(`7`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52107(form.a52107.equals(`7`)?``:`7`)}"
                                 android:text="@string/a52107" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52108"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`8`)}"
-                                android:onClick="@{()->form.setA521(`8`)}"
+                                android:checked="@{form.a52108.equals(`8`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52108(form.a52108.equals(`8`)?``:`8`)}"
                                 android:text="@string/a52108" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52109"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`9`)}"
-                                android:onClick="@{()->form.setA521(`9`)}"
+                                android:checked="@{form.a52109.equals(`9`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52109(form.a52109.equals(`9`)?``:`9`)}"
                                 android:text="@string/a52109" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52198"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`98`)}"
-                                android:onClick="@{()->form.setA521(`98`)}"
+                                android:checked="@{form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52198(form.a52198.equals(`98`)?``:`98`)}"
                                 android:text="@string/a52198" />
 
-                            <RadioButton
+                            <CheckBox
                                 android:id="@+id/a52196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a521.equals(`96`)}"
-                                android:onClick="@{()->form.setA521(`96`)}"
+                                android:checked="@{form.a52196.equals(`96`)}"
+                                android:enabled="@{!form.a52198.equals(`98`)}"
+                                android:onClick="@{()->form.setA52196(form.a52196.equals(`96`)?``:`96`)}"
                                 android:text="@string/a52196" />
 
                             <EditText
@@ -989,8 +1001,8 @@
                                 android:hint="@string/a52196"
                                 android:tag="a52196"
                                 android:text="@={form.a52196x}"
-                                android:visibility="@{form.a521.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                        </RadioGroup>
+                                android:visibility="@{form.a52196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1045,10 +1057,10 @@
 
                                 <TextView
                                     style="@style/sub_labels"
-                                    android:background="@color/grayLight"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:background="@color/grayLight"
                                     android:text="@string/a5221a" />
 
                                 <TextView
@@ -1100,9 +1112,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5221bx}"
@@ -1115,9 +1127,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5221ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5221ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5221cx}"
@@ -1158,9 +1170,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5222bx}"
@@ -1173,9 +1185,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5222ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5222ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5222cx}"
@@ -1216,9 +1228,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5223bx}"
@@ -1231,9 +1243,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5223ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5223ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5223cx}"
@@ -1274,9 +1286,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5224bx}"
@@ -1289,9 +1301,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5224ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5224ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5224cx}"
@@ -1331,9 +1343,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5225bx}"
@@ -1346,9 +1358,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5225ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5225ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5225cx}"
@@ -1388,9 +1400,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5226bx}"
@@ -1403,9 +1415,9 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:gravity="center"
                                     android:hint="###"
-                                    android:enabled="@{form.a5226ax.length() &gt; 0 &amp;&amp; Integer.parseInt(form.a5226ax) &gt; 0}"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:text="@={form.a5226cx}"

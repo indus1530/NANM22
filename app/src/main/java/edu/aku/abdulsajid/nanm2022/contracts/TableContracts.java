@@ -100,6 +100,28 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS_96X = "istatus96x";
     }
 
+    public static abstract class WiscTable implements BaseColumns {
+        public static final String TABLE_NAME = "Wisc";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_VILLAGE_CODE = "village_code";
+        public static final String COLUMN_CHILD_ID = "child_id";
+        public static final String COLUMN_CHILD_SNO = "childSno";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_SA1 = "sA1";
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNC_DATE = "sync_date";
+        public static final String COLUMN_AGE_MONTHS = "ageinmonths";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_ISTATUS_96X = "istatus96x";
+    }
+
     public static abstract class FamilyMembersTable implements BaseColumns {
         public static final String TABLE_NAME = "FamilyMembers";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
