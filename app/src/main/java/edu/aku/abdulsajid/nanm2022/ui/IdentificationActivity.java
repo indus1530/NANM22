@@ -66,6 +66,9 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.childID.setVisibility(View.GONE);
         bi.hhhead.setText(null);
         bi.headhh.setVisibility(View.GONE);
+        bi.checkHhhead.setChecked(false);
+        bi.checkChild.setChecked(false);
+        bi.checkChildID.setChecked(false);
 
         AdolList adolList = new AdolList();
 
@@ -117,7 +120,7 @@ public class IdentificationActivity extends AppCompatActivity {
     public void btnWisc(View view) {
         if (!formValidation()) return;
         childExists();
-        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+        if (MainApp.wisc.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
@@ -135,8 +138,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
         MainApp.form = new Forms();
         try {
-            //MainApp.form = db.formsDao().getFormByChildID(MainApp.currentHousehold.getChild_id(), MainApp.currentHousehold.getVillage_code());
             MainApp.form = db.formsDao().getFormByAdolSno(MainApp.currentADOL.getSrno(), MainApp.currentADOL.getVillage_code());
+            MainApp.wisc = db.wiscDao().getFormByAdolSno(MainApp.currentADOL.getSrno(), MainApp.currentADOL.getVillage_code());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -157,6 +160,7 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.hhhead.setText(null);
         bi.checkHhhead.setChecked(false);
         bi.checkChild.setChecked(false);
+        bi.checkChildID.setChecked(false);
         bi.fldGrpA105.setVisibility(View.GONE);
         Villages villages = new Villages();
 

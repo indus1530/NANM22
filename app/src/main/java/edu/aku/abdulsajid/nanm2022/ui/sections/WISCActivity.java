@@ -35,8 +35,6 @@ public class WISCActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeEnglish1 : sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeUrdu : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_wisc);
-        setSupportActionBar(bi.toolbar);
-        db = MainApp.appInfo.dbHelper;
         bi.wisc01.setText(currentADOL.getChild_name());
         wisc.setWisc01(currentADOL.getChild_name());
 
@@ -49,6 +47,8 @@ public class WISCActivity extends AppCompatActivity {
             }
         }
         bi.setForm(wisc);
+        db = MainApp.appInfo.dbHelper;
+        setSupportActionBar(bi.toolbar);
     }
 
     private boolean insertNewRecord() throws JSONException {
@@ -104,6 +104,7 @@ public class WISCActivity extends AppCompatActivity {
             Intent i;
             i = new Intent(this, IdentificationActivity.class).putExtra("complete", true);
             startActivity(i);
+            Toast.makeText(this, "Record Saved", Toast.LENGTH_SHORT).show();
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
@@ -113,6 +114,7 @@ public class WISCActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
+        startActivity(new Intent(this, IdentificationActivity.class));
     }
 
     private boolean formValidation() {
@@ -123,6 +125,7 @@ public class WISCActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         setResult(RESULT_CANCELED);
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
     @Override
