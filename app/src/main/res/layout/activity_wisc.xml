@@ -823,6 +823,43 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- wiscRemarks  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVwiscRemarks"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/wiscRemarks" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/wiscRemarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="@string/wiscRemarks"
+                            android:lines="5"
+                            android:minLines="5"
+                            android:tag="-1"
+                            android:text="@={form.wiscRemarks}" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <!--EndButton LinearLayout-->
                 <RelativeLayout
                     android:id="@+id/llbtn"

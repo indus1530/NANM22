@@ -2885,6 +2885,7 @@
     <string name="wisc0908">Matrix Reasoning</string>
     <string name="wisc0909">Comprehension</string>
     <string name="wisc0910">Symbol Search</string>
+    <string name="wiscRemarks">Remarks</string>
 
 
     <string name='Q_wisc01'>wisc01</string>

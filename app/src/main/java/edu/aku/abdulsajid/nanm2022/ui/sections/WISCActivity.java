@@ -111,7 +111,6 @@ public class WISCActivity extends AppCompatActivity {
         }
     }
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, IdentificationActivity.class));
@@ -120,7 +119,6 @@ public class WISCActivity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 
     @Override
     public void onBackPressed() {
@@ -133,4 +131,5 @@ public class WISCActivity extends AppCompatActivity {
         super.onResume();
         MainApp.lockScreen(this);
     }
+
 }

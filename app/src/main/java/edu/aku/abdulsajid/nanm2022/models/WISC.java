@@ -38,9 +38,7 @@ public class WISC extends BaseObservable implements Observable {
 
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     private String TAG = "WISC";
-    // APP VARIABLES
     private String projectName = PROJECT_NAME;
-    // APP VARIABLES
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = WiscTable.COLUMN_ID)
@@ -122,6 +120,8 @@ public class WISC extends BaseObservable implements Observable {
     private String wisc0909 = _EMPTY_;
     @Ignore
     private String wisc0910 = _EMPTY_;
+    @Ignore
+    private String wiscRemarks = _EMPTY_;
 
     private String district = _EMPTY_;
     private String tehsil = _EMPTY_;
@@ -572,6 +572,16 @@ public class WISC extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.wisc0910);
     }
 
+    @Bindable
+    public String getWiscRemarks() {
+        return wiscRemarks;
+    }
+
+    public void setWiscRemarks(String wiscRemarks) {
+        this.wiscRemarks = wiscRemarks;
+        notifyPropertyChanged(BR.wiscRemarks);
+    }
+
     public String getAgeInMonths() {
         return ageInMonths;
     }
@@ -601,23 +611,23 @@ public class WISC extends BaseObservable implements Observable {
         return this;
     }
 
-    public WISC Hydrate(WISC forms) throws JSONException {
-        this.id = forms.id;
-        this.uid = forms.uid;
-        this.projectName = forms.projectName;
-        this.villageCode = forms.villageCode;
-        this.childID = forms.childID;
-        this.childSno = forms.childSno;
-        this.userName = forms.userName;
-        this.sysDate = forms.sysDate;
-        this.deviceTag = forms.deviceTag;
-        this.appver = forms.appver;
-        this.iStatus = forms.iStatus;
-        this.iStatus96x = forms.iStatus96x;
-        this.synced = forms.synced;
-        this.syncDate = forms.syncDate;
+    public WISC Hydrate(WISC wisc) throws JSONException {
+        this.id = wisc.id;
+        this.uid = wisc.uid;
+        this.projectName = wisc.projectName;
+        this.villageCode = wisc.villageCode;
+        this.childID = wisc.childID;
+        this.childSno = wisc.childSno;
+        this.userName = wisc.userName;
+        this.sysDate = wisc.sysDate;
+        this.deviceTag = wisc.deviceTag;
+        this.appver = wisc.appver;
+        this.iStatus = wisc.iStatus;
+        this.iStatus96x = wisc.iStatus96x;
+        this.synced = wisc.synced;
+        this.syncDate = wisc.syncDate;
 
-        sA1Hydrate(forms.sA1);
+        sA1Hydrate(wisc.sA1);
         return this;
     }
 
@@ -638,16 +648,17 @@ public class WISC extends BaseObservable implements Observable {
             this.wisc08dd = json.getString("wisc08dd");
             this.wisc08mm = json.getString("wisc08mm");
             this.wisc08yy = json.getString("wisc08yy");
-            this.wisc0901 = json.getString("wisc0901");
-            this.wisc0902 = json.getString("wisc0902");
-            this.wisc0903 = json.getString("wisc0903");
-            this.wisc0904 = json.getString("wisc0904");
-            this.wisc0905 = json.getString("wisc0905");
-            this.wisc0906 = json.getString("wisc0906");
-            this.wisc0907 = json.getString("wisc0907");
-            this.wisc0908 = json.getString("wisc0908");
-            this.wisc0909 = json.getString("wisc0909");
-            this.wisc0910 = json.getString("wisc0910");
+            this.wisc0901 = json.getString("BD");
+            this.wisc0902 = json.getString("SI");
+            this.wisc0903 = json.getString("DS");
+            this.wisc0904 = json.getString("PC");
+            this.wisc0905 = json.getString("CD");
+            this.wisc0906 = json.getString("VO");
+            this.wisc0907 = json.getString("LN");
+            this.wisc0908 = json.getString("MR");
+            this.wisc0909 = json.getString("CO");
+            this.wisc0910 = json.getString("SS");
+            this.wiscRemarks = json.getString("wiscRemarks");
 
         }
     }
@@ -688,16 +699,17 @@ public class WISC extends BaseObservable implements Observable {
                 .put("wisc08dd", wisc08dd)
                 .put("wisc08mm", wisc08mm)
                 .put("wisc08yy", wisc08yy)
-                .put("wisc0901", wisc0901)
-                .put("wisc0902", wisc0902)
-                .put("wisc0903", wisc0903)
-                .put("wisc0904", wisc0904)
-                .put("wisc0905", wisc0905)
-                .put("wisc0906", wisc0906)
-                .put("wisc0907", wisc0907)
-                .put("wisc0908", wisc0908)
-                .put("wisc0909", wisc0909)
-                .put("wisc0910", wisc0910);
+                .put("BD", wisc0901)
+                .put("SI", wisc0902)
+                .put("DS", wisc0903)
+                .put("PC", wisc0904)
+                .put("CD", wisc0905)
+                .put("VO", wisc0906)
+                .put("LN", wisc0907)
+                .put("MR", wisc0908)
+                .put("CO", wisc0909)
+                .put("SS", wisc0910)
+                .put("wiscRemarks", wiscRemarks);
         return json.toString();
     }
 
