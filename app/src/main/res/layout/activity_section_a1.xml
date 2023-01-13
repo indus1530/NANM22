@@ -394,7 +394,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.a112}"
-                            app:maxValue="60"
+                            app:maxValue="75"
                             app:minValue="18"
                             app:type="range" />
                     </LinearLayout>
