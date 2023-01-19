@@ -1159,7 +1159,8 @@
     <string name="cb313e">3 hour </string>
     <string name="cb313f">4 hour</string>
     <string name="cb313g">5 or more hours </string>
-    <string name="cb314">During the past week (7 days), on how many days were (child name) physically active for a total of at least 60 minutes per day? (all the time you spent in activities that increased your heart rate and made you breathe hard)</string>
+    <string name="cb314">During the past week (7 days), on how many days were (child name) physically active for a total of at least 60 minutes per day?</string>
+    <string name="cb314info">all the time you spent in activities that increased your heart rate and made you breathe hard</string>
     <string name="cb314a">0 days </string>
     <string name="cb314b">1 day </string>
     <string name="cb314c">2 days </string>
