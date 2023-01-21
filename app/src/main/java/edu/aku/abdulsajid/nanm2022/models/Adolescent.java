@@ -2266,6 +2266,8 @@ public class Adolescent extends BaseObservable implements Observable {
         setC50607(c505.equals("1") ? this.c50607 : "");
         setC50608(c505.equals("1") ? this.c50608 : "");
         setC50609(c505.equals("1") ? this.c50609 : "");
+        setC50610(c505.equals("1") ? this.c50610 : "");
+        setC50611(c505.equals("1") ? this.c50611 : "");
         setC50696(c505.equals("1") ? this.c50696 : "");
         notifyPropertyChanged(BR.c505);
     }
