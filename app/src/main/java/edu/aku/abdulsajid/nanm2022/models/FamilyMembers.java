@@ -391,7 +391,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA204(String a204) {
         this.a204 = a204;
-        setA210("");
+//        setA210("");
         notifyPropertyChanged(BR.a204);
     }
 

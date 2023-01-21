@@ -1184,8 +1184,8 @@
                                 android:id="@+id/a307o"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.a306.equals(`8`)}"
-                                android:onClick="@{()->form.setA306(`8`)}"
+                                android:checked="@{form.a307.equals(`8`)}"
+                                android:onClick="@{()->form.setA307(`8`)}"
                                 android:text="@string/a307o" />
 
                             <TextView

@@ -178,7 +178,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a204.equals(`1`)}"
-                                android:onClick="@{()->member.setA204(`1`)}"
+                                android:onClick="@{()->member.setA204(`1`) + a210.clearCheck()}"
                                 android:text="@string/a204a" />
 
                             <RadioButton
@@ -196,7 +196,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{member.a204.equals(`3`)}"
-                                android:onClick="@{()->member.setA204(`3`)}"
+                                android:onClick="@{()->member.setA204(`3`) + a210.clearCheck()}"
                                 android:text="@string/a204c" />
 
                         </RadioGroup>
@@ -383,7 +383,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/a203x"
-                            android:tag="d10398"
+                            android:tag="a203x"
                             android:text="@={member.a20396x}"
                             android:visibility="@{member.a203.equals(`96`) ? View.VISIBLE : View.GONE}" />
 

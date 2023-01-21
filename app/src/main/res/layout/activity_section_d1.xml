@@ -234,6 +234,7 @@
                                 android:layout_height="@dimen/_25sdp"
                                 android:layout_weight="1.5"
                                 android:background="@color/grayLight"
+                                android:text="@={form.d105}"
                                 android:hint="@string/d105" />
 
                         </LinearLayout>

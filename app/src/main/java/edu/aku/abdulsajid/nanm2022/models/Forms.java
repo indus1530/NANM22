@@ -5702,7 +5702,7 @@ public class Forms extends BaseObservable implements Observable {
     public void setA52196(String a52196) {
         if (this.a52196.equals(a52196)) return; // for all checkboxes
         this.a52196 = a52196;
-        setA52196x(a51296.equals("98") ? this.a52196x : "");
+        setA52196x(a51296.equals("96") ? this.a52196x : "");
         notifyPropertyChanged(BR.a52196);
     }
 
@@ -6485,7 +6485,7 @@ public class Forms extends BaseObservable implements Observable {
     public void setA53096(String a53096) {
         if (this.a53096.equals(a53096)) return; // for all checkboxes
         this.a53096 = a53096;
-        setA52096x(a53096.equals("96") ? this.a53096 : "");
+        setA53096x(a53096.equals("96") ? this.a53096x : "");
         notifyPropertyChanged(BR.a53096);
     }
 
