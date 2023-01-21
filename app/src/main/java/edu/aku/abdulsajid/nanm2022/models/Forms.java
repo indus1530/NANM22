@@ -5399,7 +5399,7 @@ public class Forms extends BaseObservable implements Observable {
         setA52003x(a519.equals("1") ? this.a52003x : "");
         setA52004x(a519.equals("1") ? this.a52004x : "");
         setA52005x(a519.equals("1") ? this.a52005x : "");
-        setA52096x(a519.equals("1") ? this.a52096x : "");
+        //setA52096x(a519.equals("1") ? this.a52096x : "");
         setA52098(a519.equals("1") ? this.a52098 : "");
 
         notifyPropertyChanged(BR.a519);
