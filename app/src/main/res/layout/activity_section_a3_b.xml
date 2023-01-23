@@ -1828,7 +1828,7 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_a326" />
+                            android:text="@string/Q_a327" />
 
 
                         <TextView
